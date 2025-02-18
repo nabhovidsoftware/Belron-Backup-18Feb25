@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Motorist MDM Sync API --></label>
+        <name>BLN_MotoristMDMSyncAPI</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Sales MDM Sync --></label>
+        <name>BLN_SalesMDMSync</name>
+    </fieldSets>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Account Setup --></label>
+            <section>Account Setup</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Operational Model --></label>
+            <section>Operational Model</section>
+        </sections>
+        <sections>
+            <label><!-- Supply Information --></label>
+            <section>Supply Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>B2B Account Portal Layout</layout>
+        <sections>
+            <label><!-- Account Setup --></label>
+            <section>Account Setup</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Operational Model --></label>
+            <section>Operational Model</section>
+        </sections>
+        <sections>
+            <label><!-- Supply Information --></label>
+            <section>Supply Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>B2B Commerce</layout>
+        <sections>
+            <label><!-- Account Setup --></label>
+            <section>Account Setup</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Operational Model --></label>
+            <section>Operational Model</section>
+        </sections>
+        <sections>
+            <label><!-- Supply Information --></label>
+            <section>Supply Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Person Account Layout</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label><!-- Account Summary --></label>
+            <section>Account Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Address Details --></label>
+            <section>Address Details</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Details --></label>
+            <section>Contact Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Apply ARP Template --></label>
+        <name>Apply_ARP_Template</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Add Child Account --></label>
+        <name>BLN_AddChildAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Email --></label>
+        <name>BLN_Email</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Run Credit Check --></label>
+        <name>BLN_RunCreditCheck</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Submit for Credit Approval --></label>
+        <name>BLN_SubmitForCreditApproval</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Motorist Address --></label>
+        <name>bln_UpdateMotoristAddress</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Dedicated for Customer(Competitor Account) --></description>
+        <label><!-- Competitor --></label>
+        <name>BLN_Competitor</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Dedicated for Customer(B2B Account) --></description>
+        <label><!-- Customer(B2B Account) --></label>
+        <name>BLN_CustomerB2BAccount</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Referral Partner --></label>
+        <name>BLN_ReferralPartner</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- B2B Commerce Account --></label>
+        <name>LAD_B2B_Commerce_Account</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- In order to save this record please ensure the First Name and Last Name are populated --></errorMessage>
+        <name>BLN_AccountMandatoryFirstAndLastName</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can not update stage. --></errorMessage>
+        <name>BLN_AccountStatusRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account TierType is mandatory at this status. --></errorMessage>
+        <name>BLN_AccountTierMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Account with Credit Score Approval Status set to &apos;Auto Approved&apos; or &apos;Manually Approved&apos; can be activated. --></errorMessage>
+        <name>BLN_ActivatedCreditScoreLabel</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide full Billing Address --></errorMessage>
+        <name>BLN_AddressFieldMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please populate Bill To Account field. --></errorMessage>
+        <name>BLN_BillToAccountcanotbeblank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide full billing address. --></errorMessage>
+        <name>BLN_BillingAddressMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid address. The field must not contain unwanted phrases, special characters, numbers, or dates. --></errorMessage>
+        <name>BLN_BillingAddressStreet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Billing Frequency is mandatory at this status. --></errorMessage>
+        <name>BLN_BillingFrequencyValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Billing Method	is mandatory at this status. --></errorMessage>
+        <name>BLN_BillingMethodValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot change the value of the Parent Account field --></errorMessage>
+        <name>BLN_BlockingChangeParentAccount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot update credit details. Please run Credit check. --></errorMessage>
+        <name>BLN_CannotUpdateCreditDetails</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Client Sub Type is mandatory at this status. --></errorMessage>
+        <name>BLN_ClientSubTypeMandat</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please follow format: 2 alphanumeric characters and 6 next digits --></errorMessage>
+        <name>BLN_CompanyRegistrationNumberCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please confirm the Primary Contact Number --></errorMessage>
+        <name>BLN_ContactNumberMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- FLTR Indicator must be populated before activating the account. --></errorMessage>
+        <name>BLN_FLTRIndicatorRequired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For UK Accounts you can create only 3 levels hierarchy --></errorMessage>
+        <name>BLN_LevelsForUKAccount</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account Level cannot be updated. --></errorMessage>
+        <name>BLN_Levelupdate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot manually set Credit Scoring - Check Status to ‘Success - Auto check’. --></errorMessage>
+        <name>BLN_ManuallySetCreditScoringCheckStatus</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- New Accounts must be created in ‘Country Grouping Account’ and &apos;Legal Entity Account&apos; level. --></errorMessage>
+        <name>BLN_NewAccountLevelValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>
+            <!-- Account	On Insert and Update -
+For Prospect Account - Next Communication Date cannot past date.	Next Communication Date cannot be past date.. -->
+        </errorMessage>
+        <name>BLN_Next_Comm_Date_Cannot_be_In_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Payment Terms is mandatory at this status. --></errorMessage>
+        <name>BLN_PaymenTermsValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Payment Terms cannot be blank. --></errorMessage>
+        <name>BLN_PaymentTermMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select at least one phone number --></errorMessage>
+        <name>BLN_PhoneNumberMandate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Referring Status is mandatory at this status. --></errorMessage>
+        <name>BLN_ReferringStatusValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide full registered address. --></errorMessage>
+        <name>BLN_RegisteredAddMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid address. The field must not contain unwanted phrases, special characters, numbers, or dates. --></errorMessage>
+        <name>BLN_RegistrationAddressStreet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide full shipping address. --></errorMessage>
+        <name>BLN_ShippingAddressMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid address. The field must not contain unwanted phrases, special characters, numbers, or dates. --></errorMessage>
+        <name>BLN_ShippingAddressStreet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Supply status with Autoglass®  is mandatory at this status. --></errorMessage>
+        <name>BLN_SupplyStatusValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Trading Status is mandatory at this status. --></errorMessage>
+        <name>BLN_TradingStatusValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Account Owner or Administrator can edit field ‘Allow Opportunity Owner Change. --></errorMessage>
+        <name>BLN_ValidationOpportunityOwnerChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please follow format: GB or NI and 9 digits --></errorMessage>
+        <name>BLN_VatRegistrationNumberCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Integer values are allowed --></errorMessage>
+        <name>LAD_No_Decimal_Places_in_VRN_Usage</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LAD_Account_Switcher_Assignment --></label>
+        <name>LAD_Account_Switcher_Assignment</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LAD_Generate_Tasks --></label>
+        <name>LAD_Generate_Tasks</name>
+    </webLinks>
+</CustomObjectTranslation>

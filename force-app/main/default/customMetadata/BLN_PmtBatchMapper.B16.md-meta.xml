@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>B16</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_CenterDigits__c</field>
+        <value xsi:type="xsd:string">1111</value>
+    </values>
+    <values>
+        <field>BLN_MethodId__c</field>
+        <value xsi:type="xsd:string">000000000000075</value>
+    </values>
+    <values>
+        <field>BLN_PaymentType__c</field>
+        <value xsi:type="xsd:string">Chip &amp; Pin AMEX</value>
+    </values>
+    <values>
+        <field>BLN_Prefix__c</field>
+        <value xsi:type="xsd:string">MV</value>
+    </values>
+</CustomMetadata>

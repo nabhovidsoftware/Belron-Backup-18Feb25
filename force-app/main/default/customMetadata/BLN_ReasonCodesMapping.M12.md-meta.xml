@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>M12</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_FailureReasonSA__c</field>
+        <value xsi:type="xsd:string">Repair</value>
+    </values>
+    <values>
+        <field>BLN_InitiatedBy__c</field>
+        <value xsi:type="xsd:string">Belron</value>
+    </values>
+    <values>
+        <field>BLN_PrimaryReasonCase__c</field>
+        <value xsi:type="xsd:string">Non Opportunity</value>
+    </values>
+    <values>
+        <field>BLN_SecondaryReasonCase__c</field>
+        <value xsi:type="xsd:string">To Small To Be Repaired</value>
+    </values>
+    <values>
+        <field>BLN_SubfailureReasonSA__c</field>
+        <value xsi:type="xsd:string">Repair too Small/No Damage</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vehicle</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vehicles</value>
+    </caseValues>
+    <layouts>
+        <layout>BLN_VehicleLayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Vehicle Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle Details --></label>
+            <section>Vehicle Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Clear Vehicle Details --></label>
+        <name>BLN_ClearVehicleDetails</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Edit --></label>
+        <name>BLN_Edit</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Vehicle --></label>
+        <name>BLN_UpdateVehicle_c</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

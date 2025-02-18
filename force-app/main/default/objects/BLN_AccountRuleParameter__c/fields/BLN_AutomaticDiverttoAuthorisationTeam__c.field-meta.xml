@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AutomaticDiverttoAuthorisationTeam__c</fullName>
+    <description>&quot;Rules diverts job to appropriate authorisation team (BVT or FLTR). Authorisation team is determined by the indicator on the account level.
+2 options for job diversion: all jobs needs to be diverted to auth team or only jobs that are manually verified (job manually matched to B2B Account)&quot;</description>
+    <externalId>false</externalId>
+    <label>Automatic Divert To Auth Team Option</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All Cases for Validation</fullName>
+                <default>false</default>
+                <label>All Cases for Validation</label>
+            </value>
+            <value>
+                <fullName>Non-PDS Cases for Validation</fullName>
+                <default>false</default>
+                <label>Non-PDS Cases for Validation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

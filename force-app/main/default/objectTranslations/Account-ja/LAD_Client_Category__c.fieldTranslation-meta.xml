@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Client Category --></label>
+    <name>LAD_Client_Category__c</name>
+    <picklistValues>
+        <masterLabel>Captive Account</masterLabel>
+        <translation><!-- Captive Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>National Account</masterLabel>
+        <translation><!-- National Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Account</masterLabel>
+        <translation><!-- Northern Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Ireland Account</masterLabel>
+        <translation><!-- Northern Ireland Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Southern Account</masterLabel>
+        <translation><!-- Southern Account --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

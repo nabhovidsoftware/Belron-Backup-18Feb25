@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>BLN_UKrolesandsubordinatesSlaDefinition</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK -11316, FOUK - 6523</description>
+        <label>UK roles and subordinates Sla Definition</label>
+        <sharedTo>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

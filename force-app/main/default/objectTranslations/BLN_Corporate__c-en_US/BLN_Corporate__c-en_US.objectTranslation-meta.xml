@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Corporate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Corporates</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Corp Field Set --></label>
+        <name>BLN_CorpFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Corporate Field Set --></label>
+        <name>BLN_CorporateFieldSet</name>
+    </fieldSets>
+    <layouts>
+        <layout>BLN_CorporateFleetLayout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Billing Validation --></label>
+            <section>Billing Validation</section>
+        </sections>
+        <sections>
+            <label><!-- Coverage Information --></label>
+            <section>Coverage Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle Information --></label>
+            <section>Vehicle Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_Insurance</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Billing Validation --></label>
+            <section>Billing Validation</section>
+        </sections>
+        <sections>
+            <label><!-- Coverage Information --></label>
+            <section>Coverage Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Information --></label>
+            <section>Customer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Excess --></label>
+            <section>Excess</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle Information --></label>
+            <section>Vehicle Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_SplitBillLayout</layout>
+        <sections>
+            <label><!-- Additional Details --></label>
+            <section>Additional Details</section>
+        </sections>
+        <sections>
+            <label><!-- Coverage Information --></label>
+            <section>Coverage Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Vehicle Information --></label>
+            <section>Vehicle Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Corporate Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Authorisation Corporate --></label>
+        <name>BLN_AuthorizationCorporate</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Ready To Send --></label>
+        <name>BLN_ReadyToSend</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Authorisation --></label>
+        <name>bln_Authorization</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- This record type is created for Corporate/Fleet records --></description>
+        <label><!-- Corporate/Fleet --></label>
+        <name>BLN_CorporateFleet</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This record type is created for Insurance records --></description>
+        <label><!-- Insurance --></label>
+        <name>BLN_Insurance</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This record type is created for Split Bill records --></description>
+        <label><!-- Split Bill --></label>
+        <name>BLN_SpiltBill</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Policy start date should be smaller than policy end date --></errorMessage>
+        <name>BLN_PolicyStartSmallerThanPolicyEndDate</name>
+    </validationRules>
+</CustomObjectTranslation>

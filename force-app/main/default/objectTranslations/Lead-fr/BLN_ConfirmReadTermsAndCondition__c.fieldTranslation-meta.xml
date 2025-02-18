@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The customer must confirm reading the Terms and Conditions --></help>
+    <label><!-- I confirm I have read the T&amp;C --></label>
+    <name>BLN_ConfirmReadTermsAndCondition__c</name>
+</CustomFieldTranslation>

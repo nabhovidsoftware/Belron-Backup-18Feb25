@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_DelegatedAuthority__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If set on account, Claims Handling fee will be VAT Exempt if the job has been handled within the Delegated Authority parameters. If the job falls outside of the Delegated Authority parameters (i.e. we have had to seek authorisation from the insurer e.g. the job value was over the authorisation limit) then VAT should be applied to the CHF</description>
+    <externalId>false</externalId>
+    <label>Delegated Authority</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

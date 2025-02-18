@@ -1,0 +1,46 @@
+.align {
+  float: left;
+}
+
+.moveToLeft {
+  padding-right: 26px;
+}
+
+lightning-button.button {
+  --sds-c-button-brand-color-background: #94c219;
+  --sds-c-button-brand-color-background-hover: #94c219;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  padding-bottom: 0px;
+}
+
+.table {
+  columns: 50px 13;
+
+}
+
+.alignTD {
+  text-align: center;
+  justify-content: space-between;
+  padding: 4px;
+
+}
+
+.centerthis {
+  align-self: center;
+  justify-self: center;
+}
+
+[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.true {
+  outline: 4px solid green;
+}

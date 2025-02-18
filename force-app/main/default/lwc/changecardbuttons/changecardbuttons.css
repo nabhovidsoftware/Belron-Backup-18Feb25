@@ -1,0 +1,121 @@
+.wholescreen{
+    /* max-width: 848px; */
+    width: 100%;
+    /* min-height: 80vh; */
+  }
+.headcss{
+    width: 425px;
+    height: 100%;
+    margin: 48px 0px 0px 60px;
+  
+}
+.namecss{
+    width: 400px;
+    margin: 0px 0px 8px 0px !important;
+    font-family:  Roboto;   
+    color: var(--theme-color-text, #475158);
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-regular, 400);
+    line-height: 150%; /* 24px */
+    text-align: left;
+
+}
+
+.imagecss{
+   
+}
+.accountcss {
+  
+color: #475158;
+font-family: Roboto Condensed; 
+font-size: 60px;
+font-weight: 700;
+text-align: left;
+width: 588px;
+height: 78px;
+gap: 0px;
+opacity: 0px;
+
+}
+.usercss{
+    margin:48px 0px 24px 0px;
+    width: 400px;
+    height: 130px;
+    top: 326px;
+    left: 72px;
+    gap: 24px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+
+}
+.usernamecss{
+    color: var(--theme-color-text, #475158);
+    font-family: var(--theme-typography-font-family-body, Roboto);
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 150%; /* 24px */
+}
+.emailcss{
+    color: var(--theme-color-text-matt, #8B9196);
+    font-family: var(--theme-typography-font-family-body, Roboto);
+    font-size: var(--theme-typography-font-size-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+}
+.buttoncss{
+    color: var(--theme-color-secondary, #5A6369);
+    text-align: center;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+    width: 162px;
+    height: 48px;
+    border-radius: var(--ewp-comp-button-tertiary-border-radius, 4px);
+    background: rgba(250, 250, 250, 0.01);
+    border: 1px solid #5A6369;
+}
+.passcss{
+    margin-top: 24px;
+}
+/* @media only screen and (max-width: 600px) {
+   
+    .accountcss {
+        font-size: 36px !important; 
+        line-height: 48px; 
+    }
+} */
+
+/* @media screen and (max-device-width: 480px) 
+and (orientation: portrait) { */
+@media (max-width: 612px) {
+    .usercss{
+        margin:24px 0px 24px 0px;
+        /* width: 360px !important; */
+        width: 100%;
+    }
+    .headcss{
+        /* width: 360px !important; */
+        width: 100%;
+        margin-left: 0.3rem;
+        margin-top: 24px !important;
+    }
+    .accountcss{
+        width: 100%;
+        height: 55px;
+      
+        font-size: 36px !important;
+        
+    }
+    .imagecss{
+      
+    }
+    .namecss{
+        font-size: 16px;
+        width: 100%;
+      }
+}

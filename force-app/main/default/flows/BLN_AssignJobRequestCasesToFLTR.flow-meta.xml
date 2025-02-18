@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assign_Case_to_FLTR</name>
+        <label>Assign Case to FLTR</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_FLTR_Queue.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Null_Check</name>
+        <label>Null Check</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_no_null_records</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_FLTR_Queue</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Case_to_FLTR</targetReference>
+            </connector>
+            <label>If no null records</label>
+        </rules>
+    </decisions>
+    <description>FOUK-2888: This flow is created to automatically assign Job Request cases to FLTR queue.</description>
+    <environments>Default</environments>
+    <interviewLabel>Assign {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Assign Job Request Cases To FLTR</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_FLTR_Queue</name>
+        <label>Get FLTR Queue</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Null_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BLN_FLTR</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_FLTR_Queue</targetReference>
+        </connector>
+        <filterFormula>AND(
+OR(ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Fleet National&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Fleet Local&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Lease&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Rental&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Trade/Commercial&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Wholesale&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Agent/Broker&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Intercompany&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Government&apos;),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateSite__r.BLN_ClientType__c}, &apos;Intermediary&apos;)),
+ISPICKVAL({!$Record.BLN_Corporate__r.BLN_CorporateLegalEntity__r.BLN_FLTRIndicator__c}, &apos;FLTR&apos;),
+ISPICKVAL({!$Record.Type}, &apos;Job Request&apos;),
+ISPICKVAL({!$Record.BLN_SubType__c}, &apos;Job Request&apos;),
+OR (ISPICKVAL({!$Record.Origin}, &apos;Phone&apos;), ISPICKVAL({!$Record.Origin}, &apos;Email&apos;), ISPICKVAL({!$Record.Origin}, &apos;Web&apos;) ),
+NOT({!$Permission.BLN_BypassFlows}))</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

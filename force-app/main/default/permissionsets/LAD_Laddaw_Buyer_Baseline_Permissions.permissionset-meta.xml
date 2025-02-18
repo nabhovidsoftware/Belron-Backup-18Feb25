@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>LAD_Laddaw_Buyer_Credit_Info</name>
+    </customPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Laddaw Buyer Baseline Permissions</label>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>B2BCommerceUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>PaymentsAPIUser</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>RunFlow</name>
+    </userPermissions>
+</PermissionSet>

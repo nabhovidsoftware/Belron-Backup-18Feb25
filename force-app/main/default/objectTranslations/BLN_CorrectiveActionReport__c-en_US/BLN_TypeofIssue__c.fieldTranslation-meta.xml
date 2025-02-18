@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type of Issue --></label>
+    <name>BLN_TypeofIssue__c</name>
+    <picklistValues>
+        <masterLabel>Belron Way of Fitting</masterLabel>
+        <translation><!-- Belron Way of Fitting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Quality</masterLabel>
+        <translation><!-- Product Quality --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

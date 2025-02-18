@@ -1,0 +1,64 @@
+<!--
+  @description       :
+  @author            : Sourabh Bhattacharjee
+  @group             :
+  @last modified on  : 12-04-2024
+  @last modified by  : Sourabh Bhattacharjee
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   09-12-2024   Sourabh Bhattacharjee   Initial Version
+-->
+<template>
+    <template if:true={showSpinner}>
+        <c-b-l-n-_-portal-spinner></c-b-l-n-_-portal-spinner>
+    </template>
+    <div>
+        <div class={borderClass}>
+            <div>
+                <div style="display: flex;">
+                    <div>
+                        <template if:false={showPaymentScreen}>
+                            <div class="slds-grid slds-grid_align-center" style="width:100%">
+                                <img if:false={hideMessage} src={right} alt="Logo" class="res-mob-logocss"
+                                    width="17.5px" height="14px" />
+                                <img if:true={hideMessage} src={headUrl} alt="Logo" class="res-mob-logocss"
+                                    width="17.5px" height="14px" />
+                                <div
+                                    style="display: flex; flex-wrap:wrap !important;justify-content:space-between;width:100%">
+                                    <p class="outstandingcss slds-m-left_small">Outstanding balance</p>
+                                    <div if:false={hideMessage}>
+                                        <p class="balancecss slds-m-left_small">£ 00.00</p>
+                                    </div>
+                                    <div if:true={hideMessage}>
+                                        <div class="tobecss slds-m-left_small">{msg}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <template if:true={showPaymentScreen}>
+                        <div class="slds-grid slds-grid_align-center" style="width:100%">
+                            <img src={headUrl} alt="Logo" class="res-mob-logo" width="20" height="12;" />
+                            <div
+                                style="display: flex; flex-wrap:wrap !important; justify-content:space-between;width:100%">
+                                <p class="outstandingcss slds-m-left_small">Outstanding balance</p>
+                                <div>
+                                    <p class="balancecss slds-m-left_small">{balance}</p>
+                                </div>
+                                <!--div if:true={message}>
+                                    <div class="tobecss slds-m-left_small">{message}</div>
+                                </div-->
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <template if:false={isDisabled}>
+                    <div class="greenbuttoncss">
+                   <!--button class="paynowcss" onclick={handlePayNow} disabled={isDisabled} >Pay Now</button--> 
+                   <p style="font-family: Roboto;color: #475158;">Unfortunately we are unable to take payments here at the moment. Please call <a href="tel:03339990101" style="color: #00589C; text-decoration: underline;">0333 999 0101</a></p> 
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

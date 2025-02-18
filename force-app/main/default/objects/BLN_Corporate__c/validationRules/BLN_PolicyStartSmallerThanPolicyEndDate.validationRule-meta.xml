@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_PolicyStartSmallerThanPolicyEndDate</fullName>
+    <active>true</active>
+    <description>FOUK-10331 Policy start date should be smaller than policy end date</description>
+    <errorConditionFormula>BLN_PolicyEndDate__c &lt;= BLN_PolicyStartDate__c</errorConditionFormula>
+    <errorMessage>Policy start date should be smaller than policy end date</errorMessage>
+</ValidationRule>

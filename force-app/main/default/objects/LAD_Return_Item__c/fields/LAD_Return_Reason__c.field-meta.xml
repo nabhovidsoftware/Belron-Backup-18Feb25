@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Return_Reason__c</fullName>
+    <description>This Fields is used to Choose Returned Reason of the Returned Order</description>
+    <externalId>false</externalId>
+    <label>Return Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UK01</fullName>
+                <default>false</default>
+                <label>Broken on Delivery</label>
+            </value>
+            <value>
+                <fullName>UK02</fullName>
+                <default>false</default>
+                <label>Scratched on Delivery</label>
+            </value>
+            <value>
+                <fullName>UK03</fullName>
+                <default>false</default>
+                <label>Incorrectly Supplied</label>
+            </value>
+            <value>
+                <fullName>UK04</fullName>
+                <default>false</default>
+                <label>Not on Delivery</label>
+            </value>
+            <value>
+                <fullName>UK09</fullName>
+                <default>false</default>
+                <label>Not Required</label>
+            </value>
+            <value>
+                <fullName>UK11</fullName>
+                <default>false</default>
+                <label>Recall Quality Issue</label>
+            </value>
+            <value>
+                <fullName>UK12</fullName>
+                <default>false</default>
+                <label>Wholesale DMR</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

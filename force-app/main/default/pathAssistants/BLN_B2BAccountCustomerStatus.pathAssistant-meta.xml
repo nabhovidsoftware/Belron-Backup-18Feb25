@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Account</entityName>
+    <fieldName>BLN_Status__c</fieldName>
+    <masterLabel>B2B Account Customer Status</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;The account is now Active and jobs can be booked against it&lt;/li&gt;&lt;li&gt;Ensure relevant fields are maintained to keep the Account Information up to date and relevant&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Active</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;The Account is now Closed and therefore is no longer a trading account.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Closed</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Using the Onboarding case, set up the Account in Oracle and the associated pricing terms&lt;/li&gt;&lt;li&gt;Any additional setup requirements can be added to the Onboarding case as an additional Task, i.e. VRN, Reporting, Glassline etc&lt;/li&gt;&lt;li&gt;Once you are happy that all the necessary Onboarding Tasks have been completed and all the Account Rules have been added, the account can be moved to Active&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Onboarding</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Clients must have submitted an Account Application Form&lt;/li&gt;&lt;li&gt;A Credit Check is performed on the Account to see if we can provide credit facilities and to determine an acceptable credit limit, subject to business approval&lt;/li&gt;&lt;li&gt;Set up required Account Rules ahead of Onboarding&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Preparation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;Capture as much information as possible about the potential volume of jobs / scope of work&lt;/li&gt;&lt;li&gt;Record information about any Current Suppliers, their share of work and when any existing agreements are likely to come up for renewal&lt;/li&gt;&lt;li&gt;Make sure to log a &amp;#39;Next Communication Date&amp;#39; when there is not an associated Opportunity, so that you are automatically reminded of when next to make contact&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Prospect</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ol&gt;&lt;li&gt;The account has been placed on hold, please reach out to Account Maintenance or Customer Accounts for further information&lt;/li&gt;&lt;li&gt;Jobs cannot be booked against an account while it is on hold&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Suspended</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>BLN_CustomerB2BAccount</recordTypeName>
+</PathAssistant>

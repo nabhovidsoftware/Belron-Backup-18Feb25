@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Secondary Account --></label>
+    <name>BLN_InsurerAccount__c</name>
+    <relationshipLabel><!-- Account Rule Parameters (Insurer Account) --></relationshipLabel>
+</CustomFieldTranslation>

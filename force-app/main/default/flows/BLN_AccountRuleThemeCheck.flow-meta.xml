@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Copy_1_of_Update_Account_Rules_to_False</name>
+        <label>Copy 1 of Update Account Rules to False</label>
+        <locationX>578</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AccountRulesTheme__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Account_Rules_to_False</name>
+        <label>Update Account Rules to False</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AccountRulesTheme__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Account_Rules_to_True</name>
+        <label>Update Account Rules to True</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AccountRulesTheme__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_ARCheck1_and_ARCheck2</name>
+        <label>Check ARCheck1 and ARCheck2</label>
+        <locationX>314</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_Update_Account_Rules_to_False</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_True</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_ARCheck1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_ARCheck2__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Rules_to_True</targetReference>
+            </connector>
+            <label>Is True</label>
+        </rules>
+        <rules>
+            <name>Is_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_ARCheck1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_ARCheck2__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account_Rules_to_False</targetReference>
+            </connector>
+            <label>Is False</label>
+        </rules>
+    </decisions>
+    <description>FOUK:5390 This Flow is created to update the Account Rules theme field</description>
+    <environments>Default</environments>
+    <interviewLabel>BLN_AccountRuleThemeCheck {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Rule Theme Check</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_ARCheck1_and_ARCheck2</targetReference>
+        </connector>
+        <filterFormula>OR(
+       NOT({!$Permission.BLN_BypassFlows}),
+       ISNEW(),
+       ISCHANGED({!$Record.BLN_ARCheck1__c}),
+	ISCHANGED({!$Record.BLN_ARCheck2__c}),
+	ISPICKVAL({!$Record.Type},&apos;Job Request&apos;),
+	ISPICKVAL({!$Record.BLN_SubType__c},&apos;Job Request&apos;)
+      )</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Specials</name>
+    <queueMembers>
+        <users>
+            <user>test.fom@example.com</user>
+            <user>himanshu.h.verma@pwc.com.belronint</user>
+            <user>pranjali.prashant.kulkarni@pwc.com.belronint</user>
+            <user>priyanka.patil@pwc.com.belronint</user>
+            <user>ravindra.avhad@pwc.com.belronint</user>
+            <user>shubham.s.bonde@pwc.com.belronint</user>
+            <user>soumya.s.rout@pwc.com.belronint</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>BLN_CaseRoutingConfiguration</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

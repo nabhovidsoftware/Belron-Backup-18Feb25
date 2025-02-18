@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_CorrectiveActionsNeeded__c</fullName>
+    <description>FOUK-3982 Used to Store Corrective actions needed to avoid the quality issue data.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Corrective actions needed to avoid this quality issue moving forward.Please provide as much detail as possible.</inlineHelpText>
+    <label>Corrective Actions Needed</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

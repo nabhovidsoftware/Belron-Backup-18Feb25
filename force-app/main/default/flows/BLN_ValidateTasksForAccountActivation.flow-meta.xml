@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <description>Add Case ID to Collection</description>
+        <name>Add_Case_ID_to_Collection</name>
+        <label>Add Case ID to Collection</label>
+        <locationX>270</locationX>
+        <locationY>935</locationY>
+        <assignmentItems>
+            <assignToReference>caseIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_on_Case_Records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_Case_Records</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Task_Completion_Error_Message</name>
+        <label>Task Completion Error Message</label>
+        <locationX>50</locationX>
+        <locationY>1535</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Label.BLN_TaskCompletionErrorMessage}</errorMessage>
+            <fieldSelection>BLN_Status__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>TaskCompletionErrorMessage</name>
+        <label>Task Completion Error Message</label>
+        <locationX>578</locationX>
+        <locationY>827</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Label.BLN_OnboardedTaskError}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <description>Check the size of onboarding case records</description>
+        <name>Check_Case_Records_Size</name>
+        <label>Check Case Records Size</label>
+        <locationX>380</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>TaskCompletionErrorMessage</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Onboarding Case</defaultConnectorLabel>
+        <rules>
+            <name>Onboardingcase</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_on_Case_Records</targetReference>
+            </connector>
+            <label>Onboarding Case</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check incomplete pricing and billing tasks records</description>
+        <name>Check_Incomplete_Tasks_Records</name>
+        <label>Check Incomplete Tasks Records</label>
+        <locationX>182</locationX>
+        <locationY>1427</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>taskList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Task_Completion_Error_Message</targetReference>
+            </connector>
+            <label>If Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Prior_status</name>
+        <label>Check Prior status</label>
+        <locationX>198</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Get_B2B_Sales_Case_Record_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Suspended</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.BLN_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Suspended</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Suspended</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check record type of account is referral partner or customerB2b ?</description>
+        <name>Check_Record_Type</name>
+        <label>Check Record Type</label>
+        <locationX>611</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_True</name>
+            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BLN_CustomerB2BAccount</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BLN_ReferralPartner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_B2B_Sales_Case_Record_Type.DeveloperName</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Case_Records</targetReference>
+            </connector>
+            <label>If True</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Task_Records_Conditions</name>
+        <label>Task Records Conditions</label>
+        <locationX>182</locationX>
+        <locationY>1127</locationY>
+        <defaultConnector>
+            <targetReference>GetTaskRecords</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Record_Type_Check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BLN_CustomerB2BAccount</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_CompanyRegistrationNumber__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Task_Records</targetReference>
+            </connector>
+            <label>Account Record Type Check</label>
+        </rules>
+    </decisions>
+    <description>FOUK - 2890 and FOUK - 4468. To activate an Account only once Pricing &amp; Billing mandatory tasks are completed.</description>
+    <environments>Default</environments>
+    <interviewLabel>Validate Tasks For Account Activation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account - Validate Tasks For Account Activation</label>
+    <loops>
+        <name>Loop_on_Case_Records</name>
+        <label>Loop on Case Records</label>
+        <locationX>182</locationX>
+        <locationY>827</locationY>
+        <collectionReference>Get_Case_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_Case_ID_to_Collection</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Task_Records_Conditions</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Get B2B Sales Case Record Type</description>
+        <name>Get_B2B_Sales_Case_Record_Type</name>
+        <label>Get B2B Sales Case Record Type</label>
+        <locationX>611</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Record_Type</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BLN_B2BSalesCase</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get all onboarding case records whose  record type is b2b sales case</description>
+        <name>Get_Case_Records</name>
+        <label>Get Case Records</label>
+        <locationX>380</locationX>
+        <locationY>611</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Case_Records_Size</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Onboarding</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_B2B_Sales_Case_Record_Type.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Incomplete Pricing,Billing, Credit Check Task Records</description>
+        <name>Get_Task_Records</name>
+        <label>Get Task Records</label>
+        <locationX>50</locationX>
+        <locationY>1235</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Incomplete_Tasks_Records</targetReference>
+        </connector>
+        <filterLogic>(1 AND 2 AND 5 ) AND ( 3 OR 4 OR 6)</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>caseIds</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Onboarding</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pricing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Billing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Credit Check</stringValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <outputReference>taskList</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Incomplete Pricing and Billing Task Records</description>
+        <name>GetTaskRecords</name>
+        <label>Get Task Records</label>
+        <locationX>314</locationX>
+        <locationY>1235</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Incomplete_Tasks_Records</targetReference>
+        </connector>
+        <filterLogic>(1 AND 2 AND 5 ) AND ( 3 OR 4)</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>caseIds</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Onboarding</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pricing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Billing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <outputReference>taskList</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>72</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Prior_status</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Permission.BLN_BypassFlows}),
+  ISCHANGED({!$Record.BLN_Status__c}),
+  ISPICKVAL({!$Record.BLN_Status__c}, &apos;Active&apos;),
+ ISPICKVAL({!$Record.BLN_Level__c}, &apos;Legal Entity Account&apos;)
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>caseIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>taskList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>

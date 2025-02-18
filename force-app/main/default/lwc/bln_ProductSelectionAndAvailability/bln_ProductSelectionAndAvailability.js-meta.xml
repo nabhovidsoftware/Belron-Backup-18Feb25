@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" type="String"/>
+            <property name="IsCancelled" label="IsCancelled" type="String" role="outputOnly"/>
+            <property name="caseid" label="caseid" type="String"/>
+            <property name="accountName" label="accountName" type="String"/>
+            <!-- <property name="IsConfirmed" label="IsConfirmed" type="String" role="outputOnly"/>
+            
+            <property name="location" label="location" type="String" role="outputOnly"/>
+            <property name="earlyAppoitment" label="earlyAppoitment" type="String" role="outputOnly"/>
+            <property name="weatherAppoitment" label="weatherAppoitment" type="String" role="outputOnly"/>
+            <property name="vat" label="vat" type="String" role="outputOnly"/>
+            <property name="total" label="total" type="String" role="outputOnly"/> 
+            <property name="earlyAppoitmentSlot" label="earlyAppoitmentSlot" type="String" role="outputOnly"/>
+            <property name="weatherAppoitmentSlot" label="weatherAppoitmentSlot" type="String" role="outputOnly"/> -->
+
+        </targetConfig>
+    </targetConfigs> 
+</LightningComponentBundle>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Secondary Reason --></label>
+    <name>BLN_SecondaryReasonCase__c</name>
+    <picklistValues>
+        <masterLabel>Car Has Other Damaged</masterLabel>
+        <translation><!-- Car Has Other Damaged --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Completed Elsewhere Sooner</masterLabel>
+        <translation><!-- Completed Elsewhere Sooner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cracked During Repair, Declined W/S</masterLabel>
+        <translation><!-- Cracked During Repair, Declined W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Concern Of Risk Of Cracking</masterLabel>
+        <translation><!-- Customer Concern Of Risk Of Cracking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duplicate Job</masterLabel>
+        <translation><!-- Duplicate Job --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Location Of Damage, Declined W/S</masterLabel>
+        <translation><!-- Location Of Damage, Declined W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multiple Chips On W/S, Declined W/S</masterLabel>
+        <translation><!-- Multiple Chips On W/S, Declined W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Show</masterLabel>
+        <translation><!-- No Show --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Met Standard Customer Declined Replacement</masterLabel>
+        <translation><!-- Not Met Standard Customer Declined Replacement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repaired Before</masterLabel>
+        <translation><!-- Repaired Before --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>To Small To Be Repaired</masterLabel>
+        <translation><!-- To Small To Be Repaired --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Too Large To Be Repaired, Declined W/S</masterLabel>
+        <translation><!-- Too Large To Be Repaired, Declined W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unsure Of Availability</masterLabel>
+        <translation><!-- Unsure Of Availability --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Private</cacheControl>
+    <contentType>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</contentType>
+    <description>FOUK-9922: Template for the excel to be generated for the Quote</description>
+</StaticResource>

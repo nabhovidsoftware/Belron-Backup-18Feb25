@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>opportunities</category>
+    <deployed>true</deployed>
+    <description>FOUK-4815 .Top Model Factors for Opportunities</description>
+    <label>Top Model Factors for Opportunities</label>
+    <sections>
+        <masterLabel>Sales AI Score Model Factors</masterLabel>
+    </sections>
+</ReportType>

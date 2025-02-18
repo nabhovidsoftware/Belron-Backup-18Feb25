@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-9897: To allow returns past due date</description>
+    <isLicensed>false</isLicensed>
+    <label>Return Override Permission</label>
+</CustomPermission>

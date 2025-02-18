@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Role --></label>
+    <name>LAD_Role__c</name>
+    <picklistValues>
+        <masterLabel>Account Manager</masterLabel>
+        <translation><!-- Account Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Buyer</masterLabel>
+        <translation><!-- Buyer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Buyer Manager</masterLabel>
+        <translation><!-- Buyer Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hub Manager</masterLabel>
+        <translation><!-- Hub Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hub Team User</masterLabel>
+        <translation><!-- Hub Team User --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MDC User</masterLabel>
+        <translation><!-- MDC User --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wholesale Manager</masterLabel>
+        <translation><!-- Wholesale Manager --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

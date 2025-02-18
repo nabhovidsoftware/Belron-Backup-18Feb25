@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_OEAuthorizationRequired__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FOUK - 3167</description>
+    <externalId>false</externalId>
+    <label>OE Authorisation Required</label>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

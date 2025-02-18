@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Digital Chat</name>
+    <queueMembers>
+        <users>
+            <user>subhamita.d.duttacer@pwc.com</user>
+            <user>priyanka.patil@pwc.com.belronint</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>BLN_MessagingSessionRoutingConfiguration</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>MessagingSession</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,9 @@
+.spinner-div{
+    position : relative;
+}
+.spinner{
+    position: absolute;
+}
+.error-text{
+    color: red;
+}

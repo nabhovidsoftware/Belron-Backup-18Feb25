@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Failure Reason --></label>
+    <name>BLN_FailureReason__c</name>
+    <picklistValues>
+        <masterLabel>Capacity Issue</masterLabel>
+        <translation><!-- Capacity Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Issue</masterLabel>
+        <translation><!-- Customer Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Vehicle Issue</masterLabel>
+        <translation><!-- Customer Vehicle Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass/Parts Damaged</masterLabel>
+        <translation><!-- Glass/Parts Damaged --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Location/Weather Not Suitable</masterLabel>
+        <translation><!-- Location/Weather Not Suitable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Part Identification</masterLabel>
+        <translation><!-- Part Identification --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Payment/Billing Issue</masterLabel>
+        <translation><!-- Payment/Billing Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Issue</masterLabel>
+        <translation><!-- Recalibration Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair</masterLabel>
+        <translation><!-- Repair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stock/Supply Issue</masterLabel>
+        <translation><!-- Stock/Supply Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Issues</masterLabel>
+        <translation><!-- Technician Issues --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

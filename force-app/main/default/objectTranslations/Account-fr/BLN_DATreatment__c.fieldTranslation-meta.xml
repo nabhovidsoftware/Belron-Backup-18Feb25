@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- DA Treatment --></label>
+    <name>BLN_DATreatment__c</name>
+    <picklistValues>
+        <masterLabel>DA Only</masterLabel>
+        <translation><!-- DA Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DA and Non-DA</masterLabel>
+        <translation><!-- DA and Non-DA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non-DA Only</masterLabel>
+        <translation><!-- Non-DA Only --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

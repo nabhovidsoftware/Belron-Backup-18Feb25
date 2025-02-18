@@ -1,0 +1,127 @@
+<template>
+    <div class="center">
+        <template if:true={isFlowHeader}>       
+                    <div >
+                        <strong>{label.updateAddLabel}</strong>
+                    </div>  <br>
+        </template>
+    </div>
+    <div class="centers">
+    <template if:false={isCheckFlow}> 
+        <!-- <template for:each={addressOptions} for:item="item">
+            <fieldset key={item.value} class="fieldClass">
+                <div class="slds-form-element__control">
+                    <span class="slds-radio">
+                        <input name="radiogroup" id={item.value} type="radio" value={item.value}
+                            onchange={handleAddressChange}  checked={item.Boolean} />
+                        <label class="slds-radio__label" for={item.value}>
+                            <span class="slds-radio_faux" style="margin-left: 0.9rem;"> </span>
+                            <span class="slds-form-element__label">{item.label}</span>
+                        </label>
+                    </span>
+                </div>
+            </fieldset>
+        </template>   <br> -->
+        <lightning-layout multiple-column class="myRadioGroup">
+            <lightning-layout-item size="1"></lightning-layout-item>
+            <lightning-layout-item size="2" class="itemAlignment">
+                <lightning-radio-group name="radioGroup" class="RadioGroupOptions"
+                    options={options} value={value} type="radio" onchange={handleAddressChange}>
+                </lightning-radio-group>
+
+            </lightning-layout-item>
+            <lightning-layout-item size="7">
+            </lightning-layout-item>
+            <lightning-layout-item size="2"></lightning-layout-item>
+        </lightning-layout> <br />
+    </template>
+    
+        <template if:false={callAderessFlow}> 
+        <div >
+            <strong>{label.serviceAddressLabel}</strong>
+        </div>
+        </template>
+        <template if:true={callAderessFlow}> 
+            <div >
+                <strong>{label.billingAddress}</strong>
+            </div>
+            </template>
+       
+           
+       
+            
+        <!-- <template if:false={callAderessFlow}>  -->
+        <lightning-input onchange={searchAddressHandle} onfocus={searchAddressHandle}  class="size3" placeholder={label.searchAddressLabel} value={pdsPostalCode} type="search"></lightning-input>
+        <!-- </template> -->
+        <!-- <template if:true={callAderessFlow}> 
+            <lightning-input onchange={searchAddressHandle} class="size3" placeholder={label.searchAddressLabel} value={pdsPostalCode} type="search"></lightning-input>
+            </template> -->
+        <template if:true={showOptionTypeEvent}>
+            <div class={picklistCss}> 
+                
+                <ul class="slds-listbox slds-listbox_vertical ">
+                    <template if:true={showOptionTypeEvent} for:each={addressList} for:item="serecord">
+                        <li class="slds-listbox__item cursor-pointer" role="presentation"
+                            key={serecord.postalCode} data-street={serecord.street}
+                            data-postalcode={serecord.postalCode} data-city={serecord.city}
+                            data-county={serecord.county} data-country={serecord.country}
+                            data-latitude={serecord.latitude} data-longitude={serecord.longitude}
+                            onclick={handleResultClick}>
+                            <span class="slds-media">
+                                <span class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:address"
+                                        alternative-text="Address" title="Address"
+                                        size="x-small"></lightning-icon>
+                                </span>
+                                <span class="slds-media__body "><strong>{serecord.street}</strong><br>
+                                    {serecord.city} {serecord.postalCode} {serecord.county}
+                                    {serecord.countryCode} {serecord.country}</span>
+                            </span>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+        <!--</lightning-card>-->
+        <lightning-textarea label={label.streetLabel} value={serviceAddress.homeStreet} data-name="homeStreet"
+            onchange={addressValueChange} class="size3 homeStreet"></lightning-textarea>
+        <br>
+        <div>
+            <div class="style1">
+                <lightning-input label={label.townLabel} value={serviceAddress.homeTown} data-name="homeTown"
+                    onchange={addressValueChange} class="size homeTown" disabled></lightning-input>
+            </div> &nbsp; &nbsp;
+            <div class="style1">
+                <lightning-input label={label.countyLabel} value={serviceAddress.homeCounty} data-name="homeCounty"
+                    onchange={addressValueChange} class="size2 homeCounty" disabled></lightning-input>
+            </div>
+        </div>
+        <br>
+        <div>
+            <div class="style2">
+                <lightning-input label={label.countryLabel} value={serviceAddress.homeCountry} data-name="homeCountry"
+                    onchange={addressValueChange} class="size homeCountry" disabled></lightning-input>
+            </div> &nbsp; &nbsp;
+            <div class="style2">
+                <lightning-input label={label.postCodeLabel} value={serviceAddress.homePostCode} data-name="homePostCode"
+                    onchange={addressValueChange} class="size2 homePostCode" disabled></lightning-input>
+            </div>
+        </div>
+        <br>
+     <template if:false={callAderessFlow}> 
+        <lightning-input class="size3" type="checkbox" checked={ispAddress} onchange={handleISPChange} 
+            label={label.ispAddressLabel} ></lightning-input>
+        </template>
+       
+    </div>
+    <footer class="slds-align_absolute-center slds-m-top_small">
+        <div class="slds-align_absolute-center">
+            <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_neutral" onclick={handleBtnClick} name={label.cancelLabel}
+                label={label.cancelLabel}>
+            </lightning-button> &nbsp;&nbsp;
+            <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_success" onclick={handleBtnClick}
+                variant="brand" name={label.saveLabel} label={label.saveLabel} disabled={disablevalue}>
+            </lightning-button>
+        </div>
+    </footer>
+</template>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>BLN_LocationLayout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address Configuration --></label>
+            <section>Address Configuration</section>
+        </sections>
+        <sections>
+            <label><!-- Location Configuration --></label>
+            <section>Location Configuration</section>
+        </sections>
+        <sections>
+            <label><!-- MDM Information --></label>
+            <section>MDM Information</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

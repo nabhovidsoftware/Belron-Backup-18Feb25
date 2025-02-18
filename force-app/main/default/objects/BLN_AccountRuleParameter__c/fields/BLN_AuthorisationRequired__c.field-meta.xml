@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AuthorisationRequired__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FOUK-6068. This is the reference field of Authorisation Required.</description>
+    <externalId>false</externalId>
+    <label>Authorisation Required</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

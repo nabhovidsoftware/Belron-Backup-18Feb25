@@ -1,0 +1,38 @@
+.content-box{
+    display: grid;
+    grid-template-columns: auto auto;
+
+    /* align-items:center;
+    padding-left: 1.25em;
+    margin-left: 3.125em; */
+}
+.question-content{
+    font-weight: bold;
+}
+.question-pos{
+    text-wrap: balance;
+    grid-column: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.options-pos{
+    grid-column: 2;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: small;
+}
+ .buttons{
+    float: right;
+    margin-bottom: 1em; 
+ }
+.cancel-bttn{
+    padding-left: auto;
+}
+.content-box-lcard{
+    height: auto;
+}
+.pid-button{
+    float: right;
+    position: relative;
+}

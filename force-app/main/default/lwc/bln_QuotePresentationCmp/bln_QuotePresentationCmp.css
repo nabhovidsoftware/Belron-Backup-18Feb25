@@ -1,0 +1,90 @@
+.buttonStyle{
+    background-color: darkseagreen;
+    font-size:xx-large;
+    font-style:normal;
+    width: 900.8px;
+    height: 47.99px;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.borderStyle{
+font-weight: bold; 
+font-size: 18px; 
+border: 1px solid #000; 
+padding: 10px 30px 10px 10px; 
+margin: 5px 80px 5px 80px;
+}
+.pointerClass{
+    pointer-events: none;
+    font-size:small;
+    font-weight: bold;
+}
+.selectBtnStyle{
+    background-color: lightgray;
+    color: black;
+    width: 107px;
+}
+.productBtnStyle{
+    width: 430px;
+}
+.productBtnStyle2{
+    width:355px;
+}
+.checkBoxButton{
+    height: 30px;
+    width: 5px;
+    background-color: darkgray;
+    padding-top: 15px;
+    align-items: center;
+}
+.textColorClass{
+    color:black;
+}
+.displayClass{
+    display: none;
+}
+.buttonWidthClass{
+    width: 159px;
+}
+.vatButton{
+    width: 730px;
+    color:black;
+}
+.afterHourClass{
+    background-color: darkgray;
+}
+.adjustWidth{
+    width: 159px;
+}
+.adjustWidth2{
+    width:115px;
+
+}
+.bottomSpace{
+    padding-bottom: 4px;
+   
+}
+.appointmentWidth{
+    width: 499px;
+}
+.dateWidth{
+    width: 220.63px;
+}
+.timeWidth{
+    width:160px;
+}
+.footerClass{
+    width: 650.19px;
+}
+.backButtonWidth{
+    width: 140px;
+    font-size: medium;
+}
+.nameButton{
+    width: 380px;
+    font-size: medium;
+}
+.insuranceVat{
+    width: 155px;
+}

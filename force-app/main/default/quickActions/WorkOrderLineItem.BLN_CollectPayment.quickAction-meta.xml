@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-4737, FOUK-4736, FOUK-4732, FOUK-1607, FOUK-5707</description>
+    <flowDefinition>BLN_CollectPaymentQuickAction</flowDefinition>
+    <label>Collect Payment</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

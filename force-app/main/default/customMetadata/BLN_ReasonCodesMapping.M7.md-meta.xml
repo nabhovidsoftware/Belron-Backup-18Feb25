@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>M7</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_FailureReasonSA__c</field>
+        <value xsi:type="xsd:string">Customer Vehicle Issue</value>
+    </values>
+    <values>
+        <field>BLN_InitiatedBy__c</field>
+        <value xsi:type="xsd:string">Motorist</value>
+    </values>
+    <values>
+        <field>BLN_PrimaryReasonCase__c</field>
+        <value xsi:type="xsd:string">Customer</value>
+    </values>
+    <values>
+        <field>BLN_SecondaryReasonCase__c</field>
+        <value xsi:type="xsd:string">Car Has Other Damaged</value>
+    </values>
+    <values>
+        <field>BLN_SubfailureReasonSA__c</field>
+        <value xsi:type="xsd:string">Vehicle still in garage/Not delivered</value>
+    </values>
+</CustomMetadata>

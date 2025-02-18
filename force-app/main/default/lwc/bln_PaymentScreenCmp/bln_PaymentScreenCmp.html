@@ -1,0 +1,95 @@
+<template>
+	<template if:true={capturePayment}>
+    <lightning-card class="slds-align_absolute-center">
+		<template if:true={isAutomated}>
+        <lightning-layout multiple-rows>
+			<lightning-layout-item size="1"></lightning-layout-item>
+			<lightning-layout-item size="10">
+				<button class="slds-button slds-button_success buttonStyle">{label.onlineCardPayment}</button>
+			</lightning-layout-item>
+			<lightning-layout-item size="1"></lightning-layout-item>
+		</lightning-layout><br/> 
+		
+		<lightning-layout multiple-rows>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			<lightning-layout-item size="2" class="itemAlignment">
+                <lightning-radio-group name="radioGroup" options={options} value={value} type="radio"
+                    onchange={handleOptions}>
+                </lightning-radio-group>
+            </lightning-layout-item>
+			<lightning-layout-item size="7">
+			</lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout><br/>
+		<lightning-layout>
+            <lightning-layout-item size="1"></lightning-layout-item>
+					<lightning-layout-item size="2" class="itemAlignment"><label
+							class="slds-form-element__label labelWidth"><strong>{label.cardholderName}</strong></label></lightning-layout-item>
+					<lightning-layout-item size="7">
+						<lightning-input type="text" class="inputBoxWidth"
+							onchange={handleNameChange}></lightning-input>
+            </lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+		<lightning-layout multiple-rows>
+            <lightning-layout-item size="1"></lightning-layout-item>
+					<lightning-layout-item size="2" class="itemAlignment"><label
+							class="slds-form-element__label labelWidth"><strong>{label.amountToBePaid}</strong></label>
+					</lightning-layout-item>
+					<lightning-layout-item size="7">
+						<div class="slds-form-element__control">
+							<lightning-input type="number" min="1" class="inputBoxWidth inputamount"
+								onchange={handleAmountChange} value={amount} step=".01"></lightning-input>
+            </div>
+			</lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+		<lightning-layout multiple-rows>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			<lightning-layout-item size="2" class="itemAlignment">
+                <label class="slds-form-element__label labelWidth"><strong>{label.amountDue}</strong></label>
+            </lightning-layout-item>
+			<lightning-layout-item size="7">
+				<div class="slds-form-element__control">
+							<lightning-input type="number" class="inputBoxWidth" value={amountDue}
+								readonly></lightning-input>
+                </div>
+			</lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+		<lightning-layout multiple-rows>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			<lightning-layout-item size="2" class="itemAlignment">
+						<label
+							class="slds-form-element__label labelWidth"><strong>{label.outstandingBalance}</strong></label>
+            </lightning-layout-item>
+			<lightning-layout-item size="7">
+            <div class="slds-form-element__control">
+					 <lightning-input type="number" class="inputBoxWidth" value={outstandingBalance}
+                    readonly></lightning-input>
+            </div>
+			</lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout><br/><br/>
+		<lightning-layout multiple-rows>
+            <lightning-layout-item size="1"></lightning-layout-item>
+					<lightning-layout-item size="2"><lightning-button class="backButtonWidth slds-m-right_xx-large"
+							variant="neutral" label={label.Back} onclick={backPaymentScreen}></lightning-button>
+					</lightning-layout-item>
+					<lightning-layout-item size="4"></lightning-layout-item>
+					<lightning-layout-item size="4">
+						<lightning-button class="slds-m-right_medium slds-button_success" variant="success"
+							label="Skip Payment" onclick={skipPayment}></lightning-button>
+            <lightning-button class="nameButton adjustAlign" label="Start Payment" variant="brand"
+                onclick={handleConfirm} disabled={disableFlag}></lightning-button>
+			</lightning-layout-item>
+            <lightning-layout-item size="1"></lightning-layout-item>
+		</lightning-layout><br/>   
+
+	</template>
+		<!--4767<template if:true={isAssisted}>
+			<c-bln-_-assisted-payments payment-id={paymentId}></c-bln-_-assisted-payments>
+			
+		</template>-->
+    </lightning-card>
+</template></template>

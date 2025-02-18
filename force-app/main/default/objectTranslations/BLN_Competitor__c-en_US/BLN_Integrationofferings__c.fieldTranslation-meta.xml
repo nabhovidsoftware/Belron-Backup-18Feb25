@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Integration offerings --></label>
+    <name>BLN_Integrationofferings__c</name>
+    <picklistValues>
+        <masterLabel>API</masterLabel>
+        <translation><!-- API --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>App</masterLabel>
+        <translation><!-- App --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Co-Branded booking</masterLabel>
+        <translation><!-- Co-Branded booking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

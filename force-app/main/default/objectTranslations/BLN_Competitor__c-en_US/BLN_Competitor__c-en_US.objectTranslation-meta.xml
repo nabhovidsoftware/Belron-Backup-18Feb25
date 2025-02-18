@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Competitor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Competitors</value>
+    </caseValues>
+    <layouts>
+        <layout>Competitor Page layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Current Supplier Page layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Competitor --></label>
+        <name>BLN_Competitor</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Current Supplier --></label>
+        <name>BLN_CurrentSupplier</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

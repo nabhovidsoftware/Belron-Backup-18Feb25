@@ -1,0 +1,23 @@
+<template>
+    <article class="slds-card" style="height: 150vh;">
+        <div class="slds-card__body slds-card__body_inner box">
+            <template for:each={fields} for:item="fld">          
+                <template if:true={fld.isChoiceList}>
+                    <lightning-combobox class="slds-m-left_x-small slds-m-right_x-small font" key={fld.name} if:true={fld.isChoiceList} 
+                        label={fld.labels.display} value={fld.value} name={fld.name} options={fld.choiceListValues} required={fld.required}
+                        onchange={handleChange}>
+                    </lightning-combobox>
+                </template>
+                <template if:false={fld.isChoiceList} >
+                    <lightning-input class="slds-m-left_x-small slds-m-right_x-small font" key={fld.name} if:true={fld.visible} 
+                        label={fld.labels.display} value={fld.value} name={fld.name} type={fld.type} required={fld.required} onchange={handleChange}>
+                    </lightning-input>
+                </template>
+            </template>
+            <br>
+            <lightning-button label={label.startConversation} title={label.startConversation} onclick={onClickStartConversation}
+                variant="brand" class="slds-m-left_x-small">
+            </lightning-button>
+        </div>
+    </article>
+</template>

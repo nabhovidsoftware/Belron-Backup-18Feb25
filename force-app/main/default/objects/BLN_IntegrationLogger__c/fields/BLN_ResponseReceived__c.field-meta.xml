@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ResponseReceived__c</fullName>
+    <description>FOUK-252 -&gt; Store The Date and Time when Response was recieved</description>
+    <externalId>false</externalId>
+    <label>Response Received</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

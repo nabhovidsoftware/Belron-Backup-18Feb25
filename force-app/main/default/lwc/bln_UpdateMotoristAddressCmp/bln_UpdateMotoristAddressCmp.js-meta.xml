@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" type="String"/>
+            <property name="caseId" label="Case Id" type="String"/>
+            <property name="updateBillingAddress" label="Update Billing Address" type="Boolean"/>
+            <property name="caseBillingMethod" label="Case Billing Method" type="String"/>
+            <property name="IsCancelled" label="IsCancelled" type="String" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+    <description>
+        FOUK-3753,FOUK-684 This component is created to support the 'Update Motorist Address' functionality.
+  </description> 
+</LightningComponentBundle>

@@ -1,0 +1,42 @@
+<template>
+    <table>
+        <caption class="slds-align--absolute-center moveToLeft">{label.leftLabel}</caption>
+    </table>
+    <table class="slds-align--absolute-center" id="table">
+        <caption>{label.backLabel}</caption>
+        <tbody>
+            <template for:each={wrmtList} for:item="wrap">
+                <tr key={wrap.row}>
+                    <template for:each={wrap.wrapFldList} for:item="wrapFd">
+                        <td key={wrapFd.mdt.BLN_HoleId__c} class="alignTD">
+                            <template if:true={wrapFd.urlRef}>
+                                <label>
+                                    <input type="checkbox" name="fb" checked={wrapFd.checked} onchange={handleCheck}
+                                        data-id={wrapFd.imageLabel} />
+                                    <img src={wrapFd.urlRef} alt={wrapFd.mdt.BLN_StaticResourceName__c}
+                                        class={wrapFd.checked}>
+                                </label>
+                            </template>
+                        </td>
+                    </template>
+                </tr>
+            </template>
+        </tbody>
+        <caption>{label.frontLabel}</caption>
+    </table>
+    <table>
+        <caption class="slds-align--absolute-center moveToLeft">{label.rightLabel}</caption>
+    </table>
+
+    <footer class="slds-modal__footer slds-m-top_small">
+        <lightning-button class="slds-button_neutral align" onclick={handleCancel} name={label.cancelLabel}
+            label={label.cancelLabel}>
+        </lightning-button>
+        <lightning-button class="slds-m-top_small slds-m-left_x-small button" onclick={handleRepair} variant="brand"
+            name={label.repairLabel} label={label.repairLabel} disabled={showButton}>
+        </lightning-button>
+        <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_success" onclick={handleSelectGlass}
+            variant="brand" name={label.selectLabel} label={label.selectLabel}>
+        </lightning-button>
+    </footer>
+</template>

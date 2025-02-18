@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_IsActive__c</fullName>
+    <description>- checkbox=True when (Today is &lt;=Active To) and (Today&gt;=Active From). 
+- checkbox=True when Active To &amp; Active From = null
+
+Calculated field - not to be mapped into MDM</description>
+    <externalId>false</externalId>
+    <formula>OR (
+  AND (
+    TODAY() &gt;= BLN_ActiveFrom__c,
+    TODAY() &lt;= BLN_ActiveTo__c
+  ),
+  AND (
+     ISBLANK(BLN_ActiveFrom__c),
+     ISBLANK(BLN_ActiveTo__c) 
+  ),
+  AND (
+   
+    TODAY() &gt;= BLN_ActiveFrom__c, 
+    ISBLANK(BLN_ActiveTo__c)
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Active?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

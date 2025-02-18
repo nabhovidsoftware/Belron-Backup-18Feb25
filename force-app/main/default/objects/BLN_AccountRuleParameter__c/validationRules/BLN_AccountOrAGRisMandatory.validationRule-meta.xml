@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AccountOrAGRisMandatory</fullName>
+    <active>true</active>
+    <description>FOUK-5363 one of Account or Account group Rule is mandatory on ARP.</description>
+    <errorConditionFormula>AND(
+        ISBLANK(BLN_Account__c),
+        ISBLANK(BLN_AccountRuleGroup__c),
+        RecordType.DeveloperName &lt;&gt; &apos;BLN_ProductExcess&apos;
+    
+)</errorConditionFormula>
+    <errorMessage>Either of Account and Account Rule Group should be populated</errorMessage>
+</ValidationRule>

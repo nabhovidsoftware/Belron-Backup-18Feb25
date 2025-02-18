@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Case__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-3982 Used to Store which Case holds the Warranty Job.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Case which holds the Warranty Job</inlineHelpText>
+    <label>Case</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Corrective Action Reports (Case)</relationshipLabel>
+    <relationshipName>Corrective_Action_Reports1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

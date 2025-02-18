@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Glass Type --></label>
+    <name>BLN_GlassType__c</name>
+    <picklistValues>
+        <masterLabel>Body Glass</masterLabel>
+        <translation><!-- Body Glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rear Screen</masterLabel>
+        <translation><!-- Rear Screen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sunroof</masterLabel>
+        <translation><!-- Sunroof --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Windscreen</masterLabel>
+        <translation><!-- Windscreen --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

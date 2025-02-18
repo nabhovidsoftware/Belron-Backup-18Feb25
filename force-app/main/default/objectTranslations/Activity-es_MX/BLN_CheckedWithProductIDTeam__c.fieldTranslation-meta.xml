@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Checked With Product ID Team? --></label>
+    <name>BLN_CheckedWithProductIDTeam__c</name>
+</CustomFieldTranslation>

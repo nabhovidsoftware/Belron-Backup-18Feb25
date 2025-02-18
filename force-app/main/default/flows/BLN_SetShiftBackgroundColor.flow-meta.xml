@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Set_Default_Color</name>
+        <label>Set Default Color</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BackgroundColor</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>#FFFFFF</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Shift_Color</name>
+        <label>Set Shift Color</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BackgroundColor</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.RecordsetFilterCriteria.Description</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Next_Step</name>
+        <label>Next Step</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Set_Default_Color</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Shift Color</defaultConnectorLabel>
+        <rules>
+            <name>Recordset_Filter_Criteria</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordsetFilterCriteria.Description</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordsetFilterCriteriaId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Shift_Color</targetReference>
+            </connector>
+            <label>Recordset Filter Criteria</label>
+        </rules>
+    </decisions>
+    <description>FOUK - 748, FOUK-8220</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ShiftColorFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.BackgroundColor}=null,
+Case({!$Record.RecordsetFilterCriteria.Name},
+&quot;Side &amp; Rear&quot;,&quot;#ffff00&quot;,
+&quot;Warranty&quot;, &quot;#bf0863&quot;,
+&quot;Side &amp; Rear + Warranty&quot;,&quot;#ff00ff&quot;,
+&quot;ADAS&quot;, &quot;#00ff00&quot;,
+{!$Record.BackgroundColor}
+),{!$Record.BackgroundColor})</expression>
+    </formulas>
+    <interviewLabel>Set Shift background color {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Set Shift Background Color</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Next_Step</targetReference>
+        </connector>
+        <filterFormula>{!$Permission.BLN_BypassFlows} = False</filterFormula>
+        <object>Shift</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

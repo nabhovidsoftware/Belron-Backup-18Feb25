@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sub-Failure Reason --></label>
+    <name>BLN_SubfailureReasonSA__c</name>
+    <picklistValues>
+        <masterLabel>Body Rust Prevented Work</masterLabel>
+        <translation><!-- Body Rust Prevented Work --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Car Too Damaged To Carry Out Work</masterLabel>
+        <translation><!-- Car Too Damaged To Carry Out Work --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cust Unavailable/Cancelled</masterLabel>
+        <translation><!-- Cust Unavailable/Cancelled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Concern, Repair Cracking off</masterLabel>
+        <translation><!-- Customer Concern, Repair Cracking off --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer No Show</masterLabel>
+        <translation><!-- Customer No Show --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duplicate Work Order</masterLabel>
+        <translation><!-- Duplicate Work Order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Job Already Completed</masterLabel>
+        <translation><!-- Job Already Completed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Location of Repair on W/S</masterLabel>
+        <translation><!-- Location of Repair on W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multiple Impact on W/S</masterLabel>
+        <translation><!-- Multiple Impact on W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair Cracked off</masterLabel>
+        <translation><!-- Repair Cracked off --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair Done before</masterLabel>
+        <translation><!-- Repair Done before --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair too Small/No Damage</masterLabel>
+        <translation><!-- Repair too Small/No Damage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair too large after completion</masterLabel>
+        <translation><!-- Repair too large after completion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Too Close to ADAS Camera</masterLabel>
+        <translation><!-- Too Close to ADAS Camera --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Too Large to Repair</masterLabel>
+        <translation><!-- Too Large to Repair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vehicle Won’t Start/Broken Down/Insufficient Charge</masterLabel>
+        <translation><!-- Vehicle Won’t Start/Broken Down/Insufficient Charge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vehicle still in garage/Not delivered</masterLabel>
+        <translation><!-- Vehicle still in garage/Not delivered --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

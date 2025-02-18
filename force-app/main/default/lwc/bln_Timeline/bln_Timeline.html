@@ -1,0 +1,30 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container" title="Initiatives Timeline">
+                        <lightning-icon icon-name="action:new_note" size="x-small" alternative-text="New note"
+                            title="New note"></lightning-icon>
+                        <span class="slds-assistive-text">Initiatives Timeline</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a href="#" class="slds-card__header-link slds-truncate" title="Timeline">
+                            <span>Timeline</span>
+                        </a>
+                    </h2>
+                </div>
+                <div class="slds-no-flex" lwc:if={showTimelineButton}>
+                    <a href={viewTimeline} target="_blank" class="slds-button slds-button_neutral">View Timeline</a>
+                  </div>
+            </header>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <div style="background-color: #fff;" id="timeline" class="tm" lwc:dom="manual"></div>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </div>
+        <footer class="slds-card__footer"></footer>
+    </article>
+</template>

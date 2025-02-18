@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- EBS CnR Reason --></label>
+    <name>BLN_EBSCnRReason__c</name>
+    <picklistValues>
+        <masterLabel>FI - ABE10 - Account Setup Error</masterLabel>
+        <translation><!-- FI - ABE10 - Account Setup Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BAE01 - Incorrect Billing Schema</masterLabel>
+        <translation><!-- FI - BAE01 - Incorrect Billing Schema --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BAE02 - Incorrect Account</masterLabel>
+        <translation><!-- FI - BAE02 - Incorrect Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BAE11 - Incorrect Collects - PO Number</masterLabel>
+        <translation><!-- FI - BAE11 - Incorrect Collects - PO Number --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BAE13 - Incorrect Collects - VRN</masterLabel>
+        <translation><!-- FI - BAE13 - Incorrect Collects - VRN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BAE14 - Incorrect Collects - Damage Date</masterLabel>
+        <translation><!-- FI - BAE14 - Incorrect Collects - Damage Date --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BAE16 - Incorrect Collects - Motorist Details</masterLabel>
+        <translation><!-- FI - BAE16 - Incorrect Collects - Motorist Details --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BOE01 - Excess/Ceiling Incorrect</masterLabel>
+        <translation><!-- FI - BOE01 - Excess/Ceiling Incorrect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BOE10 - VAT Error - Wrong Party</masterLabel>
+        <translation><!-- FI - BOE10 - VAT Error - Wrong Party --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BOE11 - VAT Error - Wrong Rate</masterLabel>
+        <translation><!-- FI - BOE11 - VAT Error - Wrong Rate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BOE20 - Product Errors</masterLabel>
+        <translation><!-- FI - BOE20 - Product Errors --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BOE22 - Missing Items</masterLabel>
+        <translation><!-- FI - BOE22 - Missing Items --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BPE01 - Policy Incorrect</masterLabel>
+        <translation><!-- FI - BPE01 - Policy Incorrect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BPE02 - Policy cancelled</masterLabel>
+        <translation><!-- FI - BPE02 - Policy cancelled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BPE04 - No glass cover</masterLabel>
+        <translation><!-- FI - BPE04 - No glass cover --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BPY01 - Incorrect Price - Glass</masterLabel>
+        <translation><!-- FI - BPY01 - Incorrect Price - Glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FI - BPY03 - Incorrect Price - Other</masterLabel>
+        <translation><!-- FI - BPY03 - Incorrect Price - Other --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

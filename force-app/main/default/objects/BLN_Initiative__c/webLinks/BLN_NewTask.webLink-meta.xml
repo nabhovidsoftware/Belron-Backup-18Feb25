@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_NewTask</fullName>
+    <availability>online</availability>
+    <description>FOUK-4776. Created to generate new task.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New Task</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/lightning/o/Task/new?defaultFieldValues=BLN_InitiativeId__c={!BLN_Initiative__c.Id}</url>
+</WebLink>

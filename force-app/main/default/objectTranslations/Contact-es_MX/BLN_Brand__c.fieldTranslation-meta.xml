@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Brand --></label>
+    <name>BLN_Brand__c</name>
+    <picklistValues>
+        <masterLabel>Autoglass UK</masterLabel>
+        <translation><!-- Autoglass UK --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

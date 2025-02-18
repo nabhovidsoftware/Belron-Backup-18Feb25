@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <assignments>
+        <name>Assign_Description</name>
+        <label>Assign Description</label>
+        <locationX>275</locationX>
+        <locationY>384</locationY>
+        <assignmentItems>
+            <assignToReference>WorkOrderRecord.Subject</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Work Order for </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkOrderRecord.Subject</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.WorkType.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkOrderRecord.Description</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>Work Order for </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkOrderRecord.Description</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.WorkType.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>WorkOrderRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Was_Visited_on_Update</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Record_Found</name>
+        <label>Check Record Found</label>
+        <locationX>473</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Record_Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Description</targetReference>
+            </connector>
+            <label>Record Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Was_Visited_on_Update</name>
+        <label>Was Visited on Update</label>
+        <locationX>275</locationX>
+        <locationY>492</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Was_Visited_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Update_WO</leftValueReference>
+                <operator>WasVisited</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_WO</targetReference>
+            </connector>
+            <label>Was Visited False</label>
+        </rules>
+    </decisions>
+    <description>FOUK-11363</description>
+    <environments>Default</environments>
+    <interviewLabel>Update Work Order Description {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Work Order Description</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_WO</name>
+        <label>Update WO</label>
+        <locationX>143</locationX>
+        <locationY>600</locationY>
+        <inputReference>WorkOrderRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <filterFormula>NOT({!$Permission.BLN_BypassFlows}) &amp;&amp;
+NOT(ISNULL({!$Record__Prior.WorkType.Id})) &amp;&amp;
+ISCHANGED({!$Record.WorkType.Id})</filterFormula>
+        <object>WorkOrder</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>Update_Work_Order</name>
+            <connector>
+                <targetReference>Check_Record_Found</targetReference>
+            </connector>
+            <label>Update Work Order</label>
+            <offsetNumber>3</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>LastModifiedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Description</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>WorkOrderRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkOrder</objectType>
+    </variables>
+</Flow>

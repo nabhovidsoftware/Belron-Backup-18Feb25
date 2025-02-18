@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Sole Trader</fullName>
+        <default>false</default>
+        <label>Sole Trader</label>
+    </customValue>
+    <customValue>
+        <fullName>Partnership</fullName>
+        <default>false</default>
+        <label>Partnership</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Limited</fullName>
+        <default>false</default>
+        <label>Private Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Limited</fullName>
+        <default>false</default>
+        <label>Public Limited</label>
+    </customValue>
+    <customValue>
+        <fullName>Limited Liability Partnership</fullName>
+        <default>false</default>
+        <label>Limited Liability Partnership</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Sector</fullName>
+        <default>false</default>
+        <label>Public Sector</label>
+    </customValue>
+    <customValue>
+        <fullName>Not for Profit</fullName>
+        <default>false</default>
+        <label>Not for Profit</label>
+    </customValue>
+    <customValue>
+        <fullName>Charity</fullName>
+        <default>false</default>
+        <label>Charity</label>
+    </customValue>
+    <customValue>
+        <fullName>Government</fullName>
+        <default>false</default>
+        <label>Government</label>
+    </customValue>
+    <customValue>
+        <fullName>Scottish partnership</fullName>
+        <default>false</default>
+        <label>Scottish partnership</label>
+    </customValue>
+    <customValue>
+        <fullName>Corporations sole</fullName>
+        <default>false</default>
+        <label>Corporations sole</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Trading Status values</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

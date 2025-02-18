@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- EDI Type Code --></label>
+    <name>BLN_EDITypeCode__c</name>
+    <picklistValues>
+        <masterLabel>CARD</masterLabel>
+        <translation><!-- CARD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CNOT</masterLabel>
+        <translation><!-- CNOT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IDAT</masterLabel>
+        <translation><!-- IDAT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MILE</masterLabel>
+        <translation><!-- MILE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ONUM</masterLabel>
+        <translation><!-- ONUM --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

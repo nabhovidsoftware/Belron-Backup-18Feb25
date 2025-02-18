@@ -1,0 +1,46 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner variant="brand" size="large" alternative-text="Loading"></lightning-spinner>
+    </template>
+    <template if:true={isProductSummary}>
+        <h1 class="headcss">Booking Summary</h1>
+        <template if:true={appointmentList} for:each={appointmentList} for:item="currentItem" for:index="parentIndex">
+            <template if:true={currentItem.productsList}>
+                <div key={currentProduct} class="section-title section-title-background slds-m-top_medium ">Appointment&nbsp;{currentItem.appointmentIndex}&nbsp;&nbsp;&nbsp;&nbsp;{currentItem.serviceLocation}&nbsp;&nbsp;&nbsp;&nbsp;{currentItem.slotDate}&nbsp;&nbsp;{currentItem.slotTime}</div>
+                    
+                <template for:each={currentItem.productsList} for:item="currentProduct" for:index="index">
+                    <p key={currentItem.prodName} class="paracss productLine">{currentProduct.prodName}</p> 
+                </template>
+            </template>
+        </template>
+        <div class="section-title section-title-background slds-m-top_medium">{label.AdditionalCharges}</div>
+
+            <lightning-input if:false={isBranchLocSelected} lwc:ref="mobCharge" checked={isMobileChargeApplied} type="checkbox" label="Mobile Charges" class="paracss" onchange={handleMobileChargeClick}> </lightning-input>
+            <div if:false={isBranchLocSelected} class="marginBottom20"></div>
+            <lightning-input checked={isAfterHour} type="checkbox" label="After Hour Charges" class="paracss" onchange={handleAfterHour}> </lightning-input>
+            <div class="marginBottom20"></div> 
+            
+            <div class="slds-grid slds-gutters marginBottom10"  style="margin-top: 20px;">
+                <div class="slds-col slds-size--3-of-4 "> 
+                    <span class="spanTextContainer fontWeightWhite section-title">{label.totalMotoristLiability}</span>
+                </div>
+                <div class=" slds-col slds-size--1-of-4">
+                    <span class="spanTextContainer" style=" border: 1px solid var(--sds-g-color-border-1); "> <!--spanTextContainertwo-->
+                        <label class="totalQuoteCenter section-titleTotalQuote">{quoteTotal}</label>
+                    </span>
+                </div>
+            </div>
+        <footer class="footer slds-modal__footer slds-m-top_small buttonContainer">
+            <lightning-button label={label.Back} variant="brand_neutral" class="slds-m-left_x-small"
+                onclick={handleBack}></lightning-button>
+                <div class="slds-float_right">
+                    <lightning-button label={label.reprice} variant="brand" class="slds-m-right_x-small"
+                        onclick={handleRepriceClick} disabled={isRepriceBttnDisabled}>
+                    </lightning-button>
+                    <lightning-button label={label.Confirm} variant="brand" onclick={handleConfirmAppointment}>
+                        </lightning-button>
+                </div>
+        </footer>
+    </template>
+
+</template>

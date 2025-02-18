@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Timesheet</name>
+        <label>Send Timesheet</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>BLN_TechnicianTimesheetService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>timesheetIds</name>
+            <value>
+                <stringValue>{!$Record.Id}</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_TechnicianTimesheetService</nameSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <description>FOUK-9678: This flow calls BLN_TimesheetService class to send timesheet entry to Kronos</description>
+    <environments>Default</environments>
+    <interviewLabel>BLN_SendTechnicianTimesheetEntry {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>BLN_SendTechnicianTimesheetEntry</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Timesheet</targetReference>
+        </connector>
+        <object>TimeSheetEntry</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

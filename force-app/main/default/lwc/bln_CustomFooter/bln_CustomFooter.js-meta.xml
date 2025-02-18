@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <description>
+        FOUK-4221 This component is created to showcase the custom footer in the flow.
+    </description>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="IsAdditionalGlass" label="IsAdditionalGlass" type="String" role="outputOnly"/>
+            <property name="IsFinished" label="IsFinished" type="String" role="outputOnly"/>
+        </targetConfig>
+        </targetConfigs>
+</LightningComponentBundle>

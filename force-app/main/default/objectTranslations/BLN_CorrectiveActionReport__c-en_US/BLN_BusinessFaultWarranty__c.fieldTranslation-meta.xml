@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Are Business Unit at Fault for this Warranty? --></help>
+    <label><!-- Business Fault for Warranty --></label>
+    <name>BLN_BusinessFaultWarranty__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- User Approval Function --></label>
+    <name>BLN_UserApprovalFunction__c</name>
+    <picklistValues>
+        <masterLabel>Commercial Manager</masterLabel>
+        <translation><!-- Commercial Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit Manager</masterLabel>
+        <translation><!-- Credit Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finance Director</masterLabel>
+        <translation><!-- Finance Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Legal Director</masterLabel>
+        <translation><!-- Legal Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Managing Director</masterLabel>
+        <translation><!-- Managing Director --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pricing Team</masterLabel>
+        <translation><!-- Pricing Team --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Director</masterLabel>
+        <translation><!-- Sales Director --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

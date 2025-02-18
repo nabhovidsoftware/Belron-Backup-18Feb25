@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Outcome Type --></label>
+    <name>BLN_OutcomeType__c</name>
+    <picklistValues>
+        <masterLabel>Repair</masterLabel>
+        <translation><!-- Repair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Replacement</masterLabel>
+        <translation><!-- Replacement --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

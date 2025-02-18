@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Vehicle__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-539 This field is used to store the associated vehicle.</description>
+    <externalId>false</externalId>
+    <label>Vehicle</label>
+    <referenceTo>BLN_Vehicle__c</referenceTo>
+    <relationshipLabel>Vehicle Damages</relationshipLabel>
+    <relationshipName>Vehicle_Damages</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,927 @@
+<!-- ******************************************************************************************
+Page Name    : BLRCommunityLoginPage
+Description  : The BLRCommunityLoginPage Visualforce page is responsible for creating 
+               the UI for Portal Users.     
+@Story       : FOUK-10951 / FOUK-11442  
+Created Date : 09-11-2024  
+Created By   : Sourabh Bhattacharjee
+****************************************************************************************** -->
+<apex:page controller="BLR_CommunitiesLoginController" showHeader="false" applyHtmlTag="false">
+    <!--action="{!processForm}"-->
+<apex:stylesheet value="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"/>
+<apex:stylesheet value="https://fonts.googleapis.com/css?family=Roboto"/>
+<apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"/>
+<apex:stylesheet value="https://fonts.googleapis.com/css?family=Roboto+Condensed:700&subset=latin,latin-ext" />
+
+
+<style>
+
+/* @font-face {
+    font-family: 'robotoCustomFont';
+    src: url(' /Belron Autoglass Self Service Community/s/sfsites/c/resource/robotoCustomFont');
+    }   */
+    @font-face {
+    font-family: 'robotoCustomFont';
+    src: url(' /Belron Autoglass Self Service Community/s/sfsites/c/resource/BLN_robotoCustomFont');
+    } 
+    @font-face {
+font-family: Roboto Condensed;
+font-style: normal;
+font-weight:700 ;
+
+}
+
+body {
+font-family:  Roboto Condensed;
+}
+.cal {
+font-family: 'Roboto Condensed'; 
+        }
+h1{
+font-family: Roboto Condensed !important;
+}
+.login-page h1{
+font-family: Roboto Condensed !important;
+}
+.wholescreen{
+width: 100%;
+min-height: 90vh;
+}
+.forgotcss{
+text-align:center;
+margin:24px 0px;
+          }
+.redcss{
+            display: inline-block;
+            align-items: center;
+            position: relative;
+}  
+.errorredcss{
+    outline: none;
+border-bottom: 2px solid #E60F04;
+}
+        .errorcss{
+                    width: 424px;
+        text-align: center !important;
+        color: var(--theme-color-text-alert, #E60F04);
+        font-family: Roboto  !important;
+        font-size: var(--theme-typography-font-size-s, 14px);
+        font-style: normal;
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+line-height: 115%; 
+margin: 14px 0px;
+        }
+        .errornewpagecss{
+            text-align: center !important;
+        color: var(--theme-color-text-alert, #E60F04);
+        font-family: Roboto  !important;
+        font-size: var(--theme-typography-font-size-s, 14px);
+        font-style: normal;
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+        line-height: 115%; /* 13.8px */
+        margin: 14px 0px;  
+        }
+.error-underline {  
+border-bottom: 2px solid red !important;  
+}
+        .logo-header{
+        padding:12px 0px 12px 72px;
+        }
+        .res-mob-logo{
+        width:165px;
+        height:40px;
+        }
+        .margin-form{
+        margin:0 auto;
+        }
+        body, html {
+        margin: 0;
+        font-family: Roboto  !important;
+        background: #FAFAFA;
+        }
+        .container {
+            margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FAFAFA;
+        width: 100%;
+        height: 600px;
+        margin-bottom: 6rem;
+    }
+        header {
+        background-color: #FAFAFA;
+        color: white;
+        padding: 12px 0;
+        width: 100%;
+        height: 72px;        
+        max-width: 1296px;
+        margin: 0 auto ;      
+        }
+        .appoint-cssbook{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        }
+        .appoint-css{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+        footer {
+        background-color: #767E83;
+        color: white;
+        width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+ .foot1{
+    color: var(--theme-color-text-inverse, #FFF);
+    font-family: var(--typography-font-family-interface, roboto);
+    font-style: normal;
+    font-weight: var(--typography-font-weight-regular, 400);
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+        }
+        .footer-content {
+            box-sizing: border-box;
+    padding: 24px 16px 0px 16px;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    align-items: center;
+    width: 100%;
+        }
+        .footer-content span {
+margin-right: 20px;
+    font-size: 14px;
+    line-height: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    }
+    .footer-legal  {
+        box-sizing: border-box;
+        padding: 0px 72px 0px 72px;
+        margin: 0 auto; 
+    }
+    .belroncss{
+        margin-bottom: 20px;
+        text-align: center;
+    color: var(--theme-color-fg-on-dark, #FFF);
+    font-family: var(--theme-typography-font-family-body, Roboto);
+    font-size: var(--theme-typography-font-size-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+        line-height: 150%;
+    }
+    .copyrightcss{
+        text-align: left;
+    color: var(--theme-color-fg-on-dark, #FFF);
+    font-family: var(--theme-typography-font-family-body, Roboto);
+    font-size: var(--theme-typography-font-size-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+        line-height: 150%;
+        margin-bottom: 20px;
+    }
+    .copyrightcss1{
+        text-align: left;
+    color: var(--theme-color-fg-on-dark, #FFF);
+    font-family: var(--theme-typography-font-family-body, Roboto);
+    font-size: var(--theme-typography-font-size-sm, 14px);
+    font-style: normal;
+    font-weight: 400;
+        line-height: 150%;
+ }       
+      
+        .login-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #FAFAFA;
+        }
+
+        .login-form {
+            box-sizing: border-box;
+        background-color: #FAFAFA;
+        padding: 20px;
+        text-align: center;
+        max-width: 624px;
+    }
+    .buttons{   
+width: 427px;
+height: 48px;
+margin:24px 0px;
+    background:#568300 !important;
+    background-color: #568300;
+    color: #FFFFFF !important;
+    font-size: 16px !important;
+    line-height: 16px !important;
+    padding: var(--ewp-compbuttonprimarytb) var(--ewp-compbuttonprimarylr) var(--ewp-compbuttonprimarytb) var(--ewp-compbuttonprimarylr);
+        font-family: "Roboto Condensed" !important;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: center;
+}
+.buttonsset{     
+width: 427px;
+height: 48px;
+margin:24px 0px;
+        background:#568300 !important;
+        background-color: #568300;
+        color: #FFFFFF !important;
+        font-size: 16px !important;
+        line-height: 16px !important;
+        padding: var(--ewp-compbuttonprimarytb) var(--ewp-compbuttonprimarylr) var(--ewp-compbuttonprimarytb) var(--ewp-compbuttonprimarylr);
+        font-family: "Roboto Condensed" !important;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: center;
+}
+.login-form h1 { 
+color: var(--theme-color-text, #475158);
+text-align: center;
+        font-family: var(--theme-typography-font-family-title, "Roboto Condensed");
+        font-size: var(--theme-typography-font-size-3xl, 60px);
+        font-style: normal;
+                    line-height: 130%; 
+                    font-weight:700 !important;
+        }
+        .para{
+ color: #475158 !important;
+            font-family: Roboto  !important;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: center;
+        }
+        .parabook{
+ color: #475158 !important;
+            font-family: Roboto  !important;
+            font-size: 16px;
+            font-weight: 400;
+                    text-align: center;
+        }
+        .para1{
+ color: #475158 !important;
+            font-family: Roboto  !important;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        }
+        .slds-input {
+            border: none;
+    border-bottom: 2px solid #D6D8DA;
+    border-radius: 0;
+    background-color: #FFFFFF;
+    height: 54px;
+    padding: 0.2px 12px !important;
+            width: 403px;
+        font-size: 16px;
+        font-family: 'Roboto';
+    }
+    .error-icon{
+        position: relative;   
+    }
+.eye-icon { 
+position: relative;
+}
+.fa-exclamation-triangle{
+            font-family: 'Font Awesome 5 Free';
+            right: 1.5rem;
+            font-size: 15px;
+            color: #E60F04;
+            position: absolute;
+            top: 20px;
+}
+        .eye-icon:before {
+        content: '\f06e'; /* Unicode for eye icon */
+        font-family: 'Font Awesome 5 Free'; /* Font Awesome */
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #888; /* Icon color */
+        cursor: pointer;
+        }
+    .input-field {
+        padding-right: 30px; /* Adjust based on icon size */
+    }
+    .widthcss{
+        width: 424px;
+    }
+    /* For Mobile Portrait View */
+    /* @media screen and (max-device-width: 480px) 
+    and (orientation: portrait) { */
+    @media (max-width: 612px) {
+        .widthcss{
+        width: 100%;
+    }
+            .header-container {
+            width: 100%;
+        }
+                .forgotcss{
+                text-align:center;
+                width: 100%;
+            }
+                .centercss{
+                    margin-right: 0rem;
+                }
+.redcss{
+                   width: 100%; 
+}
+        .container {
+        display: block;
+        background: #FAFAFA;
+        width: 100%;
+        height: 100%;
+        }
+        .errornewpagecss{
+            margin: 14px 0px 14px 0px;
+        text-align: left !important;
+                padding: 0px !important;
+        color: var(--theme-color-text-alert, #E60F04);
+        font-family: Roboto  !important;
+        font-size: var(--theme-typography-font-size-s, 12px);
+        font-style: normal;
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+        line-height: 115%; /* 13.8px */
+        }
+        .errorcss{
+            width: 90%;
+            margin: 14px 0px 14px 0px;
+        text-align: left !important;
+        padding: 0 0.9rem;
+        color: var(--theme-color-text-alert, #E60F04);
+        font-family: Roboto  !important;
+        font-size: var(--theme-typography-font-size-s, 12px);
+        font-style: normal;
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+        line-height: 115%; /* 13.8px */
+        }
+        .login-form {
+        width: 360px;
+        }
+        .logo-header{
+        padding:12px 0px 12px 10px;
+        }
+        .res-mob-logo{
+  width: 132px !important;
+  height: 32px !important;
+}
+        header{
+        width: 100%;
+        }
+        .margin-form{
+        margin:0;
+        }
+        .login-container{
+        height: 80vh;
+        }
+        .login-form{
+        width: 100%;
+        }
+        .login-form h1{
+        width: 100%;
+        height: auto;
+        font-size: 32px;
+        }
+        .appoint-css{
+        width: 100% !important;
+        margin-bottom: 24px !important;
+        }
+        appoint-cssbook{
+            width: 100% !important;
+        }
+         footer{
+            width: 100%;
+       padding-top: 16px;
+    }
+
+    .footer-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start; /* Align content to the left on small screens */
+        padding: 0px 16px;
+        gap: 1rem;
+    }
+
+    .footer-content span {
+        padding: 4px 0px;
+        font-size: 14px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .footer-legal  {
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center; /* Keep text left-aligned */
+        padding: 24px 16px;
+    }
+        .buttons{
+width: 100%;
+    margin-left: 0rem !important;
+    }
+    .buttonsset{
+        width: 100%; 
+}
+.slds-input {
+            width: 93%;
+            }
+       }
+        .slds-input:default {
+        outline: none;
+        border-bottom: 2px solid #D6D8DA; /* Border color when the input is focused */
+        }
+        .slds-input:hover {
+        outline: none;
+        border-bottom: 2px solid #000000; /* Border color when the input is focused */
+        background-color: #F5F5F6 !important;
+        }
+        .slds-input:focus {
+        outline: none;
+        border-bottom: 2px solid #000000; /* Border color when the input is focused */
+        background-color: #FAFAFA !important;
+        }
+.slds-input:invalid {
+outline: none;
+border-bottom: 2px solid #E60F04; /* Border color when the input is focused */
+background-color: #FAFAFA !important;
+}
+        .error-message {
+        color: #E60F04;
+        font-family: Roboto  !important;
+        font-size: var(--theme-typography-font-size-s, 14px);
+        font-style: normal;
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+        line-height: 115%;
+    }
+        .slds-input:invalid {
+        outline: none;
+        border-bottom: 2px solid #E60F04; /* Border color when the input is focused */
+        }
+        .slds-input:active{
+        outline: none;
+        border-bottom: 2px solid #000000; /* Border color when the input is focused */
+        background-color: #F5F5F6 !important;
+        }
+        .myCustomMessage{
+            font-size: 12px;
+            font-family: roboto;
+        }
+        @media (min-width: 320px) and (max-width: 350px) {
+            .footer-legal{
+            background-color: #767E83;
+            color: white;
+            width: 100%;
+height: 220px;
+text-align: center;
+}  
+}
+                    @media only screen and (max-width: 932px) and (orientation: landscape) {
+                     .container {
+                        margin-top:-3rem;
+                        height: 570px;
+                        }
+
+            }
+        .myCustomMessage.message {'We're sorry. You no longer have access to the customer portal as you have no upcoming appointments. If you'd like to speak to us about a past appointment, please call 0333 999 0101.'}
+    .myinactiveUser.message {'We're sorry. You no longer have access to the customer portal as you have no upcoming appointments. If you'd like to speak to us about a past appointment, please call 0333 999 0101.'}
+    </style>
+<!-- </head> -->
+
+    <!-- Validation for password -->
+    <script>	
+    function updateErrorUnderline() {  
+        var wrongPassword = {!wrongPassword};  
+        var usernameInput = document.getElementById('{!$Component.form.username}');  
+        if (wrongPassword) {  
+            usernameInput.classList.add('error-underline');  
+        } else {  
+            usernameInput.classList.remove('error-underline');  
+        }  
+    }  
+    updateErrorUnderline();
+    
+    window.onload = function() {
+        updateErrorUnderline();
+            const urlParams = new URLSearchParams(window.parent.location.search);
+            var accid = urlParams.get('accId');  
+            if (accid) {  
+                console.log('accid is present: ' + accid);
+                getcheckIfNew(accid);
+            } else {  
+                console.log('accid is not present');  
+            }  
+        }; 
+    document.addEventListener('DOMContentLoaded', function() {  
+            var passwordField = document.getElementById('{!$Component.password}');  
+            if(passwordField) {  
+                passwordField.setAttribute('autocomplete', 'new-password');  
+            }  
+        }); 
+    function isNumber(evt) {  
+            evt = (evt) ? evt : window.event;  
+            var charCode = (evt.which) ? evt.which : evt.keyCode;  
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {  
+                return false;  
+            }  
+            return true;  
+        } 
+    function getcheckIfNew(accid) {  
+            console.log('accid', accid);  
+            Visualforce.remoting.Manager.invokeAction(  
+                '{!$RemoteAction.BLR_CommunitiesLoginController.checkIfNew}', accid,  
+                function(result, event) {  
+                    if (event.status) {  
+                        console.log('RES--->', result);  
+                        errormessages();  
+                    } else {  
+                        console.log('Error: ' + event.message);  
+                    }  
+                }  
+            );  
+        }  
+        function errormessages() {  
+            console.log('Handling error messages');  
+        }  
+        function validateUernamePassword() {
+        //document.getElementById("div01").style.visibility = "hidden";
+        document.getElementById("div02").style.visibility = "hidden";
+        document.getElementById("div02").style.display = "none";
+        var messagepage = document.getElementById("errordiv12");
+        var username = document.getElementById("j_id0:loginform:username").value;
+        var password = document.getElementById("j_id0:loginform:password").value;
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if(!emailRegex.test(username) && password.trim() === "" && username.length>0 && password.length==0) {
+            document.getElementById("j_id0:loginform:username").className = " slds-input error-underline";
+            document.getElementById("usShow").style.display = "inline";
+            document.getElementById("j_id0:loginform:password").className = " slds-input error-underline";
+            document.getElementById("pwdShow").style.display = "inline";
+            messagepage.innerText = 'Please enter a valid email address and your password.';
+            messagepage.style.display = "inline";
+            messagepage.style.fontSize = "14px"; 
+            messagepage.style.fontFamily = "Roboto"; 
+            messagepage.style.color = "#E60F04";
+            return false;
+        }
+        if(username.trim() === "" && password.trim() === "" && username.length==0 && password.length==0){
+            document.getElementById("j_id0:loginform:username").className = " slds-input error-underline";
+            document.getElementById("usShow").style.display = "inline";
+            document.getElementById("j_id0:loginform:password").className = " slds-input error-underline";
+            document.getElementById("pwdShow").style.display = "inline";
+            messagepage.innerText = 'Please enter your email address and password.';
+            messagepage.style.display = "inline";
+            messagepage.style.fontSize = "14px"; 
+            messagepage.style.fontFamily = "Roboto"; 
+            messagepage.style.color = "#E60F04";
+            return false;
+        }
+        if(username.trim() != "" && password.trim() === ""){
+            document.getElementById("j_id0:loginform:username").className = " slds-input";
+            document.getElementById("usShow").style.display = "none";
+            document.getElementById("usShow").style.visibility = "hidden";
+            document.getElementById("j_id0:loginform:password").className = " slds-input error-underline";
+            document.getElementById("pwdShow").style.display = "inline";
+            messagepage.innerText = 'Please enter your password.';
+            messagepage.style.display = "inline";
+            messagepage.style.fontSize = "14px"; 
+            messagepage.style.fontFamily = "Roboto"; 
+            messagepage.style.color = "#E60F04";
+            return false;
+        }
+        if(username.trim() === "" && password.trim() != ""){
+            document.getElementById("j_id0:loginform:username").className = " slds-input error-underline";
+            document.getElementById("usShow").style.display = "inline";
+            document.getElementById("j_id0:loginform:password").className = " slds-input";
+            document.getElementById("pwdShow").style.display = "none";
+            document.getElementById("pwdShow").style.visibility = "hidden";
+            messagepage.innerText = 'Please enter your email address.';
+            messagepage.style.display = "inline";
+            messagepage.style.fontSize = "14px"; 
+            messagepage.style.fontFamily = "Roboto"; 
+            messagepage.style.color = "#E60F04";
+            return false;
+        }
+        if(username.trim() != "" && !emailRegex.test(username) && password.trim() != "" && username.length>0 && password.length>0){
+            document.getElementById("j_id0:loginform:username").className = " slds-input error-underline";
+            document.getElementById("usShow").style.display = "inline";
+            document.getElementById("j_id0:loginform:password").className = " slds-input";
+            document.getElementById("pwdShow").style.display = "none";
+            document.getElementById("pwdShow").style.visibility = "hidden";
+            messagepage.innerText = 'We were unable to log you in. Please enter a valid email address and your password.';
+            messagepage.style.display = "inline";
+            messagepage.style.fontSize = "14px"; 
+            messagepage.style.fontFamily = "Roboto"; 
+            messagepage.style.color = "#E60F04";
+            return false;
+        }
+                return true;
+            }
+    function validateUserPassword(){
+        var messagepage = document.getElementById("errordiv123");
+        var np = document.getElementById("j_id0:loginform:newPassword").value;
+        var cp = document.getElementById("j_id0:loginform:confirmPassword").value;
+        const letterPattern = /[a-zA-Z]/;  
+        const numberPattern = /[0-9]/;  
+        const specialCharacterPattern = /[!@#$%^&*()_+\-={}[\]\\|;:',.?/`~><"]/;  
+        //alert(np +'--' + cp);
+        if (np === '' || cp === '' || np === null || cp === null) {
+            //alert('Kindly enter both passwords');
+         messagepage.innerText = 'Kindly enter both passwords';
+         messagepage.style.fontSize = "14px"; 
+         messagepage.style.fontFamily = "Roboto"; 
+            messagepage.style.color = "#E60F04";
+         return false;
+         }
+        if (np.length < 16000 && cp.length < 16000) {  
+            if ((np.length < 8 || cp.length < 8) || (!letterPattern.test(np) || !letterPattern.test(cp)) || (!numberPattern.test(np) || !numberPattern.test(cp)) || (!specialCharacterPattern.test(np) || !specialCharacterPattern.test(cp))) {  
+                messagepage.innerText = 'Password must be at least 8 characters long and include letters, numbers, and at least one special character.';
+        messagepage.style.fontSize = "14px"; 
+         messagepage.style.fontFamily = "Roboto"; 
+            messagepage.style.color = "#E60F04";
+             return false;  
+    }  
+        }
+        else{
+            if ((!letterPattern.test(np) || !letterPattern.test(cp)) || (!numberPattern.test(np) || !numberPattern.test(cp)) || (!specialCharacterPattern.test(np) || !specialCharacterPattern.test(cp))) { 
+                messagepage.innerText = 'Password must include letters, numbers, and at least one special character & should be within 16000 characters.';
+                messagepage.style.fontSize = "14px"; 
+                messagepage.style.fontFamily = "Roboto"; 
+                messagepage.style.color = "#E60F04";
+                return false;  
+            }
+            else{
+                messagepage.innerText = 'Password length cannot exceed 16000 characters.';
+                messagepage.style.fontSize = "14px"; 
+                messagepage.style.fontFamily = "Roboto"; 
+                messagepage.style.color = "#E60F04";
+                return false;  
+            }
+        }
+        if (np !== cp) {  
+            // alert('Passwords do not match');  
+        messagepage.innerText = 'Passwords do not match';
+        messagepage.style.fontSize = "14px"; 
+         messagepage.style.fontFamily = "Roboto";
+            messagepage.style.color = "#E60F04";
+                return false;
+            }
+            return true;
+        }
+    </script> 
+
+     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes" />
+   <apex:includeScript value="{!URLFOR($Resource.bln_FontAwesome, 'fontawesome-free-5.15.3-web/js/all.js')}" />
+    <link rel="icon shortcut" href="{!$Resource.Bln_Favicon}" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet' />
+    </head>
+            <header>
+              <div class="logo-header" >
+                 <img src="{!$Resource.Imagelogo}" alt="Logo" class="res-mob-logo" width="165" height="40px;"/>
+              </div>
+            </header>
+      <div class="wholescreen">
+    <div class="container">
+        <div>
+    <apex:form id="loginform" style=" margin: 0 auto;">
+            <apex:outputPanel rendered="{!customerType == 'New' && noServiceAppointment && NOT(showPasswordResetSection)}">
+                <div class="login-container">   
+            <div class="login-form"> 
+                    <div style="text-align: center;">   
+                                    <img src="{!$Resource.Imagelogo}" alt="Logo" width="165" height="150" />
+                                    <!-- Logo -->
+                    </div>
+                    <div style=" margin: 0 auto; text-align: center;">
+                        <div class="myCustomMessage message">
+                            We're sorry. You no longer have access to the customer portal as you have no upcoming appointments. If you'd like to speak to us about a past appointment, please call 0333 999 0101.
+                            <apex:pageMessages />   
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </apex:outputPanel>
+            
+            <!-- New user creation page -->
+            <apex:outputPanel rendered="{!customerType == 'New'  && !noServiceAppointment && NOT(showPasswordResetSection) }">
+                <div class="login-container">   
+            <div class="login-form">    
+                <div style="text-align: center;margin-top:24px;">
+                      <h1>Set your password</h1>
+                        <div>
+                        <apex:image url="{!$Resource.BLN_LOGOREDYELLOW}" style="max-width: 100; height: 6;padding-top:8px;" alt=""/>
+                        </div>
+                        </div>
+                    <div class="appoint-cssbook" style="  margin:24px 0px 0px 0px;"> 
+                        <h5 class="parabook">Your booking and payment information in one place.</h5> </div>
+                    <div class="appoint-css" style="  margin:0px 0px 24px 0px;"> 
+                                    <p class="para1"> {!newUserLoginPara} </p>
+                                </div>
+            
+                    <div style="margin: 0 auto; text-align: center;">                                               
+                        <apex:inputSecret id="newPassword" value="{!newPassword}" required="true" styleClass="slds-input" html-placeholder="New password*"/>
+                        <!--span id="toggleNewPassword" class="eye-icon fas fa-eye" onclick="togglePasswordVisibility('psw')"></!--span-->
+                   
+                        <apex:inputSecret id="confirmPassword" value="{!confirmPassword}" required="true" styleClass="slds-input" html-placeholder="Confirm password*"  onblur="return validatePassword();" />
+                        <!--span id="toggleNewPassword" class="eye-icon fas fa-eye" onclick="togglePasswordVisibility('psw')"></!--span-->
+                   
+                        <div style=" margin: auto 0; text-align: center;"> 
+                            <apex:outputPanel id="errorMessagePanel" rendered="{!NOT(ISBLANK(newUserLoginError))}">  
+                                <div id ="errordiv" class="errornewpagecss" >  
+                                    {!newUserLoginError}  
+                                </div>  
+                            </apex:outputPanel> 
+                                        <apex:outputPanel id="errorMessagePanel11">
+                                            <div id="errordiv123" class="errornewpagecss">
+                                                 
+                                            </div>
+                                        </apex:outputPanel>
+                                        <apex:commandButton value="Set password" action="{!newUserLogin}" styleClass="buttonsset" style="padding: 10px;margin-top:16px;  font-family: 'Roboto Condensed'  !important ;" rerender="" onclick="return validateUserPassword();" />
+                            <!--apex:pageMessages /> 
+                             <!-- Custom message display -->  
+                    <!-- <apex:outputPanel id="errorMessagePanel" rendered="{!NOT(ISBLANK(newUserLoginError))}">  
+                        <div id ="errordiv" class="errorcss" >  
+                            {!newUserLoginError}  
+                        </div>  
+                    </apex:outputPanel>  -->
+                        </div>       
+                    </div>
+                </div>
+                </div>
+            </apex:outputPanel>
+            
+            <!--Reset password for exisiting customer-->
+            <apex:outputPanel rendered="{!showPasswordResetSection}">  
+                <div class="login-container">         
+                <div class="login-form" id="passwordResetSection">
+                    <div style="text-align: center;margin-top:24px;">
+                        <h1>Set your password</h1>
+                        <div>
+                        <apex:image url="{!$Resource.BLN_LOGOREDYELLOW}" style="max-width: 100; height: 6;padding-top:8px;" alt=""/>
+                        </div>
+                        </div>
+                        <div class="appoint-css" style="  margin:24px 0px;">  <span class="para">Please set a password for your </span> <span class="para1">Self-Service-Portal. </span></div>               
+            
+                    <div style=" margin: 0 auto; text-align: center;">
+                        <apex:inputSecret id="newPassword1" value="{!newPassword1}" required="true" styleClass="slds-input" html-placeholder="New Password*"/>
+                    <!--span id="toggleNewPassword" class="eye-icon fas fa-eye" onclick="togglePasswordVisibility('psw')"></!--span-->
+                    <apex:inputSecret id="confirmPassword1" value="{!confirmPassword1}" required="true" styleClass="slds-input" html-placeholder="Confirm Password*"/>
+                    <!--span id="toggleVerifyPassword" class="eye-icon fas fa-eye" onclick="togglePasswordVisibility('vpsw')"></!--span-->
+                        <div style=" margin: auto 0; text-align: center;"> 
+                            <apex:commandButton value="Reset Password" action="{!changePassword}" styleClass="buttons"  rerender="errorMessages"  />
+                            <apex:pageMessages id="errorMessages" />
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </apex:outputPanel>
+            
+            <!-- If  existing user is deactived this page display -->
+            <apex:outputPanel rendered="{!userInactive }">
+                <div class="login-container">   
+            <div class="login-form"> 
+                    <div style="text-align: center;">
+                        <img src="{!$Resource.Imagelogo}" alt="Logo"  width="165" height="150"/>
+                    </div>
+                    <div style=" margin: 0 auto; text-align: center;">
+                        <div class="myCustomMessage message">
+                            We're sorry. You no longer have access to the customer portal as you have no upcoming appointments. If you'd like to speak to us about a past appointment, please call 0333 999 0101.
+                            <apex:pageMessages />
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </apex:outputPanel>
+            
+            <!-- Existing user login page -->
+        <apex:outputPanel rendered="{!customerType != 'New' && NOT(showPasswordResetSection) && NOT(userInactive)  }">
+                <div class="login-container">
+                    <div class="login-form">
+        <div class="login-page" style="text-align: center;margin-top:24px;">
+                        <h1>Login</h1>
+                        <div>
+                        <apex:image url="{!$Resource.BLN_LOGOREDYELLOW}" style="max-width: 100; height: 6;padding-top:8px;" alt=""/>
+                        </div>
+                        </div>
+            <div class="appoint-css" style="margin:24px 0px;"><span class="para1">Your booking and payment information in one place.</span>
+            </div>
+                    <apex:outputPanel rendered="{!showBookingInput}" styleClass="appoint-css" style="margin:24px 0px;">  
+        <span class="para1">{!loginText}</span> 
+                      <!--apex:outputText value="{!$Label.BLN_SecureLoginText}" escape="false"/-->  
+    </apex:outputPanel> 
+                                <div class="centercss">
+                <apex:outputPanel id="loginscreenlogin" rendered="{!displayLoginScreen}">
+                    <div class="redcss">
+                                            <apex:inputText id="username" value="{!username}" required="true" styleClass="slds-input {!IF(wrongPassword, 'error-underline', '')}" html-placeholder="Email" onblur="validateEmail(this)" />
+         <apex:outputPanel id="errorPanel" layout="block" rendered="{!wrongPassword}">           
+                    <span class="error-icon fa fa-exclamation-triangle"></span>
+                </apex:outputPanel>
+                        <div id="usShow" style="display:none;">
+                            <span class="error-icon fa fa-exclamation-triangle"></span>
+                        </div>
+                     <apex:outputText id="errorMsg" escape="false">  
+                                                <p style="font-weight:400;font-size:14px;font-family:Roboto;color:#E60F04" id="errorText"></p>
+        </apex:outputText> 
+                        </div>
+
+                <div class="widthcss">
+                        <div class="redcss">
+                                                <apex:inputSecret id="password" value="{!password}" required="true" styleClass="slds-input {!IF(wrongPassword, 'error-underline', '')}" html-placeholder="Password" />
+                    <apex:outputPanel id="errorPanel1" rendered="{!wrongPassword}">
+                   <span class="error-icon fa fa-exclamation-triangle"></span>
+                   <span class="errorredcss" style="border-bottom: 2px solid #E60F04;"></span>
+                   </apex:outputPanel>
+                        <div id="pwdShow" style="display:none;">
+                            <span class="error-icon fa fa-exclamation-triangle"></span>
+                        </div>
+                    </div>
+                    <div class="redcss" style="margin-top: 16px !important;">
+                        <apex:inputText id="bookingnumber" rendered="{!showBookingInput}" value="{!caseNumber}" styleClass="slds-input {!IF(wrongCase, 'error-underline', '')}" html-placeholder="Booking reference" onkeypress="return isNumber(event)"  />
+                                           </div>
+                        <!-- Custom error message for wrong password -->
+                        <div id ="errordiv" class="errorcss" >
+                            <apex:outputText rendered="{!NOT(ISBLANK(errorMessage)) }">
+                                {!errorMessage}
+                            </apex:outputText>
+                            <apex:outputText rendered="{!wrongCase }">
+                        <p class="errorcss">
+                            Kindly provide booking reference number
+                        </p>
+                    </apex:outputText>
+                    <apex:outputPanel id="errorPanel01">
+                        <div id="div01">
+                            <apex:outputText rendered="{!wrongEmail}">
+                                <p class="errorcss">
+                                    We were unable to log you in. Please enter a valid email address and your password.
+                                </p>
+                            </apex:outputText>
+                        </div>
+                    </apex:outputPanel>
+                                                <apex:outputPanel id="errorMessagePanel1">
+                                            <div id="errordiv12" class="errornewpagecss">
+                                                 
+                                            </div>
+                                        </apex:outputPanel>
+                    <apex:outputPanel id="errorPanel02">
+                        <div id="div02">
+                        <apex:outputText rendered="{!wrongPassword && NOT(wrongEmail)}">
+                            <p class="errorcss">
+                                                        We were unable to log you in. Please check your email address and password.
+                                </p> 
+                            </apex:outputText>
+                        </div>   
+                    </apex:outputPanel>
+                </div>
+            </div>
+        <div style=" margin: auto 0; text-align: center;">
+            <apex:commandButton style="font-family:roboto condensed !important;" value="Login" action="{!login}" styleClass="buttons" onclick="return validateUernamePassword()" />
+                    
+                    </div> 
+            </apex:outputPanel>
+                                    <div class="forgotcss">
+                 <apex:outputLink value="{!forgotPasswordUrl}" styleClass="slds-text-link_reset" style="
+                        font-family: Roboto  !important;font-size: 16px  !important;font-weight: 400  !important;text-align: left  !important;
+                        color: #8B9196 !important;"><u style="#8B9196">Forgot your password?</u></apex:outputLink>                    
+                </div>  
+                </div>  
+                </div> 
+                </div>
+        </apex:outputPanel>
+    </apex:form>
+</div>
+</div>
+</div>
+    <footer>
+        <style>
+            .footer-content a {
+            color: white;
+            text-decoration: none;
+            }
+        </style>
+             
+             <div class="footer-content">
+               <span><a href="https://www.autoglass.co.uk/terms-of-business/" class="foot1" style="color:#FFFF; " target="_blank">Terms of business</a></span>
+                 <span>  <a href="https://www.autoglass.co.uk/privacy-policy/" class="foot1" style="color:#FFFF; " target="_blank">Privacy policy</a></span>
+                 <span>   <a href="https://www.autoglass.co.uk/cookie-policy/" class="foot1" style="color:#FFFF; " target="_blank">Cookie policy</a></span>
+                 <span>   <a href="https://www.autoglass.co.uk/modern-slavery-act/" class="foot1" style="color:#FFFF; " target="_blank">Modern slavery act</a></span>
+             </div>
+             <div class="footer-legal">
+               <!-- <p class="belroncss">© Copyright 2023 Belron UK Limited. All rights reserved.</p> -->
+                 <p class="copyrightcss" >Belron UK Limited t/a Autoglass<sup>®</sup> is registered in England and Wales. Number: 00494648. Registered Office: 1 Priory Business Park, Cardington, Bedford, Bedfordshire MK44 3US </p>
+                 <p class="copyrightcss1">AUTOGLASS<sup>®</sup> and the logo are registered trademarks of Belron Group S.A. and its affiliated companies. © Copyright 2024 Belron UK Limited. All rights reserved.</p>
+               </div>
+              </footer>
+</apex:page>

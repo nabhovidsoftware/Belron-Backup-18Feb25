@@ -1,0 +1,16 @@
+<template>
+    <div style="text-align: center;">
+        <h1 class="headerStyle">{label.knowledgeArticlesLabel}</h1>
+    </div>
+    <template for:each={knowladgearticleobj} for:item='screenData'> 
+
+        <template for:each={screenData.value} for:item='value'>
+            <div  key={value.Id}>
+                <a data-id={value.Id} onclick={NavigatetoKA}>
+                    {value.Title}  
+                </a> 
+            </div>
+        </template>
+    
+    </template> 
+</template>

@@ -1,0 +1,237 @@
+<template>
+    <lightning-button if:false={nonReturnable} label="Return Items" variant="brand-outline"
+        onclick={openModal}></lightning-button>
+    <!-- if:false={nonReturnable} -->
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_full">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" class="close-icon" alternative-text="close"
+                            variant="inverse" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Return Order</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1"
+                    style="overflow-x: scroll;">
+                    <template if:true={isLoading}>
+                        <section class="slds-spinner_container">
+                            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+                        </section>
+                    </template>
+                    <table if:true={showUserInfo} class="slds-table slds-table_cell-buffer">
+                        <tr>
+                            <th>First Name</th>
+                            <td>{userInfo.FirstName}</td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td>{userInfo.LastName}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{userInfo.Email}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone</th>
+                            <td>{userInfo.Phone}</td>
+                        </tr>
+                        <tr>
+                            <th>Account</th>
+                            <td>{userInfo.accountName}</td>
+                        </tr>
+                    </table>
+                    <lightning-accordion if:true={showOrderItems} active-section-name="B" allow-multiple-sections-open>
+                        <lightning-accordion-section name="A" label="Mass Action">
+                                <lightning-layout>
+                                    <lightning-layout-item  class="slds-align_absolute-center" flexibility="auto" padding="around-medium">
+                                            <div class="slds-size_1-of-2">
+                                                <h1 class="slds-text-title_bold">
+                                                    <font size="3">Return Reason</font>
+                                                </h1>
+                                                <lightning-combobox variant='brand' options={reason}
+                                                    value={value} onchange={handleMassReturnReason}></lightning-combobox>
+                                                
+                                                <h1 class="slds-text-title_bold">
+                                                    <font size="3">Return Date and Time</font>
+                                                </h1>
+                                                <lightning-input type="datetime"
+                                                        value={value} onchange={handleMassDate}></lightning-input>
+                                            </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item  class="slds-align_absolute-center" flexibility="auto" padding="around-medium">
+                                            <div class="slds-size_1-of-2">
+                                                <h1 class="slds-text-title_bold">
+                                                    <font size="3">Return Method</font>
+                                                </h1>
+                                                <lightning-combobox variant='brand' options={method}
+                                                        value={value} onchange={handleMassReturnMethod}>
+                                                </lightning-combobox>
+                                                <h1 class="slds-text-title_bold">
+                                                    <font size="3">Return Address</font>
+                                                </h1>
+                                                <lightning-combobox variant='brand' options={addressOptions}
+                                                        value={value} onchange={handleMassAddress}>
+                                                </lightning-combobox>
+                                            </div>
+                                    </lightning-layout-item>
+                                </lightning-layout>
+                            <span style = 'display: flex; justify-content: center;'>
+                                <lightning-button label="Select All" class="slds-button" onclick={handleSelectAll}>
+                                </lightning-button>
+                                <lightning-button label="Auto Fill" class="slds-button" onclick={handleMassAction}>
+                                </lightning-button>
+                            </span>
+                        </lightning-accordion-section>
+
+                        <lightning-accordion-section name="B" label="Product Details">
+                            <table if:true={showOrderItems} class="slds-table slds-table_cell-buffer slds-table_bordered "
+                                style="overflow-x: scroll;">
+                                <tr class="slds-line-height_reset" style="font-weight: bold;padding-bottom:5px">
+                                    <th><lightning-button-icon icon-name={selectAllName} size="small" label="cancel"
+                                            variant={selectAllVariant} onclick={handleSelectAll}>
+                                        </lightning-button-icon></th>
+                                    <th>
+                                        <span style="display: flex; justify-content: center; font-weight:bold ">
+                                            Product Name
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span style="display: flex; justify-content: center; font-weight:bold ">
+                                            Return Reason
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span style="display: flex; justify-content: center; font-weight:bold ">
+                                            Return Date and Time
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span style="display: flex; justify-content: center; font-weight:bold ">
+                                            Quantity Ordered
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span style="display: flex; justify-content: center; font-weight:bold ">
+                                            Quantity Returned
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span style="display: flex; justify-content: center; font-weight:bold ">
+                                            Return Method
+                                        </span>
+                                    </th>
+                                    <th>
+                                        <span style="display: flex; justify-content: center; font-weight:bold ">
+                                            Return Address
+                                        </span>
+                                    </th>
+                                </tr>
+                                <template for:each={orderItems} for:item="item">
+                                    <tr class="slds-hint-parent" key={item.Id} style={item.background}>
+                                        <td><lightning-button-icon data-id={item.Id} class="slds-theme_brand" value={item.Id}
+                                                icon-name={item.iconName} size="small" variant={item.buttonVariant}
+                                                onclick={handleSelectIcon} disabled={item.isDisabled}>
+                                            </lightning-button-icon></td>
+                                        <td>{item.productName}</td>
+                                        <td>
+                                            <lightning-combobox class={item.reasonClass} variant='brand' options={reason}
+                                                value={item.returnReason} data-id={item.Id} onchange={handleReturnReason}
+                                                disabled={item.isDisabled}></lightning-combobox></td>
+                                        <td>
+                                            <div class="date-format-hide">
+                                                <span style="top: 6px;position: inherit;width:310px ;display: block;margin-top: 15px">
+                                                    <lightning-input class={item.dateClass} type="datetime" data-id={item.Id}
+                                                        value={item.returnDate} onchange={handleDate}
+                                                        disabled={item.isDisabled}></lightning-input>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <span>
+                                                {item.quantity}
+                                            </span>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <lightning-input class={item.quantityClass} type="number" data-id={item.Id} value={item.quantityReturned} onchange={handleQuantity}
+                                                disabled={item.isDisabled}>
+                                            </lightning-input>
+                                        </td>
+                                        <td>
+                                            <span style="position: inherit">
+                                                <lightning-combobox class={item.methodClass} variant='brand' options={method}
+                                                    value={item.returnMethod} data-id={item.Id} onchange={handleReturnMethod}
+                                                    disabled={item.isDisabled}>
+                                                </lightning-combobox>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span style="position: inherit">
+                                                <lightning-combobox class={item.addressClass} variant='brand'
+                                                    options={item.addressOptions} value={item.returnAddress} data-id={item.Id}
+                                                    onchange={handleReturnAddress} disabled={item.isDisabled}>
+                                                </lightning-combobox>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </table>
+                        </lightning-accordion-section>
+                    </lightning-accordion>
+                    <table if:true={overrideReasonScreen} class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Product Name"> Product Name</div>
+                                </th>
+                                <th if:true={returnPeriodOverride} class="" scope="col">
+                                    <div class="slds-truncate" title="Return Override Reason"> Return Date Override</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Additional Comments"> Additional Comments</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={selectedRecords} for:item="item">
+                                <tr key={item.Id}>
+                                    <td>{item.productName}</td>
+                                    <td if:true={returnPeriodOverride}>
+                                        <lightning-combobox if:false={item.validDate} variant='brand' options={overrideReason}
+                                        value={value} data-id={item.Id} onchange={handleOverrideReason}
+                                        disabled={item.isDisabled}>
+                                        </lightning-combobox>
+                                    </td>
+                                    <td>
+                                        <lightning-textarea data-id={item.Id} value={value} onchange={handleComment}>
+                                        </lightning-textarea>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- modal footer start-->
+                <footer class="slds-modal__footer">
+                    <!-- <lightning-button class="slds-button slds-button_neutral" onclick={hideModal}>Cancel</button> -->
+                    <lightning-button if:true={showUserInfo} class="slds-button" label="Next" onclick={nextScreen}>
+                    </lightning-button>
+                    <lightning-button if:true={showOrderItems} class="slds-button" label="Next"
+                        onclick={handleValidation}>
+                    </lightning-button>
+                    <lightning-button if:true={overrideReasonScreen} class="slds-button" label="Submit"
+                        onclick={handleOverrideReturn}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

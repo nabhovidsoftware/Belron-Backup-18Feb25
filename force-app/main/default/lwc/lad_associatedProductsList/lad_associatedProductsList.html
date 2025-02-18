@@ -1,0 +1,49 @@
+<template lwc:render-mode="light">
+    <template if:true={associatedProductsAvailable}>
+        <h1 class="component-title">Associated Products</h1>
+        <template for:each={associatedProductsList} for:item="prod">
+            <lightning-card key={prod.id}>
+                <div class="associated-products-list">
+                    <div class="product-details">
+                        <p data-product-id={prod.id} class="product-name" onclick={handleNavToAssociatedProduct}>
+                            {prod.name}</p>
+                        <p if:true={prod.isEssential} class="product-essential">Essential Product</p>
+                        <p class="product-sku">SKU#: {prod.sku}</p>
+                        <p class="product-code">Product Code: {prod.code}</p>
+                        <template lwc:if={prod.isAvailable}>
+                            <template lwc:if={prod.isPrimary}>
+                                <p class="product-available">{prod.avlStatus}: {prod.deliveryDate}</p>
+                            </template>
+                            <template lwc:else>
+                                <template lwc:if={internalUser}>
+                                    <p class="product-available">{prod.avlStatus}: {prod.deliveryDate}</p>
+                                </template>
+                                <template lwc:elseif={buyerUser}>
+                                    <p class="product-available">{prod.avlStatus}</p>
+                                </template>
+                                <template lwc:else>
+                                    <p class="product-unavailable">{NotAvailableText}</p>
+                                </template>
+                            </template>
+                        </template>
+                        <template lwc:else>
+                            <p class="product-unavailable">{prod.avlStatus}</p>
+                        </template>
+                        <p class="product-desc">Description: {prod.description}</p>
+                    </div>
+                    <div class="product-price">{prod.currencyIsoCode} {prod.unitPrice}</div>
+                    <div class="add-to-cart">
+                        <c-lad_product-quantity-add quantity-suggested={prod.quantitySuggested} product-id={prod.id}
+                            style={cartButtonStyles} button-text={normalizedButtonText} button-variant="primary"
+                            disabled={prod.isDisabled} quantity-rule={prod.purchaseQuantityRule}
+                            available-quantity={availableQuantity} minimum-text={prod.normalizedMinimumText}
+                            maximum-text={prod.normalizedMaximumText} increment-text={prod.normalizedIncrementText}
+                            quantity-selector-label={quantitySelectorLabel} out-of-stock-text={outOfStockText}
+                            onvaluechanged={handleQuantityChanged} onaddproducttocart={handleAddToCart}>
+                        </c-lad_product-quantity-add>
+                    </div>
+                </div>
+            </lightning-card>
+        </template>
+    </template>
+</template>

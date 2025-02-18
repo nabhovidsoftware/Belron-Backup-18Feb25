@@ -1,0 +1,8 @@
+.forceCommunityUserSettingsCustomizable .row {
+    box-sizing: none;
+    overflow: hidden;
+    border-bottom: none !important;
+    margin-bottom: 21px;
+    padding-left: 4px;
+    padding-right: 4px;
+}

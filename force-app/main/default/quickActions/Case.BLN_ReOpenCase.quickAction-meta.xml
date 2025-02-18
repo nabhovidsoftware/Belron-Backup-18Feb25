@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-425 and FOUK-430 This is used to re-open a case.</description>
+    <flowDefinition>BLN_ReopenCase</flowDefinition>
+    <label>Re-Open Case</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

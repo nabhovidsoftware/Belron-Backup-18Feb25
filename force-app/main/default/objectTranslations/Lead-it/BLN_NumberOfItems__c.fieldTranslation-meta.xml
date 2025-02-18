@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please select How many vehicles or vehicles insurance policies is controlled by potential customer --></help>
+    <label><!-- Number of Vehicles/Motor Policy Holders --></label>
+    <name>BLN_NumberOfItems__c</name>
+</CustomFieldTranslation>

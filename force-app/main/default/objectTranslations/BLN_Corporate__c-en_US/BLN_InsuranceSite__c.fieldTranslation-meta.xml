@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Insurance Site --></label>
+    <name>BLN_InsuranceSite__c</name>
+    <relationshipLabel><!-- Corporates (Insurance Site Name) --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Generic Account Application</name>
+    <queueMembers>
+        <roles>
+            <role>BLN_MarketingManager</role>
+        </roles>
+        <users>
+            <user>sales.user.charles@pwc.com</user>
+            <user>elizabeth.lynch@belronuk.com.belronint</user>
+            <user>sales.user.harry@pwc.com</user>
+            <user>kyle.thompson@belronuk.com.belronint</user>
+            <user>sales.user.liam@pwc.com</user>
+            <user>sfmc_sfmcintegrationuser_st@belron.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Lead</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

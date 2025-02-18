@@ -1,0 +1,183 @@
+.res-mob-logo{
+  width: 165px !important;
+  height: 40px !important;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Aligns logo to the left and user info to the right */
+  align-items: center; /* Vertically centers content */
+  padding: 12px 72px 12px 72px !important;
+  background-color: #FAFAFA; /* Adjust the background color as per your design */
+  height: 72px;
+  width: 100%;
+margin: 0 auto;
+
+
+max-width: 1296px;
+flex-direction: row;
+align-items: center;
+
+}
+.dropdowncss{
+  color: var(--theme-color-text, #475158);
+/* body/default/m */
+font-family: var(--typography-font-family-body, Roboto);
+font-size: var(--m, 16px);
+font-style: normal;
+font-weight: var(--typography-font-weight-regular, 400);
+line-height: 150%; /* 24px */
+}
+.logo-header img {
+  max-width: 100%;
+}
+.user-header {
+  position: relative; /* Ensure the dropdown is positioned relative to its container */
+  width: 158px;
+  height: 24px;
+}
+.arrowicon{
+  margin: 5px !important;
+  width: 6px;
+  height: 10px !important;
+}
+.dropdown {
+  position: relative; /* Positioning container */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adds space between the user icon, username, and dropdown icon */
+}
+
+.dropdown-content {
+  display: none; /* Initially hide the dropdown */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px; /* Set the width of the dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Adds a shadow for better visibility */
+  z-index: 1; /* Ensure the dropdown is above other elements */
+  flex-direction: column; /* Ensures the links stack vertically */
+  padding: 10px 0; /* Adds spacing inside the dropdown */
+}
+
+.dropdown-content a {
+  padding: 8px 8px; /* Spacing for individual links */
+  text-decoration: none; /* Remove underline from links */
+  display: block; /* Ensure each link takes up full width */
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd; /* Add a background color on hover */
+}
+/* Show dropdown when hovering over .dropdown */
+.dropdown:hover .dropdown-content {
+  display: flex; /* Display the dropdown content as a flexbox */
+  flex-direction: column; /* Stack links vertically */
+}
+
+.usercss {
+ width: 94px;
+ margin: 0 8px;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+ color: var(--theme-color-text, #475158);
+
+ /* body/default/m */
+ font-family: var(--typography-font-family-body, Roboto);
+ font-size: var(--m, 16px);
+ font-style: normal;
+ font-weight: var(--typography-font-weight-regular, 400);
+ line-height: 150%; /* 24px */
+}
+
+.topnav {
+  width: 100%;
+margin: 0 auto;
+  display: flex;
+  height: auto;
+  padding: 10px 72px 10px 72px;
+ background-color: #F1F1F1;
+
+
+ max-width: 1296px;
+ flex-direction: row;
+ align-items: center;
+}
+
+.topnav a {
+  color: #6D6D6D;
+  /* body/sm */
+  font-family: var(--theme-typography-font-family-body, Roboto);
+  font-size: var(--theme-typography-font-size-sm, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  height: 21px;
+}
+.topcsscon{
+  color: #6D6D6D;
+  /* body/sm */
+  font-family: var(--theme-typography-font-family-body, Roboto);
+  font-size: var(--theme-typography-font-size-sm, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+}
+
+/* @media only screen and (max-width: 600px) {
+  .header-container {
+    width: 360px;
+    height: 56px;
+    padding: 4px 16px !important;
+  }
+  .topnav{
+    padding: 4px 16px !important;
+  }
+  .usercss{
+    display: none;
+  }
+  .dropicon{
+    display: none !important;
+  }
+  .user-header {
+    float: right;
+    width: 16px;
+  }
+
+} */
+/* For Mobile Portrait View */
+/* @media screen and (max-device-width: 480px)
+and (orientation: portrait) { */
+@media (max-width: 612px) {
+  .dropdown-content {
+    margin-left: -9rem;
+  }
+  .header-container {
+    width: 100%;
+    padding: 0px 16px !important;
+  }
+  .topnav {
+    width: 100%;
+    padding: 10px 16px !important;
+  }
+.res-mob-logo{
+  /* width: 132px; */
+  width: 132px !important;
+  height: 32px !important;
+}
+.usercss{
+  display: none;
+}
+.dropicon{
+  display: none !important;
+}
+
+.user-header {
+  float: right;
+  width: 16px;
+}
+
+
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-7752: This action is created to send SMS.</description>
+    <flowDefinition>BLN_SendSMS</flowDefinition>
+    <label>Send SMS</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

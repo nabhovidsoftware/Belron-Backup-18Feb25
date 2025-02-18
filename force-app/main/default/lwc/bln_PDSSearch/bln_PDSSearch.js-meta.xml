@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" type="String"  />
+            <property name="personaccountID" label="person accountId" type="String"/>
+            <property name="selectedRowData" label="selectedRowData" type="String"/>
+            <property name="selectedRow" label="selectedRow" type="String"/>
+            <property name="callMotoristFlow" label="callMotoristFlow" type="String"/>
+            <property name="callMotoristFlow1" label="callMotoristFlow1" type="Boolean"/>
+            <property name="corporateObj" label="corporateObj" type="String"/>
+            <property name="callAderessFlow" label="callAderessFlow" type="Boolean"  />
+            <property name="callDataCollectFlow" label="callDataCollectFlow" type="Boolean"  />
+            <property name="responsePostalCode" label="resPostalCode" type="String"  />
+            <property name="finishFlow" label="finishFlow" type="Boolean" role="outputOnly" />
+            
+        </targetConfig>      
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,67 @@
+<!--
+  @description       :
+  @author            : Sourabh Bhattacharjee
+  @group             :
+  @last modified on  : 12-10-2024
+  @last modified by  : Sourabh Bhattacharjee
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   08-13-2024   Sourabh Bhattacharjee   Initial Version
+-->
+<template>
+    <template if:true={showSpinner}>
+        <c-b-l-n-_-portal-spinner></c-b-l-n-_-portal-spinner>
+    </template>
+    <template if:true={serviceAppointments}>
+        <div class="card-container">
+            <ul class="slds-list_vertical" style="background-color: #FAFAFA;">
+                <div class="namecss">
+                    <p>{accountName}</p>
+                </div>
+                <div class="countcss">
+                    <h3 class="accountcss">Welcome</h3>
+                    <img src={headUrl} alt="Logo" class="res-mob-logo" width="100" height="6;" />
+                </div>
+                <template if:true={showCard}>
+                    <div class="wholescreen">
+                    <div class="contentcss">
+                        <template for:each={serviceAppointments} for:item="serviceAppointment">
+                            <li key={serviceAppointment.id} class="slds-item">
+                                <div class="custom-card">
+                                    <h4 class="windcss">Glass {serviceAppointment.workType}</h4>
+                                    <p class="bookcss">Booking reference: {serviceAppointment.caseNumber}</p>
+                                    <div class="datecss">
+                                        <!-- <span class="clockcss"> -->
+                                            <!-- <lightning-icon icon-name="utility:event" alternative-text="Event"
+                                                title="Event" size="xx-small"
+                                                style="margin-right: 8px;"></lightning-icon> -->
+                                                <img src={calenderurl} alt="Logo" class="res-mob-logo" width="18px"
+                                                height="18px;" style="margin-top: -0.5rem;" />&nbsp;&nbsp;
+                                                <span class="clockcss">
+                                            {serviceAppointment.formattedArrivalWindowStartDate}
+                                        </span>
+                                        <!-- <span class="timecss"> -->
+                                            <!-- <lightning-icon icon-name="utility:clock" alternative-text="clock"
+                                                title="Time" size="xx-small"
+                                                style="margin-right: 8px;"></lightning-icon> -->
+                                                <img src={clockurl} alt="Logo" class="res-mob-logo" width="18px" height="18px;"
+                                                style="margin-top: -0.3rem;" /></img>&nbsp;&nbsp;
+                                                <span class="timecss">
+                                            {serviceAppointment.formattedArrivalWindowStartTime}
+                                        </span>
+                                    </div>
+                                    <div class="viewcss">
+                                        <a href={accountDetailUrl} onclick={handleViewDetails}
+                                            data-id={serviceAppointment.caseId} data-second-id={serviceAppointment.id}
+                                            class="detailslinkcss">View details</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                    </div>
+                    </div>
+                </template>
+            </ul>
+        </div>
+    </template>
+</template>

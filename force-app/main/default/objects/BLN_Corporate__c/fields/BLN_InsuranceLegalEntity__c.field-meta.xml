@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_InsuranceLegalEntity__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created as part of FOUK-9106 and FOUK-9108</description>
+    <externalId>false</externalId>
+    <label>Insurance Legal Entity</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Corporate(Insurance Legal Entity)</relationshipLabel>
+    <relationshipName>Corporates7</relationshipName>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

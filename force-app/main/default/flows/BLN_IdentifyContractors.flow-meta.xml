@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <description>Used to assign icon to Approved Partner</description>
+        <name>BLN_IconAssignedToApprovedPartner</name>
+        <label>Icon Assigned To Approved Partner</label>
+        <locationX>1502</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__Picture_Link__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BLN_Gantt_URL</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>used to assign icon if no type is selected</description>
+        <name>BLN_IconAssignedToNone</name>
+        <label>Icon Assigned To None</label>
+        <locationX>1766</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__Picture_Link__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BLN_Gantt_URL</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Used to  Assign icon to Special Technician</description>
+        <name>BLN_IconAssignedToSpecialTechnician</name>
+        <label>Icon Assigned To Special Technician</label>
+        <locationX>622</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__Picture_Link__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BLN_Gantt_URL</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>used to assign icon to Standard Technician</description>
+        <name>BLN_IconAssignedToStandardTechnician</name>
+        <label>Icon Assigned To Standard Technician</label>
+        <locationX>182</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__Picture_Link__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BLN_Gantt_URL</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Used to assign icon to Virtual Tech</description>
+        <name>BLN_IconAssignedToVirtualTech</name>
+        <label>Icon Assigned To Virtual Tech</label>
+        <locationX>1062</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__Picture_Link__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>BLN_Gantt_URL</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>To Select particular icon for Contractor</description>
+        <name>BLN_IconSelectionForContractors</name>
+        <label>Icon Selection For Contractors</label>
+        <locationX>1040</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BLN_SelectIconForTechnician</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Technician</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Clock_In</targetReference>
+            </connector>
+            <label>Select Icon For Technician</label>
+        </rules>
+        <rules>
+            <name>BLN_SelectIconForSpecial</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Specials</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Clock_In1</targetReference>
+            </connector>
+            <label>Select Icon For Special</label>
+        </rules>
+        <rules>
+            <name>BLN_SelectIconForVirtualTech</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Virtual Tech</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Clock_In2</targetReference>
+            </connector>
+            <label>Select Icon For Virtual Tech</label>
+        </rules>
+        <rules>
+            <name>BLN_SelectIconForApprovedPartner</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Type__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Approved Partner</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Clock_In3</targetReference>
+            </connector>
+            <label>Select Icon For Approved Partner</label>
+        </rules>
+        <rules>
+            <name>BLN_SelectIconForNone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Type__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_IconAssignedToNone</targetReference>
+            </connector>
+            <label>Select Icon For None</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Clock_In</name>
+        <label>Check Clock-In</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>BLN_IconAssignedToStandardTechnician</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>If Not Clock In</defaultConnectorLabel>
+        <rules>
+            <name>If_Clock_In</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FSL__Picture_Link__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>BLN_ShiftClockInURL</elementReference>
+                </rightValue>
+            </conditions>
+            <label>If Clock In</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Clock_In1</name>
+        <label>Check Clock-In</label>
+        <locationX>534</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>BLN_IconAssignedToSpecialTechnician</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>If Not Clock In</defaultConnectorLabel>
+        <rules>
+            <name>Clock_In</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FSL__Picture_Link__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>BLN_ShiftClockInURL</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Clock In</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Clock_In2</name>
+        <label>Check Clock-In</label>
+        <locationX>974</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>BLN_IconAssignedToVirtualTech</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>If Not Clock In</defaultConnectorLabel>
+        <rules>
+            <name>Clock_In1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FSL__Picture_Link__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>BLN_ShiftClockInURL</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Clock In</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Clock_In3</name>
+        <label>Check Clock-In</label>
+        <locationX>1414</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>BLN_IconAssignedToApprovedPartner</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>If Not Clock In</defaultConnectorLabel>
+        <rules>
+            <name>Clock_In3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.FSL__Picture_Link__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>BLN_ShiftClockInURL</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Clock In</label>
+        </rules>
+    </decisions>
+    <description>FOUK-186. This flow is used to identify the contractor on the basis of their &quot;Type&quot;.
+FOUK-3985. Updated the logic for technician type for shift clock in.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>BLN_ResourceType</name>
+        <dataType>String</dataType>
+        <expression>CASE(TEXT({!$Record.BLN_Type__c}),
+&apos;Approved Partner&apos;,&apos;/resource/bln_Icons/Approved_Partner.png&apos; ,
+&apos;Specials&apos;,&apos;/resource/bln_Icons/Special_Technician.png&apos; ,
+&apos;Technician&apos;,&apos;/resource/bln_Icons/Standard_Technician.png&apos;,
+&apos;Virtual Tech&apos;,&apos;/resource/bln_Icons/Virtual_Technician.png&apos;,
+&apos;--None--&apos;,&apos;&apos;,
+&apos;&apos;)</expression>
+    </formulas>
+    <interviewLabel>Identify Contractors {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Identify Contractors</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>To get different icons for different service resource.</description>
+        <name>BLN_SetServiceResourceIcons</name>
+        <label>Set Service Resource Icons</label>
+        <locationX>1040</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>BLN_IconSelectionForContractors</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Label</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.BLN_Type__c</elementReference>
+            </value>
+        </filters>
+        <object>BLN_FieldServiceIcon__mdt</object>
+        <outputAssignments>
+            <assignToReference>BLN_Gantt_URL</assignToReference>
+            <field>BLN_IconURL__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>BLN_ShiftClockInURL</assignToReference>
+            <field>BLN_ShiftClockInURL__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>914</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>BLN_SetServiceResourceIcons</targetReference>
+        </connector>
+        <filterFormula>OR(NOT({!$Permission.BLN_BypassFlows}), AND( {!$Permission.ByPassFlowForPrepCall},ISNEW()))</filterFormula>
+        <object>ServiceResource</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>BLN_Gantt_URL</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>BLN_ShiftClockInURL</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

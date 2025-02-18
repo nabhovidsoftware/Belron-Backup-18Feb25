@@ -1,0 +1,19 @@
+.isNotAvailable{
+    border: black;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 8px;
+    padding-left: 15px;
+    background-color: rgb(98, 171, 255);
+    font-weight:bold;
+}
+.isDelayed{
+    border: black;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 8px;
+    padding-left: 15px;
+    background-color: rgb(233, 255, 31);
+    font-weight:bold;
+
+}

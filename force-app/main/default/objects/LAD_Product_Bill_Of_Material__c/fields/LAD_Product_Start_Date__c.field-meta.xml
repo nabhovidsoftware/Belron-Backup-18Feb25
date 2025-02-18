@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Product_Start_Date__c</fullName>
+    <description>FOUK-7848: Created for BOM records for Associated Products</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please follow format &apos;yyyy-mm-dd&apos; for entering date</inlineHelpText>
+    <label>Product Start Date</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

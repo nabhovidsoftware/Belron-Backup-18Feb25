@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_WorkOrderLineItem__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-3987, It is used to relate the WOLI to CAR report. This field to be used on report so that the operation manager can redirect to WOLI and see photos and videos captured.</description>
+    <externalId>false</externalId>
+    <label>Work Order Line Item</label>
+    <referenceTo>WorkOrderLineItem</referenceTo>
+    <relationshipLabel>Corrective Action Reports</relationshipLabel>
+    <relationshipName>Corrective_Action_Reports</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

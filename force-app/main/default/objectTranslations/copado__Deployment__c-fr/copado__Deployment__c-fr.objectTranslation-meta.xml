@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Deployment --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Deployment --></value>
+    </caseValues>
+    <gender><!-- Masculine --></gender>
+    <nameFieldLabel><!-- Deployment Name --></nameFieldLabel>
+    <startsWith><!-- Consonant --></startsWith>
+    <validationRules>
+        <errorMessage><!-- Please get dev lead approval before deploy. --></errorMessage>
+        <name>BLN_Mandatory_Approval</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please get release manager approval before deploy. --></errorMessage>
+        <name>BLN_Mandatory_RM_Approval</name>
+    </validationRules>
+</CustomObjectTranslation>

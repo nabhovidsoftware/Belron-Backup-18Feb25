@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ActiveTo__c</fullName>
+    <description>Specifies validity date for Account Rule Parameter. This date will be set when Account Rule Parameter will be agreed. If data is not set - ARP is considered not activated. (FOUK-1904)</description>
+    <externalId>false</externalId>
+    <label>Active To</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

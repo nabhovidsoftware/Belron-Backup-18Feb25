@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : Prajjawal Tiwari
+  @group             : 
+  @last modified on  : 09-23-2024
+  @last modified by  : Prajjawal Tiwari
+-->
+<template>
+    <template if:true={isLoading}>
+        <section class="slds-spinner_container">       
+                <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </section>
+    </template>
+    <div if:true={submitMode} class='submit-order'>
+        <button class="submit-order slds-button slds-button_brand slds-button_full-width" onclick={handleOrder}
+        disabled={isSubmitOrderDisabled}>
+        {submitOrderButtonText}
+        </button>
+    </div>
+    <div if:true={amendModeandNotSpecialOrder} class='submit-order'>
+        <button class="submit-order slds-button slds-button_brand slds-button_full-width" onclick={handleOrder}
+            disabled={isSubmitOrderDisabled}>
+            {amendOrderButtonText}
+        </button>
+    </div>
+    <div if:true={specialOrderMode} class='submit-order'>
+        <button class="submit-order slds-button slds-button_brand slds-button_full-width" onclick={handleOrder}
+            disabled={isSubmitOrderDisabled}>
+            {specialOrderButtonTextinfo}
+        </button>
+    </div>
+    
+</template>

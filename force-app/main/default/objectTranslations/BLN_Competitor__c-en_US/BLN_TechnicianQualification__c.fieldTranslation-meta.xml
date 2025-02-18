@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Technician Qualification --></label>
+    <name>BLN_TechnicianQualification__c</name>
+    <picklistValues>
+        <masterLabel>ADAS Certified</masterLabel>
+        <translation><!-- ADAS Certified --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMI Level 1</masterLabel>
+        <translation><!-- IMI Level 1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMI Level 2</masterLabel>
+        <translation><!-- IMI Level 2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Level 2 &amp; 3 working safely on Hybrid and Electric Vehicles</masterLabel>
+        <translation><!-- Level 2 &amp; 3 working safely on Hybrid and Electric Vehicles --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Masters</masterLabel>
+        <translation><!-- Masters --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sub Status --></label>
+    <name>BLN_SubStatus__c</name>
+    <picklistValues>
+        <masterLabel>Customer Handover Completed</masterLabel>
+        <translation><!-- Customer Handover Completed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending Customer Handover</masterLabel>
+        <translation><!-- Pending Customer Handover --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

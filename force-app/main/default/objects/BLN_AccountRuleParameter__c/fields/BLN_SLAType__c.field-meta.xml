@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SLAType__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>FOUK-6522 Lookup field for SLA record types to SLA Definition custom object</description>
+    <externalId>false</externalId>
+    <label>SLA Type</label>
+    <referenceTo>BLN_SLADefinition__c</referenceTo>
+    <relationshipLabel>Account Rule Parameters</relationshipLabel>
+    <relationshipName>Account_Rule_Parameters</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

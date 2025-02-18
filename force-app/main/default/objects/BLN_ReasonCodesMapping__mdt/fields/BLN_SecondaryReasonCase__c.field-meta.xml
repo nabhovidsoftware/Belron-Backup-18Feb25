@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SecondaryReasonCase__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Secondary Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unsure Of Availability</fullName>
+                <default>true</default>
+                <label>Unsure Of Availability</label>
+            </value>
+            <value>
+                <fullName>No Show</fullName>
+                <default>false</default>
+                <label>No Show</label>
+            </value>
+            <value>
+                <fullName>Duplicate Job</fullName>
+                <default>false</default>
+                <label>Duplicate Job</label>
+            </value>
+            <value>
+                <fullName>Completed Elsewhere Sooner</fullName>
+                <default>false</default>
+                <label>Completed Elsewhere Sooner</label>
+            </value>
+            <value>
+                <fullName>Car Has Other Damaged</fullName>
+                <default>false</default>
+                <label>Car Has Other Damaged</label>
+            </value>
+            <value>
+                <fullName>Too Large To Be Repaired, Declined W/S</fullName>
+                <default>false</default>
+                <label>Too Large To Be Repaired, Declined W/S</label>
+            </value>
+            <value>
+                <fullName>Customer Concern Of Risk Of Cracking</fullName>
+                <default>false</default>
+                <label>Customer Concern Of Risk Of Cracking</label>
+            </value>
+            <value>
+                <fullName>Multiple Chips On W/S, Declined W/S</fullName>
+                <default>false</default>
+                <label>Multiple Chips On W/S, Declined W/S</label>
+            </value>
+            <value>
+                <fullName>To Small To Be Repaired</fullName>
+                <default>false</default>
+                <label>To Small To Be Repaired</label>
+            </value>
+            <value>
+                <fullName>Repaired Before</fullName>
+                <default>false</default>
+                <label>Repaired Before</label>
+            </value>
+            <value>
+                <fullName>Location Of Damage, Declined W/S</fullName>
+                <default>false</default>
+                <label>Location Of Damage, Declined W/S</label>
+            </value>
+            <value>
+                <fullName>Cracked During Repair, Declined W/S</fullName>
+                <default>false</default>
+                <label>Cracked During Repair, Declined W/S</label>
+            </value>
+            <value>
+                <fullName>Not Met Standard Customer Declined Replacement</fullName>
+                <default>false</default>
+                <label>Not Met Standard Customer Declined Replacement</label>
+            </value>
+            <value>
+                <fullName>Location of damage , Declined W/S</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Location of damage , Declined W/S</label>
+            </value>
+            <value>
+                <fullName>Not met standard customer Decline replacement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not met standard customer Decline replacement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

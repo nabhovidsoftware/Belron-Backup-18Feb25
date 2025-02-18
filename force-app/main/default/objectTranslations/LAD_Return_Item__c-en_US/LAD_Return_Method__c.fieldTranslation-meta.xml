@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Return Method --></label>
+    <name>LAD_Return_Method__c</name>
+    <picklistValues>
+        <masterLabel>Drop Off at MDC</masterLabel>
+        <translation><!-- Drop Off at MDC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laddaw Collect</masterLabel>
+        <translation><!-- Laddaw Collect --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

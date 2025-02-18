@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Reason__c</fullName>
+    <description>FOUK-5664: This field is created to store Reason on Payment record.</description>
+    <externalId>false</externalId>
+    <label>Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Overpayment</fullName>
+                <default>false</default>
+                <label>Overpayment</label>
+            </value>
+            <value>
+                <fullName>Goodwill</fullName>
+                <default>false</default>
+                <label>Goodwill</label>
+            </value>
+            <value>
+                <fullName>Paid in Error</fullName>
+                <default>false</default>
+                <label>Paid in Error</label>
+            </value>
+            <value>
+                <fullName>Scratched Glass</fullName>
+                <default>false</default>
+                <label>Scratched Glass</label>
+            </value>
+            <value>
+                <fullName>Cancelled Job</fullName>
+                <default>false</default>
+                <label>Cancelled Job</label>
+            </value>
+            <value>
+                <fullName>Staff Sale (Compliance Use Only )</fullName>
+                <default>false</default>
+                <label>Staff Sale (Compliance Use Only )</label>
+            </value>
+            <value>
+                <fullName>Compliance Issue (Compliance Use Only)</fullName>
+                <default>false</default>
+                <label>Compliance Issue (Compliance Use Only)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

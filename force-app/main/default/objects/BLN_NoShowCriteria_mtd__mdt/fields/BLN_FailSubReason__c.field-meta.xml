@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_FailSubReason__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Fail SubReason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Additional Part Required</fullName>
+                <default>false</default>
+                <label>Additional Part Required</label>
+            </value>
+            <value>
+                <fullName>Aftermarket Part Refused - OE Required</fullName>
+                <default>false</default>
+                <label>Aftermarket Part Refused - OE Required</label>
+            </value>
+            <value>
+                <fullName>Customer Concern, Repair Cracking Off</fullName>
+                <default>false</default>
+                <label>Customer Concern, Repair Cracking Off</label>
+            </value>
+            <value>
+                <fullName>Customer In day Cancellation</fullName>
+                <default>false</default>
+                <label>Customer In day Cancellation</label>
+            </value>
+            <value>
+                <fullName>Customer No Show</fullName>
+                <default>false</default>
+                <label>Customer No Show</label>
+            </value>
+            <value>
+                <fullName>Cust Unavailable/Cancelled</fullName>
+                <default>false</default>
+                <label>Cust Unavailable/Cancelled</label>
+            </value>
+            <value>
+                <fullName>External Purchase Delayed</fullName>
+                <default>false</default>
+                <label>External Purchase Delayed</label>
+            </value>
+            <value>
+                <fullName>Glass Damaged</fullName>
+                <default>false</default>
+                <label>Glass Damaged</label>
+            </value>
+            <value>
+                <fullName>Lack of Capacity/Overbooked</fullName>
+                <default>true</default>
+                <label>Lack of Capacity/Overbooked</label>
+            </value>
+            <value>
+                <fullName>Manufacture Defect</fullName>
+                <default>false</default>
+                <label>Manufacture Defect</label>
+            </value>
+            <value>
+                <fullName>Mislabelled/Incorrect Part Delivered</fullName>
+                <default>false</default>
+                <label>Mislabelled/Incorrect Part Delivered</label>
+            </value>
+            <value>
+                <fullName>Part Lost/Damaged - Retail</fullName>
+                <default>false</default>
+                <label>Part Lost/Damaged - Retail</label>
+            </value>
+            <value>
+                <fullName>Part Lost/Damaged - Supply Chain</fullName>
+                <default>false</default>
+                <label>Part Lost/Damaged - Supply Chain</label>
+            </value>
+            <value>
+                <fullName>Part Not Delivered - Delayed/Backordered</fullName>
+                <default>false</default>
+                <label>Part Not Delivered - Delayed/Backordered</label>
+            </value>
+            <value>
+                <fullName>Parts Damaged</fullName>
+                <default>false</default>
+                <label>Parts Damaged</label>
+            </value>
+            <value>
+                <fullName>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</fullName>
+                <default>false</default>
+                <label>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</label>
+            </value>
+            <value>
+                <fullName>Technician Absent</fullName>
+                <default>false</default>
+                <label>Technician Absent</label>
+            </value>
+            <value>
+                <fullName>Technician Doesn&apos;t Have Correct Skill/ Equipment</fullName>
+                <default>false</default>
+                <label>Technician Doesn&apos;t Have Correct Skill/ Equipment</label>
+            </value>
+            <value>
+                <fullName>Technician Missed Appt Time/Mobile Only</fullName>
+                <default>false</default>
+                <label>Technician Missed Appt Time/Mobile Only</label>
+            </value>
+            <value>
+                <fullName>Technician Van Issues/Breakdown</fullName>
+                <default>false</default>
+                <label>Technician Van Issues/Breakdown</label>
+            </value>
+            <value>
+                <fullName>Traffic/Unable to Drive</fullName>
+                <default>false</default>
+                <label>Traffic/Unable to Drive</label>
+            </value>
+            <value>
+                <fullName>Unable to Recalibrate Due to Weather</fullName>
+                <default>false</default>
+                <label>Unable to Recalibrate Due to Weather</label>
+            </value>
+            <value>
+                <fullName>Vehicle Unavailable</fullName>
+                <default>false</default>
+                <label>Vehicle Unavailable</label>
+            </value>
+            <value>
+                <fullName>Wrong Part Ordered</fullName>
+                <default>false</default>
+                <label>Wrong Part Ordered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

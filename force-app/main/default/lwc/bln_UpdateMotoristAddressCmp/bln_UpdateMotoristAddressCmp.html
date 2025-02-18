@@ -1,0 +1,174 @@
+<template>
+    <div class="slds-m-around_medium slds-align--absolute-center">
+    <lightning-card>
+        <div><strong>Select Address Type</strong></div><br>
+        <template for:each={addressOptions} for:item="item">
+            <fieldset key={item.value} class="fieldClass">
+                <div class="slds-form-element__control">
+                    <span class="slds-radio">
+                        <input name="radiogroup" id={item.value} type="radio" value={item.value}
+                            onchange={handleAddressChange} />
+                        <label class="slds-radio__label" for={item.value}>
+                            <span class="slds-radio_faux"> </span>
+                            <span class="slds-form-element__label">{item.label}</span>
+                        </label>
+                    </span>
+                </div>
+            </fieldset>
+        </template> <br><br>
+
+        <div class="slds-grid slds-gutters">
+            <template if:true={showHomeAddressFields}>
+                <div class="slds-col">
+                    <lightning-card>
+                        <div><strong>Home Address</strong>
+                        </div><br>
+                        <lightning-input onchange={searchAddressHandle} class="size3" placeholder="Search Address"
+                            type="search"></lightning-input>
+
+                        <template if:true={showOptionTypeEvent}>
+                            <div class="slds-dropdown slds-dropdown_fluid size3">
+                                <ul class="slds-listbox slds-listbox_vertical ">
+                                    <template if:true={showOptionTypeEvent} for:each={addressList} for:item="serecord">
+                                        <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                            key={serecord.postalCode} data-street={serecord.street}
+                                            data-postalcode={serecord.postalCode} data-city={serecord.city}
+                                            data-county={serecord.county} data-country={serecord.country}
+                                            data-latitude={serecord.latitude} data-longitude={serecord.longitude} data-countrycode={serecord.countryCode}
+                                            onclick={handleResultClick}>
+                                            <span class="slds-media">
+                                                <span class="slds-media__figure">
+                                                    <lightning-icon icon-name="standard:address"
+                                                        alternative-text="Address" title="Address"
+                                                        size="x-small"></lightning-icon>
+                                                </span>
+                                                <span class="slds-media__body "><strong>{serecord.street}</strong><br>
+                                                    {serecord.city} {serecord.postalCode} {serecord.county}
+                                                    {serecord.countryCode} {serecord.country}</span>
+                                            </span>
+
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
+                    </lightning-card>
+
+                    <lightning-textarea label={label.homeStreetLabel} value={homeStreet} data-name="homeStreet"
+                        onchange={addressValueChange} class="size3 homestreet"></lightning-textarea>
+                
+                    <div class="style1">
+                        <lightning-input label={label.homeTownLabel} value={homeTown} data-name="homeTown"
+                            onchange={addressValueChange} class="size townhome"></lightning-input>
+                    </div> &nbsp; &nbsp;
+                    <div class="style1">
+                        <lightning-input label={label.homeCountyLabel} value={homeCounty} data-name="homeCounty"
+                            onchange={addressValueChange} class="size2 countyhome"></lightning-input>
+                    </div>
+                    <br>
+                    <div class="style2">
+                        <lightning-input label={label.homeCountryLabel} value={homeCountry} data-name="homeCountry"
+                            onchange={addressValueChange} class="size countryhome"></lightning-input>
+                    </div> &nbsp; &nbsp;
+                    <div class="style2">
+                        <lightning-input label={label.homePostCodeLabel} value={homePostCode} data-name="homePostCode"
+                            onchange={addressValueChange} class="size2 postcodehome"></lightning-input>
+                    </div> &nbsp; &nbsp;
+                </div>
+            </template>
+
+            <template if:true={showOtherAddressFields}>
+                <div class="slds-col">
+                    <lightning-card>
+                        <div><strong>Other Address</strong></div><br>
+                        <lightning-input onchange={searchAddressHandle} class="size3" placeholder="Search Address"
+                            type="search"></lightning-input>
+                        <template if:true={showOptionTypeEvent}>
+                            <div class="slds-dropdown slds-dropdown_length-with-icon-7 slds-dropdown_fluid size3">
+                                <ul class="slds-listbox slds-listbox_vertical">
+                                    <template if:true={showOptionTypeEvent} for:each={addressList} for:item="serecord">
+                                        <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                            key={serecord.recId} data-street={serecord.street}
+                                            data-postalcode={serecord.postalCode} data-city={serecord.city}
+                                            data-county={serecord.county} data-country={serecord.country}
+                                            data-latitude={serecord.latitude} data-longitude={serecord.longitude} data-countrycode={serecord.countryCode}
+                                            onclick={handleResultClick}>
+                                            <span class="slds-media">
+                                                <span class="slds-media__figure">
+                                                    <lightning-icon icon-name="standard:address"
+                                                        alternative-text="Address" title="Address"
+                                                        size="x-small"></lightning-icon>
+                                                </span>
+                                                <span class="slds-media__body"><strong>{serecord.street}</strong><br>
+                                                    {serecord.city} {serecord.postalCode} {serecord.county}
+                                                    {serecord.countryCode} {serecord.country}</span>
+                                            </span>
+
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
+                    </lightning-card>
+                    <lightning-textarea label={label.otherStreetLabel} data-name="otherStreet" value={otherStreet}
+                        class="size3 otherStreet" onchange={otherAddressValueChange}></lightning-textarea>
+                    <div class="style1"><lightning-input data-name="otherTown" label={label.otherTownLabel}
+                            value={otherTown} onchange={otherAddressValueChange}
+                            class="size otherTown"></lightning-input>
+                    </div>&nbsp;&nbsp;
+                    <div class="style1"> <lightning-input label={label.otherCountyLabel} data-name="otherCounty"
+                            value={otherCounty} onchange={otherAddressValueChange}
+                            class="size2 otherCounty"></lightning-input></div>
+                    <br>
+                    <div class="style2"><lightning-input label={label.otherCountryLabel} data-name="otherCountry"
+                            value={otherCountry} onchange={otherAddressValueChange}
+                            class="size otherCountry"></lightning-input></div>&nbsp;&nbsp;
+                    <div class="style2"><lightning-input label={label.otherPostCodeLabel} data-name="otherPostCode"
+                            value={otherPostCode} onchange={otherAddressValueChange}
+                            class="size2 otherPostCode"></lightning-input></div>
+                </div>
+            </template>
+        </div>
+
+        <footer class="slds-m-top_small">
+            <lightning-button class="slds-button_neutral align" onclick={handleCancel} name={label.cancelLabel}
+                label={label.cancelLabel}>
+            </lightning-button>
+            <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_success" onclick={handleUpdate}
+                variant="brand" name={label.saveLabel} label={label.saveLabel}>
+            </lightning-button>
+        </footer>
+        
+            
+                <template lwc:if={openmodalError}>
+            <lightning-card class="slds-align_absolute-center">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-align_absolute-center slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container widthClass">
+                        <header class="slds-theme_error slds-modal__header">
+                            <span><b>{label.errorOccurred}</b></span>
+                            <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeErrorModal}>
+                                <lightning-icon icon-name="utility:close" size="medium">
+                                </lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button> -->
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                
+                <div class="slds-p-around_large">
+                    <span><b>{label.errorMsgMelissa}</b></span>
+                </div>
+                <div class="slds-align_absolute-center">
+                <lightning-button class="slds-align_absolute-center" label="Ok" variant="brand" onclick={closeErrorModal}></lightning-button>
+            </div>
+            </div>
+            </div>
+            </section>
+            
+            <!-- <div class="slds-backdrop slds-backdrop_open"></div> -->
+            </lightning-card>
+        </template>
+        
+        
+    </lightning-card>
+</div>
+</template>

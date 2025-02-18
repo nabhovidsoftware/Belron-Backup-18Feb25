@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_UniqueId__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>FOUK-3149</description>
+    <externalId>true</externalId>
+    <inlineHelpText>This field is a combination of MVRIS and MDM Id</inlineHelpText>
+    <label>Unique Id</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

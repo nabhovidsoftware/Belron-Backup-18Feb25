@@ -1,0 +1,232 @@
+<template>
+    <template if:true={showMainModal}>
+        <div class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeshowMainModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h5 class="slds-text-heading_medium">Service Appointments with Product Required</h5>
+                </header>
+                <div>
+                    <template if:true={data}>
+                        <lightning-datatable data={data} 
+                            columns={columns} 
+                            key-field="id"
+                            onrowselection={handleRowSelection} 
+                            max-row-selection="1">
+                        </lightning-datatable>
+                    </template>
+                    <template if:true={error}>
+                        {error}
+                    </template>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="brand" label="Continue" title="Primary action" onclick={handleClick}
+                        class="slds-m-left_x-small"></lightning-button>
+                </footer>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+        <!--<div class="slds-m-around_medium">
+            <template if:true={data}>
+                <lightning-datatable data={data} 
+                    columns={columns} 
+                    key-field="id, productRequiredNumber"
+                    onrowselection={handleRowSelection} 
+                    max-row-selection="1">
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                {error}
+            </template>
+        </div>
+        <div>
+            <lightning-button variant="brand" label="Continue" title="Primary action" onclick={handleClick}
+                class="slds-m-left_x-small"></lightning-button>
+        </div>-->
+        <!-- Modal Box for Correct Part and Incorrect Part -->
+        <template if:true={showCorrectIncorrectModal}>
+            <div class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 class="slds-text-heading_medium">Correct Part / Incorrect Part</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-button label="Correct Part" variant="brand" onclick={handleCorrectPart}>
+                        </lightning-button>
+                        <lightning-button label="Incorrect Part" variant="destructive" onclick={handleIncorrectPart}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <!-- Modal Box for Part OK -->
+        <template if:true={showModal}>
+            <div class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeIssueWithPartModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h5 class="slds-text-heading_medium">Part OK</h5>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium slds-text-align_center">
+                        <!-- Add your Part OK modal content here -->
+                        <h1><b>Is Part OK?</b></h1>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="No" class="slds-p-right_small" onclick={handleModalNo}>
+                        </lightning-button>
+                        <lightning-button label="Yes" variant="brand" onclick={handleModalYes}></lightning-button>
+                    </footer>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <template if:true={showIssueWithPartModal}>
+            <div class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeIssueWithPartModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h5 class="slds-text-heading_medium">Issue With Part</h5>
+                    </header>
+                    <div class="slds-modal__content">
+                        <!-- Add your Part OK modal content here -->
+                        <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+                            <lightning-record-edit-form object-api-name="ProductRequired" record-id={selectedProdReqId}>
+                                <lightning-messages></lightning-messages>
+                                <lightning-input-field field-name="BLN_FailureReason__c" onchange={onChangeFailReason}
+                                    required={failureReasonReq}></lightning-input-field>
+                                <lightning-input-field field-name="BLN_Notes__c" onchange={onChangeNotes}>
+                                </lightning-input-field>
+                                <lightning-input label="Upload/Attach File" type="file" accept={acceptedFormats}
+                                    onchange={openfileUpload}></lightning-input></br>
+                                <template if:true={showImg}>
+                                    <img src={imageUrl} alt="Thumbnail" />
+                                </template>
+                            </lightning-record-edit-form></br>
+                            <lightning-button variant="brand" label="Continue" title="Continue"
+                                onclick={handleContinueClick} class="slds-m-left_xxxx-small"></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <template if:true={showValidationPopup}>
+            <div class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeIssueWithPartModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h5 class="slds-text-heading_medium">Error</h5>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium slds-text-align_center">
+                        <strong>Failure Reason is required.</strong>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Close" variant="brand" class="slds-p-right_small"
+                            onclick={handleValidationModal}></lightning-button>
+                    </footer>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <template if:true={showModalVerifyProduct}>
+            <div class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeIssueWithPartModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h5 class="slds-text-heading_medium">Part Verification Modal</h5>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium slds-text-align_center">
+                        <!-- Add your Part OK modal content here -->
+                        <h1><b>Scan the barcode from the Product</b></h1>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <!--<lightning-button label="Incorrect Product" onclick={handleModalNo}></lightning-button>-->
+                        <lightning-button label="Verify Product" variant="brand" onclick={handleVerifyProduct}>
+                        </lightning-button>
+                    </footer>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <template if:true={showModalProdTransfer}>
+            <div class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__content slds-p-around_medium slds-text-align_center">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeIssueWithPartModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <!-- Add your Part OK modal content here -->
+                        <h1><b>Part Successfully Checked Out</b></h1>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Continue" variant="brand" onclick={handleContinueModal}>
+                        </lightning-button>
+                    </footer>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <template if:true={showModalAdditionalCheckouPart}>
+            <div class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__content slds-p-around_medium slds-text-align_center">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeIssueWithPartModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <!-- Add your Part OK modal content here -->
+                        <h1><b>Do you need an additional part to check out?</b></h1>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Yes" class="slds-p-right_small" variant="brand"
+                            onclick={handleModalYesAddCheck}></lightning-button>
+                        <lightning-button label="No" variant="brand" onclick={handleModalNoAddCheck}></lightning-button>
+                    </footer>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <!-- Spinner element -->
+        <template if:true={showSpinner}>
+            <div class="spinner-container">
+                <!-- Add your spinner component or loading animation here -->
+                <div class="slds-dual-ring"></div>
+            </div>
+        </template>
+</template>

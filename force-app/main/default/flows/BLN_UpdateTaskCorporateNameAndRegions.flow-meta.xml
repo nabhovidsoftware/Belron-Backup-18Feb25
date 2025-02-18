@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Assigning_values_to_corporate_name_and_regions</name>
+        <label>Assigning values to corporate name and regions</label>
+        <locationX>50</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_CorporatName__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getAccountRecord.Name</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_Regions__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getAccountRecord.PersonMailingCountry</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_account_record_is_not_null</name>
+        <label>Check account record is not null</label>
+        <locationX>380</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>account_record_is_not_null_check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getAccountRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_to_check_whatid</targetReference>
+            </connector>
+            <label>account record is not null check</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_case_record_is_not_null</name>
+        <label>Check case record is not null</label>
+        <locationX>611</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>case_record_is_not_null_check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getCaseRecord</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>getAccountRecord</targetReference>
+            </connector>
+            <label>case record is not null check</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_to_check_whatid</name>
+        <label>Decision to check whatid</label>
+        <locationX>182</locationX>
+        <locationY>719</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>WhatId_is_CaseId</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>CaseId</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assigning_values_to_corporate_name_and_regions</targetReference>
+            </connector>
+            <label>WhatId is CaseId</label>
+        </rules>
+    </decisions>
+    <description>This flow is used to update task corporate name and region</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CaseId</name>
+        <dataType>String</dataType>
+        <expression>IF(LEFT({!$Record.WhatId},3) == &apos;500&apos;, {!$Record.WhatId}, &apos;&apos;)</expression>
+    </formulas>
+    <interviewLabel>Update Task Corporate Name And Region {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Task Corporate Name And Regions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>getAccountRecord</name>
+        <label>getAccountRecord</label>
+        <locationX>380</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_account_record_is_not_null</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>getCaseRecord.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>getCaseRecord</name>
+        <label>getCaseRecord</label>
+        <locationX>611</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_case_record_is_not_null</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CaseId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>getCaseRecord</targetReference>
+        </connector>
+        <filterFormula>AND(NOT(ISBLANK({!$Record.WhatId})),NOT({!$Permission.BLN_BypassFlows}))</filterFormula>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

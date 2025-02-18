@@ -1,0 +1,239 @@
+<!--
+  @description       : 
+  @author            : Prajjawal Tiwari
+  @group             : B2B Team
+  @last modified on  : 11-04-2024
+  @last modified by  : Prajjawal Tiwari
+-->
+<template>
+
+    <template if:true={isLoading}>
+        <section class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </section>
+        <div class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+
+    <div class="cart-container">
+        <div class="cart-header">{label.LAD_LocationCheckCheckout_YourCart} <div class="slds-float_right">
+                <lightning-button label={buttonLabel} onclick={handleSaveButton}></lightning-button>
+            </div>
+        </div>
+        <template if:true={cartItems}>
+            <template for:each={cartItems} for:item="cartItem">
+                <div key={cartItem.Id} class="cart-item">
+                    <div class="cart-item-image">
+                        <img src={cartItem.ImageURL} alt={cartItem.ProductName} />
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">{cartItem.CartItemName}</div>
+                        <div class="cart-item-description">{cartItem.ProductDescription}</div>
+                        <div class="cart-item-price">{label.LAD_LocationCheckCheckout_Price}
+                            {cartItem.CartItemCurrencySymbol} {cartItem.ListPrice}</div>
+                        <div class="cart-item-quantity">{label.LAD_LocationCheckCheckout_Quantity} {cartItem.Quantity}
+                        </div>
+                        <br>
+                        <div class="cart-item-loc">{cartItem.LocationName}
+
+
+                        </div>
+                        <div if:true={cartItem.Addresses}>
+                            <div if:true={internalUser} class="deliverystatus">
+                                <p>{cartItem.deliveryStatus}</p>
+                                <p if:false={cartItem.isStockDisabled}>Stock : {cartItem.stockCount} </p>
+
+
+                            </div>
+                            <div if:false={internalUser}>
+                                <div if:true={buyerUser} class="deliverystatus">
+                                    <p>{cartItem.deliveryStatus}</p>
+
+                                </div>
+                            </div>
+                            <div if:true={cartItem.AvailableForDelivery}>
+
+
+
+                                <lightning-card>
+                                    <div>
+                                        <!-- Delivery Radio -->
+                                        <div class="cart-item-delivery"><span><lightning-icon class="card"
+                                                    icon-name="utility:truck" size="small"
+                                                    alternative-text="Delivery Truck"></lightning-icon>
+                                                <span>{label.LAD_LocationCheckCheckout_Delivery} </span><span
+                                                    class="delivery">{label.LAD_LocationCheckCheckout_From}
+                                                    {cartItem.deliveryDate}</span></span>
+                                            <span class="radio"><input type="radio" class="location"
+                                                    selectedaddress={cartItem.selectedAddress}
+                                                    method={label.LAD_LocationCheckCheckout_Laddaw_Delivery}
+                                                    name={cartItem.ProductId} product={cartItem.ProductId}
+                                                    value={cartItem.deliveryDate} price={cartItem.ListPrice}
+                                                    cartitemid={cartItem.Id} checked={cartItem.isDelivery}
+                                                    locationname={cartItem.LocationName} onchange={handledefaultaddress}
+                                                    disabled={cartItem.isDeliveryDisabled}>
+                                            </span>
+                                        </div>
+                                        <!--FOUK-9940 & FOUK-9941: Preferred Delivery Date if Primary -->
+                                        <div class="preferred-collection-date" if:true={cartItem.isPrimary}>
+                                            <lightning-input type="date" class="date-format-hide"
+                                                label="Preferred Delivery Date" data-id={cartItem.Id}
+                                                data-method="delivery" value={cartItem.selectedDeliveryDate}
+                                                onchange={handleDeliveryDateChange} min={cartItem.minDeliveryDate}
+                                                max={cartItem.maxDeliveryDate}
+                                                disabled={cartItem.isPrefDeliveryDisabled}></lightning-input>
+                                        </div>
+                                        <!-- Delivery Address -->
+                                        <div class="cart-item-picklist" style="display: flex">
+                                            <span class="cart-item-address">{label.LAD_LocationCheckCheckout_Address}
+                                            </span>
+                                            <span class="slds-select_container">
+                                                <select class="slds-select" name={cartItem.Id}
+                                                    method={label.LAD_LocationCheckCheckout_Laddaw_Delivery}
+                                                    product={cartItem.ProductId} price={cartItem.ListPrice}
+                                                    cartitemid={cartItem.Id} locationname={cartItem.LocationName}
+                                                    onchange={handleAddressChange} value={cartItem.selectedAddress}
+                                                    disabled={cartItem.isDeliveryDisabled}>
+                                                    <option value="">{cartItem.selectedAddress}</option>
+
+                                                    <template for:each={cartItem.Addresses} for:item="address">
+                                                        <!-- <template if:false={address.isSelected}> -->
+
+                                                        <option key={address.value} value={address.addressId}
+                                                            method={label.LAD_LocationCheckCheckout_Laddaw_Delivery}
+                                                            product={cartItem.ProductId} price={cartItem.ListPrice}
+                                                            locationname={cartItem.LocationName}
+                                                            addresslabel={address.label}>{address.label}</option>
+
+                                                        <!-- </template> -->
+
+                                                    </template>
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </lightning-card>
+                            </div>
+                        </div>
+                        <div if:false={cartItem.Addresses}>
+                            <div if:true={internalUser} class="deliverystatus">
+                                <p>{cartItem.deliveryStatus}</p>
+                                <p if:false={cartItem.isStockDisabled}>Stock : {cartItem.stockCount} </p>
+                            </div>
+                            <div if:false={internalUser}>
+                                <div if:true={buyerUser} class="deliverystatus">
+                                    <div if:true={cartItem.dateIsToday}>
+                                        <p>{cartItem.deliveryStatus}</p>
+                                    </div>
+                                    <div if:false={cartItem.dateIsToday} class="notAvailable">
+                                        <p>{cartItem.deliveryStatus}</p>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Collection Text -->
+                        <div class="cart-collect"><lightning-icon icon-name="utility:store" size="small"
+                                alternative-text="Delivery Truck"></lightning-icon>
+                            <span class="cart-item-collect">{label.LAD_LocationCheckCheckout_Collect} </span><span
+                                class="delivery">
+                                <span lwc:if={cartItem.isPrimary}>
+                                    {label.LAD_LocationCheckCheckout_From} {cartItem.deliveryDate}
+                                </span>
+                                <span lwc:elseif={internalUser}>
+                                    {label.LAD_LocationCheckCheckout_From} {cartItem.deliveryDate}
+                                </span>
+
+                            </span>
+
+                            <!-- Collection Radio  -->
+                            <span class="radio"><input type="radio" class="location" name={cartItem.ProductId}
+                                    product={cartItem.ProductId} price={cartItem.ListPrice}
+                                    data-cartitemid={cartItem.Id}
+                                    data-method={label.LAD_LocationCheckCheckout_LaddawCollection}
+                                    locationname={cartItem.LocationName} onchange={handleLocationChange}
+                                    value={cartItem.deliveryDate} checked={cartItem.isCollection}
+                                    disabled={cartItem.isCollectionDisabled}>
+                            </span>
+                        </div>
+                        <div class="collection-message" lwc:if={cartItem.isPrimary}>Please collect your goods within 7
+                            calendar days of the
+                            requested collection date otherwise your order will be cancelled.</div>
+                        <div class="collection-message" lwc:else>Please collect your goods within 7 calendar days
+                            otherwise your order will be
+                            cancelled.</div>
+                        <!--FOUK-9758 & FOUK-9759: Preferred Collection Date if Primary -->
+                        <div class="preferred-collection-date" if:true={cartItem.isPrimary}>
+                            <lightning-input type="date" class="date-format-hide" label="Preferred Collection Date"
+                                data-id={cartItem.Id} data-method="collection" value={cartItem.selectedCollectionDate}
+                                onchange={handleCollectionDateChange} min={cartItem.minCollectDate}
+                                max={cartItem.maxCollectDate}
+                                disabled={cartItem.isPrefCollectionDisabled}></lightning-input>
+                        </div>
+                        <div if:true={cartItem.eligibleForCollectionDiscount} class="collection-discount">
+                            <span class="collection-discount">
+                                <c-lad-_discountsvg></c-lad-_discountsvg>
+                                &nbsp;{label.LAD_Collectiondiscountof} {cartItem.collectionDiscountAmount}
+                                {cartItem.CartItemCurrencySymbol} {label.LAD_isavailable}
+                            </span>
+                        </div>
+                        <!-- Cart Item PO Number -->
+                        <div class="cart-item-input">
+                            <div class="additionaldetail-header">{label.LAD_LocationCheckCheckout_PO_Number} :</div>
+                            <input type="text" placeholder={label.LAD_LocationCheckCheckout_PO_Number}
+                                cartitem={cartItem.Id} class="po-number-input" onkeyup={handlePOUpdate}
+                                value={cartItem.poNumber} disabled={isPoDisabled} />
+                        </div>
+                        <!-- <div class="cart-item-location-name">{cartItem.Location}</div> -->
+                        <!-- <template if:true={cartItem.defaultAddress}>                        
+                            <div class="cart-item-default-address">Address: {cartItem.defaultAddress}</div>
+                        </template>
+                        <template for:each={cartItem.Addresses} for:item="add">
+                            <div key={add.index} class="normal-address">{add.address}</div>
+                        </template> -->
+
+                        <!-- <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_2-of-12 address-label">
+                                <label >Address:</label>
+                            </div>
+                            <div class="slds-col slds-size_10-of-12">
+                                <lightning-combobox 
+                                class="cart-item-default-address"
+                                name={cartItem.Id}
+                                value={cartItem.selectedAddress}
+                                placeholder="Select Address"
+                                options={cartItem.Addresses}    
+                                onchange={handleAddressChange}
+                                variant="label-hidden"></lightning-combobox>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </template>
+            <!-- Additional Information -->
+            <div>
+                <p class="adn-info">{label.LAD_LocationCheckCheckout_AdditionalOrderInformation}</p>
+                <!-- Cart PO Number -->
+                <div class="additionaldetail-header">{label.LAD_LocationCheckCheckout_PO_Number} :</div>
+
+                <div class="cart-item-input">
+                    <input type="text" placeholder={label.LAD_LocationCheckCheckout_PO_Number} value={cartPoNumber}
+                        disabled={isPoDisabled} class="po-number-input" onkeyup={handlePONumber} />
+                </div>
+                <!-- Cart Comments -->
+                <div class="additionaldetail-header">Comments :</div>
+
+                <div class="cart-item-input">
+                    <textarea placeholder="Comments" class="comments-textarea" disabled={isDisabled}
+                        onkeyup={handleComment}>{comment}</textarea>
+                </div>
+            </div>
+        </template>
+        <!-- <template if:true={error}>
+            <div class="slds-text-color_error">{error}</div>
+        </template> -->
+    </div>
+</template>

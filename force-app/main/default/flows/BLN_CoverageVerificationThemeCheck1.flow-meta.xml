@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Apex_action</name>
+        <label>Apex action</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <actionName>BLN_FlowExceptionLogger</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>excmessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_FlowExceptionLogger</nameSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <name>Check_Case_records_size</name>
+        <label>Check Case records size</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_more_than_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Call_Coverage_Verification_Sub_Flow</targetReference>
+            </connector>
+            <label>If more than 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Entry_Condition</name>
+        <label>Check Entry Condition</label>
+        <locationX>512</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>entry_condition_Is_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>checkEntry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Case</targetReference>
+            </connector>
+            <label>entry condition Is true</label>
+        </rules>
+    </decisions>
+    <description>FOUK-4941: This flow is created to call Coverage Verification Theme Check sub flow.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>checkEntry</name>
+        <dataType>Boolean</dataType>
+        <expression>OR( 
+OR(AND( {!$Record.RecordType.DeveloperName} = &apos;BLN_Insurance&apos;, NOT(ISBLANK({!$Record.BLN_InsuranceSite__c})),NOT(ISBLANK({!$Record.BLN_InsuranceLegalEntity__c}))), AND( {!$Record.RecordType.DeveloperName} = &apos;BLN_CorporateFleet&apos;,NOT(ISBLANK({!$Record.BLN_CorporateSite__c})),NOT(ISBLANK({!$Record.BLN_CorporateLegalEntity__c}))),AND({!$Record.RecordType.DeveloperName} = &apos;BLN_SpiltBill&apos;,NOT(ISBLANK({!$Record.BLN_InsuranceSite__c})),NOT(ISBLANK({!$Record.BLN_InsuranceLegalEntity__c})),NOT(ISBLANK({!$Record.BLN_CorporateSite__c})),NOT(ISBLANK({!$Record.BLN_CorporateLegalEntity__c})))),
+OR(AND( {!$Record.RecordType.DeveloperName} = &apos;BLN_Insurance&apos;,ISBLANK({!$Record.BLN_InsuranceSite__c}),NOT(ISBLANK({!$Record.BLN_InsuranceLegalEntity__c}))),AND({!$Record.RecordType.DeveloperName} = &apos;BLN_CorporateFleet&apos;,ISBLANK({!$Record.BLN_CorporateSite__c}),NOT(ISBLANK({!$Record.BLN_CorporateLegalEntity__c}))),AND({!$Record.RecordType.DeveloperName} = &apos;BLN_SpiltBill&apos;,ISBLANK({!$Record.BLN_InsuranceSite__c}),NOT(ISBLANK({!$Record.BLN_InsuranceLegalEntity__c})), ISBLANK({!$Record.BLN_CorporateSite__c}),NOT(ISBLANK({!$Record.BLN_CorporateLegalEntity__c})))),
+OR(AND({!$Record.RecordType.DeveloperName} = &apos;BLN_Insurance&apos;,ISBLANK({!$Record.BLN_InsuranceSite__c}),ISBLANK({!$Record.BLN_InsuranceLegalEntity__c})),AND(  {!$Record.RecordType.DeveloperName} = &apos;BLN_CorporateFleet&apos;,ISBLANK({!$Record.BLN_CorporateSite__c}),ISBLANK({!$Record.BLN_CorporateLegalEntity__c})),AND( {!$Record.RecordType.DeveloperName} = &apos;BLN_SpiltBill&apos;,ISBLANK({!$Record.BLN_InsuranceSite__c}),ISBLANK({!$Record.BLN_InsuranceLegalEntity__c}),ISBLANK({!$Record.BLN_CorporateSite__c}),ISBLANK({!$Record.BLN_CorporateLegalEntity__c})))
+)</expression>
+    </formulas>
+    <interviewLabel>Coverage Verification Theme Check 1 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Coverage Verification Theme Check 1</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Exception_record_for_Case</name>
+        <label>Exception record for Case</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Apex_action</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>BLN_CurrentUser__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_EntityName__c</field>
+            <value>
+                <stringValue>BLN_CoverageVerificationThemeCheck1</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_ErrorMessage__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_LogType__c</field>
+            <value>
+                <elementReference>$Label.BLN_ExceptionValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_MethodStep__c</field>
+            <value>
+                <elementReference>Get_Case.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_RecordIdIdentifier__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>BLN_FlowException__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Case</name>
+        <label>Get Case</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Case_records_size</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Exception_record_for_Case</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BLN_Corporate__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Job Request</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_SubType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Job Request</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>386</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Entry_Condition</targetReference>
+        </connector>
+        <filterFormula>AND(
+    NOT({!$Permission.BLN_BypassFlows}),
+    OR(
+        ISNEW(),
+        ISCHANGED({!$Record.BLN_InsuranceSite__c}),
+        ISCHANGED({!$Record.BLN_CorporateLegalEntity__c}),
+        ISCHANGED({!$Record.BLN_CorporateSite__c}),
+        ISCHANGED({!$Record.BLN_InsuranceLegalEntity__c})
+    )
+)</filterFormula>
+        <object>BLN_Corporate__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Call_Coverage_Verification_Sub_Flow</name>
+        <label>Call Coverage Verification Sub Flow</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <flowName>BLN_CoverageVerificationThemCheckSubFlow</flowName>
+        <inputAssignments>
+            <name>CaseRec</name>
+            <value>
+                <elementReference>Get_Case</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <name>CorpRec</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>caseRecords</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+    </variables>
+</Flow>

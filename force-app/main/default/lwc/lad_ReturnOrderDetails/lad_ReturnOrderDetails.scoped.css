@@ -1,0 +1,28 @@
+.parent-container {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.return-section-header {
+    font-size: large;
+    padding: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.return-detail-outer {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.return-detail-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.label {
+    font-weight: bold;
+}

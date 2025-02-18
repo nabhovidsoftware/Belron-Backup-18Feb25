@@ -1,0 +1,453 @@
+<template>
+    <!-- Knowledge Start  
+            <template if:true={articleOpen}>
+               <c-bln-_knowladge-article-links knowladgearticleobj={knowladgeArticleObj}></c-bln-_knowladge-article-links>
+             </template>
+            Knowledge End-->
+           
+    <div class="pwc-zoom">
+        <template if:true={spinnerSiwtch}>
+            <div>
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+    </template >
+        
+        <lightning-card class="slds-checkbox_button-group slds-accordian__summary-action slds-align_absolute-center ">
+            
+            <template if:true={confirmproduct}>
+                <!--code added for FOUK-5442 and FOUK-4321-->
+                <template if:true={isVapsEnabled}>
+                <template if:true={articleOpenprod}>
+                    <template if:true={isWiperEnabled}>
+                    <div style="text-align: center;">
+                    <div class="borderStyle">
+                     <div class="slds-text-heading_large slds-text-title_bold slds-border_bottom slds-p-around_medium">
+                         <lightning-flow flow-api-name={label.knowledgeArticleFlowName} flow-input-variables={inputVariables}></lightning-flow>
+                        </div>
+                       </div>
+                     </div>
+                 </template>
+                 <template if:false={isWiperEnabled}>
+                    <div style="text-align: center;">
+                    <div class="borderStyle">
+                     <div class="slds-text-heading_large slds-text-title_bold slds-border_bottom slds-p-around_medium">
+                         <lightning-flow flow-api-name={label.knowledgeArticleFlowName} flow-input-variables={inputVariables}></lightning-flow>
+                        </div>
+                       </div>
+                     </div>
+                 </template>
+                </template>
+            </template>
+            <template if:false={isVapsEnabled}>
+                <template if:true={isWiperEnabled}>
+                    <div style="text-align: center;">
+                    <div class="borderStyle">
+                     <div class="slds-text-heading_large slds-text-title_bold slds-border_bottom slds-p-around_medium">
+                         <lightning-flow flow-api-name={label.knowledgeArticleFlowName} flow-input-variables={inputVariables}></lightning-flow>
+                        </div>
+                       </div>
+                     </div>
+                 </template>
+            </template>
+           <!--code ended for FOUK-5442 and FOUK-4321-->
+                <template if:true={productTrue}>
+                    <div class="slds-grid slds-align_absolute-center insuranceTableHeader">
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 baground_color">
+                            <b>{label.select}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_6-of-12 baground_color">
+                            <b>{label.product}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 baground_color">
+                            <b>{label.quantity}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 baground_color">
+                            <b>{label.price}</b> </div>
+         </div>
+    
+                    <template for:each={productDataList} for:item="row">
+
+                        <div class="slds-grid slds-align_absolute-center insuranceTableDataHeader" key={row.partOrBundleCode}>
+                            <div
+                                class="slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 checkboxClass">
+                                <lightning-input type="checkbox-button" class="checked" variant="standard" data-optionalvalue={row.optionalAttributeValue}
+                                    value={row.partOrBundleCode} checked={row.checked} onchange={handleChangeCheck}></lightning-input>
+                                <!--checked={row.checked}-->
+
+                            </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_6-of-12 productClass"
+                                data-id="product"><b>{row.productName}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                                data-id="qty"><b>{row.quantity}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                                data-id="price"><b>{row.netPriceIncludingTax}</b> </div>
+                        </div>
+
+                    </template>
+                </template>
+
+                <!-- FOUK-3990 Disount Quote Ranges Start-->
+            <template if:false={isInsurance}>
+                <div class="slds-grid slds-align_absolute-center">
+                    <div class="slds-box slds-col  slds-align_absolute-center baground_color" style="margin-left:3rem;margin-right:2rem;margin-bottom:33px;">
+                            <b>{label.discount}</b>
+                        </div>
+                        <lightning-input 
+                        type="number" 
+                        step="0.001"
+                        min="0" 
+                        max={maxdiscount} 
+                        onchange={handleDiscountChange} 
+                        style="height:4rem;width:14rem;font-size:1rem; margin-left:-1rem;margin-right:42px;margin-bottom:24px;"  
+                        message-when-range-overflow= {label.discountError} 
+                        class="inputBoxWidth inputamount" >
+                    </lightning-input>
+                </div>
+            
+
+     <!--Discount Band Table start here-->
+            <div class="slds-grid slds-align_absolute-center slds-size_11-of-12" style="background: lightgrey;font-size: 30px;border:1px solid black;border-radius: 4px;margin-bottom: 0px;">
+                <b>{label.discountBandHeader}</b>  
+            </div>
+            <div class="slds-grid slds-align_absolute-center">
+                <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightblue;width: 62px;border-radius: 8px;margin-right: 9px;margin-left:48px;margin-top:5px;margin-bottom:0px;font-size:18px;border:1px solid black;">
+                    <b>{label.location}</b>
+                </div>
+                <template  if:true={hasPermissionCer}>
+                <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightgreen; border-radius: 8px;margin-right: 11px;margin-left: 18px;font-size:18px;border:1px solid black;width: 70px;margin-top: 16px;">
+                    <b>{label.lowOffer}</b>
+                </div>
+               <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: orange; border-radius: 8px;width: 70px;margin-right: 42px;margin-left: 9px;font-size:18px;border:1px solid black;margin-top: 16px;">
+                    <b>{label.mediumOffer}</b>
+               </div>
+                
+           </template>
+           <template   if:true={hasPermission}>
+            <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightgreen; width: 62px;border-radius: 8px;margin-right: 7px;margin-left: 15px;font-size:18px;border:1px solid black;">
+                <b>{label.lowOffer}</b>
+            </div>
+           <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: orange; width: 62px;border-radius: 8px;margin-right: 7px;margin-left: 15px;font-size:18px;border:1px solid black;">
+                <b>{label.mediumOffer}</b>
+            </div>
+            
+            <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: red; width: 62px;border-radius: 8px;margin-left: 15px;margin-right: 48px;font-size:18px;border:1px solid black;">
+                <b>{label.highOffer}</b>
+            
+            </div>
+            
+            </template>
+            </div>
+    
+           <template for:each={quoteRanges} for:item="quoteRange">
+                <div key={quoteRange.location} class="slds-grid slds-align_absolute-center">
+                    <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightgrey;width: 62px;border-radius: 9px;margin-right: 13px;margin-left:48px;margin-bottom:0px;margin-top:2px;font-size:15px;border:1px solid black;">
+                        {quoteRange.location}
+                    </div>
+                   <template  if:true={hasPermissionCer}>
+                    <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-top: 16px;;font-size:20px;border:1px solid black;width: 70px;">
+                        {quoteRange.lowOffer}
+                    </div>
+                    <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;width: 70px;margin-left:11px;margin-right:43px;margin-top: 16px;;font-size:20px;border:1px solid black;">
+                        {quoteRange.mediumOffer}
+                    </div>
+                   
+                </template>
+                <template   if:true={hasPermission}>
+                    <div  class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-right: 9px;width:62px;margin-left:15px;margin-bottom:0px;font-size:20px;border:1px solid black;">
+                        {quoteRange.lowOffer}
+                    </div>
+                    <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-left:14px;width:62px;margin-bottom:0px;font-size:20px;border:1px solid black;">
+                        {quoteRange.mediumOffer}
+                    </div>
+                    
+                    <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-right: 48px;width:62px;margin-left:15px;margin-bottom:0px;font-size:20px;border:1px solid black;">
+                        {quoteRange.highOffer}
+                    </div>
+                    
+                </template>
+                </div>
+            
+            </template>
+            <!-- dsicunt band table ends heres-->
+        </template>
+
+
+                <!-- FOUK-3990 Disount Quote Ranges End-->
+
+                <!-- Indurance ForEach Table Start-->
+                <template if:true={isInsurance}>
+                    <div class="slds-grid slds-align_absolute-center insuranceTableHeader">
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 insuranceClass">
+                            <b>{label.select}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_6-of-12 insuranceClass">
+                            <b>{label.product}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 insuranceClass">
+                            <b>{label.quantity}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 insuranceClass">
+                            <b>{label.Net}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 insuranceClass">
+                            <b>{label.Vat}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 insuranceClass">
+                            <b>{label.Total}</b> </div>
+
+                    </div>
+
+                    <template for:each={insurance} for:item="row">
+
+                        <div class="slds-grid slds-align_absolute-center insuranceTableDataHeader" key={row.partOrBundleCode}>
+                            <div
+                                class="slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 checkboxClass">
+                                <lightning-input type="checkbox-button" variant="standard" value={row.partOrBundleCode} data-isvap={row.optionalAttributeValue}
+                                    checked={row.checked} onchange={handleInsuranceCheck}></lightning-input>
+
+                            </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_6-of-12 productClass"
+                                data-id="product"><b>{row.productName}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 productClass"
+                                data-id="qty"><b>{row.quantity}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 productClass"
+                                data-id="price"><b>{row.netPrice}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 productClass"
+                                data-id="price"><b>{row.totalTax}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_1-of-12 productClass"
+                                data-id="price"><b>{row.netPriceIncludingTax}</b> </div>
+
+        </div>
+            
+            </template>
+        </template>
+                <!--Insurance Quote Ranges Start-->
+                <template if:true={isInsurance}>
+                    <div class="slds-grid slds-align_absolute-center">
+                        <div class="slds-box slds-col  slds-align_absolute-center baground_color" style="margin-left:3rem;margin-right:2rem;margin-bottom:33px;">
+                                <b>{label.discount}</b>
+                            </div>
+                            <lightning-input 
+                            type="number" 
+                            step="0.001"
+                            min="0" 
+                            max={maxdiscount} 
+                            value=""
+                            onchange={handleDiscountChange} 
+                            style="height:4rem;width:14rem;font-size:1rem; margin-left:-1rem;margin-right:42px;margin-bottom:24px;"  
+                            message-when-range-overflow= {label.discountError} 
+                            class="inputBoxWidth inputamount" 
+                             disabled={isInsuranceDisount}>
+                            
+                        </lightning-input>
+                    </div>
+                
+    
+         <!--Discount Band Table start here-->
+         <div class="slds-grid slds-align_absolute-center slds-size_11-of-12" style="background: lightgrey;font-size: 30px;border:1px solid black;border-radius: 4px;margin-bottom: 0px;">
+            <b>{label.discountBandHeader}</b>  
+        </div>
+        <div class="slds-grid slds-align_absolute-center">
+            <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightblue;width: 62px;border-radius: 8px;margin-right: 9px;margin-left:48px;margin-top:5px;margin-bottom:0px;font-size:18px;border:1px solid black;">
+                <b>{label.location}</b>
+            </div>
+            <template  if:true={hasPermissionCer}>
+            <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightgreen; border-radius: 8px;margin-right: 11px;margin-left: 18px;font-size:18px;border:1px solid black;width: 70px;margin-top: 16px;">
+                <b>{label.lowOffer}</b>
+            </div>
+           <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: orange; border-radius: 8px;margin-right: 42px;margin-left: 9px;font-size:18px;border:1px solid black;width: 70px;margin-top: 16px;">
+                <b>{label.mediumOffer}</b>
+           </div>
+            
+       </template>
+       <template   if:true={hasPermission}>
+        <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightgreen; width: 62px;border-radius: 8px;margin-right: 7px;margin-left: 15px;font-size:18px;border:1px solid black;">
+                <b>{label.lowOffer}</b>
+            </div>
+           <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: orange; width: 62px;border-radius: 8px;margin-right: 7px;margin-left: 15px;font-size:18px;border:1px solid black;">
+                <b>{label.mediumOffer}</b>
+            </div>
+            
+            <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: red; width: 62px;border-radius: 8px;margin-left: 15px;margin-right: 48px;font-size:18px;border:1px solid black;">
+                <b>{label.highOffer}</b>
+            
+            </div>
+        
+        </template>
+        </div>
+        
+        <template for:each={quoteRanges} for:item="quoteRange">
+            <div key={quoteRange.location} class="slds-grid slds-align_absolute-center">
+                <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="background-color: lightgrey;width: 62px;border-radius: 9px;margin-right: 13px;margin-left:48px;margin-bottom:0px;margin-top:2px;font-size:15px;border:1px solid black;">
+                    {quoteRange.location}
+                </div>
+               <template  if:true={hasPermissionCer}>
+                <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-top: 16px;font-size:20px;border:1px solid black;width: 70px;">
+                    {quoteRange.lowOffer}
+                </div>
+                <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;width: 70px;margin-left:11px;margin-right:43px;margin-top: 16px;font-size:20px;border:1px solid black;">
+                    {quoteRange.mediumOffer}
+                </div>
+               
+            </template>
+            <template   if:true={hasPermission}>
+                <div  class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-right: 9px;width:62px;margin-left:15px;margin-bottom:0px;font-size:20px;border:1px solid black;">
+                    {quoteRange.lowOffer}
+                </div>
+                <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-left:14px;width:62px;margin-bottom:0px;font-size:20px;border:1px solid black;">
+                    {quoteRange.mediumOffer}
+                </div>
+                
+                <div class="slds-box slds-col slds-m-around_small slds-align_absolute-center" style="border-radius: 8px;margin-right: 48px;width:62px;margin-left:15px;margin-bottom:0px;font-size:20px;border:1px solid black;">
+                    {quoteRange.highOffer}
+                </div>
+                
+            </template>
+            </div>
+        
+        </template>
+                <!-- dsicunt band table ends heres-->
+            </template>
+                <!--Insurance Quote Ranges End-->
+                <!-- Indurance ForEach Table End-->
+
+                <!--code added for 3990 
+                 <div class="slds-grid slds-align_absolute-center insuranceClassTop">
+                 <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_9-of-12 baground_color">
+                        <b>{label.discount}</b> </div>
+                
+                      <template if:false={isInsurance}>
+                           <div class="editable-field slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                            contenteditable="true" onchange={handleDiscount}><b>{discount}</b></div>  
+                        </template>  
+                   
+                        <template if:true={isInsurance}>
+
+                            <div class="editable-field slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                            contenteditable={isDiscountDisabled} onchange={handleDiscount}><b>{discount}</b></div>
+                        </template>
+                </div>  
+                code ended for 3990-->
+             
+                <!--code added for 3990 -->
+                 <!-- <div class="slds-grid slds-align_absolute-center insuranceClassTop">
+                    
+                    <template if:true={isInsurance}>
+                        <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_9-of-12 baground_color">
+                            <b>{label.discount}</b> </div>
+                        <div class="editable-field slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                            contenteditable={isDiscountDisabled} onchange={handleDiscount}><b>{discount}</b></div>
+
+                    </template>
+                  </div>   -->
+               <!-- code ended for 3990-->
+
+         <br>
+         <!-- Below discount table-->
+         <template if:true={isInsurance}>
+                    <div class="slds-grid slds-align_absolute-center insuranceTableHeader">
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_5-of-12 insuranceClass">
+                            <b>{label.Name}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 insuranceClass">
+                            <b>{label.Net}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 insuranceClass">
+                            <b>{label.Vat}</b> </div>
+
+                        <div
+                            class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 insuranceClass">
+                            <b>{label.Total}</b> </div>
+
+                    </div>
+                    <template for:each={liabilityDataList} for:item="row" for:index="index">
+
+                        <div class="slds-grid slds-align_absolute-center insuranceTableDataHeader" key={row.liabilityCategory}>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_5-of-12 productClass"
+                                data-id="product"><b>{row.liabilityCategory}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                                data-id="Net"><b>{row.totalPayable}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                                data-id="VAT"><b>{row.totalTaxPayable}</b> </div>
+
+                            <div class="slds-box slds-col slds-m-around_xx-small slds-align_absolute-center slds-size_2-of-12 productClass"
+                                data-id="Total"><b>{row.totalIncludingTaxPayable}</b> </div>
+
+        </div>
+            
+            </template>
+        </template>
+         <!-- Below discount table end-->
+         <!--Loaction Component Start-->
+
+              <!--- <template if:false={isInsurance}>
+                <div style="margin-top: -3rem;">
+                    <c-bln-_-discount-quote-range></c-bln-_-discount-quote-range>
+                </div>
+                     </template> -->
+                <template lwc:if={loadLocationDateTimeSlot}>
+                    <c-bln-_-location-date-time-slot back={backProduct} back-array={backValueArray} recordid={recordId}
+                        onsend={childValueReceive} onconfirm={confimButton} isreceivedata={trueBoolean}
+                        maindatemap={mainDateQuoteList} childslotmap={childArrayMap} sample-check={sampleCheck}
+                        weathers-true={weathersTrue} quote-details-data-list={quoteDetailsDataList}  earlist-availibility-details-list={earlistAvailibilityDetailsList} slotdatafromparent={slotDataFromChildTwo}
+                        slotstartparent={slotstfromparent} slotendparent={slotedfromparent} saidparent={saIdfromParent} onquoterangelocation={hanldeQuoteLocation} caseid={caseid} productdatalist={orderIdList} 
+                         selectedrows={selectedRows} insurancerows={insuranceRows}></c-bln-_-location-date-time-slot> <!-- weather-true={weather}-->
+                    <!--Loaction Component End-->
+                </template>
+        
+
+         <footer class="slds-modal__footer slds-m-top_small ">
+                    <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_success"
+                        onclick={handleReprise} variant="success" label={label.reprise}>
+                    </lightning-button>
+                    &nbsp; &nbsp;
+                    <lightning-button class="slds-button_neutral" variant="brand" label={label.Confirm}
+                        onclick={handleConfirm} disabled={buttonBooleanConfirm} name={label.Confirm}>
+                    </lightning-button>
+
+        <lightning-button class="slds-button_neutral align" onclick={handleCancel} name={label.cancelLabel}
+            label={label.cancelLabel}>
+        </lightning-button>
+                </footer>
+            </template>
+            <template if:true={confirmquote}>
+                <c-bln-_-quote-presentation-cmp onhideshow={handleScreenValue} location={location}
+                    early-appoitment={earlyAppoitment} weather-appoitment={weatherAppoitment} vat={vat} total={total}
+                    early-appoitment-slot={earlyAppoitmentSlot} weather-appoitment-slot={weatherAppoitmentSlot}
+                    weather-appoitment-main-date={weatherAppoitmentMainDate}
+                    early-appoitment-main-date={earlyAppoitmentMainDate} productvalue={selectedRows} discount={discount}
+                    maindatemap={maindateMap} parentarraymap={parentArrayMap} recordid={recordId} caseid={caseid} articles={showArticle}
+                    insurancevalue={insuranceRows} otherinsurance={liabilityDataList} slotdatafromparent={slotDataFromChild} slotstartparent={slotStTimeOne}
+                      slotendparent={slotEdTimeOne} said={sAId}></c-bln-_-quote-presentation-cmp>
+</template>      
+    </lightning-card>
+
+   
+   
+</div>
+</template>

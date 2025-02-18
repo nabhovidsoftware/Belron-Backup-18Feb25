@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_BWoFIssue__c</fullName>
+    <description>FOUK-3982 Used to Store Belron Way of Fitting Issue.</description>
+    <externalId>false</externalId>
+    <label>BWoF Issue</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BWOF - Step 1 Assess working environment, identify and use required PPE</fullName>
+                <default>false</default>
+                <label>BWOF - Step 1 Assess working environment, identify and use required PPE</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 2 Collect and verify parts against device or workorder</fullName>
+                <default>false</default>
+                <label>BWOF - Step 2 Collect and verify parts against device or workorder</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 3 Meet &amp; greet the customer and explain work to be done.</fullName>
+                <default>false</default>
+                <label>BWOF - Step 3 Meet &amp; greet the customer and explain work to be done.</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 4 Verify parts against the vehicle</fullName>
+                <default>false</default>
+                <label>BWOF - Step 4 Verify parts against the vehicle</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 5 Perform visual inspection with customer, inform customer of pre-existing damage</fullName>
+                <default>false</default>
+                <label>BWOF - Step 5 Perform visual inspection with customer, inform customer of pre-existing damage</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 6 Perform technical inspection, apply necessary car protection. ADAS jobs: Add battery support &amp; pre scan vehicle for pre-existing error codes</fullName>
+                <default>false</default>
+                <label>BWOF - Step 6 Perform technical inspection, apply necessary car protection. ADAS jobs: Add battery support &amp; pre scan vehicle for pre-existing error codes</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 7 Read vital information &amp; fitting Instructions</fullName>
+                <default>false</default>
+                <label>BWOF - Step 7 Read vital information &amp; fitting Instructions</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 8 Clean &amp; prepare glass, install lifting device/s</fullName>
+                <default>false</default>
+                <label>BWOF - Step 8 Clean &amp; prepare glass, install lifting device/s</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 9 Decontaminate glass</fullName>
+                <default>false</default>
+                <label>BWOF - Step 9 Decontaminate glass</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 10 Remove camera &amp; other sensors, test fit to new glass</fullName>
+                <default>false</default>
+                <label>BWOF - Step 10 Remove camera &amp; other sensors, test fit to new glass</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 11 Apply full car protection</fullName>
+                <default>false</default>
+                <label>BWOF - Step 11 Apply full car protection</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 12 Check decking height and gaps</fullName>
+                <default>false</default>
+                <label>BWOF - Step 12 Check decking height and gaps</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 13 Remove and check parts, store safely</fullName>
+                <default>false</default>
+                <label>BWOF - Step 13 Remove and check parts, store safely</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 14 Cut out &amp; remove old windscreen / windshield</fullName>
+                <default>false</default>
+                <label>BWOF - Step 14 Cut out &amp; remove old windscreen / windshield</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 15 Inspect old polyurethane &amp; determine where to apply new polyurethane</fullName>
+                <default>false</default>
+                <label>BWOF - Step 15 Inspect old polyurethane &amp; determine where to apply new polyurethane</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 16 Inspect &amp; clean pinch weld / aperture and take appropriate corrosion action</fullName>
+                <default>false</default>
+                <label>BWOF - Step 16 Inspect &amp; clean pinch weld / aperture and take appropriate corrosion action</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 17 Cut back old polyurethane to required height. Prepare bonding surfaces</fullName>
+                <default>false</default>
+                <label>BWOF - Step 17 Cut back old polyurethane to required height. Prepare bonding surfaces</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 18 Prepare bonding surfaces following adhesive system guidelines</fullName>
+                <default>false</default>
+                <label>BWOF - Step 18 Prepare bonding surfaces following adhesive system guidelines</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 19 Respect flash off times</fullName>
+                <default>false</default>
+                <label>BWOF - Step 19 Respect flash off times</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 20 Extrude new polyurethane at correct angle and speed, note minimum driveaway time</fullName>
+                <default>false</default>
+                <label>BWOF - Step 20 Extrude new polyurethane at correct angle and speed, note minimum driveaway time</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 21 Install new glass, check decking height, position &amp; gaps. Secure glass with required support.</fullName>
+                <default>false</default>
+                <label>BWOF - Step 21 Install new glass, check decking height, position &amp; gaps. Secure glass with required support.</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 22 Install removed parts &amp; check, connect camera wiring</fullName>
+                <default>false</default>
+                <label>BWOF - Step 22 Install removed parts &amp; check, connect camera wiring</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 23 Check functionality of glass features &amp; Head’s Up Display</fullName>
+                <default>false</default>
+                <label>BWOF - Step 23 Check functionality of glass features &amp; Head’s Up Display</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 24 Quality Check – respect minimum driveaway times</fullName>
+                <default>false</default>
+                <label>BWOF - Step 24 Quality Check – respect minimum driveaway times</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 25 Prepare static or dynamic recalibration: Connect battery support &amp; diagnostic control unit</fullName>
+                <default>false</default>
+                <label>BWOF - Step 25 Prepare static or dynamic recalibration: Connect battery support &amp; diagnostic control unit</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 26 Perform static, dynamic or dual recalibration, any sensor resets required &amp; complete post scan</fullName>
+                <default>false</default>
+                <label>BWOF - Step 26 Perform static, dynamic or dual recalibration, any sensor resets required &amp; complete post scan</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 27 Thoroughly vacuum affected area &amp; clean fitted glass inside and out, apply rain repellent if applicable</fullName>
+                <default>false</default>
+                <label>BWOF - Step 27 Thoroughly vacuum affected area &amp; clean fitted glass inside and out, apply rain repellent if applicable</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 28 Perform final Quality Check</fullName>
+                <default>false</default>
+                <label>BWOF - Step 28 Perform final Quality Check</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 29 Inform customer of the work you have done and care you have taken &amp; VAPS fitted</fullName>
+                <default>false</default>
+                <label>BWOF - Step 29 Inform customer of the work you have done and care you have taken &amp; VAPS fitted</label>
+            </value>
+            <value>
+                <fullName>BWOF - Step 30 Complete paperwork / complete job on device</fullName>
+                <default>false</default>
+                <label>BWOF - Step 30 Complete paperwork / complete job on device</label>
+            </value>
+            <value>
+                <fullName>Repair Process Not Followed</fullName>
+                <default>false</default>
+                <label>Repair Process Not Followed</label>
+            </value>
+            <value>
+                <fullName>No Fault Found</fullName>
+                <default>false</default>
+                <label>No Fault Found</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

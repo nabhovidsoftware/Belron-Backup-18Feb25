@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CaseSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAutoProcUser>false</caseAutoProcUser>
+    <caseFeedItemSettings>
+        <characterLimit>400</characterLimit>
+        <displayFormat>Default</displayFormat>
+        <feedItemType>EmailMessageEvent</feedItemType>
+    </caseFeedItemSettings>
+    <caseFeedReadUnreadLtng>false</caseFeedReadUnreadLtng>
+    <caseMergeInLightning>true</caseMergeInLightning>
+    <closeCaseThroughStatusChange>true</closeCaseThroughStatusChange>
+    <defaultCaseFeedLayoutOn>false</defaultCaseFeedLayoutOn>
+    <defaultCaseOwner>service.b9eywp0neawb@example.com</defaultCaseOwner>
+    <defaultCaseOwnerType>User</defaultCaseOwnerType>
+    <emailToCase>
+        <enableE2CAttachmentAsFile>true</enableE2CAttachmentAsFile>
+        <enableE2CDeduplicateAttachments>false</enableE2CDeduplicateAttachments>
+        <enableE2CExternalServer>true</enableE2CExternalServer>
+        <enableE2CSourceTracking>true</enableE2CSourceTracking>
+        <enableEmailToCase>true</enableEmailToCase>
+        <enableHtmlEmail>true</enableHtmlEmail>
+        <enableNewToReadTriggers>false</enableNewToReadTriggers>
+        <enableOnDemandEmailToCase>true</enableOnDemandEmailToCase>
+        <enableThreadTokenInBody>false</enableThreadTokenInBody>
+        <enableThreadTokenInSubject>false</enableThreadTokenInSubject>
+        <notifyOwnerOnNewCaseEmail>true</notifyOwnerOnNewCaseEmail>
+        <overEmailLimitAction>Bounce</overEmailLimitAction>
+        <preQuoteSignature>false</preQuoteSignature>
+        <replyWithNewContentOnly>false</replyWithNewContentOnly>
+        <routingAddresses>
+            <addressType>EmailToCase</addressType>
+            <authorizedSenders>greenlightcx.co.uk,
+cinch.co.uk,
+fmg.co.uk,
+uk.rsagroup.com2,
+europcar.com,
+westonrecoveryservices.com,
+rac.co.uk,
+fixauto.co.uk,
+motabilityoperations.co.uk,
+sytner.co.uk,
+aol.com,
+thetonkingroup.co.uk,
+apex-rms.com,
+activate-group.com,
+motorrepairnetwork.com,
+lamclaims.co.uk,
+rexel.co.uk,
+aldautomotive.com,
+policyexpert.co.uk,
+kinto-uk.com,
+leaseplan.com,
+wabtec.com,
+heidelberg.com,
+fulcrum-automotive.co.uk,
+arval.co.uk,
+rivusgroup.co.uk,
+airproducts.com,
+mdelfleetmanagement.co.uk,
+pendragon.uk.com,
+vwfs.co.uk,
+thomsonbros.co.uk,
+olympusglobal.co.uk,
+lindt.com,
+daysrental.co.uk,
+hendy-group.com,
+go-red.co.uk,
+lexautolease.co.uk,
+skechers.com,
+northumbria-healthcare.nhs.uk,
+arval.it,
+kantar.com,
+ukpowernetworks.co.uk,
+kingsely.org,
+laddaw.co.uk,
+lighteninglogistics.co.uk,
+agrovista.co.uk,
+vwfs.mail.onmicrosoft.com,
+itfleet.co.uk,
+carshop.co.uk,
+aldautomotive.com,
+motabilityoperations.co.uk,
+bca.com,
+bdelite.co.uk,
+v12sports.co.uk,
+jurassic-fibre.com,
+carbase.co.uk,
+cinch.co.uk,
+fulcrum-automotive.co.uk,
+rivusgroup.co.uk,
+glendale-services.co.uk,
+g3r.co.uk,
+astonbarclay.net,
+assistprotect.co.uk,
+fleetauctiongroup.com,
+sytner.mail.onmicrosoft.com,
+hadleighclaims.co.uk,
+openreach.co.uk,
+tugraz.at,
+justparts.app,
+linaker.com,
+vinciconstruction.co.uk,
+avis.co.uk,
+levc@autoglass.co.uk,
+rivusgroup.co.uk,
+bruntingthorpe.com,
+coxautoinc.com,
+ramplimited.co.uk,
+fclg.co.uk,
+fmg.co.uk,
+fwdkim1.fclg.co.uk,
+eu-west-1.amazonses.com,
+ehi.com,
+rac.co.uk,
+vehicle-vision.co.uk,
+em291.entegral.com,
+snapon.com,
+europcar.com,
+eu-west-1.amazonses.com,
+hertz.com,
+workflow.mail.us2.cloud.oracle.com,
+bunzl.co.uk,
+guardsmanltd.co.uk,
+factory1st.co.uk,
+madebyclassic.co.uk,
+rac.co.uk,
+alphabet.co.uk,
+fulcrum-automotive.co.uk,
+go-red.co.uk,
+eu-west-1.amazonses.com,
+doclist.bounces.google.com,
+cazoo.co.uk,
+alphabet.co.uk,
+bmwgroup.com,
+autoglass.ie,
+belronuk.com,</authorizedSenders>
+            <caseOrigin>Email</caseOrigin>
+            <caseOwner>BLN_BVT</caseOwner>
+            <caseOwnerType>Queue</caseOwnerType>
+            <casePriority>Medium</casePriority>
+            <createTask>false</createTask>
+            <emailAddress>servicecloudtest@belronuk.com</emailAddress>
+            <emailServicesAddress>servicecloudtest@2h5h7bbe5q063v89lan72coqx8i9s38gipvs9lq8zjhcp4rzf.7e-aknkuas.cs86.case.sandbox.salesforce.com</emailServicesAddress>
+            <isVerified>true</isVerified>
+            <routingName>BLN_TFL</routingName>
+            <saveEmailHeaders>false</saveEmailHeaders>
+        </routingAddresses>
+        <unauthorizedSenderAction>Discard</unauthorizedSenderAction>
+    </emailToCase>
+    <enableCaseFeed>true</enableCaseFeed>
+    <enableCaseSwarming>false</enableCaseSwarming>
+    <enableCollapseEmailThread>true</enableCollapseEmailThread>
+    <enableDraftEmails>true</enableDraftEmails>
+    <enableEarlyEscalationRuleTriggers>false</enableEarlyEscalationRuleTriggers>
+    <enableEmailActionDefaultsHandler>false</enableEmailActionDefaultsHandler>
+    <enableEscalateQfiToCaseInternal>false</enableEscalateQfiToCaseInternal>
+    <enableEscalateQfiToCaseNetworks>false</enableEscalateQfiToCaseNetworks>
+    <enableMultiLangSolnSrchCSS>false</enableMultiLangSolnSrchCSS>
+    <enableMultiLangSolnSrchPKB>false</enableMultiLangSolnSrchPKB>
+    <enableMultiLangSolution>false</enableMultiLangSolution>
+    <enableSolutionCategory>false</enableSolutionCategory>
+    <enableSolutionInlineCategory>true</enableSolutionInlineCategory>
+    <enableSolutionShortSummary>true</enableSolutionShortSummary>
+    <enableSuggestedArticlesApplication>false</enableSuggestedArticlesApplication>
+    <enableSuggestedArticlesCustomerPortal>false</enableSuggestedArticlesCustomerPortal>
+    <enableSuggestedArticlesPartnerPortal>false</enableSuggestedArticlesPartnerPortal>
+    <enableSuggestedSolutions>true</enableSuggestedSolutions>
+    <escalateCaseBefore>false</escalateCaseBefore>
+    <keepCaseMergeRecords>true</keepCaseMergeRecords>
+    <keepRecordTypeOnAssignmentRule>true</keepRecordTypeOnAssignmentRule>
+    <notifyContactOnCaseComment>false</notifyContactOnCaseComment>
+    <notifyDefaultCaseOwner>false</notifyDefaultCaseOwner>
+    <notifyOwnerOnCaseComment>false</notifyOwnerOnCaseComment>
+    <notifyOwnerOnCaseOwnerChange>false</notifyOwnerOnCaseOwnerChange>
+    <showEmailAttachmentsInCaseAttachmentsRL>true</showEmailAttachmentsInCaseAttachmentsRL>
+    <showFewerCloseActions>false</showFewerCloseActions>
+    <systemUserEmail>noreply@00d090000083qbheau</systemUserEmail>
+    <useSystemEmailAddress>true</useSystemEmailAddress>
+    <useSystemUserAsDefaultCaseUser>true</useSystemUserAsDefaultCaseUser>
+    <visibleInCssCheckbox>false</visibleInCssCheckbox>
+    <webToCase>
+        <caseOrigin>E-Ticket Online</caseOrigin>
+        <defaultResponseTemplate>unfiled$public/BLN_CaseEmailTemplate</defaultResponseTemplate>
+        <enableWebToCase>true</enableWebToCase>
+    </webToCase>
+</CaseSettings>

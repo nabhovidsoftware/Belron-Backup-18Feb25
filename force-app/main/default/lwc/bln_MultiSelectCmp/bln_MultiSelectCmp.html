@@ -1,0 +1,29 @@
+<template>
+    <template if:true={label}>
+        <label class="slds-form-element__label">{label}</label>
+    </template>
+    <div class="slds-combobox_container">
+        <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="true" aria-haspopup="listbox" role="combobox" >
+            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                <lightning-input disabled={disabled} class="inputBox" placeholder="Enter Minimum 2 character And Press Enter" onkeyup={filterOptions} value={searchString} auto-complete="off" variant="label-hidden" id="combobox-id-1" ></lightning-input>
+            </div>
+        </div>
+    </div>
+    <template for:each={optionData} for:item="option">
+            <lightning-pill key={option.value} data-id="pillId" class="slds-m-around_xx-small" name={option.value} label={option.labelWithOperation} onremove={closePill}></lightning-pill>
+    </template>
+    <div dir="rtl">
+        <div class="slds-form-element" if:false={disabled}>
+            <label class="slds-checkbox_toggle slds-grid">
+              <span class="slds-form-element__label slds-m-bottom_none"></span>
+              <input type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" onchange={handleToggle} />
+              <span id="checkbox-toggle-16" class="slds-checkbox_faux_container">
+                <span class="slds-checkbox_faux"></span>
+                <span class="slds-checkbox_on">Search By Contains</span>
+                <span class="slds-checkbox_off">Search By Begins with</span>
+              </span>
+            </label>
+        </div>
+    </div>
+    
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Person Account Type --></label>
+    <name>BLN_PersonAccountType__c</name>
+    <picklistValues>
+        <masterLabel>MOTORIST</masterLabel>
+        <translation><!-- MOTORIST --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>POLICYHOLDER</masterLabel>
+        <translation><!-- POLICYHOLDER --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

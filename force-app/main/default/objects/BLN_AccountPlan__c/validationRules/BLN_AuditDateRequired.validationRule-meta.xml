@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AuditDateRequired</fullName>
+    <active>true</active>
+    <description>FOUK-5318.This is the Description of validation rule for Audit Date.</description>
+    <errorConditionFormula>AND(
+  NOT($Permission.BLN_BypassValidationRules),
+  RecordType.Name = &quot;Account Audit&quot;,
+  NOT(ISPICKVAL(BLN_AuditType__c, &quot;&quot;)),
+  ISBLANK(BLN_AuditDate__c) 
+)</errorConditionFormula>
+    <errorDisplayField>BLN_AuditDate__c</errorDisplayField>
+    <errorMessage>Audit Date required when Audit Type has populated</errorMessage>
+</ValidationRule>

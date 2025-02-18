@@ -1,0 +1,8 @@
+:host {
+    display: flex;
+    flex-flow: wrap;
+    width: min-content;
+}
+c-lad_product-quantity-selector-popover{
+    padding-bottom: 5px;
+}

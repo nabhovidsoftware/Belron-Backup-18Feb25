@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Sales Contact MDM Sync --></label>
+        <name>BLN_SalesContactMDMSync</name>
+    </fieldSets>
+    <recordTypes>
+        <description><!-- B2b portal app --></description>
+        <label><!-- B2B Contact --></label>
+        <name>BLN_B2BContact</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid phone number containing only numerical digits, with prefix 44 (which replaces the starting 0) and without any special characters. --></errorMessage>
+        <name>BLN_ContactPhoneNumberRule</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

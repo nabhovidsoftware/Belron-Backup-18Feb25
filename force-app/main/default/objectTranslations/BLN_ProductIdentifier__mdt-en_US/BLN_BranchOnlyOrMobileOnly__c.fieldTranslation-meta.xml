@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Branch Only / Mobile Only --></label>
+    <name>BLN_BranchOnlyOrMobileOnly__c</name>
+    <picklistValues>
+        <masterLabel>Branch Only Product</masterLabel>
+        <translation><!-- Branch Only Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mobile Only Product</masterLabel>
+        <translation><!-- Mobile Only Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation><!-- None --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

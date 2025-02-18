@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Task Sub Type --></label>
+    <name>BLN_TaskSubjectType__c</name>
+    <picklistValues>
+        <masterLabel>8 Week Holding letter</masterLabel>
+        <translation><!-- 8 Week Holding letter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assigned Direct to BVT</masterLabel>
+        <translation><!-- Assigned Direct to BVT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Authorisation Required - Amount</masterLabel>
+        <translation><!-- Authorisation Required - Amount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Authorisation Required - OE</masterLabel>
+        <translation><!-- Authorisation Required - OE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Authorisation Required - Sunroof</masterLabel>
+        <translation><!-- Authorisation Required - Sunroof --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting IBT</masterLabel>
+        <translation><!-- Awaiting IBT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting Instruction to Purchase</masterLabel>
+        <translation><!-- Awaiting Instruction to Purchase --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BVT</masterLabel>
+        <translation><!-- BVT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Backorder request with Supplier</masterLabel>
+        <translation><!-- Backorder request with Supplier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Backordered</masterLabel>
+        <translation><!-- Backordered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CPT Line Cancelled</masterLabel>
+        <translation><!-- CPT Line Cancelled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CPT Promise Date later than Appointment Date</masterLabel>
+        <translation><!-- CPT Promise Date later than Appointment Date --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cover in dispute</masterLabel>
+        <translation><!-- Cover in dispute --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit Hold</masterLabel>
+        <translation><!-- Credit Hold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Data Collect</masterLabel>
+        <translation><!-- Data Collect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Email</masterLabel>
+        <translation><!-- Email --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed Refund</masterLabel>
+        <translation><!-- Failed Refund --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass Available Internally - please order</masterLabel>
+        <translation><!-- Glass Available Internally - please order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass Ordered Externally - ETA in Job Notes</masterLabel>
+        <translation><!-- Glass Ordered Externally - ETA in Job Notes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Goodwill Gesture</masterLabel>
+        <translation><!-- Goodwill Gesture --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hire Car Request</masterLabel>
+        <translation><!-- Hire Car Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ISP Approval Required</masterLabel>
+        <translation><!-- ISP Approval Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Issue</masterLabel>
+        <translation><!-- Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Letter</masterLabel>
+        <translation><!-- Letter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Liability disputed by insured</masterLabel>
+        <translation><!-- Liability disputed by insured --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Missing Insurance/Account data fields</masterLabel>
+        <translation><!-- Missing Insurance/Account data fields --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Internal Stock - Clips &amp; Trims</masterLabel>
+        <translation><!-- No Internal Stock - Clips &amp; Trims --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Internal Stock - Glass</masterLabel>
+        <translation><!-- No Internal Stock - Glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Stock</masterLabel>
+        <translation><!-- No Stock --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Requested</masterLabel>
+        <translation><!-- Not Requested --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Request - Price &amp; Availability Required</masterLabel>
+        <translation><!-- OE Request - Price &amp; Availability Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Request - Purchase Authorised</masterLabel>
+        <translation><!-- OE Request - Purchase Authorised --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Order Number required</masterLabel>
+        <translation><!-- Order Number required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Phone call</masterLabel>
+        <translation><!-- Phone call --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pricing Exception</masterLabel>
+        <translation><!-- Pricing Exception --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Obsolete</masterLabel>
+        <translation><!-- Product Obsolete --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Declined by Customer</masterLabel>
+        <translation><!-- Recalibration Declined by Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Failed</masterLabel>
+        <translation><!-- Recalibration Failed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Not Completed - Dealer Recalibration Only</masterLabel>
+        <translation><!-- Recalibration Not Completed - Dealer Recalibration Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recovery Request</masterLabel>
+        <translation><!-- Recovery Request --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SRC Letter</masterLabel>
+        <translation><!-- SRC Letter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Send Quote</masterLabel>
+        <translation><!-- Send Quote --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stock Exception</masterLabel>
+        <translation><!-- Stock Exception --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stock Request Failure</masterLabel>
+        <translation><!-- Stock Request Failure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Third Party Repair</masterLabel>
+        <translation><!-- Third Party Repair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trade Account Issues</masterLabel>
+        <translation><!-- Trade Account Issues --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urgent - More information Required</masterLabel>
+        <translation><!-- Urgent - More information Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VAT in Dispute</masterLabel>
+        <translation><!-- VAT in Dispute --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

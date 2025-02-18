@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Rebook Sub-Reason --></label>
+    <name>BLN_SubReason__c</name>
+    <picklistValues>
+        <masterLabel>Additional Part Required</masterLabel>
+        <translation><!-- Additional Part Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aftermarket Part Refused - OE Required</masterLabel>
+        <translation><!-- Aftermarket Part Refused - OE Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Body Rust Prevented Work</masterLabel>
+        <translation><!-- Body Rust Prevented Work --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Car Too Damaged To Carry Out Work</masterLabel>
+        <translation><!-- Car Too Damaged To Carry Out Work --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cust Unavailable/Cancelled</masterLabel>
+        <translation><!-- Cust Unavailable/Cancelled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Concern, Repair Cracking Off</masterLabel>
+        <translation><!-- Customer Concern, Repair Cracking Off --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer In day Cancellation</masterLabel>
+        <translation><!-- Customer In day Cancellation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Initiated Location Change</masterLabel>
+        <translation><!-- Customer Initiated Location Change --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer No Show</masterLabel>
+        <translation><!-- Customer No Show --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Unable to Pay</masterLabel>
+        <translation><!-- Customer Unable to Pay --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Duplicate Work Order</masterLabel>
+        <translation><!-- Duplicate Work Order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>External Purchase Delayed</masterLabel>
+        <translation><!-- External Purchase Delayed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass Damaged</masterLabel>
+        <translation><!-- Glass Damaged --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Job Already Completed</masterLabel>
+        <translation><!-- Job Already Completed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lack of Capacity/Overbooked</masterLabel>
+        <translation><!-- Lack of Capacity/Overbooked --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Location Not suitable</masterLabel>
+        <translation><!-- Location Not suitable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Location of Repair on W/S</masterLabel>
+        <translation><!-- Location of Repair on W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufacture Defect</masterLabel>
+        <translation><!-- Manufacture Defect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mislabelled/Incorrect Part Delivered</masterLabel>
+        <translation><!-- Mislabelled/Incorrect Part Delivered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multiple Impact on W/S</masterLabel>
+        <translation><!-- Multiple Impact on W/S --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Covered</masterLabel>
+        <translation><!-- Not Covered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Part Lost/Damaged - Retail</masterLabel>
+        <translation><!-- Part Lost/Damaged - Retail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Part Lost/Damaged - Supply Chain</masterLabel>
+        <translation><!-- Part Lost/Damaged - Supply Chain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Part Not Delivered - Delayed/Backordered</masterLabel>
+        <translation><!-- Part Not Delivered - Delayed/Backordered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parts Damaged</masterLabel>
+        <translation><!-- Parts Damaged --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending Coverage Validation</masterLabel>
+        <translation><!-- Pending Coverage Validation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</masterLabel>
+        <translation><!-- Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pre/Post Scan Error</masterLabel>
+        <translation><!-- Pre/Post Scan Error --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair Cracked Off</masterLabel>
+        <translation><!-- Repair Cracked Off --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair Done Before</masterLabel>
+        <translation><!-- Repair Done Before --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair Too Large After Completion</masterLabel>
+        <translation><!-- Repair Too Large After Completion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair too Small/No Damage</masterLabel>
+        <translation><!-- Repair too Small/No Damage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Absent</masterLabel>
+        <translation><!-- Technician Absent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Doesn&apos;t Have Correct Skill/ Equipment</masterLabel>
+        <translation><!-- Technician Doesn&apos;t Have Correct Skill/ Equipment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Missed Appt Time/Mobile Only</masterLabel>
+        <translation><!-- Technician Missed Appt Time/Mobile Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Van Issues/Breakdown</masterLabel>
+        <translation><!-- Technician Van Issues/Breakdown --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Too Close to ADAS Camera</masterLabel>
+        <translation><!-- Too Close to ADAS Camera --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Too Large to Repair</masterLabel>
+        <translation><!-- Too Large to Repair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tool Availability/Issue</masterLabel>
+        <translation><!-- Tool Availability/Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Total Availability Issue</masterLabel>
+        <translation><!-- Total Availability Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Traffic/Unable to Drive</masterLabel>
+        <translation><!-- Traffic/Unable to Drive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unable to Recalibrate As Vehicle Not in Factory Condition</masterLabel>
+        <translation><!-- Unable to Recalibrate As Vehicle Not in Factory Condition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unable to Recalibrate Due to Weather</masterLabel>
+        <translation><!-- Unable to Recalibrate Due to Weather --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vehicle Still in Garage/Not Delivered</masterLabel>
+        <translation><!-- Vehicle Still in Garage/Not Delivered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vehicle Unavailable</masterLabel>
+        <translation><!-- Vehicle Unavailable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vehicle Won’t Start/Broken Down/Insufficient Charge</masterLabel>
+        <translation><!-- Vehicle Won’t Start/Broken Down/Insufficient Charge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wrong Part Ordered</masterLabel>
+        <translation><!-- Wrong Part Ordered --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>United Kingdom</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>BLN_AllowVirtualTech__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>BLN_ArrivalStartTimeAdjustmentInMinutes__c</field>
+        <value xsi:type="xsd:double">30.0</value>
+    </values>
+    <values>
+        <field>BLN_BusinessUnit__c</field>
+        <value xsi:type="xsd:string">United Kingdom</value>
+    </values>
+    <values>
+        <field>BLN_HorizonInHours__c</field>
+        <value xsi:type="xsd:double">48.0</value>
+    </values>
+    <values>
+        <field>BLN_MaxPlnDurationInMins__c</field>
+        <value xsi:type="xsd:double">180.0</value>
+    </values>
+    <values>
+        <field>BLN_MaxSchDurationInMins__c</field>
+        <value xsi:type="xsd:double">180.0</value>
+    </values>
+    <values>
+        <field>BLN_RoundedDurationInMinutes__c</field>
+        <value xsi:type="xsd:double">15.0</value>
+    </values>
+    <values>
+        <field>BLN_ShorteningWindowInMinutes__c</field>
+        <value xsi:type="xsd:double">180.0</value>
+    </values>
+</CustomMetadata>

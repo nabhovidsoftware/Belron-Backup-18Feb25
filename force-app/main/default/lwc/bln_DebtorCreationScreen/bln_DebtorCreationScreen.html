@@ -1,0 +1,42 @@
+<template>
+    <lightning-card class="slds-align_absolute-center ">
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="1"></lightning-layout-item>
+        <lightning-layout-item size="12">
+            <button class="slds-button slds-button_success buttonStyle">{label.ScreenHeader}</button>
+        </lightning-layout-item>
+        <lightning-layout-item size="1"></lightning-layout-item>
+    </lightning-layout><br/> 
+
+    <lightning-layout>
+        <lightning-layout-item size="1"></lightning-layout-item>
+         <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth" for={label.WaivedReceiptReason}><strong>{label.WaivedReceiptReason}</strong><abbr class="slds-required" title="required">*</abbr></label></lightning-layout-item>
+         <lightning-layout-item size="7">
+            <lightning-combobox name={label.BLN_DebtorReason} value={reason}  options={options} onchange={handleReason} class="inputBoxWidth topMargin" variant="label-hidden" label={label.WaivedReceiptReason} required></lightning-combobox>
+    </lightning-layout-item>
+        <lightning-layout-item size="2"></lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout>
+        <lightning-layout-item size="1"></lightning-layout-item>
+        <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"><strong>{label.DebtorInitiatedBy}</strong></label></lightning-layout-item>
+        <lightning-layout-item size="7">
+           <lightning-input name={label.DebtorInitiatedBy} value={userName}  read-only class="inputBoxWidth"></lightning-input>
+    </lightning-layout-item>
+       <lightning-layout-item size="2"></lightning-layout-item>
+    </lightning-layout>
+    <br/>
+
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="1"></lightning-layout-item>
+        <lightning-layout-item size="2" ><lightning-button class="backButtonWidth slds-m-right_xx-large" variant="neutral" label={label.Back}
+            onclick={handleBackButton} name={label.Back}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item size="4"></lightning-layout-item>
+        <lightning-layout-item size="4">
+        <lightning-button class="nameButton adjustAlign" label={label.Confirm} variant="brand" name={label.Confirm} onclick={updateCaseFields} disabled={disableFlag}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item size="1"></lightning-layout-item>
+    </lightning-layout><br/>
+</lightning-card>
+</template>

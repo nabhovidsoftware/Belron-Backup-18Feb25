@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_RelationshipHealthIndicator__c</fullName>
+    <description>FOUK-4871. This field is the reference of Relationship Health Indicator</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(BLN_RelationshipHealth__c,&quot;Good&quot;), IMAGE(&apos;/resource/BLN_Good&apos;,&apos;BLN_Good&apos;,30,30),
+
+IF(ISPICKVAL(BLN_RelationshipHealth__c, &quot;Average&quot;),IMAGE(&apos;/resource/BLN_Average&apos;,&apos;BLN_Average&apos;,30,30),
+
+IF (ISPICKVAL(BLN_RelationshipHealth__c, &quot;Desired Contact&quot;), IMAGE(&apos;/resource/BLN_DesiredContact&apos;,&apos;BLN_DesiredContact&apos;,30,30),
+
+IF (ISPICKVAL(BLN_RelationshipHealth__c, &quot;Poor&quot;), IMAGE(&apos;/resource/BLN_Poor&apos;,&apos;BLN_Poor&apos;,30,30),
+
+
+IMAGE(&quot; &quot;, &quot; &quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Relationship Health Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

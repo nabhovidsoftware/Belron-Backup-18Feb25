@@ -1,0 +1,42 @@
+.verticalAlign {
+	cursor: pointer;
+    padding: 0px 5px !important;
+}
+.slds-dropdown {
+    padding:0px !important;
+}
+.slds-dropdown-trigger .slds-dropdown {
+    top: 93%;
+}
+.recordListBox {
+	margin-top:0px !important;
+	overflow-y: scroll;
+}
+.slds-listbox li {
+    padding: .45rem 0.7rem !important;
+    display: flex;
+}
+.inputBox input {
+	padding-left: 10px;
+}
+.eachItem:hover {
+    background-color: #F1F1F1;
+    cursor: pointer;
+}
+ 
+/* For Scrolling */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+   display: none !important;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
+}
+
+.THIS .slds-pill__remove {
+    display: none !important;
+}

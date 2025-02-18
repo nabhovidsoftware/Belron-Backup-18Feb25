@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>BLN_Type__c</name>
+    <picklistValues>
+        <masterLabel>BODY GLASS</masterLabel>
+        <translation><!-- BODY GLASS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHARGES</masterLabel>
+        <translation><!-- CHARGES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DYNAMIC</masterLabel>
+        <translation><!-- DYNAMIC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EXCLUDE FOR APPOINTMENT</masterLabel>
+        <translation><!-- EXCLUDE FOR APPOINTMENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HIDE ON UI</masterLabel>
+        <translation><!-- HIDE ON UI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRIME</masterLabel>
+        <translation><!-- PRIME --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>REPAIR</masterLabel>
+        <translation><!-- REPAIR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SPECIALIST CALIBRATION REQUIRED</masterLabel>
+        <translation><!-- SPECIALIST CALIBRATION REQUIRED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STATIC</masterLabel>
+        <translation><!-- STATIC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STATIC &amp; DYNAMIC</masterLabel>
+        <translation><!-- STATIC &amp; DYNAMIC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VAPS</masterLabel>
+        <translation><!-- VAPS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WINDSCREEN</masterLabel>
+        <translation><!-- WINDSCREEN --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

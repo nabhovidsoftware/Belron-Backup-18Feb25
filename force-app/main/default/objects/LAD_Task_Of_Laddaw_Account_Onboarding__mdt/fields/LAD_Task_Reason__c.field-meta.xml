@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Task_Reason__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Task Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Initial Account data verification</fullName>
+                <default>true</default>
+                <label>Initial Account data verification</label>
+            </value>
+            <value>
+                <fullName>New Account allocation</fullName>
+                <default>false</default>
+                <label>New Account allocation</label>
+            </value>
+            <value>
+                <fullName>Commercial Setup</fullName>
+                <default>false</default>
+                <label>Commercial Setup</label>
+            </value>
+            <value>
+                <fullName>Buyer Account approval</fullName>
+                <default>false</default>
+                <label>Buyer Account approval</label>
+            </value>
+            <value>
+                <fullName>Post enablement actions</fullName>
+                <default>false</default>
+                <label>Post enablement actions</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

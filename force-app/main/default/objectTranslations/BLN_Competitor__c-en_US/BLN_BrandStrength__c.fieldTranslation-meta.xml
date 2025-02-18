@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Brand Strength --></label>
+    <name>BLN_BrandStrength__c</name>
+    <picklistValues>
+        <masterLabel>Awareness</masterLabel>
+        <translation><!-- Awareness --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consideration</masterLabel>
+        <translation><!-- Consideration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Preference</masterLabel>
+        <translation><!-- Preference --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Top of mind</masterLabel>
+        <translation><!-- Top of mind --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

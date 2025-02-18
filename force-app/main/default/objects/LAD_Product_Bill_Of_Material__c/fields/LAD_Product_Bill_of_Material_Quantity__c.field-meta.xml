@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Product_Bill_of_Material_Quantity__c</fullName>
+    <description>FOUK-7848: Created for BOM records for Associated Products</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Suggested Quantity for Associated Product</inlineHelpText>
+    <label>Product Bill of Material Quantity</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

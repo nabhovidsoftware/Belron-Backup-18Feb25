@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ShowToCustomer__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FOUK-7055 This field is to confirm if corresponding file entry needs to be displayed to customer on portal or not</description>
+    <externalId>false</externalId>
+    <label>Show To Customer</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

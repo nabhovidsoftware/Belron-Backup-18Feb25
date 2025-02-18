@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>BLN_CloneOrderRecords_Action</name>
+        <label>BLN_CloneOrderRecords Action</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <actionName>BLN_CloneOrderRecords</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>orderList</name>
+            <value>
+                <elementReference>orderIDs</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_CloneOrderRecords</nameSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assignment_1</name>
+        <label>Collect ID from Fetched Orders</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>orderIDs</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Orders.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>BLN_CloneOrderRecords_Action</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Decision_1</name>
+        <label>Check If Order Records null or not</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>OrderRecordsFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Orders</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_1</targetReference>
+            </connector>
+            <label>Order Records Found</label>
+        </rules>
+    </decisions>
+    <description>FOUK-8101 Flow to check if case status is Open and priorly it was Closed-Completed then Order records are processed accordingly</description>
+    <environments>Default</environments>
+    <interviewLabel>Case Update Order Status On Reopen {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case Update Order Status On Reopen</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Orders</name>
+        <label>Get Orders</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BLN_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Invoiced</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Order</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Orders</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Permission.BLN_BypassFlows}),
+ISPICKVAL({!$Record__Prior.Status}, &apos;Closed-Completed&apos;),
+ISPICKVAL({!$Record.Status}, &apos;Open&apos;),
+{!$Record.RecordType.DeveloperName}=&apos;BLN_JobRequest&apos;
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>orderIDs</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

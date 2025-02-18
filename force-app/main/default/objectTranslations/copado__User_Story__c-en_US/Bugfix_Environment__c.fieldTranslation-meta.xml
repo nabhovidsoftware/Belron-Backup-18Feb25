@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Bugfix Environment --></label>
+    <name>Bugfix_Environment__c</name>
+    <picklistValues>
+        <masterLabel>AC Defect</masterLabel>
+        <translation><!-- AC Defect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Defect</masterLabel>
+        <translation><!-- New Defect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Story</masterLabel>
+        <translation><!-- New Story --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SIT-Hotfix Clone</masterLabel>
+        <translation><!-- SIT-Hotfix Clone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SIT-Hotfix Main</masterLabel>
+        <translation><!-- SIT-Hotfix Main --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

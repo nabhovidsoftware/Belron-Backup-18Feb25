@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Fail SubReason --></label>
+    <name>BLN_FailSubReason__c</name>
+    <picklistValues>
+        <masterLabel>Additional Part Required</masterLabel>
+        <translation><!-- Additional Part Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aftermarket Part Refused - OE Required</masterLabel>
+        <translation><!-- Aftermarket Part Refused - OE Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cust Unavailable/Cancelled</masterLabel>
+        <translation><!-- Cust Unavailable/Cancelled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Concern, Repair Cracking Off</masterLabel>
+        <translation><!-- Customer Concern, Repair Cracking Off --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer In day Cancellation</masterLabel>
+        <translation><!-- Customer In day Cancellation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer No Show</masterLabel>
+        <translation><!-- Customer No Show --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>External Purchase Delayed</masterLabel>
+        <translation><!-- External Purchase Delayed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass Damaged</masterLabel>
+        <translation><!-- Glass Damaged --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lack of Capacity/Overbooked</masterLabel>
+        <translation><!-- Lack of Capacity/Overbooked --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manufacture Defect</masterLabel>
+        <translation><!-- Manufacture Defect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mislabelled/Incorrect Part Delivered</masterLabel>
+        <translation><!-- Mislabelled/Incorrect Part Delivered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Part Lost/Damaged - Retail</masterLabel>
+        <translation><!-- Part Lost/Damaged - Retail --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Part Lost/Damaged - Supply Chain</masterLabel>
+        <translation><!-- Part Lost/Damaged - Supply Chain --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Part Not Delivered - Delayed/Backordered</masterLabel>
+        <translation><!-- Part Not Delivered - Delayed/Backordered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parts Damaged</masterLabel>
+        <translation><!-- Parts Damaged --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</masterLabel>
+        <translation><!-- Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Absent</masterLabel>
+        <translation><!-- Technician Absent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Doesn&apos;t Have Correct Skill/ Equipment</masterLabel>
+        <translation><!-- Technician Doesn&apos;t Have Correct Skill/ Equipment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Missed Appt Time/Mobile Only</masterLabel>
+        <translation><!-- Technician Missed Appt Time/Mobile Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician Van Issues/Breakdown</masterLabel>
+        <translation><!-- Technician Van Issues/Breakdown --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Traffic/Unable to Drive</masterLabel>
+        <translation><!-- Traffic/Unable to Drive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Unable to Recalibrate Due to Weather</masterLabel>
+        <translation><!-- Unable to Recalibrate Due to Weather --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vehicle Unavailable</masterLabel>
+        <translation><!-- Vehicle Unavailable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wrong Part Ordered</masterLabel>
+        <translation><!-- Wrong Part Ordered --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

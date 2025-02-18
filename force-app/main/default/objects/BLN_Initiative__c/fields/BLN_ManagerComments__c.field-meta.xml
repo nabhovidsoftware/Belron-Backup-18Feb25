@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ManagerComments__c</fullName>
+    <description>FOUK-5347 Account Audit - Record outcome
+Account Manager/Compliance - can enter “Manager Comments” in a Rich Text field in Outcome Section</description>
+    <externalId>false</externalId>
+    <label>Manager Comments</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

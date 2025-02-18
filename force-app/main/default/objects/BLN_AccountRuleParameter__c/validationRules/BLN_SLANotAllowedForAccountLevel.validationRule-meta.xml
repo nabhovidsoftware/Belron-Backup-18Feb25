@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SLANotAllowedForAccountLevel</fullName>
+    <active>true</active>
+    <description>FOUK-6522 Prevemt SLA creation on contract with account level site</description>
+    <errorConditionFormula>AND(
+NOT($Permission.BLN_BypassValidationRules),
+ISPICKVAL(BLN_Contract__r.Account.BLN_Level__c , &apos;Site Account&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>BLN_Contract__c</errorDisplayField>
+    <errorMessage>SLA creation only allowed for &apos;Legal Entity Account&apos; and &apos;Country Grouping Account&apos; on Contract</errorMessage>
+</ValidationRule>

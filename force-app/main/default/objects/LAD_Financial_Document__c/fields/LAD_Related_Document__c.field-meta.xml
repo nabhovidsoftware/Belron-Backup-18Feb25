@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Related_Document__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Lookup Relation with LAD_Fianancia_Document__c Object with Validation rule related to LAD_Type__c field. FOUK-10357</description>
+    <externalId>false</externalId>
+    <label>Related Document</label>
+    <referenceTo>LAD_Financial_Document__c</referenceTo>
+    <relationshipLabel>Financial Documents</relationshipLabel>
+    <relationshipName>Financial_Documents</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

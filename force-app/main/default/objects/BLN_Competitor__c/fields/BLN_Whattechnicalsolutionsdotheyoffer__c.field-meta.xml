@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Whattechnicalsolutionsdotheyoffer__c</fullName>
+    <description>FOUK-7201.This is the reference field of &quot;What technical solutions do they offer?&quot;.</description>
+    <externalId>false</externalId>
+    <label>What technical solutions do they offer?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ADAS</fullName>
+                <default>false</default>
+                <label>ADAS</label>
+            </value>
+            <value>
+                <fullName>Over the Air</fullName>
+                <default>false</default>
+                <label>Over the Air</label>
+            </value>
+            <value>
+                <fullName>ADAS Sensor Resets</fullName>
+                <default>false</default>
+                <label>ADAS Sensor Resets</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

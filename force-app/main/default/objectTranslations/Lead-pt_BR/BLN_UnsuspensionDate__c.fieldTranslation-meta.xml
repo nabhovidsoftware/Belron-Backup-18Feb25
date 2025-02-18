@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please enter the date of automatic cancellation of the suspension --></help>
+    <label><!-- Unsuspension Date --></label>
+    <name>BLN_UnsuspensionDate__c</name>
+</CustomFieldTranslation>

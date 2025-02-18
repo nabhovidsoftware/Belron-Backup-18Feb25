@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please describe in detail why we were not at fault? --></help>
+    <label><!-- Not at Fault Description --></label>
+    <name>BLN_NotAtFault__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_InterfaceType__c</fullName>
+    <description>FOUK-8400 To Store value Of Payment Interface Type</description>
+    <externalId>false</externalId>
+    <label>Interface Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OLP</fullName>
+                <default>false</default>
+                <label>OLP</label>
+            </value>
+            <value>
+                <fullName>BB</fullName>
+                <default>false</default>
+                <label>BB</label>
+            </value>
+            <value>
+                <fullName>ECOM</fullName>
+                <default>false</default>
+                <label>ECOM</label>
+            </value>
+            <value>
+                <fullName>CAP</fullName>
+                <default>false</default>
+                <label>CAP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

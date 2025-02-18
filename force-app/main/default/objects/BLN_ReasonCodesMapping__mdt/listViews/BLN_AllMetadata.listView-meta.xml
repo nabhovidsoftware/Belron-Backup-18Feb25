@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AllMetadata</fullName>
+    <columns>MasterLabel</columns>
+    <columns>BLN_FailureReasonSA__c</columns>
+    <columns>BLN_SubfailureReasonSA__c</columns>
+    <columns>BLN_PrimaryReasonCase__c</columns>
+    <columns>BLN_SecondaryReasonCase__c</columns>
+    <columns>BLN_InitiatedBy__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Metadata</label>
+    <language>en_US</language>
+</ListView>

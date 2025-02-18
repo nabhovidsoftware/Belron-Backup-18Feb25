@@ -1,0 +1,91 @@
+<template>
+    <template if:true={isLoading}>
+        <section class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </section>
+        <div class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+    <div class="location-check">
+
+        <div class="slds-box">
+
+            <template if:true={responseData}>
+                <template for:each={primaryLocations} for:item="location">
+                    <div key={location.locId} class="otherLocItem">
+                        <div class="container">
+                            <b><span>{location.location}</span></b>
+                            <span class="radio"><input type="radio" class="location" name="location"
+                                    value={location.locId} onchange={handleLocationChange}
+                                    disabled={location.isRadioButtonDisabled} />
+                            </span>
+
+                        </div>
+                        <lightning-formatted-rich-text if:true={location.isDisabled} value={location.avlStatus}
+                            class="delDate"></lightning-formatted-rich-text>
+                        <template if:false={location.isDisabled}>
+                            <!-- <p class="flag">{location.avlStatus}</p> -->
+                            <lightning-formatted-rich-text class="flag"
+                                value={location.avlStatus}></lightning-formatted-rich-text>
+                            <p class="avl">From: {location.deliveryDate}</p>
+                            <p if:true={internalUser} class="avl">Stock: {location.stockCount}</p>
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </div>
+
+        <div if:false={seeAllClosed} class="otherLocMain">
+            <div class="slds-box">
+                <template if:true={responseData}>
+                    <lightning-formatted-rich-text class="flag" if:false={isAllSecondaryDisabled} value="Also available to
+                        <b>collect</b> from:"></lightning-formatted-rich-text>
+                    <template for:each={secondaryLocations} for:item="location">
+                        <div key={location.locId} class="otherLocItem">
+                            <div class="container">
+                                <b><span>{location.location}</span></b>
+                                <span class="radio"><input type="radio" class="location" name="location"
+                                        value={location.locId} onchange={handleLocationChange}
+                                        disabled={location.isRadioButtonDisabled} />
+                                </span>
+
+                            </div>
+                            <template lwc:if={location.isDisabled}>
+                                <p class="delDate">{location.avlStatus}</p>
+                            </template>
+                            <template lwc:else>
+                                <template lwc:if={internalUser}>
+                                    <!-- <p class= "delDate">{location.avlStatus}</p> -->
+                                    <p class="avl">From: {location.deliveryDate}</p>
+                                    <p class="avl">Stock: {location.stockCount}</p>
+                                </template>
+                                <template lwc:elseif={buyerUser}>
+                                    <p class="avl">{location.avlStatus}</p>
+                                </template>
+                            </template>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </div>
+
+        <div style="display:flex; align-items: center;justify-content: center; padding-top:2%; ">
+            <button class="section-button" onclick={handleSeeAllView}>Check Other Locations <div if:false={upArrow}><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                    </svg>
+                </div>
+                <div if:true={upArrow}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+            </button>
+
+        </div>
+
+
+    </div>
+</template>

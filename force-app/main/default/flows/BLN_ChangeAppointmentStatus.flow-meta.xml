@@ -1,0 +1,2786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Customer_Issues</name>
+        <label>Assign FAASubFailure and other values for Customer Issues</label>
+        <locationX>3394</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAASub_Failure_ReasonCustomerIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Customer_Vehicle_Issues</name>
+        <label>Assign FAASubFailure and other values for Customer Vehicle Issues</label>
+        <locationX>3658</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAASub_Failure_Reason_CustomerVehicleIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_ecalibration_Issue</name>
+        <label>Assign FAASubFailure and other values for ecalibration Issue</label>
+        <locationX>5506</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAASub_Failure_ReasonReacli</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Glass_Parts_Damaged</name>
+        <label>Assign FAASubFailure and other values for Glass Parts Damaged</label>
+        <locationX>3922</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAASub_Failure_Reason_GlassPartDamaged</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Location_not_suitable</name>
+        <label>Assign FAASubFailure and other values for Location not suitable</label>
+        <locationX>4186</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAASub_Failure_ReasonLocationNotSuitable</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Part_Identification</name>
+        <label>Assign FAASubFailure and other values for Part Identification</label>
+        <locationX>4450</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAASub_Failure_ReasonPartIdentification</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Payment_Billing_Issue</name>
+        <label>Assign FAASubFailure and other values for Payment Billing Issue</label>
+        <locationX>4714</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAASub_Failure_ReasonPaymentBillingIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Stock_Supply_Issue</name>
+        <label>Assign FAASubFailure and other values for Stock Supply Issue</label>
+        <locationX>4978</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonFAA_StockSupplyIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_FAASubFailure_and_other_values_for_Technician_Issue</name>
+        <label>Assign FAASubFailure and other values for Technician Issue</label>
+        <locationX>5242</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonFAA_TechnicianIssues</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Status_Values_for_Arrived_Status</name>
+        <label>Assign Status Values for Arrived Status</label>
+        <locationX>5462</locationX>
+        <locationY>1730</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StatusCycleAfterArrvied</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>FAA_Is_Selected</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_status_values_for_In_Progress_status</name>
+        <label>Assign status values for In Progress status</label>
+        <locationX>6518</locationX>
+        <locationY>1730</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StatusForInProgress</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>FAA_Is_Selected_For_In_Progress</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_status_values_for_Travel_status</name>
+        <label>Assign status values for Travel status</label>
+        <locationX>6958</locationX>
+        <locationY>1730</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>StatusForTravel</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>FAA_Is_Selected_For_Travel</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Capacity_Issue</name>
+        <label>Assign SubFRR and Other Values for Capacity Issue</label>
+        <locationX>1106</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonCapacityIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Customer_Issue</name>
+        <label>Assign SubFRR and Other Values for Customer Issue</label>
+        <locationX>578</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonCust_Issue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Customer_Vehicle_Issue</name>
+        <label>Assign SubFRR and Other Values for Customer Vehicle Issue</label>
+        <locationX>842</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonCustVehicleIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Glass_Part_Damaged</name>
+        <label>Assign SubFRR and Other Values for Glass Part Damaged</label>
+        <locationX>1370</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonGlassPartDamaged</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Location_Not_Suitable</name>
+        <label>Assign SubFRR and Other Values for Location Not Suitable</label>
+        <locationX>1634</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonLocationWeatherNotSuitable</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Part_Idetification</name>
+        <label>Assign SubFRR and Other Values for Part Idetification</label>
+        <locationX>1898</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonPartIdentification</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Payment_Billing_Issue</name>
+        <label>Assign SubFRR and Other Values for Payment Billing Issue</label>
+        <locationX>2162</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonPaymentBillingIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Recali</name>
+        <label>Assign SubFRR and Other Values for Recali</label>
+        <locationX>50</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonRecali</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Repair</name>
+        <label>Assign SubFRR and Other Values for Repair</label>
+        <locationX>314</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonRepair</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Repair_For_FAA</name>
+        <label>Assign SubFRR and Other Values for Repair For FAA</label>
+        <locationX>5770</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Copy_1_of_Sub_Failure_ReasonRepair</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Stock_Supply_Issue</name>
+        <label>Assign SubFRR and Other Values for Stock Supply Issue</label>
+        <locationX>2690</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonStockSupplyIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_SubFRR_and_Other_Values_for_Technician_Issue</name>
+        <label>Assign SubFRR and Other Values for Technician Issue</label>
+        <locationX>2426</locationX>
+        <locationY>2378</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_SubFailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Sub_Failure_ReasonTechnicianIssues</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_values_for_Dispatched_status</name>
+        <label>Assign values for Dispatched status</label>
+        <locationX>2360</locationX>
+        <locationY>1730</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Status</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>FBA_Is_Selected</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Values_for_FAA</name>
+        <label>Assign Values for FAA</label>
+        <locationX>4714</locationX>
+        <locationY>2054</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_FailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FAA_Failure_Reason</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Failure_Reason_Mapping_for_FAA</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Values_for_FBA</name>
+        <label>Assign Values for FBA</label>
+        <locationX>1502</locationX>
+        <locationY>2054</locationY>
+        <assignmentItems>
+            <assignToReference>listOfSARecords.BLN_FailureReason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FBA_Failure_Reason1</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Failure_Reason_mapping_for_FBA</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>Additional_Part_Required</name>
+        <choiceText>Additional Part Required</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Additional Part Required</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Aftermarket_Part_Refused_OE_Required</name>
+        <choiceText>Aftermarket Part Refused - OE Required</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Aftermarket Part Refused - OE Required</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Arrived</name>
+        <choiceText>Arrived</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Arrived</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Arrived_For_Travel</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Arrived&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Arrived</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Body_Rust_Prevented_Work</name>
+        <choiceText>Body Rust Prevented Work</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Body Rust Prevented Work</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Car_Too_Damaged_To_Carry_Out_Work</name>
+        <choiceText>Car Too Damaged To Carry Out Work</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Car Too Damaged To Carry Out Work</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Completed</name>
+        <choiceText>Completed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Completed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Customer_Concern_Repair_Cracking_Off</name>
+        <choiceText>Customer Concern, Repair Cracking Off</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Concern, Repair Cracking Off</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Customer_In_day_Cancellation</name>
+        <choiceText>Customer In day Cancellation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer In day Cancellation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Customer_Initiated_Location_Change</name>
+        <choiceText>Customer Initiated Location Change</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Initiated Location Change</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Customer_No_Show</name>
+        <choiceText>Customer No Show</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer No Show</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Customer_Unable_to_Pay</name>
+        <choiceText>Customer Unable to Pay</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Unable to Pay</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Duplicate_Work_Order</name>
+        <choiceText>Duplicate Work Order</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Duplicate Work Order</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>External_Purchase_Delayed</name>
+        <choiceText>External Purchase Delayed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>External Purchase Delayed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Failed_After_Arrive_For_Arrived_Status</name>
+        <choiceText>Failed After Arrive</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Failed After Arrive</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Failed_After_Arrive_For_InProgress</name>
+        <choiceText>Failed After Arrive</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Failed After Arrive</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Failed_After_Arrive_For_Travel</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Failed Before Arrive&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Failed Before Arrive</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Failed_Before_Arrive</name>
+        <choiceText>Failed Before Arrive</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Failed Before Arrive</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FailureReason_RecalibrationIssue</name>
+        <choiceText>&lt;span style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;Recalibration Issue&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Recalibration Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FailureReason_Repair</name>
+        <choiceText>Repair</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Repair</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBACapacity_Issue</name>
+        <choiceText>Capacity Issue</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Capacity Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBACustomer_Issue</name>
+        <choiceText>Customer Issue</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBACustomer_Vehicle_Issue</name>
+        <choiceText>Customer Vehicle Issue</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Vehicle Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBAGlass_Parts_Damaged</name>
+        <choiceText>Glass/Parts Damaged</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Glass/Parts Damaged</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBALocation_Weather_Not_Suitable</name>
+        <choiceText>Location/Weather Not Suitable</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Location/Weather Not Suitable</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBAPart_Identification</name>
+        <choiceText>Part Identification</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Part Identification</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBAPayment_Billing_Issue</name>
+        <choiceText>Payment/Billing Issue</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Payment/Billing Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBAStock_Supply_Issue</name>
+        <choiceText>Stock/Supply Issue</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Stock/Supply Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>FBATechnician_Issues</name>
+        <choiceText>Technician Issues</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Technician Issues</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Glass_Damaged</name>
+        <choiceText>Glass Damaged</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Glass Damaged</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>In_Progress</name>
+        <choiceText>In Progress</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>In Progress</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>In_Progress_For_Arrived</name>
+        <choiceText>In Progress</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>In Progress</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Job_Already_Completed</name>
+        <choiceText>Job Already Completed</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Job Already Completed</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Location_Not_suitable</name>
+        <choiceText>Location Not suitable</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Location Not suitable</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Location_of_Repair_on_W_S</name>
+        <choiceText>Location of Repair on W/S</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Location of Repair on W/S</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Manufacture_Defect</name>
+        <choiceText>Manufacture Defect</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Manufacture Defect</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Mislabelled_Incorrect_Part_Delivered</name>
+        <choiceText>Mislabelled/Incorrect Part Delivered</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Mislabelled/Incorrect Part Delivered</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Multiple_Impact_on_W_S</name>
+        <choiceText>Multiple Impact on W/S</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Multiple Impact on W/S</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Not_Covered</name>
+        <choiceText>Not Covered</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Not Covered</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Part_Lost_Damaged_Retail</name>
+        <choiceText>Part Lost/Damaged - Retail</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Part Lost/Damaged - Retail</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Part_Lost_Damaged_Supply_Chain</name>
+        <choiceText>Part Lost/Damaged - Supply Chain</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Part Lost/Damaged - Supply Chain</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Part_Not_Delivered_Delayed_Backordered</name>
+        <choiceText>Part Not Delivered - Delayed/Backordered</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Part Not Delivered - Delayed/Backordered</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Parts_Damaged</name>
+        <choiceText>Parts Damaged</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Parts Damaged</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Pending_Coverage_Validation</name>
+        <choiceText>Pending Coverage Validation</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Pending Coverage Validation</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Poor_Weather_Cust_No_Cover_Doesn_t_Want_In_Branch</name>
+        <choiceText>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Pre_Post_Scan_Error</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Pre/Post Scan Error&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Pre/Post Scan Error</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Repair_Cracked_Off</name>
+        <choiceText>Repair Cracked Off</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Repair Cracked Off</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Repair_Done_Before</name>
+        <choiceText>Repair Done Before</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Repair Done Before</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Repair_Too_Large_After_Completion</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Repair Too Large After Completion&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Repair Too Large After Completion</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Repair_too_Small_No_Damage</name>
+        <choiceText>Repair too Small/No Damage</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Repair too Small/No Damage</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Scheduled</name>
+        <choiceText>Scheduled</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Scheduled</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Status_in_Arrived</name>
+        <choiceText>Arrived</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <elementReference>Arrived</elementReference>
+        </value>
+    </choices>
+    <choices>
+        <name>SubFailureReason_ToolAvailabilityIssue</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Tool Availability/Issue&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Tool Availability/Issue</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>SubFailureReasonCust_Unavailable_Cancelled</name>
+        <choiceText>Cust Unavailable/Cancelled</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Cust Unavailable/Cancelled</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>SubFailureReasonLack_of_Capacity_Overbooked</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Lack of Capacity/Overbooked&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Lack of Capacity/Overbooked</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Technician_Absent</name>
+        <choiceText>Technician Absent</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Technician Absent</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Technician_Doesn_t_Have_Correct_Skill_Equipment</name>
+        <choiceText>Technician Doesn&apos;t Have Correct Skill/ Equipment</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Technician Doesn&apos;t Have Correct Skill/ Equipment</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Technician_Missed_Appt_Time_Mobile_Only</name>
+        <choiceText>Technician Missed Appt Time/Mobile Only</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Technician Missed Appt Time/Mobile Only</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Technician_Van_Issues_Breakdown</name>
+        <choiceText>Technician Van Issues/Breakdown</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Technician Van Issues/Breakdown</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Too_Close_to_ADAS_Camera</name>
+        <choiceText>Too Close to ADAS Camera</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Too Close to ADAS Camera</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Too_Large_to_Repair</name>
+        <choiceText>Too Large to Repair</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Too Large to Repair</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Traffic_Unable_to_Drive</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Traffic/Unable to Drive&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Traffic/Unable to Drive</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Travel_From_Dispatched</name>
+        <choiceText>Travel</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Travel</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Unable_to_Recalibrate_As_Vehicle_Not_in_Factory_Condition</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Unable to Recalibrate As Vehicle Not in Factory Condition&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Unable to Recalibrate As Vehicle Not in Factory Condition</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Unable_to_Recalibrate_Due_to_Weather</name>
+        <choiceText>&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Unable to Recalibrate Due to Weather&lt;/span&gt;</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Unable to Recalibrate Due to Weather</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Vehicle_Still_in_Garage_Not_Delivered</name>
+        <choiceText>Vehicle Still in Garage/Not Delivered</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Vehicle Still in Garage/Not Delivered</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Vehicle_Unavailable</name>
+        <choiceText>Vehicle Unavailable</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Vehicle Unavailable</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Vehicle_Won_t_Start_Broken_Down_Insufficient_Charge</name>
+        <choiceText>Vehicle Won’t Start/Broken Down/Insufficient Charge</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Vehicle Won’t Start/Broken Down/Insufficient Charge</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Wrong_Part_Ordered</name>
+        <choiceText>Wrong Part Ordered</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Wrong Part Ordered</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Check_Appointment_Status</name>
+        <label>Check Appointment Status</label>
+        <locationX>4813</locationX>
+        <locationY>1514</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_if_appointment_status_is_Dispatched</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listOfSARecords.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dispatched</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AppointmentStatusScreenForDispatched</targetReference>
+            </connector>
+            <label>Check if appointment status is Dispatched</label>
+        </rules>
+        <rules>
+            <name>Check_if_appointment_status_is_Arrived</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listOfSARecords.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Arrived</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Appointment_Status_Screen_for_Arrived</targetReference>
+            </connector>
+            <label>Check if appointment status is Arrived</label>
+        </rules>
+        <rules>
+            <name>Check_if_appointment_status_is_In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listOfSARecords.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Appointment_Status_Screen_for_In_Progress</targetReference>
+            </connector>
+            <label>Check if appointment status is In Progress</label>
+        </rules>
+        <rules>
+            <name>Check_if_appointment_status_is_Travel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>listOfSARecords.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Travel</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Appointment_Status_Screen_for_Travel</targetReference>
+            </connector>
+            <label>Check if appointment status is Travel</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Failure_Reason_Mapping_for_FAA</name>
+        <label>Check Failure Reason Mapping for FAA</label>
+        <locationX>4714</locationX>
+        <locationY>2162</locationY>
+        <defaultConnector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FAA_Failure_Reason_Customer_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Customer_Issue_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Customer Issue</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Customer_Vehicle_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Vehicle Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Customer_Vehicle_Issue_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Customer Vehicle Issue</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Glass_Parts_Damaged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Glass/Parts Damaged</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Glass_Parts_Damaged_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Glass/Parts Damaged</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Location_Weather_Not_Suitable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Location/Weather Not Suitable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Location_Weather_Not_Suitable_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Location/Weather Not Suitable</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Part_Identification</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Part Identification</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Part_Identification_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Part Identification</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Payment_Billing_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Payment/Billing Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Payment_Billing_Issue_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Payment/Billing Issue</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Stock_Supply_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Stock/Supply Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Stock_Supply_Issue_Screen</targetReference>
+            </connector>
+            <label>FAA_Failure Reason Stock/Supply Issue</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Technician_Issues</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Technician Issues</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Technical_Issue_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Technician Issues</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_Recalibration_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Recalibration Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_Reason_Recalibration_Issue_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason Recalibration Issue</label>
+        </rules>
+        <rules>
+            <name>FAA_Failure_Reason_For_Repair</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FAA_Failure_Reason</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Repair</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FAA_Failure_reason_Repair_Screen</targetReference>
+            </connector>
+            <label>FAA Failure Reason For Repair</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Failure_Reason_mapping_for_FBA</name>
+        <label>Check Failure Reason mapping for FBA</label>
+        <locationX>1502</locationX>
+        <locationY>2162</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FBA_Failure_Reason_Recalibration_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Recalibration Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_Recalibration_Issue_Screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason_Recalibration Issue</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Repair</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Repair</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_Repair_Screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason_Repair</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Customer_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_Customer_Issue_Screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Customer Issue</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Customer_Vehicle_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Customer Vehicle Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_customer_vehicle_issue_screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Customer Vehicle Issue</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Capacity_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Capacity Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_capacity_Issue_Screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Capacity Issue</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Glass_Parts_Damaged</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Glass/Parts Damaged</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_glass_parts_damaged_Screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Glass/Parts Damaged</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Location_Weather_Not_Suitable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Location/Weather Not Suitable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_Location_weather_not_suitable_screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Location/Weather Not Suitable</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Part_Identification</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Part Identification</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_part_identification_Screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Part Identification</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Payment_Billing_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Payment/Billing Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_payment_billing_issue_screen</targetReference>
+            </connector>
+            <label>FBA_Failure Reason Payment/Billing Issue</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Technician_Issues</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Technician Issues</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_technical_issues_screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Technician Issues</label>
+        </rules>
+        <rules>
+            <name>FBA_Failure_Reason_Stock_Supply_Issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FBA_Failure_Reason1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Stock/Supply Issue</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_reason_stock_supply_issue_screen</targetReference>
+            </connector>
+            <label>FBA Failure Reason Stock/Supply Issue</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_time_sheet_entry</name>
+        <label>Check_time_sheet_entry</label>
+        <locationX>7378</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Clock_In_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Shift Status Not CIN</defaultConnectorLabel>
+        <rules>
+            <name>is_null_false</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_timesheet_entry_record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>TimeSheetEntryIds.BLN_ShiftStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CIN</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_SA_Records</targetReference>
+            </connector>
+            <label>is null false</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Timesheet</name>
+        <label>Check_Timesheet</label>
+        <locationX>7982</locationX>
+        <locationY>458</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Time_Sheet_is_null_false</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_TimeSheet_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_timesheet_entry_record</targetReference>
+            </connector>
+            <label>Time Sheet is null false</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>FAA_Is_Selected</name>
+        <label>FAA Is Selected</label>
+        <locationX>5462</locationX>
+        <locationY>1838</locationY>
+        <defaultConnector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FAA_Was_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Failed_After_Arrive_For_Arrived_Status</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fail_Appointment_to_FAA</targetReference>
+            </connector>
+            <label>FAA Was Selected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>FAA_Is_Selected_For_In_Progress</name>
+        <label>FAA Is Selected For In Progress</label>
+        <locationX>6518</locationX>
+        <locationY>1838</locationY>
+        <defaultConnector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FAA_Was_Selected_For_In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Failed_After_Arrive_For_InProgress</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>Fail_Appointment_to_FAA</targetReference>
+            </connector>
+            <label>FAA Was Selected For In Progress</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>FAA_Is_Selected_For_Travel</name>
+        <label>FAA Is Selected For Travel</label>
+        <locationX>6958</locationX>
+        <locationY>1838</locationY>
+        <defaultConnector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FAA_Was_Selected_For_Travel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Failed_After_Arrive_For_Travel</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <isGoTo>true</isGoTo>
+                <targetReference>FBA_Failure_Reason</targetReference>
+            </connector>
+            <label>FAA Was Selected For Travel</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>FBA_Is_Selected</name>
+        <label>FBA Is Selected</label>
+        <locationX>2360</locationX>
+        <locationY>1838</locationY>
+        <defaultConnector>
+            <targetReference>Update_Appointment_with_status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>FBA_Was_Selected</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Failed_Before_Arrive</leftValueReference>
+                <operator>WasSelected</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FBA_Failure_Reason</targetReference>
+            </connector>
+            <label>FBA Was Selected</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Null_Check_For_Current_Service_Resource</name>
+        <label>Null Check For Current Service Resource</label>
+        <locationX>8416</locationX>
+        <locationY>242</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Checking_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>currentServiceResourceId.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_TimeSheet_Record</targetReference>
+            </connector>
+            <label>Checking Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Null_Check_for_WT_Record</name>
+        <label>Null Check for WT Record</label>
+        <locationX>6435</locationX>
+        <locationY>1406</locationY>
+        <defaultConnector>
+            <targetReference>Confirmation_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>WT_Record_Null_Check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_WT_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>WTRecord.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Assist</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Appointment_Status</targetReference>
+            </connector>
+            <label>WT Record Null Check</label>
+        </rules>
+        <rules>
+            <name>WT_record_is_null_False_and_SA_Status_is_Dispatched</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_WT_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Dispatched</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Status_Update_to_Travel_after_Dispatched</targetReference>
+            </connector>
+            <label>WT record is null False and SA Status is Dispatched</label>
+        </rules>
+        <rules>
+            <name>WT_record_is_null_False_and_SA_Status_is_Travel</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_WT_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Travel</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>listOfSARecords.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Status_Update_to_Arrived_after_Travel</targetReference>
+            </connector>
+            <label>WT record is null False and SA Status is Travel</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Null_Check_Get_SA_Record</name>
+        <label>Null Check Get SA Record</label>
+        <locationX>7378</locationX>
+        <locationY>1190</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Null_Check_For_Get_SA_Records</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_SA_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_WT_Record</targetReference>
+            </connector>
+            <label>Null Check For Get SA Records</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Change Appointment Status {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Change Appointment Status</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>FieldServiceMobile</processType>
+    <recordLookups>
+        <name>get_SA_Records</name>
+        <label>get SA Records</label>
+        <locationX>7378</locationX>
+        <locationY>1082</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Null_Check_Get_SA_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Id</elementReference>
+            </value>
+        </filters>
+        <object>ServiceAppointment</object>
+        <outputReference>listOfSARecords</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Status</queriedFields>
+        <queriedFields>Description</queriedFields>
+        <queriedFields>ServiceTerritoryId</queriedFields>
+        <queriedFields>ParentRecordId</queriedFields>
+        <queriedFields>BLN_IsBranchAppointment__c</queriedFields>
+        <queriedFields>BLN_FailureReason__c</queriedFields>
+        <queriedFields>BLN_SubFailureReason__c</queriedFields>
+        <queriedFields>WorkTypeId</queriedFields>
+        <queriedFields>AppointmentNumber</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>get_Service_Resource</name>
+        <label>get Service Resource</label>
+        <locationX>8416</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Null_Check_For_Current_Service_Resource</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RelatedRecordId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>UserId</elementReference>
+            </value>
+        </filters>
+        <object>ServiceResource</object>
+        <outputReference>currentServiceResourceId</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>get_timesheet_entry_record</name>
+        <label>get timesheet entry record</label>
+        <locationX>7378</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_time_sheet_entry</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>TimeSheetId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>TimeSheetRecord.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_ShiftStatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>CIN</stringValue>
+            </value>
+        </filters>
+        <object>TimeSheetEntry</object>
+        <outputReference>TimeSheetEntryIds</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>BLN_ShiftStatus__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>get_TimeSheet_Record</name>
+        <label>get TimeSheet Record</label>
+        <locationX>7982</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Timesheet</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StartDate</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ServiceResourceId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>currentServiceResourceId.Id</elementReference>
+            </value>
+        </filters>
+        <object>TimeSheet</object>
+        <outputReference>TimeSheetRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>StartDate</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_WT_Record</name>
+        <label>Get WT Record</label>
+        <locationX>6435</locationX>
+        <locationY>1298</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Null_Check_for_WT_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>listOfSARecords.WorkTypeId</elementReference>
+            </value>
+        </filters>
+        <object>WorkType</object>
+        <outputReference>WTRecord</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Appointment_with_status</name>
+        <label>Update Appointment with status</label>
+        <locationX>4813</locationX>
+        <locationY>2738</locationY>
+        <inputReference>listOfSARecords</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_SA_Status_to_Arrived</name>
+        <label>Update Status to Arrived</label>
+        <locationX>7794</locationX>
+        <locationY>1622</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>listOfSARecords.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Arrived</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ServiceAppointment</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_SA_Status_to_Travel</name>
+        <label>Update Status to Travel</label>
+        <locationX>7530</locationX>
+        <locationY>1622</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>listOfSARecords.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Travel</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ServiceAppointment</object>
+    </recordUpdates>
+    <screens>
+        <name>Appointment_Status_Screen_for_Arrived</name>
+        <label>Appointment Status Screen for Arrived</label>
+        <locationX>5462</locationX>
+        <locationY>1622</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Status_Values_for_Arrived_Status</targetReference>
+        </connector>
+        <fields>
+            <name>StatusCycleAfterArrvied</name>
+            <choiceReferences>In_Progress_For_Arrived</choiceReferences>
+            <choiceReferences>Failed_After_Arrive_For_Arrived_Status</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Appointment_Status_Screen_for_In_Progress</name>
+        <label>Appointment Status Screen for In Progress</label>
+        <locationX>6518</locationX>
+        <locationY>1622</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_status_values_for_In_Progress_status</targetReference>
+        </connector>
+        <fields>
+            <name>StatusForInProgress</name>
+            <choiceReferences>Failed_After_Arrive_For_InProgress</choiceReferences>
+            <choiceReferences>Completed</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Appointment_Status_Screen_for_Travel</name>
+        <label>Appointment Status Screen for Travel</label>
+        <locationX>6958</locationX>
+        <locationY>1622</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_status_values_for_Travel_status</targetReference>
+        </connector>
+        <fields>
+            <name>StatusForTravel</name>
+            <choiceReferences>Failed_After_Arrive_For_Travel</choiceReferences>
+            <choiceReferences>Arrived_For_Travel</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>AppointmentStatusScreenForDispatched</name>
+        <label>Appointment Status Screen for Dispatched</label>
+        <locationX>2360</locationX>
+        <locationY>1622</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_values_for_Dispatched_status</targetReference>
+        </connector>
+        <fields>
+            <name>Status</name>
+            <choiceReferences>Arrived</choiceReferences>
+            <choiceReferences>Failed_Before_Arrive</choiceReferences>
+            <choiceReferences>In_Progress</choiceReferences>
+            <choiceReferences>Scheduled</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Clock_In_Message</name>
+        <label>Clock In Message</label>
+        <locationX>7466</locationX>
+        <locationY>782</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Clockin_Flow</targetReference>
+        </connector>
+        <fields>
+            <name>DisplayMessage</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Before performing any operation you must need to &quot;Clock-In&quot; first. Please click Next to &quot;Clock-In&quot;&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Confirmation_Screen</name>
+        <label>Confirmation Screen</label>
+        <locationX>8058</locationX>
+        <locationY>1514</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Confirmation_Message</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;All updates for this action have already been completed.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Customer_Issue_Screen</name>
+        <label>FAA Failure Reason Customer Issue Screen</label>
+        <locationX>3394</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Customer_Issues</targetReference>
+        </connector>
+        <fields>
+            <name>FAASub_Failure_ReasonCustomerIssue</name>
+            <choiceReferences>SubFailureReasonCust_Unavailable_Cancelled</choiceReferences>
+            <choiceReferences>Customer_Initiated_Location_Change</choiceReferences>
+            <choiceReferences>Customer_In_day_Cancellation</choiceReferences>
+            <choiceReferences>Customer_No_Show</choiceReferences>
+            <choiceReferences>Duplicate_Work_Order</choiceReferences>
+            <choiceReferences>Job_Already_Completed</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Customer_Vehicle_Issue_Screen</name>
+        <label>FAA Failure Reason Customer Vehicle Issue Screen</label>
+        <locationX>3658</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Customer_Vehicle_Issues</targetReference>
+        </connector>
+        <fields>
+            <name>FAASub_Failure_Reason_CustomerVehicleIssue</name>
+            <choiceReferences>Body_Rust_Prevented_Work</choiceReferences>
+            <choiceReferences>Car_Too_Damaged_To_Carry_Out_Work</choiceReferences>
+            <choiceReferences>Vehicle_Still_in_Garage_Not_Delivered</choiceReferences>
+            <choiceReferences>Vehicle_Unavailable</choiceReferences>
+            <choiceReferences>Vehicle_Won_t_Start_Broken_Down_Insufficient_Charge</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Glass_Parts_Damaged_Screen</name>
+        <label>FAA Failure Reason Glass Parts Damaged Screen</label>
+        <locationX>3922</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Glass_Parts_Damaged</targetReference>
+        </connector>
+        <fields>
+            <name>FAASub_Failure_Reason_GlassPartDamaged</name>
+            <choiceReferences>Glass_Damaged</choiceReferences>
+            <choiceReferences>Parts_Damaged</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Location_Weather_Not_Suitable_Screen</name>
+        <label>FAA Failure Reason Location Weather Not Suitable Screen</label>
+        <locationX>4186</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Location_not_suitable</targetReference>
+        </connector>
+        <fields>
+            <name>FAASub_Failure_ReasonLocationNotSuitable</name>
+            <choiceReferences>Poor_Weather_Cust_No_Cover_Doesn_t_Want_In_Branch</choiceReferences>
+            <choiceReferences>Location_Not_suitable</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Part_Identification_Screen</name>
+        <label>FAA Failure Reason Part Identification Screen</label>
+        <locationX>4450</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Part_Identification</targetReference>
+        </connector>
+        <fields>
+            <name>FAASub_Failure_ReasonPartIdentification</name>
+            <choiceReferences>Additional_Part_Required</choiceReferences>
+            <choiceReferences>Aftermarket_Part_Refused_OE_Required</choiceReferences>
+            <choiceReferences>Wrong_Part_Ordered</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Payment_Billing_Issue_Screen</name>
+        <label>FAA Failure Reason Payment Billing Issue Screen</label>
+        <locationX>4714</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Payment_Billing_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>FAASub_Failure_ReasonPaymentBillingIssue</name>
+            <choiceReferences>Customer_Unable_to_Pay</choiceReferences>
+            <choiceReferences>Not_Covered</choiceReferences>
+            <choiceReferences>Pending_Coverage_Validation</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Recalibration_Issue_Screen</name>
+        <label>FAA Failure Reason Recalibration Issue Screen</label>
+        <locationX>5506</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_ecalibration_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>FAASub_Failure_ReasonReacli</name>
+            <choiceReferences>Pre_Post_Scan_Error</choiceReferences>
+            <choiceReferences>SubFailureReason_ToolAvailabilityIssue</choiceReferences>
+            <choiceReferences>Unable_to_Recalibrate_Due_to_Weather</choiceReferences>
+            <choiceReferences>Unable_to_Recalibrate_As_Vehicle_Not_in_Factory_Condition</choiceReferences>
+            <choiceReferences>Traffic_Unable_to_Drive</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_reason_Repair_Screen</name>
+        <label>FAA Failure reason Repair Screen</label>
+        <locationX>5770</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Repair_For_FAA</targetReference>
+        </connector>
+        <fields>
+            <name>Copy_1_of_Sub_Failure_ReasonRepair</name>
+            <choiceReferences>Too_Large_to_Repair</choiceReferences>
+            <choiceReferences>Customer_Concern_Repair_Cracking_Off</choiceReferences>
+            <choiceReferences>Multiple_Impact_on_W_S</choiceReferences>
+            <choiceReferences>Repair_too_Small_No_Damage</choiceReferences>
+            <choiceReferences>Repair_Done_Before</choiceReferences>
+            <choiceReferences>Location_of_Repair_on_W_S</choiceReferences>
+            <choiceReferences>Repair_Cracked_Off</choiceReferences>
+            <choiceReferences>Too_Close_to_ADAS_Camera</choiceReferences>
+            <choiceReferences>Repair_Too_Large_After_Completion</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Stock_Supply_Issue_Screen</name>
+        <label>FAA Failure Reason Stock Supply Issue Screen</label>
+        <locationX>4978</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Stock_Supply_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonFAA_StockSupplyIssue</name>
+            <choiceReferences>Manufacture_Defect</choiceReferences>
+            <choiceReferences>Mislabelled_Incorrect_Part_Delivered</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FAA_Failure_Reason_Technical_Issue_Screen</name>
+        <label>FAA Failure Reason Technical Issue Screen</label>
+        <locationX>5242</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_FAASubFailure_and_other_values_for_Technician_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonFAA_TechnicianIssues</name>
+            <choiceReferences>Technician_Doesn_t_Have_Correct_Skill_Equipment</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Fail_Appointment_to_FAA</name>
+        <label>Fail Appointment to FAA</label>
+        <locationX>4714</locationX>
+        <locationY>1946</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Values_for_FAA</targetReference>
+        </connector>
+        <fields>
+            <name>FAA_Failure_Reason</name>
+            <choiceReferences>FBACustomer_Issue</choiceReferences>
+            <choiceReferences>FBACustomer_Vehicle_Issue</choiceReferences>
+            <choiceReferences>FBAGlass_Parts_Damaged</choiceReferences>
+            <choiceReferences>FBALocation_Weather_Not_Suitable</choiceReferences>
+            <choiceReferences>FBAPart_Identification</choiceReferences>
+            <choiceReferences>FBAPayment_Billing_Issue</choiceReferences>
+            <choiceReferences>FailureReason_RecalibrationIssue</choiceReferences>
+            <choiceReferences>FailureReason_Repair</choiceReferences>
+            <choiceReferences>FBAStock_Supply_Issue</choiceReferences>
+            <choiceReferences>FBATechnician_Issues</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_Reason</name>
+        <label>FBA Failure Reason</label>
+        <locationX>1502</locationX>
+        <locationY>1946</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Values_for_FBA</targetReference>
+        </connector>
+        <fields>
+            <name>FBA_Failure_Reason1</name>
+            <choiceReferences>FailureReason_RecalibrationIssue</choiceReferences>
+            <choiceReferences>FailureReason_Repair</choiceReferences>
+            <choiceReferences>FBACapacity_Issue</choiceReferences>
+            <choiceReferences>FBACustomer_Issue</choiceReferences>
+            <choiceReferences>FBACustomer_Vehicle_Issue</choiceReferences>
+            <choiceReferences>FBAGlass_Parts_Damaged</choiceReferences>
+            <choiceReferences>FBALocation_Weather_Not_Suitable</choiceReferences>
+            <choiceReferences>FBAPart_Identification</choiceReferences>
+            <choiceReferences>FBAPayment_Billing_Issue</choiceReferences>
+            <choiceReferences>FBAStock_Supply_Issue</choiceReferences>
+            <choiceReferences>FBATechnician_Issues</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_capacity_Issue_Screen</name>
+        <label>FBA Failure reason capacity Issue Screen</label>
+        <locationX>1106</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Capacity_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonCapacityIssue</name>
+            <choiceReferences>SubFailureReasonLack_of_Capacity_Overbooked</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_Customer_Issue_Screen</name>
+        <label>FBA Failure reason Customer Issue Screen</label>
+        <locationX>578</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Customer_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonCust_Issue</name>
+            <choiceReferences>SubFailureReasonCust_Unavailable_Cancelled</choiceReferences>
+            <choiceReferences>Customer_Initiated_Location_Change</choiceReferences>
+            <choiceReferences>Customer_In_day_Cancellation</choiceReferences>
+            <choiceReferences>Customer_No_Show</choiceReferences>
+            <choiceReferences>Duplicate_Work_Order</choiceReferences>
+            <choiceReferences>Job_Already_Completed</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_customer_vehicle_issue_screen</name>
+        <label>FBA Failure reason customer vehicle issue screen</label>
+        <locationX>842</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Customer_Vehicle_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonCustVehicleIssue</name>
+            <choiceReferences>Body_Rust_Prevented_Work</choiceReferences>
+            <choiceReferences>Car_Too_Damaged_To_Carry_Out_Work</choiceReferences>
+            <choiceReferences>Vehicle_Still_in_Garage_Not_Delivered</choiceReferences>
+            <choiceReferences>Vehicle_Unavailable</choiceReferences>
+            <choiceReferences>Vehicle_Won_t_Start_Broken_Down_Insufficient_Charge</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_glass_parts_damaged_Screen</name>
+        <label>FBA Failure reason glass parts damaged Screen</label>
+        <locationX>1370</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Glass_Part_Damaged</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonGlassPartDamaged</name>
+            <choiceReferences>Glass_Damaged</choiceReferences>
+            <choiceReferences>Parts_Damaged</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_Location_weather_not_suitable_screen</name>
+        <label>FBA Failure reason Location weather not suitable screen</label>
+        <locationX>1634</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Location_Not_Suitable</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonLocationWeatherNotSuitable</name>
+            <choiceReferences>Poor_Weather_Cust_No_Cover_Doesn_t_Want_In_Branch</choiceReferences>
+            <choiceReferences>Location_Not_suitable</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_part_identification_Screen</name>
+        <label>FBA Failure reason part identification Screen</label>
+        <locationX>1898</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Part_Idetification</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonPartIdentification</name>
+            <choiceReferences>Additional_Part_Required</choiceReferences>
+            <choiceReferences>Aftermarket_Part_Refused_OE_Required</choiceReferences>
+            <choiceReferences>Wrong_Part_Ordered</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_payment_billing_issue_screen</name>
+        <label>FBA Failure reason payment billing issue screen</label>
+        <locationX>2162</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Payment_Billing_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonPaymentBillingIssue</name>
+            <choiceReferences>Customer_Unable_to_Pay</choiceReferences>
+            <choiceReferences>Not_Covered</choiceReferences>
+            <choiceReferences>Pending_Coverage_Validation</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_Recalibration_Issue_Screen</name>
+        <label>FBA Failure reason Recalibration Issue Screen</label>
+        <locationX>50</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Recali</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonRecali</name>
+            <choiceReferences>SubFailureReason_ToolAvailabilityIssue</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_Repair_Screen</name>
+        <label>FBA Failure reason Repair Screen</label>
+        <locationX>314</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Repair</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonRepair</name>
+            <choiceReferences>Too_Large_to_Repair</choiceReferences>
+            <choiceReferences>Customer_Concern_Repair_Cracking_Off</choiceReferences>
+            <choiceReferences>Multiple_Impact_on_W_S</choiceReferences>
+            <choiceReferences>Repair_too_Small_No_Damage</choiceReferences>
+            <choiceReferences>Repair_Done_Before</choiceReferences>
+            <choiceReferences>Location_of_Repair_on_W_S</choiceReferences>
+            <choiceReferences>Repair_Cracked_Off</choiceReferences>
+            <choiceReferences>Too_Close_to_ADAS_Camera</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_stock_supply_issue_screen</name>
+        <label>FBA Failure reason stock supply issue screen</label>
+        <locationX>2690</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Stock_Supply_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonStockSupplyIssue</name>
+            <choiceReferences>External_Purchase_Delayed</choiceReferences>
+            <choiceReferences>Manufacture_Defect</choiceReferences>
+            <choiceReferences>Mislabelled_Incorrect_Part_Delivered</choiceReferences>
+            <choiceReferences>Part_Lost_Damaged_Retail</choiceReferences>
+            <choiceReferences>Part_Lost_Damaged_Supply_Chain</choiceReferences>
+            <choiceReferences>Part_Not_Delivered_Delayed_Backordered</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>FBA_Failure_reason_technical_issues_screen</name>
+        <label>FBA Failure reason technical issues screen</label>
+        <locationX>2426</locationX>
+        <locationY>2270</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_SubFRR_and_Other_Values_for_Technician_Issue</targetReference>
+        </connector>
+        <fields>
+            <name>Sub_Failure_ReasonTechnicianIssues</name>
+            <choiceReferences>Technician_Absent</choiceReferences>
+            <choiceReferences>Technician_Doesn_t_Have_Correct_Skill_Equipment</choiceReferences>
+            <choiceReferences>Technician_Missed_Appt_Time_Mobile_Only</choiceReferences>
+            <choiceReferences>Technician_Van_Issues_Breakdown</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Sub Failure Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Status_Update_to_Arrived_after_Travel</name>
+        <label>Status Update to Arrived after Travel</label>
+        <locationX>7794</locationX>
+        <locationY>1514</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_SA_Status_to_Arrived</targetReference>
+        </connector>
+        <fields>
+            <name>SA_Status_In_Arrived</name>
+            <choiceReferences>Status_in_Arrived</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>Status_in_Arrived</defaultSelectedChoiceReference>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Status_Update_to_Travel_after_Dispatched</name>
+        <label>Status Update to Travel after Dispatched</label>
+        <locationX>7530</locationX>
+        <locationY>1514</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Update_SA_Status_to_Travel</targetReference>
+        </connector>
+        <fields>
+            <name>Status_in_Travel</name>
+            <choiceReferences>Travel_From_Dispatched</choiceReferences>
+            <dataType>String</dataType>
+            <defaultSelectedChoiceReference>Travel_From_Dispatched</defaultSelectedChoiceReference>
+            <fieldText>Status</fieldText>
+            <fieldType>DropdownBox</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>8290</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_Service_Resource</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Clockin_Flow</name>
+        <label>Clockin Flow</label>
+        <locationX>7466</locationX>
+        <locationY>890</locationY>
+        <connector>
+            <targetReference>get_SA_Records</targetReference>
+        </connector>
+        <flowName>BLN_ShiftCICOManagement</flowName>
+        <inputAssignments>
+            <name>UserId</name>
+            <value>
+                <elementReference>UserId</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <variables>
+        <name>currentServiceResourceId</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceResource</objectType>
+    </variables>
+    <variables>
+        <name>Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>listOfSARecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceAppointment</objectType>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TimeSheetEntryIds</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>TimeSheetEntry</objectType>
+    </variables>
+    <variables>
+        <name>TimeSheetRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>TimeSheet</objectType>
+    </variables>
+    <variables>
+        <name>UserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>WTRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>WorkType</objectType>
+    </variables>
+</Flow>

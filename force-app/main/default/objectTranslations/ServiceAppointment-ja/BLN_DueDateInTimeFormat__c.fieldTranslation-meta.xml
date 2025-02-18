@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Due Date in Time Format --></label>
+    <name>BLN_DueDateInTimeFormat__c</name>
+</CustomFieldTranslation>

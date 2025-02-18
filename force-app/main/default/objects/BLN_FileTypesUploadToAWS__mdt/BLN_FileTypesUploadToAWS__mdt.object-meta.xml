@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-7053 MetaData to store which types of files should be uploaded to AWS</description>
+    <label>File Types upload to AWS</label>
+    <pluralLabel>File Types upload to AWS</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>GetAvailability</label>
+    <protected>false</protected>
+    <values>
+        <field>JobAppointment__c</field>
+        <value xsi:type="xsd:string">Number;Priority;TaskType;Duration;IsBranch;EarlyStart;OpenDate;AppointmentStart;Start ( Appointment Period Start);Finish( Appointment Period End);LateStart</value>
+    </values>
+    <values>
+        <field>JobWorkOrderLineItem__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>JobWorkOrder__c</field>
+        <value xsi:type="xsd:string">CallID;Profile;ExcludeCurrentAppointment</value>
+    </values>
+    <values>
+        <field>Location__c</field>
+        <value xsi:type="xsd:string">CompanyNav;Region;District;Street;City;Postcode;CountryID</value>
+    </values>
+    <values>
+        <field>Motorist__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Policyholder__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>RequiredSkills__c</field>
+        <value xsi:type="xsd:string">Key;SkillLevel</value>
+    </values>
+    <values>
+        <field>Vehicle__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Wrapper_Sobjects_Heirarchy__c</field>
+        <value xsi:type="xsd:string">JobWorkOrder;JobAppointment;Location;Required Skills</value>
+    </values>
+</CustomMetadata>

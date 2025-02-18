@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Origin --></label>
+    <name>BLN_Origin__c</name>
+    <picklistValues>
+        <masterLabel>Direct API</masterLabel>
+        <translation><!-- Direct API --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manual</masterLabel>
+        <translation><!-- Manual --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PDS</masterLabel>
+        <translation><!-- PDS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

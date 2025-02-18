@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_NetworkGoodandBadCoverageareas__c</fullName>
+    <description>FOUK-7201.This is the reference field of Network- Good and Bad Coverage areas.</description>
+    <externalId>false</externalId>
+    <label>Network- Good and Bad Coverage areas</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

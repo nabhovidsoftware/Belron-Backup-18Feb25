@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_PaymentGrouping__c</fullName>
+    <description>FOUK-3977 This is used in BLN_SCUtility class</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Payment Grouping</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BRANCH BANKING</fullName>
+                <default>true</default>
+                <label>BRANCH BANKING</label>
+            </value>
+            <value>
+                <fullName>CHIP &amp; PIN</fullName>
+                <default>false</default>
+                <label>CHIP &amp; PIN</label>
+            </value>
+            <value>
+                <fullName>ECOMMERCE</fullName>
+                <default>false</default>
+                <label>ECOMMERCE</label>
+            </value>
+            <value>
+                <fullName>ONLINE PAYMENT</fullName>
+                <default>false</default>
+                <label>ONLINE PAYMENT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

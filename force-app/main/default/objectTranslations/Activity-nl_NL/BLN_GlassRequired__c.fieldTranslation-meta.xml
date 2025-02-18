@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Glass Required --></label>
+    <name>BLN_GlassRequired__c</name>
+    <picklistValues>
+        <masterLabel>Body Glass</masterLabel>
+        <translation><!-- Body Glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Heated Rear</masterLabel>
+        <translation><!-- Heated Rear --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sunroof</masterLabel>
+        <translation><!-- Sunroof --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Windscreen</masterLabel>
+        <translation><!-- Windscreen --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

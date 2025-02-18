@@ -1,0 +1,53 @@
+<template>
+    <div if:false={isHidden}>
+    <lightning-tabset>
+        <!-- Tab for Carts -->
+        <lightning-tab label="Carts">
+            <lightning-datatable
+                key-field="Id"
+                data={carts}
+                columns={cartColumns}
+                hide-checkbox-column
+                onrowaction={handleRowAction}
+            ></lightning-datatable>
+        </lightning-tab>
+        
+        <!-- Tab for Users -->
+        <!-- <lightning-tab label="Members">
+            <lightning-datatable
+                key-field="id"
+                data={users}
+                columns={userColumns}
+                hide-checkbox-column
+                onsort={handleSort}
+            ></lightning-datatable>
+        </lightning-tab> -->
+                
+    </lightning-tabset>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Change Cart Owner</h2>
+                </header>
+                <div class="slds-modal__content slds-modal__body slds-p-around_medium">
+                    <p>Would you like to take ownership of the selected Cart?<br>
+                        <b>Please be aware that by taking ownership your current Cart will be lost.</b></p>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" style="margin-right:20px ;" onclick={closeModal}></lightning-button>
+                    <lightning-button variant="brand" label="Yes" onclick={changeOwner}></lightning-button>
+                    <!-- <lightning-button variant="neutral" label="No" onclick={changeOwnerDirectly}></lightning-button> -->
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</div>
+</template>

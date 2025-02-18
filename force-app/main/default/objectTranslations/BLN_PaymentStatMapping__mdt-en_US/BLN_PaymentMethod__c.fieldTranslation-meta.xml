@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Method --></label>
+    <name>BLN_PaymentMethod__c</name>
+    <picklistValues>
+        <masterLabel>Assisted</masterLabel>
+        <translation><!-- Assisted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Automated</masterLabel>
+        <translation><!-- Automated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Portal</masterLabel>
+        <translation><!-- Portal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Refund</masterLabel>
+        <translation><!-- Refund --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technician</masterLabel>
+        <translation><!-- Technician --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

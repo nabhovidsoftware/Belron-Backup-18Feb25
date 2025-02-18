@@ -1,0 +1,9 @@
+.host {
+    display: block;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.slds-table_header {
+    text-align: center;
+}

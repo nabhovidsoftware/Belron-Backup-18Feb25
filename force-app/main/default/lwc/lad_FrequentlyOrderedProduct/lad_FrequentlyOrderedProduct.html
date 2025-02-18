@@ -1,0 +1,17 @@
+<template>
+    <div class="text-header">Frequently Ordered Products</div>
+    <div class="products-container">
+        <template for:each={products} for:item="item">
+            <div key={item.ProductId} class="slds-box product-card">
+                <div class="product-item">
+                    <div class="product-image"><img class="image" src={item.ProductURL}></div>
+                    <div class="product-item-name">{item.ProductName}</div>
+                    <div class="product-item-code">{item.ProductCode}</div>
+                    <div class="product-button"><lightning-button label="View Product" data-product-id={item.ProductId}
+                            onclick={handleClick}></lightning-button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

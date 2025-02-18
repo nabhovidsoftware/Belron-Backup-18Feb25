@@ -1,0 +1,38 @@
+.iconClass {
+    padding-top: 8px;
+    padding-right: 550px;
+}
+.center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.style1 {
+    display: inline-block;
+}
+
+.style2 {
+    display: inline-block;
+}
+.size3 {
+    width: 330px;
+    
+}
+.size {
+    width: 200px;
+
+}
+.size2 {
+    width: 120px;
+}
+.dropdownclass{
+    top:4rem;
+}
+.adjustModelHeight{
+    height: 50rem;
+  }
+/* .slds-modal {
+    height: 950px;
+} */

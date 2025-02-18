@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Reason for Deal Lost --></label>
+    <name>BLN_ReasonforDealLost__c</name>
+    <picklistValues>
+        <masterLabel>Breadth of portfolio offering incl Specials</masterLabel>
+        <translation><!-- Breadth of portfolio offering incl Specials --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Competitor relationship</masterLabel>
+        <translation><!-- Competitor relationship --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Convenience &amp; Ease of Doing Business</masterLabel>
+        <translation><!-- Convenience &amp; Ease of Doing Business --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Satisfaction</masterLabel>
+        <translation><!-- Customer Satisfaction --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer service quality (complaint management)</masterLabel>
+        <translation><!-- Customer service quality (complaint management) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Digital Capabilities</masterLabel>
+        <translation><!-- Digital Capabilities --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESG focus / performance</masterLabel>
+        <translation><!-- ESG focus / performance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed Credit Check</masterLabel>
+        <translation><!-- Failed Credit Check --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No response to proposal</masterLabel>
+        <translation><!-- No response to proposal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Previous poor performance</masterLabel>
+        <translation><!-- Previous poor performance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price structure</masterLabel>
+        <translation><!-- Price structure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quality of work (incl glass)</masterLabel>
+        <translation><!-- Quality of work (incl glass) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Relationship</masterLabel>
+        <translation><!-- Relationship --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scale &amp; coverage</masterLabel>
+        <translation><!-- Scale &amp; coverage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Speed of Service</masterLabel>
+        <translation><!-- Speed of Service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supply chain / Stock availability</masterLabel>
+        <translation><!-- Supply chain / Stock availability --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

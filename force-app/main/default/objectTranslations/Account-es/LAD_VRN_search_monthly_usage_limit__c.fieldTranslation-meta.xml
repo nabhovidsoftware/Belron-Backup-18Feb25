@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Leave blank for no limit enforcement --></help>
+    <label><!-- VRN search monthly usage limit --></label>
+    <name>LAD_VRN_search_monthly_usage_limit__c</name>
+</CustomFieldTranslation>

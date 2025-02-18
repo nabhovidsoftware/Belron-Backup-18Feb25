@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Business Unit --></label>
+    <name>BLN_BusinessUnit__c</name>
+    <picklistValues>
+        <masterLabel>United Kingdom</masterLabel>
+        <translation><!-- United Kingdom --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_CustomerConcernsResolved__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FOUK-3982 To Checked Customer Concerns Resolved.</description>
+    <externalId>false</externalId>
+    <label>Customer Concerns Resolved</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

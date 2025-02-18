@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Origin__c</fullName>
+    <description>FOUK-5754, 6065: This field is created to store origin values.</description>
+    <externalId>false</externalId>
+    <label>Origin</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PDS</fullName>
+                <default>false</default>
+                <label>PDS</label>
+            </value>
+            <value>
+                <fullName>Direct API</fullName>
+                <default>false</default>
+                <label>Direct API</label>
+            </value>
+            <value>
+                <fullName>Manual</fullName>
+                <default>false</default>
+                <label>Manual</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

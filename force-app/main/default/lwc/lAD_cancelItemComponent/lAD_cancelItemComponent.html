@@ -1,0 +1,128 @@
+<!--
+  @description       : 
+  @author            : Prajjawal Tiwari
+  @group             : 
+  @last modified on  : 07-18-2024
+  @last modified by  : Prajjawal Tiwari
+-->
+<template>
+    <template if:true={showCancelButton}>
+        <lightning-button variant="brand" class="custom-button" label="Cancel Order" onclick={handleOpenModal}
+            disabled={flowStarted}>
+        </lightning-button>
+
+    </template>
+    <div if:true={isProcessing} class="spinner">
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+    <template if:true={showModal}>
+
+
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container " style="width:67%; max-width: 58rem;">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={hideModalBox}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small" class="black-icon"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Cancel Order Items</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1"
+                    style="overflow-x: scroll;">
+
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered ">
+                        <tr class="slds-line-height_reset" style="font-weight: bold;padding-bottom:5px">
+                            <th><lightning-button-icon icon-name={selectAllName} size="small" label="cancel"
+                                    variant={selectAllVariant} onclick={handleSelectAll}>
+                                </lightning-button-icon></th>
+                            <th>
+                                <span style="display: flex; justify-content: center"> 
+                                    Name
+                                </span> 
+                            </th>
+                            <th>
+                                <span style="display: flex; justify-content: center"> 
+                                    Quantity
+
+                                </span> 
+                            </th>
+                            <th> 
+                                <span style="display: flex; justify-content: center">
+                                    Product Code
+
+                                </span>
+                            </th>
+                            <th>
+                                <span style="display: flex; justify-content: center"> 
+                                    Unit Price
+
+                                </span> 
+                            </th>
+                            <th>
+                                <span style="display: flex; justify-content: center">
+
+                                    Pretax Total </span>
+                            </th>
+                            <th>
+                                <span style="display: flex; justify-content: center">
+
+                                    Status
+                                </span>
+                            </th>
+                            <th>
+                                <span style="display: flex; justify-content: center">
+                                    Reason for Cancellation
+                                </span>
+                            </th>
+                        </tr>
+                        <template for:each={dataSet} for:item="item">
+                            <tr class="slds-hint-parent" key={item.Id} style={item.background}>
+                                <td><lightning-button-icon data-id={item.Id} class="slds-theme_brand" value={item.Id}
+                                        icon-name={item.iconName} size="small" label="cancel"
+                                        variant={item.buttonVariant} onclick={handleSelectIcon}
+                                        disabled={item.isDisabled}>
+                                    </lightning-button-icon></td>
+                                <td>{item.Name}</td>
+                                <td>{item.Quantity}</td>
+                                <td>{item.ProductCode}</td>
+                                <td><lightning-formatted-number format-style="currency"
+                                        value={item.UnitPrice}></lightning-formatted-number></td>
+                                <td><lightning-formatted-number format-style="currency"
+                                        value={item.TotalPrice}></lightning-formatted-number></td>
+                                <td>{item.LAD_Status__c}</td>
+                                <td>
+                                    <!-- <input type="text" data-id={item.Id} onkeyup={handleDescription}
+                                        disabled={item.isDisabled}> -->
+                                    <span style="top: 6px;position: inherit;width:310px ;display: block;">
+                                        <lightning-combobox name="reason" label="reason" variant="label-hidden"
+                                            options={options} value={value} data-id={item.Id}
+                                            onchange={handleDescription}
+                                            disabled={item.isDisabled}></lightning-combobox>
+                                    </span>
+
+                                </td>
+
+                            </tr>
+                        </template>
+                    </table>
+
+
+                </div>
+
+                <!-- modal footer start-->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={handleOrderCancel}>Submit</button>
+                </footer>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

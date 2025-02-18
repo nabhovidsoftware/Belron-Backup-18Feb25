@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Business Priorities Achieved --></label>
+    <name>BLN_BusinessPrioritiesAchieved__c</name>
+    <picklistValues>
+        <masterLabel>Change SLA(s)</masterLabel>
+        <translation><!-- Change SLA(s) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Change legal clauses</masterLabel>
+        <translation><!-- Change legal clauses --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Change price structure</masterLabel>
+        <translation><!-- Change price structure --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Enhance Exceptions pricing</masterLabel>
+        <translation><!-- Enhance Exceptions pricing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Enhance supply position</masterLabel>
+        <translation><!-- Enhance supply position --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Extend contract</masterLabel>
+        <translation><!-- Extend contract --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grow ADAS price</masterLabel>
+        <translation><!-- Grow ADAS price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grow Repair price</masterLabel>
+        <translation><!-- Grow Repair price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grow Volume</masterLabel>
+        <translation><!-- Grow Volume --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grow overall price</masterLabel>
+        <translation><!-- Grow overall price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Increase contract term</masterLabel>
+        <translation><!-- Increase contract term --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maintain price</masterLabel>
+        <translation><!-- Maintain price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maintain volume</masterLabel>
+        <translation><!-- Maintain volume --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Obtain additional business</masterLabel>
+        <translation><!-- Obtain additional business --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Strengthen relationship</masterLabel>
+        <translation><!-- Strengthen relationship --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

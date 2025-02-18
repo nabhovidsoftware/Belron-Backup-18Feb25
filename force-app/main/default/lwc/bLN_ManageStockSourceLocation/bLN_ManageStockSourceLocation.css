@@ -1,0 +1,47 @@
+.appointmentHeader{
+    display: flex;
+    padding: 7px;
+    background: #bac6c6;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;   
+    font-weight: 500; 
+    font-size: 14px;
+}
+.border{
+    border-radius: 7px;
+    border: 0.3px solid;
+    padding: 7px;  
+}
+
+.borderBottom{
+    border-bottom: 0.5px solid;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* font-weight: 500; */
+}
+
+.option{
+    padding: 3px;
+    width: 80%;
+}
+
+.slds-col{
+    font-weight: 500;
+}
+
+.buttons{
+    background: #ebebeb;
+    padding: 10px
+}
+
+.checkbox{
+    margin-left: 30%;
+}
+
+.innerOpt{
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>P28</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_LookupValue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>BLN_PaymentGrouping__c</field>
+        <value xsi:type="xsd:string">BRANCH BANKING</value>
+    </values>
+    <values>
+        <field>BLN_PaymentType__c</field>
+        <value xsi:type="xsd:string">BB Visa Delta</value>
+    </values>
+    <values>
+        <field>BLN_RequestId__c</field>
+        <value xsi:type="xsd:string">000000000000053</value>
+    </values>
+</CustomMetadata>

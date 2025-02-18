@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>FCA - Introduction</label>
+                    <name>FCA_Introduction</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>TCF Principles</label>
+                        <name>TCF_Principles</name>
+                    </dataCategory>
+                    <label>Treating Customers Fairty</label>
+                    <name>Treating_Customers_Fairty</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>What is the definition of a complaint?</label>
+                        <name>What_is_the_definition_of_a_complaint</name>
+                    </dataCategory>
+                    <label>Complaints</label>
+                    <name>Complaints</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Eligibility</label>
+                    <name>Eligibility</name>
+                </dataCategory>
+                <label>FCK-UK</label>
+                <name>FCK_UK</name>
+            </dataCategory>
+            <dataCategory>
+                <label>GDPR</label>
+                <name>GDPR</name>
+            </dataCategory>
+            <label>Compliance/Policy</label>
+            <name>BLN_CompliancePolicy</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Customer/Motorist FAQ(self-serve Portal)</label>
+                <name>Customer_Motorist_FAQ_self_serve_Portal</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Account FAQs (B2B Portal)</label>
+                <name>Account_FAQs_B2B_Portal</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Product Related FAQs</label>
+                <name>Product_Related_FAQs</name>
+            </dataCategory>
+            <label>FAQ/How to&apos;s (External)</label>
+            <name>BLN_FAQHowtosExternal</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Finance Policy, IT Policy</label>
+                <name>Finance_Policy_IT_Policy</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Risk &amp; Assessment Guidance</label>
+                <name>Risk_Assessment_Guidance</name>
+            </dataCategory>
+            <dataCategory>
+                <label>SOPs/Business Ops</label>
+                <name>SOPs_Business_Ops</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Conversion guidance (Recovery,Provision)</label>
+                <name>Conversion_guidance_Recovery_Provision</name>
+            </dataCategory>
+            <label>Process/Flow Guidance and Support</label>
+            <name>BLN_ProcessFlowGuidanceandSupportInternal</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Technician support-3 Key things to Know</label>
+                <name>Technician_support_3_Key_things_to_Know</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Product &amp; Service Guidance</label>
+                <name>Product_Service_Guidance</name>
+            </dataCategory>
+            <label>Product Information</label>
+            <name>BLN_ProductInformation</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Our Customer Charter</label>
+                    <name>Our_Customer_Charter</name>
+                </dataCategory>
+                <label>New Starter Onboarding</label>
+                <name>New_Starter_Onboarding</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Adhoc/Temporary Process Guidance</label>
+                <name>Adhoc_Temporary_Process_Guidance</name>
+            </dataCategory>
+            <label>Training/Onboarding</label>
+            <name>BLN_TrainingOnboarding</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <description>FOUK-874 This is used in knowledge.</description>
+    <label>Service Category</label>
+    <objectUsage>
+        <object>SvcCatalogItemDef</object>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

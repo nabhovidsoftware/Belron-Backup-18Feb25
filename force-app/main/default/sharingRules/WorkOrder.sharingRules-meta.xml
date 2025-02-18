@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BLN_ShareWithCERUsers</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-5149 This is sharing rule is used to work orders with CER Users.</description>
+        <label>Share with CER Users</label>
+        <sharedTo>
+            <group>BLN_CERUsers</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9</booleanFilter>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Stock Collect</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Assist</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Warranty Replacement &amp; Recalibration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Warranty Replacement</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Side &amp; Rear Replacement</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Replacement</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Replacement &amp; Recalibration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Recalibration</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_WorkOrderType__c</field>
+            <operation>equals</operation>
+            <value>Repair</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

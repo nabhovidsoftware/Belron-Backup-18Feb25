@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created as a part of FOUK-5788. It will use to skip the validation rule on resource capacity creation.</description>
+    <isLicensed>false</isLicensed>
+    <label>BLN_SkipDailyWorkItemCapacityValidation</label>
+</CustomPermission>

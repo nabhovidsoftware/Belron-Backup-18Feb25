@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ReadyToSend</fullName>
+    <columns>NAME</columns>
+    <columns>BLN_PolicyNumber__c</columns>
+    <columns>BLN_FirstName__c</columns>
+    <columns>BLN_LastName__c</columns>
+    <columns>BLN_ReplacementExcess__c</columns>
+    <columns>BLN_RepairExcess__c</columns>
+    <columns>BLN_CHFVATStatus__c</columns>
+    <columns>BLN_ValidationDate__c</columns>
+    <columns>BLN_BVTStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BLN_BVTStatus__c</field>
+        <operation>equals</operation>
+        <value>Ready to Send</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>BLN_Corporate__c.BLN_Insurance</value>
+    </filters>
+    <label>Ready To Send</label>
+    <sharedTo>
+        <role>BLN_BVTAdvisor</role>
+        <role>BLN_BVTTeamManagers</role>
+    </sharedTo>
+</ListView>

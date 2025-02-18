@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Rule Parameter</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Rule Parameters</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Sales ARP MDM Sync --></label>
+        <name>BLN_SalesARPMDMSync</name>
+    </fieldSets>
+    <layouts>
+        <layout>BLN_AccountRuleParameterLayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_Product Allowance</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Validate Data Collect --></label>
+        <name>BLN_ValidateDataCollect</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- After Hours --></label>
+        <name>BLN_AfterHours</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Authorization Limit --></description>
+        <label><!-- Authorization Limit --></label>
+        <name>BLN_AuthorizationLimit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Automatic Divert to Authorisation Team --></label>
+        <name>BLN_AutomaticDiverttoAuthorisationTeam</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Data Collect --></label>
+        <name>BLN_DataCollect</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Delegated Authority --></label>
+        <name>BLN_DelegatedAuthority</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Delegated Authority - Claims Handling Fee Setup --></label>
+        <name>BLN_DelegatedAuthorityClaimsHandlingFeeSetup</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- OE Authorization --></label>
+        <name>BLN_OEAuthorization</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- FOUK-6068. This is the reference Record type of Product Allowance. --></description>
+        <label><!-- Product Allowance --></label>
+        <name>BLN_ProductAllowance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Product Excess --></label>
+        <name>BLN_ProductExcess</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SLA --></label>
+        <name>BLN_SLA</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Split Bill --></label>
+        <name>BLN_SplitBill</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- VAT To Motorist --></label>
+        <name>BLN_VATToMotorist</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record Type to store Procedure records --></description>
+        <label><!-- Procedure --></label>
+        <name>Procedure</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Account Rule Parameter cannot be associated with an Account in Closed status --></errorMessage>
+        <name>BLN_AccountNotClosedOrSuspended</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Either of Account and Account Rule Group should be populated --></errorMessage>
+        <name>BLN_AccountOrAGRisMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Active To date must be greater than Active From. --></errorMessage>
+        <name>BLN_ActiveToGreaterThanActiveFrom</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Contract field should not be blank. --></errorMessage>
+        <name>BLN_ContractMandatoryOrNonMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- New SLA record requires Contract --></errorMessage>
+        <name>BLN_ContractRequiredForSLA</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity field is required for Account Rule Parameters created associated with Quote. --></errorMessage>
+        <name>BLN_OpportunityCheckForQuoteField</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Either &quot;Product&quot; or &quot;Product Category&quot; should be populated at a time. --></errorMessage>
+        <name>BLN_ProductOrProCategoryisMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- SLA creation only allowed for &apos;Legal Entity Account&apos; and &apos;Country Grouping Account&apos; on Contract --></errorMessage>
+        <name>BLN_SLANotAllowedForAccountLevel</name>
+    </validationRules>
+</CustomObjectTranslation>

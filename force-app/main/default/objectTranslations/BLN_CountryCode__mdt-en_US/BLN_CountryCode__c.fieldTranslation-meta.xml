@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Used to store Country Code to be used in Integration Header --></help>
+    <label><!-- CountryCode --></label>
+    <name>BLN_CountryCode__c</name>
+</CustomFieldTranslation>

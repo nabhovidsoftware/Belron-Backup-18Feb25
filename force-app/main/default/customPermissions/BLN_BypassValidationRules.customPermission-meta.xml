@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>By adding this custom permission Validations Rules get bypassed for the Users or the set of users which have special Permission sets.</description>
+    <isLicensed>false</isLicensed>
+    <label>BypassValidationRules</label>
+</CustomPermission>

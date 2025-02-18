@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_OpportunityCheckForQuoteField</fullName>
+    <active>true</active>
+    <description>FOUK 2020 - Opportunity lookup field cannot be blank if Quote lookup is populated</description>
+    <errorConditionFormula>AND(
+NOT($Permission.BLN_BypassValidationRules),
+OR(
+ISCHANGED(BLN_Quote__c),
+ISNEW()
+),
+AND(
+ ISBLANK( BLN_Opportunity__c ),
+ NOT((ISBLANK(BLN_Quote__c)))  
+)
+)</errorConditionFormula>
+    <errorDisplayField>BLN_Opportunity__c</errorDisplayField>
+    <errorMessage>Opportunity field is required for Account Rule Parameters created associated with Quote.</errorMessage>
+</ValidationRule>

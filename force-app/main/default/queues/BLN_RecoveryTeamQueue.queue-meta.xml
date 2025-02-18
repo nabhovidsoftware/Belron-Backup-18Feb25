@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Recovery</name>
+    <queueMembers>
+        <users>
+            <user>ayush.a.singh@pwc.com.belronint</user>
+            <user>himanshu.h.verma@pwc.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>BLN_CaseRoutingConfiguration</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>ContactRequest</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>ServiceAppointment</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

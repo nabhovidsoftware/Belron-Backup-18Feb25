@@ -1,0 +1,10 @@
+<template>
+    <template if:true={records}>
+            <lightning-datatable
+                key-field="Id"
+                data={records}
+                columns={columns}
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+</template>

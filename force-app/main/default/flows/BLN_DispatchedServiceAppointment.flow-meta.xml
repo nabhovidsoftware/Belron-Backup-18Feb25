@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>checkbox_is_true</name>
+        <label>checkbox is true?</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ServiceTerritory.BLN_ConsiderforR1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Service_Appointment_for_Mule_Callout</targetReference>
+            </connector>
+            <label>true</label>
+        </rules>
+    </decisions>
+    <description>INC0424778 Mulesoft callout for dispatched Service Appointment</description>
+    <environments>Default</environments>
+    <interviewLabel>Service Appointment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Dispatched Service Appointment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>get_service_territory</name>
+        <label>get service territory</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>checkbox_is_true</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ServiceTerritory.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ServiceTerritory</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Mark_Service_Appointment_for_Mule_Callout</name>
+        <label>Mark Service Appointment for Mule Callout</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>BLN_QueueDispatchCallout__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>checkbox_is_true</targetReference>
+        </connector>
+        <filterFormula>NOT({!$Permission.BLN_BypassFlows})
+&amp;&amp; 
+	OR(
+		ISPICKVAL({!$Record.Status} ,&apos;Dispatched&apos;), 
+		{!$Record.LastModifiedBy.LastName} =&apos;Platform Integration User&apos;
+	) 
+&amp;&amp;
+	OR(
+		ISCHANGED({!$Record.Status}) ,
+		ISCHANGED({!$Record.SchedStartTime}),
+		ISCHANGED({!$Record.SchedEndTime}),
+		ISCHANGED({!$Record.BLN_AssignedServiceResource__c})
+	)</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

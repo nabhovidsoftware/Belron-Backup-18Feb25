@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AccountNotClosedOrSuspended</fullName>
+    <active>true</active>
+    <description>Account master field cannot be in Closed or Suspended status (to check on record insert and update) (FOUK-1904)</description>
+    <errorConditionFormula>AND(
+  OR (
+    ISNEW(),
+    ISCHANGED(BLN_Account__c),
+    ISCHANGED(BLN_InsurerAccount__c)
+  ),
+  NOT($Permission.BLN_BypassValidationRules),
+  
+    OR(ISPICKVAL(BLN_Account__r.BLN_Status__c , &quot;Closed&quot;),
+       
+       ISPICKVAL(BLN_InsurerAccount__r.BLN_Status__c , &quot;Closed&quot;)
+      )
+  
+)</errorConditionFormula>
+    <errorMessage>Account Rule Parameter cannot be associated with an Account in Closed status</errorMessage>
+</ValidationRule>

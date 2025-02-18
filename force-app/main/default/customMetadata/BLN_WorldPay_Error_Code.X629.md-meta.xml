@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>X629</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_Customer_Message__c</field>
+        <value xsi:type="xsd:string">We are unable to process your payment at this time due to a payment system error from our provider. Please try again later or contact our customer services team on 0344 375 3009 and they will be happy to help. Apologies for the inconvenience.</value>
+    </values>
+</CustomMetadata>

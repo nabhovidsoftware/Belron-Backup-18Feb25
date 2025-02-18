@@ -1,0 +1,108 @@
+<template>
+    <template if:true={showSchematic}>
+        <lightning-spinner alternative-text="Loading..." size="large" variant="brand"></lightning-spinner>
+    </template>
+    <template if:true ={statusSchematic}>
+        <div class="grid-container" ><!--backgroundImg-->
+            <div class="left-marker">{label.leftLabel}</div>
+            <div class="right-marker">{label.rightLabel}</div>
+            <div class="top-marker">{label.frontLabel}</div>
+            <div class="bottom-marker">{label.backLabel}</div>
+            <div class="whole-content"  > <!--class="whole-content" style={getBackgroundImage}-->
+              
+                <table border=0 class="table-grid"  > <!--style={getBackgroundImage}-->
+                <!-- <caption class="slds-align--absolute-center moveToLeft">{label.leftLabel}</caption> -->
+                <template if:true={showSpinner}>
+                    <lightning-spinner alternative-text="Loading..." size="large" variant="brand"></lightning-spinner>
+                </template>
+                <!-- <caption class="textColor">{label.backLabel}</caption> -->
+                        <!-- <lightning-card > -->
+                          
+                            <!-- <img src={tarzenTheCar} style="max-width:50%;max-height:50%;" class="base-image"> -->
+                         
+                        <!-- </lightning-card> -->
+                <template if:false={showSpinner} for:each={glassImageMapping} for:index="index" for:item="row">
+                    
+                    <tr key={row.value}>
+                        
+                    <template for:each={row.value} for:item="schematicElement">
+                            <td key={schematicElement} style="opacity: 0.5;"> <!--class="overlay-conatiner"-->
+                                <span class="datacells">
+                                   
+                                    <img src={schematicElement.displayTypeImg} alt={schematicElement.vehicalId} data-cellkey={schematicElement.cellIndex} data-vehicalid={schematicElement.vehicalId} data-vehicaltype={schematicElement.vehicalType} data-displaytype={schematicElement.displayType} onclick={showInfoPopup} class={schematicElement.highlightStatus}>
+                                    <!--<span class="hoverContent">{schematicElement.vehicalType}</span>-->
+                        </span>
+                        </td>
+                    </template>
+                </tr>
+            </template>
+
+                 
+                     
+               
+
+                <!-- <caption class="textColor">{label.frontLabel}</caption> -->
+            <template if:true={visibleInfoPopup}>
+                <section role="dialog" class="slds-modal slds-fade-in-open slds-align_absolute-center modal-box" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__content slds-p-around_x-large modalBody">
+                            <p class="modalText">{modalContent}</p>
+                            <p>
+                                <lightning-button label={label.cancel} title={label.cancel} onclick={closeModal} class="cancel-button"></lightning-button>
+                                <lightning-button label={label.confirm} title={label.confirm} onclick={modalConfirmAction} class="confirm-button"></lightning-button>    
+                            </p>
+                        </div>
+
+                     
+    
+                        <!-- <footer class="slds-modal__footer">
+                            <lightning-button type="destructive" label="Cancel" title="Cancel" onclick={closeModal} class="cancel-button"></lightning-button>
+                            <lightning-button type="success" label="Confirm" title="Cancel" onclick={madalConfirmAction} class="confirm-button"></lightning-button>
+                        </footer> -->
+                    </div>
+                        <!-- <caption class="slds-align--absolute-center moveToLeft">{label.rightLabel}</caption> -->
+                    </section>                
+                </template>          
+            </table>
+        </div>
+            
+        </div>
+        <!-- </div> -->
+        <footer class="slds-modal__footer slds-m-top_small">
+            <lightning-button class="slds-float_left" onclick={handleCancel} variant=""
+            name={label.cancel} label={label.cancel}></lightning-button>
+                            
+            <lightning-button class="slds-m-top_small slds-m-left_x-small button" onclick={handleRepair} variant="brand"
+                name={label.repairLabel} label={label.repairLabel} disabled={repairButtonStatus} > <!--disabled={showButton}-->
+            </lightning-button>
+    </footer>
+    </template>
+    <template if:true={openmodalError}>
+        <div>
+            
+        <lightning-card class="slds-align_center">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-align_absolute-center slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeErrorModal}>
+                            <lightning-icon icon-name="utility:close" size="medium">
+                            </lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            
+            <div class="slds-theme_error slds-p-around_large">
+                <lightning-icon variant="inverse" size="small"></lightning-icon>
+                <span ><b>{label.ContactPIDTeam}{schemtaicErrorMsg}</b></span>
+            </div>
+        </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        </lightning-card>
+    <!-- </template> -->
+    </div>
+    </template>
+
+</template>

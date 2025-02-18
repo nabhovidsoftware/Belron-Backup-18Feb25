@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>AssignAccountFields</name>
+        <label>Assign Account Fields</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <assignmentItems>
+            <assignToReference>accountRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ConvertedAccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_ClientSubType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>clientSubtype</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_ClientType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>clientType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_CompanyRegistrationNumber__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>companyRegistrationNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_CurrentSupplierNotes__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>currentSupplierNotes</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_GlassExcess__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>glassExcess</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_NameOfInsuranceCompany__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>nameOfInsuranceCompany</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_NumberOFItems__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>numberOfVehiclesMotorPolicyHoldersAcc</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_SplitBillRequired__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>splitBillRequired</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_TradingStatus__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>tradingStatus</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_LeadRecordType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>leadRecordType</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_RegistrationAddress__City__s</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>registrationAddressCity</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_RegistrationAddress__CountryCode__s</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>registrationAddressCountryCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_RegistrationAddress__PostalCode__s</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>registrationAddressPostalCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_RegistrationAddress__StateCode__s</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>registrationAddressStateCode</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_RegistrationAddress__Street__s</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>registrationAddressStreet</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_PolicyNumber__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>policyNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_PolicyExpiryDate__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>policyExpiryDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.Industry</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>industry</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_Level__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Legal Entity Account</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_VatRegistrationNumber__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VatRegistrationNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_BillingCountryCode__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>registrationAddressCountryCode</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CheckLeadRecordType</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignAdditionalAccountFields</name>
+        <label>Assign Additional Account Fields</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <assignmentItems>
+            <assignToReference>accountRecord.BillingCity</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_BillingAddress__City__s</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BillingCountry</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_BillingAddress__CountryCode__s</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BillingPostalCode</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_BillingAddress__PostalCode__s</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BillingState</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_BillingAddress__StateCode__s</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BillingStreet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_BillingAddress__Street__s</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>accountRecord.BLN_BillingCountryCode__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_BillingAddress__CountryCode__s</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateAccount</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignContactFields</name>
+        <label>Assign Contact Fields</label>
+        <locationX>182</locationX>
+        <locationY>1463</locationY>
+        <assignmentItems>
+            <assignToReference>contactRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ConvertedContactId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>contactRecord.IndividualId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>individualId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>GetConvertedContact.BLN_IsContactPayable__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>contactRecord.BLN_Role__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Applicant</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateContact</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>AssignOpportunityFields</name>
+        <label>Assign Opportunity Fields</label>
+        <locationX>204</locationX>
+        <locationY>2279</locationY>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.ConvertedOpportunityId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_NumberOfItems__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>numberOfVehiclesMotorPolicyHoldersAcc</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType1__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleType1</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleType2</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType3__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleType3</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType4__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleType4</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_PotentialVolume__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>potentialVolume</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType1Volume__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleTypeVolume1</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType2Volume__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleTypeVolume2</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType3Volume__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleTypeVolume3</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>opportunityRecord.BLN_VehicleType4Volume__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>vehicleTypeVolume4</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateOpportunity</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Payable</name>
+        <label>Check Payable</label>
+        <locationX>182</locationX>
+        <locationY>1679</locationY>
+        <defaultConnector>
+            <targetReference>IsOpportunityIdNull</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Payable_data_populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_AccountsPayableContact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Payable</targetReference>
+            </connector>
+            <label>If Payable data populated</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if Lead Record Type is Lead or Generic Account Form</description>
+        <name>CheckLeadRecordType</name>
+        <label>CheckLeadRecordType</label>
+        <locationX>182</locationX>
+        <locationY>755</locationY>
+        <defaultConnector>
+            <targetReference>UpdateAccount</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Lead</defaultConnectorLabel>
+        <rules>
+            <name>CLRT_GenericAccountForm</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>GetGenericAccountForm.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignAdditionalAccountFields</targetReference>
+            </connector>
+            <label>Generic Account Form</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsAccountIdNull</name>
+        <label>Is Account Id Null</label>
+        <locationX>336</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>IsContactIdNull</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>IAIN_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ConvertedAccountId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetConvertedAccount</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsContactIdNull</name>
+        <label>Is Contact Id Null</label>
+        <locationX>336</locationX>
+        <locationY>1247</locationY>
+        <defaultConnector>
+            <targetReference>IsOpportunityIdNull</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>ICIN_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ConvertedContactId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetConvertedContact</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsOpportunityIdNull</name>
+        <label>Is Opportunity Id Null</label>
+        <locationX>336</locationX>
+        <locationY>2063</locationY>
+        <defaultConnectorLabel>Yes</defaultConnectorLabel>
+        <rules>
+            <name>IOIN_No</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ConvertedOpportunityId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GetConvertedOpportunity</targetReference>
+            </connector>
+            <label>No</label>
+        </rules>
+    </decisions>
+    <description>FOUK-820, FOUK-3075. Update of Account and Opportunity fields during Lead conversion..</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>accountsPayableContact</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_AccountsPayableContact__c})),
+    ISBLANK({!GetConvertedContact.BLN_AccountsPayableContact__c})
+), 
+{!$Record.BLN_AccountsPayableContact__c}, 
+{!GetConvertedContact.BLN_AccountsPayableContact__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>accountsPayableEmail</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_AccountsPayableEmail__c})),
+    ISBLANK({!GetConvertedContact.BLN_AccountsPayableEmail__c})
+), 
+{!$Record.BLN_AccountsPayableEmail__c}, 
+{!GetConvertedContact.BLN_AccountsPayableEmail__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>accountsPayableJobTitle</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_AccountsPayableJobTitle__c})),
+    ISBLANK({!GetConvertedContact.BLN_AccountsPayableJobTitle__c})
+), 
+{!$Record.BLN_AccountsPayableJobTitle__c}, 
+{!GetConvertedContact.BLN_AccountsPayableJobTitle__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>accountsPayableTelephoneNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_AccountsPayableTelephoneNumber__c})),
+    ISBLANK({!GetConvertedContact.BLN_AccountsPayableTelephoneNumber__c})
+), 
+{!$Record.BLN_AccountsPayableTelephoneNumber__c}, 
+{!GetConvertedContact.BLN_AccountsPayableTelephoneNumber__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>clientSubtype</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+TEXT({!$Record.BLN_ClientSubType__c}), 
+IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_ClientSubType__c}))),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_ClientSubType__c}))
+), 
+TEXT({!$Record.BLN_ClientSubType__c}), 
+TEXT({!GetConvertedAccount.BLN_ClientSubType__c})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>clientType</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+TEXT({!$Record.BLN_ClientType__c}), 
+IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_ClientType__c}))),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_ClientType__c}))
+), 
+TEXT({!$Record.BLN_ClientType__c}), 
+TEXT({!GetConvertedAccount.BLN_ClientType__c})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>companyRegistrationNumber</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+{!$Record.BLN_CompanyRegistrationNumber__c}, 
+IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_CompanyRegistrationNumber__c})),
+    ISBLANK({!GetConvertedAccount.BLN_CompanyRegistrationNumber__c})
+), 
+{!$Record.BLN_CompanyRegistrationNumber__c}, 
+{!GetConvertedAccount.BLN_CompanyRegistrationNumber__c}
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>convertCountryToCountryCode</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.Country} = &apos;United Kingdom&apos;, &apos;GB&apos;, IF({!$Record.Country} = &apos;United States&apos;, &apos;US&apos;,{!$Record.Country}))</expression>
+    </formulas>
+    <formulas>
+        <name>currentSupplierNotes</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_CurrentSupplierNotes__c})),
+    ISBLANK({!GetConvertedAccount.BLN_CurrentSupplierNotes__c})
+), 
+{!$Record.BLN_CurrentSupplierNotes__c}, 
+{!GetConvertedAccount.BLN_CurrentSupplierNotes__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>glassExcess</name>
+        <dataType>Currency</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_GlassExcess__c})),
+    ISBLANK({!GetConvertedAccount.BLN_GlassExcess__c})
+), 
+{!$Record.BLN_GlassExcess__c}, 
+{!GetConvertedAccount.BLN_GlassExcess__c}
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>individualId</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.IndividualId})),
+    ISBLANK({!GetConvertedContact.IndividualId})
+), 
+{!$Record.IndividualId}, 
+{!GetConvertedContact.IndividualId}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>industry</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+TEXT({!$Record.Industry}), 
+IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.Industry}))),
+    ISBLANK(TEXT({!GetConvertedAccount.Industry}))
+), 
+TEXT({!$Record.Industry}), 
+TEXT({!GetConvertedAccount.Industry})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>leadRecordType</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.RecordType.Name})),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_LeadRecordType__c}))
+), 
+{!$Record.RecordType.Name}, 
+TEXT({!GetConvertedAccount.BLN_LeadRecordType__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>nameOfInsuranceCompany</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_NameOfInsuranceCompany__c})),
+    ISBLANK({!GetConvertedAccount.BLN_NameOfInsuranceCompany__c})
+), 
+{!$Record.BLN_NameOfInsuranceCompany__c}, 
+{!GetConvertedAccount.BLN_NameOfInsuranceCompany__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>numberOfVehiclesMotorPolicyHoldersAcc</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+TEXT({!$Record.BLN_NumberOfItems__c}), 
+IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_NumberOfItems__c}))),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_NumberOFItems__c}))
+), 
+TEXT({!$Record.BLN_NumberOfItems__c}), 
+TEXT({!GetConvertedAccount.BLN_NumberOFItems__c})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>numberOfVehiclesMotorPolicyHoldersOpp</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+TEXT({!$Record.BLN_NumberOfItems__c}), 
+IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_NumberOfItems__c}))),
+    ISBLANK(TEXT({!GetConvertedOpportunity.BLN_NumberOFItems__c}))
+), 
+TEXT({!$Record.BLN_NumberOfItems__c}), 
+TEXT({!GetConvertedOpportunity.BLN_NumberOFItems__c})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>policyExpiryDate</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_PolicyExpiryDate__c})),
+    ISBLANK({!GetConvertedAccount.BLN_PolicyExpiryDate__c})
+), 
+{!$Record.BLN_PolicyExpiryDate__c}, 
+{!GetConvertedAccount.BLN_PolicyExpiryDate__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>policyNumber</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_PolicyNumber__c})),
+    ISBLANK({!GetConvertedAccount.BLN_PolicyNumber__c})
+), 
+{!$Record.BLN_PolicyNumber__c}, 
+{!GetConvertedAccount.BLN_PolicyNumber__c}
+)</expression>
+    </formulas>
+    <formulas>
+        <name>potentialVolume</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_PotentialVolume__c})),
+    ISBLANK({!GetConvertedOpportunity.BLN_PotentialVolume__c})
+), 
+{!$Record.BLN_PotentialVolume__c}, 
+{!GetConvertedOpportunity.BLN_PotentialVolume__c}
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>registrationAddressCity</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+{!$Record.City}, 
+IF(
+AND(
+    NOT(ISBLANK({!$Record.City})),
+    ISBLANK({!GetConvertedAccount.BLN_RegistrationAddress__City__s})
+), 
+{!$Record.City}, 
+{!GetConvertedAccount.BLN_RegistrationAddress__City__s}
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>registrationAddressCountryCode</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+{!convertCountryToCountryCode}, 
+IF(
+AND(
+    NOT(ISBLANK({!convertCountryToCountryCode})),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_RegistrationAddress__CountryCode__s}))
+), 
+{!convertCountryToCountryCode}, 
+TEXT({!GetConvertedAccount.BLN_RegistrationAddress__CountryCode__s})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>registrationAddressPostalCode</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+{!$Record.PostalCode}, 
+IF(
+AND(
+    NOT(ISBLANK({!$Record.PostalCode})),
+    ISBLANK({!GetConvertedAccount.BLN_RegistrationAddress__PostalCode__s})
+), 
+{!$Record.PostalCode}, 
+{!GetConvertedAccount.BLN_RegistrationAddress__PostalCode__s}
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>registrationAddressStateCode</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+{!$Record.State}, 
+IF(
+AND(
+    NOT(ISBLANK({!$Record.State})),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_RegistrationAddress__StateCode__s}))
+), 
+{!$Record.State}, 
+TEXT({!GetConvertedAccount.BLN_RegistrationAddress__StateCode__s})
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>registrationAddressStreet</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+{!$Record.Street}, 
+IF(
+AND(
+    NOT(ISBLANK({!$Record.Street})),
+    ISBLANK({!GetConvertedAccount.BLN_RegistrationAddress__Street__s})
+), 
+{!$Record.Street}, 
+{!GetConvertedAccount.BLN_RegistrationAddress__Street__s}
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>splitBillRequired</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_SplitBillRequired__c}))),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_SplitBillRequired__c}))
+), 
+TEXT({!$Record.BLN_SplitBillRequired__c}), 
+TEXT({!GetConvertedAccount.BLN_SplitBillRequired__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>tradingStatus</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_TradingStatus__c}))),
+    ISBLANK(TEXT({!GetConvertedAccount.BLN_TradingStatus__c}))
+), 
+TEXT({!$Record.BLN_TradingStatus__c}), 
+TEXT({!GetConvertedAccount.BLN_TradingStatus__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>VatRegistrationNumber</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RecordTypeId} = {!GetGenericAccountForm.Id},
+{!$Record.BLN_VatRegistrationNumber__c}, 
+IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_VatRegistrationNumber__c})),
+    ISBLANK({!GetConvertedAccount.BLN_VatRegistrationNumber__c})
+), 
+{!$Record.BLN_VatRegistrationNumber__c}, 
+{!GetConvertedAccount.BLN_VatRegistrationNumber__c}
+)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>vehicleType1</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_VehicleType1__c}))),
+    ISBLANK(TEXT({!GetConvertedOpportunity.BLN_VehicleType1__c}))
+), 
+TEXT({!$Record.BLN_VehicleType1__c}), 
+TEXT({!GetConvertedOpportunity.BLN_VehicleType1__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>vehicleType2</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_VehicleType2__c}))),
+    ISBLANK(TEXT({!GetConvertedOpportunity.BLN_VehicleType2__c}))
+), 
+TEXT({!$Record.BLN_VehicleType2__c}), 
+TEXT({!GetConvertedOpportunity.BLN_VehicleType2__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>vehicleType3</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_VehicleType3__c}))),
+    ISBLANK(TEXT({!GetConvertedOpportunity.BLN_VehicleType3__c}))
+), 
+TEXT({!$Record.BLN_VehicleType3__c}), 
+TEXT({!GetConvertedOpportunity.BLN_VehicleType3__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>vehicleType4</name>
+        <dataType>String</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK(TEXT({!$Record.BLN_VehicleType4__c}))),
+    ISBLANK(TEXT({!GetConvertedOpportunity.BLN_VehicleType4__c}))
+), 
+TEXT({!$Record.BLN_VehicleType4__c}), 
+TEXT({!GetConvertedOpportunity.BLN_VehicleType4__c})
+)</expression>
+    </formulas>
+    <formulas>
+        <name>vehicleTypeVolume1</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_VehicleType1Volume__c})),
+    ISBLANK({!GetConvertedOpportunity.BLN_VehicleType1Volume__c})
+), 
+{!$Record.BLN_VehicleType1Volume__c}, 
+{!GetConvertedOpportunity.BLN_VehicleType1Volume__c}
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>vehicleTypeVolume2</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_VehicleType2Volume__c})),
+    ISBLANK({!GetConvertedOpportunity.BLN_VehicleType2Volume__c})
+), 
+{!$Record.BLN_VehicleType2Volume__c}, 
+{!GetConvertedOpportunity.BLN_VehicleType2Volume__c}
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>vehicleTypeVolume3</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_VehicleType3Volume__c})),
+    ISBLANK({!GetConvertedOpportunity.BLN_VehicleType3Volume__c})
+), 
+{!$Record.BLN_VehicleType3Volume__c}, 
+{!GetConvertedOpportunity.BLN_VehicleType3Volume__c}
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>vehicleTypeVolume4</name>
+        <dataType>Number</dataType>
+        <expression>IF(
+AND(
+    NOT(ISBLANK({!$Record.BLN_VehicleType4Volume__c})),
+    ISBLANK({!GetConvertedOpportunity.BLN_VehicleType4Volume__c})
+), 
+{!$Record.BLN_VehicleType4Volume__c}, 
+{!GetConvertedOpportunity.BLN_VehicleType4Volume__c}
+)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Lead - Update Account and Opportunity Fields {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead - Update Account and Opportunity Fields during conversion</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Payable</name>
+        <label>Create Payable</label>
+        <locationX>50</locationX>
+        <locationY>1787</locationY>
+        <connector>
+            <targetReference>IsOpportunityIdNull</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>$Record.ConvertedAccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_IsContactPayable__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_Role__c</field>
+            <value>
+                <stringValue>Payable Contact</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>$Record.BLN_AccountsPayableEmail__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>IndividualId</field>
+            <value>
+                <elementReference>individualId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>$Record.BLN_AccountsPayableContact__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Phone</field>
+            <value>
+                <elementReference>$Record.BLN_AccountsPayableTelephoneNumber__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Title</field>
+            <value>
+                <elementReference>$Record.BLN_AccountsPayableJobTitle__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>GetConvertedAccount</name>
+        <label>GetConvertedAccount</label>
+        <locationX>182</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AssignAccountFields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ConvertedAccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetConvertedContact</name>
+        <label>GetConvertedContact</label>
+        <locationX>182</locationX>
+        <locationY>1355</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AssignContactFields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ConvertedContactId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetConvertedOpportunity</name>
+        <label>Get Converted Opportunity</label>
+        <locationX>204</locationX>
+        <locationY>2171</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AssignOpportunityFields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ConvertedOpportunityId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get</description>
+        <name>GetGenericAccountForm</name>
+        <label>GetGenericAccountFormRecordType</label>
+        <locationX>336</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>IsAccountIdNull</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BLN_GenericAccountForm</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>UpdateAccount</name>
+        <label>Update Account</label>
+        <locationX>182</locationX>
+        <locationY>1055</locationY>
+        <connector>
+            <targetReference>IsContactIdNull</targetReference>
+        </connector>
+        <inputReference>accountRecord</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateContact</name>
+        <label>Update Contact</label>
+        <locationX>182</locationX>
+        <locationY>1571</locationY>
+        <connector>
+            <targetReference>Check_Payable</targetReference>
+        </connector>
+        <inputReference>contactRecord</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateOpportunity</name>
+        <label>Update Opportunity</label>
+        <locationX>204</locationX>
+        <locationY>2387</locationY>
+        <inputReference>opportunityRecord</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetGenericAccountForm</targetReference>
+        </connector>
+        <filterFormula>AND(
+    {!$Record.IsConverted} = TRUE,
+    NOT({!$Permission.BLN_BypassFlows})
+)</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>accountRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>contactRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>errorOccured</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>opportunityRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>PaybleContact</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+</Flow>

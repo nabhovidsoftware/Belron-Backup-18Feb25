@@ -1,0 +1,185 @@
+<template>
+    
+    <lightning-button class="right" variant="base" label={LAD_labels.LAD_AdvacnedSearchButtonLabel}
+        onclick={handleShowModal}></lightning-button>
+    
+    <template if:true={showModal}>
+         <!-- Spinner -->
+        
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <template if:true={isLoading}>
+                <div class="slds-spinner_container">
+                    <lightning-spinner size="large" variant="brand"></lightning-spinner>
+                </div>
+            </template>
+            <div class="slds-modal__container">
+                
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small" class="black-icon"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                        {LAD_labels.LAD_AdvacnedSearchTitle}</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                
+                <!-- Search Screen -->
+                <div if:true={showSearchScreen} class="slds-modal__content slds-p-around_medium"
+                    id="modal-content-id-1">
+
+                    <lightning-accordion class="accordion" active-section-name="A">
+                        <div if:false={disableVRN}>
+                            <lightning-accordion-section name="A" label="Search by VRN">
+
+
+                            <div class="slds-grid slds-wrap">
+                                <lightning-input class="slds-col slds-size_6-of-12  vrnValue"
+                                    label={LAD_labels.LAD_VRNfieldLabel} value={vrnValue} disabled={vrnDisabled}
+                                    onchange={handleVRNChange} pattern="^[a-zA-Z0-9]+$"
+                                    message-when-pattern-mismatch={LAD_labels.LAD_AlphanumericError}></lightning-input>
+                            </div>
+                            <div class="right">
+                                <lightning-button variant="brand" label={LAD_labels.LAD_SearchButtonLabel}
+                                    onclick={handleSearchVRN} disabled={disableVRNSearch}></lightning-button>
+                            </div>
+                        
+
+
+                            </lightning-accordion-section>
+                        </div>
+                            <!-- </lightning-accordion>                    
+                            <lightning-accordion class="accordion" active-section-name="B"> -->
+                        <lightning-accordion-section name="B" label={LAD_labels.LAD_SearchByCharsfieldLabel}>
+                            <div class="slds-grid slds-wrap">
+                                <lightning-combobox label="Make" class="slds-col slds-size_6-of-12" options={makeList}
+                                    value={makeValue} onchange={handleMakeChange}
+                                    disabled={makeDisabled}></lightning-combobox>
+                                <lightning-combobox label="Model" class="slds-col slds-size_6-of-12" options={modelList}
+                                    value={modelValue} onchange={handleModelChange}
+                                    disabled={modelDisabled}></lightning-combobox>
+                                <lightning-combobox label="Body" class="slds-col slds-size_6-of-12" options={bodyList}
+                                    value={bodyValue} onchange={handleBodyChange}
+                                    disabled={bodyDisabled}></lightning-combobox>
+                                <lightning-combobox label="Year" class="slds-col slds-size_6-of-12" options={yearList}
+                                    value={yearValue} onchange={handleYearChange}
+                                    disabled={yearDisabled}></lightning-combobox>
+                            </div>
+                            <div class="right">
+                                <lightning-button variant="brand" label={LAD_labels.LAD_SearchButtonLabel}
+                                    onclick={handleSearchVehicleChar} disabled={disableCharSearch}></lightning-button>
+                            </div>
+                        </lightning-accordion-section>
+                    </lightning-accordion>                            
+                </div>
+
+                <!-- Schematics Screen -->
+                <template if:true={showSchematicsScreen}>
+                    <div class="slds-modal__content slds-p-around_medium modal-body" id="modal-content-id-2">
+                        <div class="grid-container">
+                            <div class="left-marker">LEFT</div>
+                            <div class="right-marker">RIGHT</div>
+                            <div class="top-marker">TOP</div>
+                            <div class="bottom-marker">BOTTOM</div>
+                            <div class="whole-content">
+                                <table border=0 class="table-grid" style={getBackgroundImage}>
+                                    
+                                    <!-- <caption class="textColor">{label.backLabel}</caption> -->
+                                    <template for:each={glassImageMapping} for:index="index" for:item="row">
+                                        
+                                        <tr key={row.value}>
+                                            
+                                            <template for:each={row.value} for:item="schematicElement">
+                                                <td key={schematicElement} style="opacity: 0.5;">
+                                                <span class="datacells">
+                                                    <img    src={schematicElement.displayTypeImg} 
+                                                            alt={schematicElement.vehicalId} 
+                                                            data-cellkey={schematicElement.cellIndex} 
+                                                            data-vehicalid={schematicElement.vehicalId} 
+                                                            data-vehicaltype={schematicElement.vehicalType} 
+                                                            data-displaytype={schematicElement.displayType} 
+                                                            onclick={showInfoPopup} 
+                                                            class={schematicElement.highlightStatus}>
+                                                        <!-- <span class="hoverContent">{schematicElement.vehicalType}</span> -->
+                                                </span>
+                                            </td>
+                                            </template>
+                                        </tr>
+                                    </template>
+                                    <!-- <caption class="textColor">{label.frontLabel}</caption> -->
+                                    <template if:true={visibleInfoPopup}>
+                                        <section role="dialog"
+                                            class="slds-modal slds-fade-in-open slds-align_absolute-center modal-box"
+                                            tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true">
+                                            <div class="confirm-modal">
+                                                <div class="slds-modal__content slds-p-around_x-large modalBody">
+                                                    <p class="modalText">{modalContent}</p>
+                                                    <p class="hole-id-buttons">
+                                                        <lightning-button label={label.cancel} title={label.cancel}
+                                                            onclick={closeModal}
+                                                            class="cancel-button"></lightning-button>
+                                                        <lightning-button label={label.confirm} title={label.confirm}
+                                                            onclick={modalConfirmAction}
+                                                            class="confirm-button"></lightning-button>
+                                                    </p>
+                                                </div>
+                                                <!-- <footer class="slds-modal__footer">
+                                                    <lightning-button type="destructive" label="Cancel" title="Cancel" onclick={closeModal} class="cancel-button"></lightning-button>
+                                                    <lightning-button type="success" label="Confirm" title="Cancel" onclick={madalConfirmAction} class="confirm-button"></lightning-button>
+                                                </footer> -->
+                                            </div>
+                                            <!-- <caption class="slds-align--absolute-center moveToLeft">{label.rightLabel}</caption> -->
+                                        </section>                
+                                    </template>          
+                                </table>
+                            </div>
+                        </div>               
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                    <footer class="slds-modal__footer">
+                        <lightning-button class="slds-m-top_small slds-m-left_x-small button"
+                            onclick={handleContinueFromSchematics} variant="brand" name="continue"
+                            label={LAD_labels.LAD_ContinueButtonLabel} disabled={disableSchematicsContinue}>
+                            <!--disabled={showButton}-->
+                        </lightning-button>       
+                    </footer>
+                </template>
+
+                <!-- Product Identification Screen -->
+                <template if:true={showProductIdScreen}>
+                    <lightning-card class="content-box-lcard">
+                        <div class="content-box">
+                            <div style="font-weight: bold;">{label.Questions}</div>
+                            <div class="question-pos">
+                                <p style="font-weight: bold;">{Question_Text}</p>
+                                <p class="question-content">{question_statement}</p>
+                            </div>
+                            <div class="options-pos">
+                                <lightning-radio-group options={radioOptions} onchange={storeResponse}
+                                    value={question_response} data-trnid={question_transactionId}
+                                type="radio"></lightning-radio-group>
+                            </div>
+                        </div>
+                        <footer class="slds-modal__footer">
+<!--                             <lightning-button class="cancel-bttn" variant="" type="cancel" label="Cancel" onclick={cancelAction}></lightning-button>
+ --> <lightning-button class="slds-m-top_small slds-m-left_x-small button" type="submit"
+                                disabled={disableQuestionContinue} variant="Brand"
+                                label={LAD_labels.LAD_ContinueButtonLabel} onclick={continueAction}></lightning-button>
+                        </footer>
+                    </lightning-card>
+                </template>
+                
+                <!-- <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={submitDetails} title="OK">OK</button>
+                </footer> -->
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

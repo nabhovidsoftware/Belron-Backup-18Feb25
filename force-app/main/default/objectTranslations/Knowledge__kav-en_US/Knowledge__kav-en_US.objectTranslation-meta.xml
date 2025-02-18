@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Knowledge</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Knowledge</value>
+    </caseValues>
+    <layouts>
+        <layout>BLN_Contracts</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_KnowledgeLayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_Tender</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Custom Script Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>FAQ - Author</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>FAQ - Reader</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>FAQ-Community Layout</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>How To</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Assignment Information --></label>
+            <section>Assignment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Procedure - Author</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Procedure - Reader</layout>
+        <sections>
+            <label><!-- Article Details --></label>
+            <section>Article Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Properties --></label>
+            <section>Properties</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Tender Review --></label>
+        <name>BLN_TenderReview</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Record type of capture Contract Articles --></description>
+        <label><!-- Contracts --></label>
+        <name>BLN_Contracts</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This RecordType is created for Scripting Articles --></description>
+        <label><!-- Custom Script --></label>
+        <name>BLN_CustomScript</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- For step-by-step instructions --></description>
+        <label><!-- How To --></label>
+        <name>BLN_HowTo</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type of capture Tender Articles --></description>
+        <label><!-- Tender --></label>
+        <name>BLN_Tender</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This can be used for simple question and answer articles. --></description>
+        <label><!-- FAQ --></label>
+        <name>FAQ</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- FAQ Community --></label>
+        <name>FAQCommunity</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This can be used for defining how to do something or the steps of a procedure. --></description>
+        <label><!-- Procedure --></label>
+        <name>Procedure</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SummaryOfTermsOfReference__c</fullName>
+    <description>FOUK-5320 Account Audit  - Summary of terms of reference</description>
+    <externalId>false</externalId>
+    <label>Summary of terms of reference</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

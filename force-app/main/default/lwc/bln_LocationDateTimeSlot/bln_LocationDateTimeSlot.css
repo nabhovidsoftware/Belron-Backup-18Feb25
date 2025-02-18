@@ -1,0 +1,157 @@
+.button {
+    background-color: #fefdfd; 
+    border: rgb(4, 0, 0);
+    padding: 5px 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 1px;
+    cursor: pointer;
+  }
+  .button2 {
+    background-color: #555555; 
+    border: rgb(4, 0, 0);
+    padding: 5px 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 1px;
+    cursor: pointer;
+  }
+  .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 500px;
+      margin:20px auto;
+  
+  }
+  .dates-container {
+      display:flex;
+  }
+  .date-box {
+      border: 1px solid #ccc;
+      padding:30px;
+      margin: 0 5px;
+  }
+  
+  [type=checkbox] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+  .true{
+      outline: 2px solid rgb(79, 128, 0);
+   }
+  
+   .inputWidth{
+      width: 700px;
+  }
+
+  .tester{
+    height:2rem;
+    width:11.6rem; 
+    border:1px solid black;
+  }
+  .slds-listbox__item {
+    cursor: pointer;
+}
+
+.boxgrey{
+  background:grey;
+}
+.boxwhite{
+  background:white;
+}
+
+.dropdown-menu {
+  max-height:25rem;
+  overflow-y: scroll;
+}
+
+.baground_color{
+  background-color : lightgrey;
+  height:2rem;
+  width:12rem;
+  border:1px solid black;
+  margin-left: 1rem;
+
+
+}
+
+.baground_color_1{
+  background-color : white;
+  height:2rem;
+  width:12rem;
+  border:1px solid black;
+  margin-left: 1rem;
+}
+
+.bagroundcolor_slotA{
+  height:2rem;
+  width:18rem;
+  border:1px solid black;
+  background:lightyellow;
+}
+
+.bagroundcolor_slotB{
+  height:2rem;
+  width:18rem;
+  border:1px solid black;
+  background:lightgrey;
+}
+
+.boxeffect { 
+  cursor: pointer; 
+} 
+
+.boxeffect:active { 
+  transform: scale(0.9); 
+}
+
+.earlyCss{
+  height:2rem;
+  width:42rem;
+  border:1px solid black;
+  background:lightgray; 
+  margin-right: 4.2rem;
+}
+
+.lightGreen{
+  background:lightgreen
+}
+
+.width50{
+  width:50rem
+}
+
+.dateClass{
+  top:200px; 
+  left:50px
+}
+
+.weathercss{
+  height:2rem;
+  width:43rem; 
+  border:1px solid black;
+  background:lightgrey; 
+  margin-right: 3rem;
+}
+
+.width200{
+  top:200px; 
+  left:50px
+}
+
+.vatlabel{
+  height:3rem;
+  width:45.7rem; 
+  border:1px solid black;
+  background:lightgrey;
+}
+
+.vatValue{
+  height:3rem;
+  width:13.4rem;
+  border:1px solid black;
+  background:white;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Customer Service</name>
+    <queueMembers>
+        <users>
+            <user>dheeraj.sharma@pwc.com.belronint</user>
+            <user>divyaveer.s.samyal@pwc.com.belronint</user>
+            <user>gagandeep.singh@belronuk.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>BLN_CaseRoutingConfiguration</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

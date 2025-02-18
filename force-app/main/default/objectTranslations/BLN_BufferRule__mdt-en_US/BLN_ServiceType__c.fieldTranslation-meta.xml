@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Service Type --></label>
+    <name>BLN_ServiceType__c</name>
+    <picklistValues>
+        <masterLabel>No Work Required</masterLabel>
+        <translation><!-- No Work Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration</masterLabel>
+        <translation><!-- Recalibration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair</masterLabel>
+        <translation><!-- Repair --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Replacement</masterLabel>
+        <translation><!-- Replacement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Replacement &amp; Recalibration</masterLabel>
+        <translation><!-- Replacement &amp; Recalibration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Side &amp; Rear</masterLabel>
+        <translation><!-- Side &amp; Rear --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sunroof</masterLabel>
+        <translation><!-- Sunroof --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

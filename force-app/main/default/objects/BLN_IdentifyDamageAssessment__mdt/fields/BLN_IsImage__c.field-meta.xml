@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_IsImage__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This is boolean field to hide and show image</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Is Image</label>
+    <type>Checkbox</type>
+</CustomField>

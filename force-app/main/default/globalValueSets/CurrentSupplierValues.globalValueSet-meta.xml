@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Autoglass</fullName>
+        <default>false</default>
+        <label>Autoglass</label>
+    </customValue>
+    <customValue>
+        <fullName>National Windscreens</fullName>
+        <default>false</default>
+        <label>National Windscreens</label>
+    </customValue>
+    <customValue>
+        <fullName>Auto Windscreens</fullName>
+        <default>false</default>
+        <label>Auto Windscreens</label>
+    </customValue>
+    <customValue>
+        <fullName>Nationwide Windscreens Services</fullName>
+        <default>false</default>
+        <label>Nationwide Windscreens Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Current Supplier values</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

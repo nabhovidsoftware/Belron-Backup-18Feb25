@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>RFI - Request for Information</label>
+                <name>RFI_Request_for_Information</name>
+            </dataCategory>
+            <dataCategory>
+                <label>RFQ - Request for Quote</label>
+                <name>RFQ_Request_for_Quote</name>
+            </dataCategory>
+            <dataCategory>
+                <label>RFX - Request for Anything</label>
+                <name>RFX_Request_for_Anything</name>
+            </dataCategory>
+            <label>Contract</label>
+            <name>BLN_Contract</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>RFX - Request for Anything</label>
+                <name>RFX_Request_forAnything</name>
+            </dataCategory>
+            <dataCategory>
+                <label>RFI - Request for Information</label>
+                <name>RFI_Request_forInformation</name>
+            </dataCategory>
+            <dataCategory>
+                <label>RFQ - Request for Quote</label>
+                <name>RFQ_Request_forQuote</name>
+            </dataCategory>
+            <label>Tender</label>
+            <name>BLN_Tender</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <description>FOUK-6259 This is used in knowledge.</description>
+    <label>Sales Category</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+        <object>SvcCatalogItemDef</object>
+    </objectUsage>
+</DataCategoryGroup>

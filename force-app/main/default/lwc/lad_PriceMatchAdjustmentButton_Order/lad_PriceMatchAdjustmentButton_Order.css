@@ -1,0 +1,5 @@
+.slds-spinner_container {
+    --dxp-c-spinner-color-background: #b2abab1f;
+    position: fixed;
+
+}

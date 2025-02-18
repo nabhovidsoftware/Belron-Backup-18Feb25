@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>BLN_Initiative__c</entityName>
+    <fieldName>BLN_Progress__c</fieldName>
+    <masterLabel>BLN Sales Strategy Initiative  Path</masterLabel>
+    <recordTypeName>BLN_SalesStrategyInitiative</recordTypeName>
+</PathAssistant>

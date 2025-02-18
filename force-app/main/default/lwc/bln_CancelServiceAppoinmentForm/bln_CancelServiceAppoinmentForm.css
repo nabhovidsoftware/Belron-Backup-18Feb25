@@ -1,0 +1,143 @@
+.slds-modal__container {
+  margin: 0 auto;
+  width: 47% !important;
+  max-width: 40rem;
+  min-width: 20rem;
+}
+.container {  
+  opacity: 0;  
+  transition: opacity 2s; /* This will make the fade effect smooth */  
+}
+.custom-spinner {
+    --sds-c-spinner-color-background: #4caf50; /* Custom background color (green in this case) */
+    --sds-c-spinner-color-foreground: #ffffff; /* Custom foreground color (white in this case) */
+}
+.headcss{
+    color: var(--theme-color-text, #475158);
+    font-family: Roboto Condensed;
+font-size: var(--theme-typography-font-size-xl, 32px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 700);
+line-height: 130%; /* 41.6px */
+text-align: left;
+}
+.paracss{
+    color: var(--theme-color-text, #475158);
+
+    font-family: Roboto Condensed;
+font-size: var(--theme-typography-font-size-m, 16px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-regular, 400);
+line-height: 150%; /* 24px */
+}
+.footermargin{
+    /* margin: 0% 3%; */
+    margin: 0% 2% 0% 1%;
+  }
+  .confirm{
+    background-color: #568300; 
+    color: white; 
+    float: right;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+    padding: 12px;
+  }
+ 
+.cancel{
+    float: left; 
+    border-color:#5A6369;
+    border: 1px solid #5A6369;
+    color: #5A6369;
+    color: var(--theme-color-secondary, #5A6369);
+    padding: 12px;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+  }
+  .cancel1{
+    float: right; 
+    border-color:#5A6369;
+    border: 1px solid #5A6369;
+    color: #5A6369;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+    padding: 12px;
+    width: 96px;
+  }
+
+  .my-cystom-input{
+    --sds-c-input-radius-border: 18px;
+    --slds-c-input-color-background: var(--c-example-blue);
+    background: #FAFAFA;
+}
+.my-combobox {
+    --sds-c-combobox-background-color: #f0f0f0; /* Background color for the entire combobox */
+    --slds-colorBackground: #f0f0f0; /* Background color for the entire combobox */
+    --slds-colorBackgroundDropdown: #f0f0f0;
+}
+
+.my-combobox .slds-combobox_container {
+    background-color: #f0f0f0; /* Background color for the input area */
+}
+
+.my-combobox .slds-dropdown {
+    background-color: #f0f0f0; /* Background color for the dropdown list */
+}
+.slds-combobox__input-value {
+    --sds-c-combobox-background-color: #fafafa !important;
+    color: var(--slds-g-color-neutral-base-50, var(--lwc-colorTextPlaceholder, black)) !important;
+}
+  .slds-input_faux:not(.slds-combobox__input-value) {
+    background-color: #FAFAFA !important;
+    /* width: 100%;
+     background-color: #FAFAFA !important;
+    color: var(--slds-g-color-neutral-base-50, var(--lwc-colorTextPlaceholder, #8B9196)) !important;
+   font-family: var(--theme-typography-font-family-body, Roboto);
+font-size: var(--theme-typography-font-size-m, 16px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-regular, 400);
+line-height: 150%; /* 24px */
+    /* box-shadow: var(--slds-c-input-shadow, var(--sds-c-input-shadow));
+    transition: border var(--lwc-durationQuickly, 0.1s) linear, background-color var(--lwc-durationQuickly, 0.1s) linear;
+    display: inline-flex;
+    flex: 1 1 auto;
+    text-align: left; */ 
+}
+ 
+@media screen and (max-device-width: 480px) 
+and (orientation: portrait) {
+.headcss{
+  font-size: 20px;
+}
+.paracss{
+ font-size: 20px;
+  width: 100%;
+  /* margin-right: 5rem; */
+}
+.paracss2{
+  width: 100%;
+  margin-left: 0.5rem;
+
+}
+.cancel1{
+    /* float: right;  */
+    border-color:#5A6369;
+    border: 1px solid #5A6369;
+    color: #5A6369;
+    width: 100%;
+  }
+  .confirm{
+    width: 220px;
+  }
+}
+.blurry {
+  filter: blur(10px); /* Adjust the blur radius as needed */
+}

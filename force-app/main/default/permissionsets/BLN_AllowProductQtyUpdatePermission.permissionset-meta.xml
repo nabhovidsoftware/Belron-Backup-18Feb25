@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>BLN_AllowedQuantityChange</name>
+    </customPermissions>
+    <description>FOUK-5037 Used to allow Users to edit Product quantity on Product Selection</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Allow Product Qty Update Permission</label>
+</PermissionSet>

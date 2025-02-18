@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- BOM Identifier Id --></help>
+    <label><!-- Bill of Material Id --></label>
+    <name>LAD_Bill_of_Material_Id__c</name>
+</CustomFieldTranslation>

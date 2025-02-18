@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-642 This action is used to clear Vehicle details such as Make, Model, Body Type, Color etc..</description>
+    <flowDefinition>BLN_ClearVehiclesDetailsFromVehicle</flowDefinition>
+    <label>Clear Vehicle Details</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

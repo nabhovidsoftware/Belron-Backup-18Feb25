@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <dataCategory>
+        <dataCategory>
+            <label>Customer/Motorist FAQ(self-serve Portal)</label>
+            <name>Customer_Motorist_FAQs_self_serve_Portal</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Account FAQs (B2B Portal)</label>
+            <name>Account_FAQs_B2B_Portal</name>
+        </dataCategory>
+        <dataCategory>
+            <label>Product Related FAQs</label>
+            <name>Product_Related_FAQs</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <description>FOUK-874 This is used in knowledge.</description>
+    <label>FAQ/ How to’s (External)</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

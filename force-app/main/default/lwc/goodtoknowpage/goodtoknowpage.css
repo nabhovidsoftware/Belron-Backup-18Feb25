@@ -1,0 +1,36 @@
+.concss{
+    text-align: left;
+    margin-top: 224px;
+    /* margin-top: 56%; */
+}
+.goodcss{
+    color: var(--ewp-comp-heading-text-default, #475158);
+    font-family: Roboto Condensed;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 130%; /* 62.4px */
+}
+.paracss{
+    color: var(--theme-color-text, #475158);
+     font-family: roboto;
+    font-size:  14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    margin: 24px 0px ;
+}
+
+/* @media screen and (max-device-width: 480px) 
+and (orientation: portrait) { */
+@media (max-width: 612px) {
+    .concss{
+        text-align: left;
+        margin-top: -3%;
+        /* margin-top: -8%; */
+    }  
+    .goodcss{
+        font-size: 24px;
+    } 
+    
+}

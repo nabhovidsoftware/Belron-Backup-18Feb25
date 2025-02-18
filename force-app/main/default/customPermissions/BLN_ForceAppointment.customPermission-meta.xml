@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Permission is created as part of story FOUK-7148</description>
+    <isLicensed>false</isLicensed>
+    <label>Force Appointment</label>
+</CustomPermission>

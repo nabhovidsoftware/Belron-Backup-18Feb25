@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Raise a Complaint">
+        <div class="slds-p-around_medium">
+            <!-- Read-only fields for contact information -->
+            <lightning-input label="Contact Name" value={contactName} disabled></lightning-input>
+            <lightning-input label="Email" type="email" value={email} disabled></lightning-input>
+            <lightning-input label="Phone" type="tel" value={phone} disabled></lightning-input>
+
+            <!-- Input fields for user-entered data -->
+            <lightning-input label="First Name" value={firstName} onchange={handleChange} data-fieldname="firstName" required></lightning-input>
+            <lightning-input label="Last Name" value={lastName} onchange={handleChange} data-fieldname="lastName" required></lightning-input>
+            <lightning-input label="Vehicle Registration Number (VRN)" value={vrn} onchange={handleChange} data-fieldname="vrn" required></lightning-input>
+
+            <!-- Description input field -->
+            <lightning-input label="Description" onchange={handleChange} data-fieldname="description" variant="textarea" required></lightning-input>
+
+            <!-- File upload input -->
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="fileUpload">Please upload a document</label>
+                <div class="slds-form-element__control">
+                    <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange={handleFileUpload}></input>
+                </div>
+            </div>
+
+            <!-- Submit button aligned to the right -->
+            <div class="slds-m-top_medium slds-text-align_right">
+                <!-- Display loading spinner when isLoading is true -->
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </template>
+                <!-- Normal submit button -->
+                <template if:false={isLoading}>
+                    <lightning-button label="Submit" onclick={handleSubmit} variant="brand"></lightning-button>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

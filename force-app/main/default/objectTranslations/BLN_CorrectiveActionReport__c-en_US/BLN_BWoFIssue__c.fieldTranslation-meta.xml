@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- BWoF Issue --></label>
+    <name>BLN_BWoFIssue__c</name>
+    <picklistValues>
+        <masterLabel>BWOF - Step 1 Assess working environment, identify and use required PPE</masterLabel>
+        <translation><!-- BWOF - Step 1 Assess working environment, identify and use required PPE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 10 Remove camera &amp; other sensors, test fit to new glass</masterLabel>
+        <translation><!-- BWOF - Step 10 Remove camera &amp; other sensors, test fit to new glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 11 Apply full car protection</masterLabel>
+        <translation><!-- BWOF - Step 11 Apply full car protection --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 12 Check decking height and gaps</masterLabel>
+        <translation><!-- BWOF - Step 12 Check decking height and gaps --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 13 Remove and check parts, store safely</masterLabel>
+        <translation><!-- BWOF - Step 13 Remove and check parts, store safely --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 14 Cut out &amp; remove old windscreen / windshield</masterLabel>
+        <translation><!-- BWOF - Step 14 Cut out &amp; remove old windscreen / windshield --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 15 Inspect old polyurethane &amp; determine where to apply new polyurethane</masterLabel>
+        <translation><!-- BWOF - Step 15 Inspect old polyurethane &amp; determine where to apply new polyurethane --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 16 Inspect &amp; clean pinch weld / aperture and take appropriate corrosion action</masterLabel>
+        <translation><!-- BWOF - Step 16 Inspect &amp; clean pinch weld / aperture and take appropriate corrosion action --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 17 Cut back old polyurethane to required height. Prepare bonding surfaces</masterLabel>
+        <translation><!-- BWOF - Step 17 Cut back old polyurethane to required height. Prepare bonding surfaces --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 18 Prepare bonding surfaces following adhesive system guidelines</masterLabel>
+        <translation><!-- BWOF - Step 18 Prepare bonding surfaces following adhesive system guidelines --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 19 Respect flash off times</masterLabel>
+        <translation><!-- BWOF - Step 19 Respect flash off times --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 2 Collect and verify parts against device or workorder</masterLabel>
+        <translation><!-- BWOF - Step 2 Collect and verify parts against device or workorder --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 20 Extrude new polyurethane at correct angle and speed, note minimum driveaway time</masterLabel>
+        <translation><!-- BWOF - Step 20 Extrude new polyurethane at correct angle and speed, note minimum driveaway time --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 21 Install new glass, check decking height, position &amp; gaps. Secure glass with required support.</masterLabel>
+        <translation><!-- BWOF - Step 21 Install new glass, check decking height, position &amp; gaps. Secure glass with required support. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 22 Install removed parts &amp; check, connect camera wiring</masterLabel>
+        <translation><!-- BWOF - Step 22 Install removed parts &amp; check, connect camera wiring --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 23 Check functionality of glass features &amp; Head’s Up Display</masterLabel>
+        <translation><!-- BWOF - Step 23 Check functionality of glass features &amp; Head’s Up Display --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 24 Quality Check – respect minimum driveaway times</masterLabel>
+        <translation><!-- BWOF - Step 24 Quality Check – respect minimum driveaway times --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 25 Prepare static or dynamic recalibration: Connect battery support &amp; diagnostic control unit</masterLabel>
+        <translation><!-- BWOF - Step 25 Prepare static or dynamic recalibration: Connect battery support &amp; diagnostic control unit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 26 Perform static, dynamic or dual recalibration, any sensor resets required &amp; complete post scan</masterLabel>
+        <translation><!-- BWOF - Step 26 Perform static, dynamic or dual recalibration, any sensor resets required &amp; complete post scan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 27 Thoroughly vacuum affected area &amp; clean fitted glass inside and out, apply rain repellent if applicable</masterLabel>
+        <translation><!-- BWOF - Step 27 Thoroughly vacuum affected area &amp; clean fitted glass inside and out, apply rain repellent if applicable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 28 Perform final Quality Check</masterLabel>
+        <translation><!-- BWOF - Step 28 Perform final Quality Check --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 29 Inform customer of the work you have done and care you have taken &amp; VAPS fitted</masterLabel>
+        <translation><!-- BWOF - Step 29 Inform customer of the work you have done and care you have taken &amp; VAPS fitted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 3 Meet &amp; greet the customer and explain work to be done.</masterLabel>
+        <translation><!-- BWOF - Step 3 Meet &amp; greet the customer and explain work to be done. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 30 Complete paperwork / complete job on device</masterLabel>
+        <translation><!-- BWOF - Step 30 Complete paperwork / complete job on device --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 4 Verify parts against the vehicle</masterLabel>
+        <translation><!-- BWOF - Step 4 Verify parts against the vehicle --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 5 Perform visual inspection with customer, inform customer of pre-existing damage</masterLabel>
+        <translation><!-- BWOF - Step 5 Perform visual inspection with customer, inform customer of pre-existing damage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 6 Perform technical inspection, apply necessary car protection. ADAS jobs: Add battery support &amp; pre scan vehicle for pre-existing error codes</masterLabel>
+        <translation><!-- BWOF - Step 6 Perform technical inspection, apply necessary car protection. ADAS jobs: Add battery support &amp; pre scan vehicle for pre-existing error codes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 7 Read vital information &amp; fitting Instructions</masterLabel>
+        <translation><!-- BWOF - Step 7 Read vital information &amp; fitting Instructions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 8 Clean &amp; prepare glass, install lifting device/s</masterLabel>
+        <translation><!-- BWOF - Step 8 Clean &amp; prepare glass, install lifting device/s --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BWOF - Step 9 Decontaminate glass</masterLabel>
+        <translation><!-- BWOF - Step 9 Decontaminate glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Fault Found</masterLabel>
+        <translation><!-- No Fault Found --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair Process Not Followed</masterLabel>
+        <translation><!-- Repair Process Not Followed --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

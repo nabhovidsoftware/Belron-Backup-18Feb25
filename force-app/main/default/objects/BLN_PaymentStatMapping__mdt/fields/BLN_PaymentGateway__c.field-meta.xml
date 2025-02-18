@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_PaymentGateway__c</fullName>
+    <description>FOUK-3977 This is used BLN_SCUtility class</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Payment Gateway</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Barclays</fullName>
+                <default>false</default>
+                <label>Barclays</label>
+            </value>
+            <value>
+                <fullName>WorldPay</fullName>
+                <default>false</default>
+                <label>WorldPay</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

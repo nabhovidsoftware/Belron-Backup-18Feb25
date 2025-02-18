@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-5611 Opens the Refund screenflow on Payment object.</description>
+    <flowDefinition>BLN_RefundScreen</flowDefinition>
+    <label>Refund</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

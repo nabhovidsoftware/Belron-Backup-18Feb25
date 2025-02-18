@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>check_checkbox</name>
+        <label>check checkbox</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkbox_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ServiceTerritory.BLN_ConsiderforR1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mark_Service_Appointment_for_Mule_Callout</targetReference>
+            </connector>
+            <label>checkbox true</label>
+        </rules>
+    </decisions>
+    <description>INC0448012 Mulesoft callout for updated Service Appointment</description>
+    <environments>Default</environments>
+    <interviewLabel>Updated Service Appointment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Updated Service Appointment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Mark_Service_Appointment_for_Mule_Callout</name>
+        <label>Mark Service Appointment for Mule Callout</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>BLN_QueueUpdateCallout__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>check_checkbox</targetReference>
+        </connector>
+        <filterFormula>NOT({!$Permission.BLN_BypassFlows})
+            &amp;&amp;
+            NOT(ISNEW())
+            &amp;&amp;
+            TEXT({!$Record.Status}) != &apos;Dispatched&apos;
+            &amp;&amp;
+            OR(
+
+            ISCHANGED({!$Record.Status})&amp;&amp;
+            TEXT({!$Record.Status}) != &apos;Scheduled&apos; &amp;&amp;
+            TEXT({!$Record.Status}) != &apos;None&apos; &amp;&amp;
+            TEXT({!$Record.Status}) != &apos;Failed Before Arrive&apos;,
+
+            ISCHANGED({!$Record.Status}) &amp;&amp;
+            TEXT({!$Record.Status}) == &apos;Scheduled&apos; &amp;&amp;
+            TEXT({!$Record__Prior.Status}) == &apos;Dispatched&apos; ,
+
+            NOT(ISCHANGED({!$Record.Status})) &amp;&amp;
+            LEN({!$Record.BLN_AssignedServiceResource__c})&gt;0 &amp;&amp;
+            OR(
+            ISCHANGED({!$Record.SchedStartTime}),
+            ISCHANGED({!$Record.SchedEndTime}),
+            ISCHANGED({!$Record.BLN_AssignedServiceResource__c})),
+
+            ISCHANGED({!$Record.Status}) &amp;&amp;
+            OR(
+            TEXT({!$Record.Status})=&apos;None&apos; &amp;&amp; TEXT({!$Record__Prior.Status}) != &apos;None&apos; ,
+            TEXT({!$Record.Status})=&apos;Canceled&apos; &amp;&amp; TEXT({!$Record__Prior.Status}) != &apos;Canceled&apos;,
+            TEXT({!$Record.Status})=&apos;Failed Before Arrive&apos; &amp;&amp; TEXT({!$Record__Prior.Status}) != &apos;Failed Before Arrive&apos; )
+            )</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

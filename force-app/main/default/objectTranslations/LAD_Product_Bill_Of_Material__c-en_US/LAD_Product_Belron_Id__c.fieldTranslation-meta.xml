@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The Latest OEM Code of the Product --></help>
+    <label><!-- Product Belron Id --></label>
+    <name>LAD_Product_Belron_Id__c</name>
+</CustomFieldTranslation>

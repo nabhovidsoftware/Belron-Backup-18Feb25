@@ -1,0 +1,12 @@
+<template>
+     <footer class="slds-modal__footer slds-m-top_small">
+        <lightning-button variant="neutral" class="slds-float_left" onclick={handleBack} name={label.backLabel} label={label.backLabel}>
+        </lightning-button>
+        <lightning-button class="slds-m-top_small slds-m-left_x-small button"  variant="brand" name={label.selectAdditionalGlassLabel} label={label.selectAdditionalGlassLabel} onclick={handleAdditionalGlass}> 
+        </lightning-button>
+        <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_success"  
+        onclick={handleContinue} variant="brand" name={label.continueLabel} label={label.continueLabel}>
+        <!-- <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_success"  onclick={handleFinish} variant="brand" name={label.finishLabel} label={label.finishLabel}> -->
+        </lightning-button>
+    </footer>
+</template>

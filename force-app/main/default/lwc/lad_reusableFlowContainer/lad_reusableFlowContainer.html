@@ -1,0 +1,14 @@
+<!--
+  @description       : 
+  @author            : Prajjawal Tiwari
+  @group             : 
+  @last modified on  : 08-21-2024
+  @last modified by  : Prajjawal Tiwari
+-->
+<template>
+    <div if:true={accId} class="myflow">
+        <lightning-flow if:true={showFlow} flow-api-name={flowApiName} flow-input-variables={flowInputVariables}
+            onstatuschange={handleFlowStatusChange}>
+        </lightning-flow>
+    </div>
+</template>

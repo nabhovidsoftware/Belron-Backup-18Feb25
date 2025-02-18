@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-6577</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Exclude Technician Geolocation</label>
+    <license>FieldServiceMobilePsl</license>
+</PermissionSet>

@@ -1,0 +1,30 @@
+<template>
+    
+ 
+    
+   <lightning-datatable key-field="id" 
+   data={accounts} 
+   sorted-by={sortBy}
+   sorted-direction={sortDirection}
+   onsort={doSorting}
+   hide-checkbox-column="true"
+   columns={columns}> 
+   </lightning-datatable>
+
+
+   <div class="slds-float_right slds-size_1-of-1">
+    <template if:true={totalAccounts}>
+        <c-pagination totalrecords={totalAccounts} page-size={pageSize} onpagination={handlePagination}></c-pagination>
+    </template>
+</div>
+     
+   <div class="slds-var-p-around_small">
+    <lightning-button variant="brand" 
+    label="Export Data" 
+    title="Export Data into CSV" 
+    icon-name="utility:download" 
+    onclick={clickHandler} 
+    disabled={checkRecord}></lightning-button>
+  
+    </div>
+</template>

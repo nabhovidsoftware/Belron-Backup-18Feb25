@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>BLN_WorkOrderLineItemLayout</layout>
+        <sections>
+            <label><!-- ADAS --></label>
+            <section>ADAS</section>
+        </sections>
+        <sections>
+            <label><!-- ADAS Information --></label>
+            <section>ADAS Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Inspection Details --></label>
+            <section>Inspection Details</section>
+        </sections>
+        <sections>
+            <label><!-- Job Summary --></label>
+            <section>Job Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Information --></label>
+            <section>Legacy Information</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Details --></label>
+            <section>Payment Details</section>
+        </sections>
+        <sections>
+            <label><!-- Printing --></label>
+            <section>Printing</section>
+        </sections>
+        <sections>
+            <label><!-- Waiver Information --></label>
+            <section>Waiver Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Capture Signature --></label>
+        <name>BLN_CaptureSignature</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Collect Payment --></label>
+        <name>BLN_CollectPayment</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Corrective Action Report --></label>
+        <name>BLN_CorrectiveActionReport</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Existing Notes --></label>
+        <name>BLN_ExisitingNotes</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Invoke WorldPay Mobile App --></label>
+        <name>BLN_InvokeWorldPayMobileApp</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Payment Response --></label>
+        <name>BLN_PaymentResponse</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Terms and Conditions --></label>
+        <name>BLN_TermsAndConditions</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update status to Arrived --></label>
+        <name>BLN_UpdateStatusToArrived</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update status to travel --></label>
+        <name>BLN_UpdateStatusToTravel</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Image Capture --></label>
+        <name>Image_Capture</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Status to Travel --></label>
+        <name>Update_status_to_travel</name>
+    </quickActions>
+</CustomObjectTranslation>

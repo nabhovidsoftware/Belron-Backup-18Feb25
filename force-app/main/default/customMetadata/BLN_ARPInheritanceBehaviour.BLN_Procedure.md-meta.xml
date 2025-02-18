@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Procedure</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_ARPRecordTypeName__c</field>
+        <value xsi:type="xsd:string">Procedure</value>
+    </values>
+    <values>
+        <field>BLN_FieldList__c</field>
+        <value xsi:type="xsd:string">BLN_Procedure__c</value>
+    </values>
+    <values>
+        <field>BLN_InheritanceBehaviour__c</field>
+        <value xsi:type="xsd:string">Sum</value>
+    </values>
+</CustomMetadata>

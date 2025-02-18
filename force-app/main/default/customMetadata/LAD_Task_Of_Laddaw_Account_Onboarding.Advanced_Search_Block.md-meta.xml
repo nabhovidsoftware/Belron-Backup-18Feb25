@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Advanced Search Block</label>
+    <protected>false</protected>
+    <values>
+        <field>LAD_Task_Assigned_to__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>LAD_Task_Category__c</field>
+        <value xsi:type="xsd:string">Account Owner task</value>
+    </values>
+    <values>
+        <field>LAD_Task_Description__c</field>
+        <value xsi:type="xsd:string">Navigate to the Account record and decide if Advanced Search functionality should be disabled. Remember that &quot;Not Eligible For VRN Search&quot; flag is unchecked by default.</value>
+    </values>
+    <values>
+        <field>LAD_Task_Due_Date__c</field>
+        <value xsi:type="xsd:double">7.0</value>
+    </values>
+    <values>
+        <field>LAD_Task_Priority__c</field>
+        <value xsi:type="xsd:string">Normal</value>
+    </values>
+    <values>
+        <field>LAD_Task_Reason__c</field>
+        <value xsi:type="xsd:string">Commercial Setup</value>
+    </values>
+    <values>
+        <field>LAD_Task_Subject__c</field>
+        <value xsi:type="xsd:string">Advanced Search Block</value>
+    </values>
+    <values>
+        <field>LAD_Task_Type__c</field>
+        <value xsi:type="xsd:string">Laddaw Account Onboarding</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <description>
+        FOUK-3087,FOUK-3685,FOUK-3776, FOUK-3772, FOUK-3770 This lwc component is created to support the Product Selection Dat And Time Slot Flow.
+    </description>
+</LightningComponentBundle>

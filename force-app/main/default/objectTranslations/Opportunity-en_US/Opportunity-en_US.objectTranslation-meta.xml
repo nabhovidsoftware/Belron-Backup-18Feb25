@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Laddaw Opportunity B2B Page Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Light - Should only be used when applying a business set price book, i.e. Autoglass® Tiered Price Books --></description>
+        <label><!-- Light Opportunity --></label>
+        <name>BLN_LightOpportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Referral - Should only be used for Referral Agreements --></description>
+        <label><!-- Referral Partner Opportunity --></label>
+        <name>BLN_ReferralPartnerOpportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Standard - Must always be used when considering any negotiated pricing terms, i.e. Discount deals, Fixed price deals, differing ADAS rates etc --></description>
+        <label><!-- Standard Opportunity --></label>
+        <name>BLN_StandardOpportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- FOUK-10410: Record Type for Laddaw Opportunities --></description>
+        <label><!-- Laddaw Opportunity record type --></label>
+        <name>LAD_Laddaw_Opportunity_record_type</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Achieved - ADAS Price field is mandatory at this stage. --></errorMessage>
+        <name>BLN_AchievedAdasFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Achieved AUP  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_AchievedAupFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Achieved Ave. BM £ field is mandatory at this stage. --></errorMessage>
+        <name>BLN_AchievedAveEFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Achieved Ave. BM %  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_AchievedAveFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Achieved Share % field is mandatory at this stage. --></errorMessage>
+        <name>BLN_AchievedShareFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Achieved Value field is mandatory at this stage. --></errorMessage>
+        <name>BLN_AchievedValueFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Achieved Volume field is mandatory at this stage. --></errorMessage>
+        <name>BLN_AchievedVolumeFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_AnalysisAndPreparationStageChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Business Priorities field is mandatory at this stage. --></errorMessage>
+        <name>BLN_BusinessPrioritieFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Client Priorities field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ClientPrioritieFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_ClosedStageChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Achieved Commercial Objective field is mandatory at this stage. --></errorMessage>
+        <name>BLN_CommercialObjectFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Confidence Level is required at this stage. --></errorMessage>
+        <name>BLN_ConfidenceLevelFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason for Deal Lost field is mandatory at this stage --></errorMessage>
+        <name>BLN_DealLostFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason for Deal Won field is mandatory at this stage --></errorMessage>
+        <name>BLN_DealWonFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_InternalApprovalsStageChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_InternalInputStageChangeValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_NegotiationsAdvancedStageChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_NegotiationsInitialStageChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_NegotiationsStageChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- New Opportunity must be created in ‘Open’ stage --></errorMessage>
+        <name>BLN_NewOpportunityStageValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_OpenStageChangeValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity owner cannot be different than related Account Owner. Please contact the Account Owner for support. --></errorMessage>
+        <name>BLN_OppValidationOpportunityOwnerChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Outcome - Competitor field is mandatory at this stage. --></errorMessage>
+        <name>BLN_OutcomeCompetitorFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the value of this field when Quote synchronisation is on. --></errorMessage>
+        <name>BLN_PotentialValueReadOnlyRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the value of this field when Quote synchronisation is on. --></errorMessage>
+        <name>BLN_PotentialVolumeReadOnlyRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity Stage cannot be updated --></errorMessage>
+        <name>BLN_ProposalFinalisationStageChange</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Start Point - ADAS Price  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalStartAdasFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Start Point - AUP  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalStartAupFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Start Point - Ave.BM £  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalStartAveEFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Start Point - Ave.BM %  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalStartAveFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Walkaway Point - ADAS £  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalWalkAdasFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Walk Away Point - AUP  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalWalkAupFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Walkaway Point - Ave.BM £  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalWalkAveEFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Price proposal Walkaway point - Ave.BM %  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ProposalWalkAveFieldValidationRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Referral sales process type can’t be edited --></errorMessage>
+        <name>BLN_ReferralPartnerOpportunityRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Referral Price - Repair - Start Point  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ReferralPriceRepairStartValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Referral Price - Repair - Walkaway  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ReferralPriceRepairWalkValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Referral Price - Replace - Start Point  field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ReferralPriceReplaceStartValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Referral Price - Replace - Walkaway field is mandatory at this stage. --></errorMessage>
+        <name>BLN_ReferralPriceReplaceWalkValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason for Deal Lost field can not be empty. --></errorMessage>
+        <name>BLN_StageChangeDealLostValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason for Deal Won field can not be empty. --></errorMessage>
+        <name>BLN_StageChangeDealWonValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Standard opportunity sales process required mandatory approval process and record type can’t be edited. Please close this opportunity with “Closed - No opportunity” status and then create new opportunity with intend type. --></errorMessage>
+        <name>BLN_StandardOpportunityRule</name>
+    </validationRules>
+</CustomObjectTranslation>

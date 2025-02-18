@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>LAD_Abandoned_Cart_Email</fullName>
+        <ccEmails>tiarnan.branson@belronuk.com</ccEmails>
+        <description>Abandoned Cart Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>servicecloudtest@belronuk.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/LAD_Abandoned_Cart_Email_Template</template>
+    </alerts>
+</Workflow>

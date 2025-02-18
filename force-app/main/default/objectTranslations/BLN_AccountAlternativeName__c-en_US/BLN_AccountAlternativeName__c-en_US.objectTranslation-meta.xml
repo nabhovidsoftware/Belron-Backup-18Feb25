@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Alternative Name</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Alternative Names</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Sales Alternative Name MDM Sync --></label>
+        <name>BLN_SalesAlternativeNameMDMSync</name>
+    </fieldSets>
+    <layouts>
+        <layout>Account Alternative Name Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

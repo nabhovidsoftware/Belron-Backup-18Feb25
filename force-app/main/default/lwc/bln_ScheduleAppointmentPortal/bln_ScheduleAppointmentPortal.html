@@ -1,0 +1,114 @@
+<!--
+  @description       :
+  @author            : Sourabh Bhattacharjee
+  @group             :
+  @last modified on  : 08-06-2024
+  @last modified by  : Sourabh Bhattacharjee
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   08-06-2024   Sourabh Bhattacharjee   Initial Version
+-->
+<template>
+
+<!-- <div class="slds-box_x-small slds-m-around_x-small"> -->
+    <div >
+        
+    <template for:each={productDataList} for:item="row" for:index="index">
+        
+        <!-- <div class="slds-grid slds-m-bottom_medium" key={row}> -->
+            
+            <div  key={row}>
+            <template for:each={row.appointments} for:item="header" for:index="varindex">
+                <!-- <div class="slds-col slds-m-horizontal_xx-small slds-size_2-of-12"  key={header}> -->
+                    <div   key={header}>
+                    <!-- <div class="slds-grid"> 
+                        
+                    </div> -->
+                  
+                    <template for:each={header.productAvailibilities} for:item="prod" for:index="prodIndex">
+                        <template for:each={prod.products} for:item="prod1" for:index="prod1Index">
+                            
+                        </template>
+                    </template>
+
+                    <!-- <div class="slds-grid">
+                            <div class="slds-textAlignCenter slds-m-around_xx-small slds-align_absolute-center selectedAppointmentDateStyle slds-fontWeight slds-box text-trucate slds-box-colorNo slds-align_absolute-center slds-col slds-m-horizontal_xxx-small slds-size_12-of-12">
+                                
+                            </div>
+                            
+                    </div> -->
+                    <!-- <div class="slds-grid"> -->
+                       
+                    <!-- <div  class="slds-textAlignCenter slds-align_absolute-center slds-col slds-m-horizontal_xxx-small slds-size_12-of-12"> -->
+                        <!-- <lightning-button name="Change Appointment" label="Change Appointment"
+                                onclick={handleSelectSlot} data-columnindex={varindex} data-rowindex={index}
+                                class="slds-align_absolute-center slds-slotBtn"
+                                variant="brand" disabled={header.isDisableSelectSlot}></lightning-button>  -->
+                            
+                                 <div if:false={shouldRenderDiv} >
+                            <a href="javascript:void(0);" onclick={handleSelectSlot} style="font-family: roboto;
+                                font-size: 14px;
+                                font-weight: 400;
+                                line-height: 21px;
+                                text-align: left;
+                                color: #00589C;
+                                text-decoration: underline;
+                                 " data-columnindex={varindex} data-rowindex={index}
+                                disabled={header.isDisableSelectSlot}>
+                                Change appointment
+                                </a>
+                                 </div>
+                                <div if:true={portalstatus} >
+                                
+                                <!-- <lightning-button name="Reschedule Appointment" label="Reschedule Appointment"
+                                onclick={handleSelectSlot} data-columnindex={varindex} data-rowindex={index}
+                                
+                                disabled={header.isDisableSelectSlot}></lightning-button>  -->
+                            <button name="Reschedule Appointment" class="reschedulebuttoncss" onclick={handleSelectSlot}
+                                data-columnindex={varindex} data-rowindex={index}
+                                disabled={header.isDisableSelectSlot}>Reschedule appointment</button> 
+                                
+                            </div>
+                            <div if:true={newshedule}>
+                                
+                            <a href="javascript:void(0);" onclick={handleSelectSlot} class="alinkcss"
+                                data-columnindex={varindex} data-rowindex={index} disabled={header.isDisableSelectSlot}>
+                                Reschedule appointment
+                                </a>
+                                
+                            </div>
+                            
+                </div>
+            </template>
+            
+        
+                </div> 
+    </template>
+</div>
+
+<template lwc:if={showSpinner}>
+    <div class="spinnerStyle">
+        <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+    </div>
+</template>
+<template lwc:else>
+    <template if:true={showSelectSlotPopUp}>
+        <c-bln-_-display-available-slots-portal open-modal selected-slot-app={selectSlotAppointment}
+            onclose={handleSelectSlotClose} onselecteddata={handleSelectData} appointment-id={appointmentId}
+            is-mobile-location={isMobileLocation} selected-product-list={selectedProductList}
+            current-payload={currentPayload} is-cash-journey={isCashJourney} case-id={caseId}
+            set-product-data-list={setProductDataList} product-data-list={productDataList}
+                is-rebooking={isRebooking} old-appointment-id={oldAppointmentId} old-slot-details={oldSlotDetails}
+                get-quote-payload={getQuotePayload} onloadpage={loadpage}></c-bln-_-display-available-slots-portal>
+    </template>
+</template>
+
+<!-- Re-booking code FOUK-6281 -->
+<template if:true={isCancellChange}>
+    <c-bln-_-rebook-request is-rebooking-request-model={isRebookingRequestModel} record-id={caseId}
+    set-product-data-list={setProductDataList} current-payload={currentPayload} is-cash-journey={isCashJourney}
+        onconfirm={handleRebookReason}
+        onclose={onCloseRebook}></c-bln-_-rebook-request><!-- onhandleConfirm={handleRebookReason}-->
+</template>
+
+</template>

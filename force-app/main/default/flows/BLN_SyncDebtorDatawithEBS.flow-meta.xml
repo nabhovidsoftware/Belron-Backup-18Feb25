@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Sync_Debtor_Data_Wth_EBS</name>
+        <label>Sync Debtor Data Wth EBS</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>BLN_SyncDebtorDatawithEBS</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>cases</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_SyncDebtorDatawithEBS</nameSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <description>FOUK:6288 - This flow is created to Sync Debtor Data with EBS</description>
+    <environments>Default</environments>
+    <interviewLabel>Sync Debtor Data with EBS {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sync Debtor Data with EBS</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Sync_Debtor_Data_Wth_EBS</targetReference>
+        </connector>
+        <filterFormula>AND(
+         NOT({!$Permission.BLN_BypassFlows}),
+         ISPICKVAL({!$Record__Prior.BLN_DebtorReason__c}, &apos;&apos;),
+         NOT(ISPICKVAL({!$Record.BLN_DebtorReason__c}, &apos;&apos;)),
+         ISCHANGED({!$Record.BLN_DebtorCreatedBy__c})
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

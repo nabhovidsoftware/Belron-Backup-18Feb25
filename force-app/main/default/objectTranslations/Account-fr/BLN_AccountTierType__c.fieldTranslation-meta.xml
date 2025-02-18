@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Account Tier Type --></label>
+    <name>BLN_AccountTierType__c</name>
+    <picklistValues>
+        <masterLabel>Key Account</masterLabel>
+        <translation><!-- Key Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Large Enterprise</masterLabel>
+        <translation><!-- Large Enterprise --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Major Account</masterLabel>
+        <translation><!-- Major Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SME</masterLabel>
+        <translation><!-- SME --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

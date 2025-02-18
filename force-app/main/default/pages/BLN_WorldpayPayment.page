@@ -1,0 +1,1176 @@
+<!--
+  @description       :
+  @author            : Sourabh Bhattacharjee
+  @group             :
+  @last modified on  : 09-20-2024
+  @last modified by  : Sourabh Bhattacharjee
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   09-20-2024   Sourabh Bhattacharjee   Initial Version
+-->
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false"  controller="BLN_PaymentWorldPayController">    
+    <apex:includeScript value="https://try.access.worldpay.com/access-checkout/v2/checkout.js"/>
+    <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/> 
+    <apex:stylesheet value="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"/>
+<apex:stylesheet value="https://fonts.googleapis.com/css?family=Roboto"/>
+
+  
+   <style>
+         /* Style for the disabled button */
+         #fname.slds-theme_default.field:focus {  
+        background-color: white !important;  
+    }
+    input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    background-color: grey !important;
+}
+            .submit.disabled-button {
+                background-color: grey !important;
+                color: white !important;
+                cursor: no-drop !important;
+            }
+        body {
+         background-color: #FAFAFA;
+        color: black;
+        }
+        .cal {
+    font-family: 'Roboto Condensed'; 
+    font-size: 14px;
+  }
+  #content { font-family: Roboto Condensed; !important }
+
+        .container {
+       
+       background: #FAFAFA;
+        margin: 0px 50px 0px 50px;
+        position: relative;
+        margin-top: 48px;
+        }
+        .paracss{
+            width: 364px;
+            height: 30px;
+        }
+        .paracss1{
+            color: var(--theme-color-text, #475158);
+            font-family: Roboto;
+            font-size: var(--theme-typography-font-size-s, 12px);
+            font-style: normal;
+            font-weight: var(--theme-typography-font-weight-regular, 400);
+            line-height: 115%; /* 13.8px */
+
+
+        }
+        .label{
+          
+            font-family: Roboto ;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 13.8px;
+        text-align: left;
+        color: #8B9196;
+        }
+        .field{
+         
+       font-family: Roboto ;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+color: #475158 !important;
+        }
+        .namecss{
+            margin: 0px 0px 8px 0px !important;
+    color: var(--theme-color-text, #475158);
+    font-family: roboto;
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-regular, 400);
+    line-height: 150%; /* 24px */
+    text-align: left;
+
+        }
+        .cvccss{
+            height: 18px;
+            gap: 0px;
+            opacity: 0px;
+            font-family: roboto;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: center;
+            padding: 0px 8px;
+        }
+
+        .totalcss{
+            width: 388px;
+           /* width: 435px; */
+            height: 45px;
+            padding: 12px;
+            /* padding: 5px; */
+            gap: 0px;
+            border-radius: 0px 16px 16px 16px;
+            justify: space-between;
+            opacity: 0px;
+            background: #EEF3E5 !important;
+           margin-top: 48px;
+
+        }
+        .finalcss{
+            font-family: roboto;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16.1px;
+            text-align: left;
+            color: #475158;
+            float: left;
+            padding: 15px 0px;
+        }
+        .amountcss{
+                    
+            font-family: roboto;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16.1px;
+            text-align: left;
+            color: #475158;
+            float: right;
+            color: #475158;
+            padding: 15px 0px;
+        }
+      
+        .namecss{
+            width: 400px;
+    margin: 0px 0px 8px 0px !important;
+        
+    color: var(--theme-color-text, #475158);
+    font-family: roboto;
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-regular, 400);
+    line-height: 150%; /* 24px */
+    text-align: left;
+}
+.countcss{
+    text-align: left;
+  width: 412px;
+  height: 86px;
+  margin-top: -3rem;
+}
+.accountcss{
+    color: #475158;
+    font-family: var(--theme-typography-font-family-title, "Roboto Condensed");
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 78px;
+  text-align: left;
+  width: 417px;
+  height: 24px;
+  gap: 0px;
+  opacity: 0px;
+  
+  
+  }
+
+       .para{
+          
+        font-family: Roboto ;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            text-align: left;
+ 
+       }
+       .appoint-css{
+            
+            height:24px;
+            text-align: left;
+            /* margin:-30px 0px 42px 0px */
+            margin:-30px 0px 20px 0px;
+        }
+
+       .cardcss{
+        /* width: 364px; */
+        height: 72px;
+       }
+       .errorbox{
+        border-radius: var(--ewp-comp-message-border-radius-topleft, 0px) var(--ewp-comp-message-border-radius-topright, 12px) var(--ewp-comp-message-border-radius-bottomright, 12px) var(--ewp-comp-message-border-radius-bottomleft, 12px);
+        background: var(--theme-color-bg-alert, #FFECEB);
+        width: 386px;
+        height: 60px;
+        padding: 12px;
+       }
+        .errorboxcss{
+        color: var(--theme-color-text, #475158);
+
+/* body/default/sm */
+font-family: var(--typography-font-family-body, Arial);
+font-size: var(--sm, 14px);
+font-style: normal;
+font-weight: var(--typography-font-weight-regular, 400);
+line-height: 150%; /* 21px */
+       }
+       
+       
+        
+        .card {
+            color: #475158 !important;
+        background:#FFFF;
+        box-shadow: 0px 2px 16px 0px #00000014;
+        width: 364px;
+        /* width: 412px; */
+        padding: 24px;
+        gap: 24px;
+        border-radius: 8px ;
+        opacity: 0px;
+        /* margin-bottom: 80px !important; */
+
+        }
+        
+        .card .checkout .col-2 {
+            color: #475158 !important;
+        display: flex;
+        /* width: 427px; */
+        width: 381px;
+        }
+        .card .checkout .col {
+            color: #475158 !important;
+            background: #FAFAFA;
+        height: 48px;
+        /* width: 400px; */
+        width: 355px;
+        margin: 8px 15px 8px 0px ;
+        padding: 8px 0px 0px 12px;
+       
+        }
+        
+        .card .checkout .col-2 .col:first-child {
+            color: #475158 !important;
+        /* margin-right: 15px; */
+        background: #FAFAFA;
+        height: 48px;
+    /* width: 178px; */
+    width: 206px;
+    margin: 10px 15px 10px 0px ;
+        }
+        
+        .card .checkout .col-2 .col:last-child {
+            color: #475158 !important;
+        /* margin-left: 15px; */
+
+        background: #FAFAFA;
+        height: 48px;
+    /* width: 178px; */
+    width: 206px;
+    margin: 10px 15px 10px 0px ;
+        }
+        
+        
+        .card .checkout .label .type {
+        color: green;
+        }
+        
+        .card .checkout.visa .label .type:before {
+        content: "(visa)";
+        }
+        
+        .card .checkout.mastercard .label .type:before {
+        content: "(master card)";
+        }
+        
+        .card .checkout.amex .label .type:before {
+        content: "(american express)";
+        }
+        
+        .card .checkout .field {
+        /* height: 40px; */ color: #475158 !important;
+         height: 30px;
+        border-bottom: 2px solid #000000;
+        padding: 0px 0px 0px 13px;
+        margin-left: -0.8rem;
+        }
+        .card .checkout .field#card-pan {
+        /* margin-bottom: 30px; */
+        color: #475158 !important;
+        }
+        
+        .card .checkout .field.is-onfocus {
+        border-color: black;
+        }
+        
+        .card .checkout .field.is-empty {
+        border-color: orange;
+        }
+        
+        .card .checkout .field.is-invalid {
+        border-color: red;
+        }
+        
+        .card .checkout .field.is-valid {
+        border-color: green;
+        }
+        .card .checkout .field.default {
+        border-color: #000000;
+        }
+        
+        .card .checkout .buttonTab .submit {
+            background: #568300;
+        cursor: pointer;
+        width: 365px;
+        /* width: 412px; */
+        height: 48px;
+        padding: 12px 0px;
+        gap: 8px;
+        border-radius: var(--ewp-compbuttonprimaryborder-radius);
+        opacity: 0px;
+        font-family: "Roboto Condensed";
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFF;
+border: none;
+  }
+        
+        .card .checkout.is-valid .submit {
+        background: green;
+        }
+        
+        .card .checkout .buttonTab .clear {
+        background: grey;
+        cursor: pointer;
+        bottom: -120px;
+        width: 150px;
+        margin-left: -100px;
+        color: white;
+        outline: 0;
+        font-size: 14px;
+        border: 0;
+        border-radius: 30px;
+      
+        font-weight: bold;
+        padding: 15px 0;
+        transition: background 0.3s ease;
+        }
+        
+        input[type="text"] {
+            background-color: #FAFAFA;
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 355px;
+        /* width: 400px; */
+        font-size: 16px;
+        color: #475158 !important;
+        font-family: roboto;
+        }
+        
+        .header {
+        padding: 20px;
+        background-color: rgb(180, 178, 178);
+        position: relative;
+        padding: 10px 10px;
+        }
+        
+        .buttonTab {
+        padding-top: 20px;
+       
+        position: relative;
+       
+        }        
+        
+        .spinner-container {
+        display: none;
+        position: fixed;
+        /* top: 53%; */
+        top: 31rem;
+        /* left: 40%; */
+        transform: translate(50%, 50%);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        }
+        
+        .spinner {
+        width: 50px;
+        height: 50px;
+        border: 6px solid rgba(0, 0, 0, 0.1);
+        border-top: 6px solid #82db34;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        background-color: #FFFFFF !important;
+        position: relative;
+        }
+        
+        .checkout-container {
+        display: inline;
+        }
+        
+        .DDC-container {
+        display: none;
+        }
+        
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+        
+        .blur {
+        filter: blur(4px); /* Adjust the blur intensity as needed */
+        pointer-events: none; /* Prevent interactions with blurred elements */
+        }
+        
+        .PaymentSucc {
+        /* display: none; */
+        position: fixed;
+        top: 40%;
+        left:34%;
+        transform: translate(50%, 50%);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        font-size:25px;
+        background-color: #EEF3E5;
+        padding: 15px;
+        border: 0;
+        border-radius: 0px 12px 12px 12px;
+        font-weight: bold;
+        }
+
+        .PaymentErr {
+        display: none;
+        top: 40%;
+        left:20%;
+        transform: translate(50%, 50%);
+        //justify-content: center;
+        //align-items: inherit;
+        font-size:10px;
+        color: rgb(187, 47, 22);
+        padding: 5px;
+        border: 0;
+        border-radius: 0px 12px 12px 12px;
+      
+        }
+         
+         #messageDiv {
+            display: none;
+            color:#475158;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+            font-family: roboto;
+        }
+       @media only screen and (max-width: 612px) {
+        #messageDiv {
+           left:0.12px
+        }
+        }
+        
+        @media (max-width: 612px) {
+            .spinner-container {
+        display: none;
+        position: fixed;
+        top: 45%;
+        /* left: 25%;
+        transform: translate(25%, 25%);
+        z-index: 9999; */
+        justify-content: center;
+        align-items: center;
+        }
+        .PaymentSucc {
+        /* display: none; */
+        position: fixed;
+        top: 35%;
+        left: 25%;
+        transform: translate(50%, 50%);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        font-size:25px;
+        background-color: LightGreen;
+        padding: 15px;
+        border: 0;
+        border-radius: 30px;
+       
+        font-weight: bold;
+        }
+           
+            .errorbox{
+                width: 95%;
+                height: 66px;
+            }
+        .container {
+        display: block;
+        background: #FAFAFA;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0px;
+       }
+        .card{
+            width: 90%;
+       }
+        .card .checkout .buttonTab .submit {
+            background: #568300;
+           width: 100%;
+        }
+        .paracss {
+            width: 100%;
+        }
+        input[type="text"] {
+            background-color: #FAFAFA;
+        border: none;
+        outline: none;
+        height: 40px;
+        width: 100%;
+        font-size: 16px;
+        color: #475158 !important;
+        font-family: Roboto;
+        }
+        .card .checkout .col {
+            color: #475158 !important;
+            background: #FAFAFA;
+            height: 48px;
+            width: 96%;
+            margin: 10px 15px 10px 0px ;
+       
+        }
+        .card .checkout .col-2 {
+          
+        width: 103%;
+        }
+       
+        .card .checkout .col-2 .col:first-child {
+            color: #475158 !important;
+       background: #FAFAFA;
+        height: 48px;
+    width: 100%;
+    margin: 10px 15px 10px 0px ;
+        }
+        
+        .card .checkout .col-2 .col:last-child {
+            color: #475158 !important;
+        background: #FAFAFA;
+        height: 48px;
+    width: 100%;
+    margin: 10px 15px 10px 0px ;
+        }
+     
+        .login-container{
+            height: 80vh;
+          
+           
+        }
+        .login-form{
+            width: 90%;
+        }
+        .countcss{
+            width: 100%;
+
+        }
+        .accountcss{
+            width: 100%;
+            font-size: 32px;
+        }
+
+            .para {
+                font-size: 14px;
+
+            }
+
+        .namecss{
+            width: 100%;
+            margin: 2rem 0rem 2.5rem 0rem!important
+        }
+        .appoint-css{
+            width: 100%;
+            margin-top: -16%;
+        }
+        .totalcss{
+            /* width: 328px; */
+            width: 94%;
+            margin-top: 24px;
+        }
+        .boxcss{
+            /* width: 328px; */
+            width: 100%;
+        }
+        .buttonTab{
+            /* width: 360px; */
+            width: 100%;
+        }
+               .errorcss{
+        text-align: center !important;
+        color: var(--theme-color-text-alert, #E60F04);
+        font-family: Roboto  !important;
+        font-size: var(--theme-typography-font-size-s, 14px);
+        font-style: normal;
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+        line-height: 115%; /* 13.8px */
+        padding-bottom: 10px;
+        }
+       
+    }
+    .wholescreen{
+    /* max-width: 848px; */
+    width: 100%;
+  
+  }  
+    </style>
+    
+    <!-- <div class="spinner-container" id="spinner-container">
+        <div style="width: 100%; padding: 10px;">
+            <div style="display: flex;padding-left:25px;">
+                <div class="spinner"></div>                        
+            </div>
+            <div style="display: flex;">
+                <div style="color:Green;font-family:Roboto !important"><b>Payment Processing...</b></div>
+            </div>
+        </div>
+    </div> -->
+    <div id="messageDiv" class="PaymentSucc">
+        <apex:image url="{!$Resource.successPaymentIcon}" style="width: 16px; height: 16px;" alt="SuccessPaymento"/>
+    </div>
+    
+
+    <div id="checkout-container" class = "checkout-container"> 	
+                  
+       
+        <section class="container">   
+            
+            <div class="namecss" style="color:#475158;">
+                <span id="accountName"></span> 
+            </div>  
+        <div class="countcss">
+            <h3 class="accountcss">Your payment</h3>
+            <apex:image url="{!$Resource.BLN_LOGOREDYELLOW}" style="max-width: 100; height: 6;padding-top:8px;" alt=""/>
+   
+           
+        </div>
+      
+        <!--<div class="appoint-css"> 
+            <span class="para">We are unable to accept American Express cards.</span>
+            <apex:pageMessages id="showmsg" ></apex:pageMessages>
+        </div> -->             
+        <div class="totalcss">
+            <span class="finalcss"> Total:</span>
+            <span class="amountcss"> <b>£<span id="OutstandingBalance"></span></b></span>
+        </div>
+            <div class="finalcss">
+            <!-- <span  id="showmsg"></span> -->
+            </div>
+            <br/>   
+
+            <section class="card">
+                
+                <div class="spinner-container" id="spinner-container">
+                    <div style="width: 100%; padding: 10px;">
+                        <div style="display: flex;padding-left:40px;font-family: 'Roboto';">
+                            <div class="spinner"></div>                        
+                        </div>
+                        <div style="display: flex;">
+                            <div style="color:Green;font-family:Roboto !important"><b>Payment Processing...</b></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cardcss">
+                    <h2 style="font-family: Roboto ;font-size: 16px;font-weight: 700;line-height: 24px;text-align: left;
+                    ">We accept payment from:</h2>
+                    <div style="display:flex">
+                    <div class="visacss" >
+                        <apex:image url="{!$Resource.PaymentVisaIcon}" style="max-width: 58; height: 40;margin-right:8px;" alt="SuccessPaymento"/>
+                    </div>
+                    <div class="mastercardcss" >
+                        <apex:image url="{!$Resource.PaymentMasterIcon}" style="max-width: 58; height: 40;margin-right:8px;" alt="SuccessPaymento"/>
+                    </div>
+                    <div class="mestrocss" >
+                        <apex:image url="{!$Resource.PaymentMestroIcon}" style="max-width: 58; height: 40;" alt="SuccessPaymento"/>
+                      </div>
+                </div>
+                </div>
+            <h4 style="font-family: Roboto ;font-size: 16px;font-weight: 700;line-height: 20.8px;text-align: left;">Payment details</h4>
+            <p style=" font-family: Roboto ;font-size: 12px;font-weight: 400;line-height: 18px;text-align: left; color:#8B9196;">Mandatory*</p>                      
+           
+           
+                <form class="checkout" id="card-form">
+                    <!-- Existing card details input fields -->
+                    <section class="col">
+                    <label class="label" for="card-pan">Card number*<span class="type"></span></label>
+                    <section id="card-pan" style="color:#475158 !important;" class="field"></section>
+                </section>
+                 <!-- Input field for first name -->
+                        <section class="col">
+                            <label class="label" for="fname">First and last name on card*</label><br/>
+                            <input type="text"   style="color:#475158 !important;" id="fname" class="slds-theme_default field" placeholder="" required="true" />
+                        </section>
+                    <section class="col-2">
+                        <section class="col">
+                            <label class="label" for="card-expiry">Expiry date*</label>
+                          <b> <section id="card-expiry" style="color:#475158 !important;" class="field"></section></b>
+                        </section>
+                        <section class="col">
+                            <label class="label" for="card-cvv">CVC/CVV*</label>
+                            <section id="card-cvv" style="color:#475158 !important;" class="field"></section>
+                        </section>
+                    </section>                    
+                   
+                    <div style="text-align:center;" class="paracss"> 
+                        <p class="paracss1">CVC: 3 digits on the back, or 4 digits on the front of the card.</p>
+                    </div>
+                    <div id="errorDiv" style="display:none;">
+                         <div  style="display:flex;"  class="errorbox" >
+                        <apex:image url="{!$Resource.BLN_INFO}" style="width: 18px; height: 18px;margin-right:8px;" alt="SuccessPaymento"/>
+                   <span class="errorboxcss" id="showmsg"></span>
+                    </div>
+                    </div>
+                   
+
+                    <!--apex:outputPanel rendered="{!NOT(showCode)}"  layout="block"  style="display:flex;">
+            		<apex:image rendered="{!NOT(showCode)}" url="{!$Resource.BLN_INFO}" style="width: 18px; height: 18px; margin-right:8px;" alt="SuccessPaymento"/>
+                        <div class="errorcss">
+                        <apex:outputText >
+                             <span class="errorboxcss" id="showmsg"></span>
+                        </apex:outputText>
+                        </div>
+                    </apex:outputPanel-->
+
+                    <div class="buttonTab">
+                        <div style="width: 100%;">
+                           <button type="submit" id="submit"  class="submit">Pay now</button>
+                        </div>
+                    </div>
+                </form>           
+            </section>            
+              
+        </section> 
+    </div>
+
+    <script>
+	var tries = 0;	
+    function showoutstandingBalance() {
+        const urlParams = new URLSearchParams(window.parent.location.search);
+        // Get a specific parameter value
+        const caseid = urlParams.get('recordId');
+        //alert('caseid=>'+caseid);
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.BLN_PaymentWorldPayController.showoutstandingBalance}',caseid,
+                function(result, event) {
+                    if (event.status) {
+                        // Update HTML element with the returned data
+                        document.getElementById('OutstandingBalance').innerText = result;
+                        errormessages();
+                        
+                    } else {
+                        console.log('Error: ' + event.message);
+                    }
+                }
+            );
+        }
+		
+
+        function errormessages(){
+            var messagepage = document.getElementById("showmsg");
+            //var showCode = false;
+            const urlParams = new URLSearchParams(window.parent.location.search);
+            // Get a specific parameter value
+            const code = urlParams.get('code');
+            /*console.log('Code-->',code);
+             if(code == 400){
+                showCode = true;
+                console.log('showCode-->',showCode);
+            }*/
+
+            tries =  parseInt(urlParams.get('tries'), 10);
+            console.log('Tries826=>'+tries);
+            //alert(code);
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.BLN_PaymentWorldPayController.getErrorMessage}',code,
+                function(result, event) {
+                    if (event.status) {
+                        // Update HTML element with the returned data
+                        console.log('Tries=>'+tries);
+                        if(tries>=3){
+                            messagepage.innerText = 'We are unable to process your payment at this time due to a payment system error from our provider. Please try again later or contact our customer services team on 0344 375 3009 and they will be happy to help. Apologies for the inconvenience.'; 
+                            messagepage.style.fontSize = "13px"; 
+                            messagepage.style.fontFamily = "Roboto"; 
+                            messagepage.style.fontStyle = "normal";
+                            messagepage.style.fontWeight = "400";
+                            messagepage.style.color = "#475158";
+                            messagepage.style.lineHeight = "120%";
+                            }
+                        else{
+                        messagepage.innerText = result;
+                        }
+                        
+                        
+                    } else {
+                        //messagepage.innerText = 'Unfortunately, we have been unable to take your payment. Please contact your card issuer for further information.';
+                    }
+                }
+            );
+
+            
+            if(code != null && code != undefined){
+                console.log('code', code);
+                messagepage.innerText = "Unfortunately, we have been unable to take your payment. Please contact your card issuer for further information.";
+                messagepage.style.display = "block";  
+            }
+        }
+
+        // Call the function when the page is loaded
+        window.onload = function() {
+        showoutstandingBalance();
+        getAccountName();
+        getShowCode();
+        const param = new URLSearchParams(window.parent.location.search);
+        var counter =  parseInt(param.get('tries'), 10);
+        console.log('Cnt3--',counter);
+         if (counter >= 3) {
+        submit.disabled = true;
+             submit.classList.add('disabled-button');
+             // Disable the button if attempts are 3 or more
+         }
+    };
+    function getShowCode() {
+        const urlParams = new URLSearchParams(window.parent.location.search);
+        const code1= urlParams.get('code');
+        console.log('code1 807: ' + code1);
+
+        Visualforce.remoting.Manager.invokeAction(
+       '{!$RemoteAction.BLN_PaymentWorldPayController.getShowCode}',code1,
+         function(result, event) {
+            if (event.status) {
+                // Check if the result is false and render the div
+                if (result === true) {
+                    document.getElementById('errorDiv').style.display = 'block';
+                } else {
+                    document.getElementById('errorDiv').style.display = 'none';
+                }
+            } else {
+                console.log('Error: ' + JSON.stringify(event.message));
+            }
+              console.log('result: ' + JSON.stringify(result));
+             console.log('event: ' + JSON.stringify(event));
+        }
+    );
+    }
+    function getAccountName() {
+        Visualforce.remoting.Manager.invokeAction(
+       '{!$RemoteAction.BLN_PaymentWorldPayController.getCurrentUserAccountName}',
+         function(result, event) {
+                    if (event.status) {
+                document.getElementById('accountName').innerHTML = result;
+           errormessages();
+                        
+                    } else {
+                        console.log('Error: ' + event.message);
+                    }
+        }
+    );
+}
+        
+    
+    function clearInputFields() {
+        var firstNameInput = document.getElementById("fname");
+        var lastNameInput = document.getElementById("lname");
+        
+        // Reset all input fields
+        firstNameInput.value = "";
+        lastNameInput.value = "";
+    }
+    
+    (function () {
+        var form = document.getElementById("card-form");
+        var challengeform = document.getElementById("challengeForm");
+        var clear = document.getElementById("clear");
+        var submit = document.getElementById("submit");
+        var spinnerContainer = document.getElementById("spinner-container");
+        var messageDiv = document.getElementById("messageDiv");
+        var DDCContainer = document.getElementById("DDC-container");
+        var checkoutcontainer = document.getElementById("checkout-container");
+        const urlParams = new URLSearchParams(window.parent.location.search);
+        // Get a specific parameter value
+        const caseid = urlParams.get('recordId');
+        const said = urlParams.get('serviceId');
+        var tries= urlParams.get('tries');
+        const amount = 100;
+        const code1= urlParams.get('code');
+        console.log('code1: ' + code1);
+        // Use the parameter value in your code
+        console.log(caseid,'caseid');
+        console.log(submit);
+        
+        Worldpay.checkout.init({
+            id: "1d76c07b-907d-4ae8-8318-62e46a0eaa0c",
+            form: "#card-form",
+            fields: {
+                pan: {
+                    selector: "#card-pan",
+                    placeholder: " "
+                },
+                cvv: {
+                    selector: "#card-cvv",
+                    placeholder: ""
+                },
+                expiry: {
+                    selector: "#card-expiry",
+                    placeholder: "MM/YY",
+                    color: " #475158"
+                }
+            },
+            styles: {
+                "input": {
+                    "color": "#475158 !important",
+                    "font-weight": " ",
+                    "font-size": "16px",
+                    "letter-spacing": "3px"
+                },
+                "input#pan": {
+                    "font-size": "16px"
+                },
+                "input.is-valid": {
+                    "color": "green"
+                },
+                "input.is-invalid": {
+                    "color": "red"
+                },
+                "input.is-onfocus": {
+                    "color": "black"
+                }
+            },
+            accessibility: {
+                ariaLabel: {
+                    pan: "my custom aria label for pan input",
+                    expiry: "my custom aria label for expiry input",
+                    cvv: "my custom aria label for cvv input"
+                },
+                lang: {
+                    locale: "en-GB"
+                },
+                title: {
+                    enabled: true,
+                    pan: "my custom title for pan",
+                    expiry: "my custom title for expiry date",
+                    cvv: "my custom title for security code",
+                    lname: "my custom title for lastname code",
+                    fname: "my custom title for firstname code"
+                }
+            },
+            acceptedCardBrands: ["diners", "discover", "jcb", "maestro", "mastercard", "visa"]
+        }, function (error, checkout) {
+            //alert('error=>'+ error);
+            //alert('checkout=>'+ checkout);
+            if (error) {
+                //alert(error);
+                console.error(error);
+                
+                return;
+            }
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                var attemptInput = document.getElementById("submit");
+                var attempt = parseInt(attemptInput.value) || 0; // Initialize or parse the current value
+                attempt++;
+                localStorage.setItem('attempt', attempt);
+                attemptInput.value = attempt; 
+                // Capture first name and last name values
+                var fname = document.getElementById("fname").value;
+                var fullname = fname;
+                form.classList.add("blur");
+                if (spinnerContainer) {
+                    spinnerContainer.style.display = "block"; // Show the spinner
+                }
+                checkout.generateSessionState(function (error, sessionState) {
+                    if (error) {
+                        //alert(error);
+                        console.error(error);
+                        return;
+                    }
+                    // session state for card details
+                    console.log(sessionState,'sessionState');              
+                    var action = '{!$RemoteAction.BLN_PaymentWorldPayController.createPaymentRecord}';
+                    Visualforce.remoting.Manager.invokeAction(
+                        action,
+                        sessionState,caseid, function(result, event) {
+                            if (event.status) {
+                                // Handle success
+                                var paymentId = result;
+                                console.log('Payment created successfully with Id: ' + paymentId); 
+                                var action1 = '{!$RemoteAction.BLN_PaymentWorldPayController.generateToken}';
+                                Visualforce.remoting.Manager.invokeAction(
+                                    action1,sessionState,paymentId,fullname,said,function(result, event) {
+                                    if (event.status) {
+                                        // Handle success
+                                        var displayText =result.showCode;
+                                        var code =result.code;
+                                        var outcome =result.outcome;
+                                        var description = result.description;
+                                        var jwt =result.jwt;
+                                        var url =result.url;
+                                        var bin = result.bin;
+                                        var token = result.token;
+                                        var paymentid = result.paymentid;
+                                        var method = result.method;
+                                        console.log('displayText==>'+displayText);
+                                        console.log('Method==>'+method);
+                                        console.log('outcome==>'+outcome);
+                                        console.log(result);
+                                        console.log('url=>'+url);
+                                        if(code == '201'){
+                                            if (spinnerContainer) {
+                                                spinnerContainer.style.display = "none"; // Hide the spinner                                                    
+                                            } 
+                                            messageDiv.innerHTML = '<img src="{!$Resource.successPaymentIcon}" alt="SuccessPayment" style="width: 16px; height: 16px; margin-right: 5px;"> Payment successful!';
+                                            messageDiv.style.display = "block";                                                                                      
+                                                    messageDiv.style.fontFamily = "Roboto"; 
+                                                    messageDiv.style.fontSize = "14px";
+                                                    messageDiv.style.color = "#475158";
+                                            messageDiv.style.backgroundColor = "#EEF3E5";
+                                            setTimeout(function () {
+                                                window.open(window.location.origin + '/SelfServe/s/case/' + caseid + '/detail?sid='+ said, '_parent');
+                                            }, 3000); // 3 seconds delay
+                                        }
+                                        else {
+                                        switch(method) {
+                                            case 'token':
+                                                // code block
+                                                if(outcome=='not verified'){
+                                                    const urlParams4 = new URLSearchParams(window.parent.location.search);
+                                                    var counter4 =  parseInt(urlParams3.get('tries'), 10);
+                                                    console.log('Cnt3--',counter4);
+                                                    if (counter4 > 0) {
+                                                    attempt=counter4;
+                                                    attempt++;
+                                                    }
+                                                    tries++;
+                                                	window.open(window.location.origin + '/SelfServe/s/worldpayportalpage?recordId=' + caseid +'&serviceId='+ said+ '&code='+code+'&tries='+attempt, '_parent');
+                                                }
+                                                if(code=='404' || code=='206'){
+                                                     const urlParams3 = new URLSearchParams(window.parent.location.search);
+                                                    var counter3 =  parseInt(urlParams3.get('tries'), 10);
+                                                    console.log('Cnt3--',counter3);
+                                                    if (counter3 > 0) {
+                                                    attempt=counter3;
+                                                    attempt++;
+                                                    }
+                                
+                                                    tries++;
+                                                    window.open(window.location.origin + '/SelfServe/s/worldpayportalpage?recordId=' + caseid +'&serviceId='+ said+ '&code='+code+'&tries='+attempt, '_parent');
+                                                }
+                                                break;
+                                            case 'authorize':
+                                                //alert('Enter'+ method);
+                                                if(outcome =='authorized'){
+                                                    if (spinnerContainer) {
+                                                        spinnerContainer.style.display = "none"; // Hide the spinner                                                    
+                                                    } 
+                                                    messageDiv.innerHTML = '<img src="{!$Resource.successPaymentIcon}" alt="SuccessPayment" style="width: 16px; height: 16px; margin-right: 5px;"> Payment successful!';
+                                                    messageDiv.style.display = "block";                                                                                      
+                                                    messageDiv.style.fontFamily = "Roboto"; 
+                                                    messageDiv.style.fontSize = "14px";
+                                                    messageDiv.style.color = "#475158";
+                                                    messageDiv.style.backgroundColor = "#EEF3E5";
+                                                    setTimeout(function () {
+                                                        window.open(window.location.origin + '/SelfServe/s/case/' + caseid + '/detail?sid='+ said, '_parent');
+                                                    }, 3000); // 3 seconds delay
+                                                }
+                                                else if(outcome == 'refused'){
+                                                    messageDiv.innerText = description;
+                                                    messageDiv.style.display = "block";
+                                                    const urlParams2 = new URLSearchParams(window.parent.location.search);
+                                                    var counter2 =  parseInt(urlParams2.get('tries'), 10);
+                                                    console.log('Cnt2--',counter2);
+                                                    if (counter2 > 0) {
+                                                    attempt=counter2;
+                                                    attempt++;
+                                                    }
+                                                    tries++;
+                                                    window.open(window.location.origin + '/SelfServe/s/worldpayportalpage?recordId=' + caseid +'&serviceId='+ said+ '&code='+code+'&tries='+attempt, '_parent');
+                                                }
+                                                break;
+                                            case 'authentication':
+                                                //alert('Enter'+ method);
+                                                if(outcome == 'challenged'){
+                                                    //open 3ds screen
+                                                    // Auto submit form on page load
+                                                    //alert('Enter challenged');
+                                                    window.open(window.location.origin + '/SelfServe/apex/BLN_ChallengePageContainer?jwt=' + jwt+'&said='+said, '_parent');
+
+                                                }
+                                                else if(code == '201'){
+                                                    if (spinnerContainer) {
+                                                        spinnerContainer.style.display = "none"; // Hide the spinner                                                    
+                                                    } 
+                                                    messageDiv.innerHTML = '<img src="{!$Resource.successPaymentIcon}" alt="SuccessPayment" style="width: 16px; height: 16px; margin-right: 5px;"> Payment successful!';
+                                                    messageDiv.style.display = "block";                                                                                      
+                                                    messageDiv.style.fontFamily = "Roboto"; 
+                                                    messageDiv.style.fontSize = "14px";
+                                                    messageDiv.style.color = "#475158";
+                                                    messageDiv.style.backgroundColor = "#EEF3E5";
+
+                                                    setTimeout(function () {
+                                                        // alert(said);
+                                                        window.open(window.location.origin + '/SelfServe/s/case/' + caseid + '/detail?sid='+ said, '_parent');
+                                                    }, 3000); // 3 seconds delay
+                                                }
+                                                else{
+                                                    //alert('enter else for authentication');
+                                                    const urlParams1 = new URLSearchParams(window.parent.location.search);
+                                                    var counter1 =  parseInt(urlParams1.get('tries'), 10);
+                                                    console.log('Cnt1--',counter1);
+                                                    if (counter1 > 0) {
+                                                    attempt=counter1;
+                                                    attempt++; 
+                                                    }
+                                                    tries++;
+                                                    window.open(window.location.origin + '/SelfServe/s/worldpayportalpage?recordId=' + caseid +'&serviceId='+ said+ '&code='+code+'&tries='+attempt, '_parent');
+                                                }
+                                            break;
+                                            default:
+                                                //alert('In default');
+                                                // code block
+                                            }                                                                                     
+                                            console.log('code=>'+code);
+                                        }
+                                        
+                                        //document.getElementById('msgDiv').innerText = description;                                                
+                                        
+                                    } else {
+                                        // Handle error
+                                        console.log(attempt+'code1142=>',code+'try--',tries);
+                                        const urlParams = new URLSearchParams(window.parent.location.search);
+                                        var counter =  parseInt(urlParams.get('tries'), 10);
+                                        console.log('Cnt--',counter);
+                                        if (counter > 0) {
+                                        attempt=counter;
+                                        attempt++;
+                                        }
+                                        console.log('attt--',attempt);
+                                        console.error(event.message);
+                                        window.open(window.location.origin + '/SelfServe/s/worldpayportalpage?recordId=' + caseid +'&serviceId='+ said+ '&code=400'+'&tries='+attempt, '_parent');
+                                        //alert('Error generating token: ' + event.message);
+                                    }
+                                });                               
+                            } else {
+                                // Handle error
+                                console.error(event.message);
+                                alert('Error creating payment: ' + event.message);
+                            } 
+                        });
+                    
+                });
+            });
+            
+            clear.addEventListener("click", function (event) {
+                event.preventDefault();
+                checkout.clearForm(function () {
+                    // trigger desired behaviour on cleared form
+                    console.log('Form successfully cleared');
+                });
+            });
+        });
+    })();
+    </script>
+</apex:page>

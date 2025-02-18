@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SalesStrategy</fullName>
+    <active>true</active>
+    <label>Sales Strategy</label>
+    <picklistValues>
+        <picklist>BLN_AuditType__c</picklist>
+        <values>
+            <fullName>Information Security</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_OverallOutcome__c</picklist>
+        <values>
+            <fullName>Major Improvement Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfactory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Some Improvement Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

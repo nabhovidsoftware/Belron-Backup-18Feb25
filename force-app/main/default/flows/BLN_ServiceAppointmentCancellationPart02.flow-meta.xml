@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assign_Closed_lost_value_to_status</name>
+        <label>Assign Closed lost value to status</label>
+        <locationX>50</locationX>
+        <locationY>1319</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Closed-Lost</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>FOUK-4575, This is created for updating the Count Variable</description>
+        <name>BLN_UpdateSACount</name>
+        <label>Update SA Count</label>
+        <locationX>270</locationX>
+        <locationY>935</locationY>
+        <assignmentItems>
+            <assignToReference>Count</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>BLN_LoopForAllSARecords</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>FOUK-4575, This Decision is created for Checking Case Owner is Recovery Team Queue or not.</description>
+        <name>BLN_CheckCaseOwner</name>
+        <label>Check Case Owner</label>
+        <locationX>182</locationX>
+        <locationY>1211</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BLN_IfAllServiceAppointmentsAreCancelled</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11) AND 12</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>BLN_GetRecoveryTeamQueue.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed Elsewhere Sooner</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Stock Obsolete Product</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Direct Billing</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Duplicate Job</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Test/Training</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Glass Damage</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Non Job</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Repaired before</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>To small to be repaired</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SecondaryReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Car Scrapped</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Count</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Closed_lost_value_to_status</targetReference>
+            </connector>
+            <label>If All Service Appointments Are Cancelled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>FOUK-4575, This is created for Checking the Service Appointment Status</description>
+        <name>BLN_CheckServiceAppointmentStatus</name>
+        <label>Check Service Appointment Status</label>
+        <locationX>402</locationX>
+        <locationY>827</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BLN_IfSAStatusIsCanceled</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BLN_LoopForAllSARecords.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Canceled</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_UpdateSACount</targetReference>
+            </connector>
+            <label>If SA status is Canceled</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Get_Recovery_Team_Queue_Null_Check</name>
+        <label>Get Recovery Team Queue Null Check</label>
+        <locationX>611</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Null_Check_Passed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BLN_GetRecoveryTeamQueue</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_GetAllServiceAppointmentRecords</targetReference>
+            </connector>
+            <label>Null Check Passed</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Null_Check</name>
+        <label>Null Check</label>
+        <locationX>380</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_no_null_records</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BLN_GetAllServiceAppointmentRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_LoopForAllSARecords</targetReference>
+            </connector>
+            <label>If no null records</label>
+        </rules>
+    </decisions>
+    <description>FOUK-4575, This Flow is created for Service Appointment cancellation (When the Case owner is Recovery Team Queue)</description>
+    <environments>Default</environments>
+    <interviewLabel>Service Appointment Cancellation Part-02 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Service Appointment Cancellation Part-02</label>
+    <loops>
+        <description>FOUK-4575, This is created for processing each Service Appointment Records</description>
+        <name>BLN_LoopForAllSARecords</name>
+        <label>Loop For All SA Records</label>
+        <locationX>182</locationX>
+        <locationY>719</locationY>
+        <collectionReference>BLN_GetAllServiceAppointmentRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>BLN_CheckServiceAppointmentStatus</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>BLN_CheckCaseOwner</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>FOUK-4575, This is created for fetching all Service Appointment Records</description>
+        <name>BLN_GetAllServiceAppointmentRecords</name>
+        <label>Get All Service Appointment Records</label>
+        <locationX>380</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Null_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BLN_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ServiceAppointment</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>FOUK-4575, This is created for fetching the Recovery Team Queue</description>
+        <name>BLN_GetRecoveryTeamQueue</name>
+        <label>Get Recovery Team Queue</label>
+        <locationX>611</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Recovery_Team_Queue_Null_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BLN_RecoveryTeamQueue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Owner:Group.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>BLN_GetRecoveryTeamQueue</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Permission.BLN_BypassFlows}),
+NOT(ISPICKVAL({!$Record.BLN_SecondaryReason__c}, &apos;&apos;)),
+OR(
+{!$Record.RecordType.DeveloperName} =&apos;BLN_Enquiry&apos;,
+{!$Record.RecordType.DeveloperName} =&apos;BLN_Feedback&apos;,
+{!$Record.RecordType.DeveloperName} = &apos;BLN_JobRequest&apos;
+)
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Count</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

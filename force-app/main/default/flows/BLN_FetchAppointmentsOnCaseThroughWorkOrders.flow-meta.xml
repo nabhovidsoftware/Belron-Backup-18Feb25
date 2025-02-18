@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Assign_Work_order</name>
+        <label>Assign Work order</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_WorkOrderNumber__r.CaseId</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_case_on_SA</name>
+        <label>Check case on SA</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>check_if_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_WorkOrderNumber__r.CaseId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Work_order</targetReference>
+            </connector>
+            <label>check if null</label>
+        </rules>
+    </decisions>
+    <description>FOUK-6662,Automation to fetch Appointments on Case through Work Orders</description>
+    <environments>Default</environments>
+    <interviewLabel>BLN_fetch Appointments on Case through Work Orders {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Fetch Appointments on Case through Work Orders</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_case_on_SA</targetReference>
+        </connector>
+        <filterFormula>AND(NOT(ISBLANK({!$Record.BLN_WorkOrderNumber__c})),
+OR(ISCHANGED({!$Record.BLN_WorkOrderNumber__c}),ISNEW()),NOT({!$Permission.BLN_BypassFlows}))</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

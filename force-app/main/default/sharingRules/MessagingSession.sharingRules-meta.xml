@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BLN_MessagingSessionSharingRule1</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK-6470 This is used to share Messaging Sessions with UK Roles And Subordinates public group</description>
+        <label>Messaging Session Sharing Rule 1</label>
+        <sharedTo>
+            <group>BLN_RoleInternalAndPortalSubordinatesUK</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>startsWith</operation>
+            <value>00G</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BLN_MessagingUserSharingRule2</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Session Sharing Rule</label>
+        <sharedTo>
+            <group>BLN_RoleInternalAndPortalSubordinatesUK</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BLN_RoleInternalAndPortalSubordinatesUK</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BLN_MissedChatSharing1</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK-6470: This sharing rule is created to share Messaging session records with Missed Chat team.</description>
+        <label>Missed Chat Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>BLN_OperationAndSupplyChainDirector</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <queue>BLN_MissedChat</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BLN_MissedChatSharing2</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK-6470: This sharing rule is created to share Messaging session records with Missed Chat team.</description>
+        <label>Missed Chat Sharing</label>
+        <sharedTo>
+            <group>BLN_UKRolesSharing</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>BLN_MissedChat</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BLN_PIDChatSharing1</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK-6470: This sharing rule is created to share Messaging session records with PID Chat team.</description>
+        <label>PID Chat Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>BLN_OperationAndSupplyChainDirector</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <queue>BLN_PIDChat</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BLN_PIDChatSharing2</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK-6470: This sharing rule is created to share Messaging session records with PID Chat team.</description>
+        <label>PID Chat Sharing</label>
+        <sharedTo>
+            <group>BLN_UKRolesSharing</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>BLN_PIDChat</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BLN_SMSChat1</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>SMS Chat</label>
+        <sharedTo>
+            <group>BLN_UKRolesSharing</group>
+        </sharedTo>
+        <sharedFrom>
+            <queue>BLN_SMSChannel</queue>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

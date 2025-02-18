@@ -1,0 +1,20 @@
+<template>
+    <template if:false={NoVideo}>
+    <div style="width: 700px; margin: auto;">
+        <div style="border-bottom: 1px solid #ccc; border-top: 1px solid #ccc; margin-bottom: 10px; padding: 15px 0;">
+            <div style="display: inline-block;">
+               
+                <span style="font-size: 16px; margin-left:50px; vertical-align: middle;">About replacements</span>
+            </div>
+        </div>
+        <span style="font-size: 16px;padding-bottom:20px;">Take a look at our short video below to see<br/> how Autoglass&#174; carries out a windscreen</br> replacement.</span>
+        <br></br>
+        <template if:true={showReplacementVideo}>
+            <iframe width="700" height="150" src="https://www.youtube.com/embed/UnooKoIMmjg" frameborder="0" allowfullscreen></iframe>
+        </template>
+        <template if:true={showDefaultVideo}>
+            <iframe width="700" height="150" src="https://www.youtube.com/embed/FwLOrSgGPbc" frameborder="0" allowfullscreen></iframe>
+        </template>
+    </div>
+    </template>
+</template>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_HorizonInHours__c</fullName>
+    <description>FOUK-777
+Horizon in hours</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Next upcomming appointments time frame
+e.g 48 hrs means all upcomming appointments in next 48hrs</inlineHelpText>
+    <label>Horizon in Hours</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

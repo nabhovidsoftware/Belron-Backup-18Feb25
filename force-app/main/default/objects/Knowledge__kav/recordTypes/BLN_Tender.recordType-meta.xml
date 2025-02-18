@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Tender</fullName>
+    <active>true</active>
+    <description>Record type of capture Tender Articles</description>
+    <label>Tender</label>
+    <picklistValues>
+        <picklist>BLN_ArticleType__c</picklist>
+        <values>
+            <fullName>Appointment Summary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing Motorist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Features and Benefits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISP Knowledge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motability Accounts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specials Flag</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAPs</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_DisplayLocation__c</picklist>
+        <values>
+            <fullName>Detail Page</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Presentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Quote Summary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

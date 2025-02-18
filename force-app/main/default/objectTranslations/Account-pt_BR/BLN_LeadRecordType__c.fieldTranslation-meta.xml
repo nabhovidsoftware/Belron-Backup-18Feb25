@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- How the Account was created --></help>
+    <label><!-- Lead Record Type --></label>
+    <name>BLN_LeadRecordType__c</name>
+    <picklistValues>
+        <masterLabel>Dedicated Account Form</masterLabel>
+        <translation><!-- Dedicated Account Form --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Generic Account Form</masterLabel>
+        <translation><!-- Generic Account Form --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lead</masterLabel>
+        <translation><!-- Lead --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

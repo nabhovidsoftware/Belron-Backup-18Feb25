@@ -1,0 +1,54 @@
+<!--
+  @description       : 
+  @author            : Prajjawal Tiwari
+  @group             : 
+  @last modified on  : 07-26-2024
+  @last modified by  : Prajjawal Tiwari
+-->
+<template lwc:render-mode="light">
+    <h1 class="slds-text-title_bold">
+        <font size="6">Wishlist</font>
+    </h1>
+    <template if:true={wishlistitems}>
+        <lightning-layout multiple-rows=false>
+            <template for:each={wishlistitems} for:item="wishlistitem">
+                <lightning-layout-item padding="around-small" key={wishlistitem.productId}>
+                    <div class="slds-box" style="height:375;width:300px;">
+                        <template if:false={wishlistitem.isError}>
+                            <img src={wishlistitem.url} class="slds-align_absolute-center"
+                                style="height:100px;width:100px;" />
+                        </template>
+                        <template if:true={wishlistitem.isError}>
+                           <div style="height: 100px;"></div>
+                        </template>
+                        <div style="min-height: 81px;">
+                            <p class="slds-text-title_bold slds-align_absolute-center" style="margin-top: 10px"
+                                data-product-id={wishlistitem.productId}>
+                                <font size="4">{wishlistitem.name}</font>
+                            </p>
+                        </div>
+                      
+                        <template if:false={wishlistitem.isError}>
+                            
+                            <p class="slds-align_absolute-center" style="margin-top: 20px">
+                                SKU: {wishlistitem.sku}
+                            </p>
+
+                        </template>
+                            <p class="slds-align_absolute-center" style={wishlistitem.style}>
+                                <lightning-button data-product-id={wishlistitem.productId} label={wishlistitem.label}
+                                    variant="brand" onclick={handleClick} disabled={wishlistitem.isnavigationDisabled}></lightning-button>
+                            </p>
+                            <lightning-button class="slds-align_absolute-center" style="margin-top:10px"
+                                data-product-id={wishlistitem.productId} label="Remove"
+                                onclick={handleRemove}></lightning-button>
+
+
+                       
+
+                    </div>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </template>
+</template>

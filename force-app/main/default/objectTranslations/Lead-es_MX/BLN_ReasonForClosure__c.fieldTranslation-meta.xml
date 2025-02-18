@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please select Reason why Lead was closed --></help>
+    <label><!-- Reason for Closure --></label>
+    <name>BLN_ReasonForClosure__c</name>
+    <picklistValues>
+        <masterLabel>Already an exisiting client</masterLabel>
+        <translation><!-- Already an exisiting client --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed - Converted</masterLabel>
+        <translation><!-- Closed - Converted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed - No VGRR requirements</masterLabel>
+        <translation><!-- Closed - No VGRR requirements --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected - duplicate</masterLabel>
+        <translation><!-- Rejected - duplicate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected - wrong data</masterLabel>
+        <translation><!-- Rejected - wrong data --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-8128</description>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BLN_AccountAlternativeName__c.BLN_AccountAlternateNameID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BLN_AccountAlternativeName__c.BLN_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BLN_AccountAlternativeName__c.BLN_AlternativeAccountName__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>BLN_AccountAlternativeName__c.BLN_MDMAccountAlternativeNameID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Sales Account Alternative Name Full Access</label>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>BLN_AccountAlternativeName__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <tabSettings>
+        <tab>BLN_AccountAlternativeName__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+</PermissionSet>

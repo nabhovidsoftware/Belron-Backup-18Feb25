@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-4701 SALES PRICING - Request APPROVAL of pricing instruction generated - Sales Person&apos;s</description>
+    <flowDefinition>BLN_ContractPricingDocumentApproval</flowDefinition>
+    <label>Submit Pricing Approval</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

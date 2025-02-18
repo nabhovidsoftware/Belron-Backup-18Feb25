@@ -1,0 +1,189 @@
+.mainContainer  {
+    display: block;
+    width: 35%;
+}
+.section-title{
+    line-height: var(--slds-g-font-lineheight-5,3);
+    font-weight: var(--slds-g-font-weight-5);
+    border: 1px solid var(--sds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-2);
+    text-align: center;
+  }
+  
+  .section-title-background{
+    background: var(--slds-g-color-neutral-base-95);
+  }
+
+.marginBottom {
+    margin-bottom: 5px;
+}
+
+.marginBottom10 {
+    margin-bottom: 10px;
+}
+
+.headingContainer {
+    color: black;
+    background:#9bce7a;
+    font-weight: 600;
+    padding: 20px;
+    width: 90rem;
+    border: black;
+    /* margin: 20px 0px; 150% */
+    text-align: center;
+    border-radius: 5px;
+}
+
+.headingText {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.headingTextStyle {
+    font-family: sans-serif;
+    font-weight: var(--slds-g-font-weight-5);
+}
+
+.singleAppointmentContainer {
+    padding: 5px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    /* width: 90rem; */
+    
+}
+
+.singleAppointmentContainerTwo{
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    /* width: 90rem; */
+}
+
+.appointmentContainerHeader {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #b5acac;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px;
+    margin: 10px 0px;  */
+
+    line-height: var(--slds-g-font-lineheight-5,3);
+    font-weight: var(--slds-g-font-weight-5);
+    border: 1px solid var(--sds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-2);
+    text-align: center;
+}
+
+.spanTextHeadingContainer {
+    border: 1px solid #b5acac;
+    background-color: lightgrey;
+    font-weight:900;
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.spanTextContainer {
+    border: 1px solid #b5acac;
+    background-color: white;
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.spanTextContainertwo {
+    border: 1px solid #b5acac;
+    background-color: white;
+    width: 150%;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center; 
+}
+
+.spanTextContainerthree {
+    border: 1px solid #b5acac;
+    /* background-color: gray; */
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center; 
+}
+
+.spanTextContainerForBundle {
+    border: 1px solid black;
+    background-color: #97bbfb;
+    color: black;
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.buttonContainer {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0px;
+    /* width: 90rem;; */
+    padding: 12px 16px;
+}
+
+.displayContainer {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.displayContainer1 {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.displayContainerGap {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.spanText{
+    border: 1px solid black;
+}
+
+.fontWeight{
+    font-weight: 700;
+}
+.fontWeightWhite{
+    background-color: whitesmoke;
+    font-weight: 700;
+}
+.fontWeightGrey{
+    background-color: whitesmoke;
+    font-weight: 700;
+}
+
+.float{
+    float:right
+}
+
+.totalQuoteCenter {
+    text-align: center;
+}
+.productLine{
+    text-overflow:ellipsis;
+}

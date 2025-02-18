@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_InheritanceBehaviour__c</fullName>
+    <externalId>false</externalId>
+    <label>Inheritance Behaviour</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lowest Level</fullName>
+                <default>false</default>
+                <label>Lowest Level</label>
+            </value>
+            <value>
+                <fullName>Sum</fullName>
+                <default>false</default>
+                <label>Sum</label>
+            </value>
+            <value>
+                <fullName>Sum with Lowest Level Precedence</fullName>
+                <default>false</default>
+                <label>Sum with Lowest Level Precedence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

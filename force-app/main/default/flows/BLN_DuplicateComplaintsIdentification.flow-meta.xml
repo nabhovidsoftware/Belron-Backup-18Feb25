@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Existing_Case</name>
+        <label>Existing Case</label>
+        <locationX>138</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>ExistCase</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Iterate_the_get_records.CaseNumber</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Duplication_Error</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Duplication_Error</name>
+        <label>Duplication Error</label>
+        <locationX>138</locationX>
+        <locationY>719</locationY>
+        <connector>
+            <targetReference>Iterate_the_get_records</targetReference>
+        </connector>
+        <customErrorMessages>
+            <errorMessage>{!ExistCase} {!$Label.BLN_DupicationComplaints}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_whether_there_no_record</name>
+        <label>Check whether there no record</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Null_check_of_get_record</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_duplicate_records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Iterate_the_get_records</targetReference>
+            </connector>
+            <label>Null check of get record</label>
+        </rules>
+    </decisions>
+    <description>FOUK-3384,It is used for giving a warning if I am creating a complaint that already exists.</description>
+    <environments>Default</environments>
+    <interviewLabel>Duplicate complaints identification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Duplicate Complaints Identification</label>
+    <loops>
+        <name>Iterate_the_get_records</name>
+        <label>Iterate the get records</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <collectionReference>Get_duplicate_records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Existing_Case</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_duplicate_records</name>
+        <label>Get duplicate records</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_whether_there_no_record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BLN_SubType__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Complaint</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>AccountId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_VRN__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.BLN_VehicleRN__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsClosed</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_duplicate_records</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Record.BLN_MultipleComplaints__c}),
+NOT(ISPICKVAL({!$Record.Status}, &apos;Closed&apos;)),
+ISPICKVAL({!$Record.BLN_SubType__c},&apos;Complaint&apos; ),
+NOT(ISBLANK({!$Record.AccountId})),
+{!$Record.Account.IsPersonAccount},
+NOT(ISBLANK({!$Record.BLN_Vehicle__r.BLN_VehicleRegNumber__c})),
+OR(ISNEW(), ISCHANGED({!$Record.BLN_SubType__c}), ISCHANGED({!$Record.AccountId}), ISCHANGED({!$Record.BLN_Vehicle__c})),
+NOT({!$Permission.BLN_BypassFlows}))</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>ExistCase</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ExistingCase</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+</Flow>

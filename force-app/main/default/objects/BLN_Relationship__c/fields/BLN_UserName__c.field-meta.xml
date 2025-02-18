@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_UserName__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-4871. This field is the reference of relationship with User</description>
+    <externalId>false</externalId>
+    <label>User Name</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Relationships</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

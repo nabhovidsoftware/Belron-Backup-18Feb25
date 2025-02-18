@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>BLN_ContractApprovalAccepted</fullName>
+        <description>Contract Approval - Accepted (FOUK-3823)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>BLN_LegalCounselAuthority__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_Contract/BLN_ContractAcceptedEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>BLN_ContractApprovalRejected</fullName>
+        <description>Contract Approval - Rejected (FOUK-3823)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>BLN_LegalCounselAuthority__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_Contract/BLN_ContractRejectedEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>BLN_ContractExpirePriceReviewEmailAlert</fullName>
+        <description>Contract Expire for Price Review (FOUK-3824)</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_Contract/BLN_ContractExpirePriceReviewTemplate</template>
+    </alerts>
+    <alerts>
+        <fullName>BLN_LineManagerApporvalEmail</fullName>
+        <description>Line Manager Apporval Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_Contract/BLN_ContractPricingApprovalByLineManagerEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>BLN_LineManagerRejectsPricingApprovalRequest</fullName>
+        <description>Line Manager Rejects Pricing Approval Request</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_Contract/BLN_ContractPricingApprovalRejectedByLineManagerEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>BLN_PricingTeamAcceptPricingApprovalRequestEmail</fullName>
+        <description>Pricing Team Accept Pricing Approval Request Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_Contract/BLN_ContractPricingApprovalByPricingTeamEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>BLN_PricingTeamRejectsPricingApprovalRequestEmail</fullName>
+        <description>Pricing Team Rejects Pricing Approval Request Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_Contract/BLN_ContractPricingApprovalRejectedByPricingTeamEmail</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>BLN_FieldApprovedByLineManagerInProgess</fullName>
+        <description>Update field to In progress</description>
+        <field>BLN_ApprovedByLineManager__c</field>
+        <literalValue>In progress</literalValue>
+        <name>Field Approved By Line Manager InProgess</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BLN_UpdateApprovedByLineManagerFieldToNo</fullName>
+        <description>Line Manager Rejects Pricing Approval Request field Approved By Line Manager should be updated to “No”</description>
+        <field>BLN_ApprovedByLineManager__c</field>
+        <literalValue>No</literalValue>
+        <name>Update Approved By Line Manager Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BLN_UpdateFieldApprovedByLineManager</fullName>
+        <description>Field Approved By Line Manager should be updated to “Yes”</description>
+        <field>BLN_ApprovedByLineManager__c</field>
+        <literalValue>Yes</literalValue>
+        <name>Update Field Approved By Line Manager</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BLN_UpdateFieldReceivedByPricingTeam</fullName>
+        <description>Field  Received By Pricing Team should be updated to “No”</description>
+        <field>BLN_ReceivedByPricingTeam__c</field>
+        <literalValue>No</literalValue>
+        <name>Update Field Received By Pricing Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BLN_UpdateFieldReceivedByPricingTeamNo</fullName>
+        <field>BLN_ReceivedByPricingTeam__c</field>
+        <literalValue>No</literalValue>
+        <name>Update Field Received By Pricing Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BLN_UpdateFieldReceivedByPricingTeamYes</fullName>
+        <field>BLN_ReceivedByPricingTeam__c</field>
+        <literalValue>Yes</literalValue>
+        <name>Update Field Received By Pricing Team</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>BLN_UpdateStatusPrev</fullName>
+        <field>Status</field>
+        <literalValue>Advance Negotiations</literalValue>
+        <name>Update Status Prev</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateStatus</fullName>
+        <field>Status</field>
+        <literalValue>Stakeholder Engagement</literalValue>
+        <name>Update Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>UpdateStatusNext</fullName>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Update Status Next</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

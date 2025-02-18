@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Glass Quality --></label>
+    <name>BLN_GlassQuality__c</name>
+    <picklistValues>
+        <masterLabel>Both</masterLabel>
+        <translation><!-- Both --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EU Standard</masterLabel>
+        <translation><!-- EU Standard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Quality</masterLabel>
+        <translation><!-- OE Quality --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

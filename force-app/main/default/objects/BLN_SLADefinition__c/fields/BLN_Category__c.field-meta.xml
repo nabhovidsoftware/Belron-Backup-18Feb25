@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Category__c</fullName>
+    <description>FOUK-6522 Category picklist field for SLA Definition</description>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Telephony</fullName>
+                <default>false</default>
+                <label>Telephony</label>
+            </value>
+            <value>
+                <fullName>Time To Serve</fullName>
+                <default>false</default>
+                <label>Time To Serve</label>
+            </value>
+            <value>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <label>Quality</label>
+            </value>
+            <value>
+                <fullName>ADAS</fullName>
+                <default>false</default>
+                <label>ADAS</label>
+            </value>
+            <value>
+                <fullName>Job Retention</fullName>
+                <default>false</default>
+                <label>Job Retention</label>
+            </value>
+            <value>
+                <fullName>NPS &amp; Other Survey Questions</fullName>
+                <default>false</default>
+                <label>NPS &amp; Other Survey Questions</label>
+            </value>
+            <value>
+                <fullName>Complaints</fullName>
+                <default>false</default>
+                <label>Complaints</label>
+            </value>
+            <value>
+                <fullName>Digital</fullName>
+                <default>false</default>
+                <label>Digital</label>
+            </value>
+            <value>
+                <fullName>Financial</fullName>
+                <default>false</default>
+                <label>Financial</label>
+            </value>
+            <value>
+                <fullName>Job processing</fullName>
+                <default>false</default>
+                <label>Job processing</label>
+            </value>
+            <value>
+                <fullName>Repair Ratio</fullName>
+                <default>false</default>
+                <label>Repair Ratio</label>
+            </value>
+            <value>
+                <fullName>Mobile Appointments</fullName>
+                <default>false</default>
+                <label>Mobile Appointments</label>
+            </value>
+            <value>
+                <fullName>MI Reporting</fullName>
+                <default>false</default>
+                <label>MI Reporting</label>
+            </value>
+            <value>
+                <fullName>Subcontractors</fullName>
+                <default>false</default>
+                <label>Subcontractors</label>
+            </value>
+            <value>
+                <fullName>General</fullName>
+                <default>false</default>
+                <label>General</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

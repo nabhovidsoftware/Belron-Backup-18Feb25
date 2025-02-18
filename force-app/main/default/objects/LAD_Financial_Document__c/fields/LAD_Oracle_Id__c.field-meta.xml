@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Oracle_Id__c</fullName>
+    <description>FOUK-10523: Created to store Id returned by Oracle as response to Invoice Creation API</description>
+    <externalId>false</externalId>
+    <label>Oracle Id</label>
+    <length>100</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

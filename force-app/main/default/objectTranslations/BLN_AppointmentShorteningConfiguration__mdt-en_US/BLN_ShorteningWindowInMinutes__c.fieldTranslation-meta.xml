@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Time to be added to Due Dateeg Due Date is 15:00 and Time added is 180, so new Due Date is 18:00 --></help>
+    <label><!-- Shortening Window --></label>
+    <name>BLN_ShorteningWindowInMinutes__c</name>
+</CustomFieldTranslation>

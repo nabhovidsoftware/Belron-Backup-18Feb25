@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionSubtype>ScreenAction</actionSubtype>
+    <description>Created as a part of FOUK-6405 to make clock-in clock-out as a global action</description>
+    <label>Clock-In/Clock-Out</label>
+    <lightningWebComponent>bLN_ShiftCICOManagement</lightningWebComponent>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>LightningWebComponent</type>
+</QuickAction>

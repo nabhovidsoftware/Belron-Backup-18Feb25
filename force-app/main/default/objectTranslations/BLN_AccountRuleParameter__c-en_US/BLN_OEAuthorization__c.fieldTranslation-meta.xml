@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- OE Authorization Option --></label>
+    <name>BLN_OEAuthorization__c</name>
+    <picklistValues>
+        <masterLabel>Non-OE Glass Only</masterLabel>
+        <translation><!-- Non-OE Glass Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Authorisation Required</masterLabel>
+        <translation><!-- OE Authorisation Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Glass Accepted</masterLabel>
+        <translation><!-- OE Glass Accepted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Glass Only</masterLabel>
+        <translation><!-- OE Glass Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Motorist Liability</masterLabel>
+        <translation><!-- OE Motorist Liability --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

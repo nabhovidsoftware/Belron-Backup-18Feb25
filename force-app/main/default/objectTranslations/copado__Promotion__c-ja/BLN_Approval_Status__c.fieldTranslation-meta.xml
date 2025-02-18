@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Approval Status --></label>
+    <name>BLN_Approval_Status__c</name>
+    <picklistValues>
+        <masterLabel>Dev Lead Approved</masterLabel>
+        <translation><!-- Dev Lead Approved --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dev Lead Rejected</masterLabel>
+        <translation><!-- Dev Lead Rejected --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending With Dev Lead</masterLabel>
+        <translation><!-- Pending With Dev Lead --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending With Release Manager</masterLabel>
+        <translation><!-- Pending With Release Manager --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Release Manager Approved</masterLabel>
+        <translation><!-- Release Manager Approved --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Release Manager Rejected</masterLabel>
+        <translation><!-- Release Manager Rejected --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

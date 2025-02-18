@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_CurrentUser__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-2048--&gt; Need to create this field to populate this field of record with field values carried from Flow Exception Logger platform event:</description>
+    <externalId>false</externalId>
+    <label>Current User</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>ExceptionLogger</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

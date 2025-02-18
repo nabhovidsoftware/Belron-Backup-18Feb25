@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Current Supplier 1 must be different than Current Supplier 2 and 3 --></help>
+    <label><!-- Current Supplier 1 --></label>
+    <name>BLN_CurrentSupplier1__c</name>
+</CustomFieldTranslation>

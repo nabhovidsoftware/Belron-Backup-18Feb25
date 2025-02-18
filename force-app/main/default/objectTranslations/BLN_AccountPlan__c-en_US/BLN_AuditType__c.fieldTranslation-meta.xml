@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Audit Type --></label>
+    <name>BLN_AuditType__c</name>
+    <picklistValues>
+        <masterLabel>Business Continuity</masterLabel>
+        <translation><!-- Business Continuity --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Claims Handling Review</masterLabel>
+        <translation><!-- Claims Handling Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Complaint Review</masterLabel>
+        <translation><!-- Complaint Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Data Privacy</masterLabel>
+        <translation><!-- Data Privacy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fee Review</masterLabel>
+        <translation><!-- Fee Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Information Security</masterLabel>
+        <translation><!-- Information Security --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MI</masterLabel>
+        <translation><!-- MI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>People Management</masterLabel>
+        <translation><!-- People Management --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Responsible Business</masterLabel>
+        <translation><!-- Responsible Business --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supplier Management</masterLabel>
+        <translation><!-- Supplier Management --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SubfailureReasonSA__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Sub-Failure Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cust Unavailable/Cancelled</fullName>
+                <default>true</default>
+                <label>Cust Unavailable/Cancelled</label>
+            </value>
+            <value>
+                <fullName>Customer No Show</fullName>
+                <default>false</default>
+                <label>Customer No Show</label>
+            </value>
+            <value>
+                <fullName>Duplicate Work Order</fullName>
+                <default>false</default>
+                <label>Duplicate Work Order</label>
+            </value>
+            <value>
+                <fullName>Job Already Completed</fullName>
+                <default>false</default>
+                <label>Job Already Completed</label>
+            </value>
+            <value>
+                <fullName>Body Rust Prevented Work</fullName>
+                <default>false</default>
+                <label>Body Rust Prevented Work</label>
+            </value>
+            <value>
+                <fullName>Car Too Damaged To Carry Out Work</fullName>
+                <default>false</default>
+                <label>Car Too Damaged To Carry Out Work</label>
+            </value>
+            <value>
+                <fullName>Vehicle still in garage/Not delivered</fullName>
+                <default>false</default>
+                <label>Vehicle still in garage/Not delivered</label>
+            </value>
+            <value>
+                <fullName>Vehicle Won’t Start/Broken Down/Insufficient Charge</fullName>
+                <default>false</default>
+                <label>Vehicle Won’t Start/Broken Down/Insufficient Charge</label>
+            </value>
+            <value>
+                <fullName>Too Large to Repair</fullName>
+                <default>false</default>
+                <label>Too Large to Repair</label>
+            </value>
+            <value>
+                <fullName>Customer Concern, Repair Cracking off</fullName>
+                <default>false</default>
+                <label>Customer Concern, Repair Cracking off</label>
+            </value>
+            <value>
+                <fullName>Multiple Impact on W/S</fullName>
+                <default>false</default>
+                <label>Multiple Impact on W/S</label>
+            </value>
+            <value>
+                <fullName>Repair too Small/No Damage</fullName>
+                <default>false</default>
+                <label>Repair too Small/No Damage</label>
+            </value>
+            <value>
+                <fullName>Repair Done before</fullName>
+                <default>false</default>
+                <label>Repair Done before</label>
+            </value>
+            <value>
+                <fullName>Location of Repair on W/S</fullName>
+                <default>false</default>
+                <label>Location of Repair on W/S</label>
+            </value>
+            <value>
+                <fullName>Repair Cracked off</fullName>
+                <default>false</default>
+                <label>Repair Cracked off</label>
+            </value>
+            <value>
+                <fullName>Repair too large after completion</fullName>
+                <default>false</default>
+                <label>Repair too large after completion</label>
+            </value>
+            <value>
+                <fullName>Too Close to ADAS Camera</fullName>
+                <default>false</default>
+                <label>Too Close to ADAS Camera</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,40 @@
+.container {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .slds-backgroundPopupModel {
+        background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .cofirmButton {
+        float: right;
+    }
+    .cancelButton{
+        
+        float: right;
+    }
+
+    .notification {
+        padding: 10px;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .rebook-form label,
+    .rebook-form input,
+    .rebook-form button {
+        display:block;
+        margin-top: 10px;
+    }
+    .formBorder{
+        width: 49rem;
+        border-radius: 1rem;
+    }
+    .slds-modal-content{
+        overflow: visible;
+        overflow-y: visible;
+    }
+    .adjustModelHeight{
+        height: 60rem;
+    }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Customer Accounts and Credit Control Process Specialist</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Customer Accounts and Credit Control Process Specialist</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>BLN_CreditManager</parentRole>
+</Role>

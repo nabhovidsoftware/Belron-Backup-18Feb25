@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>BLN_ServiceAndComplaintsApprovalQueue</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Approval required for Hire car Start &amp; End Date Gap more than 3</label>
+        <name>BLN_RequireApprovalFromServiceAndComplaintsManager</name>
+    </approvalStep>
+    <description>FOUK-3050
+Approval Process for Hire Car period (Start to end date) exceeds 3 calendar days for complaint sub type</description>
+    <emailTemplate>unfiled$public/BLN_ApproverEmailForHireCarStartEndDateGapMoreThanThree</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>BLN_HireCarEndDate__c &gt; BLN_HireCarStartDate__c + 3</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>BLN_CaseApproved</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>BLN_CaseRejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>BLN_CaseSubmittedForApproval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>HireCar Start &amp; End Date Gap more than 3</label>
+    <processOrder>6</processOrder>
+    <recallActions>
+        <action>
+            <name>BLN_CaseReset</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

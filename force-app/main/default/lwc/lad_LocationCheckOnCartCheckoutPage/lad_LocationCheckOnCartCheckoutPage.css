@@ -1,0 +1,234 @@
+.slds-item{
+	padding : 2%;
+}
+
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.adn-info{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(155, 153, 153);
+}
+
+.cart-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+}
+
+.cart-item-image {
+    flex: 0 0 100px;
+    margin-right: 20px;
+}
+
+.cart-item-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.cart-item-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.cart-item-quantity {
+    font-size: 14px;
+    color: #666;
+}
+
+.cart-item-location-name{
+    font-weight: bold;
+}
+
+.cart-item-default-address{
+    --dxp-s-form-element-width-border: 0px;
+    --dxp-s-form-element-color-background: transparent;
+    --dxp-s-form-element-spacing-horizontal-start: 1%;
+    --sds-c-input-text-color: darkblue;
+    --dxp-s-form-element-spacing-block-start: 5px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+.cart-item-collect {
+    padding-left: 4%;
+}
+
+.cart-item-address{
+    padding-left: 6.3%;
+}
+
+.location{
+    align-items: right !important;
+}
+
+/* .otherLocItem input[type="radio"]:checked + .radio {
+        color: rgb(143, 133, 133);
+    }
+
+
+.otherLocItem input[type="radio"]:checked + .radio {
+        background-color: #000;
+    }*/
+
+
+    .cart-item-delivery {
+        /* display: flex; */
+        /* justify-content: space-between; */
+        padding: 5px;
+    } 
+
+.cart-collect{
+    padding: 5px;
+}
+
+.preferred-collection-date {
+    width: 60%;
+    margin-left: 10%;
+}
+.cart-item-picklist {
+    align-items: center;
+}
+.cart-item-picklist select {
+        color: darkblue;
+        text-decoration: underline;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        white-space: pre-wrap;
+       overflow-wrap: break-word;
+       text-wrap: wrap
+    }  
+
+    .cart-item-picklist select:focus {
+        outline: none;
+    }
+
+.delivery{
+    color: green;
+    font-size: 14px;
+    /* padding-left: 3%; */
+}
+
+
+.cart-item-loc{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card{
+    padding: 10px;
+}
+
+.delivery::before {
+    /* content: "\2022"; */ 
+    margin-right: 10px; 
+}
+
+.address-label{
+    padding-top: 7px;
+}
+
+.cart-item-input {
+    /* margin-top: 10px; */
+}
+
+.po-number-input,
+.comments-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #d1d1d1;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.po-number-input:focus,
+.comments-textarea:focus {
+    outline: none;
+    border-color: #0070d2;
+    box-shadow: 0 0 0 3px rgba(0, 112, 210, 0.2);
+}
+
+.radio{
+    float: right;
+    padding-top: 10px;
+}
+
+.deliverystatus{
+    color: green;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.not-available{
+    color: gray;
+}
+
+.slds-spinner_container{
+    --dxp-c-spinner-color-background: #b2abab1f;
+    position: fixed;
+
+}
+
+.collection-message {
+    font-size: small;
+    font-weight: 600;
+    margin-left: 9%;
+    padding-bottom: 2%;
+    margin-right: 7%;
+}
+.collection-discount{
+    color: red;
+}
+
+.additionaldetail-header{
+    font-size: 16px;
+    font-weight: bolder;
+    color: #0000009c;
+    padding-top: 5px;
+  
+}

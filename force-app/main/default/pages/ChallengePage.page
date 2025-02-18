@@ -1,0 +1,44 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" cache="false">
+
+  <html>
+    <head></head>
+    <body>
+      <form id="challengeForm" method="POST">
+        
+        <!--<input type="hidden" name="JWT" value="{!$CurrentPage.parameters.jwt}" />-->
+        <!--<input type="hidden" name="MD" value="{!urlParameters}" />-->
+      </form>
+
+      <script>
+        window.onload = function() {
+          // Auto submit form on page load
+            const queryString = window.location.search;
+			console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+            const jwt = urlParams.get('jwt');
+            //alert(jwt);
+            var challengeform = document.getElementById("challengeForm");
+            challengeform.setAttribute('action',"https://centinelapistag.cardinalcommerce.com/V2/Cruise/StepUp");
+            //create JWT input
+            var i = document.createElement("input");
+            i.type = "hidden";
+            i.name = "JWT";
+            i.id = "JWT";
+            i.value = jwt;
+            //create MD Parameter
+            var s = document.createElement("input");
+            s.type = "hidden";
+            s.name = "JWT";
+            s.id = "JWT";
+            s.value = jwt;
+            challengeform.appendChild(i);
+            challengeform.appendChild(s);
+            challengeform.submit();
+            //document.getElementById('challengeForm').submit();
+        }
+      </script>
+
+    </body>
+  </html>
+
+</apex:page>

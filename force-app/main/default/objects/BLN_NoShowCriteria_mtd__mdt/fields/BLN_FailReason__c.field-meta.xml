@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_FailReason__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Fail Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Capacity Issue</fullName>
+                <default>true</default>
+                <label>Capacity Issue</label>
+            </value>
+            <value>
+                <fullName>Customer Issue</fullName>
+                <default>false</default>
+                <label>Customer Issue</label>
+            </value>
+            <value>
+                <fullName>Customer Vehicle Issue</fullName>
+                <default>false</default>
+                <label>Customer Vehicle Issue</label>
+            </value>
+            <value>
+                <fullName>Glass/Parts Damaged</fullName>
+                <default>false</default>
+                <label>Glass/Parts Damaged</label>
+            </value>
+            <value>
+                <fullName>Location/Weather Not Suitable</fullName>
+                <default>false</default>
+                <label>Location/Weather Not Suitable</label>
+            </value>
+            <value>
+                <fullName>Part Identification</fullName>
+                <default>false</default>
+                <label>Part Identification</label>
+            </value>
+            <value>
+                <fullName>Recalibration Issue</fullName>
+                <default>false</default>
+                <label>Recalibration Issue</label>
+            </value>
+            <value>
+                <fullName>Repair</fullName>
+                <default>false</default>
+                <label>Repair</label>
+            </value>
+            <value>
+                <fullName>Stock/Supply Issue</fullName>
+                <default>false</default>
+                <label>Stock/Supply Issue</label>
+            </value>
+            <value>
+                <fullName>Technician Issues</fullName>
+                <default>false</default>
+                <label>Technician Issues</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

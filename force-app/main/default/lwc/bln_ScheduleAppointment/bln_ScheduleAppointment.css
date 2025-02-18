@@ -1,0 +1,388 @@
+:host{
+  --lwc-squareIconMediumBoundary:1.2rem;
+}
+
+.prd-selection-grid-header .slds-col, .section-title{
+  background: var(--slds-g-color-neutral-base-95);
+  line-height: var(--slds-g-font-lineheight-5);
+  font-weight: var(--slds-g-font-weight-5);
+  border: 1px solid var(--sds-g-color-border-1);
+  border-radius: var(--slds-g-radius-border-2);
+  text-align: center;
+}
+.fontcss{
+  background: var(--slds-g-color-neutral-base-95);
+  line-height: var(--slds-g-font-lineheight-5);
+  font-weight: var(--slds-g-font-weight-5);
+  text-align: center;
+}
+.slds-titleHeading {
+  font-size: larger;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.prd-selection-grid-row .slds-col{
+  line-height: var(--slds-g-font-lineheight-6);
+  font-weight: var(--slds-g-font-weight-4);
+  border-bottom: 1px solid var(--sds-g-color-border-1);
+  font-size: larger;
+  /*border-radius: var(--slds-g-radius-border-2);
+  text-align: center;*/
+}
+
+.slds-crossbtn > button {
+  width: 2rem !important;
+  height: 2rem!important;
+  border-radius: 2rem!important;
+  background: #c3c3c3!important;
+  color: white!important;
+}
+
+.no-border{
+  background: none !important;
+  border: none !important;
+}
+.center-align{
+  text-align: center;
+}
+.high-offer-color{
+  background-color: var(--slds-g-color-error-base-70) !important;
+}
+.medium-offer-color{
+  background-color: var(--slds-g-color-warning-base-70) !important;
+}
+.low-offer-color{
+  background-color: var(--slds-g-color-success-base-70) !important;
+}
+.button_next{
+  float:inline-end;
+}
+.button_cancel{
+  float:inline-start;
+}
+
+
+/* .button {
+  background-color: #fefdfd; 
+  border: rgb(4, 0, 0);
+  padding: 5px 12px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+}*/
+.gridStyle{
+  margin: 0 0 1rem 0;
+  width: 1600px; 
+  overflow-x: auto;
+} 
+/* table, th, td {
+  border: 1px solid black;
+} */
+
+/*.Table{
+  display: table;
+  border: none;
+}*/
+
+.Title{
+  display: table-caption;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+/* .Heading{
+  display: table-row;
+  font-weight: bold;
+  text-align: center;
+} */
+
+.Row{
+  display: table-row;
+}
+
+.Cell{
+  display: table-cell;
+}
+
+/* .locationStyle{
+  height:3rem;
+ 
+  border:1px 
+  solid black;
+  background:#9bce7a;
+  align-content: center;
+  font-size: x-large;
+} */
+
+.columnStyle{
+  height:2rem;
+  width: 15rem;
+  background:#9bce7a;
+  align-content: center;
+  color: black;
+
+}
+
+.cellDataStyle{
+  height:1.5rem;
+  color: black;
+  border-bottom: 1px solid var(--sds-g-color-border-1);
+}
+.cellDataStyle1{
+  height:34px !important;
+  color: black;
+  border-bottom: 1px solid var(--sds-g-color-border-1);
+}
+.stockCellWithDataStyle{
+  height:2.5rem;
+  width: 14rem;
+  color: black;
+}
+
+.slds-helpText {
+  margin-top: 1rem;
+  margin-left: .5rem;
+}
+.slds-slotBtn {
+  height: 2rem; 
+  width: 10rem;
+  border: 1px solid rgb(24, 93, 164) !important;
+  border-color: rgb(24, 93, 164); 
+    color: rgb(24, 93, 164);
+  line-height: var(--slds-g-font-lineheight-6);
+  font-weight: var(--slds-g-font-weight-4);
+  font-size: small;
+  background-color: #FFFFFF;
+  margin-top: 12px !important;
+}
+.text-trucate{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 2rem;
+  padding-top: 0.2rem;
+}
+
+.slds-earliestDateHeight{
+  /* height: 2rem; */
+  height: 36px !important;
+}
+
+.slds-fontWeight{
+  /* font-weight: 400; */
+  font-weight: var(--slds-g-font-weight-5);
+  font-size: smaller; 
+}
+.namecss{
+  line-height: var(--slds-g-font-lineheight-6);
+    font-weight: var(--slds-g-font-weight-4);
+}
+
+
+.slds-box-colorNo {
+  border-color: snow;
+  
+}
+.cellDataStylePn{
+  width: 16rem;
+  color: black;
+}
+.gapcss{
+  margin: 20px 0px 10px 0px;
+}
+.selectedAppointmentDateStyle{
+  border: 1px solid var(--sds-g-color-border-1);
+  line-height: var(--slds-g-font-lineheight-6);
+  font-weight: var(--slds-g-font-weight-4);
+  font-size: small;
+  text-align: center;
+  border-radius: 3px;
+  color: 1px solid var(--sds-g-color-border-1);
+  width: 10rem !important;
+  height: 60px;
+  margin: auto !important;
+}
+
+.iconStyle{
+  width: 4rem;
+  height: 3rem;
+
+  /* --slds-c-icon-color-background:#9bce7a; */
+  --slds-c-button-color-background:#9bce7a; 
+  --slds-c-button-color-background-hover: #9bce7a;
+}
+
+
+.locationstyle{
+  background-color: whitesmoke;
+}
+
+.columnTextStyle{
+  font-weight: normal;
+  font-size: medium;
+  margin-bottom: unset;
+}
+
+.slds-textAlignCenter{
+  text-align: center;
+}
+
+.slds-form-element__icon {
+  padding-top: var(--lwc-spacingXxSmall, 0.0rem);
+}
+
+.earlyDateStyle{
+  background-color: lightgrey;
+}
+.earlyDateStyleWithLocationBlank{
+  color: #e9630f;
+  width: 10rem ;
+  /* width: 260px !important; */
+}
+.containercss{
+  width: 100%;
+}
+.container {
+  display: flex;
+  column-gap: 2px;
+  justify-content: space-between;
+}
+
+.closeButton{
+  /* margin-top: 12px; */
+  margin-left: 2px;
+}
+
+
+.input-wrapper,.slds-input{
+  background-color: lightyellow;
+  border-color: black;
+}
+
+  /* .locationlist {
+    width: 20rem;
+    margin: 1rem;
+    height: 2rem;
+  } */
+
+  /* .addLocation{
+    --sds-c-button-brand-color-background: rgb(156, 232, 238);
+    --sds-c-button-brand-color-background-hover: rgb(156, 232, 238);
+    margin-left: 14rem;  margin-right: 20rem ;  width: 20rem; margin-top: 1.3rem; font-weight: bold; font-size: medium;
+    
+  } */
+
+
+  
+  .locationStyle{
+    height:3rem;
+    width:100.3rem; 
+    border:1px 
+    solid black;
+    background:#9bce7a;
+    align-content: center;
+    font-size: x-large;
+  }
+  
+  .addCellAppointment{
+        float: left !important;
+    }
+
+    
+
+  .appointmentcellDataStyle{
+    height: 2.5rem;
+    width: 12rem;
+    color: black;
+    margin-bottom: .9rem;
+  }
+ 
+  .selectButtonStyle{
+    
+    font-weight: bold;
+    --sds-c-button-brand-color-background: #21cc79;
+    /*width: 10rem;
+    height: 2rem;
+      font-weight: normal;
+      font-size: medium;
+     margin-right: 3rem;*/
+  }
+  
+  .locationlist {
+    width: 20rem;
+    margin: 1rem;
+    height: 2rem;
+    font-weight: normal;
+    font-size: medium;
+  }
+
+  .addLocation{
+    --sds-c-button-brand-color-background: rgb(156, 232, 238);
+    --sds-c-button-brand-color-background-hover: rgb(156, 232, 238);
+     margin-right: 20rem ;   margin-top: 1.3rem; font-weight: bold; font-size: medium;
+    border-radius: 2rem;
+    margin-left: 7rem;
+    width: 25rem;
+    color: black;
+    
+  }
+  /* .container {
+    display: flex;
+    flex-direction: column-reverse;
+} */
+  .slds-scroll_Appointments {
+    max-width: 64rem !important;
+    min-width: 64rem !important;
+    overflow-x: auto;
+  }
+  .slds-border-none {
+    border: none !important;
+  }
+  .slds-cross-margin {
+    /* margin-right: 2rem; */
+  }
+
+  .toastCustom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: grey !important;
+    border: 1px solid grey !important;
+    border-radius: 4px;
+    
+}
+
+.info-icon {
+    color: grey !important;
+    font-size: 24px;
+    margin-right: 10px;
+    --sds-c-icon-color-background: white !important;  
+  
+}
+
+.toast-message {
+    color: white !important;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.close-button {
+    color: white !important;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.productLine:hover{
+  background-color: #FFFFFF !important;
+  line-height: var(--slds-g-font-lineheight-7);
+  font-weight: var(--slds-g-font-weight-5);
+  height: fit-content !important;
+  -webkit-line-clamp: 5 !important;
+}

@@ -1,0 +1,89 @@
+<apex:page showHeader="false" sidebar="false" controller="BLN_WorldPayFinalController">
+<apex:stylesheet value="https://fonts.googleapis.com/css?family=Roboto"/>
+<style>
+h1{
+color:Green;
+justify-content: center;
+align-items: center;
+text-align: left;
+}
+.spinner-container {
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(50%, 50%);
+z-index: 9999;
+justify-content: center;
+align-items: center;
+}  
+.spinner {
+width: 50px;
+height: 50px;
+border: 6px solid rgba(0, 0, 0, 0.1);
+border-top: 6px solid #82db34;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+background-color: #FFFFFF;
+position: relative;
+}
+.loader {
+width: 50px;
+height: 50px;
+border: 6px solid rgba(0, 0, 0, 0.1);
+border-top: 6px solid #82db34;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+background-color: #FFFFFF;
+position: relative;
+margin: 0 auto;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>  
+<div class="spinner-container">
+  <div class="loader"></div>
+  <h1>Processing Payment...</h1>
+</div>
+    <apex:messages style="error"/>
+    <script>
+    window.onload = function() {
+    const queryString = window.location.search;
+            console.log('qs8---',queryString);
+            const urlParams = new URLSearchParams(queryString);
+            const challenge = urlParams.get('challenge');
+            const challengeurl = urlParams.get('TransactionId');
+            const paymentid = urlParams.get('paymentid');
+            var sid = urlParams.get('said');
+            if(challenge == 'complete'){
+                 var action1 = '{!$RemoteAction.BLN_WorldPayFinalController.verification}';
+                        Visualforce.remoting.Manager.invokeAction(
+                            action1,challengeurl,paymentid,function(result, event){
+                            if (event.status) {	
+                                console.log('STa21',JSON.parse(JSON.stringify(event.status)));
+                                console.log('res--',JSON.parse(JSON.stringify(result)));
+                                console.log(result.outcome+'code--',result.code);
+                                var caseid = result.caseid;
+                                if(result.outcome == 'authenticated' || result.code == '201'||result.code == '200'){
+                                    var location = window.location.origin + '/SelfServe/s/case/' + caseid + '/detail?sid='+sid;
+                                     window.open(location, '_parent');
+                                }else{
+                                    //alert('description=>'+description);
+                                    window.open(window.location.origin + '/SelfServe/s/worldpayportalpage?recordId=' + caseid + '&code='+result.code+'&serviceId='+sid, '_parent');
+                                }              				                             
+                    } else {
+                        // Handle error
+                        console.error(event.message);
+                        alert('Error creating payment: ' + event.message);
+                    } 
+                            });
+            }
+    }
+    </script>
+</apex:page>

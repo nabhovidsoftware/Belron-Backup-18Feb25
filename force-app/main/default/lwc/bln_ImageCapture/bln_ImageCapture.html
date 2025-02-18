@@ -1,0 +1,45 @@
+<template>
+  <template if:false={usedForR1}>
+    <div
+      class="slds-grid slds-grid_vertical"
+      style="background-color: white; height: 100%"
+    >
+      <c-bln_-image-selector
+        if:false={isImageSelected}
+        all-images-data={allImagesData}
+        onselectimages={handleImagesSelected}
+      onsendimagename={handlesendimagename}
+        ondelete={handleDeleteImage}
+        onannotateimage={handleAnnotateImage}
+        onuploadrequest={handleUploadRequested}
+      num-of-damage={numOfDamage}
+      work-step-name={workStepName}
+        style="height: 100%"
+      ></c-bln_-image-selector>
+      <c-bln_-image-annotate
+        if:true={isImageSelected}
+        image-info={selectedImageInfo}
+        onsave={handleSaveAnnotatedImage}
+        ondiscard={handleImageDiscarded}
+        ondelete={handleDeleteImage}
+        style="height: 100%"
+      ></c-bln_-image-annotate>
+    </div>
+  
+    <c-bln_-toast-message
+      if:true={shouldShowToast}
+      message={toastMessage}
+      type={toastType}
+      onclose={hideToast}
+    ></c-bln_-toast-message>
+  
+    <c-bln_-loading-spinner
+      if:true={isUploading}
+      loading-message="Uploading..."
+    ></c-bln_-loading-spinner>
+    <c-bln_-loading-spinner if:true={isReading} loading-message=""></c-bln_-loading-spinner>
+</template>
+<template if:true={usedForR1}>
+  <div class="slds-text-heading_medium">This feature is available for R2.</div>
+</template>
+</template>

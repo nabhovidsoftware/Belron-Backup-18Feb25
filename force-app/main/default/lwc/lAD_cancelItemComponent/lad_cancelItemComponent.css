@@ -1,0 +1,12 @@
+.container{
+    margin: 0 auto;
+    width: 60%;
+    max-width: 53rem;
+    min-width: 20rem;
+}
+.black-icon {
+    --sds-c-icon-color-foreground: black;
+}
+.spinner{
+    
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Set_Gantt_Label</name>
+        <label>Set Gantt Label</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttLabel__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!$Record.RelatedRecord.MobilePhone}{!SEPARATOR}{!$Record.RelatedRecord.PostalCode}</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>This flow updates default gantt label for service resource record</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>SEPARATOR</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.RelatedRecord.MobilePhone}&lt;&gt;null &amp;&amp; {!$Record.RelatedRecord.PostalCode}&lt;&gt;null,
+&apos; / &apos;,
+&apos;&apos;)</expression>
+    </formulas>
+    <interviewLabel>BLN_SetResourceMobilePostcode {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Set Resource Gantt Label</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Gantt_Label</targetReference>
+        </connector>
+        <filterFormula>OR(NOT({!$Permission.BLN_BypassFlows}), AND( {!$Permission.ByPassFlowForPrepCall},ISNEW()))</filterFormula>
+        <object>ServiceResource</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

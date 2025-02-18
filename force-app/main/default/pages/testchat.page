@@ -1,0 +1,21 @@
+<apex:page >
+<script type='text/javascript'>
+    function initEmbeddedMessaging() {
+        try {
+            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+            embeddedservice_bootstrap.init(
+                '00D7E000000AknK',
+                'BLN_WebMessaging',
+                'https://belronint--ukst2.sandbox.my.site.com/ESWBLNWebMessaging1708610491852',
+                {
+                    scrt2URL: 'https://belronint--ukst2.sandbox.my.salesforce-scrt.com'
+                }
+            );
+        } catch (err) {
+            console.error('Error loading Embedded Messaging: ', err);
+        }
+    };
+</script>
+<script type='text/javascript' src='https://belronint--ukst2.sandbox.my.site.com/ESWBLNWebMessaging1708610491852/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+</apex:page>

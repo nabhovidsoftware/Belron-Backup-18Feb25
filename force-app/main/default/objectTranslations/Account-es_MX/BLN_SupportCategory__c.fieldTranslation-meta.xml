@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Support Category --></label>
+    <name>BLN_SupportCategory__c</name>
+    <picklistValues>
+        <masterLabel>Health</masterLabel>
+        <translation><!-- Health --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Life Event</masterLabel>
+        <translation><!-- Life Event --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resilience</masterLabel>
+        <translation><!-- Resilience --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Something Else</masterLabel>
+        <translation><!-- Something Else --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

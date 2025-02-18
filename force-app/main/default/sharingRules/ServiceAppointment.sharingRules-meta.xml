@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BLN_ServiceAppointmentOwnerRule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Service Appointment Owner Not Equal To</label>
+        <sharedTo>
+            <group>BLN_CERUsers</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingGuestRules>
+        <fullName>Share_with_Guest_Users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Share with Guest Users</label>
+        <sharedTo>
+            <guestUser>Belron_Autoglass_Self_Service_Community</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>Subject</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+</SharingRules>

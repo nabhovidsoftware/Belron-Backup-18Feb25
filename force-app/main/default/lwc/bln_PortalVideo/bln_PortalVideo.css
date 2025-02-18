@@ -1,0 +1,45 @@
+.container{
+    width: 375px;
+    background-color:#FAFAFA !important;
+ }
+.custom-border {
+    border: 1px solid #9fa0a1; /* Adjust border color as needed */
+    border-radius: 0.20rem; /* Adjust border radius as needed */
+}
+.para{
+    color: var(--theme-color-text, #475158);
+font-family: var(--theme-typography-font-family-body, Roboto);
+font-size: var(--theme-typography-font-size-sm, 14px);
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+}
+.aboutcss{
+   
+    color: var(--theme-color-text-headline, #475158);
+
+/* title/l */
+font-family: var(--theme-typography-font-family-title, "Roboto Condensed");
+font-size: var(--theme-typography-font-size-l, 24px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 700);
+line-height: 130%; /* 31.2px */
+}
+
+.showvideocss{
+    width: 375px;
+}
+.iframe {width:375px;
+    border-radius: 8px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;}
+/* Media query for smaller screens (e.g., mobile devices) */
+/* @media (max-width: 600px) { */
+@media (max-width: 612px) {
+    .showvideocss{
+        width: 100% !important;
+    }
+    .container{
+        width: 100%;
+     }
+     .iframe {width:100%;}
+}

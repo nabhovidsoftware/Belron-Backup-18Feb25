@@ -1,0 +1,185 @@
+.slds-modal__content{
+  width: 625px !important;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.slds-backgroundPopupModel {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.buttoncss{
+    /* margin-top: 3rem; */
+    margin: 0% 2%;
+}
+.cofirmButton {
+    background-color: #568300; 
+      color: white; 
+      float: right;
+      padding: 12px;
+      font-family: Roboto Condensed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 24px */
+      margin-right: -3%;
+}
+.okcss{
+    float: right; 
+    border-color:#5A6369;
+    border: 1px solid #5A6369;
+    color: #5A6369;
+    padding: 12px;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+}
+.cancelButton{
+    float: left; 
+      border-color:#5A6369;
+      border: 1px solid #5A6369;
+      color: #5A6369;
+      padding: 12px;
+      font-family: Roboto Condensed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 24px */
+}
+
+.notification {
+    /* padding: 10px;
+    text-align: center;
+    margin-top: 1rem; */
+}
+
+.rebook-form label,
+.rebook-form input,
+.rebook-form button {
+    display:block;
+    margin-top: 10px;
+}
+.formBorder{
+    width: 49rem;
+    border-radius: 1rem;
+}
+.slds-modal-content{
+    overflow: visible;
+    overflow-y: visible;
+    width: 624px;
+}
+.adjustModelHeight{
+    /* height: 60rem; */
+}
+
+/* Rebbok confirm */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #475158;
+    float: right;
+    font-size: 31px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #475158;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0;
+}
+.headcss{
+    color: var(--theme-color-text, #475158);
+    font-family: Roboto Condensed;
+    font-size: var(--theme-typography-font-size-xl, 32px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 130%; /* 41.6px */
+    text-align: left;
+    margin-left: 2%;
+    margin-bottom: 12px;
+  }
+  .paracss2{
+    color: var(--theme-color-text, #475158);
+
+    font-family: Roboto ;
+    color: var(--theme-color-text, #475158);
+     font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 150%;  }
+  .paracss{
+  margin-left: 2%;
+  font-family: Roboto ;
+  color: var(--theme-color-text, #475158);
+ font-size: var(--theme-typography-font-size-m, 16px);
+  font-style: normal;
+  font-weight: var(--theme-typography-font-weight-regular, 400);
+  line-height: 150%; /* 24px */
+margin-bottom: 1rem;
+  }
+  @media only screen and (max-width: 600px) {
+    .slds-modal__content{
+      width: 90% !important;
+    }
+  }
+
+  @media screen and (max-device-width: 480px) 
+  and (orientation: portrait) {
+    .slds-modal__content{
+      width: 100% !important;
+    }
+  .headcss{
+    font-size: 20px;
+  }
+  .paracss{
+    width: 100%;
+    margin-right: 5rem;
+  }
+  .paracss2{
+    width: 100%;
+    margin-left: 0.5rem;
+
+  }
+  .okcss{
+    /* float: right;  */
+    border-color:#5A6369;
+    border: 1px solid #5A6369;
+    color: #5A6369;
+    width: 100%;
+  }
+  .cofirmButton{
+    width: 120px;
+  }
+  .cancelButton{
+    width: 120px;
+  }
+}

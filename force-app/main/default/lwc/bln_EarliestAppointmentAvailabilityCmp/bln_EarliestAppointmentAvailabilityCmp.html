@@ -1,0 +1,21 @@
+<template>
+    <template lwc:if={showLoading}>
+        <div class="spinner-div">
+            <lightning-spinner class="spinner" alternative-text="Loading..." size="x-small" variant="brand"></lightning-spinner>
+        </div>
+    </template>
+    <template lwc:elseif={showErrorText}>
+        <span class="error-text">
+            {label.error}
+        </span>
+        <span>
+            <lightning-helptext content={errorMsg}></lightning-helptext>
+        </span>
+    </template>
+    <template lwc:elseif={showNoSlotsText}>
+        {label.noSlots}
+    </template>
+    <template lwc:else>
+        {earliestDate_formatted}
+    </template>
+</template>

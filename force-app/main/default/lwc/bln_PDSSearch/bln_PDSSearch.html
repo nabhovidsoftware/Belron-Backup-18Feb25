@@ -1,0 +1,1071 @@
+<template>
+    
+    
+    <div class="center">
+    <template if:false={isFlowHeader}> 
+        <div >
+            <strong>{label.CaptureCorporateLabel}</strong>
+        </div>
+    </template>
+</div>
+    <div>
+        
+    <div>
+        <template lwc:if={spinnerOn}>
+            <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+        </template>
+        <template if:true={noVehicle}>
+            <div class="slds-text-color_error slds-m-around_medium">
+                {error}</div>
+            <br>
+            <lightning-button class="slds-m-left_x-small" label={label.Close} title={label.Close} variant="brand"
+                onclick={handleClose}>
+            </lightning-button>
+        </template>
+        <template if:false={noVehicle}>
+                  <!--<div style="display: flex;">
+                    <template if:true={firstPage}>
+                        <lightning-input class="slds-m-around_medium slds-align_absolute-center " type="text" readonly="true"
+                            value={vehicleRegNumber} label={label.VehicleRegistrationNumber}>
+                        </lightning-input>-->
+                        <!-- <lightning-input class="slds-m-around_medium" type="text" label={label.PolicyNumber}
+                    value={policyNumberFirstScreen} onchange={handlePolicyNumberChange}>
+                          </lightning-input> -->
+                       <!---- <lightning-input class="slds-m-around_medium slds-align_absolute-center"  type="datetime" value={incidentDate}
+                            label={label.IncidentDate} onchange={handleChange}>
+                        </lightning-input>
+                        <template if:true={incDateError}>
+                            <div class="slds-text-color_error slds-m-around_medium slds-align_absolute-center" >
+                        {label.IncidentDateError}</div>
+                </template>
+                <br />
+                <div class="slds-m-around_medium slds-align--absolute-center">       
+
+                <lightning-button class="slds-m-left_x-small" label={label.Next} title="Next"
+                    disabled={disableNextButton} onclick={onClickNext} variant="brand">
+                </lightning-button>
+                            <lightning-button class="slds-m-left_x-small" label={label.ManualSearch}
+                                title={label.ManualSearch} disabled={disableManualSearch} onclick={onClickManualSearch}
+                                variant="neutral">
+                            </lightning-button>
+                        </div>
+                    </template>
+                </div>-->
+                <div class="slds-grid slds-wrap slds-m-around_medium" style="justify-content: center; align-items: center; ">  
+                    <template if:true={firstPage}>  
+                        <div class="slds-col slds-size_1-of-1 slds-p-around_small" style="max-width: 400px; margin: 0 auto;" >  
+                            <lightning-input class="slds-m-bottom_small"  type="text" readonly="true"   value={vehicleRegNumber}   label={label.VehicleRegistrationNumber}>  </lightning-input>  
+                              
+                            <lightning-input class="slds-m-bottom_small" type="datetime" value={incidentDate} label={label.IncidentDate} onchange={handleChange}>  </lightning-input>  
+                              
+                            <template if:true={incDateError}>  
+                                <div class="slds-text-color_error slds-m-bottom_small">  
+                                    {label.IncidentDateError}  
+                                </div>  
+                            </template>  
+                        </br> </br>
+                            
+                                <lightning-button   class="slds-m-left_x-small"  label={label.Next} title="Next"  disabled={disableNextButton}  onclick={onClickNext} variant="brand">  </lightning-button>  
+                                <lightning-button   class="slds-m-left_x-small"  label={label.ManualSearch}  title={label.ManualSearch}   disabled={disableManualSearch}    onclick={onClickManualSearch}  variant="neutral">  </lightning-button>  
+                            
+                        </div>  
+                    </template>  
+                </div>  
+                
+                
+                    <!--Manual search page for corporate start-->
+                    <lightning-card class="slds-align_absolute-center widthcss">
+                <template if:true={showManualSearch}>
+                    <template if:false={firstPage}>
+                        <template if:true={secondPage}>
+                            <lightning-layout multiple-column class="myRadioGroup">
+                                <lightning-layout-item size="1"></lightning-layout-item>
+                                <lightning-layout-item size="2" class="itemAlignment">
+                                            <lightning-radio-group name="radioGroup" class="RadioGroupOptions"
+                                                options={options} value={value} type="radio"
+                                                onchange={handleOptionChange}>
+                                    </lightning-radio-group>
+
+                                </lightning-layout-item>
+                                <lightning-layout-item size="7">
+                                </lightning-layout-item>
+                                <lightning-layout-item size="2"></lightning-layout-item>
+                            </lightning-layout> <br />
+                            <template if:true={isCorporateSelected}>
+                                <template if:false={showTable}>
+                                    <template if:true={showError}>
+                                        <template if:true={userHasInteracted}>
+                                            <lightning-layout>
+
+                                                <lightning-layout-item size="2" class="itemAlignment">
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="9">
+                                                        <div class="slds-text-color_error">{label.InputError} 
+                                                        </div>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="1"></lightning-layout-item>
+                                            </lightning-layout>
+                                        </template>
+                                    </template>
+                                </template>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.AccountName}</strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <lightning-input type="text" class="inputBoxWidth"
+                                            data-label={label.AccountName} value={accountName}
+                                            onchange={handleInputChange}></lightning-input>
+                                    </lightning-layout-item>
+
+                                </lightning-layout>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.AccountNumber}</strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <lightning-input type="text" class="inputBoxWidth"
+                                            data-label={label.AccountNumber} value={accountNumber}
+                                            onchange={handleInputChange}></lightning-input>
+                                    </lightning-layout-item>
+
+
+                                </lightning-layout>
+                            </template>
+                            <template if:false={isCorporateSelected}>
+                                <template if:false={showTable}>
+                                    <template if:true={showError}>
+                                        <template if:true={userHasInteracted}>
+                                            <lightning-layout>
+
+                                                <lightning-layout-item size="2" class="itemAlignment">
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="9">
+                                                    <div class="slds-text-color_error">{label.InputError} </div>
+                                                </lightning-layout-item>
+                                                <lightning-layout-item size="1"></lightning-layout-item>
+                                            </lightning-layout>
+                                        </template>
+                                    </template>
+                                </template>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.AccountName}</strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                                <lightning-input type="text" class="inputBoxWidth"
+                                                    data-label="Account Name" value={accountName}
+                                                    onchange={handleInputChange} required></lightning-input>
+                                    </lightning-layout-item>
+
+                                </lightning-layout>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.VRN}</strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <lightning-input type="text" value={vehicleRegNumber}
+                                            readonly></lightning-input>
+                                    </lightning-layout-item>
+
+
+                                </lightning-layout>
+
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.IncidentDate}
+                                            </strong></label></lightning-layout-item>
+
+                                    <lightning-layout-item size="9">
+                                                <lightning-input type="datetime" value={incidentDate}
+                                                    readonly={readOnly}
+                                                    onchange={handleincidentchange} class="slds-form-element"></lightning-input>
+                                    </lightning-layout-item>
+
+
+                                </lightning-layout>
+
+
+
+                            </template>
+
+                            </br> </br>
+                            <template if:true={showCashButton}>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="1"></lightning-layout-item>
+                                    <lightning-layout-item size="10">
+                                        <div class="slds-text-color_error">{label.NoSearchResultsError}</div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="1"></lightning-layout-item>
+                                </lightning-layout> <br /> <br />
+
+
+                            </template>
+                            <template if:true={showTable}>
+                                <!--<template if:true={showTableDetails}>-->
+                                <template if:true={showNoAccountSelectedMessage}>
+                                    <lightning-layout>
+
+                                        <lightning-layout-item size="1"></lightning-layout-item>
+                                        <lightning-layout-item size="10">
+                                                    <div class="slds-text-color_error">{label.NoAccountSelectedError}
+                                                    </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="1"></lightning-layout-item>
+                                    </lightning-layout> <br /> <br />
+
+
+                                </template>
+                                <div class="custom-datatable">
+                                    <lightning-card>
+                                        <div class="slds-p-around_medium">
+                                            <div class="slds-scrollable_y">
+                                                        <table
+                                                            class="slds-table slds-table_bordered slds-table_cell-buffer">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset">
+                                                            <th scope="col">
+                                                                <div>{label.Select}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div>{label.AccountName}</div>
+                                                            </th>
+                                                            
+                                                                <th scope="col">
+                                                                    <div>{label.AccountNumber}</div>
+                                                                </th>
+                                                          
+                                                            <th scope="col">
+                                                                <div>{label.NonDirectBilling}</div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each={accounts} for:item="account"
+                                                            for:index="index">
+                                                            <tr key={account.Id} class="slds-hint-parent">
+                                                                <td data-label={label.Select}>
+                                                                    <div>
+                                                                        <input type="radio" name="accountSelect"
+                                                                            value={account.Id}
+                                                                            onchange={handleRadioChange}
+                                                                            checked={account.selected} />
+                                                                    </div>
+
+                                                                </td>
+                                                                        <td data-label={label.AccountName}
+                                                                            class="caseNumber">
+                                                                    <div>{account.Name}</div>
+                                                                </td>
+                                                                
+                                                                    <td data-label={label.AccountNumber}>
+                                                                        <div>{account.BLN_MDMAccountID__c}</div>
+                                                                    </td>
+                                                              
+                                                                        <td data-label={label.NonDirectBilling}
+                                                                            class="slds-text-align_center">
+                                                                            <input type="checkbox"
+                                                                                disabled={isCheckboxDisabled}
+                                                                                checked={account.BLN_NonDirectBilling__c} />
+                                                                </td>
+                                                            </tr>
+                                                        </template>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </lightning-card>
+                                </div>
+
+                                <!--</template>-->
+
+                            </template>
+                            </br> </br>
+
+                            <div class="slds-align_absolute-center">
+                                <!--<lightning-button class="slds-m-right_medium slds-button_success backMargin"
+                                    variant="Neutral" label={label.Back} onclick={handleBack}></lightning-button>-->
+                                    <lightning-button class="slds-m-left_x-small" label={label.Back}
+                                    title={label.Back} onclick={handleBack} variant="neutral">
+                                </lightning-button>
+
+                                        <lightning-button label={label.searchpds} title={label.searchpds}
+                                            variant="brand" class="slds-m-left_x-small" onclick={handleSearch}
+                                            disabled={isButtonDisabled}></lightning-button>
+                                        <template if:true={showTable}>
+
+                                            <lightning-button class="slds-m-left_x-small clearselectioncss"
+                                                variant="neutral" label={label.ClearSelection} name={label.accselect}
+                                                onclick={handleSelection}
+                                                disabled={isContinueDisabled}></lightning-button>
+
+                                    <lightning-button class="slds-m-left_x-small" label={label.ContinuePds}
+                                        variant="brand" onclick={handleContinue}
+                                        disabled={isContinueDisabled}></lightning-button>
+
+                                </template>
+
+
+                                <!--<template if:true={showCashButton}>-->
+                                   <template if:true={showCashInsurance}>
+                                        <template if:true={isCorporateSelected}>
+                                                <lightning-button class="slds-m-left_x-small" label={label.cash}
+                                                    variant="brand" onclick={handleCashButton}
+                                                    disabled={isButtonDisabled}></lightning-button>
+
+                                                <lightning-button class="slds-m-left_x-small" label={label.Close}
+                                                    variant="brand" onclick={handleCloseButton}
+                                                    disabled={isButtonDisabled}></lightning-button>
+                                            </template>
+                                            <template if:false={isCorporateSelected}>
+                                                <lightning-button class="slds-m-left_x-small" label={label.Insurance}
+                                                    variant="brand" onclick={handleInsuranceButton}
+                                                    disabled={isButtonDisabled}></lightning-button>
+
+                                                <lightning-button class="slds-m-left_x-small" label={label.cash}
+                                                    variant="brand" onclick={handleCashButton}
+                                                disabled={isButtonDisabled}></lightning-button>
+
+                                        </template>
+                                    </template>
+                               <!--- </template>-->
+                            </div>
+                        </template>
+                        <template if:false={secondPage}>
+                            <!--<template if:false={thirdPage}>-->
+                            <template if:true={isPolicyCall}>
+
+
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="1" class="itemAlignment">
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="10">
+                                        <div class="slds-text-color_error"><strong>
+                                                {label.NoteForPolicyFormat}</strong></label></div>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item size="1"></lightning-layout-item>
+                                </lightning-layout>
+
+
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.AccountName}</strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <lightning-input type="text" class="inputBoxWidth"
+                                            data-label={label.AccountName} value={selectedAccount.Name}
+                                            readonly></lightning-input>
+                                    </lightning-layout-item>
+
+                                </lightning-layout>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.VRN}</strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <lightning-input type="text" value={vehicleRegNumber}
+                                            readonly></lightning-input>
+                                    </lightning-layout-item>
+
+
+                                </lightning-layout>
+
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.IncidentDate}
+                                            </strong></label></lightning-layout-item>
+
+                                    <lightning-layout-item size="9">
+                                                <lightning-input type="datetime" value={incidentDate}
+                                                    readonly={readOnly}
+                                            onchange={handleincidentchange}></lightning-input>
+                                    </lightning-layout-item>
+
+
+                                </lightning-layout>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.PolicyNumber}
+                                            </strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                        <lightning-input type="text" class="inputBoxWidth"
+                                            data-label={label.PolicyNumber} value={policyNumber}
+                                            onchange={handleInputChange} required></lightning-input>
+                                    </lightning-layout-item>
+
+                                </lightning-layout>
+                                <lightning-layout>
+
+                                    <lightning-layout-item size="3"><label
+                                            class="slds-form-element__label labelWidth itemAlignment"><strong>{label.ReplacementExcess}
+                                            </strong></label></lightning-layout-item>
+                                    <lightning-layout-item size="9">
+                                                <lightning-input type="number" class="inputBoxWidth"
+                                            data-label={label.ReplacementExcess} value={replacementExcess}
+                                            onchange={handleInputChange} required></lightning-input>
+                                    </lightning-layout-item>
+
+                                </lightning-layout>
+                            </br> </br>
+                                <template if:true={scriptError}>
+                                    <lightning-layout>
+
+                                        <lightning-layout-item size="1"></lightning-layout-item>
+                                        <lightning-layout-item size="10">
+                                                    <div class="slds-text-color_error">{label.NoAccountSiteFoundError}
+                                                    </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="1"></lightning-layout-item>
+                                    </lightning-layout> 
+
+
+                                </template>
+
+                                </br> </br>
+                                <div class="slds-align_absolute-center">
+                                   <!--- <lightning-button class="slds-m-right_medium slds-button_success backMargin"
+                                        variant="Neutral" label={label.Back} onclick={handleBack}></lightning-button>-->
+                                        <lightning-button class="slds-m-left_x-small" label={label.Back}
+                                        title={label.Back} onclick={handleBack} variant="neutral">
+                                    </lightning-button>   
+                                            <lightning-button label={label.searchpds} title={label.searchpds}
+                                                variant="brand" class="slds-m-left_x-small" onclick={handleContinue}
+                                                disabled={isContinueDisabled}></lightning-button>
+                                    <lightning-button class="slds-m-left_x-small" label={label.Close}
+                                        variant="brand" onclick={handleSearchButton}
+                                        disabled={isButtonDisabled}></lightning-button>
+                                </div>
+
+
+                            </template>
+                            <!--</template>-->
+                        </template>
+                    </template>
+                </template>
+            </lightning-card>
+
+                    <lightning-card >
+                <template if:false={secondPage}>
+                    <template if:false={isPolicyCall}>
+                        <template if:true={thirdpage}>
+
+                            <template if:true={corporateWrapList}>
+
+                                <div class="custom-datatable marginForTable">
+                                            <!-- <lightning-card> -->
+                                                 <lightning-card >
+                                                <div class="slds-p-around_medium">
+                                                    <div class="slds-scrollable_y scrollHight">
+                                                        <table
+                                                            class="slds-table slds-table_bordered slds-table_cell-buffer">
+                                                    <thead>
+                                                        <tr class="slds-line-height_reset">
+                                                            <th scope="col">
+                                                                <div>{label.Select}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div>{label.SiteNameCorporateSite}</div>
+                                                            </th>
+                                                            <!--<template if:false={isCorporateSelected}>-->
+                                                                <th scope="col">
+                                                                    <div>{label.SiteNameInsurerSite}</div>
+                                                                </th>
+                                                            <!--</template>-->
+                                                            <th scope="col">
+                                                                <div>{label.PolicyNumber}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div>{label.ReplacementExcess}</div>
+                                                            </th>
+
+                                                            <th scope="col">
+                                                                <div>{label.RepairExcess}</div>
+                                                            </th>
+
+                                                                     <th scope="col">
+                                                                        <div>{label.PolicyLimit}</div>
+                                                                    </th> 
+                                                           <!--- <template if:false={isCorporateSelected}>-->
+                                                                <th scope="col">
+                                                                        <div>
+                                                                            {label.SplitBillAccountCorporateLegalEnitity}
+                                                                    </div>
+                                                                </th>
+                                                           <!--- </template>-->
+                                                            <th scope="col">
+                                                                    <div>{label.SplitBillAccountInsurerLegalEntity}
+                                                                    </div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div>{label.Salutation}</div>
+                                                            </th>
+                                                                  
+                                                            <th scope="col">
+                                                                <div>{label.FirstName}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div>{label.LastName}</div>
+                                                            </th>
+                                                            <template if:true={isCorporateSelected}>
+                                                            <th scope="col">
+                                                                <div>Reference</div>
+                                                            </th>
+                                                        </template>
+                                                                    <th scope="col">
+                                                                        <div>{label.GlassCoverFlagField}</div>
+                                                                    </th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <template for:each={corporateWrapList} for:item="corp">
+                                                            <tr key={corp.key} class="slds-hint-parent">
+                                                                <td data-label={label.Select}>
+                                                                    <div>
+                                                                        <input type="radio" name="corpSelect"
+                                                                                    value={corp.key}
+                                                                                    data-cropid={corp.key}
+                                                                            data-row={corp.row}
+                                                                            onchange={handleRadioChange}
+                                                                            checked={corp.attachToCase} />
+
+                                                                    </div>
+
+                                                                </td>
+
+                                                                <td data-label={label.SiteNameCorporateSite}>
+                                                                    <div>{corp.corporateSiteName}</div>
+                                                                </td>
+                                                               <!--- <template if:false={isCorporateSelected}>-->
+                                                                    <td data-label={label.SiteNameInsurerSite}>
+                                                                        <div>{corp.insuranceSiteAccountName}</div>
+                                                                    </td>
+                                                                <!--</template>-->
+                                                                <td data-label={label.PolicyNumber}>
+                                                                    <div>{corp.policyNumber}</div>
+                                                                </td>
+                                                                <td data-label={label.ReplacementExcess}>
+                                                                    <div>{corp.glassExcessAmount}</div>
+                                                                </td>
+                                                                <td data-label={label.RepairExcess}>
+                                                                    <div>{corp.repairExcessAmount}</div>
+                                                                </td>
+                                                                         <td data-label={label.PolicyLimit}>
+                                                                            <div>{corp.policyLimit}</div>
+                                                                        </td>
+                                                                <!--<template if:false={isCorporateSelected}>-->
+                                                                    <td
+                                                                        data-label={label.SplitBillAccountCorporateLegalEnitity}>
+                                                                        <div>{corp.corporateLegalEntityName}</div>
+                                                                    </td>
+                                                                <!--</template>-->
+                                                                <td
+                                                                    data-label={label.SplitBillAccountInsurerLegalEntity}>
+                                                                    <div>{corp.insuranceLegalEntityName}</div>
+                                                                </td>
+                                                                <td data-label={label.Salutation}>
+                                                                    <div>{corp.salutation}</div>
+                                                                </td>
+                                                                     
+                                                                <td data-label={label.FirstName}>
+                                                                    <div>{corp.firstName}</div>
+                                                                </td>
+                                                                <td data-label="LastName">
+                                                                    <div>{corp.lastName}</div>
+                                                                </td>
+                                                                <template if:true={isCorporateSelected}>
+                                                                <td data-label="Reference">
+                                                                    <div>{corp.reference}</div>
+                                                                </td>
+                                                                 </template>
+                                                                        <td data-label={label.GlassCoverFlagField}>
+                                                                            <div>{corp.glassCoverFlag}</div>
+                                                                        </td>
+                                                            </tr>
+
+                                                        </template>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </lightning-card>
+                                </div>
+                                <template if:true={showNoAccountSelectedMessage}>
+                                    <lightning-layout>
+
+                                        <lightning-layout-item size="1"></lightning-layout-item>
+                                        <lightning-layout-item size="10">
+                                                    <div class="slds-text-color_error">{label.PdsClearSelectionError}
+                                                    </div>
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="1"></lightning-layout-item>
+                                    </lightning-layout> <br /> <br />
+
+
+                                </template>
+
+                            </template>
+                            <template if:true={isCorporateSelected}>
+                                <template if:true={isNonDirectBilling}>
+                                    <template if:false={corporateWrapList}>
+                                        <lightning-layout>
+
+                                            <lightning-layout-item size="1"></lightning-layout-item>
+                                            <lightning-layout-item size="10">
+                                                        <div class="slds-text-color_error allignmessage">
+                                                            {label.ErrorMessageForSplitBill}
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="1"></lightning-layout-item>
+                                        </lightning-layout> <br /> <br />
+                                    </template>
+                                </template>
+                                <template if:true={thirdPageCash}>
+                                    <template if:false={corporateWrapList}>
+                                        <lightning-layout>
+
+                                            <lightning-layout-item size="1"></lightning-layout-item>
+                                            <lightning-layout-item size="10">
+                                                        <div class="slds-text-color_error">
+                                                            {label.ErrorMessageForSplitBill}
+                                                </div>
+                                            </lightning-layout-item>
+                                            <lightning-layout-item size="1"></lightning-layout-item>
+                                        </lightning-layout> <br /> <br />
+                                    </template>
+                                </template>
+                            </template>
+                            <br /> <br />
+                            <!--FOUK-10513-->
+                            <template if:true={showManualSearch}>
+                                <template if:true={corporateTable}>
+                                            <lightning-input label={label.MotoristPayViaInsurance}
+                                                class="slds-p-left_xx-large" type="checkbox" name='motoristCheckbox'
+                                                onchange={handleQuestionCheckBox} checked={isMotoristPayIns}
+                                                disabled={isQuestionCheck}>
+                                            </lightning-input>
+                                            <template if:true={motoristWantToPay}>
+                                                <lightning-input label={label.AreTheyPolicyHolder}
+                                                    class="slds-p-left_xx-large" type="checkbox">
+                                                </lightning-input>
+                                                <template if:false={policyHolder}>
+                                                    <lightning-input label={label.PermissionBehalfPolicyholder}
+                                                        class="slds-p-left_xx-large" type="checkbox"
+                                                        value={motoristWantToPay}>
+                                                    </lightning-input></template>
+                                                <lightning-input label={label.VATRegisteredLabel}
+                                                    class="slds-p-left_xx-large" type="checkbox" name="vatRegisterCheck"
+                                                    onchange={handleQuestionCheckBox} checked={vatRegistered}>
+                                        </lightning-input>
+                                        <!-- <template if:true={vatRegistered}>
+                                            <lightning-input label={label.VATNumber} class="slds-p-left_xx-large" type="text"
+                                                onchange={vatNumberEnter}>
+                                            </lightning-input>
+                                        </template> -->
+                                    </template>
+                                </template>
+                            </template>
+                            <br /> <br />
+                             <!--FOUK-10513-->
+                            <div class="slds-align_absolute-center">
+                              <!---- <lightning-button class="slds-m-right_medium slds-button_success backMargin"
+                                    variant="Neutral" label={label.Back} onclick={handleBack}></lightning-button>-->
+                                    <lightning-button class="slds-m-left_x-small" label={label.Back}
+                                    title={label.Back} onclick={handleBack} variant="neutral">
+                                </lightning-button>
+
+                                <template if:true={thirdPageCash}>
+                                    <lightning-button class="slds-m-left_x-small" label={label.cash}
+                                        variant="brand" onclick={handleCashButton}
+                                        disabled={isButtonDisabled}></lightning-button>
+                                </template>
+                                <template if:true={isNonDirectBilling}>
+                                    <template if:false={corporateWrapList}>
+
+                                                <lightning-button class="slds-m-left_x-small" label={label.Close}
+                                                    variant="brand" onclick={handleCloseButton}
+                                            disabled={isButtonDisabled}></lightning-button>
+                                    </template>
+                                </template>
+                                <template if:true={corporateWrapList}>
+                                            <lightning-button class="slds-m-left_x-small clearselectioncss"
+                                                variant="Neutral" label={label.ClearSelection} name={label.corpselect}
+                                                onclick={handleSelection}
+                                                disabled={isContinueDisabled}></lightning-button>
+
+                                    <lightning-button class="slds-m-left_x-small" label={label.ContinuePds}
+                                        variant="brand" disabled={isContinueDisabled}
+                                        onclick={handleContinueButton}></lightning-button>
+                                    <!--onclick={handleContinueButtonForUnselected}>-->
+                                    <lightning-button class="slds-m-left_x-small" label={label.Close}
+                                        variant="brand" disabled={isCloseDisabled}
+                                        onclick={handleCloseButton}></lightning-button>
+                                </template>
+                            </div>
+                        </template>
+                        <!--<template if:true={callAderessFlow}>
+                            <lightning-flow flow-api-name="BLN_ValidateServiceAddressFlow"
+                                flow-input-variables={inputAddressVarible}></lightning-flow>-->
+                            <!--flow-input-variables={inputVariables}-->
+                        <!--</template>-->
+                    </template>
+                </template>
+
+            </lightning-card>
+
+            <!--Manual search page for corporate end-->
+
+                    <lightning-card >
+                <template if:false={firstPage}>
+                    <template if:false={showManualSearch}>
+                        <!--For Referance FOUK-5379-->
+                        <template if:true={responseSuccess}>
+
+
+                                    <div class="custom-datatable">
+                                <div class="slds-p-around_medium">
+                                    <div class="slds-scrollable_y">
+                                        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                                            <thead>
+                                                <tr class="slds-line-height_reset">
+                                                    <th scope="col">
+                                                        <div>{label.Select}</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div>{label.SiteNameCorporateSite}</div>
+                                                    </th>
+                                                    <!--<template if:false={isCorporateSelected}>-->
+                                                    <th scope="col">
+                                                        <div>{label.SiteNameInsurerSite}</div>
+                                                    </th>
+                                                    <!--</template>-->
+                                                    <th scope="col">
+                                                        <div>{label.PolicyNumber}</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div>{label.ReplacementExcess}</div>
+                                                    </th>
+
+                                                    <th scope="col">
+                                                        <div>{label.RepairExcess}</div>
+                                                    </th>
+                                                    <!--- <template if:false={isCorporateSelected}>-->
+                                                    <th scope="col">
+                                                                <div>{label.PolicyLimit}</div>
+                                                            </th> 
+                                                            <th scope="col">
+                                                        <div>{label.SplitBillAccountCorporateLegalEnitity}
+                                                        </div>
+                                                    </th>
+                                                    <!--- </template>-->
+                                                    <th scope="col">
+                                                        <div>{label.SplitBillAccountInsurerLegalEntity}</div>
+                                                    </th>
+
+                                                    <th scope="col">
+                                                        <div>{label.Salutation}</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div>{label.FirstName}</div>
+                                                    </th>
+                                                    <th scope="col">
+                                                        <div>{label.LastName}</div>
+                                                    </th>
+
+                                                    <th scope="col">
+                                                        <div>{label.ProvidedVehicleRegistration}</div>
+                                                    </th>
+                                                            <th scope="col">
+                                                                <div>{label.GlassCoverFlagField}</div>
+                                                            </th>
+                                                    <!-- <th scope="col">
+                                                    <div>View Details</div>
+                                                </th> -->
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <template for:each={corporateWrapList} for:item="corp">
+                                                    <tr key={corp.row} class="slds-hint-parent">
+                                                        <td data-label="Select">
+                                                            <div>
+                                                                <input type="radio" name="happyCorp"
+                                                                    class="checkedradio" value={corp.key}
+                                                                    onchange={handleSelect}
+                                                                    data-vehicleregistration={corp.vehicleRegistration}
+                                                                    data-vatflag={corp.vatRegFlag}
+                                                                    data-postcode={corp.addressPostalCode}
+                                                                    data-salutation={corp.salutation}
+                                                                    data-firstname={corp.firstName}
+                                                                            data-lastname={corp.lastName}
+                                                                            data-row={corp.row}
+                                                                    data-corporateid={corp.corporateLegalEntityID}
+                                                                    data-insuranceid={corp.insuranceLegalEntityID} />
+                                                                <!-- data-recordtype={} checked={corp.selected}-->
+                                                            </div>
+                                                        </td>
+
+                                                        <td data-label={label.SiteNameCorporateSite}>
+                                                            <div>{corp.corporateSiteName}</div>
+                                                        </td>
+                                                        <!--- <template if:false={isCorporateSelected}>-->
+                                                        <td data-label={label.SiteNameInsurerSite}>
+                                                            <div>{corp.insuranceSiteAccountName}</div>
+                                                        </td>
+                                                        <!--</template>-->
+                                                        <td data-label={label.PolicyNumber}>
+                                                            <div>{corp.policyNumber}</div>
+                                                        </td>
+                                                        <td data-label={label.ReplacementExcess}>
+                                                            <div>{corp.glassExcessAmount}</div>
+                                                        </td>
+                                                        <td data-label={label.RepairExcess}>
+                                                            <div>{corp.repairExcessAmount}</div>
+                                                        </td>
+                                                        <!--<template if:false={isCorporateSelected}>-->
+                                                                    <td data-label={label.PolicyLimit}>
+                                                                        <div>{corp.policyLimit}</div>
+                                                                </td>
+                                                        <td
+                                                            data-label={label.SplitBillAccountCorporateLegalEnitity}>
+                                                            <div>{corp.corporateLegalEntityName}</div>
+                                                        </td>
+                                                        <!--</template>-->
+                                                                <td
+                                                                    data-label={label.SplitBillAccountInsurerLegalEntity}>
+                                                            <div>{corp.insuranceLegalEntityName}</div>
+                                                        </td>
+
+
+                                                        <td data-label={label.Salutation}>
+                                                            <div>{corp.salutation}</div>
+                                                        </td>
+                                                        <td data-label={label.FirstName}>
+                                                            <div>{corp.firstName}</div>
+                                                        </td>
+                                                        <td data-label="LastName">
+                                                            <div>{corp.lastName}</div>
+                                                        </td>
+                                                        <td data-label={label.ProvidedVehicleRegistration}>
+                                                            <div>{corp.vehicleRegistration}</div>
+                                                        </td>
+                                                                <td data-label={label.GlassCoverFlagField}>
+                                                                    <div>{corp.glassCoverFlag}</div>
+                                                                </td>
+
+                                                    </tr>
+
+                                                </template>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </template>
+                                <p><lightning-formatted-text class="slds-m-around_medium errorColor" type="text"
+                                        readonly="true" value={error}></lightning-formatted-text></p>
+                        <!-- <template if:true={motoristScreen}> -->
+                        <br><br>
+                        <template if:true={corporateTable}>
+                            <lightning-input label={label.MotoristPayViaInsurance} class="slds-p-left_xx-large"
+                                type="checkbox" name='motoristCheckbox' onchange={handleQuestionCheckBox}
+                                checked={isMotoristPayIns} disabled={isQuestionCheck}>
+                            </lightning-input>
+                            <template if:true={motoristWantToPay}>
+                                <lightning-input label={label.AreTheyPolicyHolder} class="slds-p-left_xx-large"
+                                    type="checkbox">
+                                </lightning-input>
+                                <template if:false={policyHolder}>
+                                    <lightning-input label={label.PermissionBehalfPolicyholder}
+                                        class="slds-p-left_xx-large" type="checkbox" value={motoristWantToPay}>
+                                    </lightning-input></template>
+                                <lightning-input label={label.VATRegisteredLabel} class="slds-p-left_xx-large"
+                                    type="checkbox" name="vatRegisterCheck" onchange={handleQuestionCheckBox}
+                                    checked={vatRegistered}>
+                                </lightning-input>
+                                <!-- <template if:true={vatRegistered}>
+                                    <lightning-input label={label.VATNumber} class="slds-p-left_xx-large" type="text"
+                                        onchange={vatNumberEnter}>
+                                    </lightning-input>
+                                </template> -->
+                            </template>
+                        </template>
+                        <!-- </template> -->
+
+                        <!--For Reference Flow Call FOUK-5379-->
+                        <template if:true={callMotoristFlow1}>
+                            <lightning-flow flow-api-name="BLN_IdentifyCaptureMotorist"
+                                flow-input-variables={inputVariables}></lightning-flow>
+                        </template>
+
+                        </br> </br>
+
+                        <div class="slds-align_absolute-center">
+                            <template if:false={motoristScreen}>
+                                <template if:true={responseSuccess}>
+                                            <lightning-button class="slds-m-left_x-small clearselectioncss"
+                                                label={label.ClearSelection} title={label.ClearSelection}
+                                                onclick={handleClear} variant="neutral">
+                                    </lightning-button></template>
+                            </template>
+
+                            <template if:true={responseSuccess}>
+                                <lightning-button class="slds-m-left_x-small" label={label.Close} title="Close"
+                                    onclick={handleClose} variant="neutral">
+                                </lightning-button>
+                            </template>
+
+                            <template if:true={motoristScreen}>
+                                <template if:true={corporateTable}>
+
+                                    <!--Remove This Button Under FOUK-5379-->
+                                    <!-- <lightning-button class="slds-m-right_x-small" label={label.CapturePolicyHolder}
+                                    onclick={capturePolicyHolder} variant="brand" disabled={disablePolicyHolderButton}>
+                                </lightning-button> -->
+                                   <!----<lightning-button class="slds-m-right_medium  backMargin" variant="neutral"
+                                        label={label.Back} onclick={handleBack}></lightning-button>-->
+                                        <lightning-button class="slds-m-left_x-small" label={label.Back}
+                                        title={label.Back} onclick={handleBack} variant="neutral">
+                                    </lightning-button>
+                                    <!--slds-button_success-->
+
+                                            <lightning-button class="slds-m-left_x-small" label={label.ContinuePds}
+                                                onclick={handleMotoristScreen} title="Next" variant="brand"
+                                                disabled={motoristScreenNextDisable}>
+
+                                            <!--label={label.Next}-->
+                                        </lightning-button>
+                                 
+
+                                </template>
+                            </template>
+
+
+                            <!--FOUK-5379-->
+                            <template if:false={motoristScreen}>
+                               <!--- <lightning-button class="slds-m-right_medium slds-button_success backMargin"
+                                    variant="Neutral" label={label.Back} onclick={handleBack}></lightning-button>-->
+                                    <lightning-button class="slds-m-left_x-small " label={label.Back}
+                                    title={label.Back} onclick={handleBack} variant="neutral">
+                                </lightning-button>
+
+                                    <lightning-button class="slds-m-left_x-small" label={label.ContinuePds}
+                                        onclick={handleMotoristScreen} title="Next" variant="brand"
+                                        disabled={motoristScreenNextDisable}>
+                                        <!--label={label.Next}-->
+                                    </lightning-button>
+                                    <template if:false={responseSuccess}>
+                                        
+                                        <lightning-button class="slds-m-left_x-small" label={label.cash}
+                                            variant="brand" onclick={handleCashButtonHappyPath}></lightning-button>
+                                
+                                </template>
+                                  
+                                </template>
+                                
+                        </div>
+                    </template>
+                </template>
+
+
+                <template if:true={callAderessFlow}>
+                    <lightning-flow flow-api-name="BLN_ValidateServiceAddressFlow"
+                        flow-input-variables={inputAddressVarible}></lightning-flow>
+                </template>
+
+                <template if:true={booleanVariableForFlow}>
+                    <lightning-flow flow-api-name="BLN_CaptureDataCollect"
+                        flow-input-variables={inputVariablesDataCollect}></lightning-flow>
+                </template>
+            </lightning-card>
+
+
+           <!--For Reference Flow Call FOUK-5379 -->
+         
+
+            <template if:true={viewDetails}>
+
+                <div class="demo-only heightMargin">
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true"
+                        aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header">
+                                        <button
+                                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                    title="Close" onclick={closeModal}>
+                                    <lightning-icon icon-name="utility:close" size="medium">
+                                    </lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                        <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">
+                                            Corporate
+                                    Record</h2>
+                            </header>
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+
+                                <lightning-record-edit-form object-api-name="BLN_Corporate__c"
+                                    record-type-id={recordTypeId}>
+                                    <lightning-messages></lightning-messages>
+                                    <template for:each={viewDetailsRec} for:item="field">
+                                        <!--<lightning-output-field key={field.fieldName} field-name={field.fieldName} value={field.value}></lightning-output-field>-->
+                                                <lightning-input-field key={field.fieldName}
+                                                    field-name={field.fieldName} value={field.value}
+                                                    disabled="true"></lightning-input-field>
+                                    </template>
+
+                                    <div class="slds-m-around_medium">
+                                        <div class="slds-m-top_medium">
+                                            <lightning-button variant="brand" onclick={closeModal} name="close"
+                                                label={label.Close}>
+                                            </lightning-button>
+                                        </div>
+                                    </div>
+                                </lightning-record-edit-form>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </div>
+            </template>
+            <template if:false={responseAPISuccess}>
+                <lightning-card class="slds-align_center">
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true"
+                        aria-describedby="modal-content-id-3"
+                        class="slds-align_absolute-center slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header">
+                                        <button
+                                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                    title={label.Close} onclick={closeErrorModal}>
+                                    <lightning-icon icon-name="utility:close" size="medium">
+                                    </lightning-icon>
+                                    <span class="slds-assistive-text">{label.Close}</span>
+                                </button>
+                            </header>
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3">
+
+                                <div class="slds-theme_error slds-p-around_large">
+                                    <lightning-icon variant="inverse" size="small"></lightning-icon>
+                                    <span><b>{apiError}</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </lightning-card>
+            </template>
+        </template>
+        </div>
+    </div>
+
+</template>

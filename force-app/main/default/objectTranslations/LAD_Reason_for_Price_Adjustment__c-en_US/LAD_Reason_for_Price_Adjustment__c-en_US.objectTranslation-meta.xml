@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Price Adjustment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Price Adjustments</value>
+    </caseValues>
+    <layouts>
+        <layout>Price Adjustment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Price Match Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Story - FOUK 8991 --></description>
+        <label><!-- Price Adjustment --></label>
+        <name>LAD_Price_Adjustment</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Story - FOUK 8991 --></description>
+        <label><!-- Price Match --></label>
+        <name>LAD_Price_Match</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

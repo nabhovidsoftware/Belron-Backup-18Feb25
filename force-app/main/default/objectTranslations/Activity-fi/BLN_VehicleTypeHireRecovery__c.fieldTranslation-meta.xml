@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Vehicle Type(Hire/Recovery) --></label>
+    <name>BLN_VehicleTypeHireRecovery__c</name>
+    <picklistValues>
+        <masterLabel>Hire Car</masterLabel>
+        <translation><!-- Hire Car --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vehicle Recovery</masterLabel>
+        <translation><!-- Vehicle Recovery --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

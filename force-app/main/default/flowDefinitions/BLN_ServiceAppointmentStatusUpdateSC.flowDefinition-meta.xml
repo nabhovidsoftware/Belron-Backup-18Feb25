@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-198: On the updation of SA status, making a callout through apex class.</description>
+    <masterLabel>Service Appointment Status Update  - SC</masterLabel>
+</FlowDefinition>

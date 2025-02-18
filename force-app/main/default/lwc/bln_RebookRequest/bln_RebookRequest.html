@@ -1,0 +1,76 @@
+<template>
+    <template if:true={isRequestModel}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container">
+
+                <div class="slds-modal__content slds-p-around_medium bordereffect" id="modal-content-id-1">
+                    <div class="slds-grid slds-align_absolute-center slds-m-vertical_medium ">
+                        <form class="formBorder">
+                            <div class="slds-m-around_medium">
+                                <!--<div class="notification">
+                {label.Notification} <br> </br>
+                {label.ChangingtheAppointmentTime} <br> </br>
+                {label.ChangingtheAppointmentDate}
+            </div>-->
+                                <!-- <div title="Static Resource Image">
+                                    <img src={srcImg} alt="Salesforce Image" height="auto" width="200px" />
+                                </div> -->
+                                <div class="notification">
+                                    {label.Notification}
+                                    <ol>
+                                        <li> {label.ChangingtheAppointmentTime}</li>
+                                        <li>{label.ChangingtheAppointmentDate}</li>
+                                    </ol>
+                                </div>
+                                <form class="rebook-form">
+
+                                    <!--<lightning-combobox name={label.RebookReason} label={label.RebookReason} value={rebookReasonValue}
+                        options={rebookReasonOptions} onchange={handleRebookReasonChange}></lightning-combobox>
+                    <lightning-combobox name={label.RebookSubReason} label={label.RebookSubReason}
+                        value={rebookSubReasonValue} options={rebookSubReasonOptions} onchange={handleRebookSubReasonChange}
+                        disabled={disableSubReason}></lightning-combobox>-->
+
+                                    <template if:true={objectInfo.data}>
+                                        <!-- <template if:true={picklistValues}> -->
+                                        <!-- <lightning-combobox
+                                        name={label.RebookReason}
+                                        label={label.RebookReason}
+                                        value={reasonValue}
+                                        options={reasonOptions}
+                                        onchange={handleReasonChange}
+                                    ></lightning-combobox>
+                                    <lightning-combobox
+                                        name={label.RebookSubReason}
+                                        label={label.RebookSubReason}
+                                        value={selectedValueBLN_SubFailureReason}
+                                        options={picklistValues.SubFailureReason}
+                                        onchange={handleBLN_SubFailureReasonChange}
+                                    ></lightning-combobox> -->
+                                        <!-- </template> -->
+                                    </template>
+
+                                    <lightning-combobox required="true" name={label.RebookReason} label={label.RebookReason}
+                                        value={reasonValue} options={reasonOptions}
+                                        onchange={handleReasonOptionChange}></lightning-combobox>
+                                    <lightning-combobox required="true" name={label.RebookSubReason} label={label.RebookSubReason}
+                                        value={selectedValueBLN_SubFailureReason} options={subReasonOptions}
+                                        onchange={handleBLN_SubFailureReasonChange}></lightning-combobox>
+
+                                    <div style="margin-top: 1rem;">
+                                        <lightning-button label={label.Cancel} class="cancelButton slds-m-horizontal--x-small"
+                                            onclick={cancel}></lightning-button> &nbsp; &nbsp;
+                                        <lightning-button label={label.Confirm} class="cofirmButton" variant="brand"
+                                            onclick={handleConfirm}></lightning-button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop--open slds-backgroundPopupModel"></div>
+    </template>
+</template>

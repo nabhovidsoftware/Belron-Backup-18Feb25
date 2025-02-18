@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Decision_1</name>
+        <label>Decision 1</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Avaya_Screen</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_ani_is_already_present</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>GetAccount</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>IdentifyCaptureMotorist</targetReference>
+            </connector>
+            <label>If ani is already present</label>
+        </rules>
+    </decisions>
+    <description>FOUK-3964, FOUK-3957,FOUK-3963 This flow is used for CTI.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>greetingday</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    VALUE({!greetinghour}) &lt; 12,
+    &quot;Good morning&quot;,
+    IF(
+        AND(
+            VALUE({!greetinghour}) &gt;= 12,
+            VALUE({!greetinghour}) &lt; 17
+        ),
+        &quot;Good afternoon&quot;,
+        IF(
+            VALUE({!greetinghour}) &lt; 17,
+            &quot;Good evening&quot;,
+            &quot;&quot;
+        )
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>greetinghour</name>
+        <dataType>String</dataType>
+        <expression>IF(
+    LEN(TEXT($Flow.CurrentDateTime)) = 19,
+    LEFT(TEXT($Flow.CurrentDateTime), 2),
+    MID(TEXT($Flow.CurrentDateTime), 12, 2)
+)</expression>
+    </formulas>
+    <formulas>
+        <name>greetingmessage</name>
+        <dataType>String</dataType>
+        <expression>{!greetingday} &amp; &quot; &quot; &amp; {!GetDNIS.Name} &amp; &quot;,&quot; &amp; &quot; &quot; &amp; {!$Label.BLN_GreetingMessageEnding}</expression>
+    </formulas>
+    <interviewLabel>Inbound Pop up screen {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Inbound Pop up screen</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>GetAccount</name>
+        <label>GetAccount</label>
+        <locationX>182</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>GetDNIS</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>GetDNIS</targetReference>
+        </faultConnector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>PersonMobilePhone</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ani</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>PersonHomePhone</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ani</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>GetDNIS</name>
+        <label>GetDNIS</label>
+        <locationX>182</locationX>
+        <locationY>242</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_1</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Decision_1</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BLN_GlasslineNumber__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>dnis</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>BLN_Glassline__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <runInMode>SystemModeWithSharing</runInMode>
+    <screens>
+        <name>Avaya_Screen</name>
+        <label>Avaya Screen</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Greeting_message</name>
+            <fieldText>&lt;p&gt;{!greetingmessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>CustomerPhoneNumber</name>
+            <fieldText>&lt;p&gt;Customer Phone Number - {!ani}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>GlasslineName</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Glassline Name  -  &lt;/span&gt;{!GetDNIS.Name}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Inboundcustomer</name>
+            <extensionName>c:bln_InboundCustomerDetails</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>ani</name>
+                <value>
+                    <elementReference>ani</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>GetAccount</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>IdentifyCaptureMotorist</name>
+        <label>IdentifyCaptureMotorist</label>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
+        <flowName>BLN_IdentifyCaptureMotorist</flowName>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </subflows>
+    <variables>
+        <description>for Automatic Number Identification (the caller phone number)</description>
+        <name>ani</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>checkaccount</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>CheckNumber</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <description>for Dialed Number Identification Service (the called phone number)</description>
+        <name>dnis</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>for the queue of the call</description>
+        <name>queue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>for Universal Call Identifier</description>
+        <name>ucid</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>for User-to-User Interface</description>
+        <name>uui</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

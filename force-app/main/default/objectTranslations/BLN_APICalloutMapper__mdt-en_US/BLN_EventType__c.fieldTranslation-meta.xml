@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Event Type --></label>
+    <name>BLN_EventType__c</name>
+    <picklistValues>
+        <masterLabel>Create</masterLabel>
+        <translation><!-- Create --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Update</masterLabel>
+        <translation><!-- Update --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

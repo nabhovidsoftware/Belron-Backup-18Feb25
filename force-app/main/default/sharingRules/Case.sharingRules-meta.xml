@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BLN_CaseSharingRuleWithUKRoles</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-2281 This is used to share Case with UK Roles And Subordinates public group Changed Under FOUK-12669</description>
+        <label>Case Sharing Rule</label>
+        <sharedTo>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BLN_IssueType__c</field>
+            <operation>notEqual</operation>
+            <value>Police Enquiry</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_SubType__c</field>
+            <operation>notEqual</operation>
+            <value>Quality Check(Compliance Use Only)</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>BLN_QueueSharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-11216</description>
+        <label>Queue Sharing</label>
+        <sharedTo>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>startsWith</operation>
+            <value>00G</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>BLN_QueueSharing1</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUk-11216</description>
+        <label>Queue Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>BLN_OperationAndSupplyChainDirector</roleAndSubordinates>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>startsWith</operation>
+            <value>00G</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>BLN_ShareAllQualityCheckReadEdit</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-7059 This is used to share Case with Compliance public group based on the criteria</description>
+        <label>Share All Quality Check Read / Edit</label>
+        <sharedTo>
+            <group>BLN_Compliance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BLN_SubType__c</field>
+            <operation>equals</operation>
+            <value>Quality Check(Compliance Use Only)</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>BLN_ShareGDPRCases</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-4877: This rule is created to share GDPR cases.</description>
+        <label>Share GDPR Cases</label>
+        <sharedTo>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Enquiry</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Enquiry</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_SubType__c</field>
+            <operation>equals</operation>
+            <value>Information Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>BLN_IssueType__c</field>
+            <operation>notEqual</operation>
+            <value>Police Enquiry</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>BLN_ShareQualityCheckToUKRoles</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK-7059 This is used to share Case with Quality Check Read Only public group based on the criteria</description>
+        <label>Share Quality Check Cases to UK Roles And Subordinates</label>
+        <sharedTo>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BLN_SubType__c</field>
+            <operation>equals</operation>
+            <value>Quality Check(Compliance Use Only)</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>BLN_ShareWithCompliance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-4877: This rule is created to share GDPR cases with Compliance group.</description>
+        <label>Share With Compliance</label>
+        <sharedTo>
+            <group>BLN_Compliance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>BLN_IssueType__c</field>
+            <operation>equals</operation>
+            <value>Police Enquiry</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BLN_CaseSharingRule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-2281 This is used to share Case with UK Roles And Subordinates public group</description>
+        <label>Case Sharing Rule</label>
+        <sharedTo>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

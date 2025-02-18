@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Return Reason --></label>
+    <name>LAD_Return_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Broken on Delivery</masterLabel>
+        <translation><!-- Broken on Delivery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrectly Supplied</masterLabel>
+        <translation><!-- Incorrectly Supplied --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Required</masterLabel>
+        <translation><!-- Not Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not on Delivery</masterLabel>
+        <translation><!-- Not on Delivery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recall Quality Issue</masterLabel>
+        <translation><!-- Recall Quality Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scratched on Delivery</masterLabel>
+        <translation><!-- Scratched on Delivery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wholesale DMR</masterLabel>
+        <translation><!-- Wholesale DMR --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

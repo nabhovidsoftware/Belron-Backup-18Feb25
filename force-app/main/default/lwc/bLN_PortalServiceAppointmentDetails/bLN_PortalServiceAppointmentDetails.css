@@ -1,0 +1,627 @@
+.paddingcss{
+  background: var(--theme-color-bg-surface, #FFF) !important;
+  padding: 12px !important;
+}
+.dropoff{
+  color:  #475158;
+/* body/sm-bold */
+font-family: var(--theme-typography-font-family-body, Roboto);
+font-size: var(--theme-typography-font-size-sm, 14px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 700);
+line-height: 150%;
+margin-left: 3px;
+}
+.dropoff1{
+  color:  #475158;
+/* body/sm-bold */
+font-family: var(--theme-typography-font-family-body, Roboto);
+font-size: var(--theme-typography-font-size-sm, 14px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 700);
+line-height: 150%;
+margin-left: 3px;
+}
+.section-containercsscolor{
+ 
+  border-radius: 8px 0px 0px 0px;
+  background: var(--theme-color-bg-surface, #FFF) !important;
+}
+.section-containercsscolor1{
+  background: var(--theme-color-bg-surface, #FFF);
+  border-radius: 8px 0px 0px 0px;
+  margin: 24px 48px 80px 0px;
+}
+/* YourComponent.css */
+.container {
+  position: relative;
+  background: #FAFAFA;
+  width: 100%;
+  margin: 48px 0px 0px 0px;
+  padding-left: 60px;
+
+}
+.wholescreen{
+  width: 100%;
+  min-height: 77vh;
+}
+.section-containerwhole{
+  background-color: #FFFFFF;
+  width: 100%;
+   height: 100%;
+   overflow: hidden;
+   top: 326px;
+   padding: 12px;
+   gap: 24px;
+   border-radius: 8px 0px 0px 0px;
+   opacity: 0px;
+   margin: 48px 48px 24px 0px;
+
+}
+.section-container {
+  background-color: #FFFFFF;
+   width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 326px;
+  
+}
+.sectioncontainer3css{
+  background: var(--theme-color-bg-surface, #FFF);
+  width: 100%;
+  height: 100%;
+  top: 326px;
+padding: 12px;
+  gap: 24px;
+  border-radius: 8px 0px 0px 0px;
+  opacity: 0px;
+  margin: 24px 48px 80px 0px;
+}
+.sectioncontainer4css{
+  background-color: #FFFFFF;
+   width: 100%;
+  height: 250px;
+  top: 326px;
+
+  padding: 24px;
+  gap: 24px;
+  border-radius: 8px 0px 0px 0px;
+  opacity: 0px;
+  margin: 24px 48px 80px 0px;
+}
+
+ .section-containercss {
+  overflow: hidden;
+    width: 100%;
+    height: 100%;
+   top: 510px;
+   padding: 12px;
+    gap: 24px;
+    border-radius: 8px 0px 0px 0px;
+    opacity: 0px;
+    background-color: #FFFFFF;
+    margin: 20px 48px 24px 0px;
+
+}
+.row2css{
+  width: 100%;
+  height: 100%;
+  padding: 0px 12px;
+}
+.secondrowcss{
+  width: 100%;
+  height: auto;
+    overflow: hidden;
+}
+.headcss{
+    gap: 0px;
+    opacity: 0px;
+
+    font-family: Roboto Condensed;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: left;
+    color: #475158;
+}
+.booking-ref {
+    gap: 0px;
+    opacity: 0px;
+  color: #475158;
+  font-family: Roboto ;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+
+}
+.divtop{
+  margin: 24px 0px;
+  width: 100%;
+  height: 100%;
+}
+.bordercss{
+  border-bottom: 1px solid #D6D8DA;
+  margin: 24px 0px;
+}
+.divbottom{
+  margin: 10px 0px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.windcss{
+    width: 30%;
+    height: 51px;
+    gap: 24px;
+    opacity: 0px;
+float: left;
+}
+.finalstatuscss{
+  width: 34%;
+  height: 100%;
+  gap: 24px;
+  opacity: 0px;
+  float: left;
+  margin-left: 0.5%;
+}
+.paynowcss{
+ width: 35%;
+  height: 100%;
+  padding: 12px 0px 0px 0px;
+  gap: 16px;
+  border-radius: 0px 16px 16px 16px;
+  opacity: 0px;
+  float: right;
+  margin-top: -0.8rem !important;
+}
+
+.windcsscol{
+  width: 30%;
+  height: 100%;
+  gap: 24px;
+  opacity: 0px;
+float: left;
+}
+.finalstatuscsscol{
+  width: 34%;
+  height: 100%;
+  gap: 24px;
+  opacity: 0px;
+  float: left;
+  margin-left: 0.5%;
+}
+.paynowcsscol{
+   width: 35%;
+  height: 100%;
+  padding: 12px 0px 0px 0px;
+  gap: 16px;
+  border-radius: 0px 16px 16px 16px;
+  opacity: 0px;
+  float: right;
+  margin-top: -1.1rem !important;
+}
+
+
+.backgroundcss3{
+  width: 100%;
+  height: auto;
+  padding: 12px;
+  gap: 16px;
+  border-radius: 0px 16px 16px 16px;
+  opacity: 0px;
+  margin-bottom: 10px;
+}
+.backgroundcss4{
+   height: 48px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 0px 12px 12px 12px;
+}
+.buttoncss{
+  width: 100% !important;
+   height: 48px !important;
+  color: #FFFFFF !important;
+  font-family: Roboto condensed;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 5% !important;
+
+  background-color: #568300;
+  border: none;
+  border-radius: 8px;
+}
+
+.namecss{
+    width: 400px;
+    margin: 0px 0px 8px 0px !important;
+    font-family: var(--theme-typography-font-family-body, Roboto);
+    color:  #475158;
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-regular, 400);
+    line-height: 150%; 
+    text-align: left;
+
+}
+.dropseccss{
+  width: 100%;
+}
+.countcss{
+    text-align: left;
+}
+.accountcss{
+    color: #475158;
+    font-family: Roboto Condensed;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: left;
+  gap: 0px;
+  opacity: 0px;
+
+
+  }
+  .loccss{
+    width: 251px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+    color:  #475158;
+
+    font-family: var(--theme-typography-font-family-body, Roboto);
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 150%; 
+
+  }
+  .placecss{
+    width: 251px;
+    height: 42px;
+    gap: 0px;
+    opacity: 0px;
+
+    font-family: Roboto ;
+font-size: var(--themetypographyfont-sizesm);
+font-weight: 400;
+line-height: 21px;
+text-align: left;
+
+  }
+  .foterpara1{
+    color: #475158;
+    font-family: Roboto ;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; 
+    text-align: left;
+  }
+  .foterpara2{
+    color: #475158;
+    font-family: Roboto ;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+  }
+  .changeappcssbutton{
+    width: 100%;
+    border-radius: 4px;
+    margin: 16px 0px 10px 0px;
+    height: auto;
+color: white;
+gap: 0px;
+opacity: 0px;
+font-family: Roboto Condensed;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+text-align: center;
+background: var(--theme-color-primary, #568300);
+padding: 12px;
+
+  }
+  .changeappcsslink{
+    margin: 20px 0px 0px 0px;
+  }
+  .changeappcss{
+   
+height: 21px;
+gap: 0px;
+opacity: 0px;
+margin: 10px 0px 0px 0px;
+  }
+  .changeappcss1{
+  
+height: 21px;
+gap: 0px;
+opacity: 0px;
+margin-bottom: 1.5rem;
+ }
+    .lastseccss{
+      background: var(--theme-color-bg-surface, #FFF) !important;
+      height: 100%;
+      gap: 24px;
+      opacity: 0px;
+      border-radius: 8px;
+      margin-top: 24px;
+
+    }
+  .h2css{
+   
+    color: var(--theme-color-text, #475158) !important;
+     font-family: var(--theme-typography-font-family-body, Roboto) !important;
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 150%; /* 24px */
+  text-align: left;
+
+  }
+  .headingcss{
+
+    color: var(--theme-color-text, #475158) !important;
+    font-family: var(--theme-typography-font-family-body, Roboto) !important;
+    font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 150%; /* 24px */
+
+  }
+.anscss{
+color: #475158;
+font-family: Roboto ;
+font-size: 14px;
+font-weight: 400;
+line-height: 21px;
+text-align: left;
+padding: 8px 0px 24px 0px;
+}
+.textcss{
+  color:  #475158;
+
+
+font-family: var(--theme-typography-font-family-body, Roboto);
+font-size: var(--theme-typography-font-size-m, 16px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 700);
+line-height: 150%; 
+
+}
+.textcss1{
+  color:  #475158;
+
+  font-family: Roboto ;
+font-size: var(--theme-typography-font-size-m, 14px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 400);
+line-height: 150%; 
+}
+.textcsstime{
+  color:  #475158;
+
+  font-family: Roboto ;
+font-size: var(--theme-typography-font-size-m, 13px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 400);
+line-height: 150%; 
+}
+.textcss3{
+  color:  #475158;
+  font-family: Roboto ;
+font-size: var(--theme-typography-font-size-m, 16px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 400);
+line-height: 150%;
+}
+
+.backgroundcss{
+ 
+  width:100%;
+  background-color: #F5F5F6;
+  padding: 12px;
+  border-radius: 0px 12px 12px 12px;
+}
+
+
+.backgroundcss1{
+  background-color: #FFDC00;
+ 
+  width:100%;
+  padding: 12px;
+  border-radius: 0px 12px 12px 12px;
+  margin-bottom: 10px;
+}
+.backgroundcss2{
+  background-color: #F5F5F6;
+  
+  width:100%;
+  padding: 12px;
+  border-radius: 0px 12px 12px 12px;
+}
+
+ 
+  @media (max-width: 612px) {
+      .container {
+      display: block;
+      width: 100%;
+      height: 100%;
+        padding: 0px 5px 0px 5px;
+      }
+      .card-container {
+          width: 360px !important;
+
+
+      }
+      .textcss{
+        width: 100%;
+
+      }
+
+      .textcss1{
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .accountcss{
+        font-size: 32px !important;
+        width: 100%;
+      }
+
+      .section-container{
+        width: 100%;
+        height:100%;
+        overflow: hidden;
+        margin: 0;
+        margin-top: 20px;
+    }
+    .sectioncontainer3css{
+      width: 100%;
+      height:100%;
+      margin: 0;
+      margin-top: 20px;
+    }
+    .sectioncontainer4css{
+      width: 100%;
+      height:100%;
+      margin: 0;
+      margin-top: 20px;
+    }
+    .windcss{
+        width: 100%;
+        margin-bottom: 24px !important;
+    }
+    .finalstatuscss{
+      width: 100%;
+      height:auto;
+      margin-bottom: 24px;
+
+    }
+    .paynowcss{
+        width: 100%;
+       height: auto;
+    }
+    .windcsscol{
+      width: 100%;
+      height:auto;
+      margin-bottom: 24px !important;
+  }
+  .finalstatuscsscol{
+    width: 100%;
+    height:auto;
+    margin-bottom: 24px !important;
+  }
+  .paynowcsscol{
+      width: 100%;
+     height: auto;
+     margin-bottom: 10px !important;
+  }
+
+    .row{
+      width: 100%;
+    }
+
+    .column {
+        width: 100%;
+        height: 60px !important;
+        margin-bottom: 10px;
+      }
+    .section-containercss{
+        width: 100%;
+        height: 100%;
+    }
+    .chatcss{
+      width: 328px;
+      height: 117px;
+      padding: 24px;
+      gap: 24px;
+      border-radius: 8px 0px 0px 0px;
+      opacity: 0px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-left: -8%;
+        flex-direction: column;
+        margin-top: 10%;
+
+        }
+        .bottomcss{
+            width: 280px;
+            height: 24px;
+
+
+        }
+        .uscss{
+            margin-right: 55px !important;
+        }
+
+        .backgroundcss{
+          background-color: #F5F5F6;
+          width: 100%;
+        }
+        .backgroundcss1{
+          background-color: #FFDC00;
+          width: 100%;
+
+        }
+         .backgroundcss2{
+          background-color: #F5F5F6;
+          width: 100%;
+       }
+
+        .namecss{
+          font-size: 16px;
+          width: 100%;
+          margin-bottom: 8px;
+        }
+        .changeappcsslink{
+          margin: 20px 0px 0px 0px;
+        }
+        .changeappcss{
+          width: 100%;
+          margin: 8% 21%;
+        }
+        .changeappcss1{
+          width: 100%;
+          padding: 15px 0px 30px 0px;
+          margin-bottom: 2.5rem;
+        }
+        .secondrowcss{
+          width: 100%;
+        }
+        .headcss{
+          width: 100%;
+        }
+        .booking-ref{
+          width: 100%;
+        }
+        .h2css{
+          width: 100%;
+        }
+        .dropseccss{
+          width: 100%;
+        }
+        .eventcss{
+          width: 50%;
+          float: left;
+        }
+        .iconclockcss{
+          width: 50%;
+          float: right;
+        }
+  }
+  @media screen and (min-width: 1200px) {
+    .slds-col {
+        max-width: 33.33%; /* Ensure columns don’t get too wide */
+    }
+
+    .slds-large-size_1-of-4 {
+        max-width: 25%;
+    }
+}

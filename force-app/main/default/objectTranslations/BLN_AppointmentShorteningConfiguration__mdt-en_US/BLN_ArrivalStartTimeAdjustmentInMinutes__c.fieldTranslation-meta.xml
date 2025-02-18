@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Time to be subtracted from Arrival Start in minuteseg if Arr Start is 10:30and Time off is 30 mins, so new Arr Start will be 10:00 --></help>
+    <label><!-- Arrival Start Time Adjustment (In Minute --></label>
+    <name>BLN_ArrivalStartTimeAdjustmentInMinutes__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>RCP7</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>BLN_FieldAPIName__c</field>
+        <value xsi:type="xsd:string">BLN_SecondaryReason__c</value>
+    </values>
+    <values>
+        <field>BLN_FieldValue__c</field>
+        <value xsi:type="xsd:string">No Stock 4-7 Days</value>
+    </values>
+    <values>
+        <field>BLN_ObjectName__c</field>
+        <value xsi:type="xsd:string">Case</value>
+    </values>
+    <values>
+        <field>BLN_Priority__c</field>
+        <value xsi:type="xsd:string">Medium</value>
+    </values>
+</CustomMetadata>

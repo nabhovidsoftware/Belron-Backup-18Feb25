@@ -1,0 +1,44 @@
+<template>
+    <lightning-card title="Insurance Details Form" class="form-card">
+        <div class="form-container">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-form slds-form_stacked">
+                        <!-- <lightning-combobox label="Policyholder Title *" value={titleValue} options={titleOptions} onchange={handleChange} data-fieldname="title"></lightning-combobox> -->
+                        <lightning-input label="Policyholder First Name *" value={firstName} data-fieldname="firstName" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-input label="Policyholder Last Name *" value={lastName} data-fieldname="lastName" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-input label="Policyholder Address Line 1 *" value={addressLine1} data-fieldname="addressLine1" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-input label="Policyholder Address Line 2" value={addressLine2} data-fieldname="addressLine2" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-input label="Policyholder Postcode *" value={postcode} data-fieldname="postcode" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-input label="Policy Brand (Name found along top of certificate) *" value={policyBrand} data-fieldname="policyBrand" onchange={handleChange} class="custom-input"></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-form slds-form_stacked">
+                        <lightning-input label="Policy underwriter (Insurance company listed next to/under the signature of their CEO/representative located middle to bottom of Certificate) *" value={policyUnderwriter} data-fieldname="policyUnderwriter" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-input label="Certificate/Policy Number(as indicated in your certificate) *" value={certificateNumber} data-fieldname="certificateNumber" onchange={handleChange} class="custom-input"></lightning-input>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="fileUpload">Please upload a copy of your Motor insurance certificate as this will greatly help with the processing of your claim </label>
+                            <div class="slds-form-element__control">
+                                <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange={handleFileUpload} class="custom-input"></input>
+                            </div>
+                        </div>
+                        <lightning-input label="Glass Claim Excess *" type="text" value={glassClaimExcess} data-fieldname="glassClaimExcess" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-input type="date" label="Expiry Date of Policy *" value={expiryDate} data-fieldname="expiryDate" onchange={handleChange} class="custom-input"></lightning-input>
+                        <lightning-radio-group label="Is the Policyholder VAT Registered? *" options={vatRegisteredOptions} data-fieldname="vatRegistered" onchange={handleChange} class="custom-input"></lightning-radio-group>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-m-top_medium slds-text-align_center">
+                <lightning-button label="Submit" onclick={handleSubmit} disabled={isSubmitDisabled} variant="brand"></lightning-button>
+                <lightning-button label="Back" onclick={handleBack}></lightning-button>
+            </div>
+        </div>
+        <div class="spinner">
+            <template if:true={isLoading}>
+                 <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+                 </lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>

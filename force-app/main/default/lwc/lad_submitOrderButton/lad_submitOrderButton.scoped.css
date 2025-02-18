@@ -1,0 +1,18 @@
+.submit-order {
+    display: flex;
+}
+
+.submit-order > button {
+    flex-grow: 1;
+    height: 2rem;
+    justify-content: center;
+}
+
+.submit-order > button[disabled]:hover{
+    background-color: #c9c9c9;
+}
+
+.slds-spinner_container{
+    --dxp-c-spinner-color-background: #74717117;
+    position: fixed;
+}

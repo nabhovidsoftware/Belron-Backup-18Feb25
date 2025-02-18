@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_RequestSent__c</fullName>
+    <description>FOUK-252 -&gt; Store Date and Time when Request was sent</description>
+    <externalId>false</externalId>
+    <label>Request Sent</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

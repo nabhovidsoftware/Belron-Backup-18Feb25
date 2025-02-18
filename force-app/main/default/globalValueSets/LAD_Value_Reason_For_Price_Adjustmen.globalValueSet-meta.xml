@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Price match</fullName>
+        <default>false</default>
+        <label>Price match</label>
+    </customValue>
+    <customValue>
+        <fullName>Scratched on delivery/collection</fullName>
+        <default>false</default>
+        <label>Scratched on delivery/collection</label>
+    </customValue>
+    <customValue>
+        <fullName>Laddaw error</fullName>
+        <default>false</default>
+        <label>Laddaw error</label>
+    </customValue>
+    <customValue>
+        <fullName>Complaint resolution</fullName>
+        <default>false</default>
+        <label>Complaint resolution</label>
+    </customValue>
+    <customValue>
+        <fullName>Bulk orders</fullName>
+        <default>false</default>
+        <label>Bulk orders</label>
+    </customValue>
+    <customValue>
+        <fullName>Special order pricing</fullName>
+        <default>false</default>
+        <label>Special order pricing</label>
+    </customValue>
+    <customValue>
+        <fullName>Short Shelf Life</fullName>
+        <default>false</default>
+        <label>Short Shelf Life</label>
+    </customValue>
+    <description>Value For Reason For Price Adjustment. FOUK-7775</description>
+    <masterLabel>Value Reason For Price Adjustment</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

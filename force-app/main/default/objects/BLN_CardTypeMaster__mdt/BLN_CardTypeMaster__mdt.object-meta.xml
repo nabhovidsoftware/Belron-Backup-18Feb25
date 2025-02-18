@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-3977 This is used in BLN_SCUtility class</description>
+    <label>Card Type Master</label>
+    <pluralLabel>Card Type Masters</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

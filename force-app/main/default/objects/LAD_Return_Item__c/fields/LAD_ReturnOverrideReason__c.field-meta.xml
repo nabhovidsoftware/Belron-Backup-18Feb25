@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_ReturnOverrideReason__c</fullName>
+    <description>FOUK-9897: Reason for overriding return period</description>
+    <externalId>false</externalId>
+    <label>Reason for Return Period Override</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Customer Goodwill</fullName>
+                <default>false</default>
+                <label>Customer Goodwill</label>
+            </value>
+            <value>
+                <fullName>Shortage Product</fullName>
+                <default>false</default>
+                <label>Shortage Product</label>
+            </value>
+            <value>
+                <fullName>Laddaw MDC Issue</fullName>
+                <default>false</default>
+                <label>Laddaw MDC Issue</label>
+            </value>
+            <value>
+                <fullName>Laddaw Hub Team Issue</fullName>
+                <default>false</default>
+                <label>Laddaw Hub Team Issue</label>
+            </value>
+            <value>
+                <fullName>Management Approval</fullName>
+                <default>false</default>
+                <label>Management Approval</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

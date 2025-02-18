@@ -1,0 +1,58 @@
+<!--
+    Description : FOUK : 5023  (ACCOUNT RULES - Authorisation Attributes)
+    Created by : Vedita Kashi
+    Modifird by : 
+-->
+
+<template> 
+        <template if:true={isLoading}>
+            <lightning-spinner variant="brand" size="large" alternative-text="Loading"></lightning-spinner>
+        </template>
+                <div class="slds-p-around_medium">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-1">
+                            <lightning-input label="Authorisation Reason" name="authorisationReason" value={authorisationReason} onchange={handleInputChange} required disabled={noNeedAuth}></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1">
+                            <lightning-input type="number" label="Accidental Damage Excess" name="accidentaldamageexcess" value={accidentaldamageexcess} onchange={handleInputChange} disabled={noNeedAuth} ></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1">
+                            <lightning-input label="Authorisation Code Name" name="authorisationCodeName" value={authorisationCodeName} onchange={handleInputChange} required disabled={noNeedAuth} ></lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1">
+                            <lightning-input type="number" label="Value Authorised/Reauthorised" name="valueAuthorisedReauthorised" value={valueAuthorisedReauthorised} onchange={handleInputChange} formatter="currency" step="0.01" disabled={noNeedAuth}></lightning-input>
+                        </div>
+                        <template if:true={oeAuthorisedFlag}>
+                        <div class="slds-col slds-size_1-of-1">
+                            <lightning-combobox label="OE Authorised" value={oeAuthorised} options={oeAuthorisedOptions} onchange={handlePicklistChange} data-fieldname='oeAuthorised' disabled={noNeedAuth}></lightning-combobox>
+                        </div>
+                        </template>
+                        <template if:true = {daTreatmentFlag}>
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-combobox label="CHF VAT Status" value={selectedCHF} options={picklistOptions} onchange={handlePicklistChange} data-fieldname='selectedCHF' disabled={noNeedAuth}></lightning-combobox>
+                    </div>
+                </template>
+                        <template if:true={productAuthRequired}>
+                <div class="slds-col slds-size_1-of-1">
+                            <lightning-input type="checkbox" label="Product Authorised" name="productAuthorised" checked={productAuthorised} onchange={handleCheckboxChange} disabled={noNeedAuth}></lightning-input>
+                        </div>
+                        </template>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input type="checkbox" label="Multiple Glass Claims Authorised" name="multipleGlassClaimsAuthorised" checked={multipleGlassClaimsAuthorised} onchange={handleCheckboxChange} disabled={noNeedAuth}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-m-around_medium"></div>
+            <div class="slds-align_absolute-center">
+                <!--Buttons Approve / Reject / Cancel-->
+                <lightning-button-group>
+                            <lightning-button class="slds-p-right_x-small" label="Approve" onclick={handleApprove} variant="brand" disabled={noNeedAuth}></lightning-button>
+        
+        
+                            <lightning-button class="slds-p-right_x-small" label="Reject" onclick={handleReject} variant="destructive" disabled={noNeedAuth}></lightning-button>
+
+
+                    <lightning-button  label="Cancel" onclick={handleCancel} variant="neutral"></lightning-button>
+                </lightning-button-group>
+            </div>
+        </div>
+</template>

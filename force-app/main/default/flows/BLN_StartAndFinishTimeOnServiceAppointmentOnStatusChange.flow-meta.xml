@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Set_Original_Start_End_Time</name>
+        <label>Set Original Start / End Time</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_OriginalScheduledStartTime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SchedStartTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_OriginalScheduledEndTime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SchedEndTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ActualEndTime</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Actual_End</name>
+        <label>Update Actual End</label>
+        <locationX>842</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ActualEndTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Updating actual start time</description>
+        <name>Update_Actual_Start</name>
+        <label>Update Actual Start</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.ActualStartTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ActualEndTime</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Status_Changes</name>
+        <label>Check Status Changes</label>
+        <locationX>578</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Set_Original_Start_EndTime</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Scheduled</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_OriginalScheduledStartTime__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Original_Start_End_Time</targetReference>
+            </connector>
+            <label>Set Original Start/EndTime</label>
+        </rules>
+        <rules>
+            <name>Set_Actual_Start_Time</name>
+            <conditionLogic>1 AND 6 AND ((2 AND 3) OR (4 AND 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Arrived</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_IsBranchAppointment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActualStartTime</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Actual_Start</targetReference>
+            </connector>
+            <label>Set Actual Start Time</label>
+        </rules>
+        <rules>
+            <name>Scheduled_Start_Update</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ActualStartTime</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActualStartTime</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Set Scheduled Start Time</label>
+        </rules>
+        <rules>
+            <name>Actual_End_Update</name>
+            <conditionLogic>1 AND (2 OR 3) AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Failed After Arrive</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ActualEndTime</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Actual_End</targetReference>
+            </connector>
+            <label>Set Actual End Time</label>
+        </rules>
+    </decisions>
+    <description>FOUK-174,FOUK-155,FOUK-154,FOUK-152,FOUK-153--&gt;This flow is used to update the actual start and end time for mobile and branch appointments. Modifed as a part of FOUK-11047.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CheckIfSameDay</name>
+        <dataType>Boolean</dataType>
+        <expression>DAY(DATEVALUE({!$Record.ActualEndTime})) = DAY(DATEVALUE({!$Record.SchedStartTime}))</expression>
+    </formulas>
+    <formulas>
+        <name>Duration</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.ActualEndTime}-{!$Record.SchedStartTime}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>ScheduledEndTimeFormula</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.ActualEndTime})),{!$Record.ActualEndTime},{!$Record.SchedStartTime}+{!$Record.DurationInMinutes}/(24*60))</expression>
+    </formulas>
+    <formulas>
+        <description>Addition of scheduled start plus duration</description>
+        <name>ScheduledStartDuration</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$Record.SchedStartTime} + {!$Record.Duration}</expression>
+    </formulas>
+    <formulas>
+        <name>ScheduledStartTimeFormula</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.ActualStartTime})),{!$Record.ActualStartTime},{!$Record.SchedStartTime})</expression>
+    </formulas>
+    <formulas>
+        <name>UpdateEndDuration</name>
+        <dataType>Number</dataType>
+        <expression>(({!$Record.ActualEndTime}-{!$Record.SchedStartTime})*24*60)</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Start and Finish Time On Service Appointment On Status Change {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Start And Finish Time On Service Appointment On Status Change</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Status_Changes</targetReference>
+        </connector>
+        <filterFormula>NOT({!$Permission.BLN_BypassFlows}) &amp;&amp; 
+TEXT({!$Record.Status}) != &apos;Open&apos; &amp;&amp;
+TEXT({!$Record.Status}) != &apos;None&apos; &amp;&amp;
+TEXT({!$Record.Status}) != &apos;Pending&apos;</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>30</triggerOrder>
+</Flow>

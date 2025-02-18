@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ContractArticle</fullName>
+    <columns>ARTICLE_NUMBER</columns>
+    <columns>TITLE</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>BLN_DataCategory__c</columns>
+    <columns>VALIDATION_STATUS_ENUM</columns>
+    <columns>PUBLISH_STATUS</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>LAST_PUBLISHED_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Knowledge__kav.BLN_Contracts</value>
+    </filters>
+    <label>Contract Article</label>
+</ListView>

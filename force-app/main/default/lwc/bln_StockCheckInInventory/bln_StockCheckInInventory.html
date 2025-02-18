@@ -1,0 +1,85 @@
+<template>
+    <!-- modal start -->
+    <template if:true={isShowModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={hideModalBox}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Stock Check-In List</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <template if:true={showError}>
+                        <p class="slds-align_absolute-center" style="color:red;">{errorMessage}</p>
+                    </template>
+                    <template if:false={stockData}>
+                        <p class="slds-align_absolute-center">{label.BLN_NoStockToCheckInError}</p>
+                    </template>
+                    <template if:true={stockData}>
+                        <template if:true={spinner}><lightning-spinner alternative-text="Loading"
+                                size="small"></lightning-spinner></template>
+                        <template if:true={isFirstPage}>
+                            <lightning-layout multiple-rows="true" vertical-align="center"
+                                class="slds-p-around_small slds-align_absolute-center">
+                                <template for:each={stockCheckInListData} for:item="data">
+
+                                    <lightning-layout-item key={data} size="4" small-device-size="3"
+                                        class="slds-p-around_small">
+                                        <p>{data.saName}</p>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item key={data.unUsedProductLists} class="slds-p-around_small"
+                                        size="8" small-device-size="9" flexibility="auto">
+                                        <lightning-radio-group name="radioGroup" options={data.unUsedProductLists}
+                                            value={value} onchange={radioChecked} type="radio"></lightning-radio-group>
+                                    </lightning-layout-item>
+
+                                </template>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={isSecondPage}>
+                            <p class="slds-align_absolute-center"><b>Confirm that part is returned?</b></p>
+                        </template>
+                        <template if:true={isThirdPage}>
+                            <p class="slds-align_absolute-center"><b>Part is Checked-In</b></p>
+                        </template>
+                    </template>
+                </div>
+
+                <!-- modal footer start-->
+                <template if:true={stockData}>
+                <footer class="slds-modal__footer">
+                        <template if:true={isFirstPage}>
+                            <lightning-button label="Next" name="next" class="slds-float_right"
+                                onclick={handleButtonClick}></lightning-button>
+                        </template>
+                        <template if:true={isSecondPage}>
+                            <lightning-button label="Confirm" name="confirm"
+                                class="slds-var-p-around_xxx-small slds-float_right"
+                                onclick={handleButtonClick}></lightning-button>
+                            <lightning-button label="Back" name="back"
+                                class="slds-var-p-around_xxx-small slds-float_right"
+                                onclick={handleButtonClick}></lightning-button>
+                        </template>
+                        <template if:true={isThirdPage}>
+                            <lightning-button label="Continue" name="continue"
+                                class="slds-var-p-around_xxx-small slds-float_right"
+                                onclick={handleButtonClick}></lightning-button>
+                        </template>
+                    <!-- <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button> -->
+                </footer>
+            </template>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- modal end -->
+</template>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Work Order Line Item --></label>
+    <name>BLN_WorkOrderLineItem__c</name>
+    <relationshipLabel><!-- Corrective Action Reports --></relationshipLabel>
+</CustomFieldTranslation>

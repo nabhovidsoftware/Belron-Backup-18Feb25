@@ -1,0 +1,201 @@
+<template>
+    <template if:true={spinner}>
+    <div class="spinner">
+        <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+    </div>
+</template>
+    <lightning-card>
+        <template for:each={appointmentList} for:item="appointment">
+            <template for:each={appointment.appointments} for:item="app">
+                <div key={app} style="display: flex;" class="appointmentHeader">
+                    <h4 class="slds-m-horizontal_x-large" style="margin-left:36%">{app.appointmentName}</h4>
+                    <h4>{app.locationName}</h4>
+                    <h4 class="slds-m-horizontal_x-large">{app.slotSelectedDate}</h4>
+                </div>
+                <div key={app} class="slds-grid slds-gutters slds-m-left-small">
+                    <div class="slds-col slds-size_3.5-of-8 border  slds-m-left_x-small slds-m-right_x-small">
+                        <span>{label.ProductName}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.StockStatus}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.StockLocation}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.EarliestAvailability}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.CollectManually}</span>
+                    </div>
+                </div>
+                <template for:each={app.productAvailibilities} for:item="productAvl">
+                    <template for:each={productAvl.products} for:item="product">
+                        <div key={product} class="slds-grid slds-gutters">
+                            <div
+                                class="slds-col slds-size_3.5-of-8 slds-m-left_x-small slds-m-right_x-small borderBottom">
+                                <span>{product.productName}</span>
+                                
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom">
+                                <span>{product.status}</span>
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom">
+                                <select class="slds-m-top_xx-small slds-m-bottom_x-small option" data-id={product.productCode} onchange={handleChangeLocation} data-appid={app.serviceAppointmentId}  disabled={product.disbaledloc}>
+                                    <template for:each={product.option} for:item="option" >
+                                        <option key={option} value={option.value} selected={option.selected} disabled={app.disbaledloc}>{option.label}</option>
+                                    </template>
+                                </select>
+                            </div>
+                           
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom" lwc:if={product.isOutOfStock}>
+                                <p><lightning-formatted-date-time data-procode ={product.productCode} value={product.promiseDate} class="avalDateFormat"></lightning-formatted-date-time></p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom" lwc:else>
+                                <p><lightning-formatted-date-time data-procode ={product.productCode} value={product.earlyAvlDate} class="avalDateFormat"></lightning-formatted-date-time></p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom">
+                                <lightning-input 
+                                    class="checkbox" 
+                                    data-id="checkbox" 
+                                    data-productcode = {product.productCode}
+                                    data-dateloctaion = {product.defaultLocation}
+                                    type="checkbox" 
+                                    data-appid={app.serviceAppointmentId}
+                                    onchange={handleOnchangeCheckbox}>
+                                </lightning-input>
+                            </div>
+                        </div>
+                        <!-- <template if:true={product.childProductList}>
+                            <template for:each={product.childProductList} for:item="childProduct">
+                                AN --- {childProduct.productName}
+                            </template>
+                        </template> -->
+                    </template>
+                </template>
+            </template>
+        </template>
+
+        <!-- START AN -->
+        <template for:each={productList} for:item="row">
+            <template if:false={row.hideOnUI}>
+                <div class="slds-grid prd-selection-grid-row slds-m-vertical_xxx-small slds-grid_vertical-align-end"
+                    key={row.itemIndex}>
+                    <!-- Product select checkbox for parent products -->
+                    <template if:false={row.isChild}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 center-align check-box-class">
+                            <lightning-input type="checkbox-button" variant="label-hidden"
+                                data-check-box-status={row.activeElement} data-index={row.itemIndex} 
+                                                data-prod-code={row.mdmId} data-is-checked-by-default={row.isCheckedByDefault}
+                                                data-optional-value={row.selectProduct} data-bom-id={row.bomId}
+                                                data-hierarchy={row.hierarchy} value={row.mdmId} checked={row.checked}
+                                                onchange={handleCheckboxClick}>
+                            </lightning-input>
+                        </div>
+                    </template>
+
+                    <!-- Product name for Parent Products -->
+                    <template if:false={row.isChild}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_7-of-12 productLine">
+                            {row.productDescription}
+                        </div>
+                    </template>
+
+                    <!-- Product select checkbox column empty for child products -->
+                    <template if:true={row.isChildBOM}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 no-border"></div>
+                    </template>
+
+                    <!-- Product select checkbox for child products and product name -->
+                    <template if:true={row.isChildBOM}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_7-of-12 no-border">
+                                <div class="slds-grid prd-selection-grid-row">
+                                    <div class="slds-col slds-m-horizontal_xxx-small slds-align_absolute-center check-box-class">
+                                    <lightning-input type="checkbox-button" variant="label-hidden"
+                                        data-check-box-status={row.activeElement} data-index={row.itemIndex}
+                                        data-prod-code={row.mdmId}
+                                        data-is-checked-by-default={row.isCheckedByDefault}
+                                                            data-optional-value={row.optionalAttributeValue} data-bom-id={row.bomId}
+                                                            data-hierarchy={row.hierarchy} value={row.mdmId} checked={row.checked} 
+                                                            data-child-mandatory={row.childMandatory} onchange={handleCheckboxClick}>
+                                        </lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-m-horizontal_xxx-small slds-size_11-of-12 productLine">
+                                        {row.productDescription}
+                                    </div>
+                                </div>
+                        </div>
+                    </template>
+
+                    <template if:true={row.isChildBundle}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 no-border"></div>
+                    </template>
+
+                    <template if:true={row.isChildBundle}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_7-of-12 no border">
+                            <!-- <div class="slds-col slds-m-horizontal_xxx-small"></div> -->
+                            <div class="slds-col slds-m-horizontal_xxx-small slds-size_11-of-12 productLine">
+                                    {row.productDescription}
+                            </div>
+                        </div>
+                    </template>
+                    
+                    <!-- Quantity, Price and Add All action columns  -->
+                    <div class="slds-col slds-size_4-of-12 no-border">
+                        <div class="slds-grid prd-selection-grid-row">
+                            <div class="slds-col slds-m-horizontal_xxx-small">
+                                <lightning-input type="number" variant="label-hidden" step="1" min="1"
+                                    value={row.quantity} data-product-code-qty={row.mdmId}
+                                    data-index-qty={row.itemIndex} data-bom-id-qty={row.bomId}
+                                    data-hierarchy-qty={row.hierarchy} disabled={row.isQtyDisabled}
+                                    onchange={handleQtyChange}>
+                                </lightning-input>
+                            </div>
+                            <div
+                                class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5 slds-align_absolute-center">
+                                {row.netPrice}</div>
+                            <div
+                                class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5 slds-align_absolute-center">
+                                {row.totalTax}</div>
+                            <div
+                                class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5 slds-align_absolute-center">
+                                {row.netPriceIncludingTax}</div>
+                            <div class="slds-col slds-m-horizontal_xxx-small no-border slds-size_1-of-5">
+                            <template if:true={row.isParent}>
+                                <button class="slds-button slds-button_neutral add-all-bttn"
+                                    data-product-code-add-bttn={row.mdmId} data-bom-id-add-bttn={row.bomId}
+                                        data-index-add-bttn={row.itemIndex} disabled={row.isAddAllDisabled}
+                                        name="Add All" onclick={handleAddAllClick}>
+                                            {label.addAll}
+                                </button>
+                            </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <!-- /END AN -->
+
+        <div class="slds-m-top_x-small buttons" lwc:if={buttonVisibility}>
+            <lightning-button 
+                label="Back" 
+                title="Non-primary action"
+                class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button 
+                label="Confirm Changes" 
+                title="Non-primary action" 
+                class="slds-m-left_x-small slds-float_right"
+                onclick={handleClickOnConfirmChanges}
+                disabled={disableButton}>
+            </lightning-button>
+            <lightning-button
+                label="Rebook Appointment" 
+                title="Non-primary action" 
+                onclick={navigateToFlow}
+                class="slds-m-left_x-small slds-float_right"  >
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,168 @@
+<template>
+    <template if:false={handlePaymentScreen}>
+    <div>
+        <template if:true={articleOpen}>
+           <div style="text-align: center;">
+           <div class="borderStyle">
+            <div class="slds-text-heading_large slds-text-title_bold slds-border_bottom slds-p-around_medium">
+                <lightning-flow flow-api-name="BLN_DisplayKnowladgeArticleFlow" flow-input-variables={inputVariables}></lightning-flow>
+               </div>
+              </div>
+            </div>
+        </template>
+    <div class="slds-grid slds-align_absolute-center">
+    <button class="slds-button slds-button_success buttonStyle bottomSpace">{location}</button>
+    </div>
+
+    <!-- Cash Part-->
+    <template if:true={cash}>
+    <div class="slds-grid slds-align_absolute-center" >
+    <button class="slds-button slds-button_neutral slds-m-around_xx-small selectBtnStyle pointerClass">{label.Select}</button>
+    <button class="slds-button slds-button_neutral   slds-m-around_small selectBtnStyle productBtnStyle pointerClass">{label.Product}</button>
+    <button class="slds-button slds-button_neutral   slds-m-around_small slds-m-right_x-large selectBtnStyle buttonWidthClass pointerClass">{label.Qty}</button>
+    <button class="slds-button slds-button_neutral slds-m-around_xx-small selectBtnStyle adjustWidth pointerClass">{label.Price}</button>
+    </div>
+ 
+    <table class="slds-align--absolute-center" id="table">
+        <tbody>
+            <template for:each={productvalue} for:item="data">
+                  <tr key={data.partOrBundleCode}>
+                     <template if:true={data.partOrBundleCode}>
+                          <div class="slds-grid slds-align_absolute-center bottomSpace"  >
+                              <button class="slds-button slds-button_neutral slds-m-right_xx-large slds-m-left_x-large checkBoxButton pointerClass"></button>
+                              <button class="slds-button slds-button_neutral slds-m-right_small slds-m-left_xx-large productBtnStyle textColorClass pointerClass">{data.productName}</button>
+                              <button class="slds-button slds-button_neutral slds-m-right_medium textColorClass buttonWidthClass pointerClass">{data.quantity}</button>
+                              <button class="slds-button slds-button_neutral  textColorClass adjustWidth pointerClass">{data.netPriceIncludingTax}</button>
+                        </div>
+                    </template>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+    <div class="slds-grid slds-align_absolute-center bottomSpace" ><button class="slds-button slds-button_neutral slds-m-right_small vatButton pointerClass">{label.VAT}</button><button class="slds-button slds-button_neutral textColorClass adjustWidth pointerClass">{vat}</button></div>
+      <!-- <div class="slds-grid slds-align_absolute-center bottomSpace" ><button class="slds-button slds-button_neutral  slds-m-right_small vatButton afterHourClass pointerClass">{label.AfterHours}</button><button class="slds-button slds-button_neutral textColorClass adjustWidth pointerClass afterHourClass">10.00</button></div> -->
+    <div class="slds-grid slds-align_absolute-center bottomSpace" ><button class="slds-button slds-button_neutral  slds-m-right_small vatButton pointerClass">{label.Discount}</button><button class="slds-button slds-button_neutral textColorClass adjustWidth pointerClass">{discount}</button></div>
+    <div class="slds-grid slds-align_absolute-center bottomSpace" ><button class="slds-button slds-button_neutral slds-m-right_small vatButton pointerClass">{label.Total}</button><button class="slds-button slds-button_neutral textColorClass adjustWidth pointerClass">{total}</button></div>
+</template>
+
+<!-- Insurance Part-->
+<template if:true={insurance}>
+    <div class="slds-grid slds-align_absolute-center" >
+        <span class="slds-m-around_xx-small slds-m-left_xx-large slds-m-right_xx-large selectBtnStyle pointerClass displayClass"></span>
+        <button class="slds-button slds-button_neutral    slds-m-right_small slds-m-left_x-large selectBtnStyle productBtnStyle2 pointerClass">{label.Product}</button>
+        <button class="slds-button slds-button_neutral   slds-m-around_small  selectBtnStyle adjustWidth2 pointerClass">{label.Qty}</button>
+        <button class="slds-button slds-button_neutral  selectBtnStyle adjustWidth2 pointerClass">{label.Net}</button>
+        <button class="slds-button slds-button_neutral selectBtnStyle adjustWidth2 pointerClass">{label.VAT}</button>
+        <button class="slds-button slds-button_neutral  selectBtnStyle adjustWidth2 pointerClass">{label.Total}</button>
+        </div>
+    
+        <table class="slds-align--absolute-center" id="tableInsurance">
+            <tbody>
+                <template for:each={insurancevalue} for:item="data">
+                      <tr key={data.partOrBundleCode}>
+                         <template if:true={data.optionalAttributeValue}>
+                              <div class="slds-grid slds-align_absolute-center bottomSpace"  >
+                                  <button class="slds-button slds-button_neutral checkBoxButton pointerClass"></button>
+                                  <button class="slds-button slds-button_neutral slds-m-right_small productBtnStyle2 textColorClass pointerClass">{data.productName}</button>
+                                  <button class="slds-button slds-button_neutral slds-m-right_small textColorClass adjustWidth2 pointerClass">{data.quantity}</button>
+                                  <button class="slds-button slds-button_neutral  textColorClass adjustWidth2 pointerClass">{data.netPrice}</button>
+                                  <button class="slds-button slds-button_neutral  textColorClass adjustWidth2 pointerClass">{data.totalTax}</button>
+                                  <button class="slds-button slds-button_neutral  textColorClass adjustWidth2 pointerClass">{data.netPriceIncludingTax}</button>
+                            </div>
+                        </template>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    
+          <!-- <div class="slds-grid slds-align_absolute-center bottomSpace " ><button class="slds-button slds-button_neutral vatButton afterHourClass pointerClass">{label.AfterHours}</button><button class="slds-button slds-button_neutral textColorClass adjustWidth pointerClass afterHourClass">10.00</button></div> -->
+        <div class="slds-grid slds-align_absolute-center bottomSpace" ><button class="slds-button slds-button_neutral vatButton pointerClass">{label.Discount}</button> <button class="slds-button slds-button_neutral textColorClass adjustWidth pointerClass">{discount}</button></div>
+       
+	   <div class="slds-grid slds-align_absolute-center" >
+            <button class="slds-button slds-button_neutral slds-m-right_small selectBtnStyle pointerClass nameButton">{label.Name}</button>
+            <button class="slds-button slds-button_neutral   slds-m-right_small  selectBtnStyle insuranceVat  pointerClass">{label.Net}</button>
+            <button class="slds-button slds-button_neutral   slds-m-right_small selectBtnStyle insuranceVat pointerClass">{label.VAT}</button>
+            <button class="slds-button slds-button_neutral slds-m-around_xx-small selectBtnStyle insuranceVat pointerClass">{label.Total}</button>
+        </div>
+            
+        <table class="slds-align--absolute-center" id="tableProduct">
+            <tbody>
+                <template for:each={otherinsurance} for:item="data">
+                      <tr key={data.liabilityCategory}>
+                             <template if:true={data.liabilityCategory}>
+                                  <div class="slds-grid slds-align_absolute-center bottomSpace"  >
+                                      <button class="slds-button slds-button_neutral slds-m-right_small  textColorClass pointerClass nameButton">{data.liabilityCategory}</button>
+                                      <button class="slds-button slds-button_neutral  slds-m-right_small  textColorClass insuranceVat pointerClass ">{data.totalPayable}</button>
+                                      <button class="slds-button slds-button_neutral  slds-m-right_small  slds-m-left_xx-small textColorClass insuranceVat pointerClass">{data.totalTaxPayable}</button>
+                                      <button class="slds-button slds-button_neutral slds-m-around_xx-small textColorClass insuranceVat pointerClass">{data.totalIncludingTaxPayable}</button>
+                                </div>
+                            </template>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+</template>
+
+  
+<!-- Common part-->
+    <template if:true={appointmentDate}>
+    <div class="slds-grid slds-align_absolute-center bottomSpace pointerClass">
+            <button class="slds-button slds-button_neutral slds-m-right_xx-small textColorClass appointmentWidth pointerClass">{label.Appointment}</button>  
+        <button class="slds-button slds-button_neutral slds-m-right_xx-small textColorClass dateWidth pointerClass">{appointmentDate}</button>
+       
+        <button class="slds-button slds-button_neutral textColorClass pointerClass timeWidth">{earlyAppoitmentSlot}</button>
+        </div>
+    </template>
+
+    <template if:true={weatherAppoitment}>
+        <div class="slds-grid slds-align_absolute-center bottomSpace pointerClass" >
+            <button class="slds-button slds-button_neutral slds-m-right_xx-small textColorClass pointerClass appointmentWidth">{label.WeatherGuardAppointment}</button>
+            <button class="slds-button slds-button_neutral slds-m-right_xx-small textColorClass dateWidth pointerClass">{weatherAppoitmentDate}</button>
+            <button class="slds-button slds-button_neutral textColorClass pointerClass timeWidth">{weatherAppoitmentSlot}</button>
+          </div>
+    </template>
+    </div>
+    <br/>
+    
+    <!--Footer-->
+    <div class="slds-grid slds-align_absolute-center slds-m-left_xx-large"  style="height:2rem;width:63.3rem">
+        <div class="slds-col slds-m-left_xx-large slds-size_2-of-12" style="height:2rem;width:49.3rem">
+            <span class="slds-colslds-m-left_xx-large"></span>
+            <lightning-button   class="backButtonWidth" variant="neutral" label={label.Back} onclick={backScreen}></lightning-button>
+        </div>
+        <div class="slds-col  slds-m-left_xx-large slds-m-right_small slds-size_2-of-12">
+            <lightning-button class="slds-m-left_x-small nameButton" label={label.Confirm} variant="brand" onclick={handleConfirm}></lightning-button>
+        </div>
+    </div>  
+      
+      
+</template>
+
+<!-- Invoking Payment Screen on Confirm button click-->
+    <template if:true={handlePaymentScreen}>
+      <c-bln-_-payment-screen-cmp onbackevent={handlePaymentScreenValue} location={location}
+            early-appoitment={earlyAppoitment}  vat={vat} total={total}
+            early-appoitment-slot={earlyAppoitmentSlot} 
+            weather-appoitment-main-date={weatherAppoitmentMainDate}
+            early-appoitment-main-date={earlyAppoitmentMainDate} 
+      
+       product={product}
+            productvalue ={productvalue}
+            insurancevalue={insurancevalue}
+             weather-appoitment={weatherAppoitment}
+             weather-appoitment-slot={weatherAppoitmentSlot}
+             discount={discount}
+       insurancepayment={insurancepayment}
+      cashpayment={cashpayment}
+      maindatemap={maindatemap}
+       parent-array-map={parentArrayMap}
+       appointment-date={appointmentDate}
+       empty-product-list={emptyProductList}
+       outstanding-balance={outstandingBalance}
+       amount-due={amountDue}
+       fromquote={fromquote}
+       fromconfirmquote={fromconfirmquote}
+       caseid={caseid}></c-bln-_-payment-screen-cmp> 
+    </template>
+    
+</template>

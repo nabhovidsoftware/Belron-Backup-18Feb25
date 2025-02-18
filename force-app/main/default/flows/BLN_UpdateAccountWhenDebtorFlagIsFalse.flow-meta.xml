@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assign_Values_in_Account</name>
+        <label>Assign Values in Account</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_CustomerId__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.BLN_DefaultCustomerId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_CustomerSiteId__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.BLN_DefaultCustomerSiteId</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>FOUK-6821. This flow will update Customer Site and Customer ID, if debtor flag is false</description>
+    <environments>Default</environments>
+    <interviewLabel>Update Account When Debtor Flag is False {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Account When Debtor Flag is False</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Assign_Values_in_Account</targetReference>
+        </connector>
+        <filterFormula>NOT({!$Permission.BLN_BypassFlows}) &amp;&amp;
+ISNEW() &amp;&amp; 
+{!$Record.BLN_DebtorFlag__c}= false</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

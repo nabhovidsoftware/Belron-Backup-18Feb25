@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Is Customer Present? (Handover) --></label>
+    <name>BLN_IsCustomerPresentHandover__c</name>
+</CustomFieldTranslation>

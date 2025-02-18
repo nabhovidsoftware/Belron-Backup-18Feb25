@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Related Complaint Case --></label>
+    <lookupFilter>
+        <errorMessage><!-- Not a valid Complaint Case. --></errorMessage>
+    </lookupFilter>
+    <name>BLN_RelatedComplaintCase__c</name>
+    <relationshipLabel><!-- Payments &amp; Refunds (Related Complaint Case) --></relationshipLabel>
+</CustomFieldTranslation>

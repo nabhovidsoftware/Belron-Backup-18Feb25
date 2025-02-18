@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>BLN_SycurioURLParam</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_AccountId__c</field>
+        <value xsi:type="xsd:string">&amp;accountId=900023</value>
+    </values>
+    <values>
+        <field>BLN_Amount__c</field>
+        <value xsi:type="xsd:string">&amp;amount=</value>
+    </values>
+    <values>
+        <field>BLN_BaseURL__c</field>
+        <value xsi:type="xsd:string">https://belron.sycuriotest.com/semafone/service/capture/getBelronSmartpaySWebPayment.html?</value>
+    </values>
+    <values>
+        <field>BLN_ClientId__c</field>
+        <value xsi:type="xsd:string">&amp;clientId=1</value>
+    </values>
+    <values>
+        <field>BLN_ClientRef__c</field>
+        <value xsi:type="xsd:string">clientReference=8b242467-6f9b-4ae8-b0fb-e61d604cf31e</value>
+    </values>
+    <values>
+        <field>BLN_Currency__c</field>
+        <value xsi:type="xsd:string">&amp;currency=GBP</value>
+    </values>
+    <values>
+        <field>BLN_Digest__c</field>
+        <value xsi:type="xsd:string">&amp;digest=</value>
+    </values>
+    <values>
+        <field>BLN_GatewayId__c</field>
+        <value xsi:type="xsd:string">&amp;gatewayId=SmartpaySWeb</value>
+    </values>
+    <values>
+        <field>BLN_JobNo__c</field>
+        <value xsi:type="xsd:string">&amp;remedyJobNo=</value>
+    </values>
+    <values>
+        <field>BLN_LicenseCode__c</field>
+        <value xsi:type="xsd:string">&amp;licenseCode=Password</value>
+    </values>
+    <values>
+        <field>BLN_MchntRef__c</field>
+        <value xsi:type="xsd:string">&amp;salesDetails=</value>
+    </values>
+    <values>
+        <field>BLN_PostFwdURL__c</field>
+        <value xsi:type="xsd:string">&amp;postForwardURL=https://uat.eu.api.belron.com/gbl/sycurio/v1/payments</value>
+    </values>
+    <values>
+        <field>BLN_Principle__c</field>
+        <value xsi:type="xsd:string">&amp;principle=BelronPPNPA</value>
+    </values>
+    <values>
+        <field>BLN_ResponseType__c</field>
+        <value xsi:type="xsd:string">&amp;responseType=web</value>
+    </values>
+    <values>
+        <field>BLN_ResponseURL__c</field>
+        <value xsi:type="xsd:string">&amp;responseURL=https://belron.sycuriotest.com/semafone/service/capture/getBelronSmartpaySWebPaymentResults.html</value>
+    </values>
+    <values>
+        <field>BLN_ReturnBin__c</field>
+        <value xsi:type="xsd:string">&amp;returnBin=false</value>
+    </values>
+    <values>
+        <field>BLN_SalesDetails__c</field>
+        <value xsi:type="xsd:string">&amp;salesDetails=</value>
+    </values>
+    <values>
+        <field>BLN_SemafoneCode__c</field>
+        <value xsi:type="xsd:string">&amp;semafoneMode=MANUAL_CR</value>
+    </values>
+    <values>
+        <field>BLN_TenantId__c</field>
+        <value xsi:type="xsd:string">&amp;tenantId=A</value>
+    </values>
+    <values>
+        <field>BLN_Tokenize__c</field>
+        <value xsi:type="xsd:string">&amp;tokenize=true</value>
+    </values>
+    <values>
+        <field>BLN_TxnRef__c</field>
+        <value xsi:type="xsd:string">&amp;transactionReference=</value>
+    </values>
+    <values>
+        <field>BLN_TxnType__c</field>
+        <value xsi:type="xsd:string">&amp;transactionType=PaymentAuthSettlePanSecurityCode</value>
+    </values>
+</CustomMetadata>

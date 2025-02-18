@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Product Allowance</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_ARPRecordTypeName__c</field>
+        <value xsi:type="xsd:string">Product Allowance</value>
+    </values>
+    <values>
+        <field>BLN_FieldList__c</field>
+        <value xsi:type="xsd:string">BLN_ProductAllowance__c,BLN_ProductCategory__c,BLN_Product__c,BLN_AuthorisationRequired__c</value>
+    </values>
+    <values>
+        <field>BLN_InheritanceBehaviour__c</field>
+        <value xsi:type="xsd:string">Sum with Lowest Level Precedence</value>
+    </values>
+</CustomMetadata>

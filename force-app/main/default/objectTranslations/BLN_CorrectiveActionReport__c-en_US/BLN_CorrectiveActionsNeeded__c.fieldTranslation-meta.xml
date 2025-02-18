@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Corrective actions needed to avoid this quality issue moving forward.Please provide as much detail as possible. --></help>
+    <label><!-- Corrective Actions Needed --></label>
+    <name>BLN_CorrectiveActionsNeeded__c</name>
+</CustomFieldTranslation>

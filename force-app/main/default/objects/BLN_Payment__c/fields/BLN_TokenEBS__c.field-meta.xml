@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_TokenEBS__c</fullName>
+    <description>FOUK-5744, FOUK-5663 Token Id returned from the EBS system once the payment record has been synced with it.</description>
+    <externalId>false</externalId>
+    <formula>IF(RecordType.DeveloperName == &quot;BLN_Payments&quot;, &quot;BLN_PaymentId__c&quot;,
+    IF(RecordType.DeveloperName == &quot;BLN_Refunds&quot;, &quot;BLN_PaymentId__c&quot; + &quot;R&quot; + TEXT(BLN_RefundCounter__c), &quot;&quot;)
+)</formula>
+    <label>Token EBS</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

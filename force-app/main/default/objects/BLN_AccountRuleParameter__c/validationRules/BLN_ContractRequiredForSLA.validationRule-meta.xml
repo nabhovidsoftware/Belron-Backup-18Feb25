@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ContractRequiredForSLA</fullName>
+    <active>true</active>
+    <description>FOUK-6522 Validation to check Contract populated on SLA record</description>
+    <errorConditionFormula>AND(
+NOT($Permission.BLN_BypassValidationRules),
+RecordType.DeveloperName  = &apos;BLN_SLA&apos;,
+OR(ISNULL( BLN_AccountRuleGroup__c ),BLN_AccountRuleGroup__c = &apos;&apos;), 
+OR(ISNULL( BLN_Contract__c ),BLN_Contract__c = &apos;&apos;)
+)</errorConditionFormula>
+    <errorDisplayField>BLN_Contract__c</errorDisplayField>
+    <errorMessage>New SLA record requires Contract</errorMessage>
+</ValidationRule>

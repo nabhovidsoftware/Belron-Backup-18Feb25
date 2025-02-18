@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Consider for Appointment Shortening --></help>
+    <label><!-- Enable Appointment Shortening --></label>
+    <name>BLN_EnableAppointmentShortening__c</name>
+</CustomFieldTranslation>

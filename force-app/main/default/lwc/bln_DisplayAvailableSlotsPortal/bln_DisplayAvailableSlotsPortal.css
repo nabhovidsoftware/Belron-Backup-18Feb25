@@ -1,0 +1,640 @@
+/* myComponent.css */  
+/* Style the table */ 
+@media (min-width: 48em) {
+  .slds-modal_small .slds-modal__container{
+      width: 624px !important;
+      max-width: 52.0625rem;
+      min-width: 40rem;
+  }
+}
+.paddingcss{
+  padding: 24px;
+}
+.slds-modal__container {
+  z-index: 999 !important;
+  width: 624px;
+}
+.heightcss{
+  padding-top: 0.5rem;
+}
+.custom-spinner-backgroundn {  
+  background-color: rgb(249, 246, 246) !important;  
+} 
+/* for new spinner */
+  .custom-spinner-background {  
+    background-color: transparent !important;  
+} 
+.custom-spinner .slds-spinner__dot {  
+  background-color: lightgray !important;  
+}  
+
+
+.monthcss{
+  /* width: 171px; */
+  color: var(--theme-color-text, #475158);
+  text-align: center;
+  
+  /* body/sm-bold */
+  font-family: var(--theme-typography-font-family-body, Roboto);
+  font-size: var(--theme-typography-font-size-sm, 14px);
+  font-style: normal;
+  font-weight: var(--theme-typography-font-weight-bold, 700);
+  line-height: 150%; /* 21px */
+}
+.datecss{
+  /* width: 171px; */
+  color: var(--theme-color-text, #475158);
+
+/* body/sm */
+font-family: var(--theme-typography-font-family-body, Roboto);
+font-size: var(--theme-typography-font-size-sm, 14px);
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+
+}
+
+table {border: none;}
+table {  
+  width: 100%;  
+  border-collapse: collapse;  
+  /* margin: 20px 0;   */
+  font-size: 18px;  
+  text-align: left; 
+  padding: 0;
+    border-collapse: collapse;
+    border: none; 
+    border-style: hidden !important;
+}  
+.datecss{
+  /* margin: 20px 51px  !important; */
+  /* padding: 0px 62px !important; */
+  /* padding-left: 2rem; */
+}
+/* Style the table headers */  
+th {  
+  padding: 1px 1px;
+  /* border: 1px solid #ddd; */
+  text-align: center;
+  height: 50px;
+}  
+td {
+  padding: 0.4rem;
+  border: none;
+}
+/* Add a background color to the table headers */  
+th {  
+  /* background-color: #f2f2f2;   */
+  color: var(--theme-color-text, #475158);
+  text-align: center;
+ font-family: var(--theme-typography-font-family-body, Roboto);
+  font-size: var(--theme-typography-font-size-s, 12px);
+  font-style: normal;
+  font-weight: var(--theme-typography-font-weight-bold, 700);
+  line-height: 115%; /* 13.8px */ 
+  
+}  
+
+/* Add zebra striping to the table rows */  
+/* tr:nth-child(even) {  
+  background-color: #f9f9f9;  
+}   */
+
+/* Add a hover effect to the table rows */  
+/* tr:hover {  
+  background-color: #f1f1f1;  
+}   */
+
+/* Center align the slot labels */  
+td:first-child {  
+  text-align: center;  
+  font-weight: bold;  
+}
+.slds-modal__container{
+  z-index: 999 !important;
+}
+.completedatecss{
+  /* width: 576px; */
+  width: 100%;
+/* height: 67px; */
+padding: 12px 0px 12px 0px;
+gap: 0px;
+opacity: 0px;
+/* margin: 0 5%; */
+/* margin-left: 5%; */
+}
+.leftarrowcss{
+  /* width: 10%; */
+  /* float: left; */
+  /* margin-top: 0.5rem; */
+  /* width:1.3rem; */
+  padding-top:0.7rem;
+}
+.rightarrowcss{
+  /* width: 10%; */
+  /* width: 9%; */
+  /* float: right; */
+  /* margin-top: -2.3rem !important; */
+  /* padding-left: 45px; */
+  padding-top:0.7rem;
+}
+.middledatecss{
+  /* width: 528px; */
+  /* width: 80%;
+  height: 43px; */
+  /* display: flex; */
+  width: 100%;
+}
+
+.buttonCss:hover {
+  background-color: #F5F5F6 !important;
+  color: #475158;
+}
+.buttonCss:focus {
+  background-color: #475158 !important;
+  color: #FFFFFF;
+  border: none !important;
+}
+
+.buttonCss{
+  border: none !important;
+  color: var(--theme-color-text, #475158);
+  text-align: center !important;
+  font-family: var(--theme-typography-font-family-body, Roboto);
+  font-size: var(--theme-typography-font-size-s, 12px);
+  font-style: normal;
+  font-weight: var(--theme-typography-font-weight-bold, 700);
+  line-height: 115%; 
+  border-radius: var(--ewp-comp-select-button-border-radius, 4px);
+background: var(--theme-color-bg-idle, #FFF);
+display: flex;
+width: 171px;
+height: 48px;
+min-width: 52px;
+min-height: 40px;
+padding: var(--ewp-comp-select-date-tb, 8px) var(--ewp-comp-select-date-lr, 8px);
+justify-content: center;
+align-items: center;
+gap: var(--ewp-comp-select-date-gap, 0px);
+align-self: stretch;
+margin: 16px 8px;
+  
+}
+
+.fotterbuttoncss{
+  margin-top: 24px;
+  /* margin-right: 1rem; */
+}
+/* .modelCss{
+  height: 900px;
+} */
+
+.prd-selection-grid-header .slds-col, .section-title{
+    background: var(--slds-g-color-neutral-base-95);
+    line-height: var(--slds-g-font-lineheight-5);
+    font-weight: var(--slds-g-font-weight-5);
+    border: 1px solid var(--sds-g-color-border-1);
+    border-radius: var(--slds-g-radius-border-2);
+    text-align: center;
+  }
+  .paracss{
+    color: var(--theme-color-text, #475158);
+   font-size: var(--theme-typography-font-size-m, 16px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-regular, 400);
+    line-height: 150%; /* 24px */
+    font-family: Roboto ;
+    text-align: left;
+  }
+  .paracss3pop{
+    color: var(--theme-color-text, #475158);
+    font-size: var(--theme-typography-font-size-m, 16px);
+     font-style: normal;
+     font-weight: var(--theme-typography-font-weight-regular, 400);
+     line-height: 150%; /* 24px */
+     font-family: Roboto ;
+     text-align: left;
+  }
+  .paracss1{
+    color: var(--theme-color-text, #475158);
+    text-align: center;
+    font-family: Roboto ;
+    font-size: var(--theme-typography-font-size-sm, 14px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 150%; /* 21px */
+  }
+  .paracss2{
+    color: var(--theme-color-text, #475158);
+font-family: var(--theme-typography-font-family-body, Roboto);
+font-size: var(--theme-typography-font-size-m, 16px);
+font-style: normal;
+font-weight: var(--theme-typography-font-weight-bold, 700);
+line-height: 150%;
+  }
+  .cofirmButton {
+    background-color: #568300; 
+      color: white; 
+      float: right;
+      padding: 12px;
+      font-family: Roboto Condensed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 24px */
+      margin-right: -3%;
+}
+.cancelButton{
+  float: left; 
+    border-color:#5A6369;
+    border: 1px solid #5A6369;
+    color: #5A6369;
+    padding: 12px;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+}
+.cofirmButtonok{
+  float: right;
+  color: var(--theme-color-secondary, #5A6369);
+  text-align: center;
+ font-family: "Roboto Condensed";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%; /* 24px */
+  display: flex;
+  min-width: 96px;
+  padding: var(--ewp-comp-button-tertiary-tb, 12px) var(--ewp-comp-button-tertiary-lr, 12px);
+  align-items: center;
+  gap: var(--ewp-comp-button-tertiary-gap, 8px);
+    border-radius: var(--ewp-comp-button-tertiary-border-radius, 4px);
+  background: rgba(250, 250, 250, 0.01);
+  box-shadow: 0px 0px 0px 1px #000 inset;
+}
+  .headcss{
+    color: var(--theme-color-text, #475158);
+    font-family: Roboto Condensed;
+    font-size: var(--theme-typography-font-size-xl, 32px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 130%; /* 41.6px */
+    text-align: left;
+    margin-left: 8px;
+  }
+  .headcss1{
+    color: var(--theme-color-text, #475158);
+    font-family: Roboto Condensed;
+    font-size: var(--theme-typography-font-size-xl, 32px);
+    font-style: normal;
+    font-weight: var(--theme-typography-font-weight-bold, 700);
+    line-height: 130%; /* 41.6px */
+    text-align: left;
+    margin-bottom: 20px;
+    /* margin-left: 4%; */
+  }
+  .footermargin{
+    margin: 0px 30px;
+  /* .footermargin{
+    margin: 0rem 3rem 0rem 2.7rem; */
+    /* margin: 0rem 2rem 0rem 1.6rem; */
+  }
+  .slds-modal__footer {
+    width: 624px;
+    background-color: #FAFAFA !important;
+    background: #FAFAFA !important;
+  }
+  .slds-modal__content {
+    width: 624px;
+  }
+  .slds-modal__header{
+    width: 624px;
+    background-color: #FAFAFA !important;
+    background: #FAFAFA !important;
+  }
+  .slds-modal__header .slds-modal__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    margin-left: 0px;
+    bottom: 0px;
+}
+
+  .slds-button_icon{
+    color: #475158 !important;
+  }
+  .close {
+      color:#475158;
+      float: right;
+      font-size: 28px;
+      cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+      color: #475158;
+  }
+  
+  .date-container {
+      display: flex;
+  }
+  
+  .date-box {
+      background: lightgrey;
+      font-size: 30px;
+      border: 1px solid black;
+      border-radius: 4px;
+      margin-right: 10px; /* Add spacing between dates */
+  }
+  
+    .confirm{
+      background-color: #568300; 
+      color: white; 
+      float: right;
+      padding: 12px;
+      font-family: Roboto Condensed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; 
+    }
+    button.confirm:disabled {
+      color: lightgray;
+    }
+    .cancel{
+      float: left; 
+      border-color:#5A6369;
+      border: 1px solid #5A6369;
+      color: #5A6369;
+      padding: 12px;
+      font-family: Roboto Condensed;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; 
+    }
+  
+    .slotOption{
+      width: 40rem
+    }
+    .noSlotAvail{
+      height: 1.5rem;
+      width: 31rem;
+      border: 1px solid black;
+      background: rgb(220, 217, 217);
+      line-height: var(--slds-g-font-lineheight-5);
+      font-weight: var(--slds-g-font-weight-5);
+      margin: auto;
+      margin-top: 15px;
+    }
+    /* .adjustModelHeight{
+      height: 60rem;
+    } */
+    .addLocation{
+      --sds-c-button-brand-color-background: rgb(201, 201, 201);
+      --sds-c-button-brand-color-background-hover:rgb(201, 201, 201);
+       /* margin-right: 20rem ;   */
+      margin-top: 1.7rem;
+      font-weight: bold; 
+      font-size: medium;
+      width: 33rem;
+      margin-left: 5.8rem;
+      color: black;
+      
+    }
+    /* .locationlist {
+      font-weight: normal;
+      font-size: medium;
+    } */
+  
+    .dateStyle{
+      margin: 1rem;
+    }
+    .earlyCss{
+      width: 54rem;
+      margin-left: 6rem !important;
+      font-size: x-large;
+      height: 3rem;
+      border: 1px solid black;
+      background-color: #9bce7a;
+    }
+    .adjustOptions{
+      padding-left: 6.2rem;
+    }
+    .sldsselectslotmargin{
+      margin-right: 6.2rem;
+    }
+    .spinnerStyle{
+      background: none;
+      min-height:3rem;
+      transform: translate(0, 0);
+      width: 624px;
+    }
+    .foterconcss{
+      margin-top: 12px;
+      /* margin-bottom: 24px; */
+ 
+      /* margin-left: 1%; */
+    }
+  .foterpara1{
+    color: var(--theme-color-text-matt, #8B9196);
+    font-family: Roboto ;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 21px */
+    text-align: left;
+  }
+  .foterpara2{
+    color: var(--theme-color-text-matt, #8B9196);
+    font-family: Roboto ;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+  }
+  
+  /* @media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    .buttonCss{
+      width: 5rem;
+    }
+    .cofirmButton{
+      width: 192px;
+    }
+    .noSlotAvail{
+      height: 1.5rem;
+      width: 10rem;
+    }
+    .tester{
+      height:3rem;
+      width:6.3rem !important; 
+      
+    }
+    .confirm {
+     
+      float: right;
+      width: 139% !important;
+  }
+  } */
+  /* @media screen and (max-device-width: 480px) 
+  and (orientation: portrait) { */
+  @media (min-width: 320px) and (max-width: 400px) {
+    /* .popup3{
+      width: 250px;
+    } */
+  }
+  @media (max-width: 612px) {
+    .spinnerStyle{
+      width: 100%;
+    }
+    .slds-modal__container {
+      z-index: 999 !important;
+      width: 83%;
+    }
+    .slds-modal__footer {
+      width: 100%;
+    }
+    .slds-modal__content {
+      width: 100%;
+    }
+    .slds-modal__header{
+      width: 100%;
+    }
+    .cofirmButton{
+      width: 70%;
+    }
+    .cofirmButtonok{
+      width: 100%;
+    }
+    .heightcss{
+      /* overflow-x:auto; */
+      /* padding-top: 0.5rem; */
+      padding: 0px 12px;
+    }
+    /* .datecss{
+      width: 85%;
+    }
+    .monthcss{
+      width: 85%;
+    } */
+    .paddingcss{
+      padding: 0px 12px;
+    }
+    .paracss{
+      padding-right: 15rem;
+    }
+.popup3{
+  width: 90%;
+}
+      .container {
+      display: block;
+      width: 100%;
+      height: 100%;
+    
+      }
+      .leftcss{
+        margin-left: -0.8rem;
+      }
+      .rightcss{
+        margin-left: 0.1rem;
+      }
+      .buttonCss{
+        width: 82.7px;
+        /* width: 90%; */
+        padding: 0px;
+        /* margin-left:-0.2rem; */
+        font-family: var(--theme-typography-font-family-body, Roboto);
+        font-size: var(--theme-typography-font-size-s, 11px);
+        font-style: normal;
+        font-weight: var(--theme-typography-font-weight-bold, 700);
+        line-height: 115%;
+      }
+      .noSlotAvail{
+        height: 1.5rem;
+        width: 90%;
+      }
+      .footermargin{
+        margin: 0rem  1rem !important;
+      }
+      .foterconcss{
+        margin-left: 0%;
+      }
+      .tester{
+        height:3rem;
+        width: 6.3rem !important;
+      }
+      .concss{
+        width: 100%;
+    /* margin-left: 8%; */
+    margin-left: -1%;
+    margin-top: -4px;
+      }
+      .confirm {
+     
+        float: right;
+        width: 141% !important;
+    }
+    .headcss{
+      font-size: 20px;
+    }
+    .headcss1{
+      font-size: 20px;
+    }
+    .completedatecss{
+      width: 100% !important;
+    height: 100%;
+  
+    }
+    .leftarrowcss{
+      /* width: 3%;
+      float: left;
+      margin-left: -1rem;  */
+      width: 17%;
+      float: left;
+      margin-left: -1.5rem;
+     
+    }
+    .rightarrowcss{
+      /* width: 10%; */
+      width: 15%;
+      float: right;
+    }
+    .middledatecss{
+      /* width: 528px; */
+      width: 100%;
+      /* height: 43px; */
+      display: flex;
+    }
+    
+    /* .datecss{
+      margin-left: -9px !important;
+      padding:0rem;
+    } */
+    }
+    .errorabel{
+      padding-bottom: 20px;
+      padding-top: 20px;
+      text-align: center;
+      color: var(--theme-color-text, #475158);
+      font-family: var(--theme-typography-font-family-body, Roboto);
+      font-size: var(--theme-typography-font-size-s, 11px);
+      font-style: normal;
+      font-weight: var(--theme-typography-font-weight-bold, 700);
+      line-height: 115%;
+      background-color: #FAFAFA;
+      width: 100%;
+      max-width: 624px;
+    
+    }
+
+    .test-table{
+      width: auto;
+      border: 1px solid #ccc;
+      scroll-behavior: smooth;
+    }

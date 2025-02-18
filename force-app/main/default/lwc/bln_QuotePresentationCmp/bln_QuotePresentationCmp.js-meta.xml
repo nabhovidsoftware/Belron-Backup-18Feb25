@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__Tab</target>
+    </targets>
+    <description>
+        FOUK-3090, FOUK-3781 This lwc component is created to display Price Confirmation Screen.
+        FOUK-4608 back button functionality from Payment screen.
+    </description>
+</LightningComponentBundle>

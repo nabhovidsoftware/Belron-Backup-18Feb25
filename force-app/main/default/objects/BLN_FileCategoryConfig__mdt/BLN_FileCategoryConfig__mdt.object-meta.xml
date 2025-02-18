@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-9422, FOUK-7055 
+Metadata created for storing configuration of File category</description>
+    <label>File Category Config</label>
+    <pluralLabel>File Category Configs</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

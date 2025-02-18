@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Exception_Logger</name>
+        <label>Exception Logger</label>
+        <locationX>440</locationX>
+        <locationY>539</locationY>
+        <actionName>BLN_FlowExceptionLogger</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>excmessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_FlowExceptionLogger</nameSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <description>FOUK-6455 - Flow to update Account volume/value from opportunity</description>
+    <environments>Default</environments>
+    <interviewLabel>Account Adjusted Value and Volume {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account Adjusted Value and Volume</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Flow_Exception</name>
+        <label>Flow Exception</label>
+        <locationX>440</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Exception_Logger</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>BLN_CurrentUser__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_EntityName__c</field>
+            <value>
+                <stringValue>BLN_AccountAdjustedValueAndVolume</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_ErrorMessage__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_LogType__c</field>
+            <value>
+                <stringValue>Exception</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_MethodStep__c</field>
+            <value>
+                <elementReference>Update_Account</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_RecordIdIdentifier__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>BLN_FlowException__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <faultConnector>
+            <targetReference>Flow_Exception</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>BLN_ExpectedValuePA__c</field>
+            <value>
+                <elementReference>$Record.BLN_AchievedValue__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_ExpectedVolumePA__c</field>
+            <value>
+                <elementReference>$Record.BLN_AchievedVolume__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_OpportunityExpectedValuePA__c</field>
+            <value>
+                <elementReference>$Record.BLN_AchievedValue__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_OpportunityExpectedVolumePA__c</field>
+            <value>
+                <elementReference>$Record.BLN_AchievedVolume__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Account</targetReference>
+        </connector>
+        <filterFormula>AND( 
+NOT({!$Permission.BLN_BypassFlows}),
+ISPICKVAL({!$Record.StageName}, &apos;Closed Won&apos;) ,
+NOT(ISNULL({!$Record.BLN_AchievedVolume__c})),
+NOT(ISNULL({!$Record.BLN_AchievedValue__c})),
+NOT(ISNULL({!$Record.AccountId}))
+)</filterFormula>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

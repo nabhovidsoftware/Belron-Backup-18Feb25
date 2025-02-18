@@ -1,0 +1,82 @@
+<template>
+    <lightning-card class="slds-align_absolute-center ">
+        <lightning-layout multiple-rows>
+			<lightning-layout-item size="1"></lightning-layout-item>
+			<lightning-layout-item size="12">
+				<button class="slds-button slds-button_success buttonStyle">{label.RefundScreenHeader}</button>
+			</lightning-layout-item>
+			<lightning-layout-item size="1"></lightning-layout-item>
+		</lightning-layout><br/> 
+
+        <lightning-layout>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			 <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"><strong>{label.RefundPaymentLinkRecord}</strong></label></lightning-layout-item>
+             <lightning-layout-item size="7">
+                <lightning-input type="text" class="inputBoxWidth" read-only value={linkToPaymentRecord}></lightning-input>
+        </lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+
+        <lightning-layout>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			 <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"><strong>{label.PaymentReceived}</strong></label></lightning-layout-item>
+             <lightning-layout-item size="7">
+                <lightning-input type="text" class="inputBoxWidth" read-only value={paymentReceived}></lightning-input>
+        </lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+
+        <lightning-layout>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			 <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"><strong>{label.AvailableToRefund}</strong></label></lightning-layout-item>
+             <lightning-layout-item size="7">
+                <lightning-input type="number" class="inputBoxWidth"  read-only value={availableToRefund}></lightning-input>
+        </lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+
+        <lightning-layout>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			 <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth" for={label.Amount} ><strong>{label.Amount}</strong><abbr class="slds-required" title="required">*</abbr></label></lightning-layout-item>
+             <lightning-layout-item size="7">
+                <lightning-input type="number" name={label.Amount} min="1" class="inputBoxWidth topMargin inputAmount"  value={amount} onchange={handleAmount} variant="label-hidden" label={label.Amount} required formatter="currency" step="0.01"></lightning-input>
+        </lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+
+        <lightning-layout>
+            <lightning-layout-item size="1"></lightning-layout-item>
+			 <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth" for={label.RefundReason}><strong>{label.RefundReason}</strong><abbr class="slds-required" title="required">*</abbr></label></lightning-layout-item>
+             <lightning-layout-item size="7">
+                <lightning-combobox name={label.RefundReason} value={reason}  options={optionsList} onchange={handleReason} class="inputBoxWidth topMargin" variant="label-hidden" label={label.RefundReason} required></lightning-combobox>
+        </lightning-layout-item>
+			<lightning-layout-item size="2"></lightning-layout-item>
+		</lightning-layout>
+
+        <lightning-layout>
+        <lightning-layout-item size="1"></lightning-layout-item>
+        <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"><strong>{label.RefundInitiatedBy}</strong></label></lightning-layout-item>
+        <lightning-layout-item size="7">
+           <lightning-input name={label.RefundReason} value={userName}  read-only class="inputBoxWidth"></lightning-input>
+   </lightning-layout-item>
+       <lightning-layout-item size="2"></lightning-layout-item>
+   </lightning-layout>
+   <br/>
+   <!--Footer-->
+   <lightning-layout multiple-rows>
+    <lightning-layout-item size="1"></lightning-layout-item>
+    <lightning-layout-item size="2" ><lightning-button class="backButtonWidth slds-m-right_xx-large" variant="neutral" label={label.Back}
+        onclick={handleBackButton} name={label.Back}></lightning-button>
+    </lightning-layout-item>
+    <lightning-layout-item size="4"></lightning-layout-item>
+    <lightning-layout-item size="4">
+    <lightning-button class="nameButton adjustAlign" label={label.Refund} variant="brand"
+        onclick={createRefundRecord} disabled={disableFlag}></lightning-button>
+    </lightning-layout-item>
+    <lightning-layout-item size="1"></lightning-layout-item>
+</lightning-layout><br/>
+
+
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ClientSubType__c</fullName>
+    <externalId>false</externalId>
+    <label>Client Sub Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>BLN_ClientType__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>ClientSubTypes</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Insurance</controllingFieldValue>
+            <valueName>Underwriter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Insurance</controllingFieldValue>
+            <valueName>MGA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Insurance</controllingFieldValue>
+            <valueName>Capacity Provider</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Insurance</controllingFieldValue>
+            <valueName>Underwriting Agency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lease</controllingFieldValue>
+            <valueName>Leasing Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Lease</controllingFieldValue>
+            <valueName>Leasing Broker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rental</controllingFieldValue>
+            <valueName>Vehicle Rental</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>BlueLight</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>Central Government</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>Local Government</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>Armed Forces</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Government</controllingFieldValue>
+            <valueName>Government Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intermediary</controllingFieldValue>
+            <valueName>Claims Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intermediary</controllingFieldValue>
+            <valueName>Specialist Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intermediary</controllingFieldValue>
+            <valueName>Accident Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Intermediary</controllingFieldValue>
+            <valueName>Legal Firm</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fleet Local</controllingFieldValue>
+            <valueName>Fleet Management</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Category --></label>
+    <name>BLN_Category__c</name>
+    <picklistValues>
+        <masterLabel>ADAS</masterLabel>
+        <translation><!-- ADAS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Complaints</masterLabel>
+        <translation><!-- Complaints --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Digital</masterLabel>
+        <translation><!-- Digital --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Financial</masterLabel>
+        <translation><!-- Financial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>General</masterLabel>
+        <translation><!-- General --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Job Retention</masterLabel>
+        <translation><!-- Job Retention --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Job processing</masterLabel>
+        <translation><!-- Job processing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MI Reporting</masterLabel>
+        <translation><!-- MI Reporting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mobile Appointments</masterLabel>
+        <translation><!-- Mobile Appointments --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NPS &amp; Other Survey Questions</masterLabel>
+        <translation><!-- NPS &amp; Other Survey Questions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quality</masterLabel>
+        <translation><!-- Quality --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Repair Ratio</masterLabel>
+        <translation><!-- Repair Ratio --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Subcontractors</masterLabel>
+        <translation><!-- Subcontractors --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telephony</masterLabel>
+        <translation><!-- Telephony --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Time To Serve</masterLabel>
+        <translation><!-- Time To Serve --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Job Comments --></label>
+    <name>BLN_JobComments__c</name>
+    <picklistValues>
+        <masterLabel>ADAS Confirmed Please Do Not Move This Job</masterLabel>
+        <translation><!-- ADAS Confirmed Please Do Not Move This Job --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Booked by Concierge Team - Please Do Not Move</masterLabel>
+        <translation><!-- Booked by Concierge Team - Please Do Not Move --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Branch Request CPT</masterLabel>
+        <translation><!-- Branch Request CPT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Branch Request Specific Technician</masterLabel>
+        <translation><!-- Branch Request Specific Technician --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Branch Request Warranty</masterLabel>
+        <translation><!-- Branch Request Warranty --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Complaint</masterLabel>
+        <translation><!-- Customer Complaint --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Do Not Move This Job</masterLabel>
+        <translation><!-- Do Not Move This Job --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multiple Failed Appointments</masterLabel>
+        <translation><!-- Multiple Failed Appointments --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Must Be Attended as First Appointment of Day</masterLabel>
+        <translation><!-- Must Be Attended as First Appointment of Day --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

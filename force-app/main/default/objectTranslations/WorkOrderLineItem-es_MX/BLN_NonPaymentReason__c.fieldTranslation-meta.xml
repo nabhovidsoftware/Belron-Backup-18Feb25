@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Non-Payment Reason --></label>
+    <name>BLN_NonPaymentReason__c</name>
+    <picklistValues>
+        <masterLabel>C And P device not working</masterLabel>
+        <translation><!-- C And P device not working --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Card declined</masterLabel>
+        <translation><!-- Card declined --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Completed by Approved Partner</masterLabel>
+        <translation><!-- Completed by Approved Partner --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Not Present</masterLabel>
+        <translation><!-- Customer Not Present --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No C And P</masterLabel>
+        <translation><!-- No C And P --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outstanding Complaint</masterLabel>
+        <translation><!-- Outstanding Complaint --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Payment methods stolen</masterLabel>
+        <translation><!-- Payment methods stolen --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

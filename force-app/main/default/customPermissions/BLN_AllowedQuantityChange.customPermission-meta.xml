@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-5037 This custom permission is added to allow change of quantity of product on Product Selection</description>
+    <isLicensed>false</isLicensed>
+    <label>BLN_AllowedQuantityChange</label>
+</CustomPermission>

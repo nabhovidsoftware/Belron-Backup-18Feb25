@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Return_Order__c</fullName>
+    <description>This is a master-detail to Return Order Object</description>
+    <externalId>false</externalId>
+    <label>Return Order</label>
+    <referenceTo>LAD_Return__c</referenceTo>
+    <relationshipLabel>Return Items</relationshipLabel>
+    <relationshipName>Return_Items</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

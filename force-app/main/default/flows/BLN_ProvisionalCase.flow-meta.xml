@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Last_Entry_Time_In_Provisional</name>
+        <label>Last Entry Time In Provisional</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_LastEntryTimeInProvisional__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Currenttime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Last_Exit_Time_In_Provisional</name>
+        <label>Last Exit Time In Provisional</label>
+        <locationX>446</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_LastExitTimeInProvisional__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Currenttime</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_TimeInProvisional__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>TimeinProvisional</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Quality_Value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Overridden_True</name>
+        <label>Overridden True</label>
+        <locationX>314</locationX>
+        <locationY>719</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_Overridden__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_NoOfTimesOverriden__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NoOfTimesOverridden</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <constants>
+        <name>One</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Booking_status_check</name>
+        <label>Booking status check</label>
+        <locationX>578</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Booking_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_BookingStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Provisional</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Last_Entry_Time_In_Provisional</targetReference>
+            </connector>
+            <label>Check Booking Status</label>
+        </rules>
+        <rules>
+            <name>Check_Booking_Status_Negative</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_BookingStatus__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Provisional</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Prior_Value</targetReference>
+            </connector>
+            <label>Check Booking Status Negative</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Prior_Value</name>
+        <label>Check Prior Value</label>
+        <locationX>644</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Booking_Status_PRIORVALUE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.BLN_BookingStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Provisional</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Last_Exit_Time_In_Provisional</targetReference>
+            </connector>
+            <label>Check Booking Status PRIORVALUE</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Quality_Value</name>
+        <label>Check Quality Value</label>
+        <locationX>446</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Booking_Status_Quality</name>
+            <conditionLogic>(1 OR 2 OR 3 OR 4) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_CoverageVerificationTheme__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_QuoteAcceptanceTheme__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_AccountRulesTheme__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_StockDetailsTheme__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_BookingStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Quality</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Overridden_True</targetReference>
+            </connector>
+            <label>Check Booking Status Quality</label>
+        </rules>
+    </decisions>
+    <description>FOUK-6906,FOUK-7971 This flow is used to update provisional times.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Currenttime</name>
+        <dataType>DateTime</dataType>
+        <expression>Now()</expression>
+    </formulas>
+    <formulas>
+        <name>Formulafornoodtime</name>
+        <dataType>Number</dataType>
+        <expression>IF(ISBLANK({!$Record.BLN_NoOfTimesOverriden__c}), 1, {!$Record.BLN_NoOfTimesOverriden__c} + 1)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>NoOfTimesOverridden</name>
+        <dataType>Number</dataType>
+        <expression>IF(ISBLANK({!$Record.BLN_NoOfTimesOverriden__c}), 1, {!$Record.BLN_NoOfTimesOverriden__c} + 1)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>TimeinProvisional</name>
+        <dataType>Number</dataType>
+        <expression>{!$Record.BLN_TimeInProvisional__c}+( ( Now() - {!$Record.BLN_LastEntryTimeInProvisional__c}) * 24 * 60 * 60 )</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Provisional Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Provisional Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Booking_status_check</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT {!$Permission.BLN_BypassFlows},
+OR(ISNEW(),ISCHANGED({!$Record.BLN_BookingStatus__c}))
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

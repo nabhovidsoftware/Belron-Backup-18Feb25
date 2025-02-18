@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-7080: A new permission created for the Quality Assurance Assessor persona.</description>
+    <isLicensed>false</isLicensed>
+    <label>Quality Assurance Assessor</label>
+</CustomPermission>

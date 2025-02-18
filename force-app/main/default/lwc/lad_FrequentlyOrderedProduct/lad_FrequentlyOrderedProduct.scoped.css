@@ -1,0 +1,43 @@
+.text-header {
+    font-size: 20px;
+    margin-bottom: 0.5%;
+    font-weight: 500;
+}
+
+.products-container {
+    display: flex;
+    gap: 1%;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    flex: 1;
+}
+
+.product-item {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.product-item-name,
+.product-item-code {
+    margin-bottom: 5px;
+}
+
+.product-item-code,
+.product-button {
+    flex: 1;
+    display: flex;
+    align-content: end;
+    flex-wrap: wrap;
+}

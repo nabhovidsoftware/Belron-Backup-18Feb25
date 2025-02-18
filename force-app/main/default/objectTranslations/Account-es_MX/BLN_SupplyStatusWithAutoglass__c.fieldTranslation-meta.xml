@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Supply status with Autoglass® --></label>
+    <name>BLN_SupplyStatusWithAutoglass__c</name>
+    <picklistValues>
+        <masterLabel>Leakage Supplier</masterLabel>
+        <translation><!-- Leakage Supplier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Supply Agreement</masterLabel>
+        <translation><!-- No Supply Agreement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Preferred Supplier</masterLabel>
+        <translation><!-- Preferred Supplier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sole Supplier</masterLabel>
+        <translation><!-- Sole Supplier --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

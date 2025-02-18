@@ -1,0 +1,25 @@
+.alinkcss{
+    font-family: roboto;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: #00589C;
+}
+.reschedulebuttoncss{
+    width: 100% !important;
+    height: 48px !important;
+    color: #FFFFFF !important;
+    /* font-family: sans-serif; */
+     font-family: 'Roboto Condensed';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 5% !important;
+
+    background-color: #568300;
+    border: none;
+    border-radius: 8px;
+}

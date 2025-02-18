@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <name>Copy_2_of_Set_Gantt_Status_Color</name>
+        <label>Set Gantt Status Color</label>
+        <locationX>842</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttColor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GanttColors</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttIcon__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GanttIconURL</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AppointmentRebook__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AppointmentRebook</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttLabel__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NewGanttLabel</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Gantt_Color</name>
+        <label>Set Gantt Color</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttColor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.BLN_LightGrey</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_Gantt_Status_Color</name>
+        <label>Set Gantt Status Color</label>
+        <locationX>578</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttIcon__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>GanttIconURL</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AppointmentRebook__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AppointmentRebook</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttLabel__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NewGanttLabel</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Set_GanttColor</name>
+        <label>Set_GanttColor</label>
+        <locationX>314</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.FSL__GanttColor__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Label.BLN_DarkGrey</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_GanttColors</name>
+        <label>Check GanttColors</label>
+        <locationX>710</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Copy_2_of_Set_Gantt_Status_Color</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>GanttColorsNull</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GanttColors</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Set_Gantt_Status_Color</targetReference>
+            </connector>
+            <label>GanttColors Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Gantt_Color_Decision</name>
+        <label>Gantt Color Decision</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Get_Icon</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_for_Pending_Customer_Handover</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_Completed</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_PendingCustomerHandover</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_Replacements</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_ReplaceAndRecal</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_RepairSkill</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_Recalibration</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_WarrantyReplacement</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Gantt_Color</targetReference>
+            </connector>
+            <label>Check for Pending Customer Handover</label>
+        </rules>
+        <rules>
+            <name>Check_for_Customer_Handover_Completed</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Completed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SubStatus__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_CustomerHandoverCompleted</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_Replacements</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_ReplaceAndRecal</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_RepairSkill</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_Recalibration</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WorkType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_WarrantyReplacement</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_GanttColor</targetReference>
+            </connector>
+            <label>Check for Customer Handover Completed</label>
+        </rules>
+    </decisions>
+    <description>FOUK-146,FOUK-53--&gt;This flow sets appointment gantt, color and label information.
+FOUK-3831 --&gt; Added changes for Light Grey Color on Gantt for SA</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AppointmentRebook</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(NOT({!$Record.BLN_AppointmentRebook__c})&amp;&amp;TEXT({!$Record.BLN_JobComments__c})=&quot;Multiple Failed Appointments&quot;,
+True,
+{!$Record.BLN_AppointmentRebook__c})</expression>
+    </formulas>
+    <formulas>
+        <name>CurrentUserID</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <formulas>
+        <name>GanttColors</name>
+        <dataType>String</dataType>
+        <expression>CASE(TEXT({!$Record.Status}),
+&apos;Scheduled&apos;,&apos;#b3ffff&apos;,
+&apos;Dispatched&apos;,&apos;#ACE8E2&apos;,
+&apos;Travel&apos;,&apos;#FF8043&apos;,
+&apos;Arrived&apos;,&apos;#B2FFB2&apos;,
+&apos;In Progress&apos;,&apos;#B2FFB2&apos;,
+&apos;Failed After Arrive&apos;,&apos;#ff3333&apos;,
+&apos;Failed Before Arrive&apos;,&apos;#ff3333&apos;,
+&apos;Completed&apos;,&apos;#B3B3B3&apos;,
+&apos;&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>NewGanttLabel</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Account.FirstName}+&apos; &apos;+{!$Record.Account.LastName}+{!Separator}+{!$Record.BLN_VRNInformation__c}</expression>
+    </formulas>
+    <formulas>
+        <name>Separator</name>
+        <dataType>String</dataType>
+        <expression>IF(NOT(ISBLANK({!$Record.Account.LastName})) &amp;&amp;NOT(ISBLANK({!$Record.BLN_VRNInformation__c})),&apos; / &apos;,&apos;&apos;)</expression>
+    </formulas>
+    <interviewLabel>Belron Set Appointment Gantt Color {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Set Appointment Gantt Information</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Icon</name>
+        <label>Get Icon</label>
+        <locationX>710</locationX>
+        <locationY>395</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_GanttColors</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Label</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.BLN_JobComments__c</elementReference>
+            </value>
+        </filters>
+        <object>BLN_FieldServiceIcon__mdt</object>
+        <outputAssignments>
+            <assignToReference>GanttIconURL</assignToReference>
+            <field>BLN_IconURL__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Gantt_Color_Decision</targetReference>
+        </connector>
+        <filterFormula>{!$Permission.BLN_BypassFlows} = False</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>10</triggerOrder>
+    <variables>
+        <name>GanttIconURL</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

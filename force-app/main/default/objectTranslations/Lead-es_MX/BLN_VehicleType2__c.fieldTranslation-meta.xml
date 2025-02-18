@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Vehicle Type 2 has to be different than Vehicle Types 1,3,4 --></help>
+    <label><!-- Vehicle Type 2 --></label>
+    <name>BLN_VehicleType2__c</name>
+</CustomFieldTranslation>

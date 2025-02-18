@@ -1,0 +1,45 @@
+<!--
+  @description       :
+  @author            : Sourabh Bhattacharjee
+  @group             :
+  @last modified on  : 11-22-2024
+  @last modified by  : Sourabh Bhattacharjee
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   09-12-2024   Sourabh Bhattacharjee   Initial Version
+-->
+<template>
+  <header class="header-container">
+    <div class="logo-header">
+      <img src={logoUrl} alt="Logo" class="res-mob-logo" title="Autoglass" style={logoPointer}
+        onclick={handleLogoClick} />
+    </div>
+
+    <template if:false={hidePortion}>
+    <div class="user-header">
+      <div class="dropdown">
+        <div class="user-info">
+          <img src={userUrl} alt="User Icon" class="usericon" width="16" height="18" title={accName} />
+          <p class="usercss" title={accName}>{accName}</p>
+          <img src={dropUrl} alt="User Icon" class="dropicon" width="10" height="6" />
+        </div>
+        <div class="dropdown-content">
+          <a href="javascript:void(0);" class="dropdowncss" onclick={handleHomeClick}>Home</a>
+          <a href="javascript:void(0);" class="dropdowncss" onclick={handleProfileView}>My Profile</a>
+          <a href="javascript:void(0);" class="dropdowncss" onclick={handlePasswordView}>Change Password</a>
+          <a href="javascript:void(0);" class="dropdowncss" onclick={handleLogout}>Logout</a>
+        </div>
+      </div>
+    </div>
+    </template>
+  </header>
+  <template if:false={hidePortion}>
+  <div style="background-color: #f1f1f1; width:100%;">
+  <div class="topnav">
+    <a class="active" href="javascript:void(0);" onclick={handleHomeClick}>Home</a>
+    <img src={navBarArrowImage} if:false={isHome} alt="User Icon" class="arrowicon" width="6px" height="10px" />
+    <span class="topcsscon">{value}</span>
+  </div>
+</div>
+  </template>
+</template>

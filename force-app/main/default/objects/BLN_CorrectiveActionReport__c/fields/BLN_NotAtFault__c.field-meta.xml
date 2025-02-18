@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_NotAtFault__c</fullName>
+    <description>FOUK-3982 USed to Store Not at Fault Description.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please describe in detail why we were not at fault?</inlineHelpText>
+    <label>Not at Fault Description</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

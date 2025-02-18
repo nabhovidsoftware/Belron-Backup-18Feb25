@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_DiffBtwnCreatedDateToday__c</fullName>
+    <description>FOUK:12195, This field is created to store the difference between today&apos;s date and Created Date</description>
+    <externalId>false</externalId>
+    <formula>TODAY() - DATEVALUE( CreatedDate )</formula>
+    <label>Diff Btwn Created Date &amp; Today</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

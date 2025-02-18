@@ -1,0 +1,54 @@
+<template>
+
+    <div class="slds-card">
+        <div class="slds-m-around_medium">
+            <lightning-button label={label.LinkToExternalFiles} title={label.LinkToExternalFiles}
+                onclick={handleDocRecords} variant="brand" class="slds-align_absolute-center" icon-name="utility:file">
+            </lightning-button>
+        </div>
+    </div>
+
+
+ <!--Open Modal Window-->
+ <template if:true={isModalOpen}>
+    <!-- Modal/Popup Box LWC starts here -->
+    <lightning-card>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <!-- <lightning-spinner if:true={isLoading}></lightning-spinner> -->
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{label.labelName}</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <!-- lightning-record-edit-form starts here  -->
+                    <lightning-card>
+                           
+                                <lightning-datatable key-field="id" columns={columns} data={docStoreRecordList}
+                                    hide-checkbox-column default-sort-direction={defaultSortDirection}
+                                    sorted-direction={sortDirection} sorted-by={sortedBy} onclick={handleClick}>
+                                </lightning-datatable>
+                            
+                            <template if:false={docStoreRecordList}>
+                                <div class="slds-align_absolute-center" style="height:5rem">{label.NoRecordsToDisplay}</div>
+                            </template>
+                    </lightning-card>
+                </div>
+            </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </lightning-card>
+</template>
+
+   
+   
+</template>

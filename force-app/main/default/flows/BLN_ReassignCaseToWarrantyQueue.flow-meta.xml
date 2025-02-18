@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Unable_To_Assign_Case_To_Warranty_Queue_to_false</name>
+        <label>Unable To Assign Case To Warranty Queue to false</label>
+        <locationX>314</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_UnableToAssignCaseToWarrantyQueue__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Unable_To_assign_if_owner_is_warranty</name>
+        <label>Unable To assign if owner is warranty</label>
+        <locationX>578</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_UnableToAssignCaseToWarrantyQueue__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Update_Unable_To_Assign_Case_To_Warranty_Queue_to_true</name>
+        <label>Update Unable To Assign Case To Warranty Queue to true</label>
+        <locationX>50</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_UnableToAssignCaseToWarrantyQueue__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Queue_Found</name>
+        <label>Check Queue Found</label>
+        <locationX>1073</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Queue_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_queue1</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>get_queue_members</targetReference>
+            </connector>
+            <label>Queue found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Queue_members_found</name>
+        <label>Check Queue members found</label>
+        <locationX>776</locationX>
+        <locationY>611</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>queue_members_found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_queue_members</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>If_case_owner_does_not_exists_in_queue</targetReference>
+            </connector>
+            <label>queue members found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_case_owner_does_not_exists_in_queue</name>
+        <label>If case owner does not exists in queue</label>
+        <locationX>446</locationX>
+        <locationY>719</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_owner_changed_to_other_than_warranty_queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GroupMemberId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_queue1.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Unable_To_Assign_Case_To_Warranty_Queue_to_true</targetReference>
+            </connector>
+            <label>If owner changed to other than warranty queue</label>
+        </rules>
+        <rules>
+            <name>If_owner_changed_to_warranty_queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GroupMemberId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.OwnerId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_queue1.Id</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unable_To_Assign_Case_To_Warranty_Queue_to_false</targetReference>
+            </connector>
+            <label>If owner changed to warranty queue</label>
+        </rules>
+        <rules>
+            <name>Outcome_3_of_If_case_owner_does_not_exists_in_queue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Owner:Group.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BLN_Wrranty</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SubType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Warranty</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unable_To_assign_if_owner_is_warranty</targetReference>
+            </connector>
+            <label>Outcome 3 of If case owner does not exists in queue</label>
+        </rules>
+    </decisions>
+    <description>FOUK- 1365 Re-assign the owner of the Feedback case to the Warranty queue.</description>
+    <environments>Default</environments>
+    <interviewLabel>Reassign Case To Warranty Queue {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Reassign Case To Warranty Queue</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_queue1</name>
+        <label>Get queue</label>
+        <locationX>1073</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Queue_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BLN_Warranty</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Owner:Group.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>get_queue_members</name>
+        <label>get queue members</label>
+        <locationX>776</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Queue_members_found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_queue1.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record__Prior.OwnerId</elementReference>
+            </value>
+        </filters>
+        <object>GroupMember</object>
+        <outputAssignments>
+            <assignToReference>GroupMemberId</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>947</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_queue1</targetReference>
+        </connector>
+        <filterFormula>AND(
+    NOT({!$Permission.BLN_BypassFlows}),
+    OR(
+        {!$Record.RecordType.DeveloperName} = &apos;BLN_Feedback&apos;,
+        AND(
+            {!$Record.RecordType.DeveloperName} = &apos;BLN_JobRequest&apos;,
+            ISPICKVAL({!$Record.BLN_SubType__c}, &apos;Warranty&apos;)
+        )
+    ),
+    ISCHANGED({!$Record.OwnerId}),
+  {!$Record__Prior.OwnerId} = {!$User.Id}
+ 
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>GroupMemberId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue></stringValue>
+        </value>
+    </variables>
+</Flow>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_VATToMotorist</fullName>
+    <active>true</active>
+    <label>VAT To Motorist</label>
+    <picklistValues>
+        <picklist>BLN_AnswerType__c</picklist>
+        <values>
+            <fullName>Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Text</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Picklist</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_AutomaticDiverttoAuthorisationTeam__c</picklist>
+        <values>
+            <fullName>All Cases for Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-PDS Cases for Validation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_ClaimsHandlingFeeSetup__c</picklist>
+        <values>
+            <fullName>Always apply CHF VAT to Insurer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Exclude</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_EDITypeCode__c</picklist>
+        <values>
+            <fullName>CARD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CNOT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MILE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ONUM</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_Excess__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motorist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary Account</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_InheritanceBehaviour__c</picklist>
+        <values>
+            <fullName>Lowest Level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sum</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sum with Lowest Level Precedence</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_Mandatory__c</picklist>
+        <values>
+            <fullName>Mandatory for Case Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mandatory for Quality Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optional</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_OEAuthorization__c</picklist>
+        <values>
+            <fullName>Non-OE Glass Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OE Authorisation Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OE Glass Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OE Glass Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OE Motorist Liability</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_ProductAllowance__c</picklist>
+        <values>
+            <fullName>Allow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Allow All</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do Not Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do Not Show All</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pass Liability</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_Reason__c</picklist>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_Remainder__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motorist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary Account</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_VAT__c</picklist>
+        <values>
+            <fullName>Account</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Motorist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary Account</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

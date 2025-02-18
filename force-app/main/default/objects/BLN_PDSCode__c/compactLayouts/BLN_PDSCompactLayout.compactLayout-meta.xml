@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_PDSCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>BLN_Account__c</fields>
+    <fields>BLN_ContractCode__c</fields>
+    <fields>BLN_SchemeCode__c</fields>
+    <label>PDS Compact Layout</label>
+</CompactLayout>

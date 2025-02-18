@@ -1,0 +1,106 @@
+<!--
+  @description       : Price Match or Adjustment Button visible at Order Summary detail Page
+  @author            : Manoj Varma U
+  @last modified on  : 09-11-2024
+-->
+<template>
+    <template if:true={isLoading}>
+        <section class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </section>
+
+    </template>
+    <template if:true={isButtonVisible}>
+        <lightning-button variant="brand" class="custom-button" label="Price Adjustment" onclick={openModal}>
+
+        </lightning-button>
+
+    </template>
+
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container " style="width:67%; max-width: 58rem;">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleCloseModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium"></h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1"
+                    style="overflow-x: scroll;">
+
+
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered ">
+                        <tr class="slds-line-height_reset" style="font-weight: bold;padding-bottom:5px">
+                            <th><lightning-button-icon icon-name={selectAllName} size="small" label="cancel"
+                                    variant={selectAllVariant} onclick={handleSelectAll}>
+                                </lightning-button-icon></th>
+                            <th>
+                                <span style="display: flex; justify-content: center">
+
+                                    Product Code
+                                </span>
+                            </th>
+                            <th>
+                                <span style="display: flex; justify-content: center">
+
+                                    Quantity
+                                </span>
+                            </th>
+
+                            <th> <span style="display: flex; justify-content: center">
+                                    Pretax Price</span></th>
+                            <th> <span style="display: flex; justify-content: center">
+                                    Adjusted Price</span></th>
+                            <th> <span style="display: flex; justify-content: center">
+                                    Status</span></th>
+                            <th> <span style="display: flex; justify-content: center">
+                                    Reason for Price Adjustment</span></th>
+
+                        </tr>
+                        <template for:each={dataSet} for:item="item">
+                            <tr class="slds-hint-parent" key={item.Id} style={item.background}>
+                                <td><lightning-button-icon data-id={item.Id} class="slds-theme_brand" value={item.Id}
+                                        icon-name={item.iconName} size="small" label="cancel"
+                                        variant={item.buttonVariant} onclick={handleSelectIcon}
+                                        disabled={item.isDisabled}>
+                                    </lightning-button-icon></td>
+                                <td>{item.ProductCode}</td>
+                                <td>{item.Quantity}</td>
+
+
+                                <td><lightning-formatted-number format-style="currency"
+                                        value={item.price}></lightning-formatted-number></td>
+                                <td><lightning-input data-id={item.Id} label="Input" type="number" formatter="currency"
+                                        variant="label-hidden" value={item.adjustedPrice} onchange={handleAdjustedPrice}
+                                        disabled={item.isPriceAdjustmentFieldDisabled}></lightning-input></td>
+                                <td>{item.LAD_Status__c}</td>
+                                <td>
+                                    <span style="top: 6px;position: inherit;width:296px ;display: block;">
+                                        <lightning-combobox name="reason" label="reason" variant="label-hidden"
+                                            options={options} value={value} data-id={item.Id} onchange={handleReason}
+                                            disabled={item.isPriceAdjustmentFieldDisabled}></lightning-combobox>
+                                    </span>
+
+                                </td>
+
+                            </tr>
+                        </template>
+                    </table>
+
+
+                </div>
+
+                <!-- modal footer start-->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={handlePriceAdjustment}>Submit</button>
+                </footer>
+
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

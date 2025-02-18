@@ -1,0 +1,49 @@
+<template>
+   <div class="container">
+   
+        <div >
+            <template if:false={NoVideo}>
+                <div >
+                <template if:true={showReplacementVideo}>
+                    <div  class="showvideocss">
+                        
+                        <div style="margin-bottom: 10px">
+                            <!-- <div style="border-radius:10px;overflow: hidden;width: fit-content;display: flex;height: fit-content;"> -->
+                            <iframe class="iframe" height="200" src="https://www.youtube.com/embed/UnooKoIMmjg" frameborder="0" allowfullscreen></iframe>
+                  <!-- </div> <br><br> -->
+                            <div style="display: inline-block;">
+                                <div style="text-align: center; margin-top:16px;">
+                                    <span class="aboutcss">About  replacements</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="para">
+                            Take a look at our short video above to see how Autoglass® carries out a windscreen replacement.
+                        </div>
+                       
+                    </div>
+                </template>
+                <template if:true={showDefaultVideo}>
+                    <div style="width: 375; margin: auto;">
+                        <div style="  margin-bottom: 10px; ">
+                            <div style="border-radius:10px;overflow: hidden;width: fit-content;display: flex;height: fit-content;">
+
+                            <iframe width="400" height="200" src="https://www.youtube.com/embed/FwLOrSgGPbc" frameborder="0" allowfullscreen></iframe>
+                        </div> <br><br>
+                            <div style="display: inline-block;">
+                                <div style="text-align: center;">
+                                    <span class="aboutcss">About  repair</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="para">
+                            Take a look at our short video above to see how Autoglass® carries out a windscreen repair.
+                        </div>
+                       
+                         </div>
+                </template></div>
+            </template>
+        </div>
+   
+</div> 
+</template>

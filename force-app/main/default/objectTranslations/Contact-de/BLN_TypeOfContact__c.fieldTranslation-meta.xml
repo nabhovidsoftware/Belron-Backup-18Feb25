@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- What is the role in prospect client organization of person submitting lead/web form --></help>
+    <label><!-- Type of Contact --></label>
+    <name>BLN_TypeOfContact__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Damage details whether repairable or not. --></help>
+    <label><!-- Repair Details --></label>
+    <name>BLN_RepairDetails__c</name>
+</CustomFieldTranslation>

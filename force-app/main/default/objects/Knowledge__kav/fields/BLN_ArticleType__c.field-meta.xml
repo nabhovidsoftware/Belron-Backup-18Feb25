@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ArticleType__c</fullName>
+    <description>FOUK-5442 This field is used in flow.</description>
+    <externalId>false</externalId>
+    <label>Article Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ISP Knowledge</fullName>
+                <default>false</default>
+                <label>ISP Knowledge</label>
+            </value>
+            <value>
+                <fullName>Specials Flag</fullName>
+                <default>false</default>
+                <label>Specials Flag</label>
+            </value>
+            <value>
+                <fullName>Insurance Case</fullName>
+                <default>false</default>
+                <label>Insurance Case</label>
+            </value>
+            <value>
+                <fullName>Existing Motorist</fullName>
+                <default>false</default>
+                <label>Existing Motorist</label>
+            </value>
+            <value>
+                <fullName>Features and Benefits</fullName>
+                <default>false</default>
+                <label>Features and Benefits</label>
+            </value>
+            <value>
+                <fullName>VAPs</fullName>
+                <default>false</default>
+                <label>VAPs</label>
+            </value>
+            <value>
+                <fullName>Motability Accounts</fullName>
+                <default>false</default>
+                <label>Motability Accounts</label>
+            </value>
+            <value>
+                <fullName>Appointment Summary</fullName>
+                <default>false</default>
+                <label>Appointment Summary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,30 @@
+.segment-red {
+    background-color: #9f2525;
+    color: white;
+    margin-top: 10px;
+}
+
+.segment-orange {
+    background-color: #cc741d;
+    color: white;
+    margin-top: 10px;
+
+}
+
+.segment-blue {
+    background-color: #211d81;
+    color: white;
+    margin-top: 10px;
+}
+
+.segment-blue,
+.segment-red,
+.segment-orange {
+    font-size: large;
+    border-radius: 10px;
+}
+
+a {
+    --dxp-c-link-text-color: white;
+    --dxp-s-link-text-decoration: underline;
+}

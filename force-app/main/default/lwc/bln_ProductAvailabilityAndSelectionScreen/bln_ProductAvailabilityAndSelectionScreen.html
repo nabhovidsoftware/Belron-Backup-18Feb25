@@ -1,0 +1,323 @@
+<template>
+    <div class="slds-box">
+        <template lwc:if={showSpinner}>
+            <lightning-spinner a alternative-text="Loading..." size="medium" variant="brand"></lightning-spinner>
+        </template>
+
+        <template lwc:elseif={showProductSelectionPage}>
+            <!-- Product selection header -->
+            <div class="slds-grid prd-selection-grid-header">
+                <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12">{label.select}</div>
+                <div class="slds-col slds-m-horizontal_xxx-small slds-size_6-of-12">{label.product}</div>
+                <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12">{label.productCodeLabel}</div>
+
+                <div class="slds-col slds-size_4-of-12 no-border">
+                    <div class="slds-grid prd-selection-grid-header">
+                        <div class="slds-col slds-m-horizontal_xxx-small ">{label.quantity}</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5">{label.Net}</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5">{label.Vat}</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5">{label.Total}</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small no-border slds-size_1-of-5"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product selection rows -->
+            <template for:each={productList} for:item="row">
+                <template if:false={row.hideOnUI}>
+                <div class="slds-grid prd-selection-grid-row slds-m-vertical_xxx-small slds-grid_vertical-align-end"
+                    key={row.itemIndex}>
+                    <!-- Product select checkbox for parent products -->
+                    <template if:false={row.isChild}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 center-align check-box-class">
+                            <lightning-input type="checkbox-button" variant="label-hidden"
+                                data-check-box-status={row.activeElement} data-index={row.itemIndex}
+                                                data-prod-code={row.mdmId} data-is-checked-by-default={row.isCheckedByDefault}
+                                                data-optional-value={row.selectProduct} data-bom-id={row.bomId}
+                                                data-hierarchy={row.hierarchy} value={row.mdmId} checked={row.checked}
+                                                onchange={handleCheckboxClick}>
+                            </lightning-input>
+                        </div>
+                    </template>
+
+                    <!-- Product name for Parent Products -->
+                    <template if:false={row.isChild}>
+                            <div class="slds-col slds-m-horizontal_xxx-small slds-size_6-of-12 productLine">
+                                {row.productDescription}
+                            </div>
+                            <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 productLine">
+                                {row.belronProductCode}
+                            </div>
+                    </template>
+
+                    <!-- Product select checkbox column empty for child products -->
+                    <template if:true={row.isChildBOM}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 no-border"></div>
+                    </template>
+
+                    <!-- Product select checkbox for child products and product name -->
+                    <template if:true={row.isChildBOM}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_7-of-12 no-border">
+                                <div class="slds-grid prd-selection-grid-row">
+                                        <div class=" check-box-class">
+                                    <lightning-input type="checkbox-button" variant="label-hidden"
+                                        data-check-box-status={row.activeElement} data-index={row.itemIndex}
+                                        data-prod-code={row.mdmId}
+                                        data-is-checked-by-default={row.isCheckedByDefault}
+                                                            data-optional-value={row.optionalAttributeValue} data-bom-id={row.bomId}
+                                                            data-hierarchy={row.hierarchy} value={row.mdmId} checked={row.checked} 
+                                                            data-child-mandatory={row.childMandatory} onchange={handleCheckboxClick}>
+                                        </lightning-input>
+                                    </div>
+                                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_10-of-12 productLine">
+                                            {row.productDescription}
+                                        </div>
+                                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 productLine">
+                                            {row.belronProductCode}
+                                        </div>
+                                        
+                                </div>
+                        </div>
+                    </template>
+
+                    <template if:true={row.isChildBundle}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 no-border"></div>
+                    </template>
+
+                    <template if:true={row.isChildBundle}>
+                            <div class="slds-col slds-m-horizontal_xxx-small slds-size_7-of-12 no-border">
+                                <div class="slds-col slds-m-horizontal_xxx-small slds-size_10-of-12 productLine">
+                                        {row.productDescription}
+                                </div>
+                                <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-12 productLine">
+                                    {row.belronProductCode}
+                                </div>
+
+                                </div>
+                            </template>
+                    
+                    <!-- Quantity, Price and Add All action columns  -->
+                    <div class="slds-col slds-size_4-of-12 no-border">
+                        <div class="slds-grid prd-selection-grid-row">
+                            <div class="slds-col slds-m-horizontal_xxx-small">
+                                <lightning-input type="number" variant="label-hidden" step="1" min="1"
+                                    value={row.quantity} data-product-code-qty={row.mdmId}
+                                    data-index-qty={row.itemIndex} data-bom-id-qty={row.bomId}
+                                    data-hierarchy-qty={row.hierarchy} disabled={row.isQtyDisabled}
+                                    onchange={handleQtyChange}>
+                                </lightning-input>
+                            </div>
+                            <div
+                                class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5 slds-align_absolute-center">
+                                {row.netPrice}</div>
+                            <div
+                                class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5 slds-align_absolute-center">
+                                {row.totalTax}</div>
+                            <div
+                                class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5 slds-align_absolute-center">
+                                {row.netPriceIncludingTax}</div>
+                            <div class="slds-col slds-m-horizontal_xxx-small no-border slds-size_1-of-5">
+                            <template if:true={row.isParent}>
+                                <button class="slds-button slds-button_neutral add-all-bttn"
+                                    data-product-code-add-bttn={row.mdmId} data-bom-id-add-bttn={row.bomId}
+                                        data-index-add-bttn={row.itemIndex} disabled={row.isAddAllDisabled}
+                                        name="Add All" onclick={handleAddAllClick}>
+                                            {label.addAll}
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            </template>
+            
+            <!-- Target Price Input -->
+            <div if:true={isCashJourney} class="slds-grid slds-m-top_medium slds-grid_align-end">
+                <div class="slds-col slds-p-left_x-small slds-size_4-of-12 no-border">
+                    <div class="slds-grid prd-selection-grid-header">
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_3-of-5"><!--{label.discount} -->
+                            Agreed Price</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_1-of-5 no-border">
+                            <lightning-input id="agreed" type="number" variant="label-hidden" step="0.01" min="0"
+                                onchange={handleAgreedPriceChange} value={agreedPrice}
+                                message-when-range-overflow={label.discountError} disabled={isDiscountDisabled}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Discount Band Table start here-->
+            <template if:true={isCashJourney}>
+                <div class="section-title slds-m-horizontal_xxx-small slds-m-top_medium">
+                    {label.discountBandHeader}
+                </div>
+                <div class="slds-grid prd-selection-grid-header slds-m-top_small">
+                    <div class="slds-col slds-m-horizontal_xxx-small slds-size_3-of-12">{label.location}</div>
+                    <div class="slds-col slds-m-horizontal_xxx-small low-offer-color">{label.lowOffer}</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small medium-offer-color">{label.mediumOffer}</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small high-offer-color">{label.highOffer}</div>
+                </div>
+                
+                <template for:each={quoteRanges} for:item="quoteRange">
+                    <div class="slds-grid prd-selection-grid-row slds-m-top_xx-small" key={quoteRange.location}>
+                        <div class="slds-col slds-m-horizontal_xxx-small slds-size_3-of-12 center-align">
+                            {quoteRange.location}
+                        </div>
+                        <div class="slds-col slds-m-horizontal_xxx-small center-align">{quoteRange.lowOffer}</div>
+                            <div class="slds-col slds-m-horizontal_xxx-small center-align">{quoteRange.mediumOffer}</div>
+                        <div class="slds-col slds-m-horizontal_xxx-small center-align">{quoteRange.highOffer}</div>
+                    </div>
+                </template>
+            </template>
+        
+            <!-- Insurance liability split -->
+            <template if:false={isCashJourney}>
+                <div class="liability-section slds-p-top_x-small">
+                    <div class="slds-grid prd-selection-grid-header slds-align_absolute-center">
+                        <span
+                            class="slds-col slds-size_4-of-12 slds-m-horizontal_xxx-small center-align">{label.Name}</span>
+                        <!-- <span
+                            class="slds-col slds-size_3-of-12 slds-m-horizontal_xxx-small center-align">{label.Net}</span> -->
+                        <span
+                            class="slds-col slds-size_4-of-12 slds-m-horizontal_xxx-small center-align">{label.Vat}</span>
+                        <span
+                            class="slds-col slds-size_4-of-12 slds-m-horizontal_xxx-small center-align">{label.Total}</span>
+                    </div>
+                    <template for:each={liabilityList} for:item="row">
+                        <div class="slds-grid prd-selection-grid-row slds-align_absolute-center" key={row.liabilityCategory}>
+                            <span
+                                class="slds-col slds-size_4-of-12 slds-m-horizontal_xxx-small center-align">{row.liabilityCategory}</span>
+                            <!-- <span
+                                class="slds-col slds-size_3-of-12 slds-m-horizontal_xxx-small center-align">{row.totalPayable}</span> -->
+                            <span
+                                class="slds-col slds-size_4-of-12 slds-m-horizontal_xxx-small center-align">{row.totalTaxPayable}</span>
+                            <span
+                                class="slds-col slds-size_4-of-12 slds-m-horizontal_xxx-small center-align">{row.totalIncludingTaxPayable}</span>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template if:true={showLocationPanel}>
+                <div class="location-section">
+                    <c-bln-_-product-available-locations is-product-selected={isProductSelected}
+                        earliest-date-list={earliestDateList} selected-product-list={selectedProductList}
+                        location-data={locationList} selected-location={selectedLocation} current-payload={currentPayload}
+                        is-cash-journey={isCashJourney} onreceiveselectedlocation={handleSelectedLocation}
+                        product-list={productList} has-completed-appointments={hasCompletedAppointments} from-cn-r-flow={fromCnRFlow}
+                        sub-type={subType} location-disabled-ps={locationDisabled} case-id={caseId} onreceiveappointmentdata={handleAppointmentData}
+                        onearliestavaidetailfromlocation={earliestavaiDetailfromlocationHandler}>
+                    </c-bln-_-product-available-locations>
+                </div>
+            </template>
+
+            <template if:true={showArticleComp}>
+                <c-bln-_-product-identification-scripts article-list={articleList} selected-prod={lastSelectedProd} case-id={caseId} 
+                displayed-articles={displayedArticles} checked-event={checkedEvent} selected-product-list={selectedProductList} add-on-product-list={addOnProductList}
+                is-first-load-complete={isFirstLoadComplete} ontrackarticledisplay={handleDisplayedArticles} adas-product-list={adasProductList}></c-bln-_-product-identification-scripts>
+            </template>   
+
+            <footer class="footer slds-modal__footer slds-m-top_small">
+                <div class="slds-m-top_xx-small">
+                    <!-- <div class="slds-col slds-size_1-of-2 slds-text-align_left"></div> -->
+                    <div class="slds-text-align_right">
+                        <template if:false={showConfirmButton}>
+                            <button class="button_next slds-button slds-button_brand" disabled={isNextDisabled}
+                                name="Next" type="button" part="button" onclick={handleNextClick}> {label.next}
+                            </button>
+                            </template>
+                        <button class="button_reprice slds-button slds-button_brand" disabled={isRepriceBttnDisabled}
+                            name="Reprice" type="button" part="button" onclick={handleRepriceClick}> {label.reprice}
+                        </button>
+                        <template if:true={showConfirmButton}>
+                            <button class="button_reprice slds-button slds-button_brand" disabled={isConfirmDisabled}
+                                name="Confirm" type="button" part="button" onclick={handleConfirmClick}> Confirm
+                            </button>
+                        </template>
+                        <button class="button_cancel slds-button slds-button_text-destructive" name="Cancel"
+                            type="button" part="button" onclick={handleCancelClick}> {label.cancel} </button>
+                    </div>
+                 </div>
+            </footer>
+        </template>
+        <template lwc:elseif={showAppointmentBookingPage}>
+            <c-bln-_-schedule-appointment-container liability-list={liabilityList} earliest-date-list={earliestDateList}
+                location-list={locationList} quote-data-list={quoteDataList} appointment-id={appointmentId} earliest-date={earliestDate}
+                selected-location={selectedLocation} add-on-product-list={addOnProductList} case-id={caseId}
+                is-change-product-first-time={isChangeProductFirstTime} hidden-product-list={hiddenProductList}
+                discount={discountAmount} is-product-selected={isProductSelected} case-type={caseType} first-screen-visited={firstScreenVisited}
+                case-sub-type={caseSubType} selected-product-list={selectedProductList} current-payload={currentPayload}
+                is-cash-journey={isCashJourney} onsend={handleBackArray} task-id={taskId account-id={accountId}
+                is-first-screen={isFirstScreen} is-rebookingchild={isRebookingchild} is-rebook-assign={isRebookAssign}
+                adress-list={adressList} onoldproduct={handleOldProduct} product-data-list-rebook={productDataListRebook} is-location-change={isLocationChange}
+                old-selected-product-list={oldSelectedProductList} old-add-on-product-list={oldAddOnProductList}
+                is-change-product={isChangeProduct} is-rebooking={isRebooking} all-order-items-list={allOrderItemsList} quote-location={quoteLocation}
+                existing-product-data={existingProductData} get-quote-payload={currentPayload} onchangeproductclick={handleChangeProductSA} earliest-data-detail={earliestDataDetail} bom-id-with-promse-date-time={bomIdWithPromseDateTime}></c-bln-_-schedule-appointment-container>
+        </template>
+    </div>
+    
+    <!--Added for FOUK-3801 start-->
+    <!-- modal start -->
+    <template if:true={isShowModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={hideModalBox}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">{label.close}</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate high-offer-color" >
+                        <strong>Warning</strong>
+                    </h2>
+                </header>
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_medium slds-text-align_center high-offer-color"
+                    >
+                    <strong>
+                        <p>{label.Authorization_Limit_Error}</p>
+                    </strong>
+                </div>
+                <!-- modal footer start-->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Ok</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- modal end -->
+    <template if:false={isBranchavailable}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+        aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    title="Close" onclick={hideModalBoxForBranch}>
+                    <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                        size="small"></lightning-icon>
+                    <span class="slds-assistive-text">{label.close}</span>
+                </button>
+                <!-- <h2 class="slds-text-heading_medium slds-hyphenate high-offer-color">
+                    <strong>Error</strong>
+                </h2> -->
+            </header>
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium slds-text-align_center" >
+                        <p>No Stock Availability</p>
+                </div>
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick={hideModalBoxForBranch}>Ok</button>
+            </footer>
+        </div>
+    </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+    <!--Added for FOUK-3801 end-->
+</template>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Excess__c</fullName>
+    <externalId>false</externalId>
+    <label>Excess</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Motorist</fullName>
+                <default>false</default>
+                <label>Motorist</label>
+            </value>
+            <value>
+                <fullName>Account</fullName>
+                <default>false</default>
+                <label>Account</label>
+            </value>
+            <value>
+                <fullName>Secondary Account</fullName>
+                <default>false</default>
+                <label>Secondary Account</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

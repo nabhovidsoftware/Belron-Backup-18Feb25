@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Client Priorities --></label>
+    <name>BLN_ClientPriorities__c</name>
+    <picklistValues>
+        <masterLabel>ADAS capabilities</masterLabel>
+        <translation><!-- ADAS capabilities --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brand</masterLabel>
+        <translation><!-- Brand --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Breadth of portfolio offering incl Specials</masterLabel>
+        <translation><!-- Breadth of portfolio offering incl Specials --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Compliance / Standards</masterLabel>
+        <translation><!-- Compliance / Standards --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Convenience &amp; Ease of Doing Business</masterLabel>
+        <translation><!-- Convenience &amp; Ease of Doing Business --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Satisfaction</masterLabel>
+        <translation><!-- Customer Satisfaction --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer service quality (complaint management)</masterLabel>
+        <translation><!-- Customer service quality (complaint management) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Digital capabilities</masterLabel>
+        <translation><!-- Digital capabilities --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESG</masterLabel>
+        <translation><!-- ESG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Global parentage / coverage</masterLabel>
+        <translation><!-- Global parentage / coverage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Innovation</masterLabel>
+        <translation><!-- Innovation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insights / Reporting</masterLabel>
+        <translation><!-- Insights / Reporting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multiple Suppliers</masterLabel>
+        <translation><!-- Multiple Suppliers --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partnership</masterLabel>
+        <translation><!-- Partnership --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Price</masterLabel>
+        <translation><!-- Price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quality of work (incl glass)</masterLabel>
+        <translation><!-- Quality of work (incl glass) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scale &amp; coverage</masterLabel>
+        <translation><!-- Scale &amp; coverage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Speed of service</masterLabel>
+        <translation><!-- Speed of service --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supply chain / Stock availability</masterLabel>
+        <translation><!-- Supply chain / Stock availability --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technical expertise</masterLabel>
+        <translation><!-- Technical expertise --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

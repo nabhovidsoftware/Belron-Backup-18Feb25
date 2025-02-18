@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-2240</description>
+    <environments>Default</environments>
+    <interviewLabel>Show Terms and Conditions {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Show Terms and Conditions</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>FieldServiceMobile</processType>
+    <screens>
+        <name>TermsAndConditions</name>
+        <label>Terms and Conditions</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>TC</name>
+            <fieldText>&lt;p&gt;&lt;a href=&quot;https://www.autoglass.co.uk/terms-of-business/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&amp;nbsp;Terms of Business | Autoglass® UK&lt;/a&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>TermsAndConditions</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+</Flow>

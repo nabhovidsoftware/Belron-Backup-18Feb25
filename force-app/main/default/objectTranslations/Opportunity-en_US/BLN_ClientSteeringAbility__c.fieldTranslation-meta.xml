@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Client steering ability --></label>
+    <name>BLN_ClientSteeringAbility__c</name>
+    <picklistValues>
+        <masterLabel>50% - 60%</masterLabel>
+        <translation><!-- 50% - 60% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>60% - 70%</masterLabel>
+        <translation><!-- 60% - 70% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>70% - 80%</masterLabel>
+        <translation><!-- 70% - 80% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>80% - 90%</masterLabel>
+        <translation><!-- 80% - 90% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>90% - 95%</masterLabel>
+        <translation><!-- 90% - 95% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>&lt;50%</masterLabel>
+        <translation><!-- &lt;50% --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>&gt;95%</masterLabel>
+        <translation><!-- &gt;95% --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

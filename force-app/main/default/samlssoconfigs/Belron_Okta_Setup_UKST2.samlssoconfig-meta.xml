@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SamlSsoConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <identityLocation>SubjectNameId</identityLocation>
+    <identityMapping>Username</identityMapping>
+    <issuer>exkby0mscyqHeODHb417</issuer>
+    <loginUrl>https://belron.okta.com/app/salesforce/exkby0mscyqHeODHb417/sso/saml</loginUrl>
+    <logoutUrl>https://belron.okta.com</logoutUrl>
+    <name>Belron Okta Setup UKST2</name>
+    <oauthTokenEndpoint>https://belronint--ukst2.sandbox.my.salesforce.com/services/oauth2/token</oauthTokenEndpoint>
+    <redirectBinding>false</redirectBinding>
+    <requestSignatureMethod>1</requestSignatureMethod>
+    <requestSigningCertId>0P17E000002QMzB</requestSigningCertId>
+    <salesforceLoginUrl>https://belronint--ukst2.sandbox.my.salesforce.com</salesforceLoginUrl>
+    <samlEntityId>https://belronint--ukst2.my.salesforce.com</samlEntityId>
+    <samlVersion>SAML2_0</samlVersion>
+    <useConfigRequestMethod>true</useConfigRequestMethod>
+    <useSameDigestAlgoForSigning>true</useSameDigestAlgoForSigning>
+    <userProvisioning>false</userProvisioning>
+    <validationCert>MIIDnDCCAoSgAwIBAgIGAY36N/PwMA0GCSqGSIb3DQEBCwUAMIGOMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEUMBIGA1UECwwLU1NPUHJvdmlkZXIxDzANBgNVBAMMBmJlbHJvbjEcMBoGCSqGSIb3DQEJARYNaW5mb0Bva3RhLmNvbTAeFw0yNDAzMDExMzMyMDdaFw0zNDAzMDExMzMzMDdaMIGOMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEUMBIGA1UECwwLU1NPUHJvdmlkZXIxDzANBgNVBAMMBmJlbHJvbjEcMBoGCSqGSIb3DQEJARYNaW5mb0Bva3RhLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKzmubbGpt6F1MauL9wxhe6ciuq5PvT86nRLCnasLzolViOakS9QkfGfTILda6jstRZz6Y+/1SXISYM8Kmq+blLIPMBwyT4k4O1iFhR9Oqg9i0nsutSOhkAvHBMgQpt6r25woUf9r01R81cmln5chKeofOM937RUAxA35St5SLJ0UtKjT4i5WfJqnMsj0sEe1iuRNYi8jN+xZ3JZQfvbMRCsb/PC9sXMNptl6hbXnwPdlsPAJfZG/LCGgz/9j4PvNfAwDDtEtlWSlU5U13Ma10GVC+xU/iPpneY8pb95yhnbrho5DP/n+IqgDSYCnxa60DswSFYJ8yQfD6yuVnfEUo0CAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAMnIBV9WqxuJt0A8n8MXwfXjgNSyCnw7ywn6jyH67B5qpZrpnht6H1WSBKpGaoTPJtgUMAUWqvnoa9VuGUwl/TWeleED9r6z8gEKD06WTS1xAvM7nHviTiWvkTMsEdwm57iIv/EHs09nR7m6JyqjR0d/kgHlxqtFtyErY+dqX+xapzwoHkSlMjs4KVt6TQL9ExlgxRHDvmqtoB6Lhds99bYc5HvYDjIXA6kwkyKP6RARUdMAN12lN3A3eWW4sAaO6gz1G/Wrt7JhtJcscRzB0Nl1byfYsSRHqnSAH1YVSZqqchExydOC0GcgoAfAoUQ+Haca1Qyn+No3c2RePtmcC2A==</validationCert>
+</SamlSsoConfig>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK--&gt;1374. This Metadata used to store the field mapping Okta job code</description>
+    <label>Okta User Mapping</label>
+    <pluralLabel>Okta User Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

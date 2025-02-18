@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>BLN_ProductItemSharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Product Item Sharing</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>BLN_HeadOfAutoglassFieldOperations</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>BLN_UK</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

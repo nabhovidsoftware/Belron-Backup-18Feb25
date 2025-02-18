@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Check_the_File_Type</name>
+        <label>Check the File Type</label>
+        <locationX>314</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Image_Type</name>
+            <conditionLogic>(1 OR 2 OR 5) AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_FileType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JPG</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_FileType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PNG</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_ParentObjectName__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_WorkOrderLineItem</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_S3BucketLink__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_FileType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>JPEG</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Populate_WOLI_Links</targetReference>
+            </connector>
+            <label>Image Type</label>
+        </rules>
+        <rules>
+            <name>PDF_Type</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_ParentObjectName__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Label.BLN_WorkOrderLineItem</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_FileType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PDF</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_S3BucketLink__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Service_Report_Link_Via_Email</targetReference>
+            </connector>
+            <label>PDF Type</label>
+        </rules>
+    </decisions>
+    <description>FOUK-9360, FOUK-9361
+This flow will be triggered when the record is created and BLN_S3BucketLink__c is not null. Modified as a part of FOUK-6910</description>
+    <environments>Default</environments>
+    <interviewLabel>After Insert Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>External File Links After Insert Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>452</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_the_File_Type</targetReference>
+        </connector>
+        <filterFormula>{!$Permission.BLN_BypassFlows} = False</filterFormula>
+        <object>BLN_ExternalFileLinks__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>Send_Repair_Photos_To_Service_Certainty</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>Populate_WOLI_Links</name>
+        <label>Populate WOLI Links</label>
+        <locationX>50</locationX>
+        <locationY>384</locationY>
+        <flowName>BLN_PopulateWOLILinks</flowName>
+        <inputAssignments>
+            <name>externalLinkRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Send_Repair_Photos_To_Service_Certainty</name>
+        <label>Send Repair Photos To Service Certainty</label>
+        <locationX>842</locationX>
+        <locationY>276</locationY>
+        <flowName>BLN_SendRepairPhotosToServiceCertainty</flowName>
+        <inputAssignments>
+            <name>extFileList</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+    <subflows>
+        <name>Send_Service_Report_Link_Via_Email</name>
+        <label>Send Service Report Link Via Email</label>
+        <locationX>314</locationX>
+        <locationY>384</locationY>
+        <flowName>BLN_SendServiceReportLinkViaEmail</flowName>
+        <inputAssignments>
+            <name>externalFileRecord</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

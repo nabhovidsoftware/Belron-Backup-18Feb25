@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please follow format &apos;yyyy-mm-dd&apos; for entering date --></help>
+    <label><!-- Product Start Date --></label>
+    <name>LAD_Product_Start_Date__c</name>
+</CustomFieldTranslation>

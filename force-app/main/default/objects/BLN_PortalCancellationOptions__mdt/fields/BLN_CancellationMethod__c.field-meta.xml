@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_CancellationMethod__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Cancellation Method</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Message</fullName>
+                <default>true</default>
+                <label>Message</label>
+            </value>
+            <value>
+                <fullName>Cancellation without Charge</fullName>
+                <default>false</default>
+                <label>Cancellation without Charge</label>
+            </value>
+            <value>
+                <fullName>Cancellation with charge</fullName>
+                <default>false</default>
+                <label>Cancellation with charge</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

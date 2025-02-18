@@ -1,0 +1,49 @@
+.buttonStyle{
+    background-color: orange;
+    font-size:x-large;
+    font-style:normal;
+    width: 39rem;
+    height: 3rem;
+    color: black;
+    pointer-events: none;
+    margin-left: 17.0rem;
+    margin-top: 1rem;
+    /* font-weight: bold; */
+}
+.errorButton{
+    background-color: red;
+    color: white;
+    font-size:large;
+    font-style:normal;
+    pointer-events: none;
+    margin-left: 17.0rem;
+    width: 39rem;
+    height: 4rem;
+}
+.itemAlignment{
+    margin: 1.2rem 0 0 11.5rem;
+}
+.labelWidth{
+    width: 400px;
+    /* padding-left: 100px; */
+ }
+ .inputBoxWidth{
+    width: 380px;
+    margin-right: 11.5rem ;
+}
+.backButtonWidth{
+    margin-left: 11.5rem;
+}
+.adjustAlign{
+    left:15rem;
+    padding-left: 10rem;
+}
+.amountRed{
+    color:#BA0517;  
+}
+.topMargin{
+    margin-top: 1rem;
+}
+.marginForLookup{
+    margin-top: 15px;
+}

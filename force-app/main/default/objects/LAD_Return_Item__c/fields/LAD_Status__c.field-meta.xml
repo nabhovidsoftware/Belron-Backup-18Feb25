@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Status__c</fullName>
+    <businessStatus>Active</businessStatus>
+    <description>This Field is used to store Status of the Returned Item</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Return Submitted</fullName>
+                <default>true</default>
+                <label>Return Submitted</label>
+            </value>
+            <value>
+                <fullName>Awaiting Inspection</fullName>
+                <default>false</default>
+                <label>Awaiting Inspection</label>
+            </value>
+            <value>
+                <fullName>Return Accepted</fullName>
+                <default>false</default>
+                <label>Return Accepted</label>
+            </value>
+            <value>
+                <fullName>Return Rejected</fullName>
+                <default>false</default>
+                <label>Return Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

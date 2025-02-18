@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <description>
+        FOUK-580,FOUK-1181,FOUK-2898 This lwc component is created to support the Damage Assessment button and getting called from Damage Assessment Flow.
+    </description>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" type="String"/>
+            <property name="name" label="name" type="String" role="outputOnly"/>
+            <property name="IsCancelled" label="IsCancelled" type="String" role="outputOnly"/>
+            <property name="IsWindscreen" label="IsWindscreen" type="String" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs> 
+</LightningComponentBundle>

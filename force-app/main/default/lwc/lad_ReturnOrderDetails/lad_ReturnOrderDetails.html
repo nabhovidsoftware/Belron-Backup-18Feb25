@@ -1,0 +1,45 @@
+<template>
+        <div class="return-section-header">Return Details</div>
+        <div class="slds-box">
+            <div class="return-detail-outer">
+                <div class="return-detail-inner">
+                    <div>
+                        <div class="label">Return Number </div><lightning-formatted-text
+                            value={returnName}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Account </div><lightning-formatted-text
+                            value={accountName}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Status </div><lightning-formatted-text
+                            value={status}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Created By </div><lightning-formatted-text
+                            value={createdBy}></lightning-formatted-text>
+                    </div>
+                </div>
+                <div class="return-detail-inner">
+                    <div>
+                        <div class="label">Currency </div><lightning-formatted-text
+                            value={currency}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Original Order Summary </div><lightning-formatted-text
+                            value={orderSummary}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Owner </div><lightning-formatted-text
+                            value={owner}></lightning-formatted-text>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <div class="return-section-header">Return Order Items</div>
+        <div class="slds-box">
+            <lightning-datatable key-field="id" data={returnItems} columns={columns} hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+</template>

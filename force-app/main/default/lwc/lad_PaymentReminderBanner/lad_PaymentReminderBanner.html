@@ -1,0 +1,31 @@
+<template>
+
+
+    <div if:true={red} class="segment-red slds-card__body_inner">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                Hello {name}, {labels.Red} Click <a href={invoiceURL}>here</a> to pay them
+                now.
+            </lightning-layout-item>
+        </lightning-layout>
+
+    </div>
+    <div if:true={orange} class="segment-orange slds-card__body_inner">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                Hello {name}, {labels.Orange} Click <a href={invoiceURL}>here</a> to pay
+                them now.
+            </lightning-layout-item>
+        </lightning-layout>
+
+    </div>
+    <div if:true={blue} class="segment-blue slds-card__body_inner ">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                Hello {name}, {labels.Blue} Click <a href={invoiceURL}>here</a> to pay them
+                now.
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_VehicleCompactLayout</fullName>
+    <fields>BLN_MakeOfVehicle__c</fields>
+    <fields>BLN_ModelOfVehicle__c</fields>
+    <fields>BLN_BodyType__c</fields>
+    <fields>BLN_Year__c</fields>
+    <fields>BLN_VehicleRegNumber__c</fields>
+    <fields>BLN_VIN__c</fields>
+    <fields>BLN_MVRIS__c</fields>
+    <fields>Name</fields>
+    <fields>BLN_RemedyJobId__c</fields>
+    <label>BLN_VehicleCompactLayout</label>
+</CompactLayout>

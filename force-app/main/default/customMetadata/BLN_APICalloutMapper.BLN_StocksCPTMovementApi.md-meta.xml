@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>StocksCPTMovementApi</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_APITimeout__c</field>
+        <value xsi:type="xsd:double">50000.0</value>
+    </values>
+    <values>
+        <field>BLN_CalloutURL__c</field>
+        <value xsi:type="xsd:string">/gbl/sfdc/v1/stocks/movement</value>
+    </values>
+    <values>
+        <field>BLN_DestinationSystem__c</field>
+        <value xsi:type="xsd:string">Mulesoft</value>
+    </values>
+    <values>
+        <field>BLN_EntityName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>BLN_Environment__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>BLN_EventType__c</field>
+        <value xsi:type="xsd:string">Update</value>
+    </values>
+    <values>
+        <field>BLN_Headers__c</field>
+        <value xsi:type="xsd:string">Content-Type,application/json;</value>
+    </values>
+    <values>
+        <field>BLN_Identification__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>BLN_Merchant__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>BLN_Method__c</field>
+        <value xsi:type="xsd:string">PUT</value>
+    </values>
+    <values>
+        <field>BLN_NamedCredential__c</field>
+        <value xsi:type="xsd:string">callout:BLN_MulesoftRequest</value>
+    </values>
+    <values>
+        <field>BLN_SourceSystem__c</field>
+        <value xsi:type="xsd:string">SFDC</value>
+    </values>
+</CustomMetadata>

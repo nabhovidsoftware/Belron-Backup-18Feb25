@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailServicesFunction xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <apexClass xsi:nil="true"/>
+    <attachmentOption>All</attachmentOption>
+    <authenticationFailureAction>Discard</authenticationFailureAction>
+    <authorizationFailureAction>Bounce</authorizationFailureAction>
+    <emailServicesAddresses>
+        <authorizedSenders>dominika.walega@pwc.com</authorizedSenders>
+        <developerName>emailtosalesforce</developerName>
+        <isActive>true</isActive>
+        <localPart>emailtosalesforce</localPart>
+        <runAsUser>sales.user.charles@pwc.com.ukst2</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
+        <authorizedSenders>jayanti.kumari@pwc.com</authorizedSenders>
+        <developerName>emailtosalesforce1</developerName>
+        <isActive>true</isActive>
+        <localPart>emailtosalesforce</localPart>
+        <runAsUser>jayanti.kumari@pwc.com.belronint.ukst2</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
+        <authorizedSenders>enakshi.g.ghosh@pwc.com</authorizedSenders>
+        <developerName>emailtosalesforce2</developerName>
+        <isActive>true</isActive>
+        <localPart>emailtosalesforce</localPart>
+        <runAsUser>sumeet.lall@pwc.com.belronint.ukst2</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
+        <authorizedSenders>dheeraj.sharma@pwc.com</authorizedSenders>
+        <developerName>emailtosalesforce3</developerName>
+        <isActive>true</isActive>
+        <localPart>emailtosalesforce</localPart>
+        <runAsUser>dheeraj.sharma@pwc.com.belronint.ukst2</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
+        <authorizedSenders>prashant.kumar.singh.tpr@pwc.com</authorizedSenders>
+        <developerName>emailtosalesforce4</developerName>
+        <isActive>true</isActive>
+        <localPart>emailtosalesforce</localPart>
+        <runAsUser>prashant.kumar.singh.tpr@pwc.com.belronint.ukst2</runAsUser>
+    </emailServicesAddresses>
+    <emailServicesAddresses>
+        <authorizedSenders>gagandeep.singh@belronuk.com</authorizedSenders>
+        <developerName>emailtosalesforce5</developerName>
+        <isActive>true</isActive>
+        <localPart>emailtosalesforce</localPart>
+        <runAsUser>gagandeep.singh@belronuk.com.ukst2</runAsUser>
+    </emailServicesAddresses>
+    <functionInactiveAction>Bounce</functionInactiveAction>
+    <functionName>EmailToSalesforce</functionName>
+    <isActive>true</isActive>
+    <isAuthenticationRequired>false</isAuthenticationRequired>
+    <isErrorRoutingEnabled>false</isErrorRoutingEnabled>
+    <isTextAttachmentsAsBinary>false</isTextAttachmentsAsBinary>
+    <isTlsRequired>false</isTlsRequired>
+    <overLimitAction>Bounce</overLimitAction>
+</EmailServicesFunction>

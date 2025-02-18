@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Photos_To_Service_Certainty</name>
+        <label>Send Photos To Service Certainty</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>BLN_UploadPhotoToServiceCertaintyCallout</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>extFileList</name>
+            <value>
+                <elementReference>extFileList</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_UploadPhotoToServiceCertaintyCallout</nameSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <description>Created as a part of FOUK-6910. This metadata will be used to story the image tags for those images which we needs to send to service certainty.</description>
+    <environments>Default</environments>
+    <interviewLabel>Send Repair Photos To Service Certainty {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Repair Photos To Service Certainty</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Photos_To_Service_Certainty</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>extFileList</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>BLN_ExternalFileLinks__c</objectType>
+    </variables>
+</Flow>

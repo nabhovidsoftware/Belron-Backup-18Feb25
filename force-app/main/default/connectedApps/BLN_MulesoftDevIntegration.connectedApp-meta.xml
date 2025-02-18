@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>jayanti.kumari@pwc.com</contactEmail>
+    <label>Belron Mulesoft Integration</label>
+    <oauthConfig>
+        <callbackUrl>https://belronint--ukst2.sandbox.lightning.force.com/services/oauth2/callback</callbackUrl>
+        <certificate>MIIEpTCCA42gAwIBAgIOAYuM22zCAAAAAAZl40wwDQYJKoZIhvcNAQELBQAwgY4xJjAkBgNVBAMMHVNlbGZTaWduZWRDZXJ0aWZpY2F0ZU11bGVzb2Z0MRgwFgYDVQQLDA8wMEQ3RTAwMDAwMEFrbksxFzAVBgNVBAoMDlNhbGVzZm9yY2UuY29tMRYwFAYDVQQHDA1TYW4gRnJhbmNpc2NvMQswCQYDVQQIDAJDQTEMMAoGA1UEBhMDVVNBMB4XDTIzMTEwMTIxNDc1MloXDTI0MTEwMTEyMDAwMFowgY4xJjAkBgNVBAMMHVNlbGZTaWduZWRDZXJ0aWZpY2F0ZU11bGVzb2Z0MRgwFgYDVQQLDA8wMEQ3RTAwMDAwMEFrbksxFzAVBgNVBAoMDlNhbGVzZm9yY2UuY29tMRYwFAYDVQQHDA1TYW4gRnJhbmNpc2NvMQswCQYDVQQIDAJDQTEMMAoGA1UEBhMDVVNBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhachWy54Pkuw4i2Hbto5MyKGDNV37zjk99M6Fjf1Y9rJvVo7/rBtI8h7pX5IFTVI9GPyNsQBeLB4QPLtBKZerpWBGja4eWwXFpbLatjh4IWdr0rgDle1d/4yP1LlZy7ZS50oCAtNJq2Eo9ccQlaidUlS2YxaI+tTmad+CO8uzQs/RV6MTy/5vUAzhr5oDlUaHehNvMrsu8CDAD78DxVJxfoLpjGRRTYaM0ClxjCXmWAFu6JzpePKZ5qL81668zWCBlQOHxqAsIih30YdMD3YuD3WXlawAN2EcJZOWIW1diqfFO+Plb9FTiVBrC6vtZVT1BZ1ZOKxQNSwXgTWnUNAhQIDAQABo4H+MIH7MB0GA1UdDgQWBBTVV0/+ZLlPeL133YWlBnBacHAoUTAPBgNVHRMBAf8EBTADAQH/MIHIBgNVHSMEgcAwgb2AFNVXT/5kuU94vXfdhaUGcFpwcChRoYGUpIGRMIGOMSYwJAYDVQQDDB1TZWxmU2lnbmVkQ2VydGlmaWNhdGVNdWxlc29mdDEYMBYGA1UECwwPMDBEN0UwMDAwMDBBa25LMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQYIOAYuM22zCAAAAAAZl40wwDQYJKoZIhvcNAQELBQADggEBABmgTGQgWGvc7XUqVRxdzMaSH5QaY8FZ1p+ZLgJMOqtEoMqhtcz43cgytJgahkEirDM4seAsCATHBDoxuFPH1EkYXzQIymo7UvodnhQnw095AFEpRnF1GAW2wPXSxPjugXxVM8FAXw1TAufYBS3y6WLA//6GZFbLoz/rJwuKONJ/kc88moNcZkNYscJJYd/GnIJWNKjWq7m+pRvcNSUYMEYvIUDXIWI9YXH9aN3/TrUoenh+9pM6RjA4g1U2a7i7uDoXOORHHDNmj8EGtqHiaRShNwNPNuwyduUrC8rmJXJWtPY3IWlmhKiVzSrkcmHxDeZvpZgxEk3cTCyU9NM9hQ8=</certificate>
+        <consumerKey>3MVG92u_V3UMpV.g0e3JYZAtFJLodeH5g_dPAjFtv_Am29IGYjYZ8mLNan_7El5TTaKMmkkUTRf5TqgO7x1bA</consumerKey>
+        <isAdminApproved>true</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+        <isPkceRequired>true</isPkceRequired>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+    <profileName>System Administrator</profileName>
+    <profileName>Belron Integration Profile</profileName>
+</ConnectedApp>

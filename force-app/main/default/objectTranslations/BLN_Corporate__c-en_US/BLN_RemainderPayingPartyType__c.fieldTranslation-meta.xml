@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Remainder Paying Party Type --></label>
+    <name>BLN_RemainderPayingPartyType__c</name>
+    <picklistValues>
+        <masterLabel>Account</masterLabel>
+        <translation><!-- Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate</masterLabel>
+        <translation><!-- Corporate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Insurer</masterLabel>
+        <translation><!-- Insurer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Motorist</masterLabel>
+        <translation><!-- Motorist --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Secondary</masterLabel>
+        <translation><!-- Secondary --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

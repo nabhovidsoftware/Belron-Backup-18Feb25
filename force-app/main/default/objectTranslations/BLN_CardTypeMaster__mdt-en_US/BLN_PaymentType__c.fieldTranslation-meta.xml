@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Type --></label>
+    <name>BLN_PaymentType__c</name>
+    <picklistValues>
+        <masterLabel>BRANCH BANKING</masterLabel>
+        <translation><!-- BRANCH BANKING --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CHIP &amp; PIN</masterLabel>
+        <translation><!-- CHIP &amp; PIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ECOMMERCE</masterLabel>
+        <translation><!-- ECOMMERCE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ONLINE PAYMENT</masterLabel>
+        <translation><!-- ONLINE PAYMENT --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

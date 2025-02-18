@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>BLN_VehicleSharingRule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-2281 This is used to share Vehicle Records with UK Roles And Subordinates public group.Change Under FOUK-12669</description>
+        <label>Vehicle Sharing Rule</label>
+        <sharedTo>
+            <group>BLN_RoleInternalAndPortalSubordinatesUK</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BLN_RoleInternalAndPortalSubordinatesUK</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

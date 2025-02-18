@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SpecialVehicle__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FOUK-3620 This field is used to check if vehicle is a special vehicle or not for vehicle type.</description>
+    <externalId>false</externalId>
+    <label>Special Vehicle</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

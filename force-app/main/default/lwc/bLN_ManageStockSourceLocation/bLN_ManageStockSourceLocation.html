@@ -1,0 +1,80 @@
+<template>
+    <lightning-card>
+        <template for:each={appointmentList} for:item="appointment">
+            <template for:each={appointment.appointments} for:item="app">
+                <div key={app} style="display: flex;" class="appointmentHeader">
+                    <h4 class="slds-m-horizontal_x-large" style="margin-left:36%">{app.appointmentName}</h4>
+                    <h4>{app.locationName}</h4>
+                    <h4 class="slds-m-horizontal_x-large">{app.slotSelectedDate}</h4>
+                </div>
+                <div key={app} class="slds-grid slds-gutters slds-m-left-small">
+                    <div class="slds-col slds-size_3.5-of-8 border  slds-m-left_x-small slds-m-right_x-small">
+                        <span>{label.ProductName}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.StockStatus}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.StockLocation}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.EarliestAvailability}</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-8 border slds-m-right_x-small">
+                        <span>{label.CollectManually}</span>
+                    </div>
+                </div>
+                <template for:each={app.productAvailibilities} for:item="productAvl">
+                    <template for:each={productAvl.products} for:item="product">
+                        <div key={product} class="slds-grid slds-gutters">
+                            <div
+                                class="slds-col slds-size_3.5-of-8 slds-m-left_x-small slds-m-right_x-small borderBottom">
+                                <span>{product.productName}</span>
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom">
+                                <span>{product.status}</span>
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom">
+                                <select class="slds-m-top_xx-small slds-m-bottom_x-small option" data-id={product.productCode} onchange={handleChangeLocation}>
+                                    <template for:each={product.option} for:item="option" >
+                                        <option key={option} value={option.value} >{option.label}</option>
+                                    </template>
+                                </select>
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom">
+                                <p><lightning-formatted-date-time data-procode ={product.productCode} value={product.earlyAvlDate} class="avalDateFormat"></lightning-formatted-date-time></p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-8 slds-m-right_x-small borderBottom">
+                                <lightning-input 
+                                    class="checkbox" 
+                                    data-id="checkbox" 
+                                    type="checkbox" 
+                                    onchange={handleOnchangeCheckbox}>
+                                </lightning-input>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </template>
+        <div class="slds-m-top_x-small buttons" lwc:if={buttonVisibility}>
+            <lightning-button 
+                label="Back" 
+                title="Non-primary action"
+                class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button 
+                label="Confirm Changes" 
+                title="Non-primary action" 
+                class="slds-m-left_x-small slds-float_right"
+                disabled={disableButton}>
+            </lightning-button>
+            <lightning-button
+                label="Rebook Appointment" 
+                title="Non-primary action" 
+                onclick={navigateToFlow}
+                class="slds-m-left_x-small slds-float_right"  >
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,41 @@
+<template>
+    
+  
+
+<template if:true={isLoading}>
+    <!-- Bln_ScheduleAppointmentPortal-is loading -->
+    <lightning-spinner variant="brand" size="large" alternative-text="Loading"></lightning-spinner>
+</template>
+
+
+<!--Rebooking code to navigate scheduleAppointment cmp-->
+<template lwc:if={isRebookingchild}>
+   
+    <template if:true={isSchduleAppointment}>
+   
+        <c-bln-_-schedule-appointment-portal liability-list={liabilityList} portalstatus={portalstatus} newshedule={newshedule} rebook-product-data-list={productDataList}
+            onselectionappointmentcontainer={handleAddLocationAdder}
+            earliest-availability-details-list={earliestAvailabilityDetailsList} location-list={locationList} product-reuired-list={productReuiredList}
+            selected-location={locationList} selected-location-options={selectedLocationOptions}
+            add-on-product-list={addOnProductList} earliest-date-list={earliestDateList}
+            selected-product-list={selectedProductList} is-product-summary={isProductSummary}
+            onreceivescreenthree={receivProductData} case-id={caseId} discount={discount} is-connected-call={isConnectedCall} 
+            primary-location={primaryLocation} is-click-add-location={isClickAddLocation} is-add-location={isAddLocation} selected-value={selectedValue} is-cash-journey={isCashJourney} get-quote-payload ={getQuotePayload} is-rebooking={isRebooking} onloadpage1={handleload} >
+        </c-bln-_-schedule-appointment-portal>
+    </template>
+    </template>
+    <template lwc:else>
+        <template if:true={isSchduleAppointment}>
+        <c-bln-_-schedule-appointment-portal liability-list={liabilityList} set-product-data-list={productDataList} newshedule={newshedule} portalstatus={portalstatus} 
+            onselectionappointmentcontainer={handleAddLocationAdder}
+            earliest-availability-details-list={earliestAvailabilityDetailsList} location-list={locationList}
+            selected-location={selectedLocation} selected-location-options={selectedLocationOptions}
+            add-on-product-list={addOnProductList} earliest-date-list={earliestDateList}
+            selected-product-list={selectedProductList} current-payload={currentPayload} is-product-summary={isProductSummary}
+            onreceivescreenthree={receivProductData} case-id={caseId} discount={discount} is-connected-call={isConnectedCall} 
+            primary-location={primaryLocation} is-click-add-location={isClickAddLocation} is-cash-journey={isCashJourney} is-add-location={isAddLocation} selected-value={selectedValue} onloadpage1={handleload}>
+        </c-bln-_-schedule-appointment-portal>
+    </template>
+</template>
+
+</template>

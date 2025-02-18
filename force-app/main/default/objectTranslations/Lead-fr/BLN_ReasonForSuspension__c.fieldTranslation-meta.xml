@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please select Reason why Lead was suspended --></help>
+    <label><!-- Reason for Suspension --></label>
+    <name>BLN_ReasonForSuspension__c</name>
+    <picklistValues>
+        <masterLabel>Autoglass driven</masterLabel>
+        <translation><!-- Autoglass driven --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Client driven</masterLabel>
+        <translation><!-- Client driven --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer unavailable</masterLabel>
+        <translation><!-- Customer unavailable --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

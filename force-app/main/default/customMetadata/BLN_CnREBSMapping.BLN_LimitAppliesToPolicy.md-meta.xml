@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Limit Applies To Policy</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_EBSCnRReason__c</field>
+        <value xsi:type="xsd:string">FI - BOE01 - Excess/Ceiling Incorrect</value>
+    </values>
+    <values>
+        <field>BLN_SFCnRReason__c</field>
+        <value xsi:type="xsd:string">Limit Applies to Policy</value>
+    </values>
+</CustomMetadata>

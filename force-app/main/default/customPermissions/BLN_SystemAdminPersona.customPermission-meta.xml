@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-5742 This custome permission is used for System Admin only</description>
+    <isLicensed>false</isLicensed>
+    <label>System Administrator Persona</label>
+</CustomPermission>

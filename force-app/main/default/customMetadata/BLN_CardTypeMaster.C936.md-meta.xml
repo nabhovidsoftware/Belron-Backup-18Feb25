@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>C936</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_CardLength__c</field>
+        <value xsi:type="xsd:double">17.0</value>
+    </values>
+    <values>
+        <field>BLN_CardTypeID__c</field>
+        <value xsi:type="xsd:double">44.0</value>
+    </values>
+    <values>
+        <field>BLN_CardType__c</field>
+        <value xsi:type="xsd:string">On-line LASER</value>
+    </values>
+    <values>
+        <field>BLN_EndofRange__c</field>
+        <value xsi:type="xsd:double">630499.0</value>
+    </values>
+    <values>
+        <field>BLN_PaymentType__c</field>
+        <value xsi:type="xsd:string">ONLINE PAYMENT</value>
+    </values>
+    <values>
+        <field>BLN_StartofRange__c</field>
+        <value xsi:type="xsd:double">630490.0</value>
+    </values>
+    <values>
+        <field>BLN_Status__c</field>
+        <value xsi:type="xsd:string">Valid</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-11566 Autharization button should be visible only for bvt and concierge role.</description>
+    <isLicensed>false</isLicensed>
+    <label>BLN_Authorisation</label>
+</CustomPermission>

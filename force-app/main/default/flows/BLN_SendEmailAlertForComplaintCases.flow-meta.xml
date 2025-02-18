@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_To_Nominated_Person</name>
+        <label>Email To Nominated Person</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.BLN_NominatedPerson__r.PersonEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>Get_Org_Email.Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Emailbody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedRecordId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>logEmailOnSend</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Update_On_Autoglass_Case_Template</name>
+        <label>Update On Autoglass Case Template</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <actionName>Case.BLN_UpdateOnAutoglassCaseTemplate</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Case.BLN_UpdateOnAutoglassCaseTemplate</nameSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>get_decision</name>
+        <label>get decision</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Update_On_Autoglass_Case_Template</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>getdecision1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_NominatedPerson__r.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Org_Email</targetReference>
+            </connector>
+            <label>getdecision1</label>
+        </rules>
+    </decisions>
+    <description>FOUK-1369, This flow is for Sending Email Alert For Complaint Cases.</description>
+    <environments>Default</environments>
+    <interviewLabel>Update On Autoglass Case Template {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Email Alert For Complaint Cases</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Org_Email</name>
+        <label>Get Org Email</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Email_To_Nominated_Person</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DisplayName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Label.BLN_AutomatedCommsOrgWideEmailName</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>OrgWideEmailAddress</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>get_decision</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Permission.BLN_BypassFlows}),
+    ISPICKVAL({!$Record.Status}, &apos;Closed&apos;),
+    {!$Record.BLN_FCAReportable__c},
+   NOT(ISBLANK({!$Record.Contact.Email})) ,
+    ISPICKVAL({!$Record.BLN_SubType__c}, &apos;Complaint&apos;),
+    NOW() &lt; {!$Record.CreatedDate} +3
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>Emailbody</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Dear&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: medium; font-family: &amp;quot;Times New Roman&amp;quot;;&quot;&gt;{!$Record.BLN_NominatedPerson__r.BLN_AccountName__c},&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Thank you for giving us the opportunity to look into your complaint, which we are handling on behalf of your insurance provider,{!$Record.Parent.BLN_CorporateName__c}. We value your feedback and I am sorry you felt it was necessary to make a complaint.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;I have updated our records to show your complaint is resolved.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Here to help&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;If you are unhappy with the outcome of your complaint or would like us to consider this further, please contact me on 0344 826 8377.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Alternatively, you have the right to refer your complaint to the Financial Ombudsman Service, free of charge – but you must do so within six months of the date of this e-mail. Please note, part of your complaint may fall outside their remit.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;If you do not refer your complaint in time, the Financial Ombudsman Service will only have our permission to consider your complaint in very limited circumstances. For example, if the Financial Ombudsman Service believes the delay was as a result of exceptional circumstances.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12pt; color: rgb(0, 0, 0); font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;The Financial Ombudsman Service has a leaflet outlining how they may help you. This is available on their website at:&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;http://www.financial-ombudsman.org.uk/publications/consumer-leaflet.htm&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: blue; font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;http://www.financial-ombudsman.org.uk/publications/consumer-leaflet.htm&lt;/a&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;. If you require a copy of this by post, please let us know by replying to this email.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12pt; color: rgb(0, 0, 0); font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;The Financial Ombudsman Service may be contacted via the following channels:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12pt; color: rgb(0, 0, 0); font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Post&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;: Financial Ombudsman Service, Exchange Tower, London, E14 9SR&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Telephone:&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;&amp;nbsp;0800 023 4567&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Email&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;mailto:complaint.info@financial-ombudsman.org.uk&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: blue; font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;complaint.info@financial-ombudsman.org.uk&lt;/a&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 12pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Website:&lt;/strong&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 12pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;http://www.financial-ombudsman.org.uk/&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: blue; font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;www.financial-ombudsman.org.uk&lt;/a&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 12pt; font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12pt; color: rgb(0, 0, 0); font-family: &amp;quot;Times New Roman&amp;quot;, serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Yours sincerely&lt;/span&gt;&lt;/p&gt;&lt;p&gt;{!$Record.Owner:User.FirstName} {!$Record.Owner:User.LastName}&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Tel: 0344 826 8377 Ext:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;XXXX&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 11pt; font-family: Arial, sans-serif;&quot;&gt;Email:&amp;nbsp;{!$Record.BLN_NominatedPerson__r.Owner.Email}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-size: medium; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(0, 0, 0);&quot;&gt;You can contact us between 8.30am and 5.30pm Monday to Friday. Calls may be recorded for training and monitoring purposes.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: medium; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(0, 0, 0);&quot;&gt;&lt;img src=&quot;https://belronint--ukdev2.sandbox.file.force.com/file-asset-public/Autoglass_logo?oid=00D7Z000000543T&quot; alt=&quot;Autoglass logo&quot;&gt;&lt;/span&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Update on your Autoglass case - {!$Record.CaseNumber}</text>
+    </textTemplates>
+</Flow>

@@ -1,0 +1,24 @@
+.width-input{
+        
+}
+
+.header-container {
+    background-color: var(--sds-c-brand-primary); /* Org's theme primary color */
+    color: var(--sds-c-brand-primary);
+}
+
+
+.header-title {
+    font-size: 1.0rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--sds-c-brand-primary);
+}
+
+
+.margin-center{
+    margin: auto;
+ /*   max-width: 600px; 
+    text-align: center; */
+
+}

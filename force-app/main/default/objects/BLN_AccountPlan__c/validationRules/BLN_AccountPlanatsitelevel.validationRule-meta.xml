@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AccountPlanatsitelevel</fullName>
+    <active>true</active>
+    <description>FOUK-4763</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.BLN_BypassValidationRules),
+    ISNEW(),
+    ISPICKVAL(BLN_AccountName__r.BLN_Level__c, &apos;Site Account&apos;)
+)</errorConditionFormula>
+    <errorMessage>You cannot create an Account Plan at site level.</errorMessage>
+</ValidationRule>

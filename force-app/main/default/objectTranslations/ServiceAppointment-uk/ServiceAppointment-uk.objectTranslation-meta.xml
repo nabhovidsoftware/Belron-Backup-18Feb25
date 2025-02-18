@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>BLN_ServiceAppointmentLayout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Failure Information --></label>
+            <section>Failure Information</section>
+        </sections>
+        <sections>
+            <label><!-- Fitting Standards --></label>
+            <section>Fitting Standards</section>
+        </sections>
+        <sections>
+            <label><!-- Legacy Information --></label>
+            <section>Legacy Information</section>
+        </sections>
+        <sections>
+            <label><!-- Rebook History --></label>
+            <section>Rebook History</section>
+        </sections>
+        <sections>
+            <label><!-- Rebook Information --></label>
+            <section>Rebook Information</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Change Status --></label>
+        <name>BLN_ChangeStatus</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Fail Appointment --></label>
+        <name>BLN_FailAppointment</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Stock Check-In --></label>
+        <name>BLN_StockCheckIn</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Stock Check-Out --></label>
+        <name>BLN_StockCheckOut</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Technician Call Log --></label>
+        <name>BLN_TechnicianCallLog</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Update Status --></label>
+        <name>BLN_UpdateStatus</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <validationRules>
+        <errorMessage><!-- Please provide Actual End Time. --></errorMessage>
+        <name>BLN_ActualEndDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please do not modify Actual End Time --></errorMessage>
+        <name>BLN_ActualEndTimeLock</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please do not modify the Actual Start Time --></errorMessage>
+        <name>BLN_ActualStartTimeLockBranch</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please do not modify the Actual Start Time --></errorMessage>
+        <name>BLN_ActualStartTimeLockMobile</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide a Failure Reason. --></errorMessage>
+        <name>BLN_FailureReason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please do not select this sub reason --></errorMessage>
+        <name>BLN_FailureReasonFiltering</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please do not select this Sub Failure Reason. --></errorMessage>
+        <name>BLN_FailureReasonMapping</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please do not select Travel for branch appointments. --></errorMessage>
+        <name>BLN_ServiceAppointmentLifecycle</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Service Agent can&apos;t go to this status. --></errorMessage>
+        <name>BLN_StatusTransitionForServiceAgent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sub Failure Reason is required --></errorMessage>
+        <name>BLN_SubFailureReasonRequired</name>
+    </validationRules>
+</CustomObjectTranslation>

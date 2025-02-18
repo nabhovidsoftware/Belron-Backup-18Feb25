@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Primary Reason --></label>
+    <name>BLN_PrimaryReasonCase__c</name>
+    <picklistValues>
+        <masterLabel>Appointment (ETA)</masterLabel>
+        <translation><!-- Appointment (ETA) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer</masterLabel>
+        <translation><!-- Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non Opportunity</masterLabel>
+        <translation><!-- Non Opportunity --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Repairable</masterLabel>
+        <translation><!-- Not Repairable --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

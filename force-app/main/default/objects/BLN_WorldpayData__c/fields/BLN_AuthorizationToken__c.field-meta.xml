@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AuthorizationToken__c</fullName>
+    <description>To store basic auth token for worldpay integration. use the below code to generate for production.
+
+
+String myString = username+&apos;:&apos;+password; 
+Blob myBlob = Blob.valueof(myString);
+String base64EncryptedString = EncodingUtil.base64Encode(myBlob);
+System.debug(base64EncryptedString);</description>
+    <externalId>false</externalId>
+    <label>AuthorizationToken</label>
+    <length>100</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

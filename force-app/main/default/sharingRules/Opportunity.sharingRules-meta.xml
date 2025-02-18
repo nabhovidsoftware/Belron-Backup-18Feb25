@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>LAD_Laddaw_Opportunity_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Laddaw Opportunity Read</label>
+        <sharedTo>
+            <roleAndSubordinates>LAD_Wholesale_Manager</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LAD_Wholesale_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>LAD_Laddaw_Opportunity_Read_Edit</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Laddaw Opportunity Read Edit</label>
+        <sharedTo>
+            <group>LAD_Laddaw_Account_Access</group>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LAD_Wholesale_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

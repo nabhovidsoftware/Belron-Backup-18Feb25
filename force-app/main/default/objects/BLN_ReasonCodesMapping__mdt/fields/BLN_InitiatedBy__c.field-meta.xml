@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_InitiatedBy__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Initiated By</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Belron</fullName>
+                <default>true</default>
+                <label>Belron</label>
+            </value>
+            <value>
+                <fullName>Motorist</fullName>
+                <default>false</default>
+                <label>Motorist</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

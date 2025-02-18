@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__GlobalAction</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" type="String"/>
+            <property name="caseSubtype" label="Case SubType" type="String"/>
+
+            <property name="serviceStreet" label="Service Street" type="String"/>
+            <property name="serviceTown" label="Service Town" type="String"/>
+            <property name="serviceCountry" label="Service Country" type="String"/>
+            <property name="serviceCounty" label="Service County" type="String"/>
+            <property name="servicePostCode" label="Service Post Code" type="String"/>
+            <property name="ispAddress" label="Service ISP" type="Boolean"/>
+            <property name="serviceLongitudeNum" label="Service Longitute Num" type="Integer"/>
+            <property name="serviceLatitudeNum" label="Service Latitude Num" type="Integer"/>
+            <property name="callAderessFlow" label="callAderessFlow" type="Boolean" />
+            <property name="callDataCollectFlow" label="callDataCollectFlow" type="Boolean" />
+            <property name="unhappyAddressFlow" label="unhappyAddressFlow" type="Boolean" />
+            <property name="callAderessFlowNew" label="callAderessFlowNew" type="Boolean" role="inputOnly" />
+            <property name="booleanVariableForFlow" label="booleanVariableForFlow" type="Boolean" />
+            <property name="isCheckFlow" label="isCheckFlow" type="Boolean" />
+            <property name="isAddressType" label="isAddressType" type="Boolean" />
+
+            <property name="billingStreet" label="Billing Street" type="String"/>
+            <property name="billingTown" label="Billing Town" type="String"/>
+            <property name="billingCountry" label="Billing Country" type="String"/>
+            <property name="billingCounty" label="Billing County" type="String"/>
+            <property name="billingPostCode" label="Billing PostCode" type="String"/>
+            <property name="pdsPostalCode" label=" PDS PostCode" type="String" />
+            <property name="pdsPostalCodeNew" label="pdsPostalCodeNew" type="Boolean" role="inputOnly" />
+
+            <property name="outputserviceStreet" label="output Service Street" type="String" role="outputOnly"/>
+            <property name="outputserviceTown" label="output Service Town" type="String" role="outputOnly"/>
+            <property name="outputserviceCounty" label="output Service County" type="String" role="outputOnly"/>
+            <property name="outputserviceCountry" label="output Service country" type="String" role="outputOnly"/>
+            <property name="outputservicePostCode" label="output Service PostCode" type="String" role="outputOnly"/>
+            <property name="outputserviceISPAddress" label="output Service isp" type="Boolean" role="outputOnly"/>
+            <property name="outputserviceLongitudeNum" label="output Service Longitute Num" type="Integer" role="outputOnly"/>
+            <property name="outputserviceLatitudeNum" label="output Service Latitude Num" type="Integer" role="outputOnly"/>
+
+            <property name="outputbillingPostCode" label="output Post Code" type="String" role="outputOnly"/>
+            <property name="outputbillingCountry" label="output Billing Country" type="String" role="outputOnly"/>
+            <property name="outputbillingCounty" label="output Billing County" type="String" role="outputOnly"/>
+            <property name="outputbillingTown" label="output Billing Town" type="String" role="outputOnly"/>
+            <property name="outputbillingStreet" label="output Billing Street" type="String" role="outputOnly"/>
+
+            <property name="isSave" label="isSave" type="String" role="outputOnly"/>
+            <property name="IsCancelled" label="IsCancelled" type="String" role="outputOnly"/>
+            
+        </targetConfig>
+    </targetConfigs>
+    
+
+</LightningComponentBundle>

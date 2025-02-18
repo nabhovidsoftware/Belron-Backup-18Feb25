@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Please set the Original Scheduled Duration and Scheduled Duration and flag the Appointment Duration Variation.</description>
+        <name>Error_Handling</name>
+        <label>Error Handling</label>
+        <locationX>1272</locationX>
+        <locationY>792</locationY>
+        <actionName>BLN_FlowExceptionLogger</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>excmessage</name>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_FlowExceptionLogger</nameSegment>
+    </actionCalls>
+    <apiVersion>54.0</apiVersion>
+    <assignments>
+        <description>Appointment Duration Variation field to mark as increased/decreased.</description>
+        <name>Assign_flag_as_decreased</name>
+        <label>Assign flag as decreased</label>
+        <locationX>1040</locationX>
+        <locationY>479</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AppointmentDurationVariation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AppointmentDurationVariation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_the_Service_Appointment_Record</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Appointment Duration Variation field to mark as increased/decreased.</description>
+        <name>Assign_Flag_as_Increased</name>
+        <label>Assign Flag as Increased</label>
+        <locationX>512</locationX>
+        <locationY>479</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AppointmentDurationVariation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>AppointmentDurationVariation</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_the_Service_Appointment_Record</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Calculate the difference between the Original Scheduled Duration and Planned Duration and text field to mark as reduced/decreased.</description>
+        <name>Compare_Planned_Duration_Original_Scheduled_Duration</name>
+        <label>Compare Planned Duration &amp; Original Scheduled Duration</label>
+        <locationX>771</locationX>
+        <locationY>378</locationY>
+        <defaultConnectorLabel>If Difference is negative:del</defaultConnectorLabel>
+        <rules>
+            <name>If_Difference_is_positive</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PlannedDuration</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Record.BLN_OriginalScheduledDuration__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Duration</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Flag_as_Increased</targetReference>
+            </connector>
+            <label>If Difference is positive</label>
+        </rules>
+        <rules>
+            <name>If_Difference_is_Negative</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>PlannedDuration</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.BLN_OriginalScheduledDuration__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Duration</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_flag_as_decreased</targetReference>
+            </connector>
+            <label>If Difference is Negative</label>
+        </rules>
+    </decisions>
+    <description>FOUK-199--&gt;Compares between Original Scheduled Duration and Planned Duration and text field to mark as reduced/decreased.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Formula field to calculate the difference between Original Scheduled Duration and Planned Duration</description>
+        <name>AppointmentDurationVariation</name>
+        <dataType>Number</dataType>
+        <expression>{!PlannedDuration}-{!$Record.BLN_OriginalScheduledDuration__c}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>CurrentUserId</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <formulas>
+        <description>Variable to store DurationInMinutes</description>
+        <name>DurationInMinutes</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <description>Stores the difference of Scheduled End and Scheduled Start</description>
+        <name>PlannedDuration</name>
+        <dataType>Number</dataType>
+        <expression>(({!ScheduledEnd}-{!$Record.SchedStartTime})*24*60)</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <description>Whenever Duration is Updated Scheduled End should be updated</description>
+        <name>ScheduledEnd</name>
+        <dataType>DateTime</dataType>
+        <expression>{!$Record.SchedStartTime}+{!$Record.Duration/1440}</expression>
+    </formulas>
+    <interviewLabel>Compare Between Original Scheduled Duration And Planned Duration {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Compares Between Original Scheduled Duration And Planned Duration</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Error_Exception_logs</name>
+        <label>Error Exception logs</label>
+        <locationX>1003</locationX>
+        <locationY>789</locationY>
+        <faultConnector>
+            <targetReference>Error_Handling</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>BLN_CurrentUser__c</field>
+            <value>
+                <elementReference>CurrentUserId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_EntityName__c</field>
+            <value>
+                <stringValue>BLN_ComparesBetweenOriginalScheduledDurationAndPlannedDuration</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_ErrorMessage__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_LogType__c</field>
+            <value>
+                <stringValue>Exception</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_MethodStep__c</field>
+            <value>
+                <elementReference>Update_the_Service_Appointment_Record</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_RecordIdIdentifier__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>BLN_FlowException__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <description>Update the Planned duration and based on comparison between Planned Duration and Original Scheduled Duration, mark the flag as Increased/decreased</description>
+        <name>Update_the_Service_Appointment_Record</name>
+        <label>Update the Service Appointment Record</label>
+        <locationX>778</locationX>
+        <locationY>699</locationY>
+        <faultConnector>
+            <targetReference>Error_Exception_logs</targetReference>
+        </faultConnector>
+        <inputAssignments>
+            <field>BLN_AppointmentDurationVariation__c</field>
+            <value>
+                <elementReference>AppointmentDurationVariation</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SchedEndTime</field>
+            <value>
+                <elementReference>ScheduledEnd</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Compare_Planned_Duration_Original_Scheduled_Duration</targetReference>
+        </connector>
+        <filterFormula>{!$Permission.BLN_BypassFlows} = False</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <triggerOrder>50</triggerOrder>
+</Flow>

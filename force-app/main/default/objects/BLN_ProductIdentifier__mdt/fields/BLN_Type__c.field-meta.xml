@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Type__c</fullName>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CHARGES</fullName>
+                <default>true</default>
+                <label>CHARGES</label>
+            </value>
+            <value>
+                <fullName>WINDSCREEN</fullName>
+                <default>false</default>
+                <label>WINDSCREEN</label>
+            </value>
+            <value>
+                <fullName>BODY GLASS</fullName>
+                <default>false</default>
+                <label>BODY GLASS</label>
+            </value>
+            <value>
+                <fullName>PRIME</fullName>
+                <default>false</default>
+                <label>PRIME</label>
+            </value>
+            <value>
+                <fullName>VAPS</fullName>
+                <default>false</default>
+                <label>VAPS</label>
+            </value>
+            <value>
+                <fullName>REPAIR</fullName>
+                <default>false</default>
+                <label>REPAIR</label>
+            </value>
+            <value>
+                <fullName>HIDE ON UI</fullName>
+                <default>false</default>
+                <label>HIDE ON UI</label>
+            </value>
+            <value>
+                <fullName>EXCLUDE FOR APPOINTMENT</fullName>
+                <default>false</default>
+                <label>EXCLUDE FOR APPOINTMENT</label>
+            </value>
+            <value>
+                <fullName>STATIC</fullName>
+                <default>false</default>
+                <label>STATIC</label>
+            </value>
+            <value>
+                <fullName>DYNAMIC</fullName>
+                <default>false</default>
+                <label>DYNAMIC</label>
+            </value>
+            <value>
+                <fullName>STATIC &amp; DYNAMIC</fullName>
+                <default>false</default>
+                <label>STATIC &amp; DYNAMIC</label>
+            </value>
+            <value>
+                <fullName>SPECIALIST CALIBRATION REQUIRED</fullName>
+                <default>false</default>
+                <label>SPECIALIST CALIBRATION REQUIRED</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

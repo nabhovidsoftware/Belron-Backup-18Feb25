@@ -1,0 +1,328 @@
+<template>
+    
+    <div class="center">
+            <div >
+                <strong>{label.CaptureDataCollect}</strong>
+            </div>
+    </div>
+    <div style="max-height:100vh; height:500px">
+        <!-- FOUK-11106 Bug start -->
+        <!-- {showNoArpMessage} -->
+         <template if:true={showSpinnerARP}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+         </template>
+         <template if:false={showSpinnerARP}>
+            <template if:true={showNoArpMessage}>
+                <div class="errorMsg">
+                <p>{label.NoArpErrorMessage}</p>
+            </div>
+            </template>
+    
+            <template if:false={showNoArpMessage}>
+                <!-- FOUK-11106 Bug end-->
+                <!-- FOUK-10506 -->
+                <lightning-accordion allow-multiple-sections-open="true" active-section-name={activeSections}>
+                    <!-- corporate section -->
+                    <template if:true={isCorporate}>
+                        <lightning-accordion-section name="corporate" label={corporateSiteAccountName}>
+                            <template for:each={corporate_freeTextParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    <lightning-input disabled={parameter.disableInput}
+                                    type="text"  class="narrow-input"  name="state"  pattern={parameter.BLN_AnswerValidation__c}
+                                    message-when-pattern-mismatch={parameter.BLN_ValidationMessage__c} 
+                                        value={parameter.selectedTextInputValue} 
+                                        onchange={handleTextInputChange}
+                                        data-parameter-id={parameter.Id}>
+                                    </lightning-input>
+                                </div>
+                            </template>
+                            <template for:each={corporate_freeclosureParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <!-- <span class="strike-symbol slds-is-relative strike"  >*</span> -->
+                                    <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    </div>
+                                    <lightning-input disabled={parameter.disableInput}
+                                    type="text"  class="narrow-input"
+                                        value={parameter.selectedTextInputValue} 
+                                        name="state" 
+                                        pattern={parameter.BLN_AnswerValidation__c}
+                                    message-when-pattern-mismatch={parameter.BLN_ValidationMessage__c} 
+                                        onchange={handleTextInputChange}
+                                        data-parameter-id={parameter.Id}>
+                                    </lightning-input>
+                                </div>
+                            </template>
+                            <template for:each={corporate_freeQualityParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <span class="strike-symbol slds-is-relative strike"  >*</span>
+                                    <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    </div>
+                                    <lightning-input disabled={parameter.disableInput}
+                                    type="text"  class="narrow-input"
+                                        value={parameter.selectedTextInputValue} 
+                                        onchange={handleTextInputChange}
+                                        name="state"  pattern={parameter.BLN_AnswerValidation__c}
+                                    message-when-pattern-mismatch={parameter.BLN_ValidationMessage__c} 
+                                        data-parameter-id={parameter.Id}>
+                                    </lightning-input>
+                                </div>
+                            </template>
+                            <template for:each={corporate_picklistParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    
+                                    <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    <lightning-combobox 
+                                    disabled={parameter.disableInput}
+                                    options={parameter.picklistOptions} 
+                                    value={parameter.selectedOption} 
+                                    onchange={handlePicklistChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                        
+                            <template for:each={corporate_picklistclosureParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <!-- <span class="strike-symbol slds-is-relative strike">*</span> -->
+                                        <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                        </div>
+                                    <lightning-combobox 
+                                    disabled={parameter.disableInput}
+                                    options={parameter.picklistOptions} 
+                                    value={parameter.selectedOption} 
+                                    onchange={handlePicklistChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                        
+                            <template for:each={corporate_picklistQualityParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <span class="strike-symbol slds-is-relative strike">*</span>
+                                        <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                        </div>
+                                    <lightning-combobox 
+                                    disabled={parameter.disableInput}
+                                    options={parameter.picklistOptions} 
+                                    value={parameter.selectedOption} 
+                                    onchange={handlePicklistChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                        
+                            <template for:each={corporate_dateParameters} for:item="parameter">
+                            <div key={parameter.Id} class="input-field slds-m-top_small">
+                                <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                <lightning-input 
+                                    disabled={parameter.disableInput}
+                                    type="date" 
+                                    value={parameter.selectedDate} 
+                                    onchange={handleDateChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                </lightning-input>
+                            </div>
+                            </template>
+                        
+                            <template for:each={corporate_dateclosureParameters} for:item="parameter">
+                            <div key={parameter.Id} class="input-field slds-m-top_small">
+                                <!-- <span class="strike-symbol slds-is-relative strike">*</span> -->
+                                <div class="question">
+                                <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                </div>
+                                <lightning-input 
+                                    disabled={parameter.disableInput}
+                                    type="date" 
+                                    value={parameter.selectedDate} 
+                                    onchange={handleDateChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                </lightning-input>
+                            </div>
+                            </template>
+                        
+                            <template for:each={corporate_dateQualityParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <span class="strike-symbol slds-is-relative strike">*</span>
+                                <div class="question">
+                                <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                </div>
+                                    <lightning-input 
+                                        disabled={parameter.disableInput}
+                                        type="date" 
+                                        value={parameter.selectedDate} 
+                                        onchange={handleDateChange}
+                                        data-parameter-id={parameter.Id}
+                                        class="narrow-input">
+                                    </lightning-input>
+                                </div>
+                            </template>
+                        </lightning-accordion-section>
+                    </template>
+            
+                    <!-- insurance section -->
+                    <template if:true={isInsurance}>
+                        <lightning-accordion-section name="insurance" label={insuranceSiteAccountName}>
+                            <template for:each={insurance_freeTextParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    <lightning-input disabled={parameter.disableInput}
+                                    type="text"  class="narrow-input"  name="state"  pattern={parameter.BLN_AnswerValidation__c}
+                                    message-when-pattern-mismatch={parameter.BLN_ValidationMessage__c} 
+                                        value={parameter.selectedTextInputValue} 
+                                        onchange={handleTextInputChange}
+                                        data-parameter-id={parameter.Id}>
+                                    </lightning-input>
+                                </div>
+                            </template>
+                            <template for:each={insurance_freeclosureParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <!-- <span class="strike-symbol slds-is-relative strike"  >*</span> -->
+                                    <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    </div>
+                                    <lightning-input disabled={parameter.disableInput}
+                                    type="text"  class="narrow-input"
+                                        value={parameter.selectedTextInputValue} 
+                                        name="state" 
+                                        pattern={parameter.BLN_AnswerValidation__c}
+                                    message-when-pattern-mismatch={parameter.BLN_ValidationMessage__c} 
+                                        onchange={handleTextInputChange}
+                                        data-parameter-id={parameter.Id}>
+                                    </lightning-input>
+                                </div>
+                            </template>
+                            <template for:each={insurance_freeQualityParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <span class="strike-symbol slds-is-relative strike"  >*</span>
+                                    <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    </div>
+                                    <lightning-input disabled={parameter.disableInput}
+                                    type="text"  class="narrow-input"
+                                        value={parameter.selectedTextInputValue} 
+                                        onchange={handleTextInputChange}
+                                        name="state"  pattern={parameter.BLN_AnswerValidation__c}
+                                    message-when-pattern-mismatch={parameter.BLN_ValidationMessage__c} 
+                                        data-parameter-id={parameter.Id}>
+                                    </lightning-input>
+                                </div>
+                            </template>
+                            <template for:each={insurance_picklistParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    
+                                    <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                    <lightning-combobox 
+                                    disabled={parameter.disableInput}
+                                    options={parameter.picklistOptions} 
+                                    value={parameter.selectedOption} 
+                                    onchange={handlePicklistChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                        
+                            <template for:each={insurance_picklistclosureParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <!-- <span class="strike-symbol slds-is-relative strike">*</span> -->
+                                        <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                        </div>
+                                    <lightning-combobox 
+                                    disabled={parameter.disableInput}
+                                    options={parameter.picklistOptions} 
+                                    value={parameter.selectedOption} 
+                                    onchange={handlePicklistChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                        
+                            <template for:each={insurance_picklistQualityParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <span class="strike-symbol slds-is-relative strike">*</span>
+                                        <div class="question">
+                                        <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                        </div>
+                                    <lightning-combobox 
+                                    disabled={parameter.disableInput}
+                                    options={parameter.picklistOptions} 
+                                    value={parameter.selectedOption} 
+                                    onchange={handlePicklistChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                    </lightning-combobox>
+                                </div>
+                            </template>
+                        
+                            <template for:each={insurance_dateParameters} for:item="parameter">
+                            <div key={parameter.Id} class="input-field slds-m-top_small">
+                                <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                <lightning-input 
+                                    disabled={parameter.disableInput}
+                                    type="date" 
+                                    value={parameter.selectedDate} 
+                                    onchange={handleDateChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                </lightning-input>
+                            </div>
+                            </template>
+                        
+                            <template for:each={insurance_dateclosureParameters} for:item="parameter">
+                            <div key={parameter.Id} class="input-field slds-m-top_small">
+                                <!-- <span class="strike-symbol slds-is-relative strike">*</span> -->
+                                <div class="question">
+                                <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                </div>
+                                <lightning-input 
+                                    disabled={parameter.disableInput}
+                                    type="date" 
+                                    value={parameter.selectedDate} 
+                                    onchange={handleDateChange}
+                                    data-parameter-id={parameter.Id}
+                                    class="narrow-input">
+                                </lightning-input>
+                            </div>
+                            </template>
+                        
+                            <template for:each={insurance_dateQualityParameters} for:item="parameter">
+                                <div key={parameter.Id} class="input-field slds-m-top_small">
+                                    <span class="strike-symbol slds-is-relative strike">*</span>
+                                <div class="question">
+                                <lightning-formatted-rich-text  value={parameter.BLN_Question__c} ></lightning-formatted-rich-text>
+                                </div>
+                                    <lightning-input 
+                                        disabled={parameter.disableInput}
+                                        type="date" 
+                                        value={parameter.selectedDate} 
+                                        onchange={handleDateChange}
+                                        data-parameter-id={parameter.Id}
+                                        class="narrow-input">
+                                    </lightning-input>
+                                </div>
+                            </template>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            
+                <lightning-button label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+            </template>
+         </template>
+        
+         
+        
+
+    </div>
+</template>

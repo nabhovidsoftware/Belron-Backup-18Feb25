@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Card Type --></label>
+    <name>BLN_CardType__c</name>
+    <picklistValues>
+        <masterLabel>BB Amex</masterLabel>
+        <translation><!-- BB Amex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Carte Bleue</masterLabel>
+        <translation><!-- BB Carte Bleue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Diners</masterLabel>
+        <translation><!-- BB Diners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Electron</masterLabel>
+        <translation><!-- BB Electron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB JCB</masterLabel>
+        <translation><!-- BB JCB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Laser (debit)</masterLabel>
+        <translation><!-- BB Laser (debit) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Maestro (Switch) IN</masterLabel>
+        <translation><!-- BB Maestro (Switch) IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Maestro (Switch) NO IN</masterLabel>
+        <translation><!-- BB Maestro (Switch) NO IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Maestro International</masterLabel>
+        <translation><!-- BB Maestro International --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Mastercard</masterLabel>
+        <translation><!-- BB Mastercard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Solo IN</masterLabel>
+        <translation><!-- BB Solo IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Solo NO IN</masterLabel>
+        <translation><!-- BB Solo NO IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Visa</masterLabel>
+        <translation><!-- BB Visa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Visa Delta</masterLabel>
+        <translation><!-- BB Visa Delta --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Amex</masterLabel>
+        <translation><!-- On-line Amex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Carte Bleue</masterLabel>
+        <translation><!-- On-line Carte Bleue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line International Maestro</masterLabel>
+        <translation><!-- On-line International Maestro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line JCB</masterLabel>
+        <translation><!-- On-line JCB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line LASER</masterLabel>
+        <translation><!-- On-line LASER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Maestro</masterLabel>
+        <translation><!-- On-line Maestro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Mastercard</masterLabel>
+        <translation><!-- On-line Mastercard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Visa</masterLabel>
+        <translation><!-- On-line Visa --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

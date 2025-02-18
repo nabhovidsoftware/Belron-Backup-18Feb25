@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Round to nearest time in multiples of given number. e.g if time is 1:34, should be round down to 1:30 --></help>
+    <label><!-- Rounded Duration (In Minutes) --></label>
+    <name>BLN_RoundedDurationInMinutes__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,413 @@
+<!--
+  @description       : B2C Portal Service Appointment Detail Page
+  @author            : Sourabh Bhattacharjee
+  @group             : Belron B2C Portal
+  @last modified on  : 12-05-2024
+  @last modified by  : Sourabh Bhattacharjee
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   17-08-2024   Sourabh Bhattacharjee   Initial Version
+-->
+<template>
+    <div class="container">
+        <div style="color:#475158;">
+            <p class="namecss">{accountName}</p>
+        </div>
+        <div class="countcss">
+            <h3 class="accountcss">Your appointment</h3>
+            <img src={headUrl} alt="Logo" class="res-mob-logo" width="100" height="6;" />
+        </div>
+        <!-- Display a loading spinner while data is being fetched -->
+        <template if:true={isLoading}>
+            <p>Loading...</p>
+        </template>
+        <div class="wholescreen">
+        <template if:true={portalServiceAppointment}>
+            <div if:true={portalServiceAppointment.isBranchApp}>
+ <!-- Section 1.1: Windscreen Replacement -->
+  
+                <div class="section-containerwhole">
+                <div class="demo-only demo-only--sizing slds-grid slds-wrap section-containercsscolor" >
+                     <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss"> 
+                  
+                       <h2 class="headcss">Glass {portalServiceAppointment.wTformulareplacement}</h2>
+                    <p class="booking-ref">Booking reference: {portalServiceAppointment.caseno}</p>
+        
+             
+                </div>
+            
+                <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+                  <div class="backgroundcss3" style={colourName}  >
+                     <span>  
+                        <img src={iconName}  alt="Logo" class="res-mob-logo" width="17.5px" height="14px;" />    </span>  &nbsp;&nbsp;&nbsp;
+                       
+                        <span 
+                 class="textcss1">{portalServiceAppointment.portalStatusName}   </span>
+                    
+                 
+                    <div if:true={isAppointmentNotCompleted}>
+                        
+                           <div>
+                                        <c-bln-_-portal-rebook 
+                                            -service-appointment-id={portalServiceAppointment.sAid}
+                                            case-id={recordId}
+                                            is-rebooking=true 
+                                            portalstatus ={isAppointmentNotCompleted}
+                                            is-cash-journey=true class="blncss">  
+                                        </c-bln-_-portal-rebook>
+                                    </div>
+                    </div>
+                    <div if:true={isAppointmentCancelled}>
+                        <a href="tel:03339990101">  
+                            <button class="buttoncss">Call: 0333 999 0101</button>  
+                        </a> 
+                    </div>
+                    <div if:true={isTechnicianOnTheWay}>
+                        <button class="buttoncss">Track technican </button>
+                    </div>
+        
+                        
+                    </div>
+                    <div if:true={parentAndChildCases}>
+                    <div class="backgroundcss4" style={colourNamecomplaint} if:true={parentAndChildCases.summarizedStatus}>
+                        <span>  
+                        <img src={iconNamecomplaint}  alt="Logo" class="res-mob-logo" width="17.5px" height="14px;" />   </span>  
+                        <span  class="textcss1">Complaint: {parentAndChildCases.summarizedStatus}</span>
+                        
+                    </div>
+                </div>
+        
+                </div>
+        
+                <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+                   
+             <c-b-l-n-_-show-outstanding-Balance record-id={recordId} service-id={portalServiceAppointment.sAid}></c-b-l-n-_-show-outstanding-Balance>
+                
+               
+                </div>
+            </div>
+        </div> 
+ <!-- Section 2.1: Appointment Information -->
+ <div class="demo-only demo-only--sizing slds-grid slds-wrap section-containercsscolor" style="padding: 12px;">
+    <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+        <!-- <div class="slds-box slds-box_x-small"> -->
+        <p class="textcss"> {portalServiceAppointment.addressS} </p>
+        <p class="textcss1"> {portalServiceAppointment.addressC}</p>
+        <!-- <p class="textcss1"> {portalServiceAppointment.addressState}</p> -->
+        <p class="textcss1"> {portalServiceAppointment.addressP}</p>
+   
+      <!-- </div> -->
+    </div>
+    <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+        <!-- <div class="slds-box slds-box_x-small"> -->
+        <div class="dropseccss">
+        <p class="eventcss">
+            <span>
+                <img src={calenderurl} alt="Logo" class="res-mob-logo" width="14px"
+                    height="16px;" style="margin-top: -0.5rem;" />&nbsp;&nbsp; </span>
+            <span class="textcss"> {portalServiceAppointment.appointmentDateTextFormula} </span>
+        </p>
+        <p class="iconclockcss">
+            <span>
+                <img src={clockurl} alt="Logo" class="res-mob-logo" width="15px" height="16px;"
+                    style="margin-top: -0.3rem;" />&nbsp;&nbsp; </span>
+            <span class="textcss"> {portalServiceAppointment.arrivalTimeFormatted} </span>
+        </p>
+    </div>
+<!-- </div> -->
+    </div>
+     <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+     
+       <div class="backgroundcss">
+        <img src={infourl} alt="Logo" class="res-mob-logo" width="15px" height="14px;" />
+        <div style="margin: -20px 0px 0px 30px;">
+            <p class="textcss1"> Drop-off by 
+                <span class="dropoff1">{portalServiceAppointment.arrivalTimeFormatted}</span>
+            </p>
+            <p class="textcss1">Collect by<span class="dropoff">
+                    {portalServiceAppointment.collectedbymobail}</span>
+            </p>
+        </div>
+  
+</div>
+    </div> 
+   
+    
+
+    <div class="row2css">
+        <!-- Conditional rendering based on showRebookModal -->
+        <template if:true={showRebookModal}>
+            <div class="changeappcsslink" >
+                <!--  #FOUK-4342  STARTS  -->
+                <!-- <p>Change Appointmnet button will visible 1</p> -->
+                <c-bln-_-portal-rebook -service-appointment-id={portalServiceAppointment.sAid}
+                    case-id={recordId} newshedule={newshedule} is-rebooking=true is-cash-journey=true
+                    class="blncss"></c-bln-_-portal-rebook>
+            </div>
+            <!--  #FOUK-4342  ENDS  -->
+        </template>
+        <!-- <div class="changeappcss"><c-bln-_-cancel-service-appoinment-form
+                                service-appointment={portalServiceAppointment.sAid}
+                                case-id={recordId} class="blncss"></c-bln-_-cancel-service-appoinment-form></div> -->
+        <template if:false={showRebookModal}>
+            <div class="changeappcss1">
+                <p class="foterpara1">Can't find what you are looking for?</p>
+                <p class="foterpara2">If you urgently need to change your appointment please call: <a href="tel:03339990101" style="color: #00589C; text-decoration: underline;">0333 999 0101</a></p>
+            </div>
+        </template>
+        <!-- FOUK:9102 END-->
+        <!--  #FOUK-4342  OLD  -->
+        <!-- <div class="changeappcss"><c-bln-_-portal-rebook
+                                -service-appointment-id={portalServiceAppointment.sAid}
+                                case-id={recordId}
+                                is-rebooking=true
+                                is-cash-journey=true class="blncss"></c-bln-_-portal-rebook></div> -->
+        <!-- </div> -->
+    </div>
+    </div>
+<!-- Section 3.1: Appointment Details -->
+    <div class="sectioncontainer3css">
+    <div class="demo-only demo-only--sizing slds-grid slds-wrap section-containercsscolor">
+        <div class="slds-size_12-of-12 paddingcss">
+         
+            <!-- <div class="slds-box slds-box_x-small"> -->
+            <h2 class="h2css">Appointment details</h2>
+            <p style="border-bottom: 1px solid #D6D8DA; margin-top:24px"></p>
+            <div class="lastseccss">
+                <!-- <p><strong>Product & Work Type:</strong> {portalServiceAppointment.produc} - {portalServiceAppointment.WTformula}</p><p><strong>Vehicle Registration Number:</strong> {portalServiceAppointment.Vrgnumber}</p><p><strong>Vehicle:</strong> {portalServiceAppointment.Vyear} {portalServiceAppointment.makeofV} {portalServiceAppointment.modeofv}</p>
+                            -->
+                <p class="headingcss">What</p>
+                <p class="anscss">We will <span
+                        style="font-weight:700;">{portalServiceAppointment.wTformula}</span> your <span
+                        style="font-weight:700;">glass.</span>
+                </p>
+                <p class="headingcss">Vehicle registration </p>
+                <p class="anscss"> {portalServiceAppointment.vrgnumber}</p>
+                <p class="headingcss">Vehicle make</p>
+                <p class="anscss"> {portalServiceAppointment.vyear} {portalServiceAppointment.makeofV}
+                    {portalServiceAppointment.modeofv}</p>
+                <template if:true={showReport}>
+                    <p class="headingcss" style="pointer-events: none;">Reports</p>
+                    <br />
+                    <template for:each={fileList} for:item="file">
+                        <div key={file.Id}>
+                            <a href="#" onclick={handleLinkNavigation} data-link={file.BLN_S3BucketLink__c}
+                                style="font-family: roboto;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 21px;
+                        text-align: left;
+                        text-decoration: underline;
+                        color: #00589C;">
+                                {file.BLN_Category__c} report.{file.BLN_FileType__c} ({file.BLN_FileSize__c} KB)
+                            </a>
+                          
+                        </div>
+                    </template>
+                </template>
+
+            </div>
+            <!-- </div> -->
+            </div>
+        
+    </div>
+    </div>
+
+            </div>
+            <!-- </div> -->
+            <!-- If not branch app -->
+            <div if:false={portalServiceAppointment.isBranchApp}>
+    <!-- Section 1.1: Windscreen Replacement -->
+    <div class="section-containerwhole">
+        <div class="demo-only demo-only--sizing slds-grid slds-wrap section-containercsscolor" >
+            <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+                <!-- <div class="slds-box slds-box_x-small"> -->
+        
+            <h2 class="headcss">Glass {portalServiceAppointment.wTformulareplacement}</h2>
+            <p class="booking-ref">Booking reference: {portalServiceAppointment.caseno}</p>
+
+        <!-- </div> -->
+        </div>
+    
+        <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+            <!-- <div class="slds-box slds-box_x-small"> -->
+    
+          <div class="backgroundcss3" style={colourName}  >
+               
+                <!-- <lightning-icon icon-name='{iconName}' alternative-text="clock" title="success"  size="xx-small" style="margin-right: 8px;"></lightning-icon>
+                -->
+                <span>  
+                <img src={iconName}  alt="Logo" class="res-mob-logo" width="17.5px" height="14px;" />    </span>  &nbsp;&nbsp;&nbsp;
+               
+                <span 
+         class="textcss1">{portalServiceAppointment.portalStatusName}   </span>
+            
+         
+            <div if:true={isAppointmentNotCompleted}>
+                
+                <!-- <button class="buttoncss">Schedule Appointment</button> -->
+                  <!-- <div class="changeappcssbutton"> -->
+                             <!--  #FOUK-4342  STARTS  -->
+                             <!-- <p>Change Appointmnet button will visible</p> -->
+                              <div>
+                                <c-bln-_-portal-rebook 
+                                    -service-appointment-id={portalServiceAppointment.sAid}
+                                    case-id={recordId}
+                                    is-rebooking=true 
+                                    portalstatus ={isAppointmentNotCompleted} onreload={handlerefresh}
+                                    is-cash-journey=true class="blncss" >  
+                                </c-bln-_-portal-rebook>
+                            </div>
+            </div>
+            <div if:true={isAppointmentCancelled}>
+                <button class="buttoncss">Call: 0333 999 0101 </button>
+            </div>
+            <div if:true={isTechnicianOnTheWay}>
+                <button class="buttoncss">Track technican </button>
+            </div>
+
+                
+            </div>
+            <div if:true={parentAndChildCases}>
+            <div class="backgroundcss4" style={colourNamecomplaint} if:true={parentAndChildCases.summarizedStatus}>
+                <span>  
+                <img src={iconNamecomplaint}  alt="Logo" class="res-mob-logo" width="17.5px" height="14px;" />   </span>  
+                <span  class="textcss1">Complaint: {parentAndChildCases.summarizedStatus}</span>
+                
+            </div>
+        </div>
+    <!-- </div> -->
+        </div>
+
+        <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+            <!-- <div class="slds-box slds-box_x-small"> -->
+    
+       
+        
+            <c-b-l-n-_-show-outstanding-Balance record-id={recordId} service-id={portalServiceAppointment.sAid}></c-b-l-n-_-show-outstanding-Balance>
+        
+        <!-- </div> -->
+        </div>
+    </div>
+</div> 
+             <!-- Section 2.1: Appointment Information -->
+             <div class="demo-only demo-only--sizing slds-grid slds-wrap section-containercsscolor" style="padding: 12px;">
+                <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+                    <!-- <div class="slds-box slds-box_x-small"> -->
+                    <p class="textcss"> {portalServiceAppointment.addressS} </p>
+                    <p class="textcss1"> {portalServiceAppointment.addressC}</p>
+                    <p class="textcss1"> {portalServiceAppointment.addressState}</p>
+                    <p class="textcss1"> {portalServiceAppointment.addressP}</p>
+               
+                  <!-- </div> -->
+                </div>
+                <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+                    <!-- <div class="slds-box slds-box_x-small"> -->
+                    <div class="dropseccss">
+                    <p class="eventcss">
+                        <span>
+                            <img src={calenderurl} alt="Logo" class="res-mob-logo" width="14px"
+                                height="16px;" style="margin-top: -0.5rem;" />&nbsp;&nbsp; </span>
+                        <span class="textcss"> {portalServiceAppointment.appointmentDateTextFormula} </span>
+                    </p>
+                    <p class="iconclockcss">
+                        <span>
+                            <img src={clockurl} alt="Logo" class="res-mob-logo" width="15px" height="16px;"
+                                style="margin-top: -0.3rem;" />&nbsp;&nbsp; </span>
+                        <span class="textcss"> {portalServiceAppointment.arrivalTimeFormatted} </span>
+                    </p>
+                </div>
+            <!-- </div> -->
+                </div>
+                <div class="slds-size_1-of-1 slds-medium-size_1-of-3 paddingcss">
+                    <!-- <div class="slds-box slds-box_x-small"> -->
+                      <div class="backgroundcss1">
+                            <img src={infourl} alt="Logo" class="res-mob-logo" width="15px" height="14px;"
+                                style="margin-right: 8px; margin-top: -6px;" />
+                            <div style="margin: -21px 0px 0px 20px;">
+                                <!--  in this dropoffby field have fomula of end date   -->
+                                <p class="textcsstime">Arrival between {portalServiceAppointment.arrivalTimeFormatted}
+                                    and {portalServiceAppointment.collectedbymobail} </p>
+                            </div>
+                        </div>
+                        <div class="backgroundcss2">
+                            <img src={infourl} alt="Logo" class="res-mob-logo" width="15px" height="14px;"
+                                style="margin-right: 8px; margin-top: -6px;" />
+                            <div style="margin: -21px 0px 0px 20px;">
+                                <p class="textcsstime"> It will take {portalServiceAppointment.dure} min to complete
+                                </p>
+                            </div>
+                        </div>
+
+            <!-- </div> -->
+                </div>
+               
+                <div class="row2css">
+                    <template if:true={showRebookModal}>
+                        <div class="changeappcsslink">
+                            <!--  #FOUK-4342  STARTS  -->
+                            <!-- <p>Change Appointmnet button will visible</p> -->
+                            <c-bln-_-portal-rebook -service-appointment-id={portalServiceAppointment.sAid}
+                                case-id={recordId} is-rebooking=true newshedule={newshedule} is-cash-journey=true
+                                class="blncss"></c-bln-_-portal-rebook>
+                        </div>
+                        <!--  #FOUK-4342  ENDS  -->
+                    </template>
+                    <template if:false={showRebookModal}>
+                        <div class="changeappcss1">
+                            <p class="foterpara1">Can't find what you are looking for?</p>
+                            <p class="foterpara2">If you urgently need to change your appointment please call: <a href="tel:03339990101" style="color: #00589C; text-decoration: underline;">0333 999 0101</a></p>
+                        </div>
+                    </template>
+                </div>
+                </div>
+<!-- Section 3.1: Appointment Details -->
+                <div class="sectioncontainer3css">
+                <div class="demo-only demo-only--sizing slds-grid slds-wrap section-containercsscolor">
+                    <div class="slds-size_12-of-12 paddingcss">
+                         <h2 class="h2css">Appointment details</h2>
+                        <p style="border-bottom: 1px solid #D6D8DA; margin-top:24px"></p>
+                        <div class="lastseccss">
+                            <!-- <p><strong>Product & Work Type:</strong> {portalServiceAppointment.produc} - {portalServiceAppointment.WTformula}</p><p><strong>Vehicle Registration Number:</strong> {portalServiceAppointment.Vrgnumber}</p><p><strong>Vehicle:</strong> {portalServiceAppointment.Vyear} {portalServiceAppointment.makeofV} {portalServiceAppointment.modeofv}</p>
+                                        -->
+                            <p class="headingcss">What</p>
+                            <p class="anscss">We will <span
+                                    style="font-weight:700;">{portalServiceAppointment.wTformula}</span> your <span
+                                    style="font-weight:700;">glass.</span>
+                            </p>
+                            <p class="headingcss">Vehicle registration </p>
+                            <p class="anscss"> {portalServiceAppointment.vrgnumber}</p>
+                            <p class="headingcss">Vehicle make</p>
+                            <p class="anscss"> {portalServiceAppointment.vyear} {portalServiceAppointment.makeofV}
+                                {portalServiceAppointment.modeofv}</p>
+                            <template if:true={showReport}>
+                                <p class="headingcss" style="pointer-events: none;">Reports</p>
+                                <br />
+                                <template for:each={fileList} for:item="file">
+                                    <div key={file.Id}>
+                                        <a href="#" onclick={handleLinkNavigation} data-link={file.BLN_S3BucketLink__c}
+                                            style="font-family: roboto;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 21px;
+                                    text-align: left;
+                                    text-decoration: underline;
+                                    color: #00589C;">
+                                            {file.BLN_Category__c} report.{file.BLN_FileType__c} ({file.BLN_FileSize__c} KB)
+                                        </a>
+                                      
+                                    </div>
+                                </template>
+                            </template>
+    
+                        </div>
+                        </div>
+                        </div>
+                    
+                </div>
+                </div>
+            <!-- </div> -->
+        </template>
+    </div>
+    </div>
+</template>

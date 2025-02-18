@@ -1,0 +1,67 @@
+<!--
+  @description       : 
+  @author            : Prajjawal Tiwari
+  @group             : 
+  @last modified on  : 08-23-2024
+  @last modified by  : Prajjawal Tiwari
+-->
+<template>
+   <!-- <lightning-button label="Switch Account" onclick={handleswitchaccount}></lightning-button>
+   <template if:true={buttonClicked}> -->
+   <div>
+      <template if:false={accountSwitcher}>
+
+         You do not have any neccessary permissions to use this feature.
+
+      </template>
+      <template if:true={accountSwitcher}>
+         <div class="displaybox">
+            <div class="header">Switch Account</div>
+            <div class="content">
+               Manage multiple accounts by switching between them without logging out. Use the filter and search for the
+               account to switch to.
+            </div>
+            <div class="masterbox">
+               <div class="select">
+                  <div>
+                     <lightning-combobox label="Filter" required="true" options={dataType} value={selectedInputType}
+                        placeholder="Select Filter" onchange={handlePicklistChange}></lightning-combobox>
+                  </div>
+
+                  <div>
+                     <span style="color: #c23b36;">* &nbsp;</span> <lightning-formatted-text
+                        value="Search"></lightning-formatted-text>
+                  </div>
+                  <div class="input"><input type="text" label="Search" class="inputcomp" required
+                        onkeyup={handleUpdateList} style="width: 100%;"></div>
+                  <div class="slds-align_absolute-center"><lightning-button label="Switch Account" onclick={handleClick}
+                        disabled={buttonDisabled}>
+                     </lightning-button>
+                  </div>
+               </div>
+               <br>
+               <br>
+               <div for:each={AccountListView} for:item="account" key={account.IdStr}>
+
+                  <div class="options">
+                     <span>
+                        <lightning-button-icon icon-name={account.iconName} accountid={account.IdStr}
+                           variant={account.variant} onclick={handleAccountSwitch}></lightning-button-icon>
+                     </span>
+                     <span class="accountdetails">
+                        {account.AccountName}
+                     </span>
+                  </div>
+
+               </div>
+
+
+
+
+
+            </div>
+         </div>
+         <!-- </template> -->
+      </template>
+   </div>
+</template>

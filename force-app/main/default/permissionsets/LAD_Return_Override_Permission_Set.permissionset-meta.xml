@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>LAD_Return_Override_Permission</name>
+    </customPermissions>
+    <description>FOUK-9897: Permission to allow returns over and above the due date</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Return Override Permission Set</label>
+</PermissionSet>

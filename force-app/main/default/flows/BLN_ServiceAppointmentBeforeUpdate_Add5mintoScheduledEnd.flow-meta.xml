@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Update_Scheduled_End_Time</name>
+        <label>Update Scheduled End Time</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.SchedEndTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SchedEndTimePlus5min</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>INC0491615 - workaround for Scheduled Start and Scheduled end having same time</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>SchedEndTimePlus5min</name>
+        <dataType>DateTime</dataType>
+        <expression>IF(
+    DAY(DATEVALUE({!$Record.SchedEndTime})) = DAY(DATEVALUE({!$Record.SchedEndTime} + (5/1440))),
+    {!$Record.SchedEndTime} + (5/1440),
+    {!$Record.SchedEndTime}
+)</expression>
+    </formulas>
+    <interviewLabel>ServiceAppointmentBeforeUpdate - Add 5 min to Scheduled End {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>ServiceAppointmentBeforeUpdate - Add 5 min to Scheduled End</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_Scheduled_End_Time</targetReference>
+        </connector>
+        <filterFormula>{!$Setup.BLN_ProcessDeactivation__c.BLN_DisableLightningFlows__c} = False
+ &amp;&amp; {!$Record.FSL__Duration_In_Minutes__c} = 0
+&amp;&amp; NOT(ISBLANK({!$Record.SchedStartTime}))
+&amp;&amp; NOT(ISBLANK({!$Record.SchedEndTime}))</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

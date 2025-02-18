@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Credit Scoring - Check Status --></label>
+    <name>BLN_CreditScoringCheckStatus__c</name>
+    <picklistValues>
+        <masterLabel>Failed</masterLabel>
+        <translation><!-- Failed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Progress</masterLabel>
+        <translation><!-- In Progress --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not Run</masterLabel>
+        <translation><!-- Not Run --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Success - Auto check</masterLabel>
+        <translation><!-- Success - Auto check --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Success - Manual check</masterLabel>
+        <translation><!-- Success - Manual check --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,8 @@
+.font{
+    font-size: 12px;
+}
+.box{
+    padding: 15px;
+    overflow-y: auto;
+    height: 450px;
+}

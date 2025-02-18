@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Glass/Hole Type --></label>
+    <name>BLN_GlassHoleType__c</name>
+    <picklistValues>
+        <masterLabel>Back Window</masterLabel>
+        <translation><!-- Back Window --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Door</masterLabel>
+        <translation><!-- Door --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partition</masterLabel>
+        <translation><!-- Partition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Quarter</masterLabel>
+        <translation><!-- Quarter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Roof</masterLabel>
+        <translation><!-- Roof --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Side</masterLabel>
+        <translation><!-- Side --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vent</masterLabel>
+        <translation><!-- Vent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Windshield</masterLabel>
+        <translation><!-- Windshield --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

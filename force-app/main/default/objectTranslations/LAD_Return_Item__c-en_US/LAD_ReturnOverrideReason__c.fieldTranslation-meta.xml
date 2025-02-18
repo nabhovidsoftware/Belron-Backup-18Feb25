@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Reason for Return Period Override --></label>
+    <name>LAD_ReturnOverrideReason__c</name>
+    <picklistValues>
+        <masterLabel>Customer Goodwill</masterLabel>
+        <translation><!-- Customer Goodwill --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laddaw Hub Team Issue</masterLabel>
+        <translation><!-- Laddaw Hub Team Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laddaw MDC Issue</masterLabel>
+        <translation><!-- Laddaw MDC Issue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Management Approval</masterLabel>
+        <translation><!-- Management Approval --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shortage Product</masterLabel>
+        <translation><!-- Shortage Product --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,24 @@
+.section-title{
+  line-height: var(--slds-g-font-lineheight-5);
+  font-weight: var(--slds-g-font-weight-5);
+  border: 1px solid var(--sds-g-color-border-1);
+  border-radius: var(--slds-g-radius-border-2);
+  text-align: center;
+}
+
+.section-title-background{
+  background: var(--slds-g-color-neutral-base-95);
+}
+
+.error-background{
+  color:white;
+  background-color: var(--slds-g-color-error-base-60);
+}
+
+.center-align{
+  text-align: center;
+}
+
+.highlight{
+  outline: 3px solid var(--slds-g-color-success-base-70);
+}

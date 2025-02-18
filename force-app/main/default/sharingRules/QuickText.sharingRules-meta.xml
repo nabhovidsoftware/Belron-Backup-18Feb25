@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>BLN_DigitalTeamManagerQueueSharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>FOUK-6186 This is used to share Quick Texts with UK Roles And Subordinates public group owned by Digital Team Manager queue</description>
+        <label>Digital Team Manager Queue Sharing</label>
+        <sharedTo>
+            <group>BLN_DigitalTeamManager</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>BLN_QuickTextSharingRule</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>FOUK-6186 This is used to share Quick Texts with UK Roles And Subordinates public group</description>
+        <label>Quick Text Sharing Rule</label>
+        <sharedTo>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>BLN_UKRolesAndSubordinates</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

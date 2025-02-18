@@ -1,0 +1,24 @@
+lightning-button.button {
+	--sds-c-button-brand-color-background: #94c219;
+  --sds-c-button-brand-color-background-hover: #94c219;
+}
+
+.slds-grid {
+  justify-content: space-between;
+}
+.slds-wrap .slds-col.slds-size_1-of-2:nth-child(odd) {
+  padding-bottom: 10;
+}
+.slds-wrap .slds-col.slds-size_1-of-2:nth-child(even) {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.slds-m-bottom_small {
+  margin-bottom: 0.5rem;
+}
+.slds-float_left {
+  float: left;
+}
+.slds-button_size {
+  width: 200px;
+}

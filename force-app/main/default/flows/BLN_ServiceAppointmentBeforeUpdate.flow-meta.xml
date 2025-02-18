@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assignment_of_cancellation_by_field</name>
+        <label>Assignment of cancellation by field</label>
+        <locationX>50</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_CancellationBy__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>getcustommetadata.BLN_InitiatedBy__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Custom_metadata_is_not_null</name>
+        <label>Check Custom metadata is not null</label>
+        <locationX>380</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Custom_metadata_is_not_null_check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>getcustommetadata</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_failure_and_subfailure_reason</targetReference>
+            </connector>
+            <label>Custom metadata is not null check</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_failure_and_subfailure_reason</name>
+        <label>Check failure and subfailure reason</label>
+        <locationX>182</locationX>
+        <locationY>503</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Failure_sub_failure</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_FailureReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>getcustommetadata.BLN_FailureReasonSA__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_SubFailureReason__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>getcustommetadata.BLN_SubfailureReasonSA__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_of_cancellation_by_field</targetReference>
+            </connector>
+            <label>Failure sub failure</label>
+        </rules>
+    </decisions>
+    <description>FOUK-4618 This flow is used for service appointment cancellation by field update.</description>
+    <environments>Default</environments>
+    <interviewLabel>Service Appointment Before Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Service Appointment Before Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>getcustommetadata</name>
+        <label>getcustommetadata</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Custom_metadata_is_not_null</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BLN_FailureReasonSA__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.BLN_FailureReason__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_SubfailureReasonSA__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.BLN_SubFailureReason__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>BLN_ReasonCodesMapping__mdt</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>getcustommetadata</targetReference>
+        </connector>
+        <filterFormula>ISPICKVAL({!$Record.Status}, &apos;Canceled&apos;) &amp;&amp; NOT(ISBLANK(TEXT({!$Record.BLN_FailureReason__c}))) &amp;&amp; NOT(ISBLANK(TEXT({!$Record.BLN_SubFailureReason__c}))) &amp;&amp; NOT({!$Permission.BLN_BypassFlows})</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

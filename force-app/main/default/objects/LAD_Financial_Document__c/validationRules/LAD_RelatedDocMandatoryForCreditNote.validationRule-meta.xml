@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_RelatedDocMandatoryForCreditNote</fullName>
+    <active>false</active>
+    <description>Rule to check the Type of Financial Document. FOUK-10357</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL( LAD_Type__c, &quot;Credit Note&quot;),
+    ISBLANK( LAD_Related_Document__c ))</errorConditionFormula>
+    <errorMessage>Financial Documents of type Credit Note are required to have the Related Document field populated with the Invoices for which the Credit Notes are generated.</errorMessage>
+</ValidationRule>

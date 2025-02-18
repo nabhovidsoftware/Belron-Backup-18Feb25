@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Category Type --></label>
+    <name>BLN_CategoryType__c</name>
+    <picklistValues>
+        <masterLabel>Additional Inspection</masterLabel>
+        <translation><!-- Additional Inspection --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corrective Action Report</masterLabel>
+        <translation><!-- Corrective Action Report --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed Appointment Photos</masterLabel>
+        <translation><!-- Failed Appointment Photos --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Post-Inspection</masterLabel>
+        <translation><!-- Post-Inspection --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pre-Inspection</masterLabel>
+        <translation><!-- Pre-Inspection --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration</masterLabel>
+        <translation><!-- Recalibration --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

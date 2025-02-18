@@ -1,0 +1,275 @@
+/* .whole-content {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #1a1b1f;
+  align-items: center;
+  overflow: hidden;
+  position: relative; 
+}
+
+.table-grid {
+  width: 100%;
+  height: 100%; 
+  background-image: url('your_background_image_url_here');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  table-layout: fixed; 
+}
+
+.datacells {
+  position: relative;
+}
+
+.datacells .hoverContent {
+  visibility: hidden;
+}
+
+.datacells:hover .hoverContent {
+  visibility: visible;
+  background-color: whitesmoke;
+  color: black;
+}
+
+.grid-container {
+  display: grid;
+  background-color: #1a1b1f;
+  grid-template-columns: 7.5% 85% 7.5%;
+  grid-template-rows: 7.5% 85% 7.5%;
+  position: relative;
+  width: 100%;
+}
+
+.left-marker, .right-marker, .top-marker, .bottom-marker {
+  align-self: center;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: aqua;
+} */
+
+
+.whole-content{
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #1a1b1f;
+    align-items: center;
+    overflow: hidden;
+  position: relative; /* Ensure it's positioned relative */
+}
+
+.table-grid {
+  width: 100%; /* Ensure table takes full width */
+  height: 50%; /* Ensure table takes full height */
+  /* background-image: url('your_background_image_url_here'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  table-layout: fixed; /* Ensures table width is fixed */
+  border-collapse: collapse !important;
+  border: 1px solid #000 !important;
+}
+
+.datacells {
+  position: relative; /* Ensure cells are positioned relative */
+  max-width: 200px; /* Adjust max-width as needed based on design */
+}
+
+.datacells img {
+  max-width: 100%; /* Ensure images inside cells are not larger than their container */
+  display: block; /* Ensure images behave as block elements */
+}
+
+.datacells .hoverContent {
+  visibility: hidden;
+}
+
+.datacells:hover .hoverContent {
+  visibility: visible;
+  background-color: whitesmoke;
+  color: black;
+}
+
+/* .grid-container {
+  display: grid;
+  background-color: #1a1b1f;
+  grid-template-columns: 7.5% 85% 7.5%;
+  position: relative;
+  width: 100%;
+} */
+.grid-container {
+  display: grid;
+  background-color: #1a1b1f;
+  grid-template-columns: 30.5% 36% 30.5%;
+  /* grid-template-columns: 30.5% 36% 30.5%;
+  grid-template-rows: 10% 83% 10%; */
+  /* grid-template-columns: 24.5% 35% 26.5%;
+    grid-template-rows: 6% 87% 10%; */
+  position: relative;
+  width: 100%;
+  height: 100% !important;
+}
+
+
+.left-marker, .right-marker, .top-marker, .bottom-marker {
+  align-self: center;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: aqua;
+}
+
+@media (max-width: 500px) {
+  .datacells {
+      max-width: 100%; /* Adjust to full width for extreme zoom levels */
+  }
+}
+
+@media (min-width: 1440px) {
+  .table-grid {
+      background-size: contain; /* Ensure the background image fits within the container */
+      background-position: top center; /* Adjust background positioning as needed */
+  }
+
+  .datacells img {
+      max-width: 100%; /* Ensure images still fit within their containers */
+      width: 100%;
+      height: auto;
+  }
+}
+
+/* .whole-content{
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #1a1b1f;
+    align-items: center;
+    overflow: hidden;
+} */
+/* .table-grid{
+    
+    margin: auto;
+} */
+/* .datacells{
+    position: relative;
+}
+.datacells .hoverContent{
+    visibility: hidden;
+}
+
+.datacells:hover .hoverContent{
+    visibility: visible;
+    background-color: whitesmoke;
+    color: black;
+} */
+.cancel-buton{
+    margin: 2em;
+    padding-top: 1em;
+}
+.confirm-button{
+    margin-top: 1em;
+    margin-left: 0.75em;
+    padding: 1em;
+}
+.modalBody{
+    background-color: #595959;
+    color: white;
+}
+.modalText{
+    font-size: 1.5em;
+    padding-bottom: 2em;
+}
+.slds-modal__container{
+    width: fit-content;
+    height: fit-content;    
+}
+.modal-box{
+    height: auto;
+}
+.yes-highlight{
+    /* outline: 5px solid greenyellow; */
+     border: 5px solid greenyellow;
+     /* margin: 5px solid red;
+    padding: 10px solid red;
+    color:  solid antiquewhite; */ 
+
+}
+
+.dropdown-menu {
+    max-height:25rem;
+    overflow-y: scroll;
+  }
+
+  .moveToLeft {
+    padding-right: 26px;
+    color: red;
+  }
+
+  .textColor {
+    color: red;
+  }
+  
+  .designClass{
+    margin-bottom: -500px;
+    
+  }
+  /* .grid-container{
+    display: grid;
+    background-color: #1a1b1f;
+    grid-template-columns: 7.5% 85% 7.5%;
+    grid-template-rows: 7.5% 85% 7.5%;
+    position: relative;
+    width: 100%;
+  } */
+
+  .backgroundImg{
+    width:500px;
+    height:250px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(84 83 84 / 30%);
+}
+  
+  .overlay-conatiner{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .base-image{
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+
+  .left-marker{
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .right-marker{
+    grid-column: 3;
+    grid-row: 2;
+  }
+ .top-marker{
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .bottom-marker{
+    grid-column: 2;
+    grid-row: 3;
+  }
+.left-marker,.right-marker,.top-marker,.bottom-marker{
+    align-self: center;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color:aqua;
+}

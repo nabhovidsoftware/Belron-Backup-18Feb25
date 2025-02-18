@@ -1,0 +1,110 @@
+<template>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+    aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+    <div class="slds-modal__container adjustModelHeight">
+        <div class="slds-modal__content slds-p-around_medium bordereffect" id="modal-content-id-2">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeErrorModal}>
+                <lightning-icon icon-name="utility:close" size="medium">
+                </lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            <div class="slds-grid slds-align_absolute-center slds-m-vertical_medium ">
+    <div class="center">
+        <div>
+            <strong>{label.serviceAddressLabel}</strong>
+        </div>
+        <lightning-input onchange={searchAddressHandle} class="size3" placeholder={label.searchAddressLabel} type="search" disabled={isFieldDisabled}></lightning-input>
+        <template if:true={showOptionTypeEvent}>
+            <div class="slds-dropdown slds-dropdown_fluid size3 dropdownclass"> 
+                
+                <ul class="slds-listbox slds-listbox_vertical ">
+                    <template if:true={showOptionTypeEvent} for:each={addressList} for:item="serecord">
+                        <li class="slds-listbox__item cursor-pointer" role="presentation"
+                            key={serecord.postalCode} data-street={serecord.street}
+                            data-postalcode={serecord.postalCode} data-city={serecord.city}
+                            data-county={serecord.county} data-country={serecord.country}
+                            data-latitude={serecord.latitude} data-longitude={serecord.longitude}
+                            onclick={handleResultClick}>
+                            <span class="slds-media">
+                                <span class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:address"
+                                        alternative-text="Address" title="Address"
+                                        size="x-small"></lightning-icon>
+                                </span>
+                                <span class="slds-media__body "><strong>{serecord.street}</strong><br>
+                                    {serecord.city} {serecord.postalCode} {serecord.county}
+                                    {serecord.countryCode} {serecord.country}</span>
+                            </span>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+        <!--</lightning-card>-->
+        <lightning-textarea label={label.streetLabel} value={serviceStreet} data-name="homeStreet"
+            onchange={addressValueChange} class="size3 homestreet" disabled={isFieldDisabled}></lightning-textarea>
+        <br>
+        <div>
+            <div class="style1">
+                <lightning-input label={label.townLabel} value={serviceTown} data-name="homeTown"
+                    onchange={addressValueChange} class="size townhome" disabled={isFieldDisabled}></lightning-input>
+            </div> &nbsp; &nbsp;
+            <div class="style1">
+                <lightning-input label={label.countyLabel} value={serviceCounty} data-name="homeCounty"
+                    onchange={addressValueChange} class="size2 countyhome" disabled={isFieldDisabled}></lightning-input>
+            </div>
+        </div>
+        <br>
+        <div>
+            <div class="style2">
+                <lightning-input label={label.countryLabel} value={serviceCountry} data-name="homeCountry"
+                    onchange={addressValueChange} class="size countryhome" disabled={isFieldDisabled}></lightning-input>
+            </div> &nbsp; &nbsp;
+            <div class="style2">
+                <lightning-input label={label.postCodeLabel} value={servicePostCode} data-name="homePostCode"
+                    onchange={addressValueChange} class="size2 postcodehome" disabled={isFieldDisabled}></lightning-input>
+            </div>
+        </div>
+        <br>
+        <!-- <lightning-input class="size3" type="checkbox" checked={ispAddress} onchange={handleChange} 
+            label={label.ispAddressLabel}></lightning-input> -->
+            <footer class="slds-modal__footer slds-m-top_small">
+                <div class="slds-align_absolute-center">
+               <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_neutral"  onclick={handleCancel} name={label.cancelLabel}
+                    label={label.cancelLabel}>
+                </lightning-button> &nbsp;&nbsp;
+                <lightning-button class="slds-m-top_small slds-m-left_x-small slds-button_success" onclick={handleUpdate}
+                    variant="brand" name={label.saveLabel} label={label.saveLabel} disabled={disablevalue}>
+                </lightning-button>
+                </div>
+            </footer>
+    </div>
+ 
+    <!-- <template lwc:if={openmodalError}>
+        <lightning-card class="slds-align_center">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-align_absolute-center slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeErrorModal}>
+                            <lightning-icon icon-name="utility:close" size="medium">
+                            </lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            
+            <div class="slds-theme_error slds-p-around_large">
+                <lightning-icon variant="inverse" size="small"></lightning-icon>
+                <span><b>{label.errorMsg}</b></span>
+            </div>
+        </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        </lightning-card>
+    </template> -->
+</div>
+         </div>
+        </div>
+    </section>
+</template>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_TaskType__c</fullName>
+    <description>FOUK-9459 - Field to contain task type which is sent to bosch for creating job cards</description>
+    <externalId>false</externalId>
+    <label>Task Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AWNTXOD000</fullName>
+                <default>false</default>
+                <label>AWNTXOD000</label>
+            </value>
+            <value>
+                <fullName>BOSCHAS002</fullName>
+                <default>false</default>
+                <label>BOSCHAS002</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

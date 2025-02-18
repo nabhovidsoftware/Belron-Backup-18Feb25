@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_InitiativeID__c</fullName>
+    <description>FOUK-4770. To collect initiative ID.</description>
+    <displayFormat>IN-{00000}</displayFormat>
+    <externalId>false</externalId>
+    <label>Initiative ID</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

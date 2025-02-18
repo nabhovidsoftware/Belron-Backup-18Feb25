@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Total_Price__c</fullName>
+    <description>FOUK-9920: Sum of all related Quote Item record Prices.</description>
+    <externalId>false</externalId>
+    <label>Total Price</label>
+    <summarizedField>LAD_Quote_Item__c.LAD_Price__c</summarizedField>
+    <summaryForeignKey>LAD_Quote_Item__c.LAD_Quote__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

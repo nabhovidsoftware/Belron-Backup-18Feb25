@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- SF CnR Reason --></label>
+    <name>BLN_SFCnRReason__c</name>
+    <picklistValues>
+        <masterLabel>Discount Not Applied</masterLabel>
+        <translation><!-- Discount Not Applied --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Billing Site</masterLabel>
+        <translation><!-- Incorrect Billing Site --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Excess</masterLabel>
+        <translation><!-- Incorrect Excess --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Incident Date</masterLabel>
+        <translation><!-- Incorrect Incident Date --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Insurer</masterLabel>
+        <translation><!-- Incorrect Insurer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Policy Number</masterLabel>
+        <translation><!-- Incorrect Policy Number --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Policyholder Address</masterLabel>
+        <translation><!-- Incorrect Policyholder Address --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Policyholder Name</masterLabel>
+        <translation><!-- Incorrect Policyholder Name --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Price</masterLabel>
+        <translation><!-- Incorrect Price --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Purchase Order Number</masterLabel>
+        <translation><!-- Incorrect Purchase Order Number --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Trade Account</masterLabel>
+        <translation><!-- Incorrect Trade Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect VRN</masterLabel>
+        <translation><!-- Incorrect VRN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect mileage</masterLabel>
+        <translation><!-- Incorrect mileage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Limit Applies to Policy</masterLabel>
+        <translation><!-- Limit Applies to Policy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Motorist to Corporate Amendment</masterLabel>
+        <translation><!-- Motorist to Corporate Amendment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Glass Cover</masterLabel>
+        <translation><!-- No Glass Cover --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Policy Cancelled/Lapsed</masterLabel>
+        <translation><!-- Policy Cancelled/Lapsed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Error - Missing Product Added</masterLabel>
+        <translation><!-- Product Error - Missing Product Added --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Error - Product Removed not used</masterLabel>
+        <translation><!-- Product Error - Product Removed not used --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trade Split Account Updated</masterLabel>
+        <translation><!-- Trade Split Account Updated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VAT Incorrect - PH is VAT registered</masterLabel>
+        <translation><!-- VAT Incorrect - PH is VAT registered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VAT Incorrect - PH not VAT registered</masterLabel>
+        <translation><!-- VAT Incorrect - PH not VAT registered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VAT Incorrect - Wrong Rate</masterLabel>
+        <translation><!-- VAT Incorrect - Wrong Rate --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

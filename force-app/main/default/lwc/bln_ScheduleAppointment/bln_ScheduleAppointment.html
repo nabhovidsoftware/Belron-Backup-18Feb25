@@ -1,0 +1,166 @@
+<template>
+    <div class="slds-grid slds-titleHeading">
+        <div class="slds-fontWeight slds-col slds-m-horizontal_xxx-small slds-size_3-of-12" style="font-size: var(--lwc-fontSize5, 1rem);
+        line-height: var(--lwc-lineHeightHeading, 1.25); font-weight: var(--slds-g-font-weight-5);">{quoteLocation}</div>
+    </div>
+    
+    <div class="slds-box_x-small slds-m-around_x-small">
+        <template for:each={productDataList} for:item="row" for:index="index">
+            <div class="slds-scrollable_x" style="height: 100%; width:100%;" key={row.keyIndex}>
+                <div class="slds-grid">
+                        <template for:each={row.serviceLocationLabel} for:item="header" for:index="varindex">
+                            <div class="slds-col  slds-size_8-of-12" key={header.serviceLabel}> 
+                                <div class="slds-box slds-m-vertical_xx-small slds-m-left_xxx-small slds-align_absolute-center slds-text-align_center text-trucate fontcss" style=" background: var(--slds-g-color-neutral-base-95);">{row.serviceLocationName}</div>
+                        </div>
+                        <template for:each={row.appointments} for:item="header" for:index="varindex">
+                            <div key={header.appointmentName} class="slds-size_2-of-12"> 
+                                    <div class="fontcss slds-box slds-m-around_xx-small slds-align_absolute-center slds-text-align_center text-trucate fontcss" style=" background: var(--slds-g-color-neutral-base-95);">
+                                        {header.appointmentName}
+                                        <span if:false={header.disableCrossButton} style="float: right;">
+                                            <lightning-button-icon icon-name="action:close" variant="base" label="Base" size="large"
+                                            class="slds-cross-margin slds-crossbtn  closeBGColor"
+                                            data-key={header.headerName} data-counter={varindex} data-servicelocindex={index}
+                                            data-appointmentcolumn={varindex}
+                                            onclick={handleRemoveAppointment}></lightning-button-icon>
+                                        </span>
+                                    </div>
+                            </div>
+                        </template>
+                            <div key={header.serviceLabel} style="margin:.5rem 0px 0px 0px;">
+                                <lightning-button-icon  icon-name="utility:new" data-rowindex={index} variant="base" class="slds-cross-margin slds-crossbtn  red-background-icon closeBGColor"
+                                                        data-location={row.serviceLocationName} label="Base" onclick={handleClick} size="large">
+                                </lightning-button-icon>
+                            </div>
+                        </template>
+                </div>
+                <div class="slds-grid"> 
+                    <template for:each={row.serviceLocationLabel} for:item="header" for:index="varindex">
+                        <div key={header.serviceLabel} class="slds-size_6-of-12 slds-m-right_x-small slds-box slds-m-around_xxx-small slds-align_absolute-center slds-text-align_center text-trucate fontcss" style=" background: var(--slds-g-color-neutral-base-95);">
+                        Product&nbsp;Name
+                    </div>
+                </template>
+                <template for:each={row.earliestAvailablity} for:item="header" for:index="varindex">
+                    <div class="slds-size_2-of-12 slds-box slds-m-around_xxx-small slds-m-left_small slds-align_absolute-center slds-text-align_center text-trucate fontcss" style=" background: var(--slds-g-color-neutral-base-95);" key={index}>
+                        Earliest&nbsp;Availability
+                    </div>    
+                </template>
+                <template if:true={earliestDateList}>
+                    <template for:each={row.appointments} for:item="header" for:index="varindex">
+                        <div key={header.keyIndex} class="slds-size_2-of-12 slds-textAlignCenter namecss slds-box text-trucate slds-box-colorNo slds-col slds-m-horizontal_xxx-small" style="border-bottom: 1px solid var(--sds-g-color-border-1);">
+                            <!--{header.earlierAvailabilityDateHeader}-->
+                                <c-bln-_-earliest-appointment-availability-cmp wrap-index="0" earliest-date={row.earlierAvailabilityDateHeader} appointment-id={row.earlierAvailabilityAppointmentId}  earliest-date-list={earliestDateList} location={row.location}
+                                case-id={caseId} current-payload={currentPayload} selected-product-list={selectedProductList} is-first-init-succes="true"
+                                add-on-product-list={addOnProductList} onappointmentdata={earliestAppointmentDataWrapSAHandler} is-rebooking={isRebooking} >
+                                </c-bln-_-earliest-appointment-availability-cmp>
+                            
+                        </div>
+                    </template>
+                </template>
+                                </div>
+
+                <div class="slds-grid slds-m-bottom_medium">
+                    <div class="slds-col slds-m-horizontal_xx-small slds-size_6-of-12">
+                        <template for:each={row.serviceLocationLabel} for:item="header" for:index="varindex">
+                            <template for:each={header.productNames} for:item="prod" for:index="prodIndex">
+                                <div key={prod.keyIndexSLP}>
+                                        <div class="namecss slds-m-around_xx-small text-trucate cellDataStyle"
+                                        title={prod.productDescription}>
+                                            {prod.productDescription}
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+
+                <div class="slds-col slds-m-horizontal_xx-small slds-size_2-of-12">
+                    <template for:each={row.earliestAvailablity} for:item="header" for:index="varindex">
+                        <template for:each={header.productDate} for:item="prod" for:index="prodIndex">
+                                <div key={prod.keyIndex}>
+                                    <div class="slds-earliestDateHeight slds-align_absolute-center">
+                                        <template lwc:if={prod.isCPTDate}>
+                                            <div class="slds-textAlignCenter namecss slds-box text-trucate slds-box-colorNo slds-align_absolute-center slds-col  slds-m-around_xx-small  slds-size_12-of-12 cellDataStyle earlyDateStyleWithLocationBlank  " style="border-bottom:1px solid var(--sds-g-color-border-1);margin-top:10px;    width: 12rem;" >
+                                                {prod.earliestDate}
+                                                <span style="float: right;">
+                                                    <lightning-helptext content={earlistHelpText}></lightning-helptext>
+                                                </span>
+                                            </div>
+                                    </template>
+                                    <template lwc:else>
+                                        <div class="slds-textAlignCenter namecss slds-box text-trucate slds-box-colorNo slds-align_absolute-center slds-col  slds-m-around_xx-small  slds-size_12-of-12 cellDataStyle" style="border-bottom: 1px solid var(--sds-g-color-border-1);margin-top:10px;">
+                                            {prod.earliestDate}
+                                                </div>
+                                                </template>
+                                            </div>
+                                            </div>
+                                        </template>
+                                    </template>
+                                </div>
+
+                <template for:each={row.appointments} for:item="header" for:index="varindex">
+                        <div class="slds-col slds-m-horizontal_xx-small slds-size_2-of-12"  key={header.keyIndex}>
+                            <template for:each={header.productAvailibilities} for:item="prod" for:index="prodIndex">
+                                <template for:each={prod.products} for:item="prod1" for:index="prod1Index">
+                                    <div key={prod1.keyIndex} >
+                                        <div class="namecss slds-m-around_xx-small text-trucate cellDataStyle slds-textAlignCenter">
+                                    
+                                            <input type="radio" value={prod1.productEnable} 
+                                                    checked={prod1.productEnable} 
+                                                    data-rowindex={index} data-appointmentindex={varindex} data-prodindex={prod1Index}
+                                                    data-productcode={prod1.productCode} id={prod1.productCode}
+                                                data-name={prod1.productCode} data-location={header.locationName}
+                                                disabled={prod1.isChecked} onclick={onchangebox}></input>
+                                    </div>
+                                </div>
+                            </template>
+                        </template>
+                        <div class="slds-grid">
+                                <div class="slds-textAlignCenter slds-m-around_xx-small slds-align_absolute-center selectedAppointmentDateStyle slds-fontWeight slds-box text-trucate slds-box-colorNo slds-align_absolute-center slds-col slds-m-horizontal_xxx-small slds-size_12-of-12">
+                                    {header.slotSelectedDate}
+                                    </div>
+                            </div>
+                            <div class="slds-grid">
+                            <div class="slds-textAlignCenter slds-align_absolute-center slds-col slds-m-horizontal_xxx-small slds-size_12-of-12">
+                                        <button name={label.SelectSlot} 
+                                            onclick={handleSelectSlot} data-columnindex={varindex} data-rowindex={index}
+                                            class="slds-align_absolute-center slds-slotBtn"
+                                            disabled={header.isDisableSelectSlot}>
+                                            {label.SelectSlot}
+                                        </button> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </template>
+                </div>
+            </div> 
+
+            <div class="gapcss" key={row}></div>
+        </template>
+    </div>
+    
+        <template lwc:if={showSpinner}>
+            <div class="spinnerStyle">
+                <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+            </div>
+         </template>
+
+        <template lwc:else>
+    <template if:true={showSelectSlotPopUp}>
+            <c-bln-_-display-available-slots open-modal selected-slot-app={selectSlotAppointment}
+                onclose={handleSelectSlotClose} onselecteddata={handleSelectData} appointment-id={appointmentId}
+                is-mobile-location={isMobileLocation} selected-product-list={selectedProductList}
+                current-payload={currentPayload} is-cash-journey={isCashJourney} is-change-product={isChangeProduct} case-id={caseId}
+                set-product-data-list={setProductDataList} product-data-list={productDataList}
+                is-rebooking={isRebooking} old-appointment-id={oldAppointmentId}
+                old-slot-details={oldSlotDetails} get-quote-payload ={getQuotePayload}></c-bln-_-display-available-slots>
+        </template>
+    </template>
+
+    <!-- Re-booking code FOUK-6281 -->
+    <template if:true={isCancellChange}>
+        <c-bln-_-rebook-request is-rebooking-request-model={isRebookingRequestModel} record-id={caseId}
+        set-product-data-list={setProductDataList} current-payload={currentPayload} is-cash-journey={isCashJourney}
+            onconfirm={handleRebookReason}
+            onclose={onCloseRebook}></c-bln-_-rebook-request>
+    </template>
+    
+</template>

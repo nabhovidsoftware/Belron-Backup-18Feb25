@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>SLAApproved</fullName>
+        <description>SLA Approved email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_AccountRuleParameter/BLN_SLAAcceptedEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>SLAReject</fullName>
+        <description>SLA Reject email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>BLN_AccountRuleParameter/BLN_SLARejectedEmail</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>BLN_ApproveSLA</fullName>
+        <field>BLN_SLAApproved__c</field>
+        <literalValue>1</literalValue>
+        <name>Approve SLA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

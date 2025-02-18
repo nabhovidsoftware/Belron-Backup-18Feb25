@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Vehicle__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-3982 To Store Vehicle Data.</description>
+    <externalId>false</externalId>
+    <label>Vehicle</label>
+    <referenceTo>BLN_Vehicle__c</referenceTo>
+    <relationshipLabel>Corrective Action Reports</relationshipLabel>
+    <relationshipName>Corrective_Action_Reports</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

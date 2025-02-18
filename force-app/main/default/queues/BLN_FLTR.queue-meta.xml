@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>FLTR</name>
+    <queueMembers>
+        <users>
+            <user>cec.managertest@pwc.com</user>
+            <user>test.cer@example.com</user>
+            <user>pranjali.prashant.kulkarni@pwc.com.belronint</user>
+            <user>soumya.s.rout@pwc.com.belronint</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>BLN_CaseRoutingConfiguration</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

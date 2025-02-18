@@ -1,0 +1,38 @@
+<template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+             <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+             </lightning-spinner>
+        </template>
+    </div>
+    <lightning-card title="Raise an Enquiry">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Contact Name" value={contactName} onchange={handleChange} data-fieldname="contactName" disabled></lightning-input>
+            <lightning-input label="Contact Address" type="text" value={contactAddress} onchange={handleChange} data-fieldname="contactAddress" disabled></lightning-input>
+            <lightning-input label="Contact Phone" type="tel" value={contactPhone} onchange={handleChange} data-fieldname="contactPhone" disabled></lightning-input>
+            <lightning-combobox field-name='BLN_SubType__c' label="Sub-Type" options={subTypeOptions} onchange={handleChange} data-fieldname="subtype" required></lightning-combobox>
+            <lightning-input label="Description" type="text" value={description} onchange={handleChange} data-fieldname="description" required></lightning-input>
+
+            <lightning-input label="Vehicle Registration Number" value={vrn} onchange={handleChange} data-fieldname='vrn' required = {paymentInvoicingFlag}></lightning-input>
+            <lightning-record-edit-form object-api-name="Case">
+                <template if:true={paymentInvoicingFlag}>
+                <label  class="slds-form-element__label">Job Number</label>
+                <lightning-input-field  field-name='ParentId' onchange={handleChange} data-fieldname="parentId" variant="label-hidden"></lightning-input-field>
+                </template>
+                <template if:true={invoicingFlag}>
+                    <lightning-input label="Invoice Number" type="text" value={invoiceNumber} onchange={handleChange} data-fieldname="invoiceNumber"></lightning-input>
+                    </template>
+                
+            </lightning-record-edit-form>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="fileUpload">Please upload a document </label>
+                <div class="slds-form-element__control">
+                    <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange={handleFileUpload} ></input>
+                </div>
+            </div>
+            <div class="slds-m-top_medium slds-text-align_right">
+                <lightning-button label="Submit" onclick={handleSubmit} variant="brand"></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

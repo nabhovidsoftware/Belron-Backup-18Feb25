@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>DST East</name>
+    <queueMembers>
+        <publicGroups>
+            <publicGroup>BLN_East</publicGroup>
+        </publicGroups>
+        <users>
+            <user>test.technician12@example.com</user>
+            <user>test.technician19@example.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Task</sobjectType>
+    </queueSobject>
+</Queue>

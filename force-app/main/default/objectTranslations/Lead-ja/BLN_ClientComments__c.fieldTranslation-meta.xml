@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please provide Comments provided by potential customer --></help>
+    <label><!-- Client Comments --></label>
+    <name>BLN_ClientComments__c</name>
+</CustomFieldTranslation>

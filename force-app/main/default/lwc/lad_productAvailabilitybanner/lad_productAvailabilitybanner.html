@@ -1,0 +1,14 @@
+<template>
+    <div for:each={orderProductList} for:item="orderProduct" key={orderProduct.Id}>
+        <div if:true={orderProduct.isNotAvailable} class="isNotAvailable">
+                <div>{orderProduct.productName}</div>
+                <div>{orderProduct.message}</div>
+        </div>
+        
+        <div if:true={orderProduct.isDelayed} class="isDelayed">
+            <div>{orderProduct.productName}</div>
+            <div>{orderProduct.message}</div>
+        </div>
+        <br>
+    </div>
+</template>

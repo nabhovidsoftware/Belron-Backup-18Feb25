@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AccountAudit</fullName>
+    <active>true</active>
+    <label>Account Audit</label>
+    <picklistValues>
+        <picklist>BLN_AuditType__c</picklist>
+        <values>
+            <fullName>Business Continuity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Claims Handling Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complaint Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Privacy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fee Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Information Security</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MI</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Responsible Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supplier Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_OverallOutcome__c</picklist>
+        <values>
+            <fullName>Major Improvement Required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfactory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Some Improvement Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BLN_Status__c</picklist>
+        <values>
+            <fullName>Aborted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

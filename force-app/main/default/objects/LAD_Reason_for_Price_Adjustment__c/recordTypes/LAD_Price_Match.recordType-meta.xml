@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Price_Match</fullName>
+    <active>true</active>
+    <description>Story - FOUK 8991</description>
+    <label>Price Match</label>
+    <picklistValues>
+        <picklist>LAD_Reason_of_Price_Adjustment__c</picklist>
+        <values>
+            <fullName>Price match</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

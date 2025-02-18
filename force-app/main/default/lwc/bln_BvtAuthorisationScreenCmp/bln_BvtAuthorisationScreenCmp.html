@@ -1,0 +1,26 @@
+<template>
+    <lightning-card variant="narrow"  title="Authorization">
+        <lightning-tabset>
+            <template if:true={isInsurance}>
+                <lightning-tab label="Insurance">
+                    <c-bln-_-authorisation-screen-cmp record-id={recordId} onupdatesuccess={handleSucess} onupdatefailure={handlefailure} oncancelevent={handleCancel}></c-bln-_-authorisation-screen-cmp>
+                </lightning-tab>
+            </template>
+            <template if:true={isCorporate}>
+                <lightning-tab label="Corporate/fleet">
+                    <c-bln-_-authorisation-screen-corporate-cmp record-id={recordId} onupdatesuccess={handleSucess} onupdatefailure={handlefailure} oncancelevent={handleCancel}></c-bln-_-authorisation-screen-corporate-cmp>
+                </lightning-tab>
+            </template>
+            <template if:true={isSpiltBill}>
+                <lightning-tab label="Insurance">
+                    <c-bln-_-authorisation-screen-cmp record-id={recordId} onupdatesuccess={handleSucess} onupdatefailure={handlefailure} oncancelevent={handleCancel}></c-bln-_-authorisation-screen-cmp>
+                </lightning-tab>
+                <lightning-tab label="Corporate/fleet">
+                    <c-bln-_-authorisation-screen-corporate-cmp record-id={recordId} onupdatesuccess={handleSucess} onupdatefailure={handlefailure} oncancelevent={handleCancel}></c-bln-_-authorisation-screen-corporate-cmp>
+                </lightning-tab>
+            </template>
+
+        </lightning-tabset>
+
+    </lightning-card>
+</template>

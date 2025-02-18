@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Account__c</fullName>
+    <description>FOUK-4871. This field is the reference of Master Details relationship with Account</description>
+    <externalId>false</externalId>
+    <label>Account</label>
+    <lookupFilter>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <filterItems>
+            <field>Account.BLN_Level__c</field>
+            <operation>equals</operation>
+            <value>Legal Entity Account</value>
+        </filterItems>
+        <filterItems>
+            <field>Account.BLN_Level__c</field>
+            <operation>equals</operation>
+            <value>Country Grouping Account</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Relationships</relationshipLabel>
+    <relationshipName>Relationships</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

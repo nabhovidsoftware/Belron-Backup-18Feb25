@@ -1,0 +1,50 @@
+<template>
+    <div class="parent-container">
+        <!-- Quote Detail Section -->
+        <div class="quote-section-header">Quote Details</div>
+        <div class="slds-box">
+            <div class="quote-detail-outer">
+                <div class="quote-detail-inner">
+                    <div>
+                        <div class="label">Quote Number </div><lightning-formatted-text
+                            value={quoteNumber}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Account </div><lightning-formatted-text
+                            value={accountName}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Contact </div><lightning-formatted-text
+                            value={contactName}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Created Date </div><lightning-formatted-text
+                            value={createdDate}></lightning-formatted-text>
+                    </div>
+                </div>
+                <div class="quote-detail-inner">
+                    <div>
+                        <div class="label">Currency </div><lightning-formatted-text
+                            value={currencyIsoCode}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Total Price </div><lightning-formatted-text
+                            value={totalPrice}></lightning-formatted-text>
+                    </div>
+                    <div>
+                        <div class="label">Owner </div><lightning-formatted-text
+                            value={ownerName}></lightning-formatted-text>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote Items Table -->
+        <div class="quote-section-header">Quote Items</div>
+        <div class="slds-box">
+            <lightning-datatable key-field="id" data={quoteItems} columns={columns} hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+    </div>
+</template>

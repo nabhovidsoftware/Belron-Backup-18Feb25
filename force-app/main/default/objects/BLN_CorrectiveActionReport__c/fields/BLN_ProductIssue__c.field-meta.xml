@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ProductIssue__c</fullName>
+    <description>FOUK-3982 Used to display list of product Issue.</description>
+    <externalId>false</externalId>
+    <label>Product Issue</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PQ 1 Glass - ADAS bracket</fullName>
+                <default>false</default>
+                <label>PQ 1 Glass - ADAS bracket</label>
+            </value>
+            <value>
+                <fullName>PQ 2 Glass - Antenna</fullName>
+                <default>false</default>
+                <label>PQ 2 Glass - Antenna</label>
+            </value>
+            <value>
+                <fullName>PQ 3 Glass - Delaminated</fullName>
+                <default>false</default>
+                <label>PQ 3 Glass - Delaminated</label>
+            </value>
+            <value>
+                <fullName>PQ 4 Glass - Heated screen Connections</fullName>
+                <default>false</default>
+                <label>PQ 4 Glass - Heated screen Connections</label>
+            </value>
+            <value>
+                <fullName>PQ 5 Glass - Heated screen Elements</fullName>
+                <default>false</default>
+                <label>PQ 5 Glass - Heated screen Elements</label>
+            </value>
+            <value>
+                <fullName>PQ 6 Glass - HUD</fullName>
+                <default>false</default>
+                <label>PQ 6 Glass - HUD</label>
+            </value>
+            <value>
+                <fullName>PQ 7 Glass - Marks between interlayer</fullName>
+                <default>false</default>
+                <label>PQ 7 Glass - Marks between interlayer</label>
+            </value>
+            <value>
+                <fullName>PQ 8 Glass - Mirror Boss Adhesion</fullName>
+                <default>false</default>
+                <label>PQ 8 Glass - Mirror Boss Adhesion</label>
+            </value>
+            <value>
+                <fullName>PQ 9 Glass - Misshaped</fullName>
+                <default>false</default>
+                <label>PQ 9 Glass - Misshaped</label>
+            </value>
+            <value>
+                <fullName>PQ 10 Glass - Optic Distorted</fullName>
+                <default>false</default>
+                <label>PQ 10 Glass - Optic Distorted</label>
+            </value>
+            <value>
+                <fullName>PQ 11 Glass - Rain sensor bracket</fullName>
+                <default>false</default>
+                <label>PQ 11 Glass - Rain sensor bracket</label>
+            </value>
+            <value>
+                <fullName>PQ 12 Glass - Unidentified Fracture</fullName>
+                <default>false</default>
+                <label>PQ 12 Glass - Unidentified Fracture</label>
+            </value>
+            <value>
+                <fullName>PQ 13 Trim - Fitment/Quality</fullName>
+                <default>false</default>
+                <label>PQ 13 Trim - Fitment/Quality</label>
+            </value>
+            <value>
+                <fullName>PQ 14 Clips - Quality</fullName>
+                <default>false</default>
+                <label>PQ 14 Clips - Quality</label>
+            </value>
+            <value>
+                <fullName>PQ 15 Glass - ADAS Heating</fullName>
+                <default>false</default>
+                <label>PQ 15 Glass - ADAS Heating</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

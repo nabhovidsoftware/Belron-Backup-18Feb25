@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Reason of Suspension/Close --></label>
+    <name>BLN_ReasonOfSuspensionClose__c</name>
+    <picklistValues>
+        <masterLabel>CUSTOMER CLOSED ACCOUNT</masterLabel>
+        <translation><!-- CUSTOMER CLOSED ACCOUNT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOMER CLOSED SITE</masterLabel>
+        <translation><!-- CUSTOMER CLOSED SITE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INSOLVENT</masterLabel>
+        <translation><!-- INSOLVENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LEGAL</masterLabel>
+        <translation><!-- LEGAL --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

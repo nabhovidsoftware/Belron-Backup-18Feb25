@@ -1,0 +1,109 @@
+.slds-spinner_container{
+    --dxp-c-spinner-color-background: #b2abab1f;
+}
+
+.section-button {
+    outline: none;
+    border: none;
+    background: none;
+    color: #332362;
+    display: inline-grid;
+    grid-template-columns: 1fr 0.1fr;
+    gap: 4px;
+    color: #332362;
+}
+
+.location-check{
+    background: #f0f0f0;
+    border-radius: 5px;
+    padding-inline: 15px;
+    padding-block: 10px;
+    width: 50%;
+}
+
+
+.otherLocItem{
+    font-family: Salesforce Sans;
+    padding: 5px;
+    font-weight: 50%;
+    font-size: 16px;
+}
+
+.primary-status{
+    color: #a5a1a1;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.delDate{
+    color: #a5a1a1;
+    font-size: 12px;
+}
+.delDate::before {
+    content: "\2022"; 
+    margin-right: 10px; 
+}
+
+.avl{
+    color: green;
+    font-size: 12px;
+}
+
+.avl::before {
+    content: "\2022"; 
+    margin-right: 10px; 
+}
+
+.notavl{
+    color: #eeeb42;
+    font-size: 12px;
+}
+
+.notavl::before {
+    content: "\2022"; 
+    margin-right: 10px; 
+}
+
+.flag{
+    padding: 2px;
+    font-size: 12px;
+}
+
+:host{
+    --slds-c-card-color-background: #f0f0f0;
+}
+
+.location{
+    align-items: right !important;
+}
+
+
+.otherLocItem input[type="radio"]:checked + .radio {
+        background-color: #000;
+    }
+
+
+    .otherLocItem .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+     /* .otherLocItem input[type="radio"] {
+        display: none;
+    }
+
+    .otherLocItem .radio {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid rgb(29, 28, 28);
+        
+    }*/
+
+    .radio{
+        padding-top: 10px;
+    }
+
+.otherLocItem input[type="radio"]:checked + .radio {
+        color: rgb(143, 133, 133);
+    }

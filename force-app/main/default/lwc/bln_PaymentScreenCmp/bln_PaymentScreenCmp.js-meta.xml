@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__Tab</target>
+        <target>lightning__RecordAction</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId"  type="String" role="inputOnly"/>
+            <property name="finishFlow" label="finishFlow" type="Boolean" role="outputOnly" />
+            <property name="paymentmethod" label="paymentmethod" type="String" role="outputOnly" />
+            <property name="paymentId" label="paymentId" type="String" role="outputOnly" />
+            <property name="IsCancelled" label="IsCancelled" type="String" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+    <description>
+        FOUK-3971,FOUK3972 , FOUK-4601, FOUK-4608 This lwc component is created to Display Payment Screen .
+    </description>
+</LightningComponentBundle>

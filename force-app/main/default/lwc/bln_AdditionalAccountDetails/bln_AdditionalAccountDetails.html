@@ -1,0 +1,240 @@
+<!--
+  @description       :
+  @author            : Sourabh Bhattacharjee
+  @group             :
+  @last modified on  : 09-24-2024
+  @last modified by  : Sourabh Bhattacharjee
+  Modifications Log
+  Ver   Date         Author                  Modification
+  1.0   09-24-2024   Sourabh Bhattacharjee   Initial Version
+-->
+<template>
+  <div class="container">
+    <lightning-card>
+      <!-- <lightning-record-edit-form record-id={accountId} object-api-name="Account" onsuccess={handleSuccess}
+        onsubmit={handleSubmit}> -->
+        <lightning-record-edit-form record-id={accountId} object-api-name="Account">
+          <lightning-messages></lightning-messages> 
+          <template if:true={isUpdating}>
+              <div class="slds-align_absolute-center">
+                  <lightning-spinner alternative-text='Updating...' size="large"></lightning-spinner>
+              </div>
+          </template> 
+          <div class="login-container"> 
+            <div style="display:flex;">
+            <lightning-output-field field-name="FirstName" class=" inputcss1 inputfeildcol123"
+              variant="label-hidden"></lightning-output-field>&nbsp;
+            <lightning-output-field field-name="LastName" class=" inputcss1 inputfeildcol123"
+              variant="label-hidden"></lightning-output-field>
+            </div>              
+                  <!-- <div class="namecss" style="width: 400px; padding:0px 0px 0px 80px; display: flex;font-size:16px;color:#475158;">
+                  
+                      <lightning-output-field field-name="FirstName" variant="label-hidden" class="stylecss" style="font-family: roboto;font: size 16px;"></lightning-output-field>&nbsp;
+                      <lightning-output-field field-name="LastName" variant="label-hidden" class="stylecss1" style="font-family: roboto;font: size 16px;"></lightning-output-field>
+                  </div>   -->
+          <div class="countcss">
+              <h3 class="accountcss">Account information</h3>
+              <img src={headUrl}  alt="Logo" class="res-mob-logo" width="100" height="6;"/>
+                
+         </div>
+          <div class="wholescreen">
+         <div class="login-form">      
+         
+         <template if:true={isEditing}>
+          <div class="top-margin"><label class="textInput">Title</label></div>
+              <!-- <div class="field-container">
+                <lightning-input-field field-name="Salutation" variant="label-hidden"
+                  class="inputcss1 inputfeildcol"></lightning-input-field>
+              </div> -->
+              <div class="input-container">
+                <div class="alligncss">
+                  <template if:true={salutationOptions}>
+                    <lightning-combobox class="overrideslds"
+                      style="width:100%;box-shadow: none !important;"
+                      name="salutation"
+                      value={accountData.salutation}
+                      options={salutationOptions}
+                      onchange={handleInputChange} >
+                      <!-- onchange={handleSalutationChange} > -->
+                    </lightning-combobox>
+                    <!-- <select name="salutation" id="salutation" onchange={handleSalutationChange} value={selectedSalutationValue}>
+                      <template for:each={salutationOptions} for:item="item">
+                        <option key={item.value} selected={item.selected} value={item.value}>{item.label}</option>
+                      </template>
+                    </select> -->
+                  </template>
+                <!-- <input type="text" id="username" required>  -->
+             
+                  <img src={successurl}  alt="Logo" class="successimage" width="17.5px" height="14px;" style="margin-top:0.7rem !important;" />   
+                </div>
+               
+                <label for="username">Title</label>
+              </div>
+              
+          </template>
+         <template if:false={isEditing}>
+          <div class="top-margin"><span><label class="textInput">Title</label></span>
+                <span style="margin-left: 1rem;"> <img src={editUrl} alt="Logo" class="res-mob-logo" onclick={editField}
+                    width="16" height="16;" /></span>
+              </div>
+              <div class="field-container">
+                <lightning-output-field field-name="Salutation" variant="label-hidden"
+                  class="inputcss1 inputfeildcol"></lightning-output-field>
+       </div>
+          </template>
+          <template if:true={isEditing}>
+              <div class="top-margin"> <label class="textInput">Name</label></div>
+              <div class="input-container">
+                <div class="alligncss">
+                  <input type="text" id="firstName" name="firstName" class="inputfeildcol" value={accountData.firstName} onchange={handleInputChange} required> 
+               
+                    <img src={successurl}  alt="Logo" class="successimage" width="17.5px" height="14px;" />   
+                  </div>
+               
+                <label for="username" class="labelcss">First name</label>
+              </div>
+              <div class="input-container">
+                <div class="alligncss">
+                  <input type="text" id="lastName" name="lastName"  class="inputfeildcol" value={accountData.lastName} onchange={handleInputChange} required> 
+               
+                    <img src={successurl}  alt="Logo" class="successimage" width="17.5px" height="14px;" />   
+                  </div>
+               
+                <label for="username" class="labelcss">Last name</label>
+                      </div>
+          </template>
+          <template if:false={isEditing}>
+              <div class="top-margin"><span> <label class="textInput">Name</label></span>
+                <span style="margin-left: 0.3rem;"> <img src={editUrl} alt="Logo" class="res-mob-logo"
+                    onclick={editField} width="16" height="16;" /></span>
+      </div>
+          
+              <div  class="field-container">
+                  <!-- <div style="width:370px !important;display: flex;"> -->
+                    <div style="display:flex;">
+                  <lightning-output-field field-name="FirstName" class=" inputcss1 inputfeildcolblack"
+                    variant="label-hidden"></lightning-output-field>&nbsp;
+                  <lightning-output-field field-name="LastName" class=" inputcss1 inputfeildcolblack"
+                    variant="label-hidden"></lightning-output-field>
+                    </div>
+                      <!-- <lightning-output-field field-name="Name" variant="label-hidden" class="overrideslds inputfeildcol" style="margin-right: 5px;"></lightning-output-field> -->
+                      <!-- <lightning-output-field field-name="Name" variant="label-hidden" class="overrideslds inputfeildcol" ></lightning-output-field>
+                  -->
+                    <!-- </div>                     -->
+                                   
+              </div>
+          </template>
+          
+          <div class="top-margin"> <label class="textInput">Email</label></div>
+            <div class="field-container">
+              <lightning-output-field field-name="PersonEmail" variant="label-hidden" style={emailStyle}>
+              </lightning-output-field>
+            </div>
+         
+          <template if:true={isEditing}>
+                  <div class="top-margin"><label class="textInput">Phone</label></div>
+              <div class="input-container">
+                <div class="alligncss">
+                  <input type="text" id="phone" name="phone" value={accountData.phone} onchange={handleInputChange} required> 
+               
+                    <img src={successurl}  alt="Logo" class="successimage" width="17.5px" height="14px;" />   
+                  </div>
+               
+                <label for="username">Phone</label>
+               </div>
+          </template>
+          <template if:false={isEditing}>
+                  <div class="top-margin"><span> <label class="textInput">Phone</label></span>  
+                <span> <img src={editUrl} alt="Logo" class="res-mob-logo" onclick={editField} width="16"
+                    height="16;" /></span>
+              </div>
+              <div class="field-container">
+                <lightning-output-field field-name="PersonMobilePhone" variant="label-hidden" required={isHomePhoneRequiredForMobile}  
+                 message-when-value-missing="phone is required for Mobile Contact"
+                  class="inputcss inputfeildcolblack"></lightning-output-field>
+                  </div>
+          </template>
+                <div class="top-margin"> <label class="textInput">Address</label></div>
+                <template if:true={isPersonMailingStreet}>
+              <div class="field-container"><lightning-output-field field-name="PersonMailingStreet"
+                  variant="label-hidden" style={emailStyle}> </lightning-output-field> </div>
+            </template>
+            <template if:true={isPersonMailingCity}>
+              <div class="field-container"><lightning-output-field class="uppercase-text inputfeildcol"
+                  field-name="PersonMailingCity" variant="label-hidden" style={emailStyle}> </lightning-output-field>
+              </div>
+            </template>
+            <template if:true={isPersonMailingPostalCode}>
+              <div class="field-container"><lightning-output-field field-name="PersonMailingPostalCode"
+                  variant="label-hidden" style={emailStyle}> </lightning-output-field> </div>
+                </template>
+                  
+                      <h6 class="accountcss1">Additional contact options</h6>
+                      
+               
+                
+                <template if:true={isEditing}>
+                  <div class="top-margin"> <label class="textInputcss">Home phone</label></div>  
+              <div class="input-container">
+                <div class="alligncss">
+                 
+                  <input type="text" id="homePhone" name="homePhone" value={accountData.homePhone} onchange={handleInputChange} required> 
+               
+                    <img src={successurl}  alt="Logo" class="successimage" width="17.5px" height="14px;" />   
+                  </div>
+               
+                <label for="username">Home phone</label>
+                      </div>
+                  </template>
+      
+                 <template if:false={isEditing}>
+                      <div class="top-margin"><span> <label class="textInputcss">Home phone</label></span> 
+                <span> <img src={editUrl} alt="Logo" class="res-mob-logo" onclick={editField} width="16"
+                    height="16;" /></span>
+              </div>
+              <div class="field-container">
+                <lightning-output-field field-name="PersonHomePhone" variant="label-hidden"
+               
+                  class="inputcss inputfeildcolblack"></lightning-output-field>
+                      </div>
+                </template>
+
+                <template if:true={isEditing}>
+                  <div class="top-margin"> <label class="textInputcss">Other phone</label></div>  
+              <div class="input-container">
+                <div class="alligncss">
+                  <input type="text" id="otherPhone" name="otherPhone" value={accountData.otherPhone} onchange={handleInputChange}> 
+               
+                    <img src={successurl}  alt="Logo" class="successimage" width="17.5px" height="14px;" />   
+                  </div>
+               
+                <label for="username">Other phone</label>
+                  </div>
+                </template>
+                <template if:false={isEditing}>
+                  <div class="top-margin"><span><label class="textInputcss">Other phone</label></span>  
+                <span> <img src={editUrl} alt="Logo" class="res-mob-logo" onclick={editField} width="16"
+                    height="16;" /></span>
+              </div>
+              <div class="field-container">
+                <lightning-output-field field-name="PersonOtherPhone" variant="label-hidden"
+                  class="inputcss inputfeildcolblack"></lightning-output-field>
+                  </div>
+                </template>
+              
+                <template if:true={isEditing}>
+                  <div style="display:flex; margin:24px 0px;">
+                  <button type="button" onclick={handleCancel} class="buttoncancel" >Cancel</button>
+                <button type="submit" name="update" class="buttonsubmit" onclick={handleSubmit}>Update</button>
+                  
+                  </div>  
+              </template> 
+         </div>
+         </div>
+        </div>
+       
+      </lightning-record-edit-form>
+  </lightning-card>
+  
+</div>
+</template>

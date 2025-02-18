@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Underwriter</fullName>
+        <default>false</default>
+        <label>Underwriter</label>
+    </customValue>
+    <customValue>
+        <fullName>MGA</fullName>
+        <default>false</default>
+        <label>MGA</label>
+    </customValue>
+    <customValue>
+        <fullName>Capacity Provider</fullName>
+        <default>false</default>
+        <label>Capacity Provider</label>
+    </customValue>
+    <customValue>
+        <fullName>Underwriting Agency</fullName>
+        <default>false</default>
+        <label>Underwriting Agency</label>
+    </customValue>
+    <customValue>
+        <fullName>Fleet National</fullName>
+        <default>false</default>
+        <label>Fleet National</label>
+    </customValue>
+    <customValue>
+        <fullName>Fleet Management</fullName>
+        <default>false</default>
+        <label>Fleet Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Fleet Local</fullName>
+        <default>false</default>
+        <label>Fleet Local</label>
+    </customValue>
+    <customValue>
+        <fullName>Leasing Company</fullName>
+        <default>false</default>
+        <label>Leasing Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Leasing Broker</fullName>
+        <default>false</default>
+        <label>Leasing Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Rental</fullName>
+        <default>false</default>
+        <label>Vehicle Rental</label>
+    </customValue>
+    <customValue>
+        <fullName>Association / Club</fullName>
+        <default>false</default>
+        <label>Association / Club</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Dealership</fullName>
+        <default>false</default>
+        <label>Vehicle Dealership</label>
+    </customValue>
+    <customValue>
+        <fullName>De-fleet / vehicle prep centre</fullName>
+        <default>false</default>
+        <label>De-fleet / vehicle prep centre</label>
+    </customValue>
+    <customValue>
+        <fullName>Bodyshop</fullName>
+        <default>false</default>
+        <label>Bodyshop</label>
+    </customValue>
+    <customValue>
+        <fullName>Auction</fullName>
+        <default>false</default>
+        <label>Auction</label>
+    </customValue>
+    <customValue>
+        <fullName>Used Car Market</fullName>
+        <default>false</default>
+        <label>Used Car Market</label>
+    </customValue>
+    <customValue>
+        <fullName>Logistics</fullName>
+        <default>false</default>
+        <label>Logistics</label>
+    </customValue>
+    <customValue>
+        <fullName>Rail</fullName>
+        <default>false</default>
+        <label>Rail</label>
+    </customValue>
+    <customValue>
+        <fullName>Marine</fullName>
+        <default>false</default>
+        <label>Marine</label>
+    </customValue>
+    <customValue>
+        <fullName>Airside</fullName>
+        <default>false</default>
+        <label>Airside</label>
+    </customValue>
+    <customValue>
+        <fullName>Coach</fullName>
+        <default>false</default>
+        <label>Coach</label>
+    </customValue>
+    <customValue>
+        <fullName>Bus</fullName>
+        <default>false</default>
+        <label>Bus</label>
+    </customValue>
+    <customValue>
+        <fullName>Plant &amp; Ag</fullName>
+        <default>false</default>
+        <label>Plant &amp; Ag</label>
+    </customValue>
+    <customValue>
+        <fullName>General Trade</fullName>
+        <default>false</default>
+        <label>General Trade</label>
+    </customValue>
+    <customValue>
+        <fullName>Wholesale</fullName>
+        <default>false</default>
+        <label>Wholesale</label>
+    </customValue>
+    <customValue>
+        <fullName>Agent</fullName>
+        <default>false</default>
+        <label>Agent</label>
+    </customValue>
+    <customValue>
+        <fullName>Broker</fullName>
+        <default>false</default>
+        <label>Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>ISP</fullName>
+        <default>false</default>
+        <label>ISP</label>
+    </customValue>
+    <customValue>
+        <fullName>Warranty</fullName>
+        <default>false</default>
+        <label>Warranty</label>
+    </customValue>
+    <customValue>
+        <fullName>BlueLight</fullName>
+        <default>false</default>
+        <label>Blue Light</label>
+    </customValue>
+    <customValue>
+        <fullName>Central Government</fullName>
+        <default>false</default>
+        <label>Central Government</label>
+    </customValue>
+    <customValue>
+        <fullName>Local Government</fullName>
+        <default>false</default>
+        <label>Local Government</label>
+    </customValue>
+    <customValue>
+        <fullName>Armed Forces</fullName>
+        <default>false</default>
+        <label>Armed Forces</label>
+    </customValue>
+    <customValue>
+        <fullName>Government Services</fullName>
+        <default>false</default>
+        <label>Government Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Claims Management</fullName>
+        <default>false</default>
+        <label>Claims Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Specialist Company</fullName>
+        <default>false</default>
+        <label>Specialist Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Accident Management</fullName>
+        <default>false</default>
+        <label>Accident Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Legal Firm</fullName>
+        <default>false</default>
+        <label>Legal Firm</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance Broker</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Insurance Broker</label>
+    </customValue>
+    <customValue>
+        <fullName>Referral Client</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Referral Client</label>
+    </customValue>
+    <masterLabel>Client Sub Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

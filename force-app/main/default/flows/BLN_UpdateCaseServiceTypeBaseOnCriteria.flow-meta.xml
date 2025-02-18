@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Service_Type</name>
+        <label>Assign Service Type</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_ServiceTypeFinal__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ServiceTypeFormula</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Check_Service_Type_Update_Criteria</name>
+        <label>Check Service Type Update Criteria</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Fail</defaultConnectorLabel>
+        <rules>
+            <name>Pass</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ISNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ServiceTypeDAFormula</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>ServiceTypeDAOldFormula</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_ServiceTypeWO__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Service_Type</targetReference>
+            </connector>
+            <label>Pass</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>ISNEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>ServiceTypeDAFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.BLN_ServiceTypeCode__c}=6,&apos;Side &amp; Rear&apos;,
+IF({!$Record.BLN_ServiceTypeCode__c}=5,&apos;Replacement&apos;,
+IF({!$Record.BLN_ServiceTypeCode__c}=4,&apos;Replacement &amp; Recalibration&apos;,
+IF({!$Record.BLN_ServiceTypeCode__c}=3,&apos;Recalibration&apos;,
+IF({!$Record.BLN_ServiceTypeCode__c}=2, &apos;Repair&apos;,
+IF({!$Record.BLN_ServiceTypeCode__c}=1, &apos;No Work Required&apos;,
+&apos;&apos;))))))</expression>
+    </formulas>
+    <formulas>
+        <name>ServiceTypeDAOldFormula</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record__Prior.BLN_ServiceTypeCode__c}=6,&apos;Side &amp; Rear&apos;,
+IF({!$Record__Prior.BLN_ServiceTypeCode__c}=5,&apos;Replacement&apos;,
+IF({!$Record__Prior.BLN_ServiceTypeCode__c}=4,&apos;Replacement &amp; Recalibration&apos;,
+IF({!$Record__Prior.BLN_ServiceTypeCode__c}=3,&apos;Recalibration&apos;,
+IF({!$Record__Prior.BLN_ServiceTypeCode__c}=2, &apos;Repair&apos;,
+IF({!$Record__Prior.BLN_ServiceTypeCode__c}=1, &apos;No Work Required&apos;,
+&apos;&apos;))))))</expression>
+    </formulas>
+    <formulas>
+        <name>ServiceTypeFormula</name>
+        <dataType>String</dataType>
+        <expression>IF(AND(ISBLANK({!$Record.BLN_ServiceTypeWO__c}), NOT(ISBLANK({!ServiceTypeDAFormula}))), 
+{!ServiceTypeDAFormula}, 
+IF(AND(ISBLANK({!ServiceTypeDAFormula}), NOT(ISBLANK({!$Record.BLN_ServiceTypeWO__c}))), 
+{!$Record.BLN_ServiceTypeWO__c}, 
+IF(AND(NOT(ISBLANK({!ServiceTypeDAFormula})), NOT(ISBLANK({!$Record.BLN_ServiceTypeWO__c}))),{!$Record.BLN_ServiceTypeWO__c}, &apos;&apos;
+)))</expression>
+    </formulas>
+    <interviewLabel>UpdateCaseServiceTypeBaseOnCriteria {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>UpdateCaseServiceTypeBaseOnCriteria</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Service_Type_Update_Criteria</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

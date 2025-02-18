@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_BrandStrength__c</fullName>
+    <description>FOUK-7201.This is the reference field of Brand Strength.</description>
+    <externalId>false</externalId>
+    <label>Brand Strength</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Top of mind</fullName>
+                <default>false</default>
+                <label>Top of mind</label>
+            </value>
+            <value>
+                <fullName>Awareness</fullName>
+                <default>false</default>
+                <label>Awareness</label>
+            </value>
+            <value>
+                <fullName>Preference</fullName>
+                <default>false</default>
+                <label>Preference</label>
+            </value>
+            <value>
+                <fullName>Consideration</fullName>
+                <default>false</default>
+                <label>Consideration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

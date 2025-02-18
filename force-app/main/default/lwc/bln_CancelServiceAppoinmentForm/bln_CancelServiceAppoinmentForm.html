@@ -1,0 +1,80 @@
+<template>
+   <div class={blurClass}></div>
+    <template if:true={isUpdating}>
+        <div class="slds-align_absolute-center">
+            <lightning-spinner alternative-text='Updating...' size="large" class="custom-spinner"></lightning-spinner>
+        </div>
+    </template>
+    
+    <template if:true={isShowModal}>
+        <div class="slds-backdrop slds-backdrop--open">  
+        <!-- <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-03" aria-modal="true" aria-describedby="modal-content-id-3" class="slds-modal slds-fade-in-open">
+          -->
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+          aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+      
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header" style="background-color: #FFFFFF !important;">
+                  <button class="slds-button slds-button_icon slds-modal__close " title="Close" onclick={hideModalBox} required="true">
+                        <lightning-icon icon-name="utility:close" style="color:#475158 !important; margin-top: 5rem !important;    margin-right: 20px !important;"
+                            alternative-text="close"  size="x-small" ></lightning-icon>
+                        
+                    </button>
+                    <h2 id="modal-heading-01" class=" headcss" style="margin-left: 10px;">Please tell us your reason for cancellation</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-3" style="  padding: 0% 5% 0% 4%;">
+                    <lightning-combobox class="overrideslds" style="margin-top: -1rem;"
+                        placeholder="Select Reason"
+                        options={options}
+                        onchange={handleChange}>
+                    </lightning-combobox><br/>
+                    <template if:true={showError}>
+                        <p class="slds-text-color_error">Please select a cancellation reason.</p>
+                    </template>     
+                </div>
+                <footer class="slds-modal__footer"  style="background-color: #FFFFFF !important;">
+              
+               <div class="slds-grid slds-wrap footermargin">
+                  <div class="slds-size_6-of-12 slds-m-top_x-small">
+                      <button class="slds-button slds-button_neutral cancel" onclick={hideModalBox}>Back</button>
+                  </div>
+                  <div class="slds-size_6-of-12 slds-m-top_x-small">
+                  <button class="slds-button slds-button_neutral confirm" onclick={handleSubmit}>Cancel appointment</button>
+                  </div>
+               </div>
+                </footer>
+            </div>
+        </section>
+        </div>
+    </template>
+
+    <template if:true={showCard}>
+        <div class="slds-backdrop slds-backdrop--open">
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+        aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+        <div class="slds-modal__container">
+        
+                    <header class="slds-modal__header" style="background-color: #FFFFFF !important;">
+                    
+                     <button class="slds-button slds-button_icon slds-modal__close " title="Close" onclick={hideModalBox} required="true">
+                        <lightning-icon icon-name="utility:close" style="color:#475158 !important; margin-top: 5rem !important;margin-right: 20px !important;"
+                            alternative-text="close"  size="x-small" ></lightning-icon>
+                        
+                    </button>
+                    <h2 id="modal-heading-04" class="slds-text-heading_medium slds-hyphenate headcss" style="text-align: left;"><b>Appointment cancellation</b></h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-4">
+                    <p class="paracss">We have received your cancellation request and will release your appointment.</p>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral cancel1" onclick={hideModalBoxOk} title="OK">OK</button>
+                </footer>
+            </div>
+        </section>
+       </div> 
+    </template>
+</template>

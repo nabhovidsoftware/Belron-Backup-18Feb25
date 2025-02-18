@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AccountAudit</fullName>
+    <columns>NAME</columns>
+    <columns>BLN_AccountName__c</columns>
+    <columns>BLN_PlanName__c</columns>
+    <columns>BLN_AuditType__c</columns>
+    <columns>BLN_AuditDate__c</columns>
+    <columns>BLN_Owner__c</columns>
+    <columns>BLN_DueDate__c</columns>
+    <columns>BLN_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>BLN_AccountPlan__c.BLN_AccountAudit</value>
+    </filters>
+    <label>Account Audit</label>
+    <sharedTo>
+        <group>BLN_SalesUsersPublicGroup</group>
+        <role>BLN_ComplianceManager</role>
+        <role>BLN_ComplianceSpecialist</role>
+        <role>BLN_SeniorSalesManager</role>
+    </sharedTo>
+</ListView>

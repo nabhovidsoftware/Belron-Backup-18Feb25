@@ -1,0 +1,99 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner variant="brand" size="large" alternative-text="Loading"></lightning-spinner>
+    </template>
+    
+    <!--Rebooking code to navigate scheduleAppointment cmp-->
+    <template if:true={isSchduleAppointment}>
+        <template lwc:if={isRebookingchild}>
+            <c-bln-_-schedule-appointment liability-list={liabilityList} is-location-change={isLocationChange} rebook-product-data-list={productDataList} set-product-data-list={productDataList}
+                onselectionappointmentcontainer={handleAddLocationAdder} is-change-product={isChangeProduct}
+                location-list={locationList} product-reuired-list={productReuiredList}
+                selected-location={selectedLocation} selected-location-options={selectedLocationOptions}
+                add-on-product-list={addOnProductList} earliest-date-list={earliestDateList} product-data-list-rebook={productDataListRebook}
+                selected-product-list={selectedProductList} current-payload={currentPayload} is-product-summary={isProductSummary}
+                onreceivescreenthree={receivProductData} case-id={caseId} discount={discount} is-connected-call={isConnectedCall} 
+                primary-location={primaryLocation} is-click-add-location={isClickAddLocation} is-cash-journey={isCashJourney} is-add-location={isAddLocation} 
+                selected-value={selectedValue}  get-quote-payload ={getQuotePayload} 
+                is-rebooking={isRebooking} existing-product-data={existingProductData} repair-products={repairProducts} earliest-data-detail={earliestDataDetail} onearliestappointmentcontainerdatawrap={earliestAppointmentContainerDataWrapSAHandler}
+                bom-id-with-promse-date-time={bomIdWithPromseDateTime}>
+            </c-bln-_-schedule-appointment>
+        </template>
+        <template lwc:else>
+            <template if:false={isChangeProduct}>
+                <c-bln-_-schedule-appointment liability-list={liabilityList} is-location-change={isLocationChange} rebook-product-data-list={productDataList} set-product-data-list={productDataList}
+                    onselectionappointmentcontainer={handleAddLocationAdder} is-change-product={isChangeProduct}
+                    location-list={locationList} product-reuired-list={productReuiredList}
+                    selected-location={selectedLocation} selected-location-options={selectedLocationOptions}
+                    add-on-product-list={addOnProductList} earliest-date-list={earliestDateList}
+                    selected-product-list={selectedProductList} current-payload={currentPayload} is-product-summary={isProductSummary}
+                    onreceivescreenthree={receivProductData} case-id={caseId} discount={discount} is-connected-call={isConnectedCall} 
+                    primary-location={primaryLocation} is-click-add-location={isClickAddLocation} is-cash-journey={isCashJourney} is-add-location={isAddLocation} 
+                    selected-value={selectedValue} get-quote-payload ={getQuotePayload} location-for-reapir-sort={locationForReapirSort}
+                    is-rebooking={isRebooking} existing-product-data={existingProductData} repair-products={repairProducts} earliest-data-detail={earliestDataDetail} onearliestappointmentcontainerdatawrap={earliestAppointmentContainerDataWrapSAHandler}
+                    bom-id-with-promse-date-time={bomIdWithPromseDateTime}>
+                </c-bln-_-schedule-appointment>
+            </template>
+        </template>
+    
+        <div class="slds-grid">
+            <div class="slds-col slds-m-horizontal_xxx-small slds-size_4-of-12"></div>
+            <div class="slds-col slds-m-horizontal_xxx-small slds-size_2-of-12">
+                <lightning-combobox class="slds-lightningcombobox slds-align_absolute-center" name="location"
+                                    value={selectedValue} placeholder="Select a Location" options={locationOptions}
+                                    onchange={handleLocationChange}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-m-horizontal_xxx-small slds-size_3-of-12 sldscomboboxcontainer">
+                <button class="slds-button slds-button_brand" onclick={handleAddLocationClick}
+                        disabled={isAddLocationDisabled}>
+                    {label.addLocation}
+                </button>
+            </div>
+            <div class="slds-col slds-m-horizontal_xxx-small slds-size_3-of-12"></div>
+        </div>
+
+        <div>
+            <footer class="footer slds-modal__footer slds-m-top_small">
+                <div class="slds-grid gridStyle " >
+                    <div class="slds-size_7-of-12"> 
+                        <lightning-button class="slds-button_neutral align " onclick={handleBack} name="Back" label="Back"
+                            style="margin-left: 1rem; float: left;"></lightning-button>
+                    </div>
+                    <div class="slds-size_5-of-12"> 
+                        <lightning-button class="slds-button_neutral align"  name="Change Product"
+                            label={label.changeProduct} style="margin-left: 1rem;" onclick={handleChangeProductClick}></lightning-button>
+                        <lightning-button class="slds-button_neutral align" name="Change Location"
+                            label={label.changeLocation} onclick={handleChangeLocation} style="margin-left: 1rem;" ></lightning-button>
+                        <lightning-button class="slds-button_neutral selectButtonStyle " variant="brand" label={label.confirmBooking}
+                            onclick={handleConfirm} style="margin-left: 1rem;" name="Confirm"></lightning-button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </template>
+
+    <template if:true={showProductSelection}>
+        <c-bln-_-product-availability-and-selection-screen case-id={caseId} show-product-selection-page={showProductSelectionPage} is-rebooking={isRebooking} 
+            is-force-reprice={isForceReprise}  is-location-change={isLocationChange} adress-list={adressList} existing-guid={existingGuid} cpq-external-code={externalQuoteId} is-refresh={isRefresh}
+            case-external-ids={caseExternalIds} all-order-items-list={allOrderItemsList} product-data-list-rebook={productDataListRebook}
+            old-add-on-product-list={oldAddOnProductList} old-selected-product-list={oldSelectedProductList} is-change-product-first-time={isChangeProductFirstTime}
+            is-change-product={isChangeProduct} order-id={orderId} existing-product-data={existingProductData} is-cash-journey={isCashJourney} current-payload={currentPayload} get-quote-payload={getQuotePayload}
+            bom-id-with-promse-date-time={bomIdWithPromseDateTime}>
+        </c-bln-_-product-availability-and-selection-screen>
+     </template>
+
+    <template if:true={isChangeLocation}>
+         <c-bln-_-change-location-address onclose={closeModal} case-id={caseId} onadressdetail={adressDetail}></c-bln-_-change-location-address>
+    </template>
+    
+    <template lwc:if={isProductSummary}>
+        <c-bln-_-product-selection-summary appointment-screen-data={screenThreeArrey} location-list={locationList} all-order-items-list={allOrderItemsList}
+            selected-location={selectedLocation} add-on-product-list={addOnProductList} quote-data-list={quoteDataList} case-type={caseType} case-sub-type={caseSubType}
+            selected-product-list={selectedProductList} current-payload={currentPayload} get-quote-payload={getQuotePayload} discount={discount} hidden-product-list={hiddenProductList}
+            is-cash-journey={isCashJourney} liability-list={liabilityList} case-id={caseId} onbackscreen={productsummarydata} task-id={taskId} 
+            after-hours={afterHours} is-rebooking={isRebooking} rebook-sa-list={rebookSaList} account-id={accountId} after-hour-obj={afterHourObj} 
+            old-selected-product-list={productDataListRebook} old-add-on-product-list={oldAddOnProductList} is-refresh={isRefresh} adress-list={adressList} 
+            onoldproduct={handleOldProduct} is-repair-applied={isRepairApplied} earliest-availability-list={earliestDateList} bom-id-with-promse-date-time={bomIdWithPromseDateTime}></c-bln-_-product-selection-summary>
+    </template>
+</template>

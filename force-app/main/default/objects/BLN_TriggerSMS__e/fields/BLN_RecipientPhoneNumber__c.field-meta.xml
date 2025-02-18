@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_RecipientPhoneNumber__c</fullName>
+    <description>FOUK-7703, The destination phone number that the message is sent to. Use if the Recipient Record ID lists an object other than MessagingEndUser, or if the Recipient Record ID isn&apos;t completed.</description>
+    <externalId>false</externalId>
+    <isFilteringDisabled>false</isFilteringDisabled>
+    <isNameField>false</isNameField>
+    <isSortingDisabled>false</isSortingDisabled>
+    <label>Recipient Phone Number</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

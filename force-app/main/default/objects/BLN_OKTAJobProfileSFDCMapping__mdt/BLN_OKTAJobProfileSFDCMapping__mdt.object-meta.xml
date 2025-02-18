@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-1373. This metadata is used for OKTA Job Profile SFDC Mapping</description>
+    <label>OKTA Job Profile SFDC Mapping</label>
+    <pluralLabel>OKTA Job Profile SFDC Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Belron Lead Assignment Rules</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>BLN_SmallAllClientTypes</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.BLN_NumberOfItems__c</field>
+                <operation>equals</operation>
+                <value>Up to 500,&quot;500 - 1,000&quot;</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>Generic Account Form,Dedicated Account Form</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.BLN_ClientType__c</field>
+                <operation>equals</operation>
+                <value>Insurance,Fleet National,Fleet Local,Lease,Rental,Trade/Commercial,Wholesale,Agent/Broker,Intercompany,Government,Intermediary</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BLN_FleetNationalFleetLocalLeaseRental</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.BLN_ClientType__c</field>
+                <operation>equals</operation>
+                <value>Fleet National,Fleet Local,Lease,Rental</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.BLN_NumberOfItems__c</field>
+                <operation>equals</operation>
+                <value>&quot;1,000 - 5,000&quot;,&quot;5,000 - 10,000&quot;,&quot;10,000 - 50,000&quot;,&quot;50,000 - 100,000&quot;,&quot;Over 100,000&quot;</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>Generic Account Form,Dedicated Account Form</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BLN_InsuranceAgentBroker</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.BLN_ClientType__c</field>
+                <operation>equals</operation>
+                <value>Insurance,Agent/Broker</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.BLN_NumberOfItems__c</field>
+                <operation>equals</operation>
+                <value>&quot;1,000 - 5,000&quot;,&quot;5,000 - 10,000&quot;,&quot;10,000 - 50,000&quot;,&quot;50,000 - 100,000&quot;,&quot;Over 100,000&quot;</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>Generic Account Form,Dedicated Account Form</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BLN_GovernmentTrade</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.BLN_ClientType__c</field>
+                <operation>equals</operation>
+                <value>Trade/Commercial,Government,Intermediary</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.BLN_NumberOfItems__c</field>
+                <operation>equals</operation>
+                <value>&quot;1,000 - 5,000&quot;,&quot;5,000 - 10,000&quot;,&quot;10,000 - 50,000&quot;,&quot;50,000 - 100,000&quot;,&quot;Over 100,000&quot;</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>Generic Account Form,Dedicated Account Form</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BLN_GenericAccountApplication</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Generic Account Form</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>BLN_DedicatedAccountApplication</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Lead.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Dedicated Account Form</value>
+            </criteriaItems>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

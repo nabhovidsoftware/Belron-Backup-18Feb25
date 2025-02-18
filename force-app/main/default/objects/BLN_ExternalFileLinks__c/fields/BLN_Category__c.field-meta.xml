@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_Category__c</fullName>
+    <description>Categorization of the File Uploaded</description>
+    <externalId>false</externalId>
+    <label>Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre-Inspection</fullName>
+                <default>false</default>
+                <label>Pre-Inspection</label>
+            </value>
+            <value>
+                <fullName>Additional Inspection</fullName>
+                <default>false</default>
+                <label>Additional Inspection</label>
+            </value>
+            <value>
+                <fullName>Post-Inspection</fullName>
+                <default>false</default>
+                <label>Post-Inspection</label>
+            </value>
+            <value>
+                <fullName>Recalibration</fullName>
+                <default>false</default>
+                <label>Recalibration</label>
+            </value>
+            <value>
+                <fullName>Failed Appointment Photos</fullName>
+                <default>false</default>
+                <label>Failed Appointment Photos</label>
+            </value>
+            <value>
+                <fullName>Corrective Action Report</fullName>
+                <default>false</default>
+                <label>Corrective Action Report</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

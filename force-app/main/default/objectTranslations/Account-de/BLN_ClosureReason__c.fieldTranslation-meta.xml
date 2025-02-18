@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Closure Reason --></label>
+    <name>BLN_ClosureReason__c</name>
+    <picklistValues>
+        <masterLabel>Account Already Exist</masterLabel>
+        <translation><!-- Account Already Exist --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

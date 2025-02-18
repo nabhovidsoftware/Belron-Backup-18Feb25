@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>2630-Remove AND Refit Rear - rubber</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_BranchOnlyOrMobileOnly__c</field>
+        <value xsi:type="xsd:string">None</value>
+    </values>
+    <values>
+        <field>BLN_CategoryCode__c</field>
+        <value xsi:type="xsd:string">2630-Remove AND Refit Rear - rubber</value>
+    </values>
+    <values>
+        <field>BLN_MatchingCriteria__c</field>
+        <value xsi:type="xsd:string">Exact</value>
+    </values>
+    <values>
+        <field>BLN_ProductCode__c</field>
+        <value xsi:type="xsd:string">PSER00105A</value>
+    </values>
+    <values>
+        <field>BLN_Type__c</field>
+        <value xsi:type="xsd:string">PRIME</value>
+    </values>
+</CustomMetadata>

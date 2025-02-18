@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_IsDeletable__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+  TODAY()-DATEVALUE(CreatedDate) &gt;= $Setup.BLN_LoggingSettings__c.BLN_IntegrationLoggerRetentionPeriod__c,
+  NOT(BLN_RetainLog__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Deletable</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

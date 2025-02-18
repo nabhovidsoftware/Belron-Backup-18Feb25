@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="BLN_SearchAndGetMotorist">
+    <apiVersion>53.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="firstName" type="String" label="First Name"/>
+            <property name="lastName" type="String" label="Last Name"/>
+            <property name="email" type="String" label="Email"/>
+            <property name="caseId" type="String" label="CaseId"/>
+            <property name="salutation" type="String" label="Salutation"/>
+            <property name="phone" type="String" label="Phone"/>
+            <property name="recordId" label="Account RecordId" type="String"/>
+            <property name="serviceStreet" label="Service Street" type="String"/>
+            <property name="serviceTown" label="Service Town" type="String"/>
+            <property name="serviceCountry" label="Service Country" type="String"/>
+            <property name="servicePostCode" label="Service Post Code" type="String"/>
+            <property name="outputserviceStreet" label="output Service Street" type="String" role="outputOnly"/>
+            <property name="outputserviceTown" label="output Service Town" type="String" role="outputOnly"/>
+            <property name="outputserviceCountry" label="output Service country" type="String" role="outputOnly"/>
+            <property name="outputservicePostCode" label="output Service PostCode" type="String" role="outputOnly"/>
+            <property name="IsCancelled" label="IsCancelled" type="String" role="outputOnly"/>
+            <property name="callMotoristFlow1" label="callMotoristFlow1" type="Boolean"/>
+            <property name="persontypefield" label="persontypefield" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

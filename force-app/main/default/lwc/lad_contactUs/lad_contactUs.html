@@ -1,0 +1,32 @@
+<template>
+    <template if:true={isLoading}>
+        <section class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </section>
+    </template>
+        <div class="slds-p-around_medium">
+            <lightning-input class="firstName" label="First Name" value={firstName} onchange={handleFirstNameChange} pattern = "^\S.*\S$" required = true></lightning-input>
+            <lightning-input class="lastName" label="Last Name" value={lastName} onchange={handleLastNameChange} required = true> </lightning-input>
+            <lightning-input class="companyName" label="Company Name" value={accountName} onchange={handleAccountNameChange} required = true></lightning-input>
+            <lightning-input if:false={isGuest} class="accountNumber" label="Account Number" value={accountNumber} onchange={handleAccountNumberChange} required = true></lightning-input>
+            <lightning-input class="phoneNumber" label="Phone Number" value={phoneNumber} onchange={handlePhoneNumberChange} required = true></lightning-input>
+            <lightning-input class="email" label="Email Address" type = 'email' value={email} placeholder="Enter your email address" onchange={handleEmailChange} required = true></lightning-input>
+            <lightning-combobox class="type" name="Type" label="Enquiry Type" value={type} placeholder="--None--" options={caseType} onchange={handleType} required = true></lightning-combobox>
+            <div if:true={type}>
+                <lightning-combobox class="subType" name="Sub Type" label="Sub Type" value={reason} placeholder="--None--" options={caseReason} onchange={handleReason} required = true></lightning-combobox>
+            </div>
+            <lightning-textarea class="Description" label="Message" value={description} onchange={handleDescriptionChange} required = true></lightning-textarea>
+                <lightning-card if:false={isGuest} title="File Upload " icon-name="custom:custom14">
+                    <div class="slds-m-around_medium">
+                        <lightning-input type="file" 
+                        accept=".xlsx, .xls, .csv, .png, .doc, .docx, .pdf"
+                        label="Attachment" onchange={openfileUpload}></lightning-input>
+                    </div>
+                    <template if:true={fileData}>
+                        <p>{fileData.filename}</p>
+                    </template>
+                </lightning-card>
+                <br>
+            <lightning-button variant="brand" label="Submit" onclick={handleValidation}></lightning-button>
+        </div>
+</template>

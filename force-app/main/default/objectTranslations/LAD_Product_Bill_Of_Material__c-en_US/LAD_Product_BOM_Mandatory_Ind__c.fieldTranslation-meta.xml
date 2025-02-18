@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Signifies if the Associated Product is essential or not --></help>
+    <label><!-- Product BOM Mandatory Ind --></label>
+    <name>LAD_Product_BOM_Mandatory_Ind__c</name>
+    <picklistValues>
+        <masterLabel>FALSE</masterLabel>
+        <translation><!-- FALSE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRUE</masterLabel>
+        <translation><!-- TRUE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

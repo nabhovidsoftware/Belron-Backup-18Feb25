@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" label="Record Id" type="String"/>
+            <property name="recordVehicleId" label="Record Vehicle Id" type="String"/>
+            <property name="vehicleId" label="Vehicle Id" type="String"/>
+            <property name="IsCancelled" label="IsCancelled" type="String" role="outputOnly"/>
+            <property name="IsSave" label="IsSave" type="String" role="outputOnly"/>
+            <property name="IsSaveFinish" label="IsSaveFinish" type="Boolean" role="outputOnly"/>
+            <property name="checkEdit" label="Check Edit" type="String"/>
+            <property name="vrnValue" label="VRN" type="String"/>
+        </targetConfig>      
+    </targetConfigs>
+
+    <description>
+        FOUK-3149 This component is created special vehicle identification' functionality.
+    </description>
+</LightningComponentBundle>

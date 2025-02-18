@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ProductOrProCategoryisMandatory</fullName>
+    <active>true</active>
+    <description>FOUK-6068. This is the Reference Validation Rule, one of Product or Product category is Mandatory on ARP.</description>
+    <errorConditionFormula>AND(  
+    NOT($Permission.BLN_BypassValidationRules),  
+    OR(RecordType.DeveloperName = &quot;BLN_ProductAllowance&quot;,
+     RecordType.DeveloperName = &quot;BLN_ProductExcess&quot;),
+  
+    OR(  
+        AND(  
+            ISBLANK(BLN_Product__c),  
+            ISBLANK(BLN_ProductCategory__c),  
+            OR(  
+                ISPICKVAL(BLN_ProductAllowance__c, &quot;Allow&quot;),  
+                ISPICKVAL(BLN_ProductAllowance__c, &quot;Pass Liability&quot;),
+                ISPICKVAL(BLN_ProductAllowance__c, &quot;Do Not Show&quot;),
+                ISPICKVAL(BLN_ProductAllowance__c, &quot;&quot;)  
+                
+            )  
+        ),  
+        AND(  
+            NOT(ISBLANK(BLN_Product__c)),  
+            NOT(ISBLANK(BLN_ProductCategory__c))  
+        )  
+    )  
+)</errorConditionFormula>
+    <errorDisplayField>BLN_ProductCategory__c</errorDisplayField>
+    <errorMessage>Either &quot;Product&quot; or &quot;Product Category&quot; should be populated at a time.</errorMessage>
+</ValidationRule>

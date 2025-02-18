@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-4896 - Created for error handling of Worldpay Payment integration on Experience cloud.</description>
+    <label>WorldPay Error Code</label>
+    <pluralLabel>WorldPay Error Codes</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

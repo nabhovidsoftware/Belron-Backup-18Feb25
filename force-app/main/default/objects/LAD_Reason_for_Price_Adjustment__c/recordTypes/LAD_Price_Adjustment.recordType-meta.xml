@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Price_Adjustment</fullName>
+    <active>true</active>
+    <description>Story - FOUK 8991</description>
+    <label>Price Adjustment</label>
+    <picklistValues>
+        <picklist>LAD_Reason_of_Price_Adjustment__c</picklist>
+        <values>
+            <fullName>Bulk orders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complaint resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laddaw error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price match</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scratched on delivery%2Fcollection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Short Shelf Life</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Special order pricing</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

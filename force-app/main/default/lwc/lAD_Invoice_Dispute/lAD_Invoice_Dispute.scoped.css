@@ -1,0 +1,14 @@
+.slds-modal__content {
+    height: 700px;
+    /* Adjust height as needed */
+    overflow: auto;
+}
+
+.custom-button {
+    background-color: #332362 !important;
+    color: white !important;
+}
+
+.dispute-button {
+    text-align: right;
+}

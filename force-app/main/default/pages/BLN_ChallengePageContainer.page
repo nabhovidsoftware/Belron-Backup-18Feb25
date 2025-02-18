@@ -1,0 +1,21 @@
+<apex:page showHeader="false" sidebar="false">
+<div id='iframediv'>
+    <apex:iframe id="challengecontainer"></apex:iframe>
+</div>
+
+<script>
+window.onload = function(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const jwt = urlParams.get('jwt');
+    const sid = urlParams.get('sid');
+    var iframe = document.getElementById('challengecontainer');
+
+    // provide height and width to it
+    iframe.setAttribute("src",window.location.origin + '/SelfServe/apex/ChallengePage?jwt=' + jwt+'&sid'+sid);
+    iframe.setAttribute("allow","https://www.worldpay.com/");
+
+}
+
+</script>
+</apex:page>

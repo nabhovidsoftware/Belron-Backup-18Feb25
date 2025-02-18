@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-5371 Used for calling Reserve cpt stock LWC</description>
+    <label>Reserve CPT Stock</label>
+    <lwcComponent>bln_ReserveCptStock</lwcComponent>
+    <motif>Custom55: Books</motif>
+</CustomTab>

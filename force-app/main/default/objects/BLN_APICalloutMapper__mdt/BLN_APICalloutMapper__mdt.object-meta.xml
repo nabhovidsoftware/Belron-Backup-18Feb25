@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>FOUK-6359, API callout header and URL mapping master</description>
+    <label>API Callout Mapper</label>
+    <pluralLabel>API Callout Mappers</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Outcome Of Call --></label>
+    <name>BLN_OutcomeOfCall__c</name>
+    <picklistValues>
+        <masterLabel>Answered</masterLabel>
+        <translation><!-- Answered --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Incorrect Number</masterLabel>
+        <translation><!-- Incorrect Number --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Left Message</masterLabel>
+        <translation><!-- Left Message --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Answer</masterLabel>
+        <translation><!-- No Answer --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

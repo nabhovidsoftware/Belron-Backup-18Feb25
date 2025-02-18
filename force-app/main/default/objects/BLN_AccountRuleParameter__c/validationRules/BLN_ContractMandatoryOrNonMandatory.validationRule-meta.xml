@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ContractMandatoryOrNonMandatory</fullName>
+    <active>true</active>
+    <description>FOUK-11052 This rule is created when account is filled contract is mandatory .</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(BLN_Account__c ) ), RecordType.DeveloperName =&apos;BLN_SLA&apos;,ISBLANK( BLN_Contract__c ) )</errorConditionFormula>
+    <errorDisplayField>BLN_Contract__c</errorDisplayField>
+    <errorMessage>Contract field should not be blank.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <errorMessage><!-- Work capacity can only be created for day&apos;s. --></errorMessage>
+        <name>BLN_DailyWorkItemCapacityOnly</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please create capacity only for resources of type &apos;Virtual Tech;. --></errorMessage>
+        <name>BLN_OPCreatesCapacityforVirtualTech</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Salutation --></label>
+    <name>LAD_Salutation__c</name>
+    <picklistValues>
+        <masterLabel>Already an existing client</masterLabel>
+        <translation><!-- Already an existing client --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed - Converted</masterLabel>
+        <translation><!-- Closed - Converted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Closed - No VGRRR requirements</masterLabel>
+        <translation><!-- Closed - No VGRRR requirements --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected - duplicate</masterLabel>
+        <translation><!-- Rejected - duplicate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected - wrong data</masterLabel>
+        <translation><!-- Rejected - wrong data --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

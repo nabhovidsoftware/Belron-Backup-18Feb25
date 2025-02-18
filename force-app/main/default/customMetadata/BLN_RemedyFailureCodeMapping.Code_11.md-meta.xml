@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Code 11</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_CodeId__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>BLN_Code_Id__c</field>
+        <value xsi:type="xsd:double">11.0</value>
+    </values>
+    <values>
+        <field>BLN_Remedy_Reason__c</field>
+        <value xsi:type="xsd:string">ATF-Arrived Too Late to Complete Work in Time</value>
+    </values>
+    <values>
+        <field>BLN_SFS_Reason_Level_1__c</field>
+        <value xsi:type="xsd:string">Technician Issues</value>
+    </values>
+    <values>
+        <field>BLN_SFS_Reason_Level_2__c</field>
+        <value xsi:type="xsd:string">Technician Missed Appt Time/Mobile Only</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,100 @@
+<template>
+    <lightning-card  title= "Relationships Matrix" icon-name="custom:custom19" >
+        <div id="containerDiv" onmousemove={handlemousemove} onmouseup={handlemouseup}
+        ondblclick={handledblclickresizable}
+        class="slds-table_header-fixed_container slds-border_right slds-border_left tableScroll"
+        onscroll={tableOuterDivScrolled}>
+            <div  id="tableViewInnerDiv" onscroll={tableScrolled} class="slds-scrollable_y tableViewInnerDiv">
+            <table class="slds-table slds-table_bordered slds-table_header-fixed slds-table_resizable-cols slds-table_fixed-layout">
+                <thead >
+                    <tr>
+                        <!-- Iterate over columns to add dynamic headers -->
+                        <template for:each={dynamicColumns} for:item="column">
+                            <th class="slds-is-resizable dv-dynamic-width"  key={column.fieldName} scope="col" title={column.label} style="width:15rem;">
+                                <div class="slds-cell-fixed" style="width:15rem;">
+                                    <a class="slds-th__action slds-text-link--reset ">
+                                        <span class="slds-truncate">{column.label}</span>
+                                    </a>
+                                    <div class="slds-resizable">
+                                        <span class="slds-resizable__handle" onmousedown={handlemousedown}>
+                                            <span class="slds-resizable__divider"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iterate over contactUserRelationshipList to populate rows -->
+                    <template for:each={contactUserRelationshipList} for:item="contactUserRelation">
+                        <tr key={contactUserRelation}>
+                            <!-- Iterate over contactUserRelation to populate dynamic contactUserRelation -->
+                            <template for:each={contactUserRelation} for:item="relationItem">
+                                <td key={relationItem.label}>
+                                    <div class="slds-truncate dv-dynamic-width" style="width:15rem;">
+                                    <!-- check item has contact url-->
+                                    <template if:true={relationItem.Url}>
+                                        <a href={relationItem.Url} target="_blank">{relationItem.value}</a>
+                                    </template>
+                                    <!-- Check if the value is an image -->
+                                    <template if:true={relationItem.Id}>
+                                        <!-- Render the image directly -->
+                                        <template if:true={relationItem.value}>
+                                            <div  ondblclick={onClickHandler} data-id={relationItem.Id} data-label={relationItem.label}>
+                                                <img src={relationItem.value} alt={relationItem.label}
+                                                    style="height:30px; width:30px;" border="0" />
+                                            </div>
+                                        </template>
+                                    </template>
+                                    <!-- If it's not an image, render normally -->
+                                    <template if:false={relationItem.Id}>
+                                        <template if:false={relationItem.Url}>
+                                            <div>{relationItem.value}</div>
+                                        </template>
+                                    </template>
+                                </div>
+                                </td>
+                            </template>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+    </div>
+    </div>
+
+        <!-- Modal -->
+        <template if:true={openmodel}>
+            <section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                class="slds-modal slds-fade-in-open" role="dialog" tabindex="-1">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium">Change Relationship</h2>
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="Close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <br /><br />
+                        <lightning-record-edit-form object-api-name="BLN_Relationship__c" record-id={relationId}
+                            onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                            <lightning-messages></lightning-messages>
+                            <lightning-input-field field-name={relationshipHealthField}></lightning-input-field>
+                            <br /><br /><br />
+                            <footer class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                                <lightning-button class="slds-button" variant="brand" type="submit" label="Save"
+                                    title="Save"></lightning-button>
+                            </footer>
+                        </lightning-record-edit-form>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <!-- End Modal -->
+
+    </lightning-card>
+</template>

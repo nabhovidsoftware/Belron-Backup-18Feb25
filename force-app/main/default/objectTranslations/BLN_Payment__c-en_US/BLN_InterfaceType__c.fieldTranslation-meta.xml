@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Interface Type --></label>
+    <name>BLN_InterfaceType__c</name>
+    <picklistValues>
+        <masterLabel>BB</masterLabel>
+        <translation><!-- BB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CAP</masterLabel>
+        <translation><!-- CAP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ECOM</masterLabel>
+        <translation><!-- ECOM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OLP</masterLabel>
+        <translation><!-- OLP --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

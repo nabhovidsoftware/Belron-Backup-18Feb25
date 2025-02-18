@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <customErrors>
+        <name>BLN_IncompleteTaskFoundError</name>
+        <label>Incomplete Task Found Error</label>
+        <locationX>50</locationX>
+        <locationY>803</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Label.BLN_IncompleteTaskFoundError}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>BLN_CheckIncompleteTasks</name>
+        <label>Check incomplete tasks</label>
+        <locationX>182</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BLN_IncompleteTasksFinded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>TaskList</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_IncompleteTaskFoundError</targetReference>
+            </connector>
+            <label>Incomplete tasks finded</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>BLN_CheckRecordType</name>
+        <label>Check record type</label>
+        <locationX>380</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BLN_B2BSalesCase</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>B2B Sales Case</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Task_Record_Condition</targetReference>
+            </connector>
+            <label>B2B Sales Case</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Task_Record_Condition</name>
+        <label>Task Record Condition</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Get_tasks1</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Record_Type_Check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BLN_CustomerB2BAccount</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.BLN_CompanyRegistrationNumber__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_GetTasks</targetReference>
+            </connector>
+            <label>Account Record Type Check</label>
+        </rules>
+    </decisions>
+    <description>FOUK - 2527 and FOUK - 4468</description>
+    <environments>Default</environments>
+    <interviewLabel>Case - Validate Tasks for Onboarding Case Closure {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Case - Validate Tasks for Onboarding Case Closure</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>BLN_GetTasks</name>
+        <label>Get tasks</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>BLN_CheckIncompleteTasks</targetReference>
+        </connector>
+        <filterLogic>1 AND 4 AND (2 OR 3 OR 5)</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pricing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Billing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Credit Check</stringValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <outputReference>TaskList</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_tasks1</name>
+        <label>Get tasks</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>BLN_CheckIncompleteTasks</targetReference>
+        </connector>
+        <filterLogic>1 AND 4 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Pricing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>BLN_Subtype__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Billing</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <object>Task</object>
+        <outputReference>TaskList</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>254</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>BLN_CheckRecordType</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Permission.BLN_BypassFlows}),
+ISCHANGED({!$Record.Status}),
+ISPICKVAL({!$Record.Status}, &apos;Closed&apos;)
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>TaskList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+</Flow>

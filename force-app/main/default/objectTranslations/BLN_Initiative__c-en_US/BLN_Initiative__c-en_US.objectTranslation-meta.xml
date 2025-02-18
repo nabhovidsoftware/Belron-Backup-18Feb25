@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Initiative</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Initiatives</value>
+    </caseValues>
+    <layouts>
+        <layout>BLN_AccountAuditInitiativespagelayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_AccountPlanInitiativespagelayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Intiative Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Account Audit Initiatives --></label>
+        <name>BLN_AccountAuditInitiatives</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Account Plan Initiative --></label>
+        <name>BLN_AccountPlanInitiative</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Strategy Initiative --></label>
+        <name>BLN_SalesStrategyInitiative</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- BLN_NewTask --></label>
+        <name>BLN_NewTask</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- BLN_Task --></label>
+        <name>BLN_Task</name>
+    </webLinks>
+</CustomObjectTranslation>

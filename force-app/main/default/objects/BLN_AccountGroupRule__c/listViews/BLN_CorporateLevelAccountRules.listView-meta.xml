@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_CorporateLevelAccountRules</fullName>
+    <columns>NAME</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>BLN_Description__c</columns>
+    <columns>BLN_ActiveFrom__c</columns>
+    <columns>BLN_ActiveTo__c</columns>
+    <columns>BLN_CorporateType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>BLN_AccountGroupRule__c.BLN_CorporateLevel</value>
+    </filters>
+    <label>Corporate Level Account Rules</label>
+</ListView>

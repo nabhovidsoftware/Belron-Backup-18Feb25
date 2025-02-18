@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Autoglass Business Manager</fullName>
+        <default>false</default>
+        <label>Autoglass Business Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Client Referral</fullName>
+        <default>false</default>
+        <label>Client Referral</label>
+    </customValue>
+    <customValue>
+        <fullName>Event / Exhibition</fullName>
+        <default>false</default>
+        <label>Event / Exhibition</label>
+    </customValue>
+    <customValue>
+        <fullName>Industry publication</fullName>
+        <default>false</default>
+        <label>Industry publication</label>
+    </customValue>
+    <customValue>
+        <fullName>Internal referral</fullName>
+        <default>false</default>
+        <label>Internal referral</label>
+    </customValue>
+    <customValue>
+        <fullName>Online search</fullName>
+        <default>false</default>
+        <label>Online search</label>
+    </customValue>
+    <customValue>
+        <fullName>Social media</fullName>
+        <default>false</default>
+        <label>Social media</label>
+    </customValue>
+    <customValue>
+        <fullName>TV / Radio advertising</fullName>
+        <default>false</default>
+        <label>TV / Radio advertising</label>
+    </customValue>
+    <customValue>
+        <fullName>Vision magazine</fullName>
+        <default>false</default>
+        <label>Vision magazine</label>
+    </customValue>
+    <customValue>
+        <fullName>Word of mouth</fullName>
+        <default>false</default>
+        <label>Word of mouth</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <description>How potential customer heard about Belron</description>
+    <masterLabel>How Did You Hear About Us picklist</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

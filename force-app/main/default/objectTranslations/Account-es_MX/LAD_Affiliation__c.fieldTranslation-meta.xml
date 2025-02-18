@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Affiliation --></label>
+    <name>LAD_Affiliation__c</name>
+    <picklistValues>
+        <masterLabel>Autoglass®</masterLabel>
+        <translation><!-- Autoglass® --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Autowindscreen Services Ltd</masterLabel>
+        <translation><!-- Autowindscreen Services Ltd --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Charles Pughs Glass Ltd</masterLabel>
+        <translation><!-- Charles Pughs Glass Ltd --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dealer Network</masterLabel>
+        <translation><!-- Dealer Network --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Master Auto Glass</masterLabel>
+        <translation><!-- Master Auto Glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>National Windscreens</masterLabel>
+        <translation><!-- National Windscreens --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nationwide Windscreen Services</masterLabel>
+        <translation><!-- Nationwide Windscreen Services --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pilkington</masterLabel>
+        <translation><!-- Pilkington --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

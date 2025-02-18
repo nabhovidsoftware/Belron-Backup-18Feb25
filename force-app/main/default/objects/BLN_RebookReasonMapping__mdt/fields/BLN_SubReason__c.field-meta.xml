@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SubReason__c</fullName>
+    <description>FOUK-6281 This field created for Rebook  Sub-Reason</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Rebook Sub-Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lack of Capacity/Overbooked</fullName>
+                <default>true</default>
+                <label>Lack of Capacity/Overbooked</label>
+            </value>
+            <value>
+                <fullName>Cust Unavailable/Cancelled</fullName>
+                <default>false</default>
+                <label>Cust Unavailable/Cancelled</label>
+            </value>
+            <value>
+                <fullName>Customer In day Cancellation</fullName>
+                <default>false</default>
+                <label>Customer In day Cancellation</label>
+            </value>
+            <value>
+                <fullName>Customer No Show</fullName>
+                <default>false</default>
+                <label>Customer No Show</label>
+            </value>
+            <value>
+                <fullName>Body Rust Prevented Work</fullName>
+                <default>false</default>
+                <label>Body Rust Prevented Work</label>
+            </value>
+            <value>
+                <fullName>Car Too Damaged To Carry Out Work</fullName>
+                <default>false</default>
+                <label>Car Too Damaged To Carry Out Work</label>
+            </value>
+            <value>
+                <fullName>Glass Damaged</fullName>
+                <default>false</default>
+                <label>Glass Damaged</label>
+            </value>
+            <value>
+                <fullName>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</fullName>
+                <default>false</default>
+                <label>Poor Weather-Cust No Cover/Doesn&apos;t Want In Branch</label>
+            </value>
+            <value>
+                <fullName>Location Not suitable</fullName>
+                <default>false</default>
+                <label>Location Not suitable</label>
+            </value>
+            <value>
+                <fullName>Additional Part Required</fullName>
+                <default>false</default>
+                <label>Additional Part Required</label>
+            </value>
+            <value>
+                <fullName>Wrong Part Ordered</fullName>
+                <default>false</default>
+                <label>Wrong Part Ordered</label>
+            </value>
+            <value>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+                <label>Not Covered</label>
+            </value>
+            <value>
+                <fullName>Pre/Post Scan Error</fullName>
+                <default>false</default>
+                <label>Pre/Post Scan Error</label>
+            </value>
+            <value>
+                <fullName>Technician Doesn&apos;t Have Correct Skill/ Equipment</fullName>
+                <default>false</default>
+                <label>Technician Doesn&apos;t Have Correct Skill/ Equipment</label>
+            </value>
+            <value>
+                <fullName>Too Large to Repair</fullName>
+                <default>false</default>
+                <label>Too Large to Repair</label>
+            </value>
+            <value>
+                <fullName>Customer Concern, Repair Cracking Off</fullName>
+                <default>false</default>
+                <label>Customer Concern, Repair Cracking Off</label>
+            </value>
+            <value>
+                <fullName>Multiple Impact on W/S</fullName>
+                <default>false</default>
+                <label>Multiple Impact on W/S</label>
+            </value>
+            <value>
+                <fullName>Repair too Small/No Damage</fullName>
+                <default>false</default>
+                <label>Repair too Small/No Damage</label>
+            </value>
+            <value>
+                <fullName>Repair Done Before</fullName>
+                <default>false</default>
+                <label>Repair Done Before</label>
+            </value>
+            <value>
+                <fullName>Location of Repair on W/S</fullName>
+                <default>false</default>
+                <label>Location of Repair on W/S</label>
+            </value>
+            <value>
+                <fullName>Repair Cracked Off</fullName>
+                <default>false</default>
+                <label>Repair Cracked Off</label>
+            </value>
+            <value>
+                <fullName>Part Not Delivered - Delayed/Backordered</fullName>
+                <default>false</default>
+                <label>Part Not Delivered - Delayed/Backordered</label>
+            </value>
+            <value>
+                <fullName>Part Lost/Damaged - Retail</fullName>
+                <default>false</default>
+                <label>Part Lost/Damaged - Retail</label>
+            </value>
+            <value>
+                <fullName>Mislabelled/Incorrect Part Delivered</fullName>
+                <default>false</default>
+                <label>Mislabelled/Incorrect Part Delivered</label>
+            </value>
+            <value>
+                <fullName>Technician Absent</fullName>
+                <default>false</default>
+                <label>Technician Absent</label>
+            </value>
+            <value>
+                <fullName>Technician Missed Appt Time/Mobile Only</fullName>
+                <default>false</default>
+                <label>Technician Missed Appt Time/Mobile Only</label>
+            </value>
+            <value>
+                <fullName>Technician Van Issues/Breakdown</fullName>
+                <default>false</default>
+                <label>Technician Van Issues/Breakdown</label>
+            </value>
+            <value>
+                <fullName>Repair Too Large After Completion</fullName>
+                <default>false</default>
+                <label>Repair Too Large After Completion</label>
+            </value>
+            <value>
+                <fullName>Customer Initiated Location Change</fullName>
+                <default>false</default>
+                <label>Customer Initiated Location Change</label>
+            </value>
+            <value>
+                <fullName>Duplicate Work Order</fullName>
+                <default>false</default>
+                <label>Duplicate Work Order</label>
+            </value>
+            <value>
+                <fullName>Job Already Completed</fullName>
+                <default>false</default>
+                <label>Job Already Completed</label>
+            </value>
+            <value>
+                <fullName>Vehicle Still in Garage/Not Delivered</fullName>
+                <default>false</default>
+                <label>Vehicle Still in Garage/Not Delivered</label>
+            </value>
+            <value>
+                <fullName>Vehicle Unavailable</fullName>
+                <default>false</default>
+                <label>Vehicle Unavailable</label>
+            </value>
+            <value>
+                <fullName>Vehicle Won’t Start/Broken Down/Insufficient Charge</fullName>
+                <default>false</default>
+                <label>Vehicle Won’t Start/Broken Down/Insufficient Charge</label>
+            </value>
+            <value>
+                <fullName>Parts Damaged</fullName>
+                <default>false</default>
+                <label>Parts Damaged</label>
+            </value>
+            <value>
+                <fullName>Aftermarket Part Refused - OE Required</fullName>
+                <default>false</default>
+                <label>Aftermarket Part Refused - OE Required</label>
+            </value>
+            <value>
+                <fullName>Customer Unable to Pay</fullName>
+                <default>false</default>
+                <label>Customer Unable to Pay</label>
+            </value>
+            <value>
+                <fullName>Pending Coverage Validation</fullName>
+                <default>false</default>
+                <label>Pending Coverage Validation</label>
+            </value>
+            <value>
+                <fullName>Tool Availability/Issue</fullName>
+                <default>false</default>
+                <label>Tool Availability/Issue</label>
+            </value>
+            <value>
+                <fullName>Unable to Recalibrate Due to Weather</fullName>
+                <default>false</default>
+                <label>Unable to Recalibrate Due to Weather</label>
+            </value>
+            <value>
+                <fullName>Unable to Recalibrate As Vehicle Not in Factory Condition</fullName>
+                <default>false</default>
+                <label>Unable to Recalibrate As Vehicle Not in Factory Condition</label>
+            </value>
+            <value>
+                <fullName>Traffic/Unable to Drive</fullName>
+                <default>false</default>
+                <label>Traffic/Unable to Drive</label>
+            </value>
+            <value>
+                <fullName>Too Close to ADAS Camera</fullName>
+                <default>false</default>
+                <label>Too Close to ADAS Camera</label>
+            </value>
+            <value>
+                <fullName>External Purchase Delayed</fullName>
+                <default>false</default>
+                <label>External Purchase Delayed</label>
+            </value>
+            <value>
+                <fullName>Manufacture Defect</fullName>
+                <default>false</default>
+                <label>Manufacture Defect</label>
+            </value>
+            <value>
+                <fullName>Part Lost/Damaged - Supply Chain</fullName>
+                <default>false</default>
+                <label>Part Lost/Damaged - Supply Chain</label>
+            </value>
+            <value>
+                <fullName>Total Availability Issue</fullName>
+                <default>false</default>
+                <label>Total Availability Issue</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>ServiceAppointmentCallout</name>
+        <label>ServiceAppointmentCallout</label>
+        <locationX>545</locationX>
+        <locationY>1187</locationY>
+        <actionName>BLN_ServiceAppointmentCallout</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>serviceAppointmentlist</name>
+            <value>
+                <elementReference>SAList</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>BLN_ServiceAppointmentCallout</nameSegment>
+    </actionCalls>
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Add_Current_Updates</name>
+        <label>Add Current Updates</label>
+        <locationX>545</locationX>
+        <locationY>971</locationY>
+        <assignmentItems>
+            <assignToReference>SAList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adjustment_for_Prior_Value</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Adjustment_for_Prior_Value</name>
+        <label>Adjustment for Prior Value</label>
+        <locationX>545</locationX>
+        <locationY>1079</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>statusAdjustment</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SAList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>ServiceAppointmentCallout</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>System_Administrator_API_Name</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>System Administrator</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Check_ST</name>
+        <label>Check ST</label>
+        <locationX>204</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ST_is_R1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ServiceTerritory.BLN_ConsiderforR1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>VerifyUserprofile</targetReference>
+            </connector>
+            <label>ST is R1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_ST_0</name>
+        <label>Check ST</label>
+        <locationX>886</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ST_is_R1_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ServiceTerritory.BLN_ConsiderforR1__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Verify_User_profile</targetReference>
+            </connector>
+            <label>ST is R1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Verify_User_profile</name>
+        <label>Verify User profile</label>
+        <locationX>710</locationX>
+        <locationY>384</locationY>
+        <defaultConnectorLabel>Regular user</defaultConnectorLabel>
+        <rules>
+            <name>Admin_user</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>System_Administrator_API_Name</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Uncheck_Service_Appointment_for_Mule_Callout</targetReference>
+            </connector>
+            <label>Admin user</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>VerifyUserprofile</name>
+        <label>Verify User profile</label>
+        <locationX>50</locationX>
+        <locationY>384</locationY>
+        <defaultConnector>
+            <targetReference>Uncheck_Service_Appointment_for_Mule_Callout</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Regular user</defaultConnectorLabel>
+        <rules>
+            <name>AdminUser</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Profile.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>System_Administrator_API_Name</elementReference>
+                </rightValue>
+            </conditions>
+            <label>Admin user</label>
+        </rules>
+    </decisions>
+    <description>INC0424778 Mulesoft callout for dispatched Service Appointment
+INC0467264 Change dispatch flow to check System Admin path</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>statusAdjustment</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!$Record.Status})=&apos;Dispatched&apos;, &apos;Scheduled&apos;,TEXT({!$Record.Status}))</expression>
+    </formulas>
+    <interviewLabel>ISCHANGED({!$Record.Status}) &amp;&amp; ISPICKVAL({!$Record.Status} ,&apos;Dispatched&apos;) &amp;&amp; ISPICKVAL({!$Record__Prior.Status} ,&apos;Scheduled&apos;) {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Mulesoft Callout - Appointment Dispatch</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Uncheck_Service_Appointment_for_Mule_Callout</name>
+        <label>Uncheck Service Appointment for Mule Callout</label>
+        <locationX>545</locationX>
+        <locationY>863</locationY>
+        <connector>
+            <targetReference>Add_Current_Updates</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>BLN_QueueDispatchCallout__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>419</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_ST</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>NOT({!$Permission.BLN_BypassFlows}) &amp;&amp; {!$Record.BLN_QueueDispatchCallout__c} = true</filterFormula>
+        <object>ServiceAppointment</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <scheduledPaths>
+            <name>TriggerMulesoftUpdate</name>
+            <connector>
+                <targetReference>Check_ST_0</targetReference>
+            </connector>
+            <label>TriggerMulesoftUpdate</label>
+            <maxBatchSize>200</maxBatchSize>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>CreatedDate</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>SAList</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ServiceAppointment</objectType>
+    </variables>
+</Flow>

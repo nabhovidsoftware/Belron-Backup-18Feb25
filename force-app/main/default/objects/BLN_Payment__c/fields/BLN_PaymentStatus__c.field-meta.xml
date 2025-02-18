@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_PaymentStatus__c</fullName>
+    <description>FOUK-4686: This field is created to store Payment status value.</description>
+    <externalId>false</externalId>
+    <label>Payment Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>SUCCESS</fullName>
+                <default>false</default>
+                <label>SUCCESS</label>
+            </value>
+            <value>
+                <fullName>ERROR</fullName>
+                <default>false</default>
+                <label>ERROR</label>
+            </value>
+            <value>
+                <fullName>DECLINE</fullName>
+                <default>false</default>
+                <label>DECLINE</label>
+            </value>
+            <value>
+                <fullName>INITIATED</fullName>
+                <default>false</default>
+                <label>INITIATED</label>
+            </value>
+            <value>
+                <fullName>CANCELLED</fullName>
+                <default>false</default>
+                <label>CANCELLED</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

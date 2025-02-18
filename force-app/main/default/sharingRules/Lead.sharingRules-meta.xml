@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>BLN_LeadSharing</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Lead Sharing</label>
+        <sharedTo>
+            <roleAndSubordinates>BLN_DigitalMarketingUser</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>BLN_UK</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>LAD_Laddaw_Lead_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Laddaw Lead Read</label>
+        <sharedTo>
+            <roleAndSubordinates>LAD_Wholesale_Manager</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>LAD_Wholesale_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,39 @@
+.buttonStyle{
+    background-color: orange;
+    font-size:x-large;
+    font-style:normal;
+    width: 39rem;
+    height: 3rem;
+    color: black;
+    pointer-events: none;
+   margin-left: 14.0rem;
+   margin-top: 1rem;
+    /* font-weight: bold; */
+}
+.itemAlignment{
+    margin: 1.2rem 0 0 9.0rem;
+}
+.labelWidth{
+    width: 500px;
+    /* padding-left: 100px; */
+ }
+ .inputBoxWidth{
+    width: 400px;
+}
+.backButtonWidth{
+    margin-left: 9.0rem;
+}
+.adjustAlign{
+    left:15rem;
+    padding-left: 10rem;
+}
+.amountRed{
+    color:#BA0517;  
+}
+.topMargin{
+    margin-top: 1rem;
+}
+.THIS header.slds-card__header.slds-text-heading--medium{
+    padding-top:0px;
+    display: none;
+}

@@ -1,0 +1,50 @@
+.logo-header{
+    padding:12px 0px 12px 72px;
+    float: left;
+}
+.res-mob-logo{
+    width:165px;
+   
+}
+
+
+body, html {
+margin: 0;
+font-family: Arial, sans-serif;
+}
+
+
+header {
+background-color: #FAFAFA;
+color: white;
+padding: 12px 0;
+width: 100%;
+max-width: 1296px;
+height: 72px;   
+margin: 0 auto;
+
+
+max-width: 1296px;
+flex-direction: row;
+align-items: center;     
+}
+
+
+/* For Mobile Portrait View */
+@media (max-width: 612px) {
+.logo-header{
+    padding:12px 0px 12px 10px;
+   
+}
+.res-mob-logo{
+    /* width: 132px; */
+    width: 100px;
+    height: 40px;
+}
+header{
+    width: 100%;
+}
+
+
+
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexTestSuite xmlns="http://soap.sforce.com/2006/04/metadata">
+    <testClassName>B2BCartUpload_ProductSearchRestApiMock</testClassName>
+    <testClassName>B2BCartUploadTestUtils</testClassName>
+    <testClassName>B2BProductEntitlementCheckTest</testClassName>
+    <testClassName>CartUploadControllerTest</testClassName>
+    <testClassName>CartUploadControllerTest2</testClassName>
+</ApexTestSuite>

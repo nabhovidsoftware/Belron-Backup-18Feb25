@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Primary Contact Number --></label>
+    <name>BLN_PrimaryContactNumber__c</name>
+    <picklistValues>
+        <masterLabel>Home Phone</masterLabel>
+        <translation><!-- Home Phone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mobile Phone</masterLabel>
+        <translation><!-- Mobile Phone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other Phone</masterLabel>
+        <translation><!-- Other Phone --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

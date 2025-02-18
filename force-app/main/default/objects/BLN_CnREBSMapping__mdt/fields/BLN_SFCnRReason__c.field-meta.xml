@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_SFCnRReason__c</fullName>
+    <description>FOUK-6818
+Picklist of Credit &amp; Rebill Reason values.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>SF CnR Reason</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Discount Not Applied</fullName>
+                <default>true</default>
+                <label>Discount Not Applied</label>
+            </value>
+            <value>
+                <fullName>Incorrect Billing Site</fullName>
+                <default>false</default>
+                <label>Incorrect Billing Site</label>
+            </value>
+            <value>
+                <fullName>Incorrect Excess</fullName>
+                <default>false</default>
+                <label>Incorrect Excess</label>
+            </value>
+            <value>
+                <fullName>Incorrect Incident Date</fullName>
+                <default>false</default>
+                <label>Incorrect Incident Date</label>
+            </value>
+            <value>
+                <fullName>Incorrect Insurer</fullName>
+                <default>false</default>
+                <label>Incorrect Insurer</label>
+            </value>
+            <value>
+                <fullName>Incorrect mileage</fullName>
+                <default>false</default>
+                <label>Incorrect mileage</label>
+            </value>
+            <value>
+                <fullName>Incorrect Policy Number</fullName>
+                <default>false</default>
+                <label>Incorrect Policy Number</label>
+            </value>
+            <value>
+                <fullName>Incorrect Policyholder Address</fullName>
+                <default>false</default>
+                <label>Incorrect Policyholder Address</label>
+            </value>
+            <value>
+                <fullName>Incorrect Policyholder Name</fullName>
+                <default>false</default>
+                <label>Incorrect Policyholder Name</label>
+            </value>
+            <value>
+                <fullName>Incorrect Price</fullName>
+                <default>false</default>
+                <label>Incorrect Price</label>
+            </value>
+            <value>
+                <fullName>Incorrect Purchase Order Number</fullName>
+                <default>false</default>
+                <label>Incorrect Purchase Order Number</label>
+            </value>
+            <value>
+                <fullName>Incorrect Trade Account</fullName>
+                <default>false</default>
+                <label>Incorrect Trade Account</label>
+            </value>
+            <value>
+                <fullName>Incorrect VRN</fullName>
+                <default>false</default>
+                <label>Incorrect VRN</label>
+            </value>
+            <value>
+                <fullName>Limit Applies to Policy</fullName>
+                <default>false</default>
+                <label>Limit Applies to Policy</label>
+            </value>
+            <value>
+                <fullName>Motorist to Corporate Amendment</fullName>
+                <default>false</default>
+                <label>Motorist to Corporate Amendment</label>
+            </value>
+            <value>
+                <fullName>No Glass Cover</fullName>
+                <default>false</default>
+                <label>No Glass Cover</label>
+            </value>
+            <value>
+                <fullName>Policy Cancelled/Lapsed</fullName>
+                <default>false</default>
+                <label>Policy Cancelled/Lapsed</label>
+            </value>
+            <value>
+                <fullName>Product Error - Missing Product Added</fullName>
+                <default>false</default>
+                <label>Product Error - Missing Product Added</label>
+            </value>
+            <value>
+                <fullName>Product Error - Product Removed not used</fullName>
+                <default>false</default>
+                <label>Product Error - Product Removed not used</label>
+            </value>
+            <value>
+                <fullName>Trade Split Account Updated</fullName>
+                <default>false</default>
+                <label>Trade Split Account Updated</label>
+            </value>
+            <value>
+                <fullName>VAT Incorrect - PH is VAT registered</fullName>
+                <default>false</default>
+                <label>VAT Incorrect - PH is VAT registered</label>
+            </value>
+            <value>
+                <fullName>VAT Incorrect - PH not VAT registered</fullName>
+                <default>false</default>
+                <label>VAT Incorrect - PH not VAT registered</label>
+            </value>
+            <value>
+                <fullName>VAT Incorrect - Wrong Rate</fullName>
+                <default>false</default>
+                <label>VAT Incorrect - Wrong Rate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

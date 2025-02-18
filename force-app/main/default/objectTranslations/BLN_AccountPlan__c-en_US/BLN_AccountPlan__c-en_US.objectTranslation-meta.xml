@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Plans</value>
+    </caseValues>
+    <layouts>
+        <layout>Account Plan Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_AccountAuditInitiativesPagelayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_AccountPlanInitiativesPagelayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_SalesStrategyInitiativesPagelayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Account Audit --></label>
+        <name>BLN_AccountAudit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Account Plan --></label>
+        <name>BLN_AccountPlan</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Strategy --></label>
+        <name>BLN_SalesStrategy</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You cannot create an Account Plan at site level. --></errorMessage>
+        <name>BLN_AccountPlanatsitelevel</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Audit Date required when Audit Type has populated --></errorMessage>
+        <name>BLN_AuditDateRequired</name>
+    </validationRules>
+</CustomObjectTranslation>

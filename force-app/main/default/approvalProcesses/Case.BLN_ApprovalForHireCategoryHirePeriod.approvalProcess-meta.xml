@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>BLN_HireCarCategory__c</field>
+        <field>BLN_HireCarStartDate__c</field>
+        <field>BLN_HireCarEndDate__c</field>
+        <field>BLN_Approver__c</field>
+        <field>BLN_ApprovalStatus__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>true</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>BLN_ServiceAndComplaintsApprovalQueue</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Approval required Hire Category and Hire Period</label>
+        <name>BLN_ApprovalRequiredHireCategoryAndHirePeriod</name>
+    </approvalStep>
+    <description>FOUK-4703
+Approval Process for Hire Car Category and Hire Car Period.</description>
+    <emailTemplate>BLN_Case/BLN_ApproverEmailForHireCategoryAndHirePeriod</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>OR( ISPICKVAL(BLN_HireCarCategory__c, &apos;C&apos;), ISPICKVAL(BLN_HireCarCategory__c, &apos;B&apos;) ,NOT(ISPICKVAL(BLN_HireCarCategory__c, &apos;&apos;)),
+(BLN_HireCarEndDate__c &gt; BLN_HireCarStartDate__c + 3))</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>BLN_CaseApprove</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>BLN_CaseReject</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>BLN_CaseSubmitForApproval</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Approval for Hire Category &amp; Hire Period</label>
+    <processOrder>8</processOrder>
+    <recallActions>
+        <action>
+            <name>BLN_CaseSetToReset</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

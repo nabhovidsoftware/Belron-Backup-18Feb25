@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Type --></label>
+    <name>BLN_PaymentType__c</name>
+    <picklistValues>
+        <masterLabel>BB Amex</masterLabel>
+        <translation><!-- BB Amex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Cash</masterLabel>
+        <translation><!-- BB Cash --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Cheque</masterLabel>
+        <translation><!-- BB Cheque --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Diners</masterLabel>
+        <translation><!-- BB Diners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Electron</masterLabel>
+        <translation><!-- BB Electron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB JCB</masterLabel>
+        <translation><!-- BB JCB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Laser (debit)</masterLabel>
+        <translation><!-- BB Laser (debit) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Lost receipts Cash</masterLabel>
+        <translation><!-- BB Lost receipts Cash --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Lost receipts Cheque</masterLabel>
+        <translation><!-- BB Lost receipts Cheque --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Maestro (Switch) IN</masterLabel>
+        <translation><!-- BB Maestro (Switch) IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Maestro (Switch) NO IN</masterLabel>
+        <translation><!-- BB Maestro (Switch) NO IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Maestro International</masterLabel>
+        <translation><!-- BB Maestro International --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Mastercard</masterLabel>
+        <translation><!-- BB Mastercard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Solo IN</masterLabel>
+        <translation><!-- BB Solo IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Solo NO IN</masterLabel>
+        <translation><!-- BB Solo NO IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Staff sales</masterLabel>
+        <translation><!-- BB Staff sales --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Visa</masterLabel>
+        <translation><!-- BB Visa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Visa Delta</masterLabel>
+        <translation><!-- BB Visa Delta --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BB Waived Receipts</masterLabel>
+        <translation><!-- BB Waived Receipts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin AMEX</masterLabel>
+        <translation><!-- Chip &amp; Pin AMEX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin ARVAL PHH</masterLabel>
+        <translation><!-- Chip &amp; Pin ARVAL PHH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Debit MasterCard</masterLabel>
+        <translation><!-- Chip &amp; Pin Debit MasterCard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Diners</masterLabel>
+        <translation><!-- Chip &amp; Pin Diners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Duet</masterLabel>
+        <translation><!-- Chip &amp; Pin Duet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Intl Maestro</masterLabel>
+        <translation><!-- Chip &amp; Pin Intl Maestro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin JCB</masterLabel>
+        <translation><!-- Chip &amp; Pin JCB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Laser</masterLabel>
+        <translation><!-- Chip &amp; Pin Laser --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin MasterCard</masterLabel>
+        <translation><!-- Chip &amp; Pin MasterCard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Solo</masterLabel>
+        <translation><!-- Chip &amp; Pin Solo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin UK Maestro</masterLabel>
+        <translation><!-- Chip &amp; Pin UK Maestro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Visa</masterLabel>
+        <translation><!-- Chip &amp; Pin Visa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Visa ATM</masterLabel>
+        <translation><!-- Chip &amp; Pin Visa ATM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Visa Debit</masterLabel>
+        <translation><!-- Chip &amp; Pin Visa Debit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Visa Electron</masterLabel>
+        <translation><!-- Chip &amp; Pin Visa Electron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chip &amp; Pin Visa Purchasing</masterLabel>
+        <translation><!-- Chip &amp; Pin Visa Purchasing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Diners</masterLabel>
+        <translation><!-- E-Comm Diners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Electron</masterLabel>
+        <translation><!-- E-Comm Electron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Intl Maestro</masterLabel>
+        <translation><!-- E-Comm Intl Maestro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm JCB</masterLabel>
+        <translation><!-- E-Comm JCB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm MasterCard</masterLabel>
+        <translation><!-- E-Comm MasterCard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Mastercard Corp Credit</masterLabel>
+        <translation><!-- E-Comm Mastercard Corp Credit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Mastercard Corp Debit</masterLabel>
+        <translation><!-- E-Comm Mastercard Corp Debit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Mastercard Credit</masterLabel>
+        <translation><!-- E-Comm Mastercard Credit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Mastercard Debit</masterLabel>
+        <translation><!-- E-Comm Mastercard Debit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Visa Corporate Credit</masterLabel>
+        <translation><!-- E-Comm Visa Corporate Credit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Visa Corporate Debit</masterLabel>
+        <translation><!-- E-Comm Visa Corporate Debit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Visa Credit</masterLabel>
+        <translation><!-- E-Comm Visa Credit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Visa Debit</masterLabel>
+        <translation><!-- E-Comm Visa Debit --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>E-Comm Visa Electron</masterLabel>
+        <translation><!-- E-Comm Visa Electron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ecomms Card</masterLabel>
+        <translation><!-- Ecomms Card --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-Line Solo IN</masterLabel>
+        <translation><!-- On-Line Solo IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-Line Solo NO IN</masterLabel>
+        <translation><!-- On-Line Solo NO IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Amex</masterLabel>
+        <translation><!-- On-line Amex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Diners</masterLabel>
+        <translation><!-- On-line Diners --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Electron</masterLabel>
+        <translation><!-- On-line Electron --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line International Maestro</masterLabel>
+        <translation><!-- On-line International Maestro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line JCB</masterLabel>
+        <translation><!-- On-line JCB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line LASER</masterLabel>
+        <translation><!-- On-line LASER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Maestro</masterLabel>
+        <translation><!-- On-line Maestro --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Maestro (Switch) IN</masterLabel>
+        <translation><!-- On-line Maestro (Switch) IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Maestro (Switch)NO IN</masterLabel>
+        <translation><!-- On-line Maestro (Switch)NO IN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Mastercard</masterLabel>
+        <translation><!-- On-line Mastercard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Visa</masterLabel>
+        <translation><!-- On-line Visa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>On-line Visa Delta</masterLabel>
+        <translation><!-- On-line Visa Delta --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

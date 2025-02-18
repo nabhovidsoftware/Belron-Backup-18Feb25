@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_MyAccountPlans</fullName>
+    <columns>NAME</columns>
+    <columns>BLN_PlanName__c</columns>
+    <columns>BLN_AccountName__c</columns>
+    <columns>BLN_Owner__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Account Plans</label>
+</ListView>

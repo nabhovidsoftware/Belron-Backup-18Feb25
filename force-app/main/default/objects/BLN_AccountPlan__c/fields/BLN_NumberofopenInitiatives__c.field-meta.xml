@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_NumberofopenInitiatives__c</fullName>
+    <description>FOUK-5354 Created to use in reports</description>
+    <externalId>false</externalId>
+    <label>Number of open Initiatives</label>
+    <summaryFilterItems>
+        <field>BLN_Initiative__c.BLN_Status__c</field>
+        <operation>equals</operation>
+        <value>Planned, In Progress</value>
+    </summaryFilterItems>
+    <summaryForeignKey>BLN_Initiative__c.BLN_AccountPlanName__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

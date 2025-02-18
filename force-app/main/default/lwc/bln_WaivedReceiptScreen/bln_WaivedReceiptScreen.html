@@ -1,0 +1,126 @@
+<template>
+    <lightning-card class="slds-align_absolute-center ">
+		<template if:true={amountValidation}>
+            <button class="slds-button slds-button_success errorButton">{label.WaivedReceiptAmountValidation}</button>
+
+        </template>
+        <lightning-layout multiple-rows>
+			<lightning-layout-item size="1"></lightning-layout-item>
+			<lightning-layout-item size="12">
+				<button class="slds-button slds-button_success buttonStyle">{label.WaivedReceiptScreenHeader}</button>
+			</lightning-layout-item>
+			<lightning-layout-item size="1"></lightning-layout-item>
+		</lightning-layout><br/> 
+        <lightning-layout>
+            <template if:true={caseNumber}>
+                <lightning-layout>
+                    <lightning-layout-item size="1"></lightning-layout-item>
+                    <lightning-layout-item size="2" class="itemAlignment">
+                        <label class="slds-form-element__label labelWidth" for={label.RelatedJob}>
+                            <strong>{label.RelatedJob}</strong>
+                            <abbr class="slds-required" title="required">*</abbr>
+                        </label>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="4">
+                       
+                            <lightning-input class="inputBoxWidth" value={caseNumber} read-only></lightning-input>
+                        
+                    </lightning-layout-item>
+                    <lightning-layout-item size="2"></lightning-layout-item>
+                </lightning-layout>
+            </template>
+            <template if:true={relatedJobId} >
+                <lightning-layout-item size="1"></lightning-layout-item>
+                <lightning-layout-item size="2" class="itemAlignment">
+                    <label class="slds-form-element__label labelWidth" for={label.RelatedJob}>
+                        <strong>{label.RelatedJob}</strong>
+                        <abbr class="slds-required" title="required">*</abbr>
+                    </label>
+                </lightning-layout-item>
+                <lightning-layout-item size="4" class="marginForLookup">
+                    
+                        <c-bln-_-custom-lookup icon-name="standard:case" account-id={relatedJobId} s-object-api-name="case"
+                            onlookupupdate={handleLookupUpdate}></c-bln-_-custom-lookup>
+                    
+                </lightning-layout-item>
+                <lightning-layout-item size="2"></lightning-layout-item>
+            </template>
+        </lightning-layout>
+        
+<!--This part will be covered in next sprint-->
+<lightning-layout>
+    <lightning-layout-item size="1"></lightning-layout-item>
+    <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"
+            for={label.OutstandingBalanceLabel}><strong>{label.OutstandingBalanceLabel}</strong></label></lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-input type="number" name={label.OutstandingBalanceLabel} class="inputBoxWidth"
+            value={oustandingbalancevalue} formatter="currency" read-only></lightning-input>
+    </lightning-layout-item>
+    <lightning-layout-item size="2"></lightning-layout-item>
+</lightning-layout>
+
+
+
+<lightning-layout>
+    <lightning-layout-item size="1"></lightning-layout-item>
+    <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"
+            for={label.Amount}><strong>{label.Amount}</strong><abbr class="slds-required"
+                title="required">*</abbr></label></lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-input type="number" name={label.Amount} min="1" class="inputBoxWidth topMargin checkValidation"
+            value={amount} onchange={handleAmount} variant="label-hidden" label={label.Amount} required
+            formatter="currency" step="0.01"></lightning-input>
+    </lightning-layout-item>
+        <lightning-layout-item size="2"></lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout>
+        <lightning-layout-item size="1"></lightning-layout-item>
+    <lightning-layout-item size="2" class="itemAlignment"><label class="slds-form-element__label labelWidth"
+            for={label.WaivedReceiptReason}><strong>{label.WaivedReceiptReason}</strong><abbr class="slds-required"
+                title="required">*</abbr></label></lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-combobox name={label.RefundReason} value={reason} options={options} onchange={handleReason}
+            class="inputBoxWidth topMargin" variant="label-hidden" label={label.WaivedReceiptReason}
+            required></lightning-combobox>
+    </lightning-layout-item>
+        <lightning-layout-item size="2"></lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout>
+        <lightning-layout-item size="1"></lightning-layout-item>
+    <lightning-layout-item size="2" class="itemAlignment"><label
+            class="slds-form-element__label labelWidth"><strong>{label.WaivedReceiptComment}</strong></label></lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-input type="text" name={label.WaivedReceiptComment} value={comment} class="inputBoxWidth"
+            onchange={handleComment}></lightning-input>
+   </lightning-layout-item>
+       <lightning-layout-item size="2"></lightning-layout-item>
+   </lightning-layout>
+
+   <lightning-layout>
+    <lightning-layout-item size="1"></lightning-layout-item>
+    <lightning-layout-item size="2" class="itemAlignment"><label
+            class="slds-form-element__label labelWidth"><strong>{label.WaivedReceiptInitiatedBy}</strong></label></lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-input name={label.WaivedReceiptInitiatedBy} value={userName} read-only
+            class="inputBoxWidth"></lightning-input>
+</lightning-layout-item>
+   <lightning-layout-item size="2"></lightning-layout-item>
+</lightning-layout>
+<br/>
+<!--Footer-->
+<lightning-layout multiple-rows>
+    <lightning-layout-item size="1"></lightning-layout-item>
+    <lightning-layout-item size="2"><lightning-button class="backButtonWidth slds-m-right_xx-large" variant="neutral"
+            label={label.Back} onclick={handleBackButton} name={label.Back}></lightning-button>
+    </lightning-layout-item>
+    <lightning-layout-item size="4"></lightning-layout-item>
+    <lightning-layout-item size="4">
+        <lightning-button class="nameButton adjustAlign" label={label.Confirm} variant="brand" name={label.Confirm}
+            onclick={createWaivedRecord} disabled={disableFlag}></lightning-button>
+    </lightning-layout-item>
+    <lightning-layout-item size="1"></lightning-layout-item>
+</lightning-layout><br/>
+</lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LAD_Account__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-9966 : Account lookup (assigned to the person who triggered search - can be empty if triggered by Internal Laddaw Portal User)</description>
+    <externalId>false</externalId>
+    <label>Account</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Searches</relationshipLabel>
+    <relationshipName>Searches</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

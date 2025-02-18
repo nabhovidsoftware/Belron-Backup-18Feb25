@@ -1,0 +1,26 @@
+<template>
+   
+    <lightning-card title="My Bookings" icon-name="standard:case">
+        <div  style="height: 80vh;width: 100%;">
+        <template if:true={listView.data}>
+            <div style="height: 200px;">
+                <lightning-datatable
+                    key-field="id"
+                    data={cases}
+                    hide-checkbox-column="true"
+                    columns={columns}
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </div>
+            
+        </template> 
+        <template if:true={listView.error}>
+            <c-error-panel errors={listView.error}></c-error-panel>
+        </template>
+        <c-view-source source="lwc/myBookingsListView" slot="footer">
+            Get the records for the 'My_Bookings' list view using @wire.
+        </c-view-source>
+    </div>
+    </lightning-card>
+
+</template>

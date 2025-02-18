@@ -1,0 +1,93 @@
+<template>
+    <template if:true={isLoading}>
+        <section class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </section>
+    </template>
+    <!-- Filters and Sorting -->
+    <div class="filters-and-sorting">
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-text">Filter by date:</div>
+            <div class="filter-start-date date-format-hide"><lightning-input data-id="start" label="Start Date"
+                    type="date" value={startDate} onchange={handleStartDate}></lightning-input></div>
+            <div class="filter-end-date date-format-hide"><lightning-input data-id="end" label="End Date" type="date"
+                    value={endDate} onchange={handleEndDate}></lightning-input></div>
+            <div class="filter-button">
+                <div class="apply"><lightning-button label="Apply" variant="brand" onclick={handleApplyDateFilter}
+                        disabled={disableFilterApply}></lightning-button></div>
+                <div class="reset"><lightning-button label="Reset" variant="base"
+                        onclick={handleResetDateFilter}></lightning-button></div>
+            </div>
+        </div>
+        <!-- Sorting -->
+        <div class="sorting">
+            <lightning-combobox class="combo-no-border" variant="label-hiddens" options={sortingOptions}
+                value={currentSorting} onchange={handleSortChange}></lightning-combobox>
+        </div>
+    </div>
+    <div if:true={showError} class="error-message"><lightning-formatted-rich-text
+            value={errorMessage}></lightning-formatted-rich-text></div>
+    <!-- Search -->
+    <div class="search-container">
+        <div class="search-bar"><lightning-input label="Search Order Number" type="search" value={queryTerm}
+                oncommit={handleClear}></lightning-input></div>
+        <div class="search-button"><lightning-button label="Search" variant="brand" onclick={handleSearch}
+                disabled={disableSearch}></lightning-button></div>
+    </div>
+    <div class="item-count">{itemCountMessage}</div>
+    <!-- Order List -->
+    <template for:each={paginatedRecords} for:item="item">
+        <div key={item.OrderSummaryId} class="slds-box order-summary-card">
+            <!-- Header: Order Number and Buttons -->
+            <div class="summary-header">
+                <div class="summary-header-number">
+                    <lightning-formatted-rich-text value="Order Number:&nbsp;"></lightning-formatted-rich-text>
+                    <lightning-formatted-rich-text class="summary-number"
+                        value={item.OrderSummaryNumber}></lightning-formatted-rich-text>
+                </div>
+                <div class="summary-header-buttons">
+                    <lightning-button data-order-id={item.OrderSummaryId} label="View Details" variant="base"
+                        onclick={handleViewDetails}></lightning-button>
+                    <lightning-button data-order-id={item.OrderSummaryId} label="Reorder" variant="brand-outline"
+                        onclick={handleReorder}></lightning-button>
+                </div>
+            </div>
+
+            <!-- FOUK-10604 (FROM HERE)-->
+            <div if:true={item.isAnyOrderProductDelayed} class="order-delayed">
+                {label.LAD_OrderHistoryComponent_ProductDelayedMessage}
+            </div>
+            <!-- FOUK-10604 (TILL HERE)-->
+
+            <!-- Order Status -->
+            <div class="summary-status">{item.OrderStatus}</div>
+            <!-- Ordered Date -->
+            <div class="summary-date">{item.OrderedDate}</div>
+            <!-- Order Details: Number, Ordered Date, Status, Total, PO Number -->
+            <div class="summary-details">
+                <div class="summary-details-item">Order Summary Number:&nbsp;{item.OrderSummaryNumber}</div>
+                <div class="summary-details-item">Ordered Date:&nbsp;{item.OrderedDate}</div>
+                <div class="summary-details-item">Status:&nbsp;{item.OrderStatus}</div>
+                <div class="summary-details-item">Total:&nbsp;{item.GrandTotalAmount}</div>
+                <div class="summary-details-item">PO Number:&nbsp;{item.OrderPONumber}</div>
+            </div>
+            <!-- Product Images -->
+            <!-- <div class="summary-images">
+                <template for:each={item.ProductImages} for:item="itemImg">
+                    <div key={itemImg.ProductURL} class="product-img-container">
+                        <img class="product-img" src={itemImg.ProductURL} alt="Product Image">
+                    </div>
+                </template>
+            </div> -->
+
+            
+        </div>
+    </template>
+    <div class="pagination-controls">
+        <lightning-button label="Previous" variant="brand" onclick={previousPage}
+            disabled={isFirstPage}></lightning-button>
+        <span>Page {currentPage} of {totalPages}</span>
+        <lightning-button label="Next" variant="brand" onclick={nextPage} disabled={isLastPage}></lightning-button>
+    </div>
+</template>

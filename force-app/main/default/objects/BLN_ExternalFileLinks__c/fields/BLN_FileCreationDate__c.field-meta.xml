@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_FileCreationDate__c</fullName>
+    <description>FOUK-7055 This field is to hold DateTime of when document Id was created</description>
+    <externalId>false</externalId>
+    <label>File Creation Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

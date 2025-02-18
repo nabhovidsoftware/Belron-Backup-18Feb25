@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ThresholdDimension__c</fullName>
+    <description>FOUK-6522. This field is the reference of Threshold Dimension.</description>
+    <externalId>false</externalId>
+    <label>Threshold Dimension</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>%</fullName>
+                <default>false</default>
+                <label>%</label>
+            </value>
+            <value>
+                <fullName>Seconds</fullName>
+                <default>false</default>
+                <label>Seconds</label>
+            </value>
+            <value>
+                <fullName>Minutes</fullName>
+                <default>false</default>
+                <label>Minutes</label>
+            </value>
+            <value>
+                <fullName>Hours</fullName>
+                <default>false</default>
+                <label>Hours</label>
+            </value>
+            <value>
+                <fullName>Days</fullName>
+                <default>false</default>
+                <label>Days</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

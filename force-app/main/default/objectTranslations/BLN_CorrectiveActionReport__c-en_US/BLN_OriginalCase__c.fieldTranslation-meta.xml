@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Original Case from which Warranty was raised. --></help>
+    <label><!-- Original Case --></label>
+    <name>BLN_OriginalCase__c</name>
+    <relationshipLabel><!-- Corrective Action Reports --></relationshipLabel>
+</CustomFieldTranslation>

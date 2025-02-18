@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Suggested Quantity for Associated Product --></help>
+    <label><!-- Product Bill of Material Quantity --></label>
+    <name>LAD_Product_Bill_of_Material_Quantity__c</name>
+</CustomFieldTranslation>

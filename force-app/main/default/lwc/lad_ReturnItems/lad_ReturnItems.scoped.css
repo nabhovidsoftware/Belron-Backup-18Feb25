@@ -1,0 +1,13 @@
+.close-icon {
+    --slds-c-icon-color-foreground: black;
+}
+
+lightning-datepicker.slds-form-element {
+    margin-bottom: 0;
+}
+lightning-timepicker.slds-form-element {
+    margin-bottom: 0;
+}
+.bold-text {
+    font-weight: bold;
+}

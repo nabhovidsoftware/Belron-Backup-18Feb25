@@ -1,0 +1,15 @@
+.font{
+    font-size: 12px;
+}
+.box{
+    padding: 15px;
+    overflow-y: auto;
+    height: 450px;
+}
+.customButton
+{
+    /* background-color: #332362; */
+    --slds-c-button-brand-color-background:#332362;
+    --slds-c-button-brand-color-border:#332362;
+    margin-left: 10px;
+}

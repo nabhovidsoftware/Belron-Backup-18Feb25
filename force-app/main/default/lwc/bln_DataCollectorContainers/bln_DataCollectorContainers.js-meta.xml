@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+            <target>lightning__FlowScreen</target>
+            <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="caserecordId"  label="caserecordId" type="String" /> 
+            <property name="accountId" label="accountId" type="String"  />
+            <property name="accountId2" label="accountId2" type="String"  />
+            <property name="accountType" label="accountType" type="String"  />
+            <property name="isCloseTab" label="isCloseTab" type="Boolean"  />
+        </targetConfig>
+    </targetConfigs>
+    <description>
+        FOUK-8278, FOUK-5014 This lwc component is created to Display data collect ARP records .
+    </description>
+</LightningComponentBundle>

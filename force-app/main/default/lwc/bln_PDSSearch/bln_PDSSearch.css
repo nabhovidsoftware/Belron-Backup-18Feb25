@@ -1,0 +1,133 @@
+.allignmessage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.radio-group-container .sld-radio{
+   display: inline-block !important;
+   
+}
+.clearselectioncss{
+    width: 8rem;
+    margin-right: -0.7rem;
+}
+.labelWidth{
+  width: 400px;
+ /*padding-top: 16px;*/
+ }
+ .itemAlignment{
+    margin: 1.2rem 0 0 0rem;
+}
+.THIS .slds-form-element__label{
+    width: 200px !important;
+    /*padding-left: 3rem;*/
+}
+.inputBoxWidth{
+    width: 250px;
+}
+
+.custom-datatable .slds-table {
+    border-collapse: collapse;
+    border: 1px solid black; 
+}
+
+ .custom-datatable .slds-table td,
+ .custom-datatable .slds-table th {
+    padding: 0.5rem; 
+    border: 1px solid black;
+    border-bottom: 1px solid black; 
+}
+
+ .custom-datatable .slds-table th {
+    background-color: #f3f4f6; 
+}
+.adjustAlign{
+    left:10rem;
+}
+
+.container {  
+    position: absolute;
+  } 
+.marginForTable{
+    /*margin-left: 10rem;*/
+    /*overflow: auto; */
+    width: 100%;
+    /* position: absolute; */
+}
+.slds-scrollable_y, .slds-scrollable--y {
+    -webkit-overflow-scrolling: touch;
+    max-height: 100%;
+    overflow: hidden;
+    /* overflow-y: auto; */
+    overflow-x: auto;
+}
+.absolute-div {  
+    position: absolute;
+   
+   /* padding: 10px;   
+  /*  top: 20px;  
+    left: 20px;  
+     
+    padding: 10px;  
+    border-radius: 5px;  */
+      
+}
+.scrollHeight {
+    max-height: 300px;
+   
+}
+
+.selectionMargin {
+    margin-right: 1rem;
+}
+
+.inputBoxWidth {
+    width: 100%;
+}
+
+.myRadioGroup {
+    display: -webkit-inline-box !important;
+    
+}
+.RadioGroupOptions{
+    float: left;
+
+}
+.center{
+    display:flex;
+    /*justify-content: center;*/
+    align-items: center;
+    flex-direction: column;
+}
+.radio-option {
+    margin-right: 10px;
+}
+
+.myTable table>thead .slds-cell-fixed.slds-has-button-menu, .myTable table>thead .slds-cell-fixed.slds-has-button-menu:hover{
+    background: antiquewhite;
+  }
+
+  .buttonMargin{
+    margin-left: 1rem;
+  }
+  .widthcss{
+    /* width: 640px; */
+    width: 527px;
+  }
+  /* slds-form-element{
+    width: 50%;
+  } */
+  .errorColor{
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .heightMargin{
+    height: 640px;
+  }
+  .backMargin{
+    margin-left: 1rem;
+   
+  }

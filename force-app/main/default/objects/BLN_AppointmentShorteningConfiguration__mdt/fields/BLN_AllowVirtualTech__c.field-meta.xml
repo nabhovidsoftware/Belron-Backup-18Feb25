@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AllowVirtualTech__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>FOUK-777To include Virtual Technicians or not</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>To include Virtual Technicians or not</inlineHelpText>
+    <label>Allow Virtual Technicians</label>
+    <type>Checkbox</type>
+</CustomField>

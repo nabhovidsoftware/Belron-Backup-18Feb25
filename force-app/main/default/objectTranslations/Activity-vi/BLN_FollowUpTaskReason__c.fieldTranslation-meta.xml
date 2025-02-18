@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Follow Up Task Reason --></label>
+    <name>BLN_FollowUpTaskReason__c</name>
+    <picklistValues>
+        <masterLabel>Recalibration Declined by Customer</masterLabel>
+        <translation><!-- Recalibration Declined by Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Not Completed - Dealer Recalibration Only</masterLabel>
+        <translation><!-- Recalibration Not Completed - Dealer Recalibration Only --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

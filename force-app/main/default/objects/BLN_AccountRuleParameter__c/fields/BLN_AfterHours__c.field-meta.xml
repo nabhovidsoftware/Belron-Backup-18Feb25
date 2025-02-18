@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AfterHours__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>After hours define which time scheme is used to determine if job for the account is being treated as after hours or not.
+
+If After Hours account rule parameter is not set up on Account, default Salesforce Busines Hours will be used and defualt charge will be applied.</description>
+    <externalId>false</externalId>
+    <label>After Hours</label>
+    <referenceTo>BusinessHours</referenceTo>
+    <relationshipLabel>Account Rule Parameters</relationshipLabel>
+    <relationshipName>Account_Rule_Parameters</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

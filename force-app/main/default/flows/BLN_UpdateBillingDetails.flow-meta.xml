@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Assign_Billing_Name</name>
+        <label>Assign Billing Name</label>
+        <locationX>1106</locationX>
+        <locationY>1019</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingName__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NameCash</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assignment_Of_Billing_Country</name>
+        <label>Assignment Of Billing Country</label>
+        <locationX>50</locationX>
+        <locationY>1427</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingCountry__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.PersonMailingCountry</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>County_Check_Cash</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_Of_Billing_County</name>
+        <label>Assignment Of Billing County</label>
+        <locationX>50</locationX>
+        <locationY>1727</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingCounty__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.PersonMailingState</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>PostCode_Check_Cash</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_Of_PostCode</name>
+        <label>Assignment Of PostCode</label>
+        <locationX>50</locationX>
+        <locationY>2027</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingPostCode__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.PersonMailingPostalCode</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Street_Check_Cash</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_Of_Street</name>
+        <label>Assignment Of Street</label>
+        <locationX>50</locationX>
+        <locationY>2327</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingStreet__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.PersonMailingStreet</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Town_Check_Cash</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_Of_Town</name>
+        <label>Assignment Of Town</label>
+        <locationX>50</locationX>
+        <locationY>2627</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingTown__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Account.PersonMailingCity</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Billing_Name_For_Cash</name>
+        <label>Billing Name For Cash</label>
+        <locationX>50</locationX>
+        <locationY>1127</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingName__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>NameCash</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Country_Check_Cash</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Billing_Name_from_Corporate</name>
+        <label>Billing Name from Corporate</label>
+        <locationX>842</locationX>
+        <locationY>911</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_BillingName__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>isBillingNameFromCorporate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>BillingName_Assignment</name>
+        <label>BillingName Assignment</label>
+        <locationX>1007</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>isBillingNameFromCorporate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>{!Get_Corporate_Record.BLN_Salutation__c} {!Get_Corporate_Record.BLN_FirstName__c}  {!Get_Corporate_Record.BLN_MiddleName__c}  {!Get_Corporate_Record.BLN_LastName__c}</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Billing_Method</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Account_Name_Not_Blank</name>
+        <label>Account Name Not Blank</label>
+        <locationX>182</locationX>
+        <locationY>1019</locationY>
+        <defaultConnector>
+            <targetReference>Country_Check_Cash</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_Name_check</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.FirstName</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.LastName</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Billing_Name_For_Cash</targetReference>
+            </connector>
+            <label>Account Name check</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Account_Not_Blank_Check</name>
+        <label>Account Not Blank Check</label>
+        <locationX>380</locationX>
+        <locationY>911</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Account_not_blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.AccountId</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Get_Person_Account_RT.DeveloperName</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Account_Name_Not_Blank</targetReference>
+            </connector>
+            <label>Account not blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Billing_Method</name>
+        <label>Billing Method</label>
+        <locationX>1139</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Cash_Method</name>
+            <conditionLogic>1 AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_BillingMethod__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cash</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Get_Person_Account_RT</targetReference>
+            </connector>
+            <label>Cash Method</label>
+        </rules>
+        <rules>
+            <name>Insurance_Method</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_BillingMethod__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Insurance / Account</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Corporate_Not_Blank_Check</targetReference>
+            </connector>
+            <label>Insurance Method</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Get_Corporate</name>
+        <label>Check Get Corporate</label>
+        <locationX>1139</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Billing_Method</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Null_Check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Corporate_Record</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BillingName_Assignment</targetReference>
+            </connector>
+            <label>Null Check</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Corporate_Not_Blank_Check</name>
+        <label>Corporate Not Blank Check</label>
+        <locationX>1238</locationX>
+        <locationY>803</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Corporate_Check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Corporate__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Billing_Name_from_Corporate</targetReference>
+            </connector>
+            <label>Corporate Check</label>
+        </rules>
+        <rules>
+            <name>Corporate_Check_false</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Corporate__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Is_New_Case</targetReference>
+            </connector>
+            <label>Corporate Check false</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Country_Check_Cash</name>
+        <label>Country Check Cash</label>
+        <locationX>182</locationX>
+        <locationY>1319</locationY>
+        <defaultConnector>
+            <targetReference>County_Check_Cash</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Country_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.PersonMailingCountry</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Of_Billing_Country</targetReference>
+            </connector>
+            <label>Country Not Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>County_Check_Cash</name>
+        <label>County Check Cash</label>
+        <locationX>182</locationX>
+        <locationY>1619</locationY>
+        <defaultConnector>
+            <targetReference>PostCode_Check_Cash</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>County_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.PersonMailingState</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Of_Billing_County</targetReference>
+            </connector>
+            <label>County Not Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_New_Case</name>
+        <label>Is New Case</label>
+        <locationX>1238</locationX>
+        <locationY>911</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>New_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Id</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Billing_Name</targetReference>
+            </connector>
+            <label>New Case</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>PostCode_Check_Cash</name>
+        <label>PostCode Check Cash</label>
+        <locationX>182</locationX>
+        <locationY>1919</locationY>
+        <defaultConnector>
+            <targetReference>Street_Check_Cash</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>PostCode_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.PersonMailingPostalCode</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Of_PostCode</targetReference>
+            </connector>
+            <label>PostCode Not Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Street_Check_Cash</name>
+        <label>Street Check Cash</label>
+        <locationX>182</locationX>
+        <locationY>2219</locationY>
+        <defaultConnector>
+            <targetReference>Town_Check_Cash</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Street_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.PersonMailingStreet</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Of_Street</targetReference>
+            </connector>
+            <label>Street Not Blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Town_Check_Cash</name>
+        <label>Town Check Cash</label>
+        <locationX>182</locationX>
+        <locationY>2519</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Town_Not_Blank</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.PersonMailingCity</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_Of_Town</targetReference>
+            </connector>
+            <label>Town Not Blank</label>
+        </rules>
+    </decisions>
+    <description>FOUK-5479 This flow is used to update billing details.
+Flow Modify under Stroy FOUK-11617</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>NameCash</name>
+        <dataType>String</dataType>
+        <expression>TEXT({!$Record.Account.Salutation})+&apos; &apos;+{!$Record.Account.FirstName}+&apos; &apos;+{!$Record.Account.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>NameInsurance</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.BLN_Corporate__r.BLN_FirstName__c}+ &apos; &apos;+{!$Record.BLN_Corporate__r.BLN_MiddleName__c} + &apos; &apos;+{!$Record.BLN_Corporate__r.BLN_LastName__c}</expression>
+    </formulas>
+    <interviewLabel>Update Billing Details {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Billing Details</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Corporate_Record</name>
+        <label>Get Corporate Record</label>
+        <locationX>1139</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Get_Corporate</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.BLN_Corporate__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>BLN_Corporate__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Person_Account_RT</name>
+        <label>Get Person Account RT</label>
+        <locationX>380</locationX>
+        <locationY>803</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Account_Not_Blank_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>PersonAccount</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>1013</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Corporate_Record</targetReference>
+        </connector>
+        <filterFormula>AND (
+NOT(ISPICKVAL({!$Record.BLN_BillingMethod__c}, &apos;&apos;)), 
+NOT({!$Permission.BLN_BypassFlows}),
+OR( ISNEW(), ISCHANGED({!$Record.BLN_Corporate__c}))
+)</filterFormula>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>isBillingNameFromCorporate</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

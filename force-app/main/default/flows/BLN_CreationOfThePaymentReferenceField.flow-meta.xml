@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>BRANCHBANKINGS</name>
+        <label>BRANCH BANKING</label>
+        <locationX>50</locationX>
+        <locationY>1295</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_InterfaceType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>BB</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>CHIPPIN</name>
+        <label>CHIP PIN</label>
+        <locationX>50</locationX>
+        <locationY>695</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_InterfaceType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>CAP</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CheckONLINEPAYMENT</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ONLINEPAYMENTS</name>
+        <label>ONLINE PAYMENT</label>
+        <locationX>50</locationX>
+        <locationY>995</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_InterfaceType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>OLP</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CheckBRANCHBANKING</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>UpdateECOMMERCE</name>
+        <label>Update ECOMMERCE</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_InterfaceType__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>ECOM</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>CHIPandPIN</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>CheckBRANCHBANKING</name>
+        <label>Check BRANCH BANKING</label>
+        <locationX>182</locationX>
+        <locationY>1187</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BRANCHBANKING</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_PaymentType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BRANCH BANKING</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BRANCHBANKINGS</targetReference>
+            </connector>
+            <label>BRANCH BANKING</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckForECOMMERCE</name>
+        <label>Check For ECOMMERCE</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>CHIPandPIN</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ECOMMERCE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_PaymentType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>ECOMMERCE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateECOMMERCE</targetReference>
+            </connector>
+            <label>ECOMMERCE</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckONLINEPAYMENT</name>
+        <label>Check ONLINE PAYMENT</label>
+        <locationX>182</locationX>
+        <locationY>887</locationY>
+        <defaultConnector>
+            <targetReference>CheckBRANCHBANKING</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>ONLINEPAYMENT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_PaymentType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>ONLINE PAYMENT</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ONLINEPAYMENTS</targetReference>
+            </connector>
+            <label>ONLINE PAYMENT</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CHIPandPIN</name>
+        <label>CHIP and PIN</label>
+        <locationX>182</locationX>
+        <locationY>587</locationY>
+        <defaultConnector>
+            <targetReference>CheckONLINEPAYMENT</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CHIPandPINs</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_PaymentType__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CHIP &amp; PIN</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CHIPPIN</targetReference>
+            </connector>
+            <label>CHIP and PIN</label>
+        </rules>
+    </decisions>
+    <description>FOUK-8400 For Creation of the Payment Reference field</description>
+    <environments>Default</environments>
+    <interviewLabel>Payment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Creation of the Payment Reference field</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>CheckForECOMMERCE</targetReference>
+        </connector>
+        <filterFormula>AND(NOT({!$Permission.BLN_BypassFlows}), NOT(ISPICKVAL({!$Record.BLN_PaymentType__c}, &apos;&apos;)))</filterFormula>
+        <object>BLN_Payment__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

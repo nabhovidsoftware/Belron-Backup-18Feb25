@@ -1,0 +1,61 @@
+<template>
+   <template for:each={locationList} for:item="wrap" for:index="wrapIndex">
+      <div key={wrap.locationGUID}>
+         <div  class={wrap.class} data-valcheck={wrap.checked} data-value={wrap.locationGUID}
+               data-quoteid={wrap.quoteId} data-disbledlocation={wrap.locDisabled} data-locationdisabledps={locationDisabledPs} onclick={selectLocationValue}>
+            {wrap.quotelocation}
+         </div>
+         
+         <template if:true={wrap.isCPT}>
+               <div  class="slds-m-top_xx-small slds-p-vertical_xx-small slds-align_absolute-center error-background">
+                  {label.BufferText}
+            </div>
+      </template>
+        
+         <div class="slds-grid slds-m-top_xx-small">
+         <div class="slds-col slds-size_9-of-12 slds-m-horizontal_xxx-small section-title">{label.EarlyAppointment}</div>  
+         <div  class="slds-col slds-size_3-of-12 slds-m-horizontal_xxx-small section-title" data-id={wrap.quotelocation}
+               data-value={wrap.quoteEarliestAppointmentAvailability} data-name="EarliestAppointment">
+               <div class="slds-grid slds-m-top_xx-small">
+                  <div class="slds-col slds-size_1-of-3"></div>
+                     <div class="slds-col slds-size_1-of-3">
+                        <template if:true={showEarlyAppointment}>
+                           <template if:true={wrap}>
+                              <c-bln-_-earliest-appointment-availability-cmp wrap-index={wrapIndex} earliest-date-list={earliestDateList} location={wrap}
+                              case-id={caseId} current-payload={currentPayload} selected-product-list={selectedProductList}
+                              add-on-product-list={addOnProductList} hidden-product-list={hiddenProductList} onappointmentdata={handleAppointmentData}
+                              onearliestappointmentdatawrap={earliestAppointmentDataWrapHandler} is-rebooking="false">
+                              </c-bln-_-earliest-appointment-availability-cmp>
+                           </template>
+                        </template>
+                     </div>
+                     <!-- <div class="slds-col slds-size_1-of-3">{wrap.quoteEarliestAppointmentAvailability_Formatted}</div> -->
+                  <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small slds-text-align_right">
+                     <template if:true={wrap.isCPT}>
+                        <lightning-helptext content={label.TooltipText}></lightning-helptext>
+                     </template>
+                  </div>
+               </div>
+                  
+         </div>
+      </div>
+
+      <template if:true={isCashJourney}> 
+            <div class="slds-grid slds-m-top_xx-small">
+            <div class="slds-col slds-size_9-of-12 slds-m-horizontal_xxx-small section-title">{label.Vat}</div>
+            <div  class="slds-col slds-size_3-of-12 slds-m-horizontal_xxx-small section-title">
+                  {wrap.quoteVAT}
+            </div>
+         </div>
+
+            <div class="slds-grid slds-m-top_xx-small">
+            <div class="slds-col slds-size_9-of-12 slds-m-horizontal_xxx-small section-title">{label.Total}</div>
+            <div  class="slds-col slds-size_3-of-12 slds-m-horizontal_xxx-small section-title">
+                     {wrap.quoteNetTotal}
+            </div>
+         </div>
+       </template> 
+      </div> 
+    </template>
+    
+</template>

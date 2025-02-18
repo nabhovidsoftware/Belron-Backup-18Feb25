@@ -1,0 +1,259 @@
+.slds-spinner_container {
+    --dxp-c-spinner-color-background: #34343473;
+    position: fixed;
+}
+
+.search-selector {
+    margin-right: auto;
+    margin-left: 0px;
+    display: flex;
+    margin-bottom: -15px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1%;
+}
+
+.search-bar,
+.search-button {
+    flex: 1;
+}
+
+.search-bar {
+    flex-basis: 100%;
+}
+
+.search-button {
+    /*  margin-top: 1%; */
+}
+
+.black-icon {
+    --sds-c-icon-color-foreground: black;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1%;
+    align-items: center;
+    padding-bottom: 0.5%;
+}
+
+.parent-modal-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2%;
+    padding-right: 1rem;
+}
+
+.filter-navigation-menu {
+    flex: 1;
+    background-color: #f3f3f3c2;
+    align-self: normal;
+}
+
+.filter-detail-screen {
+    display: flex;
+    gap: 2%;
+    align-items: normal;
+    flex: 3;
+    flex-direction: column;
+    margin: 2% 0;
+    min-width: 0px;
+}
+
+.filter-button {
+    padding-top: 1.5%;
+    display: flex;
+    gap: 5%;
+}
+
+.error-message {
+    color: red;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 2%;
+}
+
+.filter-results-button {
+    /* align-self: flex-start; */
+}
+
+/* .filter-pill {
+    flex: 1;
+} */
+
+.combo-no-border {
+    --dxp-s-form-element-width-border: 0px;
+}
+
+.separation-line {
+    border-bottom: 2px solid #dcdcdc;
+    margin-bottom: 1%;
+}
+
+.payments-and-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1%;
+}
+
+.payment-buttons {
+    display: flex;
+    gap: 1%;
+    flex-wrap: wrap;
+    flex: 5;
+}
+
+.item-count {
+    margin-right: 1%;
+    flex: 1;
+    text-align: right;
+    align-self: flex-end;
+}
+
+.slds-box {
+    padding: 0 0.5%;
+    margin-bottom: 1%;
+}
+
+.tcontain {
+    /* width: 100%; */
+    overflow-x: auto;
+}
+
+.table-style {
+    border-collapse: collapse;
+    margin: 0 2px;
+    font-size: 0.9em;
+    --dxp-s-button-font-size: 0.9em;
+    min-width: 100%;
+}
+
+.table-style thead tr {
+    background-color: #f3f3f3;
+}
+
+.table-style th[data-id="actions"] {
+    width: 20%;
+}
+
+/* .table-style thead tr th {
+    text-align: center;
+} */
+
+.table-style td,
+.table-style thead tr th {
+    padding: 0.5% 0.5%;
+}
+
+.table-style thead th {
+    border-right: 2px solid #dddddd;
+}
+
+.table-style th[data-id="select-header"] {
+    border-right: 0px !important;
+}
+
+.table-style tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.select-header {
+    width: 2%;
+}
+
+.select-row {
+    display: flex;
+    align-items: center;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 2.5%;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.pagination-controls {
+    display: flex;
+    gap: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PAYMENT MODAL */
+.payment-modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.minimum-payment-amount,
+.outstanding-balance,
+.pay-custom-amount {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 2% 0;
+}
+
+.minimum-amount-text,
+.minimum-amount-value,
+.outstanding-amount-text,
+.outstanding-amount-value,
+.custom-amount-text,
+.custom-amount-value {
+    flex: 1;
+}
+
+.custom-amount-value {
+    display: flex;
+    gap: 2%;
+    align-items: center;
+}
+
+.custom-pay-error-message {
+    color: red;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 2%;
+}
+
+.tool-tip-inverse {
+    background-color: rgb(22 50 92);
+}
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+
+
+
+    :host {
+        font-size: 0.9em;
+        --dxp-s-button-font-size: 0.9em;
+        --dxp-s-form-element-label-font-size: 0.9em;
+        --dxp-s-form-element-text-font-size: 0.9em;
+    }
+
+    /*    .filters-and-sorting {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    } */
+
+    /*     .filter-detail-screen {
+        display: flex;
+        gap: 2%;
+        align-items: flex-start;
+        flex: 2;
+        flex-direction: column;
+
+    } */
+
+
+}

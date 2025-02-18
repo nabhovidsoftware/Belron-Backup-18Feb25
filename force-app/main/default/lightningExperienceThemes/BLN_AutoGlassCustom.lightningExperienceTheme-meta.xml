@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningExperienceTheme xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultBrandingSet>LEXTHEMINGBLN_AutoGlassCustom</defaultBrandingSet>
+    <description>FOUK-427 This is created to check to display the loading icon.</description>
+    <masterLabel>AutoGlassCustom</masterLabel>
+    <shouldOverrideLoadingImage>false</shouldOverrideLoadingImage>
+</LightningExperienceTheme>

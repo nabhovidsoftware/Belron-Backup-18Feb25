@@ -1,0 +1,279 @@
+<template>
+    <template if:true={isLoading}>
+        <section class="slds-spinner_container">
+            <lightning-spinner size="large" variant="brand"></lightning-spinner>
+        </section>
+    </template>
+
+    <!-- Search  -->
+    <div class="search-selector">
+        <lightning-combobox class="combo-no-border" variant="label-hidden" options={searchModes}
+            value={currentSearchMode} onchange={handleSearchModeChange}></lightning-combobox>
+    </div>
+    <div class="search-container">
+        <div class="search-bar"><lightning-input variant="label-hidden" type="search" value={queryTerm}
+                onchange={handleQueryChangeOrClear} oncommit={handleQueryChangeOrClear}></lightning-input></div>
+        <div class="search-button"><lightning-button label="Search" variant="brand" onclick={handleSearch}
+                disabled={disableSearch}></lightning-button></div>
+    </div>
+    <div if:true={showSearchError} class="error-message" data-filter="search-error">
+        <lightning-formatted-rich-text value={searchErrorMessage}></lightning-formatted-rich-text>
+    </div>
+    <!-- Filters, Pills and Items -->
+    <div class="filter-section">
+        <div class="filter-results-button">
+            <lightning-button class="combo-no-border" variant="base" label="Filters"
+                onclick={handleOpenFilterModal}></lightning-button><lightning-icon icon-name="utility:right"
+                size="xx-small"></lightning-icon>
+        </div>
+        <template for:each={filterItemPillList} for:item="filterPill">
+            <div class="filter-pill" key={filterPill.name}>
+                <lightning-pill data-id={filterPill.name} label={filterPill.label}
+                    onremove={handlePillRemove}></lightning-pill>
+            </div>
+        </template>
+
+    </div>
+    <div class="separation-line"></div>
+
+    <div class="payments-and-columns">
+        <div class="payment-buttons">
+            <lightning-button label="Pay custom amount" variant="brand" onclick={handlePayCustomAmount}
+                disabled={disablePayCustom}></lightning-button>
+            <lightning-button label={selectedFinDocsLabel} variant="brand" onclick={handlePaySelectedInvoices}
+                disabled={disablePaySelectedInvoices}></lightning-button>
+        </div>
+        <div class="item-count">{itemCountMessage}</div>
+    </div>
+    <!-- Order List -->
+
+    <!-- LIGHTNING DATA TABLE -->
+    <div class="slds-box tcontain">
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th class="select-header" data-priority="essential" data-id="select-header">
+                        &nbsp;&nbsp;
+                    </th>
+                    <template for:each={finDocColumns} for:item="col">
+                        <th key={col.name} data-priority={col.priority} data-id={col.name}>
+                            {col.label}
+                        </th>
+                    </template>
+                    <th data-priority="essential" data-id="actions">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={paginatedRecords} for:item="item">
+                    <tr key={item.FinDocId} data-key={item.FinDocId}>
+                        <td class="select" data-priority="essential">
+                            <div class="select-row">
+                                <input type="checkbox" data-id={item.FinDocId} onclick={handleFinDocSelect}
+                                    disabled={item.disableCheckbox}></input>
+                            </div>
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.DocumentNumber}
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.Type}
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.CreatedDate}
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.OrderNumber}
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.OrderPONumber}
+                            <lightning-helptext if:false={item.disablePoTooltip} class="tool-tip"
+                                icon-name="utility:threedots" content={item.OrderPoNumberToolTip}></lightning-helptext>
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.PaymentId}
+                            <lightning-helptext if:false={item.disablePaymentTooltip} class="tool-tip"
+                                icon-name="utility:threedots" content={item.PaymentIdTooltip}></lightning-helptext>
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.TotalAmount}
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.RemainingAmount}
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.DueDate}
+                        </td>
+                        <td class="cell-individual-forecast" data-priority="optional">
+                            {item.PaymentStatus}
+                        </td>
+                        <td class="buttons" data-priority="essential">
+                            <div class="action-buttons">
+                                <lightning-button data-id={item.FinDocId} label="Pay Now" variant="brand-outline"
+                                    onclick={handlePayNow} disabled={item.disablePayNow}></lightning-button>
+                                <lightning-button data-id={item.FinDocId} data-number={item.DocumentNumber}
+                                    label="Download PDF" variant="brand-outline" onclick={handleDownloadPDF}
+                                    disabled={item.disableDownloadPDF} data-url={item.pdfURL}></lightning-button>
+                            </div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="pagination-controls">
+        <lightning-button label="Previous" variant="brand" onclick={previousPage}
+            disabled={isFirstPage}></lightning-button>
+        <span>Page {currentPage} of {totalPages}</span>
+        <lightning-button label="Next" variant="brand" onclick={nextPage} disabled={isLastPage}></lightning-button>
+    </div>
+
+    <!-- FILTERS MODAL -->
+    <template if:true={showFilterModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleCloseFilterModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small" class="black-icon"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate">
+                        Filters</h2>
+                </header>
+                <!-- Modal Content -->
+                <div class="parent-modal-container slds-modal__content">
+                    <div class="filter-navigation-menu">
+                        <lightning-vertical-navigation selected-item="issue">
+                            <lightning-vertical-navigation-section>
+                                <template for:each={filterList} for:item="filter">
+                                    <lightning-vertical-navigation-item key={filter.name} label={filter.label}
+                                        name={filter.name} data-id={filter.name} onclick={handleFilterSwitch}>
+                                    </lightning-vertical-navigation-item>
+                                </template>
+                            </lightning-vertical-navigation-section>
+                        </lightning-vertical-navigation>
+                    </div>
+
+                    <div class="filter-detail-screen">
+                        <template lwc:if={issueMode}>
+                            <div class="filter-start-date date-format-hide"><lightning-input data-id="start"
+                                    data-filter="issue" label="From" type="date" value={issueStartDate}
+                                    onchange={handleStartDate}></lightning-input>
+                            </div>
+                            <div class="filter-end-date date-format-hide"><lightning-input data-id="end"
+                                    data-filter="issue" label="To" type="date" value={issueEndDate}
+                                    onchange={handleEndDate}></lightning-input>
+                            </div>
+                            <div if:true={showIssueError} class="error-message" data-filter="due">
+                                <lightning-formatted-rich-text
+                                    value={issueErrorMessage}></lightning-formatted-rich-text>
+                            </div>
+                            <div class="filter-button">
+                                <div class="reset"><lightning-button label="Reset" variant="brand-outline"
+                                        data-filter="issue" onclick={handleResetDateFilter}></lightning-button>
+                                </div>
+                            </div>
+
+                        </template>
+                        <template lwc:elseif={dueMode}>
+                            <div class="filter-start-date date-format-hide"><lightning-input data-id="start"
+                                    data-filter="due" label="From" type="date" value={dueStartDate}
+                                    onchange={handleStartDate}></lightning-input>
+                            </div>
+                            <div class="filter-end-date date-format-hide"><lightning-input data-id="end"
+                                    data-filter="due" label="To" type="date" value={dueEndDate}
+                                    onchange={handleEndDate}></lightning-input>
+                            </div>
+                            <div if:true={showDueError} class="error-message" data-filter="due">
+                                <lightning-formatted-rich-text value={dueErrorMessage}></lightning-formatted-rich-text>
+                            </div>
+                            <div class="filter-button">
+                                <div class="reset"><lightning-button label="Reset" variant="brand-outline"
+                                        data-filter="due" onclick={handleResetDateFilter}></lightning-button>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <!--  Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button class="slds-m-top_small slds-m-left_x-small button"
+                        onclick={handleApplyAllFilters} variant="brand" name="apply-filters" label="Apply Filters"
+                        disabled={disableApplyFilters}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- PAYMENT MODAL -->
+    <template if:true={showPaymentModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={handleClosePaymentModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small" class="black-icon"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate">Pay Custom Amount</h2>
+                </header>
+                <!-- Modal Content -->
+                <div class="slds-modal__content payment-modal-container">
+                    <div class="minimum-payment-amount">
+                        <div class="minimum-amount-text">
+                            <lightning-formatted-rich-text
+                                value="Minimum allowed amount: "></lightning-formatted-rich-text>
+                        </div>
+                        <div class="minimum-amount-value">
+                            <span>$</span><lightning-formatted-rich-text
+                                value={minimumCustomAmount}></lightning-formatted-rich-text>
+                        </div>
+                    </div>
+                    <div class="outstanding-balance">
+                        <div class="outstanding-amount-text">
+                            <lightning-formatted-rich-text
+                                value="Account Outstanding balance: "></lightning-formatted-rich-text>
+                        </div>
+                        <div class="outstanding-amount-value">
+                            <span>$</span><lightning-formatted-rich-text
+                                value={accountOutstandingBalance}></lightning-formatted-rich-text>
+                        </div>
+                    </div>
+                    <div class="pay-custom-amount">
+                        <div class="custom-amount-text">
+                            <lightning-formatted-rich-text value="Pay Custom Amount: "></lightning-formatted-rich-text>
+                        </div>
+                        <div class="custom-amount-value">
+                            <span>$</span><lightning-input style="margin: 0" type="number" variant="label-hidden"
+                                onchange={handleCustomAmountChange} value={customAmount} step="0.01"></lightning-input>
+                        </div>
+                    </div>
+                    <div if:true={showPayCustomError} class="custom-pay-error-message" data-filter="pay-custom">
+                        <lightning-formatted-rich-text value={payCustomErrorMessage}></lightning-formatted-rich-text>
+                    </div>
+                </div>
+                <!--  Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button class="slds-m-top_small slds-m-left_x-small button"
+                        onclick={handleModalPaymentButton} variant="brand" name="modal-pay-now" label="Pay Now"
+                        disabled={disableModalPaymentButton}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>VAT Incorrect - PH Is VAT Registered</label>
+    <protected>false</protected>
+    <values>
+        <field>BLN_EBSCnRReason__c</field>
+        <value xsi:type="xsd:string">FI - BOE10 - VAT Error - Wrong Party</value>
+    </values>
+    <values>
+        <field>BLN_SFCnRReason__c</field>
+        <value xsi:type="xsd:string">VAT Incorrect - PH is VAT registered</value>
+    </values>
+</CustomMetadata>

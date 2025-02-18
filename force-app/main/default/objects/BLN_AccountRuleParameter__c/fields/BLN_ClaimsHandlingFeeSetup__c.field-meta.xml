@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ClaimsHandlingFeeSetup__c</fullName>
+    <description>&quot;Setting this parameter does not consider CHF for the job. Value Apply - defaulted value represents the same scenario when paramter is not set at all. Value Exclude - does not consider CHF for the job Always apply CHF VAT to Insurer - same as Apply but CHF Vat is applied to Insurer
+
+Apply = Claims Handling Fee always applied to all associated jobs
+
+Exclude = Claims Handling Fee should not be applied to associated jobs
+
+Always apply CHF VAT to Insurer = Claims Handling Fee always applies to all associated jobs and VAT for the Claims Handling Fee must be applied to the insurance account&quot;</description>
+    <externalId>false</externalId>
+    <label>Claims Handling Fee Setup</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apply</fullName>
+                <default>false</default>
+                <label>Apply</label>
+            </value>
+            <value>
+                <fullName>Exclude</fullName>
+                <default>false</default>
+                <label>Exclude</label>
+            </value>
+            <value>
+                <fullName>Always apply CHF VAT to Insurer</fullName>
+                <default>false</default>
+                <label>Always apply CHF to Insurer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

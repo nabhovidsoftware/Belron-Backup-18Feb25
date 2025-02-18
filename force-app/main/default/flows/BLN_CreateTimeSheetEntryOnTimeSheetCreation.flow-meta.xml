@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <description>This flow is created as part of bug FOUK-12784. Previously we are facing syncing issue in FS mobile  flow. hence moved the logic in record triggered flow.</description>
+    <environments>Default</environments>
+    <interviewLabel>Create Time Sheet Entry when Time Sheet Created {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Time Sheet Entry when Time Sheet Created</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Time_Sheet_Entry</name>
+        <label>Create Time Sheet Entry</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <inputAssignments>
+            <field>BLN_ShiftStatus__c</field>
+            <value>
+                <stringValue>CIN</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartTime</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>TimeSheetId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>TimeSheetEntry</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Time_Sheet_Entry</targetReference>
+        </connector>
+        <filterFormula>NOT({!$Permission.BLN_BypassFlows}) &amp;&amp;
+{!$Record.BLN_TimesheetCreatedbyTechnician__c} = true</filterFormula>
+        <object>TimeSheet</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

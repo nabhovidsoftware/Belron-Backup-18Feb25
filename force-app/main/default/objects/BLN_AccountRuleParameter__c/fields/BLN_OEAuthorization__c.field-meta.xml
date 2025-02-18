@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_OEAuthorization__c</fullName>
+    <description>Parameter controls if OE glass requirement for an account. OE glass might be enforced, not allowed, within motorists liability, allowed or extra authorisation might be needed.</description>
+    <externalId>false</externalId>
+    <label>OE Authorization Option</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>OE Glass Only</fullName>
+                <default>false</default>
+                <label>OE Glass Only</label>
+            </value>
+            <value>
+                <fullName>Non-OE Glass Only</fullName>
+                <default>false</default>
+                <label>Non-OE Glass Only</label>
+            </value>
+            <value>
+                <fullName>OE Motorist Liability</fullName>
+                <default>false</default>
+                <label>OE Motorist Liability</label>
+            </value>
+            <value>
+                <fullName>OE Authorisation Required</fullName>
+                <default>false</default>
+                <label>OE Authorisation Required</label>
+            </value>
+            <value>
+                <fullName>OE Glass Accepted</fullName>
+                <default>false</default>
+                <label>OE Glass Accepted</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

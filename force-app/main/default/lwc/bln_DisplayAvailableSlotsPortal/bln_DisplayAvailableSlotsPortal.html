@@ -1,0 +1,386 @@
+<template>
+   
+    <template if:true={isShowModal}>
+       
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container">
+
+                <!-- modal header start -->
+                <template if:false={IsModalHide}>
+                <header class="slds-modal__header" style="background-color: #FAFAFA !important; border-bottom: 2px solid #fafafa">
+                    <button class="slds-button slds-button_icon slds-modal__close " title="Close" onclick={hideModalBox} required="true">
+                        <lightning-icon icon-name="utility:close" style="color:#475158 !important"
+                            alternative-text="close"  size="small" ></lightning-icon>
+                        <!-- <span class="slds-assistive-text">Close</span> -->
+                    </button>
+                    <!-- <span class="close" onclick={hideModalBox}>&times;</span> -->
+                    <h2 id="modal-heading-01" class="slds-hyphenate headcss">Select a new time</h2>
+                    
+
+                </header>
+                <!--header end-->
+                <template if:true={mainSpiner}>
+                    <!-- <div class="slds-modal__content  modelCss" id="modal-content-id-565" style="background-color: #FAFAFA !important; height:20vh;">
+                    <lightning-spinner  class="custom-spinner-background custom-spinner"  size="medium"> </lightning-spinner>
+                    </div> -->
+                    <div class="spinnerStyle" style="background-color: #FAFAFA !important; height:40vh;">
+                        <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                    </div>
+                    </template>
+                <!-- modal body start -->
+                 <template if:false={mainSpiner}>
+                <div class="slds-modal__content  modelCss" id="modal-content-id-1" style="background-color: #FAFAFA !important;">
+                    <template if:false={isMobileLocation}>
+                        <!-- <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                            <div class="slds-size_1-of-12"></div>
+                            <div class="slds-size_10-of-12">
+                                <lightning-combobox class="slds-align_absolute-center locationlist paracss"
+                                    name="location" label={label.WaitingDropOff} value={selectedOptionValue} options={options}
+                                    onchange={handleSlotOptionChange}> </lightning-combobox>
+                            </div>
+                            <div class="slds-size_1-of-12"></div>
+                        </div> -->
+                    </template>  
+
+                <div class="slds-grid heightcss">
+                   
+                      <!-- <div class="slds-size_1-of-12">
+                            <lightning-button-icon variant="base" icon-name="utility:chevronleft" class="slds-m-top_x-small slds-m-left_medium slds-listbox__item leftcss"
+                            alternative-text="Previous" onclick={handleLeftArrowClick} disabled={disableLeftArrow}></lightning-button-icon>
+                        </div> -->
+                        <!-- <template if:false={disableLeftArrow}>   -->
+                            <div class="slds-size_1-of-12"> 
+                                <template if:false={disableLeftArrow}>   
+                                <lightning-button-icon   
+                                    variant="base"   
+                                    icon-name="utility:chevronleft"   
+                                    class="slds-m-top_x-small slds-m-left_medium slds-listbox__item leftcss"  
+                                    alternative-text="Previous"   
+                                    onclick={handleLeftArrowClick}>  
+                                </lightning-button-icon> 
+                            </template> 
+                            </div>  
+                        <!-- </template> -->
+                        
+                         <div class="slds-grid slds-size_10-of-12">
+                            <template for:each={splitArray} for:item="mapItem" for:index="indx">
+                                <div key={mapItem.date} class="slds-size_1-of-3 slds-text-align_center">
+                                    <p class="monthcss"> {mapItem.day} </p>
+                                    <p class="datecss">{mapItem.date} {mapItem.month} </p>
+
+                                    <!-- <div>
+                                        <template for:each={mapItem.slotList} for:item="slot">
+                                            <div key={slot.endTime}>
+                                                <button type="button" class="  buttonCss" data-id={slot.slotTime} data-startdate={slot.startTime}
+                                                data-enddate={slot.endTime} disabled={slot.isButtonDisabled} onclick={handleSlot}>{slot.slotTime}</button>
+                                        </div>
+                                </template>
+                            </div> -->
+                        </div>
+                            </template>
+                        </div> 
+
+                        <div class="slds-size_1-of-12">
+                            <lightning-button-icon variant="base" icon-name="utility:chevronright" class="slds-m-top_x-small  slds-listbox__item rightcss"
+                            alternative-text="Next" onclick={handleRightArrowClick} disabled={disableRightArrow}></lightning-button-icon>
+                        </div>
+                   
+            </div>
+            <div class="slds-grid slds-size_1-of-1 paddingcss">
+                <template for:each={splitArray} for:item="mapItem" for:index="indx">
+                    <div key={mapItem.date} class="slds-size_1-of-3 slds-text-align_center">
+                        <!-- <p class="monthcss"> {mapItem.day} </p>
+                        <p class="datecss">{mapItem.date} {mapItem.month} </p> -->
+
+                        <div>
+                            <template for:each={mapItem.slotList} for:item="slot">
+                                <div key={slot.endTime}>
+                                    <button type="button" class="  buttonCss" data-id={slot.slotTime} data-startdate={slot.startTime}
+                                    data-enddate={slot.endTime} disabled={slot.isButtonDisabled} onclick={handleSlot}>{slot.slotTime}</button>
+                            </div>
+                    </template>
+                </div>
+            </div>
+                </template>
+            </div>
+            <!-- <div class="slds-grid ">
+                <div class="slds-grid slds-size_1-of-1">
+                            <template for:each={splitArray} for:item="mapItem" for:index="indx">
+                                <div key={mapItem.date} class="slds-size_1-of-3 slds-text-align_center">
+                                    <p class="monthcss"> {mapItem.day} </p>
+                                    <p class="datecss">{mapItem.date} {mapItem.month} </p>
+
+                                    <div>
+                                        <template for:each={mapItem.slotList} for:item="slot">
+                                            <div key={slot.endTime}>
+                                                <button type="button" class="  buttonCss" data-id={slot.slotTime} data-startdate={slot.startTime}
+                                                data-enddate={slot.endTime} disabled={slot.isButtonDisabled} onclick={handleSlot}>{slot.slotTime}</button>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+             </div>  -->
+
+                    <template lwc:if={showSpinner}>
+                        <div class="spinnerStyle">
+                            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                        </div>
+
+                    </template>
+                    <template lwc:else>
+                            
+                                <template for:each={arreyMap} for:item="wrap">
+                                    <div class="slds-grid concss slds-grid_vertical" key={wrap}>
+                                        <template for:each={wrap.List} for:item="wrapFd">
+                                            <div key={wrapFd.value} class=" datecss   alignTD paracss1" style="color:#0070d2;">
+                                                <label>
+                                                    <input type="checkbox" checked={wrapFd.checked} class="checked " 
+                                                        data-id={wrapFd.value} data-startdate={wrapFd.starttime}
+                                                        data-enddate={wrapFd.endtime} onclick={handleSlot} />
+
+
+                                                    <div class={wrapFd.boxcss} data-id={wrapFd.value}
+                                                        data-valcheck={wrapFd.checked} data-check={wrapFd.booked}
+                                                        onclick={handleCheck}>
+                                                        <span>{wrapFd.value}</span>
+                                                    </div>
+
+                                                </label>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    
+                                </template>
+                                <!-- <template lwc:if={noSlotBoolean}>
+                                    <label
+                                        class="slds-box slds-text-heading_small slds-m-around_small slds-col slds-align_absolute-center slds-size_11-of-12 slds-listbox__item noSlotAvail"><b>
+                                            {label.NoSlotAvailable}</b></label>
+                                </template> -->
+                                <template lwc:if={noslotcheck}>
+                                    <div class="slds-align_absolute-center">
+                                        <label><span><b>{label.forceDropOff}</b></span></label></div><br/>
+                                    <lightning-input type="checkbox" onchange={markTrue} checked={subSection} label ="Force Appointment">
+                                    </lightning-input><br/>
+                                    <template if:true={subSection}>
+                                        <lightning-combobox
+                                            name="Select Time"
+                                            label="Appointment Window Start"
+                                            placeholder="Select Time Slot"
+                                            options={timeOptions}
+                                            onchange={handleStartTime}>
+                                        </lightning-combobox>
+                                        <lightning-combobox
+                                            name="Time"
+                                            label="Appointment Window End"
+                                            placeholder="Select Time Slot"
+                                            options={timeOptions}
+                                            onchange={handleEndTime}>
+                                            </lightning-combobox>
+                                    </template>
+                        </template>
+                    </template>
+                    <br/>
+                                 
+                    <br />
+                    
+                    <!-- add by vedita FOUK-8156 -->
+                    <template if:true={showModal}>
+                        <div class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close" onclick={closeModal}>&times;</span>
+                                <p>After Hours Charges will be applicable</p>
+                            </div>
+                        </div>
+                    </template>
+                    
+                    <!--<button class="slds-button slds-button_neutral confirm" onclick={handleConfirm}>Confirm</button>-->
+
+                <!-- add by vedita FOUK-8156-->
+                </div>
+            </template>
+                <!-- modal footer start-->
+                <!--<footer class="slds-modal__footer">
+                  <button class="slds-button slds-button_neutral" style="margin-right: 40rem; border-color: blue; color: blue; width: 8rem;" onclick={hideModalBox}>Cancel</button>
+                  <button class="slds-button slds-button_neutral" style="background-color: lightgreen; color: white; margin-right: 3rem; width: 8rem;" onclick={handleConfirmButtonClick}>Confirm</button>
+              </footer>-->
+              <!-- modal footer start-->
+              <template if:true={showError}>
+                <p class="slds-text-color_error" style="text-align: center;background-color: #FAFAFA;" >Please select a slot time.</p>
+            </template>
+              <footer class="slds-modal__footer" style="background-color: #FAFAFA !important;border-top:2px solid #fafafa;padding: 10px 0px !important;">
+                <div  style="box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.16); width:100%">
+                <div class="slds-grid slds-wrap footermargin">
+                    <div style="display:flex; justify-content:space-between; width:100%">
+                        <div class="slds-size_6-of-12 slds-m-top_x-small">
+                            <button class="slds-button slds-button_neutral cancel" onclick={hideModalBox}>Close</button>
+                        </div>
+                        <div class="slds-size_6-of-12 slds-m-top_x-small">
+                        <button class="slds-button slds-button_neutral confirm" onclick={handleConfirm}>Change appointment</button>
+                        </div>
+                    </div>
+                    <!-- <div class="slds-size_6-of-12 slds-m-top_x-small">
+                        <button class="slds-button slds-button_neutral cancel" onclick={hideModalBox}>Close</button>
+                    </div>
+                    <div class="slds-size_6-of-12 slds-m-top_x-small">
+                    <button class="slds-button slds-button_neutral confirm" onclick={handleConfirm}>Change appointment</button>
+                    </div> -->
+    <!-- //R2.1 FOUK:8452 starts-->  
+     <!--BLN_CancellationMethod__c == Message-->  
+    <template if:true={isMessage1}> 
+<div class="foterconcss">
+<p class="foterpara1">
+    Can't find what you're looking for? 
+</p>
+<p class="foterpara2">
+    If you urgently need to change your appointment please call:<u style="color:#00589C"> 0333 999 0101</u>
+</p>
+</div>
+    </template>   
+    <!--BLN_CancellationMethod__c == Cancellation with Charge and Cancellation without Charge-->   
+    <!-- commented by dheeraj fir r2 only  <template if:true={isMessage2}>
+        <div class="foterconcss">
+            <p class="foterpara1">
+                You can't make it? 
+            </p>
+            <p class="foterpara2">
+                If you need to cancel your appointment please click here: <u style="color:#00589C"> 
+                    <a href="javascript:void(0);" onclick={showModalBox} style=" font-family: Roboto;  font-size: 14px; font-weight: 400;
+                    line-height: 21px;
+                    text-align: left;
+                    color: #00589C;
+                    text-decoration: underline">Cancel appointment</a></u>
+            </p>
+        </div>
+    </template> -->
+
+        <!-- //R2.1 FOUK:8452 ENDS BLN_CancellationMethod__c == Message-->  
+
+
+                </div>
+</div>
+            </footer>
+        </template>
+            </div>
+        </section>
+    </template>
+        <template if:true={isDateChange}>            
+             <!-- <c-bln-_-rebook-request-portal is-rebooking-request-model={isRebookingRequestModel} selectslot={slotValue} startadte={newSlotDate}  enddate={newEndSlotDate}  selectslotdate={selectSlotDate} record-id={caseId} set-product-data-list={setProductDataList} current-payload={currentPayload} is-cash-journey={isCashJourney}  onconfirm={handleRebookReason} onclose={onCloseRebook}></c-bln-_-rebook-request-portal>   onhandleConfirm={handleRebookReason}-->            
+             <!-- <c-bln-_-rebook-request-portal is-rebooking-request-model={isRebookingRequestModel} newappoinmetid={appointmentId} selectslot={slotValue} startadte={newSlotDate}  enddate={newEndSlotDate}  selectslotdate={selectSlotDate} record-id={caseId} set-product-data-list={setProductDataList} current-payload={currentPayload} is-cash-journey={isCashJourney}></c-bln-_-rebook-request-portal> -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+            <div class="slds-modal__container adjustModelHeight">
+
+                <div class="slds-modal__content slds-p-around_medium bordereffect" id="modal-content-id-2" style="border-radius: 5px !important;">
+                   
+                        <span class="close" onclick={cancel}>&times;</span>
+                      
+                    <!-- <div class="slds-grid slds-align_absolute-center  "> -->
+                        <form class="formBorder">
+                            <div class="slds-m-around_medium">
+         
+                                <div class="notification">
+                                    <h2 class="headcss1">Please confirm</h2>
+                                    <ol >
+                                        <li><span class="paracss"> Change your appointment to: </span> <span class="paracss2"> {formattedSlotDate}, {formattedTime}</span>  </li>
+                                        
+                                    </ol>
+                                </div>
+                                <form class="rebook-form">
+
+
+                                    <template if:true={objectInfo.data}>
+                                        
+                                    </template>
+
+                                    <div class="fotterbuttoncss">
+                                       
+                                            <button  class="slds-button slds-button_neutral cancelButton "
+                                            onclick={cancel}>Back</button> &nbsp; &nbsp;
+                                        <button class="slds-button slds-button_neutral cofirmButton" 
+                                            onclick={handleChangeNow}>Change now</button>
+
+                                            <template if:true={isLoadingOKpopup}>
+                                                <lightning-spinner  class="custom-spinner-background custom-spinner"  size="medium"> </lightning-spinner>
+                                            </template> 
+                                            <!-- <template if:false={isLoadingOKpopup}>
+                                                <button class="slds-button slds-button_neutral cofirmButton" 
+                                            onclick={handleChangeNow}>Change now</button>
+                                            </template>  -->
+                                    </div>
+                                          
+                                    
+                                    <!-- </div> -->
+                                </form>
+                            </div>
+
+                        </form>
+                    <!-- </div> -->
+                </div>
+                </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop--open slds-backgroundPopupModel"></div>
+        </template>
+    
+
+    <!--template if:true={ShowCancelForm}>
+        <c-bln-_-cancel-service-appoinment-form  service-appointment={oldAppointmentId} case-id={caseId} class="blncss"></c-bln-_-cancel-service-appoinment-form>
+        </template-->
+    <template if:true={isShowModal}>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+            
+    </template>
+    <template if:true={okPopup}>        
+        <!-- <c-bln-_-rebook-request-portal is-rebooking-request-model={isRebookingRequestModel} selectslot={slotValue} startadte={newSlotDate}  enddate={newEndSlotDate}  selectslotdate={selectSlotDate} record-id={caseId} set-product-data-list={setProductDataList} current-payload={currentPayload} is-cash-journey={isCashJourney}  onconfirm={handleRebookReason} onclose={onCloseRebook}></c-bln-_-rebook-request-portal>   onhandleConfirm={handleRebookReason}-->            
+        <!-- <c-bln-_-rebook-request-portal is-rebooking-request-model={isRebookingRequestModel} newappoinmetid={appointmentId} selectslot={slotValue} startadte={newSlotDate}  enddate={newEndSlotDate}  selectslotdate={selectSlotDate} record-id={caseId} set-product-data-list={setProductDataList} current-payload={currentPayload} is-cash-journey={isCashJourney}></c-bln-_-rebook-request-portal> -->
+       <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+       aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_small">
+       <div class="slds-modal__container adjustModelHeight">
+
+           <div class="slds-modal__content slds-p-around_medium bordereffect" id="modal-content-id-3" style="border-radius: 5px !important;">
+              
+                   <span class="close" onclick={HandlechangeOK}>&times;</span>
+                 
+               <!-- <div class="slds-grid slds-align_absolute-center  "> -->
+                   <form class="formBorder">
+                       <div class="slds-m-around_medium">
+    
+                           <div class="notification">
+                               <h2 class="headcss1">Appointment changed</h2>
+                               <ol >
+                                   <li class="popup3"><span class="paracss3pop"> We have rescheduled your appointment to: </span> <span class="paracss2"> {formattedSlotDate}, {formattedTime}.</span><span class="paracss3pop"> We will be in touch should we need to discuss your appointment change.</span>  </li>
+                                   
+                               </ol>
+                           </div>
+                           <form class="rebook-form">
+
+
+                               <template if:true={objectInfo.data}>
+                                   
+                               </template>
+
+                               <div class="fotterbuttoncss">
+                                  
+                                       <!-- <button  class="slds-button slds-button_neutral cancelButton "
+                                       onclick={okclose}>Back</button> &nbsp; &nbsp; -->
+                                   <button class="slds-button slds-button_neutral cofirmButtonok" 
+                                       onclick={HandlechangeOK}>OK</button>
+                               </div>
+                                     
+                               
+                               <!-- </div> -->
+                           </form>
+                       </div>
+
+                   </form>
+               <!-- </div> -->
+           </div>
+           </div>
+   </section>
+   <div class="slds-backdrop slds-backdrop--open slds-backgroundPopupModel"></div>
+    </template>
+   
+</template>

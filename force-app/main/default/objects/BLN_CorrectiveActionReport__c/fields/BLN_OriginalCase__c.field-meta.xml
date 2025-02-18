@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_OriginalCase__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>FOUK-3982 For Original Case from which Warranty was raised.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Original Case from which Warranty was raised.</inlineHelpText>
+    <label>Original Case</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Corrective Action Reports</relationshipLabel>
+    <relationshipName>Corrective_Action_Reports</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

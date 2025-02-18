@@ -1,0 +1,195 @@
+<template>
+   <template lwc:if={showSpinner}>
+      <lightning-spinner alternative-text="Loading..." size="large"></lightning-spinner>
+   </template>
+   <template lwc:else>
+      <!-- <template lwc:if={quoterangeBoolean}>
+         <div style="margin-top: -3rem;"> -->
+      <!-- <c-bln-_-discount-quote-range quote-range-location={quoteRangeLocation} ></c-bln-_-discount-quote-range> -->
+      <!-- </div>
+      </template> -->
+   <!-- <lightning-card  icon-name="standard:account"> -->
+   <div class="slds-scrollable_y slds-m-left_medium" style="height:28rem;width:65rem " tabindex="0">
+      <!--slds-m-left_large slds-m-left_x-large class="dropdown-menu class="slds-scrollable_y" style="height:25rem;width:240rem" tabindex="0"-->
+      <template for:each={otherThanDiscountList} for:item="wrap">
+
+         <div class="slds-grid slds-align_absolute-center" key={wrap.quotelocation}>
+            <div class={wrap.loccss} style="height:3rem;width:60.3rem; border:1px solid black;background:lightgreen"
+                  data-valcheck={wrap.checked} data-value={wrap.quotelocation} data-quoteid={wrap.quotename}  onclick={locationValue}>
+               <b>{wrap.quotelocation}</b> </div>
+         </div>
+         <div class="slds-grid slds-gutters slds-align_absolute-center" key={wrap.quoteEarliestAppointmentAvailability}>
+            <div class="slds-box slds-col slds-align_absolute-center slds-size_2-of-3 earlyCss">
+               <span><b>{label.EarlyAppoitment}</b></span>
+            </div>
+            <div class={wrap.earlyCss} data-id={wrap.quotelocation}
+               data-value={wrap.quoteEarliestAppointmentAvailability} data-name="EarliestAppoitment"
+            onclick={earlyAppoitmentClick}>
+            <span><b>{wrap.quoteEarliestAppointmentAvailability}</b></span>
+         </div>
+      </div>
+      <template if:true={wrap.dateSlotShow}>
+         <div class="slds-grid slds-align_absolute-center slds-m-vertical_medium " key={wrap.quotelocation}>
+            <div class="slds-grid slds-align_absolute-center slds-m-vertical_medium">
+
+                  <lightning-button-icon variant="base" icon-name="utility:left" class="slds-listbox__item lightGreen"
+                     alternative-text="Left Arrow" disabled={leftArrowDisabled}
+                        onclick={decreaseDates}></lightning-button-icon>  <!--{leftArrowDisabled}-->
+
+                     <template for:each={dateMap} for:item="wraps" for:index="index">
+                        <div key={wraps.dateValue} class={wraps.slotcss} data-transfer={wraps.dateTranfer}
+                           data-index={index} data-name="EarliestAppoitmentA" data-value={wraps.dateValue} data-click={wraps.dateName}
+                           data-datecheck={wraps.dateCheck}  onclick={selectSlot} ><strong>{wraps.dateValue}</strong></div>
+                     </template>
+
+                     <lightning-button-icon variant="base" icon-name="utility:right" class="slds-listbox__item lightGreen"
+                        alternative-text="right Arrow" onclick={increaseDates} disabled={rightArrowDisabled} ></lightning-button-icon> <!--disabled={isLastPage}-->
+            </div>
+         </div>
+         
+
+         <template if:true={wrap.showSlots}>
+               <table class="slds-align--absolute-center slds-size_3-of-12" id={wrap.quotelocation}
+                  key={wrap.quotelocation}>
+           
+            <tbody>
+               <template for:each={arreyMap} for:item="wrap">
+                  <tr key={wrap.row}>
+                     <template for:each={wrap.List} for:item="wrapFd">
+                        <td key={wrapFd.value} class="alignTD">
+                           <label>
+                                    <input type="checkbox" checked={wrapFd.checked} class="checked"
+                                       data-id={wrapFd.value} />
+
+
+                                    <div class={wrapFd.boxcss} data-id={wrapFd.value} data-valcheck={wrapFd.checked}
+                                          data-check={wrapFd.booked} 
+                                          data-starttime={wrapFd.starttime} style={wrapFd.locStyle} data-endtime={wrapFd.endtime} onclick={handleCheck}>
+                                          <b>{wrapFd.value}</b> <!--style={wrapFd.locStyle}-->
+                                       </div> <!--style={wrapFd.locStyle} -->
+
+                           </label>
+                        </td>
+                     </template>
+                  </tr>
+               </template>
+            </tbody>
+        
+         </table>
+                  <template lwc:if={noSlotBoolean} >
+                     <label key={wrap.quotelocation}  class="slds-box slds-text-heading_large slds-m-around_small slds-col slds-align_absolute-center slds-size_11-of-12 slds-listbox__item noSlotAvail"
+                      ><b> {label.NoSlotAvailable}</b></label>
+                   </template> <!--class="slds-box slds-col slds-m-around_small slds-align_absolute-center Font-Size:x-large;"-->
+
+
+               <div class="slds-grid slds-form-element_horizontal width50" key={wrap.quotelocation}>
+            <div class="slds-grid slds-align_absolute-center slds-form-element ">
+               <lightning-input
+                  class="slds-col slds-m-around_xx-small inputWidth slds-align_absolute-center slds-size_2-of-3"
+                  type="date" placeholder="Enter new date"></lightning-input>
+                     <lightning-button-icon class="dateClass" variant="brand" icon-name="utility:search"
+                  alternative-text="right Arrow" onclick={handleDate}></lightning-button-icon>
+            </div>
+         </div>
+      </template>
+             
+      </template> 
+         <template if:true={weathersTrue}>
+            <div class="slds-grid slds-align_absolute-center slds-m-top_small" key={wrap.quoteWeatherGuard}>
+               <div class="slds-box slds-col slds-align_absolute-center slds-size_2-of-3 weathercss">
+                  <b>{label.WeatherGuard}</b>
+               </div>
+
+               <div class={wrap.weatherCss} data-id={wrap.quotelocation} data-value={wrap.quoteWeatherGuard}
+                  data-name="WeatherGuard" onclick={earlyAppoitmentClick}>
+            <b>{wrap.quoteWeatherGuard}</b>
+         </div>
+
+      </div>
+
+<template if:true={wrap.weatherDateShow}>
+   <div class="slds-grid slds-align_absolute-center slds-m-vertical_medium " key={wrap.quotelocation}>
+      <div class="slds-grid slds-align_absolute-center slds-m-vertical_medium">
+
+                     <lightning-button-icon variant="base" icon-name="utility:left"
+                        class="slds-listbox__item lightGreen" alternative-text="Left Arrow" disabled={leftArrowDisabled}
+                        onclick={decreaseDates}></lightning-button-icon>
+
+                     <template for:each={dateMap} for:item="wraps">
+                        <div key={wraps.dateValue} class={wraps.slotWeathercss} data-name="WeatherGuardA"
+                           data-transfer={wraps.dateTranfer} data-value={wraps.dateValue} onclick={selectSlot}>
+                           <strong>{wraps.dateValue}</strong></strong></div>
+                     </template>
+
+                     <lightning-button-icon variant="base" icon-name="utility:right"
+                        class="slds-listbox__item lightGreen" alternative-text="right Arrow"
+            onclick={increaseDates}></lightning-button-icon>
+      </div>
+   </div>
+   
+
+   <template if:true={wrap.showSlots}>
+                  <table class="slds-align--absolute-center slds-size_3-of-12" id={wrap.quotelocation}
+                     key={wrap.quotelocation}>
+     
+      <tbody>
+         <template for:each={arreyMap} for:item="wrap">
+            <tr key={wrap.row}>
+               <template for:each={wrap.List} for:item="wrapFd">
+                  <td key={wrapFd.value} class="alignTD">
+                     <label>
+                                       <input type="checkbox" checked={wrapFd.checked} class="checked"
+                                          data-id={wrapFd.value} />
+                                       <!-- onchange={handleCheck} checked={wrapFd.checked}-->
+
+                                       <div class={wrapFd.boxcss} data-id={wrapFd.value} data-valcheck={wrapFd.checked}
+                                          data-check={wrapFd.booked} style={wrapFd.locStyle} onclick={handleCheck}>
+                                          <b>{wrapFd.value}</b> <!--style={wrapFd.locStyle}-->
+                        </div>
+                        <!--style={whiteStyle}-->
+                     </label>
+                  </td>
+               </template>
+            </tr>
+         </template>
+      </tbody>
+  
+   </table>
+
+
+                  <div class="slds-grid slds-form-element_horizontal" style="width:50rem" key={wrap.quotelocation}>
+      <div class="slds-grid slds-align_absolute-center slds-form-element ">
+         <lightning-input
+            class="slds-col slds-m-around_xx-small inputWidth slds-align_absolute-center slds-size_2-of-3"
+            type="date" placeholder={label.EnterDate}></lightning-input>
+                        <lightning-button-icon class="width200" variant="brand" icon-name="utility:search"
+            alternative-text="right Arrow" onclick={handleDate}></lightning-button-icon>
+      </div>
+   </div>
+</template>
+                
+</template> 
+</template>
+         <template if:true={isInsurance}>
+            <div class="slds-grid slds-align_absolute-center" key={wrap.quoteVAT}>
+               <div class="slds-box slds-col slds-text-align_center slds-size_2-of-3 vatlabel"><b>{label.Vat}</b> </div>
+
+
+               <button
+                  class="slds-box slds-col slds-text-align_center slds-m-around_xx-small slds-p-around_small slds-size_1-of-3 vatSelect vatValue"><b>{wrap.quoteVAT}</b>
+               </button>
+
+            </div>
+            <div class="slds-grid slds-align_absolute-center" key={wrap.quoteTotal}>
+               <div class="slds-box slds-col slds-text-align_center slds-size_2-of-3 vatlabel"><b>{label.Total}</b>
+               </div>
+               <div
+                  class="slds-box slds-col slds-m-around_xx-small slds-text-align_center slds-p-around_small slds-size_1-of-3 vatValue">
+                  <b>{wrap.quoteTotal}</b> </div>
+            </div>
+         </template>
+  
+   </template>
+ </div>
+   </template>
+</template>

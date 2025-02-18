@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Milliseconds --></help>
+    <label><!-- API Timeout --></label>
+    <name>BLN_APITimeout__c</name>
+</CustomFieldTranslation>

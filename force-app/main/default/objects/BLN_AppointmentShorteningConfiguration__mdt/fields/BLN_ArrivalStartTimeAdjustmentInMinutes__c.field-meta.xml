@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_ArrivalStartTimeAdjustmentInMinutes__c</fullName>
+    <description>FOUK-777Time to be subtracted from Arrival Window Start in minutes</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Time to be subtracted from Arrival Start in minuteseg if Arr Start is 10:30and Time off is 30 mins, so new Arr Start will be 10:00</inlineHelpText>
+    <label>Arrival Start Time Adjustment (In Minute</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

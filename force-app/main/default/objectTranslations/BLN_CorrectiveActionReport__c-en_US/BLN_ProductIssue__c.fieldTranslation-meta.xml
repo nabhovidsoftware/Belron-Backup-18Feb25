@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Product Issue --></label>
+    <name>BLN_ProductIssue__c</name>
+    <picklistValues>
+        <masterLabel>PQ 1 Glass - ADAS bracket</masterLabel>
+        <translation><!-- PQ 1 Glass - ADAS bracket --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 10 Glass - Optic Distorted</masterLabel>
+        <translation><!-- PQ 10 Glass - Optic Distorted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 11 Glass - Rain sensor bracket</masterLabel>
+        <translation><!-- PQ 11 Glass - Rain sensor bracket --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 12 Glass - Unidentified Fracture</masterLabel>
+        <translation><!-- PQ 12 Glass - Unidentified Fracture --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 13 Trim - Fitment/Quality</masterLabel>
+        <translation><!-- PQ 13 Trim - Fitment/Quality --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 14 Clips - Quality</masterLabel>
+        <translation><!-- PQ 14 Clips - Quality --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 15 Glass - ADAS Heating</masterLabel>
+        <translation><!-- PQ 15 Glass - ADAS Heating --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 2 Glass - Antenna</masterLabel>
+        <translation><!-- PQ 2 Glass - Antenna --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 3 Glass - Delaminated</masterLabel>
+        <translation><!-- PQ 3 Glass - Delaminated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 4 Glass - Heated screen Connections</masterLabel>
+        <translation><!-- PQ 4 Glass - Heated screen Connections --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 5 Glass - Heated screen Elements</masterLabel>
+        <translation><!-- PQ 5 Glass - Heated screen Elements --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 6 Glass - HUD</masterLabel>
+        <translation><!-- PQ 6 Glass - HUD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 7 Glass - Marks between interlayer</masterLabel>
+        <translation><!-- PQ 7 Glass - Marks between interlayer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 8 Glass - Mirror Boss Adhesion</masterLabel>
+        <translation><!-- PQ 8 Glass - Mirror Boss Adhesion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PQ 9 Glass - Misshaped</masterLabel>
+        <translation><!-- PQ 9 Glass - Misshaped --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

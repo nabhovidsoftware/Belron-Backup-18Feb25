@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_StandardSLAList</fullName>
+    <columns>NAME</columns>
+    <columns>BLN_AccountRuleGroup__c</columns>
+    <columns>BLN_ActiveFrom__c</columns>
+    <columns>BLN_ActiveTo__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BLN_AccountRuleGroup__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>BLN_AccountRuleParameter__c.BLN_SLA</value>
+    </filters>
+    <label>Standard SLA list</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_AllMetadatas</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>BLN_PaymentGateway__c</columns>
+    <columns>BLN_PaymentMethod__c</columns>
+    <columns>BLN_ResponseStatus__c</columns>
+    <columns>BLN_SalesforceStatus__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Metadatas</label>
+    <language>en_US</language>
+</ListView>

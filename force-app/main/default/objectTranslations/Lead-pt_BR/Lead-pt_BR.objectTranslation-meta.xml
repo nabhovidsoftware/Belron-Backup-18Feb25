@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>BLN_DedicatedAccountApplication</layout>
+        <sections>
+            <label><!-- Application --></label>
+            <section>Application</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Tracking --></label>
+            <section>Tracking</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_GenericAccountFormPageLayout</layout>
+        <sections>
+            <label><!-- Application --></label>
+            <section>Application</section>
+        </sections>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Tracking --></label>
+            <section>Tracking</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>BLN_LeadPageLayout</layout>
+        <sections>
+            <label><!-- Background --></label>
+            <section>Background</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- General Information --></label>
+            <section>General Information</section>
+        </sections>
+        <sections>
+            <label><!-- Tracking --></label>
+            <section>Tracking</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Laddaw Lead B2B Page Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Accept --></label>
+        <name>BLN_LeadAccept</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Reject --></label>
+        <name>BLN_RejectLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Send Email --></label>
+        <name>BLN_SendEmail</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Close - No Opportunity --></label>
+        <name>CloseNoOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Reopen --></label>
+        <name>ReopenClosedLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Unsuspend --></label>
+        <name>ReopenSuspendedLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Suspend --></label>
+        <name>SuspendLead</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- Dedicated Account Form --></description>
+        <label><!-- Dedicated Account Form --></label>
+        <name>BLN_DedicatedAccountForm</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Dedicated for Account Form Handling --></description>
+        <label><!-- Generic Account Form --></label>
+        <name>BLN_GenericAccountForm</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for regular Lead data --></description>
+        <label><!-- Lead --></label>
+        <name>BLN_Lead</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- FOUK-10408: Record type for Laddaw Leads --></description>
+        <label><!-- Laddaw Lead Record Type --></label>
+        <name>LAD_Laddaw_Lead_Record_Type</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please provide the Address in General Information section. --></errorMessage>
+        <name>BLN_AddressFieldMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid address. The field must not contain unwanted phrases, special characters, numbers, or dates. --></errorMessage>
+        <name>BLN_AddressStreet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invalid address. The field  must not contain unwanted phrases, special characters, numbers, or dates --></errorMessage>
+        <name>BLN_BillingAddressStreet</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Lead Status cannot be set to “Closed - Converted&apos; for Dedicated Account Form Lead. --></errorMessage>
+        <name>BLN_CantSetStatusOnDAFToCloseConverted</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please populate the Reason for Closure --></errorMessage>
+        <name>BLN_ClosureReasonRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please follow format: 2 alphanumeric characters and 6 next digits --></errorMessage>
+        <name>BLN_CompanyRegistrationNumberCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- All values from &quot;Information consent&quot; and &quot;Marketing consent&quot; are mandatory for &quot;Trading Status&quot; of Sole Trader,Partnership and Other. --></errorMessage>
+        <name>BLN_InformationMarketingConsentMandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Lead Owner&quot; has to be changed before Closing the Lead --></errorMessage>
+        <name>BLN_LeadOwnerNotEditable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid phone number containing only numerical digits, with prefix 44 and without any special characters and it should not start with a zero. --></errorMessage>
+        <name>BLN_LeadPhoneNumberRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Policy Expiry Date must be in the future --></errorMessage>
+        <name>BLN_PolicyExpiryDateRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- One or more edited fields are read-only. They can&apos;t be changed. --></errorMessage>
+        <name>BLN_ReadOnlyFields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please populate the Reason for Suspension --></errorMessage>
+        <name>BLN_SuspensionReasonRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This field is mandatory --></errorMessage>
+        <name>BLN_TermsAndConditionsMandatoryField</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Unsuspension date must be in the future --></errorMessage>
+        <name>BLN_UnsuspensionDateRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please follow format: GB or NI and 9 digits --></errorMessage>
+        <name>BLN_VatRegistrationNumberCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Values for Vehicle Types fields can&apos;t be duplicated --></errorMessage>
+        <name>BLN_VehicleType2Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Values for Vehicle Types fields can&apos;t be duplicated --></errorMessage>
+        <name>BLN_VehicleType3Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Values for Vehicle Types fields can&apos;t be duplicated --></errorMessage>
+        <name>BLN_VehicleType4Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Values for Vehicle Types fields can&apos;t be duplicated --></errorMessage>
+        <name>BLN_VehicleTypeRule1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill in Vehicle Type 1 first --></errorMessage>
+        <name>BLN_VehicleTypeRule2</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

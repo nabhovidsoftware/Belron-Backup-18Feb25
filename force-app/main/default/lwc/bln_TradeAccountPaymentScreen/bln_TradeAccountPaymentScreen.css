@@ -1,0 +1,47 @@
+.buttonStyle{
+    background-color: orange;
+    font-size:xx-large;
+    font-style:normal;
+    width: 39rem;
+    height: 3rem;
+    pointer-events: none;
+    margin-left: 9.0rem;
+    /* font-weight: bold; */
+}
+.amountRed{
+  color:#BA0517;  
+}
+.slds-modal {
+    padding: 1rem !important;
+}
+.inputBoxWidth{
+    width: 400px;
+}
+
+.labelWidth{
+   width: 500px;
+   /* padding-left: 100px; */
+}
+
+labelSpacing{
+    padding-left:400px;
+}
+.slds-form-element_horizontal .slds-form-element__control{
+    padding-left: 30%;
+}
+.THIS .slds-form-element__label{
+    width: 200px !important;
+    /*padding-left: 3rem;*/
+}
+.adjustAlign{
+    left:10rem;
+}
+.alignRight{
+    padding-right:200px ;
+}
+.itemAlignment{
+    margin: 1.2rem 0 0 9.0rem;
+}
+.backButtonWidth{
+    margin-left: 9.0rem;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Payments &amp; Refunds</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Payments &amp; Refunds</value>
+    </caseValues>
+    <layouts>
+        <layout>Payment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Refund --></label>
+        <name>BLN_Refund</name>
+    </quickActions>
+    <recordTypes>
+        <description><!-- FOUK_5667, This Record Type is created for storing Payment related information --></description>
+        <label><!-- Payments --></label>
+        <name>BLN_Payments</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- FOUK_5667, This Record Type is created for storing Refund related information --></description>
+        <label><!-- Refunds --></label>
+        <name>BLN_Refunds</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- FOUK_5667, This Record Type is created for storing Waived Receipts related information --></description>
+        <label><!-- Waived Receipts --></label>
+        <name>BLN_WaivedReceipts</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Laddaw Payment --></label>
+        <name>Laddaw_Payment</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

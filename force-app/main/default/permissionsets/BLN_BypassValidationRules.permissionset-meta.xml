@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>BLN_BypassValidationRules</name>
+    </customPermissions>
+    <description>FOUK-492 This permission set will help to skip the validations rules to the User.</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Event.BLN_CompletedBy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.BLN_CompletedBy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Bypass Validation Rules</label>
+</PermissionSet>

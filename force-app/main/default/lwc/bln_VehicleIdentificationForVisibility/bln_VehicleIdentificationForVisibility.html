@@ -1,0 +1,318 @@
+<template>
+    <section>
+        <template if:false={isFlowHeader}> 
+        <div class="center">
+                <div >
+                    <strong>{label.CaptureVehicleDetails}</strong>
+                </div>
+        </div>
+    </template>
+
+        <template if:false={isPdsFlow}>
+        <template if:true={spinnerSiwtch}>
+            <div> <!--class="exampleHolder"-->
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+        <div class="slds-m-around_medium slds-align--absolute-center">
+            <lightning-card> <!--title="Vehicle Identification"-->
+
+                <div class={sldsGrid}>
+
+
+                    <div class={sldsColoum}>
+
+                        <lightning-input label={label.VRNUpperCase} value={vrnValueA} class="size vrnValue"
+                            disabled={vrnDisabled} data-name='VRN' onchange={handleInputChange} message-when-value-missing={vrnError} required></lightning-input>
+                        <!--onchange={handleInputChange}-->
+                        <!--Duplicate cases start-->
+                        <template if:false={hideExistingCases}>
+                            <template if:false={firstScreen}>
+                                
+                                    <template if:true={existingCases.length}>
+                                        <div class="custom-datatable">
+                                            <lightning-card>
+                                                <div class="slds-p-around_medium">
+                                                    <div class="slds-scrollable_y scrollHight">
+                                                        <table
+                                                            class="slds-table slds-table_bordered slds-table_cell-buffer">
+                                                            <thead>
+                                                                <tr class="slds-line-height_reset">
+                                                                    <th class="slds-text-title_caps" scope="col">
+                                                                        <div>{label.caseNumber}</div>
+                                                                    </th>
+                                                                    <th class="slds-text-title_caps" scope="col">
+                                                                        <div>{label.VRNUpperCase}</div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <template for:each={existingCases}
+                                                                    for:item="existingCase">
+                                                                    <tr key={existingCase.Id} class="slds-hint-parent">
+                                                                        <td data-label={label.caseNumber}
+                                                                            class="caseNumber">
+                                                                            <div title={existingCase.CaseNumber}
+                                                                                onclick={openRecord}
+                                                                                data-record-id={existingCase.Id}>
+                                                                                {existingCase.CaseNumber}
+                                                                            </div>
+                                                                        </td>
+                                                                        <td data-label={label.VRNUpperCase}>
+                                                                            <div>{existingCase.vrnNumber}</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </template>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </lightning-card>
+                                        </div>
+                                    
+                                </template>
+                                <template if:false={existingCases.length}>
+
+                                    <div class="slds-p-around_medium">
+                                        <p class="vrnErrors">{label.vrnError}</p>
+                                    </div>
+                                </template>
+                            </template>
+                        </template>
+
+                        <!--duplicate cases end-->
+                        <div>
+                            <lightning-input if:true ={firstScreen} label={label.makeLabel} class="size makeValue" 
+                            data-name="Make" onfocus={handleMakeFocus}  onchange={handleMakeSearch}   value={makeValue}></lightning-input> <!--onblur={handleMakeBlur}-->
+                           
+                            <div if:true={showMakeField} data-id="containerDiv" class="slds-dropown slds-dropdown_fluid makeScroll size2 dropdown">
+                                <ul class="slds-listbox slds-listbox_vertical">
+                                    <template for:each={currentMakeList} for:item="makeRec">
+                                        <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                        key={makeRec.Id} data-value={makeRec.BLN_Make__c} data-name="Make" onclick={handleMakeSelection}>
+                                            <span class="slds-media">
+                                                <span class="slds-media_body">
+                                                    {makeRec.BLN_Make__c}
+                                                </span>
+                                            </span>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+
+                        </div>
+
+
+                    <div>  
+                     <lightning-input if:true={firstScreen} label={label.modelLabel} class="size modelValue" 
+                        data-name="Model" onfocus={handleModelFocus} onchange={handleModelSearch}  disabled={modelDisabled} value={modelValue}></lightning-input> <!--onblur={handleModelBlur}-->
+                        <div  if:true={showModelDropDown} data-id="containerDiv1x" class="slds-dropdown slds-dropdown_fluid  makeScroll1 size2">
+                            <ul class="slds-listbox slds-listbox_vertical ">
+                                <template for:each={currentModelList} for:item="modelRecord">
+                                    <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                        key={modelRecord.Id} data-value={modelRecord.BLN_Model__c} data-name="Model"
+                                        onclick={handleResultClick}>
+                                        <span class="slds-media">
+                                            <span class="slds-media__body ">
+                                                {modelRecord.BLN_Model__c}
+                                            </span>
+                                        </span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                    </div>
+                  
+
+
+                        <lightning-input if:true={firstScreen} label={label.bodyTypeLabel} class="size bodyTypeValue"
+                        data-name="BodyType"  onfocus={handleBodyFocus} onchange={handleBodySearch}  disabled={bodayTypeDisabled} value={bodyTypeValue}
+                        ></lightning-input> <!--onblur={handleBodyBlur}-->
+                
+                        <div if:true={showBodyDropdown} class="slds-dropdown slds-dropdown_fluid makeScroll2 size2">
+                           <ul class="slds-listbox slds-listbox_vertical ">
+                                <template for:each={currentBodyList} for:item="bodyRecord">
+                                    <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                        key={bodyRecord.Id} data-value={bodyRecord.BLN_BodyType__c} data-name="BodyType"
+                                        onclick={handleResultClick}>
+                                        <span class="slds-media">
+                                            <span class="slds-media__body ">
+                                                {bodyRecord.BLN_BodyType__c}</span>
+                                            </span>
+
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        <!--10575 Start-->
+
+                           <lightning-input if:true={firstScreen} label={label.yearRange} data-name="YearRange"
+                        class="size colorValue" onfocus={handleYearRangeFocus} onchange={handleYearRangeSearch}  value={yearRangeValue}
+                        disabled={yearDisabled}></lightning-input> 
+                  
+                        <div if:true={showYearRangedropDown} class="slds-dropdown slds-dropdown_fluid makeScroll5 size2">
+                            <ul class="slds-listbox slds-listbox_vertical ">
+                                <template  for:each={currentYearRangeList} for:item="serecord">
+                                    <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                        key={serecord.Id} data-startdate={serecord.BLN_AvailableStartDate__c}  data-enddate={serecord.BLN_AvailableEndDate__c} data-note={serecord.BLN_VehicleNote__c} data-concat={serecord.BLN_ConcatVal} data-name="Year Range"
+                                        onclick={handleResultClick}>
+                                        <span class="slds-media">
+                                    <!-- <template lwc:if ={otherYearRange}>    -->
+                                        <span class="slds-media__body ">
+                                              {serecord.BLN_ConcatVal} </span>
+                                            <!-- </template> {serecord.BLN_AvailableStartDate__c}-{serecord.BLN_AvailableEndDate__c} {serecord.BLN_VehicleNote__c} -->
+                                           
+                                            </span>
+                                   
+                                    
+                                    </li>
+                                </template>
+                            </ul>
+                        </div> 
+                       <!--10575 End-->
+                   
+
+                        <lightning-input if:true={firstScreen} label={label.yearLabel} data-name="Year"
+                        class="size yearValue" onfocus={handleYearFocus} onchange={handleYearSearch}  value={yearValue}
+                        disabled={yearDisabled}></lightning-input> <!--onblur={handleYearBlur} onfocus={handleYearFocus} onchange={handleYearSearch}-->
+                        <div  if:true={showYearDropdown} class="slds-dropdown slds-dropdown_fluid makeScroll3 size2">
+                            <ul class="slds-listbox slds-listbox_vertical ">
+                                <template for:each={currentYearList} for:item="serecord">
+                                        <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                    key={serecord} data-value={serecord} data-name="Year"
+                                        onclick={handleResultClick}> <!-- key={serecord.Id} data-value={serecord.BLN_Year__c}-->
+                                        <span class="slds-media">
+                                            <span class="slds-media__body ">
+                                                {serecord}</span> <!--{serecord.BLN_Year__c}-->
+                                            </span>
+
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                      
+                      
+                   
+                  
+                    </div>
+                    <div class="slds-col">
+                        <lightning-input if:true={firstScreen} label={label.vinLabel} value={vinValue}
+                            class="size vinValue" disabled={vinFieldDisabled}></lightning-input><br>
+                        <!--value={vinValue}-->
+                        <lightning-input if:true={firstScreen} type="checkbox" label={label.specialVehicleLabel}
+                            class="size specialVehicle" data-name={label.specialVehicleLabel} onchange={handleInputChange} checked={specialVehicleValue}
+                            disabled={specialVeicleDisabled}></lightning-input><br>
+                        <!--onchange={handleInputChange}-->
+                        <template if:true={showSpecialVehicleType}>
+                            <lightning-combobox if:true={firstScreen} label={label.specialTypesLabel}
+                                data-name="Special Types" class="size specialTypeValue" options={specialTypeOptions}
+                                onchange={handleComboboxChange} disabled={specialTypesDisabled} value={jsSpecialTypeValue}></lightning-combobox>
+                        </template>
+                        <lightning-input if:true={firstScreen} label={label.registrationAuthorityLabel}
+                            value={regisTrationValue} class="size regisTrationValue"
+                            disabled={registrationDiasabled} data-name={label.registrationAuthorityLabel} onchange={handleInputChange}></lightning-input>
+                        <!--onchange={handleInputChange} value={regisTrationValue} -->
+                        <lightning-input if:true={firstScreen} label={label.mvrisLabel} value={mvrisValue}
+                            class="size mvrisValue" 
+                            disabled={mvrisDisabled}></lightning-input><br> <!--value={mvrisValue} onchange={handleInputChange}-->
+                         
+                            <lightning-input if:true={firstScreen} label={label.colorLabel} data-name="Color"
+                            class="size colorValue"  value={colorValue} 
+                            disabled={colorDisabled}></lightning-input> 
+                      
+                            <div if:true={showColorDropDown} class="slds-dropdown slds-dropdown_fluid makeScroll4 size2">
+                                <ul class="slds-listbox slds-listbox_vertical ">
+                                    <template  for:each={currentColorList} for:item="serecord">
+                                        <li class="slds-listbox__item cursor-pointer" role="presentation"
+                                            key={serecord.Id} data-value={serecord.BLN_Colour__c} data-name="Color"
+                                            onclick={handleResultClick}>
+                                            <span class="slds-media">
+                                                <span class="slds-media__body ">
+                                                    {serecord.BLN_Colour__c}</span>
+                                            </span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>    
+                            <br>
+                        <lightning-input if:true={firstScreen} type="checkbox" label={label.IsVehicleCalibration}
+                            class="size iscalibration" data-name={label.IsVehicleCalibration} checked={isCalibration} disabled={isCalibrationdisabled}  onchange={handleInputChange}></lightning-input><br>
+                            
+                        
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <!-- </template> -->
+                <div class="slds-m-around_medium slds-align--absolute-center">
+        
+                <footer class="slds-m-top_small ">
+                    <lightning-button class="slds-button_neutral" onclick={handleCancel} name={label.cancelLabel}
+                        label={label.cancelLabel}>
+                    </lightning-button>
+
+                    <lightning-button if:true={showSearchbutton}
+                        class="slds-m-top_small slds-m-left_x-small slds-button_success"
+                        onclick={searchExistingCases} variant="brand" label={label.searchExistingCase}
+                        disabled={vrnButtonDisabled}>
+                    </lightning-button>
+                    
+                    <template if:false={hideExistingCases}>
+                        <lightning-button if:true={showSearchbutton}
+                            class="slds-m-top_small slds-m-left_x-small slds-button_success" onclick={searchVehicle}
+                            variant="brand" label={label.Next} disabled={vrnButtonDisabled}>
+                        </lightning-button>                   
+                    </template>
+
+                    <lightning-button if:true={firstScreen} class="slds-button_neutral slds-m-left_x-small" variant="brand"
+                        onclick={clearInput} label={label.ClearInput}>
+                    </lightning-button> <!--name={label.saveLabel} -->
+                    <lightning-button if:true={firstScreen} class="slds-button_neutral slds-m-left_x-small" variant="brand"
+                        onclick={changeVrn} label={label.ChangeVRN}>
+                    </lightning-button> <!--name={label.saveLabel} -->                  
+                    <lightning-button if:true={firstScreen} class="slds-button_neutral slds-m-left_x-small" variant="brand"
+                        onclick={handleSave} name={label.saveLabel} label={label.saveLabel} disabled={saveDisabled}>
+                    </lightning-button>
+                    
+                </footer>
+                </div>
+
+
+            </lightning-card>
+        </div>
+        <template lwc:if={openmodalError}>
+            <lightning-card class="slds-align_center">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                    aria-describedby="modal-content-id-1"
+                    class="slds-align_absolute-center slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container widthClass">
+                        <header class="slds-modal__header slds-theme_error">
+                            <span><b>{label.errorOccurred}</b></span>
+                            <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={closeErrorModal}>
+                                <lightning-icon icon-name="utility:close" size="medium">
+                                </lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button> -->
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                            <div class="slds-p-around_large">
+                                <lightning-icon variant="inverse" size="small"></lightning-icon>
+                                <span><b>{label.errorMsg}</b></span>
+                            </div>
+                            <div class="slds-align_absolute-center">
+                                <lightning-button class="slds-align_absolute-center" label="Ok" variant="brand" onclick={closeErrorModal}></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </lightning-card>
+        </template>
+    </template>
+        
+         <template if:true={isPdsFlow}> 
+            <c-bln-_-p-d-s-search record-id={recordId}></c-bln-_-p-d-s-search>
+         </template> 
+    </section>
+</template>

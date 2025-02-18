@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Service and Complaints Approval Queue</name>
+    <queueMembers>
+        <users>
+            <user>ankana.c.chakraborty@pwc.com.belronint</user>
+            <user>ankana.c.chakraborty@pwc.com</user>
+            <user>hemangi.temgire@pwc.com.belronint</user>
+            <user>soumya.s.rout@pwc.com.belronint</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

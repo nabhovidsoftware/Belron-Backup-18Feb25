@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Threshold Operator --></label>
+    <name>BLN_ThresholdOperator__c</name>
+    <picklistValues>
+        <masterLabel>Equal (=)</masterLabel>
+        <translation><!-- Equal (=) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greater Than (&gt;)</masterLabel>
+        <translation><!-- Greater Than (&gt;) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greater Than or Equal (&gt;=)</masterLabel>
+        <translation><!-- Greater Than or Equal (&gt;=) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lesser Than (&lt;)</masterLabel>
+        <translation><!-- Lesser Than (&lt;) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lesser Than or Equal (&lt;=)</masterLabel>
+        <translation><!-- Lesser Than or Equal (&lt;=) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>blank</masterLabel>
+        <translation><!-- blank --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

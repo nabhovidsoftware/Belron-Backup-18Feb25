@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Terms --></label>
+    <name>BLN_PaymentTerms__c</name>
+    <picklistValues>
+        <masterLabel>30 END OF MONTH</masterLabel>
+        <translation><!-- 30 END OF MONTH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>30 END OF MONTH CONSOL BILL</masterLabel>
+        <translation><!-- 30 END OF MONTH CONSOL BILL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>30 Net</masterLabel>
+        <translation><!-- 30 Net --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>45 NET</masterLabel>
+        <translation><!-- 45 NET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>5 END OF MONTH</masterLabel>
+        <translation><!-- 5 END OF MONTH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>60 END OF MONTH</masterLabel>
+        <translation><!-- 60 END OF MONTH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>60 END OF MONTH CONSOL BILL</masterLabel>
+        <translation><!-- 60 END OF MONTH CONSOL BILL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>60 NET</masterLabel>
+        <translation><!-- 60 NET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMMEDIATE</masterLabel>
+        <translation><!-- IMMEDIATE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

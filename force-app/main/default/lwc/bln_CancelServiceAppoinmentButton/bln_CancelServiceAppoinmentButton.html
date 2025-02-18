@@ -1,0 +1,51 @@
+<template>
+    <lightning-button variant="Brand" label="Cancel Appointment"  title="Open popup" onclick={showModalBox}>
+    </lightning-button>
+
+   <!-- modal start -->      
+   <template if:true={isShowModal}>
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+       <div class="slds-modal__container">
+        <!-- modal header start -->
+          <header class="slds-modal__header">
+             <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                <lightning-icon icon-name="utility:close"
+                   alternative-text="close"
+                   variant="inverse"
+                   size="small" ></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+             </button>
+             <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Appointment  cancellation form</h2>
+          </header>
+      
+          <!-- modal body start -->
+          <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <lightning-combobox name="Failure Reason"
+            label="Failure Reason"        
+            placeholder="--None--"        
+            options={contentOptions}        
+            onchange={handleContinentChange}>        
+        </lightning-combobox>
+        
+        <lightning-combobox name="Sub Failure Reason"        
+            label="Sub Failure Reason"        
+            placeholder="--None--"        
+            options={countyOptions}        
+            onchange={handleCountryChange}>        
+        </lightning-combobox>
+                <p></p>
+          </div>
+
+          <!-- modal footer start-->
+          <footer class="slds-modal__footer">
+            <lightning-button class="slds-m-top_small" onclick={hideModalBox} variant="Brand" type="button" name="Cancel" label="Cancel"></lightning-button>&nbsp;&nbsp;
+            <lightning-button class="slds-m-top_small" onclick={hideModalBox} variant="Brand" type="button" name="Submit" label="Submit"></lightning-button>
+          </footer>
+       
+       </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+ </template>
+ <!-- modal end -->
+
+</template>

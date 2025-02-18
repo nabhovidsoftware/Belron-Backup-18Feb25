@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Client Sub-category --></label>
+    <name>LAD_Client_Sub_category__c</name>
+    <picklistValues>
+        <masterLabel>Allglass Ireland</masterLabel>
+        <translation><!-- Allglass Ireland --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Competitor Account</masterLabel>
+        <translation><!-- Competitor Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Account</masterLabel>
+        <translation><!-- Internal Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Key Account</masterLabel>
+        <translation><!-- Key Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Major NI Account</masterLabel>
+        <translation><!-- Major NI Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Major Northern Account</masterLabel>
+        <translation><!-- Major Northern Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Major Southern Account</masterLabel>
+        <translation><!-- Major Southern Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minor NI Account</masterLabel>
+        <translation><!-- Minor NI Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minor Northern Account</masterLabel>
+        <translation><!-- Minor Northern Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Minor Southern Account</masterLabel>
+        <translation><!-- Minor Southern Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Strategic Account</masterLabel>
+        <translation><!-- Strategic Account --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supplier Account</masterLabel>
+        <translation><!-- Supplier Account --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

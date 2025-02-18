@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Status --></label>
+    <name>BLN_PaymentStatus__c</name>
+    <picklistValues>
+        <masterLabel>CANCELLED</masterLabel>
+        <translation><!-- CANCELLED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DECLINE</masterLabel>
+        <translation><!-- DECLINE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ERROR</masterLabel>
+        <translation><!-- ERROR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INITIATED</masterLabel>
+        <translation><!-- INITIATED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SUCCESS</masterLabel>
+        <translation><!-- SUCCESS --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

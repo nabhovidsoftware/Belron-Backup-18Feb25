@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Subtype --></label>
+    <name>BLN_Subtype__c</name>
+    <picklistValues>
+        <masterLabel>Awaiting IBT</masterLabel>
+        <translation><!-- Awaiting IBT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting Instruction to Purchase</masterLabel>
+        <translation><!-- Awaiting Instruction to Purchase --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BVT</masterLabel>
+        <translation><!-- BVT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Backorder request with Supplier</masterLabel>
+        <translation><!-- Backorder request with Supplier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Billing</masterLabel>
+        <translation><!-- Billing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CEC Follow Up</masterLabel>
+        <translation><!-- CEC Follow Up --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CPT Promise Date</masterLabel>
+        <translation><!-- CPT Promise Date --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CPT Response Task</masterLabel>
+        <translation><!-- CPT Response Task --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Compliance Information</masterLabel>
+        <translation><!-- Compliance Information --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Costing Analysis</masterLabel>
+        <translation><!-- Costing Analysis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit Check</masterLabel>
+        <translation><!-- Credit Check --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Credit Hold</masterLabel>
+        <translation><!-- Credit Hold --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Accounts</masterLabel>
+        <translation><!-- Customer Accounts --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Enquiry</masterLabel>
+        <translation><!-- Enquiry --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Failed Refund</masterLabel>
+        <translation><!-- Failed Refund --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass Available Internally - please order</masterLabel>
+        <translation><!-- Glass Available Internally - please order --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Glass Ordered Externally - ETA in Job Notes</masterLabel>
+        <translation><!-- Glass Ordered Externally - ETA in Job Notes --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Goodwill Gesture</masterLabel>
+        <translation><!-- Goodwill Gesture --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Letter</masterLabel>
+        <translation><!-- Letter --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Motability Hire/Recovery</masterLabel>
+        <translation><!-- Motability Hire/Recovery --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Internal Stock - Clips &amp; Trims</masterLabel>
+        <translation><!-- No Internal Stock - Clips &amp; Trims --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Internal Stock - Glass</masterLabel>
+        <translation><!-- No Internal Stock - Glass --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>No Stock</masterLabel>
+        <translation><!-- No Stock --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Request - Price &amp; Availability Required</masterLabel>
+        <translation><!-- OE Request - Price &amp; Availability Required --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OE Request - Purchase Authorised</masterLabel>
+        <translation><!-- OE Request - Purchase Authorised --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pricing</masterLabel>
+        <translation><!-- Pricing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pricing Exception</masterLabel>
+        <translation><!-- Pricing Exception --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Identification Task</masterLabel>
+        <translation><!-- Product Identification Task --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Obsolete</masterLabel>
+        <translation><!-- Product Obsolete --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prospect Follow Up</masterLabel>
+        <translation><!-- Prospect Follow Up --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Declined by Customer</masterLabel>
+        <translation><!-- Recalibration Declined by Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Failed</masterLabel>
+        <translation><!-- Recalibration Failed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recalibration Not Completed - Dealer Recalibration Only</masterLabel>
+        <translation><!-- Recalibration Not Completed - Dealer Recalibration Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Proposition</masterLabel>
+        <translation><!-- Service Proposition --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Task</masterLabel>
+        <translation><!-- Service Task --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Stock Exception</masterLabel>
+        <translation><!-- Stock Exception --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Urgent - More information Required</masterLabel>
+        <translation><!-- Urgent - More information Required --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

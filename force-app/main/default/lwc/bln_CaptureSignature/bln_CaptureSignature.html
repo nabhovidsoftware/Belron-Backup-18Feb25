@@ -1,0 +1,41 @@
+<template>
+  <template if:false={usedForR1}>
+    <div class="slds-m-around_small">
+      <div style="height: 300px">
+        <c-bln_-Generate-signature
+          enable-name-signing="true"
+          name-input-label="Type name here:"
+          enable-signature-drawing="true"
+          pad-label="Or draw signature here:"
+          stroke-thickness="2"
+          pen-color="black"
+          pad-color="white"
+          font="30px 'Great Vibes'" ongetname={handleGetName}>
+        </c-bln_-Generate-signature>
+      </div>
+      <div class="slds-m-top_small">
+        <lightning-button
+          variant="brand"
+          label="Save"
+          title="Save"
+          onclick={saveSignature}
+        ></lightning-button>
+        <lightning-button
+          variant="brand"
+          label="Clear"
+          title="Clear"
+          onclick={clearSignature}
+          class="slds-m-left_x-small"
+        ></lightning-button>
+      </div>
+      <template if:true={imgSrc}>
+        <br />
+        <br />
+        <img src={imgSrc} />
+      </template><br>
+    </div>
+  </template>
+  <template if:true={usedForR1}>
+    <div class="slds-text-heading_medium">This feature is available for R2.</div>
+  </template>
+  </template>

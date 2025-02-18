@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>59.0</apiVersion>
+    <assignments>
+        <name>Assign_Appointment_Start_Time</name>
+        <label>Assign Appointment Start Time</label>
+        <locationX>50</locationX>
+        <locationY>1427</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_AppointmentStartTime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_SA_records.SchedStartTime</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>FOUK-5374, This is created for assigning it to the Account Field</description>
+        <name>BLN_AccountAssignment</name>
+        <label>Account Assignment</label>
+        <locationX>94</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_FLTR_Queue.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_vehicle_type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>FOUK-5374, This is created for assigning it to the Account Field</description>
+        <name>BLN_AccountAssignment01</name>
+        <label>Account Assignment</label>
+        <locationX>842</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>FOUK-5374, This is created for assigning it to Case Field</description>
+        <name>BLN_CaseAssignment</name>
+        <label>Case Assignment</label>
+        <locationX>380</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_Case__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.BLN_Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.BLN_Case__r.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Account_related_to_Case</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Account_related_to_Case</name>
+        <label>Account related to Case</label>
+        <locationX>380</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Check_vehicle_type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Account_exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.BLN_Case__r.Account.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_Case__r.Account.BLN_FLTRIndicator__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FLTR</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Subject</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>BVT</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_FLTR_Queue</targetReference>
+            </connector>
+            <label>Is Account exists</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>FOUK-5374, This is created for the decision element</description>
+        <name>BLN_WhatIDDecision</name>
+        <label>WhatId Decision</label>
+        <locationX>743</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>WhatId_starts_with_Id_500</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>500</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_CaseAssignment</targetReference>
+            </connector>
+            <label>WhatId starts with Id 500</label>
+        </rules>
+        <rules>
+            <name>BLN_WhatIdStartsWith001</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>001</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_AccountAssignment01</targetReference>
+            </connector>
+            <label>WhatId Starts With 001</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_SA_id_is_not_null</name>
+        <label>Check if SA id is not null</label>
+        <locationX>182</locationX>
+        <locationY>1319</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_SA_Id</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_SA_records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_SA_records.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Appointment_Start_Time</targetReference>
+            </connector>
+            <label>Check SA Id</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_vehicle_type</name>
+        <label>Check vehicle type</label>
+        <locationX>380</locationX>
+        <locationY>1103</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_vehicle_type_is_Hire_or_Recovery</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>ISNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_VehicleTypeHireRecovery__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Hire Car</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BLN_VehicleTypeHireRecovery__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Vehicle Recovery</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_SA_records</targetReference>
+            </connector>
+            <label>Check vehicle type is Hire or Recovery</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Null_Check</name>
+        <label>Null Check</label>
+        <locationX>226</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>Check_vehicle_type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_no_null_records</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_FLTR_Queue</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BLN_AccountAssignment</targetReference>
+            </connector>
+            <label>If no null records</label>
+        </rules>
+    </decisions>
+    <description>FOUK-5374, 4645 This Flow is created for assigning it to Case &amp; Account Fields in Task Object</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ISNEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <interviewLabel>Provisional Booking - No Stock Task in CPT Queue {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Provisional Booking - No Stock Task In CPT Queue</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_FLTR_Queue</name>
+        <label>Get FLTR Queue</label>
+        <locationX>226</locationX>
+        <locationY>611</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Null_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BLN_FLTR</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_SA_records</name>
+        <label>Get SA records</label>
+        <locationX>182</locationX>
+        <locationY>1211</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_SA_id_is_not_null</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>BLN_Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>SchedStartTime</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Canceled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Failed After Arrive</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>ServiceAppointment</object>
+        <sortField>SchedStartTime</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>617</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>BLN_WhatIDDecision</targetReference>
+        </connector>
+        <filterFormula>AND (
+	OR( 
+		NOT(ISBLANK({!$Record.Subject})), 
+		NOT(ISBLANK({!$Record.BLN_VehicleTypeHireRecovery__c}))
+		),
+	NOT(ISBLANK({!$Record.WhatId})), 
+	OR( 
+		ISNEW(), ISCHANGED({!$Record.WhatId}), 
+		ISCHANGED({!$Record.Subject}), 
+		ISCHANGED({!$Record.BLN_VehicleTypeHireRecovery__c})
+		),
+NOT({!$Permission.BLN_BypassFlows})
+)</filterFormula>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>FOUK-6851 Clear out old orderitem values</description>
+    <environments>Default</environments>
+    <interviewLabel>Clear Inactive Orderitem Values {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Clear Inactive Orderitem Values</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Flow_Exception</name>
+        <label>Flow Exception</label>
+        <locationX>440</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>BLN_CurrentUser__c</field>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_EntityName__c</field>
+            <value>
+                <stringValue>BLN_ClearInactiveOrderitemValues</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_ErrorMessage__c</field>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_LogType__c</field>
+            <value>
+                <elementReference>$Label.BLN_ExceptionValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_MethodStep__c</field>
+            <value>
+                <elementReference>Update_all_OrderItems</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>BLN_RecordIdIdentifier__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>BLN_FlowException__e</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordUpdates>
+        <name>Update_all_OrderItems</name>
+        <label>Update all OrderItems</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <faultConnector>
+            <targetReference>Flow_Exception</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OrderId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>BLN_StockLineNumber__c</field>
+        </inputAssignments>
+        <object>OrderItem</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Update_all_OrderItems</targetReference>
+        </connector>
+        <filterFormula>AND(
+NOT({!$Permission.BLN_BypassFlows}),
+ISCHANGED({!$Record.Status}),
+ISPICKVAL( {!$Record__Prior.Status}, &apos;Accepted&apos;),
+ISPICKVAL( {!$Record.Status}, &apos;Inactive&apos;)
+)</filterFormula>
+        <object>Order</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

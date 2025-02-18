@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Financial Document</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Financial Documents</value>
+    </caseValues>
+    <layouts>
+        <layout>Financial Document Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Financial Documents of type Credit Note are required to have the Related Document field populated with the Invoices for which the Credit Notes are generated. --></errorMessage>
+        <name>LAD_RelatedDocMandatoryForCreditNote</name>
+    </validationRules>
+</CustomObjectTranslation>

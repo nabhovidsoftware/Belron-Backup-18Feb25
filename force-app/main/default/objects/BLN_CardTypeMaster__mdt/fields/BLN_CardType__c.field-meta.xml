@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLN_CardType__c</fullName>
+    <description>FOUK-3977 This is used in Bln_SCutility class</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Card Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>BB Carte Bleue</fullName>
+                <default>false</default>
+                <label>BB Carte Bleue</label>
+            </value>
+            <value>
+                <fullName>On-line Carte Bleue</fullName>
+                <default>false</default>
+                <label>On-line Carte Bleue</label>
+            </value>
+            <value>
+                <fullName>BB Diners</fullName>
+                <default>false</default>
+                <label>BB Diners</label>
+            </value>
+            <value>
+                <fullName>BB Amex</fullName>
+                <default>false</default>
+                <label>BB Amex</label>
+            </value>
+            <value>
+                <fullName>On-line Amex</fullName>
+                <default>false</default>
+                <label>On-line Amex</label>
+            </value>
+            <value>
+                <fullName>BB JCB</fullName>
+                <default>false</default>
+                <label>BB JCB</label>
+            </value>
+            <value>
+                <fullName>On-line JCB</fullName>
+                <default>false</default>
+                <label>On-line JCB</label>
+            </value>
+            <value>
+                <fullName>BB Visa</fullName>
+                <default>false</default>
+                <label>BB Visa</label>
+            </value>
+            <value>
+                <fullName>On-line Visa</fullName>
+                <default>false</default>
+                <label>On-line Visa</label>
+            </value>
+            <value>
+                <fullName>BB Visa Delta</fullName>
+                <default>false</default>
+                <label>BB Visa Delta</label>
+            </value>
+            <value>
+                <fullName>BB Electron</fullName>
+                <default>false</default>
+                <label>BB Electron</label>
+            </value>
+            <value>
+                <fullName>BB Maestro (Switch) IN</fullName>
+                <default>false</default>
+                <label>BB Maestro (Switch) IN</label>
+            </value>
+            <value>
+                <fullName>BB Maestro International</fullName>
+                <default>false</default>
+                <label>BB Maestro International</label>
+            </value>
+            <value>
+                <fullName>On-line International Maestro</fullName>
+                <default>false</default>
+                <label>On-line International Maestro</label>
+            </value>
+            <value>
+                <fullName>On-line Maestro</fullName>
+                <default>false</default>
+                <label>On-line Maestro</label>
+            </value>
+            <value>
+                <fullName>BB Mastercard</fullName>
+                <default>false</default>
+                <label>BB Mastercard</label>
+            </value>
+            <value>
+                <fullName>On-line Mastercard</fullName>
+                <default>false</default>
+                <label>On-line Mastercard</label>
+            </value>
+            <value>
+                <fullName>On-line LASER</fullName>
+                <default>false</default>
+                <label>On-line LASER</label>
+            </value>
+            <value>
+                <fullName>BB Laser (debit)</fullName>
+                <default>false</default>
+                <label>BB Laser (debit)</label>
+            </value>
+            <value>
+                <fullName>BB Maestro (Switch) NO IN</fullName>
+                <default>false</default>
+                <label>BB Maestro (Switch) NO IN</label>
+            </value>
+            <value>
+                <fullName>BB Solo IN</fullName>
+                <default>false</default>
+                <label>BB Solo IN</label>
+            </value>
+            <value>
+                <fullName>BB Solo NO IN</fullName>
+                <default>false</default>
+                <label>BB Solo NO IN</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
